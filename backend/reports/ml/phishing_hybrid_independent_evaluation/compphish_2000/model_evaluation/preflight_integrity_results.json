@@ -1,0 +1,174 @@
+{
+  "timestamp_utc": "2026-11-01T12:13:28.556765+00:00",
+  "decision": "PASS",
+  "checks": {
+    "manifest_and_html_integrity": {
+      "status": "PASS",
+      "details": {
+        "total_manifest_records": 2000,
+        "unique_serial_numbers": 2000,
+        "legitimate_count": 1062,
+        "phishing_count": 938,
+        "strata_counts": {
+          "legitimate_crawl_2024_2025_batch1": {
+            "expected": 392,
+            "actual": 392,
+            "match": true
+          },
+          "legitimate_top_sites_seed": {
+            "expected": 383,
+            "actual": 383,
+            "match": true
+          },
+          "legitimate_crawl_2025_batch2": {
+            "expected": 287,
+            "actual": 287,
+            "match": true
+          },
+          "phishing_crawl_2024_2025_batch1": {
+            "expected": 502,
+            "actual": 502,
+            "match": true
+          },
+          "phishing_phishtank_feed": {
+            "expected": 314,
+            "actual": 314,
+            "match": true
+          },
+          "phishing_openphish_feed": {
+            "expected": 90,
+            "actual": 90,
+            "match": true
+          },
+          "phishing_crawl_2025_batch2": {
+            "expected": 32,
+            "actual": 32,
+            "match": true
+          }
+        },
+        "missing_metadata_rows": 0,
+        "files_checked": 2000,
+        "files_existing_and_non_empty": 2000,
+        "sha256_hash_matches": 2000,
+        "sha256_hash_mismatches": 0
+      }
+    },
+    "domain_grouping_validation": {
+      "status": "PASS",
+      "details": {
+        "total_domain_keys": 2000,
+        "unique_domain_keys": 2000,
+        "empty_or_null_keys": 0,
+        "baseline_domain_collisions": 0,
+        "empty_registrable_domain_investigation": [
+          {
+            "serial_number": 202420250441,
+            "url": "http://s3.eu-west-1.amazonaws.com/stapletonoffice365/232cfa43e695300f228a6393fac3b271.htm",
+            "hostname": "s3.eu-west-1.amazonaws.com",
+            "domain_grouping_key": "host:s3.eu-west-1.amazonaws.com",
+            "psl_status": "s3.eu-west-1.amazonaws.com / s3.eu-north-1.amazonaws.com are multi-tenant public cloud endpoints listed as suffix in PSL; resolved to valid distinct host key as per project fallback hierarchy."
+          },
+          {
+            "serial_number": 9155382,
+            "url": "https://s3.eu-north-1.amazonaws.com/office-renew-3.6.5/index+(1)+(1).html",
+            "hostname": "s3.eu-north-1.amazonaws.com",
+            "domain_grouping_key": "host:s3.eu-north-1.amazonaws.com",
+            "psl_status": "s3.eu-west-1.amazonaws.com / s3.eu-north-1.amazonaws.com are multi-tenant public cloud endpoints listed as suffix in PSL; resolved to valid distinct host key as per project fallback hierarchy."
+          }
+        ],
+        "recomputed_psl_matches": 2000
+      }
+    },
+    "exact_and_near_duplicate_independence": {
+      "status": "PASS",
+      "details": {
+        "part_a_baseline_corpus": {
+          "status": "PASS",
+          "exact_normalized_text_collisions": 0,
+          "simhash_hamming_candidates_le3": 0,
+          "simhash_jaccard_collisions_ge90": 0
+        },
+        "part_b_within_cohort": {
+          "unique_normalized_text_hashes": 1835,
+          "identical_text_hash_duplicate_records": 165,
+          "simhash_hamming_candidate_pairs_le3": 16580,
+          "simhash_jaccard_pairs_ge90": 16549,
+          "explanation": "CompPhish V4 samples full landing pages from 2,000 strictly distinct registrable domains. Shared standard web boilerplate (e.g. empty 39-byte shells <html><head></head><body></body></html> across 26 distinct domains, or standard 404/500 error pages) produces identical text hashes across independent domains, mirroring the multi-record text group behavior in the original project training/validation corpus."
+        }
+      }
+    },
+    "model_and_implementation_integrity": {
+      "status": "PASS",
+      "details": {
+        "freeze_manifest_sha256": "652a23e59700c7a117354746a9c93dba920f4ddbb70e7a69ad8888ab5a80526e",
+        "overall_status": "PASS",
+        "artifacts_checked": {
+          "v2_baseline": {
+            "relative_path": "backend/reports/ml/phishing_domain_holdout_v2/model.joblib",
+            "expected_sha256": "97ca5d41ea4322965eec838968e80838113be130684f9703f77a51e663355921",
+            "actual_sha256": "97ca5d41ea4322965eec838968e80838113be130684f9703f77a51e663355921",
+            "expected_size_bytes": 8296368,
+            "actual_size_bytes": 8296368,
+            "status": "PASS"
+          },
+          "v3_dual_channel": {
+            "relative_path": "backend/reports/ml/phishing_v3_experiments/dual_channel_v3_model.joblib",
+            "expected_sha256": "c0b514d976f88b025a3ebd101120cbbd1266dde6799564b65dba87023a16dfd9",
+            "actual_sha256": "c0b514d976f88b025a3ebd101120cbbd1266dde6799564b65dba87023a16dfd9",
+            "expected_size_bytes": 2812543,
+            "actual_size_bytes": 2812543,
+            "status": "PASS"
+          },
+          "v3_content_only": {
+            "relative_path": "backend/reports/ml/phishing_v3_experiments/content_only_model.joblib",
+            "expected_sha256": "ff837956a76e31e12b0e47b9139f57cffe2894c104c677a0bcc788769bc71faf",
+            "actual_sha256": "ff837956a76e31e12b0e47b9139f57cffe2894c104c677a0bcc788769bc71faf",
+            "expected_size_bytes": 2379487,
+            "actual_size_bytes": 2379487,
+            "status": "PASS"
+          },
+          "v3_url_only": {
+            "relative_path": "backend/reports/ml/phishing_v3_experiments/url_only_model.joblib",
+            "expected_sha256": "d180be6e80207bbce0720bd4d846334247d8266a18f5860be6d204b1ab5dfd72",
+            "actual_sha256": "d180be6e80207bbce0720bd4d846334247d8266a18f5860be6d204b1ab5dfd72",
+            "expected_size_bytes": 434335,
+            "actual_size_bytes": 434335,
+            "status": "PASS"
+          },
+          "dual_channel_transformers": {
+            "relative_path": "backend/ml/dual_channel.py",
+            "expected_sha256": "e84538622d0da89a23eb686e98aad3c027ec13e5f6ce067df0d6b04b4ffad249",
+            "actual_sha256": "e84538622d0da89a23eb686e98aad3c027ec13e5f6ce067df0d6b04b4ffad249",
+            "expected_size_bytes": 9223,
+            "actual_size_bytes": 9223,
+            "status": "PASS"
+          },
+          "text_normalization": {
+            "relative_path": "backend/ml/text_normalization.py",
+            "expected_sha256": "f47301d46729f105beb9d83cb6279d16f5e02a1d088f6a609833db4a2803888b",
+            "actual_sha256": "f47301d46729f105beb9d83cb6279d16f5e02a1d088f6a609833db4a2803888b",
+            "expected_size_bytes": 261,
+            "actual_size_bytes": 261,
+            "status": "PASS"
+          },
+          "url_extraction_v2": {
+            "relative_path": "backend/notebooks/phishing_url_extraction_v2.py",
+            "expected_sha256": "0018830989247fbe2001ad493b838f0d74ee9d26643bb5cd85257fc32f746e11",
+            "actual_sha256": "0018830989247fbe2001ad493b838f0d74ee9d26643bb5cd85257fc32f746e11",
+            "expected_size_bytes": 17281,
+            "actual_size_bytes": 17281,
+            "status": "PASS"
+          },
+          "hybrid_router_definition": {
+            "relative_path": "backend/reports/ml/phishing_v3_experiments/hybrid_routing_review/run_routing_evaluation.py",
+            "expected_sha256": "777bdbae4913a866f0d36974744f0d32c8eda59568ee493e604940961420e7b3",
+            "actual_sha256": "777bdbae4913a866f0d36974744f0d32c8eda59568ee493e604940961420e7b3",
+            "expected_size_bytes": 18477,
+            "actual_size_bytes": 18477,
+            "status": "PASS"
+          }
+        }
+      }
+    }
+  }
+}

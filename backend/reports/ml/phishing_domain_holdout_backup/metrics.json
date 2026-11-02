@@ -1,0 +1,427 @@
+{
+  "experiment": "Phishing TF-IDF + Logistic Regression: registrable-domain holdout",
+  "interpretation": "Exploratory within-dataset domain-held-out evaluation; not independently collected data or real-world validation.",
+  "threshold": 0.5,
+  "threshold_policy": "Fixed at 0.5 for comparability; no threshold selection or hyperparameter tuning was performed on validation or test data.",
+  "environment": {
+    "python": "3.14.6",
+    "scikit_learn": "1.8.0",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "joblib": "1.6.0"
+  },
+  "split_counts": {
+    "train": {
+      "unique_text_groups": 45034,
+      "source_records": 45196,
+      "unique_text_class_counts": {
+        "0": 23895,
+        "1": 21139
+      },
+      "source_record_class_counts": {
+        "0": 23919,
+        "1": 21277
+      },
+      "unique_text_percentage_of_primary": 0.6998508112140237,
+      "source_record_percentage_of_primary": 0.6999426987347261
+    },
+    "validation": {
+      "unique_text_groups": 9658,
+      "source_records": 9693,
+      "unique_text_class_counts": {
+        "0": 5124,
+        "1": 4534
+      },
+      "source_record_class_counts": {
+        "0": 5129,
+        "1": 4564
+      },
+      "unique_text_percentage_of_primary": 0.1500901348915273,
+      "source_record_percentage_of_primary": 0.15011382818912514
+    },
+    "test": {
+      "unique_text_groups": 9656,
+      "source_records": 9682,
+      "unique_text_class_counts": {
+        "0": 5124,
+        "1": 4532
+      },
+      "source_record_class_counts": {
+        "0": 5124,
+        "1": 4558
+      },
+      "unique_text_percentage_of_primary": 0.15005905389444893,
+      "source_record_percentage_of_primary": 0.14994347307614875
+    }
+  },
+  "validation_at_threshold_0_5": {
+    "records": 9658,
+    "class_counts": {
+      "0": 5124,
+      "1": 4534
+    },
+    "confusion_matrix_labels_0_1": [
+      [
+        4617,
+        507
+      ],
+      [
+        384,
+        4150
+      ]
+    ],
+    "TN": 4617,
+    "FP": 507,
+    "FN": 384,
+    "TP": 4150,
+    "accuracy": 0.907744874715262,
+    "precision": 0.8911316298045953,
+    "recall": 0.9153065725628584,
+    "f1": 0.9030573387009031,
+    "specificity": 0.9010538641686182,
+    "false_positive_rate": 0.09894613583138173,
+    "false_negative_rate": 0.0846934274371416,
+    "roc_auc": 0.9685168216411211,
+    "average_precision_pr_auc": 0.9591268939007598,
+    "undefined_metric_note": null
+  },
+  "test_overall": {
+    "records": 9656,
+    "class_counts": {
+      "0": 5124,
+      "1": 4532
+    },
+    "confusion_matrix_labels_0_1": [
+      [
+        4490,
+        634
+      ],
+      [
+        444,
+        4088
+      ]
+    ],
+    "TN": 4490,
+    "FP": 634,
+    "FN": 444,
+    "TP": 4088,
+    "accuracy": 0.8883595691797845,
+    "precision": 0.86573485811097,
+    "recall": 0.9020300088261254,
+    "f1": 0.8835098335854765,
+    "specificity": 0.8762685402029664,
+    "false_positive_rate": 0.12373145979703357,
+    "false_negative_rate": 0.09796999117387467,
+    "roc_auc": 0.9644819724150856,
+    "average_precision_pr_auc": 0.958431190626743,
+    "undefined_metric_note": null
+  },
+  "test_url_containing": {
+    "records": 7444,
+    "class_counts": {
+      "0": 3830,
+      "1": 3614
+    },
+    "confusion_matrix_labels_0_1": [
+      [
+        3238,
+        592
+      ],
+      [
+        357,
+        3257
+      ]
+    ],
+    "TN": 3238,
+    "FP": 592,
+    "FN": 357,
+    "TP": 3257,
+    "accuracy": 0.8725147770016121,
+    "precision": 0.846193816575734,
+    "recall": 0.9012174875484228,
+    "f1": 0.8728393407476887,
+    "specificity": 0.8454308093994778,
+    "false_positive_rate": 0.15456919060052218,
+    "false_negative_rate": 0.0987825124515772,
+    "roc_auc": 0.9551773925306432,
+    "average_precision_pr_auc": 0.9513615474311823,
+    "undefined_metric_note": null
+  },
+  "test_non_url_containing": {
+    "records": 2212,
+    "class_counts": {
+      "0": 1294,
+      "1": 918
+    },
+    "confusion_matrix_labels_0_1": [
+      [
+        1252,
+        42
+      ],
+      [
+        87,
+        831
+      ]
+    ],
+    "TN": 1252,
+    "FP": 42,
+    "FN": 87,
+    "TP": 831,
+    "accuracy": 0.9416817359855335,
+    "precision": 0.9518900343642611,
+    "recall": 0.9052287581699346,
+    "f1": 0.9279731993299832,
+    "specificity": 0.9675425038639877,
+    "false_positive_rate": 0.03245749613601236,
+    "false_negative_rate": 0.09477124183006536,
+    "roc_auc": 0.9897734810908736,
+    "average_precision_pr_auc": 0.9839420576476788,
+    "undefined_metric_note": null
+  },
+  "test_url_by_domain_grouping_status": {
+    "url_with_ip_or_exact_host_fallback": {
+      "records": 32,
+      "class_counts": {
+        "0": 6,
+        "1": 26
+      },
+      "confusion_matrix_labels_0_1": [
+        [
+          6,
+          0
+        ],
+        [
+          1,
+          25
+        ]
+      ],
+      "TN": 6,
+      "FP": 0,
+      "FN": 1,
+      "TP": 25,
+      "accuracy": 0.96875,
+      "precision": 1.0,
+      "recall": 0.9615384615384616,
+      "f1": 0.9803921568627451,
+      "specificity": 1.0,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.038461538461538464,
+      "roc_auc": 1.0,
+      "average_precision_pr_auc": 1.0,
+      "undefined_metric_note": null
+    },
+    "url_with_registrable_domain": {
+      "records": 6372,
+      "class_counts": {
+        "0": 3353,
+        "1": 3019
+      },
+      "confusion_matrix_labels_0_1": [
+        [
+          2798,
+          555
+        ],
+        [
+          321,
+          2698
+        ]
+      ],
+      "TN": 2798,
+      "FP": 555,
+      "FN": 321,
+      "TP": 2698,
+      "accuracy": 0.8625235404896422,
+      "precision": 0.8293882569935445,
+      "recall": 0.8936734017886717,
+      "f1": 0.8603316326530612,
+      "specificity": 0.8344765881300328,
+      "false_positive_rate": 0.1655234118699672,
+      "false_negative_rate": 0.10632659821132825,
+      "roc_auc": 0.9496175775906583,
+      "average_precision_pr_auc": 0.9432668894629236,
+      "undefined_metric_note": null
+    },
+    "url_without_extractable_destination": {
+      "records": 1040,
+      "class_counts": {
+        "0": 471,
+        "1": 569
+      },
+      "confusion_matrix_labels_0_1": [
+        [
+          434,
+          37
+        ],
+        [
+          35,
+          534
+        ]
+      ],
+      "TN": 434,
+      "FP": 37,
+      "FN": 35,
+      "TP": 534,
+      "accuracy": 0.9307692307692308,
+      "precision": 0.9352014010507881,
+      "recall": 0.9384885764499121,
+      "f1": 0.9368421052631579,
+      "specificity": 0.921443736730361,
+      "false_positive_rate": 0.07855626326963906,
+      "false_negative_rate": 0.061511423550087874,
+      "roc_auc": 0.9787685774946921,
+      "average_precision_pr_auc": 0.9807710231157611,
+      "undefined_metric_note": null
+    }
+  },
+  "test_by_inferred_input_type": {
+    "email": {
+      "records": 51,
+      "class_counts": {
+        "0": 22,
+        "1": 29
+      },
+      "confusion_matrix_labels_0_1": [
+        [
+          16,
+          6
+        ],
+        [
+          2,
+          27
+        ]
+      ],
+      "TN": 16,
+      "FP": 6,
+      "FN": 2,
+      "TP": 27,
+      "accuracy": 0.8431372549019608,
+      "precision": 0.8181818181818182,
+      "recall": 0.9310344827586207,
+      "f1": 0.8709677419354839,
+      "specificity": 0.7272727272727273,
+      "false_positive_rate": 0.2727272727272727,
+      "false_negative_rate": 0.06896551724137931,
+      "roc_auc": 0.9608150470219436,
+      "average_precision_pr_auc": 0.9714106977358768,
+      "undefined_metric_note": null
+    },
+    "html": {
+      "records": 1975,
+      "class_counts": {
+        "0": 1325,
+        "1": 650
+      },
+      "confusion_matrix_labels_0_1": [
+        [
+          1256,
+          69
+        ],
+        [
+          88,
+          562
+        ]
+      ],
+      "TN": 1256,
+      "FP": 69,
+      "FN": 88,
+      "TP": 562,
+      "accuracy": 0.920506329113924,
+      "precision": 0.8906497622820919,
+      "recall": 0.8646153846153846,
+      "f1": 0.87743950039032,
+      "specificity": 0.9479245283018868,
+      "false_positive_rate": 0.052075471698113204,
+      "false_negative_rate": 0.13538461538461538,
+      "roc_auc": 0.9755796806966618,
+      "average_precision_pr_auc": 0.9525428896956363,
+      "undefined_metric_note": null
+    },
+    "plain_text": {
+      "records": 2381,
+      "class_counts": {
+        "0": 1368,
+        "1": 1013
+      },
+      "confusion_matrix_labels_0_1": [
+        [
+          1332,
+          36
+        ],
+        [
+          101,
+          912
+        ]
+      ],
+      "TN": 1332,
+      "FP": 36,
+      "FN": 101,
+      "TP": 912,
+      "accuracy": 0.9424611507769844,
+      "precision": 0.9620253164556962,
+      "recall": 0.9002961500493584,
+      "f1": 0.930137684854666,
+      "specificity": 0.9736842105263158,
+      "false_positive_rate": 0.02631578947368421,
+      "false_negative_rate": 0.09970384995064166,
+      "roc_auc": 0.9899868955046386,
+      "average_precision_pr_auc": 0.9872618185042855,
+      "undefined_metric_note": null
+    },
+    "url": {
+      "records": 5249,
+      "class_counts": {
+        "0": 2409,
+        "1": 2840
+      },
+      "confusion_matrix_labels_0_1": [
+        [
+          1886,
+          523
+        ],
+        [
+          253,
+          2587
+        ]
+      ],
+      "TN": 1886,
+      "FP": 523,
+      "FN": 253,
+      "TP": 2587,
+      "accuracy": 0.8521623166317394,
+      "precision": 0.8318327974276527,
+      "recall": 0.9109154929577464,
+      "f1": 0.8695798319327731,
+      "specificity": 0.7828974678289746,
+      "false_positive_rate": 0.21710253217102532,
+      "false_negative_rate": 0.08908450704225353,
+      "roc_auc": 0.9422505978168721,
+      "average_precision_pr_auc": 0.9483723480178804,
+      "undefined_metric_note": null
+    }
+  },
+  "leakage_checks": {
+    "source_records_in_manifest": 77676,
+    "source_record_id_duplicates": 0,
+    "normalized_text_overlap_train_validation": 0,
+    "normalized_text_overlap_train_test": 0,
+    "normalized_text_overlap_validation_test": 0,
+    "near_duplicate_component_overlap_train_validation": 0,
+    "near_duplicate_component_overlap_train_test": 0,
+    "near_duplicate_component_overlap_validation_test": 0,
+    "registrable_domain_overlap_train_validation": 0,
+    "registrable_domain_overlap_train_test": 0,
+    "registrable_domain_overlap_validation_test": 0,
+    "all_domain_group_key_overlap_train_validation": 0,
+    "all_domain_group_key_overlap_train_test": 0,
+    "all_domain_group_key_overlap_validation_test": 0,
+    "quarantined_records_in_primary": 0,
+    "validation_method": "Computed by set-intersection assertions immediately before and after partition assignment."
+  },
+  "limitations": [
+    "Within-dataset evaluation on combined_reduced.json; not an independent external test.",
+    "Source labels are not independently adjudicated.",
+    "Rows without usable destination domains are retained but do not demonstrate unseen-domain generalization.",
+    "Domain extraction is syntactic and may miss obfuscated or nonstandard URLs.",
+    "Domain components can couple otherwise unrelated examples that share any extracted destination domain."
+  ]
+}

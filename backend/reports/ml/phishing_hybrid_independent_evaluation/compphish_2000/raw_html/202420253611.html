@@ -1,0 +1,1693 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#" class="no-js">
+  <head>
+        <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+    </script>
+          <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="63062422-b269-4a8b-9cdd-c2459c797d19"></script>
+      <script type="text/javascript">
+        function OptanonWrapper() {
+          window.dataLayer.push( { event: 'OneTrustGroupsUpdated' } );
+
+          this.ProcessIntegrationModules = function() {
+            var json = Optanon.GetDomainData();
+            for (var i = 0; i < json.Groups.length; i += 1) {
+              var group = json.Groups[i];
+
+              var eloquaCookieGroup = null;
+              if (group.Cookies && group.Cookies.length > 0) {
+                for (var k = 0; k < group.Cookies.length; k += 1) {
+                  var cookie = group.Cookies[k];
+                  if (cookie.Name === "ELOQUA") {
+                    eloquaCookieGroup = group.Parent ? group.Parent.OptanonGroupId : group.OptanonGroupId;
+                  }
+                }
+              }
+
+              if (eloquaCookieGroup !== null) {
+                var groupIsActive = OptanonActiveGroups.indexOf(eloquaCookieGroup) != -1;
+                SetEloquaTracking(groupIsActive);
+              }
+            }
+          }
+          ProcessIntegrationModules();
+        }
+      </script>
+      <script type="text/javascript">
+        var _elqQ = _elqQ || [];
+        _elqQ.push(['elqSetSiteId', '2376']);
+        _elqQ.push(['elqUseFirstPartyCookie', 'trk.anthology.com']);
+        _elqQ.push(['elqTrackPageView', window.location.href]);
+        //_elqQ.push(['elqTrackPageView']);
+      
+        (function() {
+            function async_load() {
+                var s = document.createElement('script'); s.type = 'text/javascript';
+                s.async = true;
+                s.src = '//img.en25.com/i/elqCfg.min.js';
+                var x = document.getElementsByTagName('script')[0];
+                x.parentNode.insertBefore(s, x);
+            }
+            if(window.addEventListener) window.addEventListener('DOMContentLoaded', async_load, false);
+            else if (window.attachEvent) window.attachEvent('onload', async_load);
+        })();
+
+        /* function OptanonWrapper() {
+          this.ProcessIntegrationModules = function() {
+            var json = Optanon.GetDomainData();
+            for (var i = 0; i < json.Groups.length; i += 1) {
+              var group = json.Groups[i];
+
+              var eloquaCookieGroup = null;
+              if (group.Cookies && group.Cookies.length > 0) {
+                for (var k = 0; k < group.Cookies.length; k += 1) {
+                  var cookie = group.Cookies[k];
+                  if (cookie.Name === "ELOQUA") {
+                    eloquaCookieGroup = group.Parent ? group.Parent.OptanonGroupId : group.OptanonGroupId;
+                  }
+                }
+              }
+
+              if (eloquaCookieGroup !== null) {
+                var groupIsActive = OptanonActiveGroups.indexOf(eloquaCookieGroup) != -1;
+                SetEloquaTracking(groupIsActive);
+              }
+            }
+          }
+          ProcessIntegrationModules();
+        } */
+
+        function SetEloquaTracking(optIn) {
+            var trackingStatus = optIn ? "elqOptIn" : "elqOptOut";
+            var a = _elqQ.push([trackingStatus]);
+        };
+      </script>
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MJQ7BRZ');</script>
+    <!-- End Google Tag Manager -->
+
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/themes/custom/blackboard/assets/icons/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/themes/custom/blackboard/assets/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="true" />
+    <link rel="preconnect" href="https://thestacks.anthology.com" crossOrigin="true" />
+    <link rel="preconnect" href="https://app.cdn.lookbookhq.com/" crossOrigin="true" />
+    <link rel="preconnect" href="https://widgets.getsitecontrol.com" crossOrigin="true" />
+    <link rel="preconnect" href="https://snap.licdn.com" crossOrigin="true" />
+    <link rel="preconnect" href="https://prod.ally.ac" crossOrigin="true" />
+    <link rel="preconnect" href="https://cdn.siteimprove.net" crossOrigin="true" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossOrigin="true" />
+
+    <!-- Start VWO Async SmartCode -->
+    <link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />
+    <script type='text/javascript' data-cfasync="false" id='vwoCode'>
+    window._vwo_code || (function() {
+    var account_id=989895,
+    version=2.1,
+    settings_tolerance=2000,
+    hide_element='body',
+    hide_element_style = 'opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;transition:none !important;',
+    /* DO NOT EDIT BELOW THIS LINE */
+    f=false,w=window,d=document,v=d.querySelector('#vwoCode'),cK='_vwo_'+account_id+'_settings',cc={};try{var c=JSON.parse(localStorage.getItem('_vwo_'+account_id+'_config'));cc=c&&typeof c==='object'?c:{}}catch(e){}var stT=cc.stT==='session'?w.sessionStorage:w.localStorage;code={nonce:v&&v.nonce,use_existing_jquery:function(){return typeof use_existing_jquery!=='undefined'?use_existing_jquery:undefined},library_tolerance:function(){return typeof library_tolerance!=='undefined'?library_tolerance:undefined},settings_tolerance:function(){return cc.sT||settings_tolerance},hide_element_style:function(){return'{'+(cc.hES||hide_element_style)+'}'},hide_element:function(){if(performance.getEntriesByName('first-contentful-paint')[0]){return''}return typeof cc.hE==='string'?cc.hE:hide_element},getVersion:function(){return version},finish:function(e){if(!f){f=true;var t=d.getElementById('_vis_opt_path_hides');if(t)t.parentNode.removeChild(t);if(e)(new Image).src='https://dev.visualwebsiteoptimizer.com/ee.gif?a='+account_id+e}},finished:function(){return f},addScript:function(e){var t=d.createElement('script');t.type='text/javascript';if(e.src){t.src=e.src}else{t.text=e.text}v&&t.setAttribute('nonce',v.nonce);d.getElementsByTagName('head')[0].appendChild(t)},load:function(e,t){var n=this.getSettings(),i=d.createElement('script'),r=this;t=t||{};if(n){i.textContent=n;d.getElementsByTagName('head')[0].appendChild(i);if(!w.VWO||VWO.caE){stT.removeItem(cK);r.load(e)}}else{var o=new XMLHttpRequest;o.open('GET',e,true);o.withCredentials=!t.dSC;o.responseType=t.responseType||'text';o.onload=function(){if(t.onloadCb){return t.onloadCb(o,e)}if(o.status===200||o.status===304){_vwo_code.addScript({text:o.responseText})}else{_vwo_code.finish('&e=loading_failure:'+e)}};o.onerror=function(){if(t.onerrorCb){return t.onerrorCb(e)}_vwo_code.finish('&e=loading_failure:'+e)};o.send()}},getSettings:function(){try{var e=stT.getItem(cK);if(!e){return}e=JSON.parse(e);if(Date.now()>e.e){stT.removeItem(cK);return}return e.s}catch(e){return}},init:function(){if(d.URL.indexOf('__vwo_disable__')>-1)return;var e=this.settings_tolerance();w._vwo_settings_timer=setTimeout(function(){_vwo_code.finish();stT.removeItem(cK)},e);var t;if(this.hide_element()!=='body'){t=d.createElement('style');var n=this.hide_element(),i=n?n+this.hide_element_style():'',r=d.getElementsByTagName('head')[0];t.setAttribute('id','_vis_opt_path_hides');v&&t.setAttribute('nonce',v.nonce);t.setAttribute('type','text/css');if(t.styleSheet)t.styleSheet.cssText=i;else t.appendChild(d.createTextNode(i));r.appendChild(t)}else{t=d.getElementsByTagName('head')[0];var i=d.createElement('div');i.style.cssText='z-index: 2147483647 !important;position: fixed !important;left: 0 !important;top: 0 !important;width: 100% !important;height: 100% !important;background: white !important;display: block !important;';i.setAttribute('id','_vis_opt_path_hides');i.classList.add('_vis_hide_layer');t.parentNode.insertBefore(i,t.nextSibling)}var o=window._vis_opt_url||d.URL,s='https://dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(o)+'&vn='+version;if(w.location.search.indexOf('_vwo_xhr')!==-1){this.addScript({src:s})}else{this.load(s+'&x=true')}}};w._vwo_code=code;code.init();})();
+    </script>
+    <!-- End VWO Async SmartCode -->
+    <script>
+      window.VWO = window.VWO || [];
+      window.VWO.init = window.VWO.init || function(state) { window.VWO.consentState = state; }
+      // <number-value> can be any of the following:
+      // 1 - Accepted
+      // 2 - Pending
+      // 3 - Denied
+      window.VWO.init(1);
+    </script>
+
+    
+    
+    <style type="text/css">@font-face {font-family:Nunito Sans;font-style:normal;font-weight:300;src:url(/cf-fonts/v/nunito-sans/5.0.11/cyrillic/wght/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Nunito Sans;font-style:normal;font-weight:300;src:url(/cf-fonts/v/nunito-sans/5.0.11/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Nunito Sans;font-style:normal;font-weight:300;src:url(/cf-fonts/v/nunito-sans/5.0.11/latin-ext/wght/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Nunito Sans;font-style:normal;font-weight:300;src:url(/cf-fonts/v/nunito-sans/5.0.11/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Nunito Sans;font-style:normal;font-weight:300;src:url(/cf-fonts/v/nunito-sans/5.0.11/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Nunito Sans;font-style:normal;font-weight:400;src:url(/cf-fonts/v/nunito-sans/5.0.11/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Nunito Sans;font-style:normal;font-weight:400;src:url(/cf-fonts/v/nunito-sans/5.0.11/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Nunito Sans;font-style:normal;font-weight:400;src:url(/cf-fonts/v/nunito-sans/5.0.11/cyrillic/wght/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Nunito Sans;font-style:normal;font-weight:400;src:url(/cf-fonts/v/nunito-sans/5.0.11/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Nunito Sans;font-style:normal;font-weight:400;src:url(/cf-fonts/v/nunito-sans/5.0.11/latin-ext/wght/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Nunito Sans;font-style:normal;font-weight:600;src:url(/cf-fonts/v/nunito-sans/5.0.11/cyrillic/wght/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Nunito Sans;font-style:normal;font-weight:600;src:url(/cf-fonts/v/nunito-sans/5.0.11/latin-ext/wght/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Nunito Sans;font-style:normal;font-weight:600;src:url(/cf-fonts/v/nunito-sans/5.0.11/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Nunito Sans;font-style:normal;font-weight:600;src:url(/cf-fonts/v/nunito-sans/5.0.11/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Nunito Sans;font-style:normal;font-weight:600;src:url(/cf-fonts/v/nunito-sans/5.0.11/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Nunito Sans;font-style:normal;font-weight:700;src:url(/cf-fonts/v/nunito-sans/5.0.11/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Nunito Sans;font-style:normal;font-weight:700;src:url(/cf-fonts/v/nunito-sans/5.0.11/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Nunito Sans;font-style:normal;font-weight:700;src:url(/cf-fonts/v/nunito-sans/5.0.11/latin-ext/wght/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Nunito Sans;font-style:normal;font-weight:700;src:url(/cf-fonts/v/nunito-sans/5.0.11/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Nunito Sans;font-style:normal;font-weight:700;src:url(/cf-fonts/v/nunito-sans/5.0.11/cyrillic/wght/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Nunito Sans;font-style:italic;font-weight:300;src:url(/cf-fonts/v/nunito-sans/5.0.11/vietnamese/wght/italic.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Nunito Sans;font-style:italic;font-weight:300;src:url(/cf-fonts/v/nunito-sans/5.0.11/cyrillic/wght/italic.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Nunito Sans;font-style:italic;font-weight:300;src:url(/cf-fonts/v/nunito-sans/5.0.11/cyrillic-ext/wght/italic.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Nunito Sans;font-style:italic;font-weight:300;src:url(/cf-fonts/v/nunito-sans/5.0.11/latin/wght/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Nunito Sans;font-style:italic;font-weight:300;src:url(/cf-fonts/v/nunito-sans/5.0.11/latin-ext/wght/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Nunito Sans;font-style:italic;font-weight:400;src:url(/cf-fonts/v/nunito-sans/5.0.11/latin/wght/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Nunito Sans;font-style:italic;font-weight:400;src:url(/cf-fonts/v/nunito-sans/5.0.11/latin-ext/wght/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Nunito Sans;font-style:italic;font-weight:400;src:url(/cf-fonts/v/nunito-sans/5.0.11/vietnamese/wght/italic.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Nunito Sans;font-style:italic;font-weight:400;src:url(/cf-fonts/v/nunito-sans/5.0.11/cyrillic-ext/wght/italic.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Nunito Sans;font-style:italic;font-weight:400;src:url(/cf-fonts/v/nunito-sans/5.0.11/cyrillic/wght/italic.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Nunito Sans;font-style:italic;font-weight:600;src:url(/cf-fonts/v/nunito-sans/5.0.11/cyrillic-ext/wght/italic.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Nunito Sans;font-style:italic;font-weight:600;src:url(/cf-fonts/v/nunito-sans/5.0.11/vietnamese/wght/italic.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Nunito Sans;font-style:italic;font-weight:600;src:url(/cf-fonts/v/nunito-sans/5.0.11/latin-ext/wght/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Nunito Sans;font-style:italic;font-weight:600;src:url(/cf-fonts/v/nunito-sans/5.0.11/cyrillic/wght/italic.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Nunito Sans;font-style:italic;font-weight:600;src:url(/cf-fonts/v/nunito-sans/5.0.11/latin/wght/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Nunito Sans;font-style:italic;font-weight:700;src:url(/cf-fonts/v/nunito-sans/5.0.11/vietnamese/wght/italic.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Nunito Sans;font-style:italic;font-weight:700;src:url(/cf-fonts/v/nunito-sans/5.0.11/cyrillic-ext/wght/italic.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Nunito Sans;font-style:italic;font-weight:700;src:url(/cf-fonts/v/nunito-sans/5.0.11/latin-ext/wght/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Nunito Sans;font-style:italic;font-weight:700;src:url(/cf-fonts/v/nunito-sans/5.0.11/cyrillic/wght/italic.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Nunito Sans;font-style:italic;font-weight:700;src:url(/cf-fonts/v/nunito-sans/5.0.11/latin/wght/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Nunito Sans;font-style:italic;font-weight:900;src:url(/cf-fonts/v/nunito-sans/5.0.11/cyrillic-ext/wght/italic.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Nunito Sans;font-style:italic;font-weight:900;src:url(/cf-fonts/v/nunito-sans/5.0.11/latin/wght/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Nunito Sans;font-style:italic;font-weight:900;src:url(/cf-fonts/v/nunito-sans/5.0.11/latin-ext/wght/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Nunito Sans;font-style:italic;font-weight:900;src:url(/cf-fonts/v/nunito-sans/5.0.11/cyrillic/wght/italic.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Nunito Sans;font-style:italic;font-weight:900;src:url(/cf-fonts/v/nunito-sans/5.0.11/vietnamese/wght/italic.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}</style>
+
+    <meta charset="utf-8" />
+<style>/* @see https://github.com/aFarkas/lazysizes#broken-image-symbol */.js img.lazyload:not([src]) { visibility: hidden; }/* @see https://github.com/aFarkas/lazysizes#automatically-setting-the-sizes-attribute */.js img.lazyloaded[data-sizes=auto] { display: block; width: 100%; }</style>
+<meta name="description" content="Discover Anthology’s suite of solutions for learning effectiveness, including: Blackboard, the best LMS for modern teaching and learning, and Anthology Ally, for building inclusive environments and making digital content more accessible for all." />
+<link rel="canonical" href="https://www.anthology.com/blackboard-is-now-anthology" />
+<meta property="og:site_name" content="Anthology" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.anthology.com/blackboard-is-now-anthology" />
+<meta property="og:title" content="Did you know Blackboard is now Anthology?" />
+<meta property="og:description" content="Discover Anthology’s suite of solutions for learning effectiveness, including: Blackboard, the best LMS for modern teaching and learning, and Anthology Ally, for building inclusive environments and making digital content more accessible for all." />
+<meta property="og:image" content="https://www.anthology.com/sites/default/files/2024-07/anthology-meta-image.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="628" />
+<meta property="og:image:alt" content="Anthology logo with the tagline power of together over a blue background" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="Discover Anthology’s suite of solutions for learning effectiveness, including: Blackboard, the best LMS for modern teaching and learning, and Anthology Ally, for building inclusive environments and making digital content more accessible for all." />
+<meta name="twitter:title" content="Did you know Blackboard is now Anthology?" />
+<meta name="twitter:site" content="@AnthologyInc" />
+<meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" href="/themes/custom/blackboard/favicon.ico" type="image/vnd.microsoft.icon" />
+
+    <title>Did you know Blackboard is now Anthology? | Anthology</title>
+    <link rel="stylesheet" media="all" href="/core/assets/vendor/jquery.ui/themes/base/core.css?sux3u1" />
+<link rel="stylesheet" media="all" href="/core/assets/vendor/jquery.ui/themes/base/controlgroup.css?sux3u1" />
+<link rel="stylesheet" media="all" href="/core/assets/vendor/jquery.ui/themes/base/checkboxradio.css?sux3u1" />
+<link rel="stylesheet" media="all" href="/core/assets/vendor/jquery.ui/themes/base/resizable.css?sux3u1" />
+<link rel="stylesheet" media="all" href="/core/assets/vendor/jquery.ui/themes/base/button.css?sux3u1" />
+<link rel="stylesheet" media="all" href="/core/assets/vendor/jquery.ui/themes/base/dialog.css?sux3u1" />
+<link rel="stylesheet" media="all" href="/core/misc/components/progress.module.css?sux3u1" />
+<link rel="stylesheet" media="all" href="/core/misc/components/ajax-progress.module.css?sux3u1" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/align.module.css?sux3u1" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/fieldgroup.module.css?sux3u1" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/container-inline.module.css?sux3u1" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/clearfix.module.css?sux3u1" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/details.module.css?sux3u1" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/hidden.module.css?sux3u1" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/item-list.module.css?sux3u1" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/js.module.css?sux3u1" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/nowrap.module.css?sux3u1" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/position-container.module.css?sux3u1" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/reset-appearance.module.css?sux3u1" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/resize.module.css?sux3u1" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/system-status-counter.css?sux3u1" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/system-status-report-counters.css?sux3u1" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/system-status-report-general-info.css?sux3u1" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/tablesort.module.css?sux3u1" />
+<link rel="stylesheet" media="all" href="/core/modules/ckeditor5/css/ckeditor5.dialog.fix.css?sux3u1" />
+<link rel="stylesheet" media="all" href="/core/assets/vendor/jquery.ui/themes/base/theme.css?sux3u1" />
+<link rel="stylesheet" media="all" href="/modules/custom/base/assets/css/styles.css?sux3u1" />
+<link rel="stylesheet" media="all" href="/modules/contrib/paragraphs/css/paragraphs.unpublished.css?sux3u1" />
+<link rel="stylesheet" media="all" href="/themes/custom/blackboard/dist/css/style.css?sux3u1" />
+<link rel="stylesheet" media="all" href="/themes/custom/blackboard/images/icons/fontello/css/fontello.css?sux3u1" />
+<link rel="stylesheet" media="all" href="/themes/custom/blackboard/assets/css/motion-ui.min.css?sux3u1" />
+<link rel="stylesheet" media="all" href="/themes/custom/blackboard/assets/css/slick.css?sux3u1" />
+
+    
+    <link rel="stylesheet" href="/themes/custom/blackboard/templates/partials/migration-styles-2.css">
+    
+    
+          </head>
+  <body class="group-6 group-north-america language-dir-ltr language-en page-did-you-know-blackboard-is-now-anthology region-india">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJQ7BRZ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+        <a href="#main-content" class="visually-hidden focusable">
+      Skip to main content
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+<div class="layout-container">
+
+          <header
+  class="site-header"
+>
+   
+  <div class="bb_header--desktop__sub-nav">
+    <div class="bb_component__main-content" id="subnav">
+               <p class="x-header-message"><a href="https://www2.anthology.com/together">Anthology Together 2025 registration is open</a> <br />Don’t wait—Early Bird pricing is here!</p>
+            <div class="bb_header--desktop__sub-nav__menu--secondary"></div>
+      <div class="bb_header--desktop__sub-nav__menu--service">
+          <div class="menu secondary" id="block-currentmenusecondarynavigation">
+  
+    
+      
+              <nav aria-labelledby="currentmenusecondarynavigation">
+        <h2 id="currentmenusecondarynavigation" class="show-for-sr">Audience Menu</h2>
+      <ul class="menu vertical large-horizontal bb_component--menu--secondary" data-dropdown-menu>
+              <li>
+      <a href="/community-and-support" data-drupal-link-system-path="node/16476">Community &amp; Support</a>
+          </li>
+    </ul>
+          </nav>
+        
+
+
+  </div>
+
+
+      </div>
+    </div>
+  </div>
+  
+  <nav class="main-navigation" role="navigation">
+    <a href="#main" class="sr-only skip-link">Skip to content</a>
+    <button
+      class="menu-toggle"
+      type="button"
+      data-toggle="collapse"
+      data-target="#mainNav"
+      aria-controls="mainNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="sr-only">Menu</span>
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        data-prefix="fad"
+        data-icon="bars"
+        class="svg-inline--fa fa-bars fa-w-14"
+        role="img"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 448 512"
+      >
+        <g class="fa-group">
+          <path
+            class="fa-secondary"
+            fill="currentColor"
+            d="M16 288h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16z"
+          ></path>
+          <path
+            class="fa-primary"
+            fill="currentColor"
+            d="M432 384H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-320H16A16 16 0 0 0 0 80v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16z"
+          ></path>
+        </g>
+      </svg>
+    </button>
+    <a class="header-logo" href="/"
+      ><span class="sr-only">Home</span>
+        <?xml version="1.0" encoding="UTF-8"?>
+<svg id="anthology-logo-trademark" data-name="Anthology Logo Trademark" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1297.65 300">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#gradient-logo-trademark);
+      }
+
+      .cls-1, .cls-2 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #000;
+      }
+    </style>
+    <linearGradient id="gradient-logo-trademark" x1="1124.53" y1="204.06" x2="1239.94" y2="4.16" gradientUnits="userSpaceOnUse">
+      <stop offset=".55" stop-color="#0054bc"/>
+      <stop offset=".85" stop-color="#0dac41"/>
+      <stop offset=".99" stop-color="#caef01"/>
+    </linearGradient>
+  </defs>
+  <path class="cls-1" d="M1166.21,148.53l-34.46,59.69h32.06s18.43-31.93,18.43-31.93l18.43,31.93h32.06s-34.46-59.69-34.46-59.69h-32.06ZM1212.69,140.2l34.46,59.69,16.03-27.76-18.43-31.93h36.87s16.03-27.76,16.03-27.76h-68.92s-16.03,27.76-16.03,27.76ZM1228.72,95.78h68.92s-16.03-27.76-16.03-27.76h-36.87s18.43-31.93,18.43-31.93l-16.03-27.76-34.46,59.69,16.03,27.76ZM1198.27,59.69L1232.73,0h-32.06s-18.43,31.93-18.43,31.93L1163.8,0h-32.06s34.46,59.69,34.46,59.69h32.06ZM1151.78,68.02l-34.46-59.69-16.03,27.76,18.43,31.93h-36.87s-16.03,27.76-16.03,27.76h68.92s16.03-27.76,16.03-27.76Z"/>
+  <polygon class="cls-2" points="1096.8 130.81 1069.71 177.72 1042.62 130.81 1003.43 130.81 1050.12 211.67 1012 277.68 1012.2 277.49 1051.31 277.49 1136 130.81 1096.8 130.81"/>
+  <path class="cls-2" d="M237.66,247.89v-64.98c0-15.82-5.49-23.21-18.35-23.21-14.13,0-20.04,7.81-20.04,23.63v64.56h-35.02v-117.09h32.7v12.45h.42c7.38-12.02,17.72-16.45,31.86-16.45,21.1,0,43.46,11.81,43.46,46.41v74.68h-35.02Z"/>
+  <path class="cls-2" d="M580.94,251.48c-35.65,0-63.08-26.37-63.08-62.24s28.06-62.24,63.08-62.24,63.08,26.37,63.08,61.81-27.85,62.66-63.08,62.66ZM609,189.24c0-15.61-11.81-29.54-28.27-29.54-15.4,0-27.85,13.5-27.85,29.54s12.24,29.54,28.06,29.54,28.06-13.92,28.06-29.54Z"/>
+  <path class="cls-2" d="M780.09,251.48c-35.65,0-63.08-26.37-63.08-62.24s28.06-62.24,63.08-62.24,63.08,26.37,63.08,61.81-27.85,62.66-63.08,62.66ZM808.14,189.24c0-15.61-11.81-29.54-28.27-29.54-15.4,0-27.85,13.5-27.85,29.54s12.24,29.54,28.06,29.54,28.06-13.92,28.06-29.54Z"/>
+  <path class="cls-2" d="M954.1,234.18c-5.27,11.18-18.35,17.51-32.7,17.51-34.18,0-58.86-26.37-58.86-61.6s25.11-63.08,58.86-63.08c15.19,0,26.79,5.7,32.49,14.77h.42v-10.97h35.02v104.64c0,15.82-2.11,27.85-6.33,35.86-8.44,16.24-31.43,28.69-60.76,28.69-33.12,0-54.64-18.78-57.59-41.14h40.51c4.01,8.65,11.81,11.6,20.46,11.6,17.72,0,28.48-11.6,28.48-32.91v-3.38ZM954.32,189.88c0-17.09-11.6-30.17-28.69-30.17-15.61,0-28.06,13.08-28.06,29.11s11.18,30.17,28.06,30.17,28.69-12.24,28.69-29.11Z"/>
+  <polygon class="cls-2" points="347.46 91.78 312.44 91.78 312.44 130.81 289.1 130.81 289.1 157.39 312.44 157.39 312.44 247.89 347.46 247.89 347.46 157.39 370.81 157.39 370.81 130.81 347.46 130.81 347.46 91.78"/>
+  <path class="cls-2" d="M456.82,126.8c-13.92,0-25.32,5.7-30.38,15.19v-50.21h-35.02v156.11h35.02v-65.82c0-14.56,6.33-22.36,19.62-22.36s18.78,8.65,18.78,23.84v64.34h35.02v-73.63c0-30.59-16.24-47.47-43.04-47.47Z"/>
+  <rect class="cls-2" x="663.56" y="91.78" width="35.02" height="156.11"/>
+  <polygon class="cls-2" points="57.77 91.78 0 247.89 42.83 247.89 74.97 150.33 75.59 150.33 107.74 247.89 150.57 247.89 92.79 91.78 57.77 91.78"/>
+</svg>      </a>
+        <div class="nav-container">
+        <div>
+    <div class="menu main" id="block-currentmenuprimarynavigation">
+  
+    
+      
+
+  <h2 id="currentmenuprimarynavigation" class="show-for-sr">Main Menu</h2>
+  <ul class="nav-items" aria-labelledby="currentmenuprimarynavigation">
+    <li>                                                    
+        
+                        
+                  <ul class="bb_component--menu--main dropdown menu menu-level-0" data-dropdown-menu>
+                                                                        
+                  <li class="leaf-0 menu-item-about-us">
+
+                 
+                      <a href="/about-us" data-drupal-link-system-path="node/16406">About Us</a>
+                                    
+                                                                                                          
+        
+                                  <ul class="bb_component--menu--main dropdown vertical menu menu-level-1" data-dropdown-menu>
+                                                                        
+                  <li class="leaf-0 menu-item-overview">
+
+                 
+                      <a href="/about-us" data-drupal-link-system-path="node/16406">Overview</a>
+                                    
+                                                                                      </li>
+                                                
+                  <li class="leaf-1 menu-item-leadership">
+
+                 
+                      <a href="/about-us/leadership" data-drupal-link-system-path="node/16411">Leadership</a>
+                                    
+                                                                                      </li>
+                                                
+                  <li class="leaf-2 menu-item-who-we-serve">
+
+                 
+                      <a href="/about-us/who-we-serve" data-drupal-link-system-path="node/16416">Who We Serve</a>
+                                    
+                                                                                      </li>
+                                                
+                  <li class="leaf-3 menu-item-newsroom">
+
+                 
+                      <a href="/about-us/newsroom" data-drupal-link-system-path="node/16421">Newsroom</a>
+                                    
+                                                                                      </li>
+                                                
+                  <li class="leaf-4 menu-item-events">
+
+                 
+                      <a href="/about-us/events" data-drupal-link-system-path="node/16441">Events</a>
+                                    
+                                                                                      </li>
+                                                
+                  <li class="leaf-5 menu-item-user-conference">
+
+                 
+                      <a href="https://www2.anthology.com/together" target="_blank" rel="noopener">User Conference</a>
+                                    
+                                                                                      </li>
+                                                
+                  <li class="leaf-6 menu-item-careers">
+
+                 
+                      <a href="/about-us/careers" data-drupal-link-system-path="node/16446">Careers</a>
+                                    
+                                                                                      </li>
+                                          </ul>
+            
+                                                                </li>
+                                                
+                  <li class="leaf-1 menu-item-solutions">
+
+                 
+                      <a href="/products">Solutions</a>
+                                    
+                                                                        <ul class="bb_component--menu--main dropdown vertical menu menu-level-1 submenu is-dropdown-submenu first-sub" data-dropdown-menu="jc9i6w-dropdown-menu" data-submenu="">
+                            <li>
+                              <div class="product-menu-container">
+                                <div class="product-menu-tabs-container">
+                                  <p class="product-menu-tabs-label">Industries</p>
+                                  <ul class="product-menu-tabs">
+                                    <li><a href="#higher-education" data-industry="higher-education" class="is-active">Higher Education</a></li>
+                                    <li><a href="#business" data-industry="business">Business</a></li>
+                                    <li><a href="#governemnt" data-industry="governemnt">Government</a></li>
+                                    <li><a href="#k-12" data-industry="k-12">K-12</a></li>
+                                  </ul>
+                                </div>
+                                <div class="product-menu-content-container">
+                                  <div class="product-menu-content" data-industry="higher-education">
+                                    <div class="product-menu-content-column product-menu-content-track">
+                                      <h3>Anthology pairs the only complete SaaS solution suite with a flexible ecosystem built to help everyone thrive.</h3>
+                                      <p><a href="/higher-education-products-and-services" class="bb_cta--solid">View All Products</a></p>
+                                    </div>
+                                    <div class="product-menu-content-column product-menu-content-track">
+                                      <p class="product-menu-callout">
+                                        <a href="/products/teaching-and-learning/learning-effectiveness/blackboard">
+                                          <img src="https://www.anthology.com/sites/default/files/2024-07/blackboard-logo-colored.png" alt="Blackboard logo" class="product-menu-blackboard" />
+                                          Learning Management System (LMS) with modern learning capabilities
+                                          <span class="product-explore-link">Explore <span class="no-wrap">Blackboard <i class="fa fa-angle-right"></i></span></span>
+                                        </a>
+                                      </p>
+                                    </div>
+                                    <div class="product-menu-content-column product-menu-content-track">
+                                      <p class="product-menu-callout">
+                                        <a href="/products/enterprise-operations/student-information-and-enterprise-resources/anthology-student">
+                                          <img src="https://www.anthology.com/sites/default/files/2024-07/student-logo-colored.png" alt="Student logo" />
+                                          Student Information System (SIS) with ERP capabilities
+                                          <span class="product-explore-link">Explore Anthology <span class="no-wrap">Student <i class="fa fa-angle-right"></i></span></span>
+                                        </a>
+                                      </p>
+                                    </div>
+                                    <div class="product-menu-content-column product-menu-content-track">
+                                      <p class="product-menu-callout">
+                                        <a href="/products/lifecycle-engagement/enrollment-and-retention/anthology-reach">
+                                          <img src="https://www.anthology.com/sites/default/files/2024-07/reach-logo-colored.png" alt="Reach logo" />
+                                          Constituent Relationship Management (CRM) solution
+                                          <span class="product-explore-link">Explore Anthology <span class="no-wrap">Reach <i class="fa fa-angle-right"></i></span></span>
+                                        </a>
+                                      </p>
+                                    </div>
+                                    <div class="product-menu-content-column product-menu-content-track">&nbsp;</div>
+                                    <div class="product-menu-content-column product-menu-content-column-third product-menu-content-track">
+                                      <p class="product-illuminate-container">
+                                        <a href="/products/institutional-intelligence/anthology-illuminate">
+                                          <span class="product-illuminate-name">Anthology<span class="x-superscript">®</span> Illuminate</span>
+                                          <span class="product-illuminate-description">Holistic data and reporting platform that unites siloed sources from across your campus and delivers key, actionable insights and enhanced analytics. <span class="product-illuminate-link">Learn more <i class="fa fa-angle-right"></i></span></span>
+                                        </a>
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <div class="product-menu-content display-none" data-industry="business">
+                                    <div class="product-menu-content-column product-menu-content-track">
+                                      <h3>Anthology pairs the only complete SaaS solution suite with a flexible ecosystem built to help everyone thrive.</h3>
+                                    </div>
+                                    <div class="product-menu-content-column product-menu-content-track product-menu-content-column-half">
+                                      <h4>Anthology for Business</h4>
+                                      <p>Drive employee professional development, training, and success with a flexible Learning Management System (LMS).</p>
+                                      <a class="bb_cta--solid" href="/business">Learn More<span class="sr-only"> about Anthology for Business</span></a>
+                                    </div>
+                                    <div class="product-menu-content-column product-menu-content-track product-menu-teaching-learning">
+                                      <p>
+                                        <a href="/business/products/teaching-and-learning/learning-effectiveness/blackboard-learn" class="bb_cta--hollow bb_cta--text bb_cta--abbr">
+                                          <img src="https://www.anthology.com/sites/default/files/2024-07/blackboard-logo-colored.png" alt="Blackboard logo" class="product-menu-blackboard" />
+                                        </a>
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <div class="product-menu-content display-none" data-industry="governemnt">
+                                    <div class="product-menu-content-column product-menu-content-track">
+                                      <h3>Anthology pairs the only complete SaaS solution suite with a flexible ecosystem built to help everyone thrive.</h3>
+                                    </div>
+                                    <div class="product-menu-content-column product-menu-content-track product-menu-content-column-half">
+                                      <h4>Anthology for Government</h4>
+                                      <p>Efficiently, easily, and securely support government agency employees with a robust Learning Management System (LMS).</p>
+                                      <a class="bb_cta--solid" href="/government">Learn More<span class="sr-only"> about Anthology for Government</span></a>
+                                    </div>
+                                    <div class="product-menu-content-column product-menu-content-track product-menu-teaching-learning">
+                                      <p>
+                                        <a href="/government/products/teaching-and-learning/learning-effectiveness/blackboard-learn" class="bb_cta--hollow bb_cta--text bb_cta--abbr">
+                                          <img src="https://www.anthology.com/sites/default/files/2024-07/blackboard-logo-colored.png" alt="Blackboard logo" class="product-menu-blackboard" />
+                                        </a>
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <div class="product-menu-content product-menu-content-serviceless display-none" data-industry="k-12">
+                                    <div class="product-menu-content-column product-menu-content-track">
+                                      <h3>Anthology pairs the only complete SaaS solution suite with a flexible ecosystem built to help everyone thrive.</h3>
+                                    </div>
+                                    <div class="product-menu-content-column product-menu-content-track product-menu-content-column-half">
+                                      <h4>K-12</h4>
+                                      <p>It takes a village to help learners be successful. Provide your teachers, parents, school districts, and all actively involved in their journey with our purpose-built tools designed to support the complete needs of your K-12 learner.</p>
+                                      <a class="bb_cta--solid" href="https://www.finalsite.com" target="_blank" rel="noopener">Blackboard Community Engagement</a>
+                                    </div>
+                                    <div class="product-menu-content-column product-menu-content-track product-menu-teaching-learning">
+                                      <p>
+                                        <a href="/products/teaching-and-learning/learning-effectiveness/blackboard" class="bb_cta--hollow bb_cta--text bb_cta--abbr">
+                                          <img src="https://www.anthology.com/sites/default/files/2024-07/blackboard-logo-colored.png" alt="Blackboard logo" class="product-menu-blackboard" />
+                                        </a>
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                          
+                                                                </li>
+                                                
+                  <li class="leaf-2 menu-item-services">
+
+                 
+                      <a href="/services" data-drupal-link-system-path="node/31496">Services</a>
+                                    
+                                              
+                                                                  </li>
+                                                
+                  <li class="leaf-3 menu-item-resources">
+
+                 
+                      <a href="/resources" data-drupal-link-system-path="node/651">Resources</a>
+                                    
+                                                                                                          
+        
+                                  <ul class="bb_component--menu--main dropdown vertical menu menu-level-1" data-dropdown-menu>
+                                                                        
+                  <li class="leaf-0 menu-item-overview">
+
+                 
+                      <a href="/resources" data-drupal-link-system-path="node/651">Overview</a>
+                                    
+                                                                                      </li>
+                                                
+                  <li class="leaf-1 menu-item-blog">
+
+                 
+                      <a href="/resources/blog" data-drupal-link-system-path="node/16451">Blog</a>
+                                    
+                                                                                      </li>
+                                                
+                  <li class="leaf-2 menu-item-webinars">
+
+                 
+                      <a href="/resources/webinars" data-drupal-link-system-path="node/16456">Webinars</a>
+                                    
+                                                                                      </li>
+                                                
+                  <li class="leaf-3 menu-item-research--white-papers">
+
+                 
+                      <a href="/resources/research-and-white-papers" data-drupal-link-system-path="node/16461">Research &amp; White Papers</a>
+                                    
+                                                                                      </li>
+                                                
+                  <li class="leaf-4 menu-item-brochures--materials">
+
+                 
+                      <a href="/resources/brochures-and-materials" data-drupal-link-system-path="node/16466">Brochures &amp; Materials</a>
+                                    
+                                                                                      </li>
+                                          </ul>
+            
+                                                                </li>
+                                                
+                  <li class="leaf-4 menu-item-success-stories">
+
+                 
+                      <a href="/client-success-stories" data-drupal-link-system-path="node/16211">Success Stories</a>
+                                    
+                                                                                      </li>
+                                                
+                  <li class="leaf-5 menu-item-partners">
+
+                 
+                      <a href="/integration-partnerships" data-drupal-link-system-path="node/16386">Partners</a>
+                                    
+                                                                        <ul style="align-items: start" class="bb_component--menu--main dropdown vertical menu menu-level-1 submenu is-dropdown-submenu first-sub" data-dropdown-menu="0tphxu-dropdown-menu" data-submenu="">
+                            
+                            <li>
+                              <div class="stragegic-partner-links">
+                              <span style="font-size: 1.11rem; font-weight: 600; display: block; margin-bottom: 1.3rem; color: #000000 !important;margin-top: 3px;">Strategic Partnerships</span>
+                                <a href="https://www.anthology.com/strategic-partners/aws" class="strategic-partner-link" style="padding: 0px !important; margin-bottom:1rem;display: inline-block;">Amazon Web Services</a>
+                                <a href="https://www.anthology.com/strategic-partners/microsoft" class="strategic-partner-link" style="padding: 0px !important;display: inline-block;">Microsoft</a>
+                              </div>
+                            </li>
+                            <li>
+                              <a href="/integration-partnerships" class="partner-learn-more">
+                              <span style="font-size: 1.11rem; font-weight: 600; display: block; margin-bottom: 1.3rem; color: #000000 !important;">Integration Partnerships</span>
+                              <span class="menu-item-note">Discover our network of Integration Partners with whom we collaborate so you can seamlessly extend your Anthology platform</span>
+                                <span class="partners-learn-more-link" style="padding: 0px !important; margin: 0px !important;">Learn More <i class="fa-solid fa-chevron-right"></i></span>
+                              </a>
+                            </li>
+                            <li>
+                              <a href="/channel-partnerships" class="partner-learn-more">
+                              <span style="font-size: 1.11rem; font-weight: 600; display: block; margin-bottom: 1.3rem; color: #000000 !important;">Channel Partnerships</span>
+                                <span class="menu-item-note">Explore our extensive and expert network of Channel Partners who resell Anthology’s Solutions and Services</span>
+                                <span class="partners-learn-more-link" style="padding: 0px !important; margin: 0px !important;">Learn More <i class="fa-solid fa-chevron-right"></i></span>
+                              </a>
+                            </li>
+                          </ul>
+                                                                </li>
+                                          </ul>
+            </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+    </div>
+      <div class="menu service" id="block-currentmenuservicenavigation">
+  
+    
+      
+
+<nav>
+  <h2 class="show-for-sr">Contact Us Menu</h2>
+  <ul  class="menu dropdown large-horizontal" data-dropdown-menu>
+    <li>
+              <a href="/contact-us" class="contact-link">Contact Us</a>
+                
+    </li>
+  </ul>
+</nav>
+
+
+  </div>
+
+
+<nav>
+  <h2 class="show-for-sr">Region Selector Menu</h2>
+  <ul  id="block-regionselector" class="menu bb_component--menu--secondary bb_component--menu-region-selector" data-responsive-menu="accordion large-dropdown">
+    <li>
+      <a class="globe-icon" href="#"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="31.799" height="31.8" viewBox="0 0 31.799 31.8">
+  <title>Select Your Region/Country</title>
+  <path data-name="Path 221" d="M15.9,31.8A15.9,15.9,0,1,1,31.8,15.9,15.918,15.918,0,0,1,15.9,31.8m0-30.013A14.113,14.113,0,1,0,30.013,15.9,14.129,14.129,0,0,0,15.9,1.787" transform="translate(0 -0.001)"/>
+  <rect data-name="Rectangle 284" width="1.786" height="30.013" transform="translate(15.006 0.893)"/>
+  <path data-name="Path 222" d="M114.893,31.8c-5,0-8.914-6.984-8.914-15.9S109.895,0,114.893,0s8.914,6.984,8.914,15.9-3.916,15.9-8.914,15.9m0-30.013c-3.864,0-7.128,6.463-7.128,14.114s3.264,14.113,7.128,14.113,7.128-6.463,7.128-14.113-3.264-14.114-7.128-14.114" transform="translate(-98.994 -0.001)"/>
+  <rect data-name="Rectangle 285" width="28.257" height="1.786" transform="translate(1.756 9.98)"/>
+  <rect data-name="Rectangle 286" width="28.257" height="1.786" transform="translate(1.756 20.033)"/>
+</svg>
+</a>
+              <ul class="menu" data-no-home-link="1">
+          <li>
+        <a href="/" data-drupal-link-system-path="&lt;front&gt;">North America (English)</a>
+              </li>
+          <li>
+        <a href="/en-emea" data-drupal-link-system-path="group/141">Europe, the Middle East &amp; Africa (English)</a>
+              </li>
+          <li>
+        <a href="/en-apac" data-drupal-link-system-path="group/136">Asia Pacific (English)</a>
+              </li>
+          <li>
+        <a href="/en-in" data-drupal-link-system-path="group/261">India (English)</a>
+              </li>
+          <li>
+        <a href="/es-lac" data-drupal-link-system-path="group/271">Latinoamérica y el Caribe (Español)</a>
+              </li>
+          <li>
+        <a href="/pt-br" data-drupal-link-system-path="group/281">Brasil (Português)</a>
+              </li>
+          <li>
+        <a href="https://www.anthology.com/es-es">España (Español)</a>
+              </li>
+        </ul>
+  
+    </li>
+  </ul>
+</nav>
+
+
+
+      </nav>
+</header>
+
+<section class="bb_header">
+    <div class="sticky">
+    <div
+      class="bb_header--mobile"
+      data-responsive-toggle="bb_header-menu-toggle"
+      data-hide-for="large"
+      style="width: 100%"
+    >
+      <div
+        class="bb_header--mobile__logo"
+      >
+        <a href="/">
+           <?xml version="1.0" encoding="UTF-8"?>
+<svg id="anthology-logo" data-name="Anthology Logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1297.65 300">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#gradient-logo);
+      }
+
+      .cls-1, .cls-2 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #000;
+      }
+    </style>
+    <linearGradient id="gradient-logo" x1="1124.53" y1="204.06" x2="1239.94" y2="4.16" gradientUnits="userSpaceOnUse">
+      <stop offset=".55" stop-color="#0054bc"/>
+      <stop offset=".85" stop-color="#0dac41"/>
+      <stop offset=".99" stop-color="#caef01"/>
+    </linearGradient>
+  </defs>
+  <path class="cls-1" d="M1166.21,148.53l-34.46,59.69h32.06s18.43-31.93,18.43-31.93l18.43,31.93h32.06s-34.46-59.69-34.46-59.69h-32.06ZM1212.69,140.2l34.46,59.69,16.03-27.76-18.43-31.93h36.87s16.03-27.76,16.03-27.76h-68.92s-16.03,27.76-16.03,27.76ZM1228.72,95.78h68.92s-16.03-27.76-16.03-27.76h-36.87s18.43-31.93,18.43-31.93l-16.03-27.76-34.46,59.69,16.03,27.76ZM1198.27,59.69L1232.73,0h-32.06s-18.43,31.93-18.43,31.93L1163.8,0h-32.06s34.46,59.69,34.46,59.69h32.06ZM1151.78,68.02l-34.46-59.69-16.03,27.76,18.43,31.93h-36.87s-16.03,27.76-16.03,27.76h68.92s16.03-27.76,16.03-27.76Z"/>
+  <polygon class="cls-2" points="1096.8 130.81 1069.71 177.72 1042.62 130.81 1003.43 130.81 1050.12 211.67 1012 277.68 1012.2 277.49 1051.31 277.49 1136 130.81 1096.8 130.81"/>
+  <path class="cls-2" d="M237.66,247.89v-64.98c0-15.82-5.49-23.21-18.35-23.21-14.13,0-20.04,7.81-20.04,23.63v64.56h-35.02v-117.09h32.7v12.45h.42c7.38-12.02,17.72-16.45,31.86-16.45,21.1,0,43.46,11.81,43.46,46.41v74.68h-35.02Z"/>
+  <path class="cls-2" d="M580.94,251.48c-35.65,0-63.08-26.37-63.08-62.24s28.06-62.24,63.08-62.24,63.08,26.37,63.08,61.81-27.85,62.66-63.08,62.66ZM609,189.24c0-15.61-11.81-29.54-28.27-29.54-15.4,0-27.85,13.5-27.85,29.54s12.24,29.54,28.06,29.54,28.06-13.92,28.06-29.54Z"/>
+  <path class="cls-2" d="M780.09,251.48c-35.65,0-63.08-26.37-63.08-62.24s28.06-62.24,63.08-62.24,63.08,26.37,63.08,61.81-27.85,62.66-63.08,62.66ZM808.14,189.24c0-15.61-11.81-29.54-28.27-29.54-15.4,0-27.85,13.5-27.85,29.54s12.24,29.54,28.06,29.54,28.06-13.92,28.06-29.54Z"/>
+  <path class="cls-2" d="M954.1,234.18c-5.27,11.18-18.35,17.51-32.7,17.51-34.18,0-58.86-26.37-58.86-61.6s25.11-63.08,58.86-63.08c15.19,0,26.79,5.7,32.49,14.77h.42v-10.97h35.02v104.64c0,15.82-2.11,27.85-6.33,35.86-8.44,16.24-31.43,28.69-60.76,28.69-33.12,0-54.64-18.78-57.59-41.14h40.51c4.01,8.65,11.81,11.6,20.46,11.6,17.72,0,28.48-11.6,28.48-32.91v-3.38ZM954.32,189.88c0-17.09-11.6-30.17-28.69-30.17-15.61,0-28.06,13.08-28.06,29.11s11.18,30.17,28.06,30.17,28.69-12.24,28.69-29.11Z"/>
+  <polygon class="cls-2" points="347.46 91.78 312.44 91.78 312.44 130.81 289.1 130.81 289.1 157.39 312.44 157.39 312.44 247.89 347.46 247.89 347.46 157.39 370.81 157.39 370.81 130.81 347.46 130.81 347.46 91.78"/>
+  <path class="cls-2" d="M456.82,126.8c-13.92,0-25.32,5.7-30.38,15.19v-50.21h-35.02v156.11h35.02v-65.82c0-14.56,6.33-22.36,19.62-22.36s18.78,8.65,18.78,23.84v64.34h35.02v-73.63c0-30.59-16.24-47.47-43.04-47.47Z"/>
+  <rect class="cls-2" x="663.56" y="91.78" width="35.02" height="156.11"/>
+  <polygon class="cls-2" points="57.77 91.78 0 247.89 42.83 247.89 74.97 150.33 75.59 150.33 107.74 247.89 150.57 247.89 92.79 91.78 57.77 91.78"/>
+</svg>         </a>
+      </div>
+      <div
+        class="bb_header--mobile__toggle"
+        data-toggle="bb_header-menu-toggle"
+      >
+        <i class="fa-regular fa-bars"></i>
+      </div>
+        <div>
+    <div class="menu service">
+  
+    
+      
+
+<nav>
+  <h2 class="show-for-sr">Contact Us Menu</h2>
+  <ul  class="menu dropdown large-horizontal" data-dropdown-menu>
+    <li>
+              <a href="/contact-us" class="contact-link">Contact Us</a>
+                
+    </li>
+  </ul>
+</nav>
+
+
+  </div>
+
+
+<nav>
+  <h2 class="show-for-sr">Region Selector Menu</h2>
+  <ul  id="block-regionselector-2" class="menu bb_component--menu--secondary bb_component--menu-region-selector" data-responsive-menu="accordion large-dropdown">
+    <li>
+      <a class="globe-icon" href="#"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="31.799" height="31.8" viewBox="0 0 31.799 31.8">
+  <title>Select Your Region/Country</title>
+  <path data-name="Path 221" d="M15.9,31.8A15.9,15.9,0,1,1,31.8,15.9,15.918,15.918,0,0,1,15.9,31.8m0-30.013A14.113,14.113,0,1,0,30.013,15.9,14.129,14.129,0,0,0,15.9,1.787" transform="translate(0 -0.001)"/>
+  <rect data-name="Rectangle 284" width="1.786" height="30.013" transform="translate(15.006 0.893)"/>
+  <path data-name="Path 222" d="M114.893,31.8c-5,0-8.914-6.984-8.914-15.9S109.895,0,114.893,0s8.914,6.984,8.914,15.9-3.916,15.9-8.914,15.9m0-30.013c-3.864,0-7.128,6.463-7.128,14.114s3.264,14.113,7.128,14.113,7.128-6.463,7.128-14.113-3.264-14.114-7.128-14.114" transform="translate(-98.994 -0.001)"/>
+  <rect data-name="Rectangle 285" width="28.257" height="1.786" transform="translate(1.756 9.98)"/>
+  <rect data-name="Rectangle 286" width="28.257" height="1.786" transform="translate(1.756 20.033)"/>
+</svg>
+</a>
+              <ul class="menu" data-no-home-link="1">
+          <li>
+        <a href="/" data-drupal-link-system-path="&lt;front&gt;">North America (English)</a>
+              </li>
+          <li>
+        <a href="/en-emea" data-drupal-link-system-path="group/141">Europe, the Middle East &amp; Africa (English)</a>
+              </li>
+          <li>
+        <a href="/en-apac" data-drupal-link-system-path="group/136">Asia Pacific (English)</a>
+              </li>
+          <li>
+        <a href="/en-in" data-drupal-link-system-path="group/261">India (English)</a>
+              </li>
+          <li>
+        <a href="/es-lac" data-drupal-link-system-path="group/271">Latinoamérica y el Caribe (Español)</a>
+              </li>
+          <li>
+        <a href="/pt-br" data-drupal-link-system-path="group/281">Brasil (Português)</a>
+              </li>
+          <li>
+        <a href="https://www.anthology.com/es-es">España (Español)</a>
+              </li>
+        </ul>
+  
+    </li>
+  </ul>
+</nav>
+
+
+  </div>
+
+      <div class="bb_header--mobile__menu" id="bb_header-menu-toggle">
+        <div>
+            <div>
+    <div class="menu na-primary-mobile" id="block-currentmenuprimarymobilenavigation">
+  
+    
+      
+
+
+  <nav aria-labelledby="">
+    <h2 id="" class="show-for-sr">Main Menu</h2>
+                                                        
+                        
+                  <ul class="bb_component--menu--main accordion-menu menu menu-level-0" data-accordion-menu>
+                                                          <li class="leaf-0 menu-item-about-us">
+                  <a href="/about-us" data-drupal-link-system-path="node/16406">About Us</a>
+                                                                      
+                                  <ul class="bb_component--menu--main accordion-menu vertical menu menu-level-1" data-accordion-menu>
+                                                          <li class="leaf-0 menu-item-overview">
+                  <a href="/about-us" data-drupal-link-system-path="node/16406">Overview</a>
+                                  </li>
+                                              <li class="leaf-1 menu-item-leadership">
+                  <a href="/about-us/leadership" data-drupal-link-system-path="node/16411">Leadership</a>
+                                  </li>
+                                              <li class="leaf-2 menu-item-who-we-serve">
+                  <a href="/about-us/who-we-serve" data-drupal-link-system-path="node/16416">Who We Serve</a>
+                                                                      
+                          <div class="foundation-dropdown-preventer">
+                          <ul class="bb_component--menu--main accordion-menu vertical menu menu-level-2" data-accordion-menu>
+                                                          <li class="leaf-0 menu-item-business">
+                  <a href="https://www.anthology.com/business">Business</a>
+                                  </li>
+                                              <li class="leaf-1 menu-item-government">
+                  <a href="https://www.anthology.com/government">Government</a>
+                                  </li>
+                                        </ul>
+                    </div>
+            
+                                  </li>
+                                              <li class="leaf-3 menu-item-newsroom">
+                  <a href="/about-us/newsroom" data-drupal-link-system-path="node/16421">Newsroom</a>
+                                  </li>
+                                              <li class="leaf-4 menu-item-events">
+                  <a href="/about-us/events" data-drupal-link-system-path="node/16441">Events</a>
+                                  </li>
+                                              <li class="leaf-5 menu-item-user-conference">
+                  <a href="https://www2.anthology.com/together">User Conference</a>
+                                  </li>
+                                              <li class="leaf-6 menu-item-careers">
+                  <a href="/about-us/careers" data-drupal-link-system-path="node/16446">Careers</a>
+                                  </li>
+                                        </ul>
+            
+                                  </li>
+                                              <li class="leaf-1 menu-item-solutions">
+                  <a href="/products/lifecycle-engagement/enrollment-and-retention">Solutions</a>
+                                                                      
+                                  <ul class="bb_component--menu--main accordion-menu vertical menu menu-level-1" data-accordion-menu>
+                                                          <li class="leaf-0 menu-item-blackboard">
+                  <a href="/products/teaching-and-learning/learning-effectiveness/blackboard" data-drupal-link-system-path="node/23741">Blackboard</a>
+                                  </li>
+                                              <li class="leaf-1 menu-item-student">
+                  <a href="/products/enterprise-operations/student-information-and-enterprise-resources/anthology-student" data-drupal-link-system-path="node/23576">Student</a>
+                                  </li>
+                                              <li class="leaf-2 menu-item-reach">
+                  <a href="/products/lifecycle-engagement/enrollment-and-retention/anthology-reach" data-drupal-link-system-path="node/23731">Reach</a>
+                                  </li>
+                                              <li class="leaf-3 menu-item-all-products">
+                  <a href="https://www.anthology.com/higher-education-products-and-services">All Products</a>
+                                  </li>
+                                        </ul>
+            
+                                  </li>
+                                              <li class="leaf-2 menu-item-services">
+                  <a href="/services" data-drupal-link-system-path="node/31496">Services</a>
+                                  </li>
+                                              <li class="leaf-3 menu-item-resources">
+                  <a href="/resources" data-drupal-link-system-path="node/651">Resources</a>
+                                                                      
+                                  <ul class="bb_component--menu--main accordion-menu vertical menu menu-level-1" data-accordion-menu>
+                                                          <li class="leaf-0 menu-item-overview">
+                  <a href="/resources" data-drupal-link-system-path="node/651">Overview</a>
+                                  </li>
+                                              <li class="leaf-1 menu-item-blog">
+                  <a href="/resources/blog" data-drupal-link-system-path="node/16451">Blog</a>
+                                  </li>
+                                              <li class="leaf-2 menu-item-webinars">
+                  <a href="/resources/webinars" data-drupal-link-system-path="node/16456">Webinars</a>
+                                  </li>
+                                              <li class="leaf-3 menu-item-research--white-papers">
+                  <a href="/resources/research-and-white-papers" data-drupal-link-system-path="node/16461">Research &amp; White Papers</a>
+                                  </li>
+                                              <li class="leaf-4 menu-item-brochures--materials">
+                  <a href="/resources/brochures-and-materials" data-drupal-link-system-path="node/16466">Brochures &amp; Materials</a>
+                                  </li>
+                                        </ul>
+            
+                                  </li>
+                                              <li class="leaf-4 menu-item-success-stories">
+                  <a href="/client-success-stories" data-drupal-link-system-path="node/16211">Success Stories</a>
+                                  </li>
+                                              <li class="leaf-5 menu-item-partners">
+                  <a href="/integration-partnerships" data-drupal-link-system-path="node/16386">Partners</a>
+                                                                      
+                                  <ul class="bb_component--menu--main accordion-menu vertical menu menu-level-1" data-accordion-menu>
+                                                          <li class="leaf-0 menu-item-integration-partnerships">
+                  <a href="/integration-partnerships" data-drupal-link-system-path="node/16386">Integration Partnerships</a>
+                                  </li>
+                                              <li class="leaf-1 menu-item-channel-partnerships">
+                  <a href="/channel-partnerships" data-drupal-link-system-path="node/16401">Channel Partnerships</a>
+                                  </li>
+                                        </ul>
+            
+                                  </li>
+                                              <li class="leaf-6 menu-item-contact-us">
+                  <a href="/contact-us" data-drupal-link-system-path="node/32196">Contact Us</a>
+                                                                      
+                                  <ul class="bb_component--menu--main accordion-menu vertical menu menu-level-1" data-accordion-menu>
+                                                          <li class="leaf-0 menu-item-connect-with-a-sales-representative">
+                  <a href="/contact-us/sales" data-drupal-link-system-path="node/23786">Connect with a sales representative</a>
+                                  </li>
+                                              <li class="leaf-1 menu-item-i-have-a-support-issue">
+                  <a href="/community-and-support" data-drupal-link-system-path="node/16476">I have a support issue</a>
+                                  </li>
+                                              <li class="leaf-2 menu-item-access-the-anthology-user-portal">
+                  <a href="https://community.anthology.com/home" target="_blank">Access the Anthology User Portal</a>
+                                  </li>
+                                              <li class="leaf-3 menu-item-all-other-inquiries">
+                  <a href="/contact-us/general-inquiry" data-drupal-link-system-path="node/19811">All other inquiries</a>
+                                  </li>
+                                        </ul>
+            
+                                  </li>
+                                        </ul>
+            
+  </nav>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+      </section>
+  
+  <main role="main" id="main" class="type-basic-page">
+      <div>
+    <div id="block-breadcrumbs">
+  
+    
+        <nav class="bb_breadcrumbs" aria-label="breadcrumb">
+
+        
+    
+
+  </nav>
+
+  </div>
+
+  </div>
+
+    <div id="sticky-header-anchor"></div>
+    <a id="main-content" tabindex="-1"></a>    <div class="layout-content">  <div>
+    <div data-drupal-messages-fallback class="hidden"></div>  
+
+
+<article class="node node--type-page node--view-mode-full">
+
+			
+		
+	
+			<div class="node__content">
+			
+                
+
+
+<div class="paragraph paragraph--type--html-component paragraph--view-mode--default bb_component--html-component bb_component--html-component--no-margins bb_theme--palette-white">
+  <div class="bb_component__contents">
+    
+  <div class="bb_component--intro-section">
+    <div class="bb_component__contents">
+
+            
+          </div>
+  </div>
+
+    <div class="bb_component__main-content">
+      <div class="x-home-container">
+    <div class="x-home-hero">
+        <div class="x-interior">
+            <svg id="anthology-logo-trademark-header" data-name="Anthology Logo Trademark" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1297.65 300">
+<defs>
+<style>
+      .cls-1 {
+        fill: url(#gradient-logo-trademark-2);
+      }
+
+      .cls-1, .cls-2 {
+        stroke-width: 0px;
+      }
+
+      .bcls-2 {
+        fill: #fff;
+      }
+    </style>
+<linearGradient id="gradient-logo-trademark-2" x1="1124.53" y1="204.06" x2="1239.94" y2="4.16" gradientUnits="userSpaceOnUse">
+<stop offset=".55" stop-color="#0054bc"></stop>
+<stop offset=".85" stop-color="#0dac41"></stop>
+<stop offset=".99" stop-color="#caef01"></stop>
+</linearGradient>
+</defs>
+<path class="cls-1" d="M1166.21,148.53l-34.46,59.69h32.06s18.43-31.93,18.43-31.93l18.43,31.93h32.06s-34.46-59.69-34.46-59.69h-32.06ZM1212.69,140.2l34.46,59.69,16.03-27.76-18.43-31.93h36.87s16.03-27.76,16.03-27.76h-68.92s-16.03,27.76-16.03,27.76ZM1228.72,95.78h68.92s-16.03-27.76-16.03-27.76h-36.87s18.43-31.93,18.43-31.93l-16.03-27.76-34.46,59.69,16.03,27.76ZM1198.27,59.69L1232.73,0h-32.06s-18.43,31.93-18.43,31.93L1163.8,0h-32.06s34.46,59.69,34.46,59.69h32.06ZM1151.78,68.02l-34.46-59.69-16.03,27.76,18.43,31.93h-36.87s-16.03,27.76-16.03,27.76h68.92s16.03-27.76,16.03-27.76Z"></path>
+<polygon class="bcls-2" points="1096.8 130.81 1069.71 177.72 1042.62 130.81 1003.43 130.81 1050.12 211.67 1012 277.68 1012.2 277.49 1051.31 277.49 1136 130.81 1096.8 130.81"></polygon>
+<path class="bcls-2" d="M237.66,247.89v-64.98c0-15.82-5.49-23.21-18.35-23.21-14.13,0-20.04,7.81-20.04,23.63v64.56h-35.02v-117.09h32.7v12.45h.42c7.38-12.02,17.72-16.45,31.86-16.45,21.1,0,43.46,11.81,43.46,46.41v74.68h-35.02Z"></path>
+<path class="bcls-2" d="M580.94,251.48c-35.65,0-63.08-26.37-63.08-62.24s28.06-62.24,63.08-62.24,63.08,26.37,63.08,61.81-27.85,62.66-63.08,62.66ZM609,189.24c0-15.61-11.81-29.54-28.27-29.54-15.4,0-27.85,13.5-27.85,29.54s12.24,29.54,28.06,29.54,28.06-13.92,28.06-29.54Z"></path>
+<path class="bcls-2" d="M780.09,251.48c-35.65,0-63.08-26.37-63.08-62.24s28.06-62.24,63.08-62.24,63.08,26.37,63.08,61.81-27.85,62.66-63.08,62.66ZM808.14,189.24c0-15.61-11.81-29.54-28.27-29.54-15.4,0-27.85,13.5-27.85,29.54s12.24,29.54,28.06,29.54,28.06-13.92,28.06-29.54Z"></path>
+<path class="bcls-2" d="M954.1,234.18c-5.27,11.18-18.35,17.51-32.7,17.51-34.18,0-58.86-26.37-58.86-61.6s25.11-63.08,58.86-63.08c15.19,0,26.79,5.7,32.49,14.77h.42v-10.97h35.02v104.64c0,15.82-2.11,27.85-6.33,35.86-8.44,16.24-31.43,28.69-60.76,28.69-33.12,0-54.64-18.78-57.59-41.14h40.51c4.01,8.65,11.81,11.6,20.46,11.6,17.72,0,28.48-11.6,28.48-32.91v-3.38ZM954.32,189.88c0-17.09-11.6-30.17-28.69-30.17-15.61,0-28.06,13.08-28.06,29.11s11.18,30.17,28.06,30.17,28.69-12.24,28.69-29.11Z"></path>
+<polygon class="bcls-2" points="347.46 91.78 312.44 91.78 312.44 130.81 289.1 130.81 289.1 157.39 312.44 157.39 312.44 247.89 347.46 247.89 347.46 157.39 370.81 157.39 370.81 130.81 347.46 130.81 347.46 91.78"></polygon>
+<path class="bcls-2" d="M456.82,126.8c-13.92,0-25.32,5.7-30.38,15.19v-50.21h-35.02v156.11h35.02v-65.82c0-14.56,6.33-22.36,19.62-22.36s18.78,8.65,18.78,23.84v64.34h35.02v-73.63c0-30.59-16.24-47.47-43.04-47.47Z"></path>
+<rect class="bcls-2" x="663.56" y="91.78" width="35.02" height="156.11"></rect>
+<polygon class="bcls-2" points="57.77 91.78 0 247.89 42.83 247.89 74.97 150.33 75.59 150.33 107.74 247.89 150.57 247.89 92.79 91.78 57.77 91.78"></polygon>
+</svg>
+            <h1>Did you know Blackboard is now Anthology?</h1>
+            <h3>Let’s get you where you want to go.</h3>
+        </div>
+    </div>
+    <div class="x-main-content">
+        <div class="x-interior">
+            <h3>Discover Anthology’s suite of solutions for learning effectiveness, including:</h3>
+            <div class="x-flex x-flex-top">
+                <p class="x-half"><a href="https://www.anthology.com/products/teaching-and-learning/learning-effectiveness/blackboard">Blackboard</a>, the best LMS for modern teaching and learning</p>
+                <p class="x-half"><a href="https://www.anthology.com/products/teaching-and-learning/learning-effectiveness/anthology-ally">Anthology Ally</a>, for building inclusive environments and making digital content more accessible for all</p>
+            </div>
+            <div class="x-flex x-flex-bottom">
+                <div class="x-half x-border">
+                    <p><strong>Visit Anthology for Business</strong> to see how our solutions and services—including Blackboard, our LMS—drive professional development, training, and employee and organization success.</p>
+                    <a href="https://www.anthology.com/business" class="x-button">Visit Anthology for Business</a>
+                </div>
+                <div class="x-half x-border">
+                    <p><strong>Explore Anthology for Government</strong> to see how our solutions and services—including Blackboard, our LMS—efficiently, easily, and securely support government employees and agency mission success.</p>
+                    <a href="https://www.anthology.com/government" class="x-button">Visit Anthology for Government</a>
+                </div>
+                <div class="x-half x-border">
+                    <p>If you are seeking information about <strong>community engagement tools for K-12 schools</strong>, please visit the Finalsite website.</p>
+                    <a href="https://www.finalsite.com/" class="x-button">Visit Finalsite for K-12</a>
+                </div>
+                <div class="x-half x-border">
+                    <p>Looking for something else? Hop over to our website for a complete view of our products, services, and other resources.</p>
+                    <a href="https://www.anthology.com/" class="x-button">Discover Anthology</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style type="text/css">
+    .x-home-container {
+        width: 100%;
+        height: auto;
+        font-family: 'Inter', Helvetica, Arial, sans-serif;
+    }
+    .x-top-bar {
+        display: block;
+        background: #000;
+        color: #fff;
+        font-size: 0.78rem;
+        line-height: 1em;
+        padding: 8px 0;
+    }
+    .x-top-bar a {
+        text-decoration: none;
+        color: #fff;
+        display: block;
+        width: 100%;
+        max-width: 1700px;
+        margin: 0 auto;
+        padding: 0 20px;
+        transition: all 0.3s ease;
+        border: none !important;
+        text-align: right;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-family: 'Inter', Helvetica, Arial, sans-serif;
+    }
+    .x-top-bar a:hover,
+    .x-top-bar a:focus {
+        text-decoration: none;
+        color: #E1EBF3;
+    }
+    .x-arrow-right {
+        display: inline-block;
+        width: 0; 
+        height: 0; 
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-left: 5px solid #fff;
+        margin-left: 5px;
+    }
+    .x-home-hero {
+        padding: 85px 0;
+        background: #001B39 url('/sites/default/files/styles/2000w/public/2024-07/all-products-header.jpeg?itok=Nt6JRzQj') no-repeat 50% 50%;
+        background-size: cover;
+    }
+    .x-interior {
+        width: 100%;
+        max-width: 1040px;
+        padding: 0 20px;
+        margin: 0 auto;
+    }
+    .x-home-hero img,
+    .x-home-hero svg {
+        margin: 0 auto;
+        width: 309px;
+        height: auto;
+        display: block;
+    }
+    .x-home-hero h1 {
+        font-family: 'Poppins', Helvetica, Arial, sans-serif;
+        font-size: 2.78rem;
+        color: #fff;
+        font-weight: 400;
+        margin: 40px auto 0;
+        text-align: center;
+        line-height: 1.2em;
+    }
+    .x-home-hero h3 {
+        font-size: 1.67rem;
+        color: #fff;
+        font-family: 'Poppins', Helvetica, Arial, sans-serif;
+        font-weight: 400;
+        margin: 30px auto 0;
+        text-align: center;
+        line-height: 1.2em;
+    }
+    .x-main-content {
+        padding: 100px 0 50px;
+        background: #fff;
+    }
+    .x-main-content h3 {
+        font-weight: bold;
+        font-size: 1.33rem;
+        color: #000;
+        font-family: 'Poppins', Helvetica, Arial, sans-serif;
+        line-height: 1.2em;
+    }
+    .x-main-content a {
+        border: none !important;
+        text-decoration: none;
+        color: #0054bc;
+        font-weight: bold;
+        font-family: 'Inter', Helvetica, Arial, sans-serif;
+    }
+    .x-main-content a:hover,
+    .x-main-content a:focus {
+        border: none !important;
+        text-decoration: underline !important;
+        color: #0054bc;
+    }
+    .x-flex {
+        display: flex;
+        flex-flow: wrap;
+        justify-content: space-between;
+    }
+    .x-half {
+        width: 47.6%;
+        margin: 0;
+    }
+    .x-border {
+        border: 1px solid #E1EBF3;
+        margin-bottom: 45px;
+        padding: 45px;
+        display: flex;
+        flex-flow: column;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+    .x-half p {
+        margin: 0;
+        font-family: 'Inter', Helvetica, Arial, sans-serif;
+    }
+    .x-flex-top {
+        margin: 40px 0 0;
+        padding: 0 0 60px;
+        border-bottom: 1px solid #E1EBF3;
+    }
+    .x-flex-bottom {
+        padding: 75px 0 0;
+    }
+    .x-footer {
+        margin: 30px auto 0;
+        font-size: 0.78rem;
+        line-height: 1.2em;
+        font-family: 'Inter', Helvetica, Arial, sans-serif;
+        font-size: 300;
+        color: #000;
+        text-align: center;
+    }
+    .x-footer a {
+        text-decoration: underline;
+        color: #000;
+        font-weight: 400;
+    }
+    .x-footer a:hover,
+    .x-footer a:focus {
+        text-decoration: none !important;
+        color: #000;
+    }
+    .x-main-content .x-button {
+        display: inline-block;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1em;
+        padding: 12px 18px 10px;
+        border: none !important;
+        background: linear-gradient(to right,#0054bc,#0dac14) !important;
+        text-decoration: none !important;
+        border-radius: 0;
+        margin-top: 40px;
+        color: #fff !important;
+        transition: none;
+        font-family: 'Inter', Helvetica, Arial, sans-serif;
+    }
+    .x-main-content .x-button:hover,
+    .x-main-content .x-button:focus {
+        border: none !important;
+        text-decoration: none !important;
+        color: #fff !important;
+        background: #0054bc !important;
+    }
+    .x-button .x-arrow-right {
+        border-left-color: #000;
+    }
+    @media only screen and (max-width: 1024px) {
+        .x-border {
+            padding: 25px;
+        }
+        .x-main-content .x-button {
+            font-size: 1rem;
+        }
+    }
+    @media only screen and (max-width: 767px) {
+        .x-main-content {
+            padding-top: 50px;
+            background: #fff;
+        }
+        .x-half {
+            width: 100%;
+        }
+        p.x-half {
+            font-size: 1.1rem;
+        }
+        p.x-half + p.x-half {
+            margin-top: 30px;
+        }
+    }
+</style>
+    </div>
+  </div>
+</div>
+
+
+
+        
+		</div>
+	
+</article>
+
+
+  </div>
+</div>    <div class="pre-footer"></div>
+  </main>
+
+  <footer role="contentinfo" class="bb_footer">
+  <div class="bb_footer__contents">
+    <div class="bb_component__main-content">
+      <div class="bb_component__grid-item">
+        <div class="bb_footer__top">
+          <div class="bb_footer__logo">
+            <a class="bb_footer__logoImg" href="/">
+                              <?xml version="1.0" encoding="UTF-8"?>
+<svg id="anthology-logo-white" data-name="Anthology Logo - White" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1297.65 300">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#gradient-logo-white);
+      }
+
+      .cls-1, .white-fill {
+        stroke-width: 0px;
+      }
+
+      .white-fill {
+        fill: #fff;
+      }
+    </style>
+    <linearGradient id="gradient-logo-white" x1="1124.53" y1="204.06" x2="1239.94" y2="4.16" gradientUnits="userSpaceOnUse">
+      <stop offset=".55" stop-color="#0054bc"/>
+      <stop offset=".85" stop-color="#0dac41"/>
+      <stop offset=".99" stop-color="#caef01"/>
+    </linearGradient>
+  </defs>
+  <path class="cls-1" d="M1166.21,148.53l-34.46,59.69h32.06s18.43-31.93,18.43-31.93l18.43,31.93h32.06s-34.46-59.69-34.46-59.69h-32.06ZM1212.69,140.2l34.46,59.69,16.03-27.76-18.43-31.93h36.87s16.03-27.76,16.03-27.76h-68.92s-16.03,27.76-16.03,27.76ZM1228.72,95.78h68.92s-16.03-27.76-16.03-27.76h-36.87s18.43-31.93,18.43-31.93l-16.03-27.76-34.46,59.69,16.03,27.76ZM1198.27,59.69L1232.73,0h-32.06s-18.43,31.93-18.43,31.93L1163.8,0h-32.06s34.46,59.69,34.46,59.69h32.06ZM1151.78,68.02l-34.46-59.69-16.03,27.76,18.43,31.93h-36.87s-16.03,27.76-16.03,27.76h68.92s16.03-27.76,16.03-27.76Z"/>
+  <polygon class="white-fill" points="1096.8 130.81 1069.71 177.72 1042.62 130.81 1003.43 130.81 1050.12 211.67 1012 277.68 1012.2 277.49 1051.31 277.49 1136 130.81 1096.8 130.81"/>
+  <path class="white-fill" d="M237.66,247.89v-64.98c0-15.82-5.49-23.21-18.35-23.21-14.13,0-20.04,7.81-20.04,23.63v64.56h-35.02v-117.09h32.7v12.45h.42c7.38-12.02,17.72-16.45,31.86-16.45,21.1,0,43.46,11.81,43.46,46.41v74.68h-35.02Z"/>
+  <path class="white-fill" d="M580.94,251.48c-35.65,0-63.08-26.37-63.08-62.24s28.06-62.24,63.08-62.24,63.08,26.37,63.08,61.81-27.85,62.66-63.08,62.66ZM609,189.24c0-15.61-11.81-29.54-28.27-29.54-15.4,0-27.85,13.5-27.85,29.54s12.24,29.54,28.06,29.54,28.06-13.92,28.06-29.54Z"/>
+  <path class="white-fill" d="M780.09,251.48c-35.65,0-63.08-26.37-63.08-62.24s28.06-62.24,63.08-62.24,63.08,26.37,63.08,61.81-27.85,62.66-63.08,62.66ZM808.14,189.24c0-15.61-11.81-29.54-28.27-29.54-15.4,0-27.85,13.5-27.85,29.54s12.24,29.54,28.06,29.54,28.06-13.92,28.06-29.54Z"/>
+  <path class="white-fill" d="M954.1,234.18c-5.27,11.18-18.35,17.51-32.7,17.51-34.18,0-58.86-26.37-58.86-61.6s25.11-63.08,58.86-63.08c15.19,0,26.79,5.7,32.49,14.77h.42v-10.97h35.02v104.64c0,15.82-2.11,27.85-6.33,35.86-8.44,16.24-31.43,28.69-60.76,28.69-33.12,0-54.64-18.78-57.59-41.14h40.51c4.01,8.65,11.81,11.6,20.46,11.6,17.72,0,28.48-11.6,28.48-32.91v-3.38ZM954.32,189.88c0-17.09-11.6-30.17-28.69-30.17-15.61,0-28.06,13.08-28.06,29.11s11.18,30.17,28.06,30.17,28.69-12.24,28.69-29.11Z"/>
+  <polygon class="white-fill" points="347.46 91.78 312.44 91.78 312.44 130.81 289.1 130.81 289.1 157.39 312.44 157.39 312.44 247.89 347.46 247.89 347.46 157.39 370.81 157.39 370.81 130.81 347.46 130.81 347.46 91.78"/>
+  <path class="white-fill" d="M456.82,126.8c-13.92,0-25.32,5.7-30.38,15.19v-50.21h-35.02v156.11h35.02v-65.82c0-14.56,6.33-22.36,19.62-22.36s18.78,8.65,18.78,23.84v64.34h35.02v-73.63c0-30.59-16.24-47.47-43.04-47.47Z"/>
+  <rect class="white-fill" x="663.56" y="91.78" width="35.02" height="156.11"/>
+  <polygon class="white-fill" points="57.77 91.78 0 247.89 42.83 247.89 74.97 150.33 75.59 150.33 107.74 247.89 150.57 247.89 92.79 91.78 57.77 91.78"/>
+</svg>                          </a>
+                          <p>Anthology is the EdTech leader powering learners and institutions worldwide, pairing the only complete SaaS solution suite with a flexible ecosystem built to help everyone thrive. </p>
+                        <div style="display: flex; align-items: center;">
+                                <div>
+    <div class="menu service">
+  
+    
+      
+
+<nav>
+  <h2 class="show-for-sr">Contact Us Menu</h2>
+  <ul  class="menu dropdown large-horizontal" data-dropdown-menu>
+    <li>
+              <a href="/contact-us" class="contact-link">Contact Us</a>
+                
+    </li>
+  </ul>
+</nav>
+
+
+  </div>
+
+
+<nav>
+  <h2 class="show-for-sr">Region Selector Menu</h2>
+  <ul  id="block-regionselector-2" class="menu bb_component--menu--secondary bb_component--menu-region-selector" data-responsive-menu="accordion large-dropdown">
+    <li>
+      <a class="globe-icon" href="#"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="31.799" height="31.8" viewBox="0 0 31.799 31.8">
+  <title>Select Your Region/Country</title>
+  <path data-name="Path 221" d="M15.9,31.8A15.9,15.9,0,1,1,31.8,15.9,15.918,15.918,0,0,1,15.9,31.8m0-30.013A14.113,14.113,0,1,0,30.013,15.9,14.129,14.129,0,0,0,15.9,1.787" transform="translate(0 -0.001)"/>
+  <rect data-name="Rectangle 284" width="1.786" height="30.013" transform="translate(15.006 0.893)"/>
+  <path data-name="Path 222" d="M114.893,31.8c-5,0-8.914-6.984-8.914-15.9S109.895,0,114.893,0s8.914,6.984,8.914,15.9-3.916,15.9-8.914,15.9m0-30.013c-3.864,0-7.128,6.463-7.128,14.114s3.264,14.113,7.128,14.113,7.128-6.463,7.128-14.113-3.264-14.114-7.128-14.114" transform="translate(-98.994 -0.001)"/>
+  <rect data-name="Rectangle 285" width="28.257" height="1.786" transform="translate(1.756 9.98)"/>
+  <rect data-name="Rectangle 286" width="28.257" height="1.786" transform="translate(1.756 20.033)"/>
+</svg>
+</a>
+              <ul class="menu" data-no-home-link="1">
+          <li>
+        <a href="/" data-drupal-link-system-path="&lt;front&gt;">North America (English)</a>
+              </li>
+          <li>
+        <a href="/en-emea" data-drupal-link-system-path="group/141">Europe, the Middle East &amp; Africa (English)</a>
+              </li>
+          <li>
+        <a href="/en-apac" data-drupal-link-system-path="group/136">Asia Pacific (English)</a>
+              </li>
+          <li>
+        <a href="/en-in" data-drupal-link-system-path="group/261">India (English)</a>
+              </li>
+          <li>
+        <a href="/es-lac" data-drupal-link-system-path="group/271">Latinoamérica y el Caribe (Español)</a>
+              </li>
+          <li>
+        <a href="/pt-br" data-drupal-link-system-path="group/281">Brasil (Português)</a>
+              </li>
+          <li>
+        <a href="https://www.anthology.com/es-es">España (Español)</a>
+              </li>
+        </ul>
+  
+    </li>
+  </ul>
+</nav>
+
+
+  </div>
+
+                            <span>
+                                  <a href="/our-offices" class="link-footer">Our Offices</a>
+                              </span>
+            </div>
+            <div class="bb_footer__social">
+                <div>
+    <div id="block-currentgroupsociallinks">
+  
+    
+      
+<div class="bb-current-group-social-links">
+  <a href="https://www.facebook.com/TheAnthologyInc/" target="_blank" aria-label="Facebook">
+    <i class="fab fa-facebook-square"></i>
+  </a>
+  <a href="https://twitter.com/AnthologyInc" target="_blank" aria-label="Twitter">
+    <i class="fa-brands fa-x-twitter"></i>
+  </a>
+    <a href="https://www.linkedin.com/company/anthologyinc/" target="_blank" aria-label="LinkedIn">
+    <i class="fab fa-linkedin"></i>
+  </a>
+  <a href="https://www.instagram.com/anthology_inc/" target="_blank" aria-label="Instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+</div>
+
+  </div>
+
+  </div>
+
+            </div>
+          </div>
+                    <div class="bb_footer__menu">
+              <div>
+    <div class="menu footer" id="block-currentmenufooternavigation">
+  
+    
+      
+              <nav>
+        <h2 class="show-for-sr">Footer Menu</h2>
+        <ul class="menu bb_footer__menu__menu">
+              <li>
+                <a href="/about-us" data-drupal-link-system-path="node/16406">About Us</a>
+              </li>
+          <li>
+                <a href="https://www.anthology.com/higher-education-products-and-services">Solutions</a>
+              </li>
+          <li>
+                <a href="/client-success-stories" data-drupal-link-system-path="node/16211">Success Stories</a>
+              </li>
+          <li>
+                <a href="/resources" data-drupal-link-system-path="node/651">Resources</a>
+              </li>
+          <li>
+                <a href="/integration-partnerships" data-drupal-link-system-path="node/16386">Integration Partnerships</a>
+              </li>
+          <li>
+                <a href="/channel-partnerships" data-drupal-link-system-path="node/16401">Channel Partnerships</a>
+              </li>
+          <li>
+                <a href="/investor-relations" data-drupal-link-system-path="node/31346">Investor Relations</a>
+              </li>
+          <li>
+                <a href="/our-commitment-to-accessibility" data-drupal-link-system-path="node/32151">Our Commitment to Accessibility</a>
+              </li>
+        </ul>
+          </nav>
+      
+
+
+  </div>
+<div class="menu na-footer-middle" id="block-currentmenufootermiddlenavigation">
+  
+    
+      
+              <nav>
+        <h2 class="show-for-sr">Footer Menu</h2>
+        <ul class="menu bb_footer__menu__menu">
+              <li>
+        <a href="/trust-center" data-drupal-link-system-path="node/16481">Anthology Trust Center</a>
+              </li>
+          <li>
+        <a href="/trust-center/privacy-statement" data-drupal-link-system-path="node/16486">Privacy Statement</a>
+              </li>
+          <li>
+        <a href="/trust-center/us-state-privacy-notice" data-drupal-link-system-path="node/16491">US State Privacy Notice</a>
+              </li>
+          <li>
+        <a href="/trust-center/modern-slavery-act-statement" data-drupal-link-system-path="node/16496">Modern Slavery Act Statement</a>
+              </li>
+          <li>
+        <a href="/trust-center/security" data-drupal-link-system-path="node/16506">Security</a>
+              </li>
+          <li>
+        <a href="/trust-center/terms-of-use" data-drupal-link-system-path="node/16511">Terms of Use</a>
+              </li>
+          <li class="x-ot-na-nav-item">
+        <a href="#" class="ot-preference-center">Cookie Preferences</a>
+      </li>
+      <li class="x-ot-na-nav-item">
+        <a href="https://www.anthology.com/trust-center/right-to-know-and-right-to-deletion">Your Privacy Choices<svg version="1.1" class="x-footer-menu-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 30 14" style="enable-background:new 0 0 30 14;" xml:space="preserve">
+<style type="text/css">
+	.otst0{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+	.otst1{fill-rule:evenodd;clip-rule:evenodd;fill:#0066FF;}
+	.otst2{fill:#FFFFFF;}
+	.otst3{fill:#0066FF;}
+</style>
+<g>
+	<g id="final---dec.11-2020_1_">
+		<g id="_x30_208-our-toggle_2_" transform="translate(-1275.000000, -200.000000)">
+			<g id="Final-Copy-2_2_" transform="translate(1275.000000, 200.000000)">
+				<path class="otst0" d="M7.4,12.8h6.8l3.1-11.6H7.4C4.2,1.2,1.6,3.8,1.6,7S4.2,12.8,7.4,12.8z"/>
+			</g>
+		</g>
+	</g>
+	<g id="final---dec.11-2020">
+		<g id="_x30_208-our-toggle" transform="translate(-1275.000000, -200.000000)">
+			<g id="Final-Copy-2" transform="translate(1275.000000, 200.000000)">
+				<path class="otst1" d="M22.6,0H7.4c-3.9,0-7,3.1-7,7s3.1,7,7,7h15.2c3.9,0,7-3.1,7-7S26.4,0,22.6,0z M1.6,7c0-3.2,2.6-5.8,5.8-5.8
+					h9.9l-3.1,11.6H7.4C4.2,12.8,1.6,10.2,1.6,7z"/>
+				<path id="x" class="otst2" d="M24.6,4c0.2,0.2,0.2,0.6,0,0.8l0,0L22.5,7l2.2,2.2c0.2,0.2,0.2,0.6,0,0.8c-0.2,0.2-0.6,0.2-0.8,0
+					l0,0l-2.2-2.2L19.5,10c-0.2,0.2-0.6,0.2-0.8,0c-0.2-0.2-0.2-0.6,0-0.8l0,0L20.8,7l-2.2-2.2c-0.2-0.2-0.2-0.6,0-0.8
+					c0.2-0.2,0.6-0.2,0.8,0l0,0l2.2,2.2L23.8,4C24,3.8,24.4,3.8,24.6,4z"/>
+				<path id="y" class="otst3" d="M12.7,4.1c0.2,0.2,0.3,0.6,0.1,0.8l0,0L8.6,9.8C8.5,9.9,8.4,10,8.3,10c-0.2,0.1-0.5,0.1-0.7-0.1l0,0
+					L5.4,7.7c-0.2-0.2-0.2-0.6,0-0.8c0.2-0.2,0.6-0.2,0.8,0l0,0L8,8.6l3.8-4.5C12,3.9,12.4,3.9,12.7,4.1z"/>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>
+</a>
+      </li>
+    </ul>
+          </nav>
+      
+
+
+  </div>
+<div class="menu na-footer-right" id="block-currentmenufooterrightnavigation">
+  
+    
+      
+              <nav>
+        <h2 class="show-for-sr">Footer Menu</h2>
+        <ul class="menu bb_footer__menu__menu">
+              <li>
+                <a href="https://community.anthology.com" target="_blank" rel="noopener">Anthology Community</a>
+              </li>
+          <li>
+                <a href="/community-and-support" data-drupal-link-system-path="node/16476">Get Support</a>
+              </li>
+          <li>
+                <a href="/brand-guidance" data-drupal-link-system-path="node/31651">Brand Guidance</a>
+              </li>
+          <li>
+                  <strong>We're Hiring!</strong>
+                <a href="/about-us/careers" title="We’re hiring!" data-drupal-link-system-path="node/16446">Join our team</a>
+              </li>
+        </ul>
+          </nav>
+      
+
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bb_footer__bottom">
+          <span class="bb_footer__copyright">©2025 Anthology Inc. and its affiliates. All rights reserved. <a href="/trademarks-and-patents">Trademarks and Patents</a></span>
+      </div>
+</footer>
+
+</div>
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node\/31891","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"eJxFjcEKhDAMBX8oNN_0YkurmzUlsWD9-tWD7GUOw8AIojD2o5lanSSK5SMGz1zVBEqLeeHso0NTXnFXCRtOUlyTH1CHozp6i7f7mzT2PkTXaCVTzDjKl-Ve_gC7Fy4X","theme":"blackboard","theme_token":null},"ajaxTrustedUrl":[],"lazy":{"lazysizes":{"lazyClass":"lazyload","loadedClass":"lazyloaded","loadingClass":"lazyloading","preloadClass":"lazypreload","errorClass":"lazyerror","autosizesClass":"lazyautosizes","srcAttr":"data-src","srcsetAttr":"data-srcset","sizesAttr":"data-sizes","minSize":40,"customMedia":[],"init":true,"expFactor":1.5,"hFac":0.80000000000000004,"loadMode":2,"loadHidden":true,"ricTimeout":0,"throttleDelay":125,"plugins":[]},"placeholderSrc":"","preferNative":false,"minified":true,"libraryPath":"\/libraries\/lazysizes"},"six_sense":"40216d3603e7ec5ac281ced9bc178b6b0cad889d","language":"en","user":{"uid":0,"permissionsHash":"e2759f4c554ca763bd5ee6e0f0262dee0ca559ad53519e35b7b47ec2a8a6dab1"}}</script>
+<script src="/core/assets/vendor/jquery/jquery.min.js?v=3.7.1"></script>
+<script src="/core/assets/vendor/once/once.min.js?v=1.0.1"></script>
+<script src="/core/misc/drupalSettingsLoader.js?v=10.4.5"></script>
+<script src="/core/misc/drupal.js?v=10.4.5"></script>
+<script src="/core/misc/drupal.init.js?v=10.4.5"></script>
+<script src="/core/assets/vendor/jquery.ui/ui/version-min.js?v=10.4.5"></script>
+<script src="/core/assets/vendor/jquery.ui/ui/data-min.js?v=10.4.5"></script>
+<script src="/core/assets/vendor/jquery.ui/ui/disable-selection-min.js?v=10.4.5"></script>
+<script src="/core/assets/vendor/jquery.ui/ui/jquery-patch-min.js?v=10.4.5"></script>
+<script src="/core/assets/vendor/jquery.ui/ui/scroll-parent-min.js?v=10.4.5"></script>
+<script src="/core/assets/vendor/jquery.ui/ui/unique-id-min.js?v=10.4.5"></script>
+<script src="/core/assets/vendor/jquery.ui/ui/focusable-min.js?v=10.4.5"></script>
+<script src="/core/assets/vendor/jquery.ui/ui/keycode-min.js?v=10.4.5"></script>
+<script src="/core/assets/vendor/jquery.ui/ui/plugin-min.js?v=10.4.5"></script>
+<script src="/core/assets/vendor/jquery.ui/ui/widget-min.js?v=10.4.5"></script>
+<script src="/core/assets/vendor/jquery.ui/ui/labels-min.js?v=10.4.5"></script>
+<script src="/core/assets/vendor/jquery.ui/ui/widgets/controlgroup-min.js?v=10.4.5"></script>
+<script src="/core/assets/vendor/jquery.ui/ui/form-reset-mixin-min.js?v=10.4.5"></script>
+<script src="/core/assets/vendor/jquery.ui/ui/widgets/mouse-min.js?v=10.4.5"></script>
+<script src="/core/assets/vendor/jquery.ui/ui/widgets/checkboxradio-min.js?v=10.4.5"></script>
+<script src="/core/assets/vendor/jquery.ui/ui/widgets/draggable-min.js?v=10.4.5"></script>
+<script src="/core/assets/vendor/jquery.ui/ui/widgets/resizable-min.js?v=10.4.5"></script>
+<script src="/core/assets/vendor/jquery.ui/ui/widgets/button-min.js?v=10.4.5"></script>
+<script src="/core/assets/vendor/jquery.ui/ui/widgets/dialog-min.js?v=10.4.5"></script>
+<script src="/core/assets/vendor/tabbable/index.umd.min.js?v=6.2.0"></script>
+<script src="/core/assets/vendor/tua-body-scroll-lock/tua-bsl.umd.min.js?v=10.4.5"></script>
+<script src="/core/assets/vendor/js-cookie/js.cookie.min.js?v=3.0.5"></script>
+<script src="//kit.fontawesome.com/0bfb0f0ba9.js" crossorigin="anonymous"></script>
+<script src="//player.vimeo.com/api/player.js" async></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.6.6/iframeResizer.min.js" async></script>
+<script src="/themes/custom/blackboard/dist/js/libs.js?v=1.8.02"></script>
+<script src="/themes/custom/blackboard/dist/js/theme.js?v=1.8.02"></script>
+<script src="/themes/custom/blackboard/dist/js/slick.js?v=1.8.02"></script>
+<script src="/themes/custom/blackboard/assets/js/parallax.min.js?v=1.8.02"></script>
+<script src="/core/misc/progress.js?v=10.4.5"></script>
+<script src="/core/assets/vendor/loadjs/loadjs.min.js?v=4.3.0"></script>
+<script src="/core/misc/debounce.js?v=10.4.5"></script>
+<script src="/core/misc/announce.js?v=10.4.5"></script>
+<script src="/core/misc/message.js?v=10.4.5"></script>
+<script src="/core/misc/ajax.js?v=10.4.5"></script>
+<script src="/core/misc/displace.js?v=10.4.5"></script>
+<script src="/core/misc/jquery.tabbable.shim.js?v=10.4.5"></script>
+<script src="/core/misc/position.js?v=10.4.5"></script>
+<script src="/core/misc/dialog/dialog-deprecation.js?v=10.4.5"></script>
+<script src="/core/misc/dialog/dialog.js?v=10.4.5"></script>
+<script src="/core/misc/dialog/dialog.position.js?v=10.4.5"></script>
+<script src="/core/misc/dialog/dialog.jquery-ui.js?v=10.4.5"></script>
+<script src="/core/modules/ckeditor5/js/ckeditor5.dialog.fix.js?v=10.4.5"></script>
+<script src="/core/misc/dialog/dialog.ajax.js?v=10.4.5"></script>
+<script src="/modules/contrib/lazy/js/lazy.js?v=10.4.5"></script>
+
+
+    <script type="text/plain" class="optanon-category-C0002">
+      (function() {
+          var sz = document.createElement('script'); sz.type = 'text/javascript'; sz.async = true;
+          sz.src = '//siteimproveanalytics.com/js/siteanalyze_6004134.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sz, s);
+      })();
+    </script>
+
+    <script type="text/plain" class="optanon-category-C0002">
+      (function (w,i,d,g,e,t,s) {w[d] = w[d]||[];t= i.createElement(g);
+        t.async=1;t.src=e;s=i.getElementsByTagName(g)[0];s.parentNode.insertBefore(t, s);
+      })(window, document, '_gscq','script','//widgets.getsitecontrol.com/194325/script.js');
+    </script>
+
+    
+    <script type="text/plain" class="optanon-category-C0002">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "ix6yh7vyf9");
+    </script>
+
+    <script type="text/plain" class="optanon-category-C0002">(function (c, p, d, u, id, i) {
+      id = ''; // Optional Custom ID for user in your system
+      u = 'https://tracking.g2crowd.com/attribution_tracking/conversions/' + c + '.js?p=' + encodeURI(p) + '&e=' + id;
+      i = document.createElement('script');
+      i.type = 'application/javascript';
+      i.async = true;
+      i.src = u;
+      d.getElementsByTagName('head')[0].appendChild(i);
+    }("1009142", document.location.href, document));</script>
+
+    <script src="https://app.cdn.lookbookhq.com/libraries/overlay/overlay.js" async></script>
+    <link href="https://app.cdn.lookbookhq.com/libraries/overlay/overlay.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga4/8535189.js"></script>
+
+    <style>
+      #ally-af-launcher.ally-af-launch-container {
+        left: 0px !important;
+        width:50px !important;
+        bottom: 55.8px !important;
+      }
+        #ally-af-launcher.ally-af-style-flag_small {
+        left: 0px !important;
+        width: 55px !important
+        bottom: 55.8px !important;
+      }
+      .ally-af-launch-container.ally-af-style-flag_small>button{
+        border-right: 1px solid #fff !important;
+      }
+    </style>
+    <!--
+        Ally Website Integration Script.
+
+        "data-ally-af-style" can be one of the following values to customize the look and feel:
+            - flag_small
+            - flag_large
+            - bar_bottom
+    -->
+    <script
+      data-ally-loader
+      data-ally-platform-name="web"
+      data-ally-client-id="14096"
+      data-ally-af-style="flag_small"
+      src="https://prod.ally.ac/integration/api/ally.ui.js" async>
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Anthology",
+      "url": "https://www.anthology.com/",
+      "logo": "https://shelves.s3.us-east-1.amazonaws.com/images/Anth-Logo-Full-Color-Black_06-24.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Boca Raton, FL",
+        "postalCode": "33487",
+        "streetAddress": "5201 Congress Ave"
+      },
+      "faxNumber": "561-999-0096",
+      "telephone": "561-923-2500",
+      "sameAs": [
+        "https://www.facebook.com/TheAnthologyInc/",
+        "https://x.com/AnthologyInc",
+        "https://www.linkedin.com/company/anthologyinc/",
+        "https://www.instagram.com/anthology_inc/"
+      ]
+    }
+    </script>
+  </body>
+</html>

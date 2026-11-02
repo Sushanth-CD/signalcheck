@@ -1,17 +1,8 @@
 ﻿"""Typed API schemas for the analysis service."""
 
-from enum import StrEnum
-from typing import Annotated, Any
+from typing import Annotated, Any, Literal
 
-from pydantic import BaseModel, ConfigDict, Field, field_validator
-
-
-class RiskLevel(StrEnum):
-    """Risk bands defined by the Version 1 analysis contract."""
-
-    LOW = "low"
-    MEDIUM = "medium"
-    HIGH = "high"
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, field_validator
 
 
 class AnalysisRequest(BaseModel):
@@ -33,28 +24,40 @@ class AnalysisRequest(BaseModel):
         return value
 
 
-class DetectedIndicator(BaseModel):
-    """One explainable rule match in a completed analysis."""
+class MLAnalysisResponse(BaseModel):
+    """Result from the separate text-classification model endpoint."""
 
     model_config = ConfigDict(extra="forbid")
 
-    rule_id: str = Field(min_length=1)
-    category: str = Field(min_length=1)
-    title: str = Field(min_length=1)
-    score_contribution: int = Field(ge=0, le=100)
-    explanation: str = Field(min_length=1)
+    classification: Literal["phishing", "benign"]
+    phishing_score: float = Field(ge=0.0, le=1.0)
+    score_kind: Literal["uncalibrated_model_score"] = "uncalibrated_model_score"
+    threshold: float = Field(ge=0.0, le=1.0)
+    model_id: str = Field(min_length=1)
+    disclaimer: str = Field(min_length=1)
 
 
-class AnalysisResponse(BaseModel):
-    """Structured analysis result reserved for the implemented engine."""
+class AndroidMLAnalysisRequest(BaseModel):
+    """Prepared named Android feature values; this is not an APK upload."""
 
     model_config = ConfigDict(extra="forbid")
 
-    risk_score: int = Field(ge=0, le=100)
-    risk_level: RiskLevel
-    summary: str = Field(min_length=1)
-    detected_indicators: list[DetectedIndicator]
-    recommendations: list[str]
+    features: dict[str, Annotated[StrictInt, Field(ge=0, le=1)]] = Field(
+        min_length=226,
+        max_length=226,
+    )
+
+
+class AndroidMLAnalysisResponse(BaseModel):
+    """Result from the separate Android permission-feature classifier."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    classification: Literal["malicious", "non_malicious"]
+    malware_score: float = Field(ge=0.0, le=1.0)
+    score_kind: Literal["uncalibrated_model_score"] = "uncalibrated_model_score"
+    threshold: float = Field(ge=0.0, le=1.0)
+    model_id: str = Field(min_length=1)
     disclaimer: str = Field(min_length=1)
 
 

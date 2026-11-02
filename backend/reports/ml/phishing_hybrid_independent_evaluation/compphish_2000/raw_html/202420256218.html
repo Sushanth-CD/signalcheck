@@ -1,0 +1,1596 @@
+<html lang="en"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <!-- Common -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="">
+    <link href="https://static2.camfrogcdn.com/css/template_styles.css?v=338" rel="preload" as="style">
+    <link rel="stylesheet" type="text/css" href="https://static2.camfrogcdn.com/css/template_styles.css?v=338">
+    <link rel="stylesheet" type="text/css" href="https://static2.camfrogcdn.com/css/fonts.css?v=338">
+
+    <link href="https://static.camfrogcdn.com/js/template.min.js?v=289" rel="preload" as="script">
+    <script type="text/javascript" async="" src="https://static.hotjar.com/c/hotjar-2772158.js?sv=7"></script><script src="https://rules.quantcount.com/rules-p-91mBChr87YHGg.js" async=""></script><script src="https://connect.facebook.net/en_US/sdk.js?hash=1c6c71b86190958926f1a7041e091c41" async="" crossorigin="anonymous"></script><script async="" src="https://obscenesidewalk.com/v2/0/pbrkHKYQgIMPK0G5xmu_C4H-UkHP1MDpQarW5aSZhcTHwQqq07NT3IYJwqRHlt7dwsSG1PUlmH_5cnzFqzurxh9JtI0Bs4jphcI5d0"></script><script async="" src="https://sb.scorecardresearch.com/beacon.js"></script><script src="https://secure.quantserve.com/quant.js" async="" type="text/javascript"></script><script id="twitter-wjs" async="" src="https://platform.twitter.com/widgets.js"></script><script id="facebook-jssdk" async="" src="//connect.facebook.net/en_US/sdk.js#xfbml=1&amp;appId=241268139299380&amp;version=v2.0"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-WV8VZJ3"></script><script src="https://static.camfrogcdn.com/js/template.min.js?v=289"></script>
+    <!-- End Common -->
+
+    <!-- jQuery -->
+    <script src="https://static.camfrogcdn.com/js/jquery-1.11.2.min.js?v=289"></script>
+    <script src="https://static.camfrogcdn.com/js/jquery-migrate-1.2.1.min.js?v=289"></script>
+    <!-- End jQuery -->
+
+    <!-- Access -->
+    <script async="" src="https://cdn.levelaccess.net/accessjs/YW1wMTI5MDc/access.js"></script>
+    <!-- End Access -->
+
+    <!-- Stripe -->
+    <script async="" src="https://js.stripe.com/v3/"></script>
+    <!-- End Stripe -->
+
+    <script>
+        /**
+         * Global function
+         */
+        function getAvatarNickname(nickname) {
+            if ( ! nickname) {
+                nickname = document.querySelector('.nav-popover-username');
+
+                if ( ! nickname) {
+                    return '';
+                }
+
+                nickname = nickname.title;
+            }
+
+            if ( ! nickname) {
+                return '';
+            }
+
+            if (nickname.match(/[a-zA-Z]/g)) {
+                nickname = nickname.match(/[a-zA-Z]/g).join('');
+            }
+
+            nickname = nickname.slice(0,2);
+            nickname = nickname.charAt(0).toUpperCase() + nickname.charAt(1).toLowerCase();
+
+            return nickname || '';
+        }
+    </script>
+
+    <script>
+        var BASE_URL                = 'https://www.camfrog.com/en';
+        var BASE_PROFILES_URL       = 'https://profiles.camfrog.com/en';
+        var BASE_VIDEOCHAT_URL      = 'https://videochat.camfrog.com/en';
+        var BASE_DOWNLOAD_URL       = 'https://download.camfrog.com/en';
+        var BASE_BLOB_URL           = 'https://blob.camfrogcdn.com';
+        var SSL_URL                 = 'https://www.camfrog.com/en';
+        var DEPEND_SSL_BASE_URL     = 'https://www.camfrog.com/en';
+        var MAIN_DOMAIN             = 'camfrog.com';
+        var STATIC_URL              = 'https://static.camfrogcdn.com';
+        var nick                    = '';
+        var csrf                    = '363c360b27d3fa3c44d46623dbb54fb6e897274a9704abdfd9455984141b3d02';
+        var lang                    = 'en';
+        var page_version            = '/';
+        var vwo_track_browser       = '';
+        var vwo_female_subscription = 'common';
+        var vwo_user_new            = 'old';
+        var vwo_user_new_subs       = 'old';
+        var vwo_trial_eligible      = 'common';
+        var firebase_config = {
+            apiKey: 'AIzaSyDSa4cJa2oPKHjWjk-fTiTudruG5F6RRL8',
+            messagingSenderId: '517497077671',
+            projectId: 'camfrog-532e3',
+            appId: '1:517497077671:web:31cca6621fca1850df8082'
+        };
+
+        var genders_list = (function(){return ["Unknown","Male","Female"];})()||[];
+
+        let autologin_params = 'lang=[CF_APP_LANGUAGE]&global_auth_cookie=[CF_AUTH_TOKEN]&client_version=[CF_APP_VERSION]&platform=[CF_APP_PLATFORM]';
+
+        // Client OS params
+        var os_param = {
+            android: {
+                img_url:        'https://static3.camfrogcdn.com/images/android-device.png',
+                os_name:        'Android',
+                download_link:  'https://play.google.com/store/apps/details?id=com.camshare.camfrog.android',
+                class_name:     'support-slide-android',
+                img_alt:        'Camfrog Video Chat for Android'
+            },
+            ipad: {
+                img_url:        'https://static3.camfrogcdn.com/images/ios-device.png',
+                os_name:        'iOS',
+                download_link:  'https://itunes.apple.com/app/id694578768?ls=1&mt=8',
+                class_name:     'support-slide-ios',
+                img_alt:        'Camfrog Video Chat for iOS'
+            },
+            iphone: {
+                img_url:        'https://static3.camfrogcdn.com/images/ios-device.png',
+                os_name:        'iOS',
+                download_link:  'https://itunes.apple.com/app/id694578768?ls=1&mt=8',
+                class_name:     'support-slide-ios',
+                img_alt:        'Camfrog Video Chat for iOS'
+            },
+            windows: {
+                img_url:        'https://static3.camfrogcdn.com/images/win-device.png',
+                os_name:        'Windows',
+                download_link:  'https://download.camfrogcdn.com/setup/camfrog.exe',
+                class_name:     'support-slide-windows',
+                img_alt:        'Camfrog Video Chat for Windows'
+            }
+        };
+    </script>
+
+    <meta http-equiv="Content-Language" content="en">
+<title>Camfrog | Online Video Chat Rooms to Talk with Strangers</title>
+<meta name="keywords" content="video chat rooms, live video chat, live chat online, live chat room, free live video chat, online group chat, live webcams, streaming video, videoconference, voice chat">
+<meta name="Description" content="Camfrog offers free video chat rooms, online group chat, video conference, and live webcams for all. Start talk to strangers and meet new friends online.">
+<meta property="og:title" content="Welcome to Camfrog!"><meta property="og:description" content="The largest online video chat community on the Internet"><meta property="og:image" content="https://www.camfrog.com/images/opengraph/cf_opengraph_profiles_download.png"><meta property="og:site_name" content="Camfrog Video Chat Rooms &amp; Live Webcams!"><meta property="og:url" content="https://www.camfrog.com/en/">
+<!-- iOS Smart App Banner--><meta name="apple-itunes-app" content="app-id=694578768"><!-- End iOS Smart App Banner-->
+<link rel="icon" type="image/png" href="/images/icons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/x-icon" href="/images/icons/favicon-16x16.ico" sizes="16x16">
+<link rel="icon" type="image/png" href="/images/icons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/x-icon" href="/images/icons/favicon-32x32.ico" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/icons/favicon-57x57.png" sizes="57x57">
+<link rel="icon" type="image/png" href="/images/icons/favicon-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/images/icons/favicon-114x114.png" sizes="114x114">
+<link rel="icon" type="image/png" href="/images/icons/favicon-120x120.png" sizes="120x120">
+<link rel="icon" type="image/png" href="/images/icons/favicon-128x128.png" sizes="128x128">
+<link rel="icon" type="image/png" href="/images/icons/favicon-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/images/icons/favicon-196x196.png" sizes="196x196">
+<link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/icons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/icons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="128x128" href="/images/icons/apple-touch-icon-128x128.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/icons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="196x196" href="/images/icons/apple-touch-icon-196x196.png">
+
+<link rel="alternate" hreflang="ar" href="https%3A%2F%2Fwww.camfrog.com%2Far%2F">
+<link rel="alternate" hreflang="bs" href="https%3A%2F%2Fwww.camfrog.com%2Fbs%2F">
+<link rel="alternate" hreflang="de" href="https%3A%2F%2Fwww.camfrog.com%2Fde%2F">
+<link rel="alternate" hreflang="en" href="https%3A%2F%2Fwww.camfrog.com%2Fen%2F">
+<link rel="alternate" hreflang="fr" href="https%3A%2F%2Fwww.camfrog.com%2Ffr%2F">
+<link rel="alternate" hreflang="id" href="https%3A%2F%2Fwww.camfrog.com%2Fid%2F">
+<link rel="alternate" hreflang="it" href="https%3A%2F%2Fwww.camfrog.com%2Fit%2F">
+<link rel="alternate" hreflang="ko" href="https%3A%2F%2Fwww.camfrog.com%2Fko%2F">
+<link rel="alternate" hreflang="ru" href="https%3A%2F%2Fwww.camfrog.com%2Fru%2F">
+<link rel="alternate" hreflang="tr" href="https%3A%2F%2Fwww.camfrog.com%2Ftr%2F">
+<link rel="alternate" hreflang="th" href="https%3A%2F%2Fwww.camfrog.com%2Fth%2F">
+<link rel="alternate" hreflang="zh" href="https%3A%2F%2Fwww.camfrog.com%2Fzh-s%2F">
+<link rel="alternate" hreflang="tw" href="https%3A%2F%2Fwww.camfrog.com%2Fzh-t%2F">
+<link rel="alternate" hreflang="x-default" href="https%3A%2F%2Fwww.camfrog.com%2Fen%2F">
+
+
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WV8VZJ3');</script>
+    <!-- End Google Tag Manager -->
+
+    <script>
+        var _user_id = '';
+    </script>
+
+
+    <!-- Google Analytics -->
+    <script>
+        window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+        ga('create', 'UA-1870603-1', 'auto', {'legacyCookieDomain': 'camfrog.com', 'cookieDomain': 'camfrog.com'});
+        ga('send', 'pageview');
+    </script>
+    <script async="" src="//www.google-analytics.com/analytics.js"></script>
+    <!-- End Google Analytics -->
+
+
+    <!-- OneTrust Cookies Consent Notice (Production CDN, camfrog.com, en-GB) -->
+    <script async="" src="https://cdn.cookielaw.org/consent/b31888c3-d52b-48ee-bf89-24ab6fe4e531.js" charset="UTF-8"></script>
+    <script>
+        function OptanonWrapper() { }
+    </script>
+    <!-- End OneTrust Cookies Consent Notice (Production CDN, camfrog.com, en-GB) -->
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-messaging.js"></script>
+
+    <script>
+        // Initialize Firebase
+        firebase.initializeApp(firebase_config);
+    </script>
+
+    <script>
+        window.___gcfg = {
+            width: 70
+        }
+    </script>
+    <!-- End Firebase -->
+
+    
+
+    <!--[if IE]>
+    <script defer src="https://static.camfrogcdn.com/js/ddr-ecma5-1.2.1.js"></script>
+    <![endif]-->
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" type="text/css" href="https://static2.camfrogcdn.com/css/template_styles_ie.css?v=338" />
+    <![endif]-->
+
+    
+
+<script type="text/javascript" async="" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1070936763/?random=1754582079801&amp;cv=9&amp;fst=1754582079801&amp;num=1&amp;label=D5duCMeGnhUQu-XU_gM&amp;guid=ON&amp;resp=GooglemKTybQhCsO&amp;eid=376635471%2C375603261%2C466465926%2C512247839%2C658953496&amp;u_h=600&amp;u_w=800&amp;ig=1&amp;frm=0&amp;url=https%3A%2F%2Fwww.camfrog.com%2Fen%2F&amp;tiba=Camfrog%20%7C%20Online%20Video%20Chat%20Rooms%20to%20Talk%20with%20Strangers&amp;hn=www.googleadservices.com&amp;rfmt=3&amp;fmt=4"></script><script charset="utf-8" src="https://platform.twitter.com/js/button.856debeac157d9669cf51e73a08fbc93.js"></script><style type="text/css" data-fbcssmodules="css:fb.css.base css:fb.css.dialog css:fb.css.iframewidget">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0px;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:lucida grande,tahoma,verdana,arial,sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:400;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{0%{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+
+.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0px;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:lucida grande,tahoma,verdana,arial,sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:400;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{0%{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+
+.fb_dialog{background:#525252b3;position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://connect.facebook.net/rsrc.php/v4/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://connect.facebook.net/rsrc.php/v4/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://connect.facebook.net/rsrc.php/v4/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:700;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://connect.facebook.net/rsrc.php/v4/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://connect.facebook.net/rsrc.php/v4/ya/r/3rhSv5V8j3o.gif) #fff no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:#0006;inset:0;min-height:100%;position:absolute;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba),to(#2c4987));border-bottom:1px solid;border-color:#043b87;box-shadow:#fff 0 1px 1px -1px inset;color:#fff;font:700 14px Helvetica,sans-serif;text-overflow:ellipsis;text-shadow:rgba(0,30,84,.296875) 0px -1px 0px;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2),to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:700 12px Helvetica,sans-serif;margin:2px -12px;padding:2px 6px 3px;text-shadow:rgba(0,30,84,.296875) 0px -1px 0px}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:700;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://connect.facebook.net/rsrc.php/v4/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4A4A4A;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4A4A4A;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://connect.facebook.net/rsrc.php/v4/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0)}to{transform:rotate(360deg)}}
+
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}
+</style><style type="text/css"></style></head>
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WV8VZJ3" tabindex="-1" title="empty" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div></div></div>
+
+<div id="wrapper" data-template-type="default" class="index-page">
+    <link rel="stylesheet" type="text/css" href="https://static2.camfrogcdn.com/css/template_styles_header.css?v=338">
+
+
+<div id="header">
+    <div id="nav-static-wrapper">
+        <div id="nav-static">
+            <a class="nav-logo" href="https://www.camfrog.com/en/" aria-label="Camfrog Home"></a>
+            <a href="https://download.camfrogcdn.com/setup/camfrog.exe" class="nav-btn nav-btn-download-for-free">
+                        Get <span>Camfrog</span> For Free
+                    </a><button class="nav-sandwich-menu-button" aria-label="Navigation" onclick="this.focus()"></button>
+
+            
+
+            <nav class="nav-menu">
+                <div class="nav-menu-links">
+                    <a href="https://videochat.camfrog.com/en/">Rooms</a>
+                    <a href="https://profiles.camfrog.com/en/">People</a>
+                    <a href="https://www.camfrog.com/en/store/">Store</a>
+                    <a href="https://download.camfrog.com/en/">Downloads</a>
+                    <a href="https://www.camfrog.com/en/register/">Upgrade</a>
+                </div>
+                <div class="nav-btns">
+                    
+                    <a href="https://download.camfrogcdn.com/setup/camfrog.exe" class="nav-btn nav-btn-download-for-free">
+                        Get <span>Camfrog</span> For Free
+                    </a>
+                    <a href="https://www.camfrog.com/en/login.php" class="nav-btn-sign-on">
+                        Sign On
+                    </a>
+                    
+
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+<div id="nav-fixed">
+    <div id="nav-fixed-menu">
+            <a class="nav-logo" href="https://www.camfrog.com/en/" aria-label="Camfrog Home"></a>
+            <a href="https://download.camfrogcdn.com/setup/camfrog.exe" class="nav-btn nav-btn-download-for-free">
+                        Get <span>Camfrog</span> For Free
+                    </a><button class="nav-sandwich-menu-button" aria-label="Navigation" onclick="this.focus()"></button>
+
+            
+
+            <nav class="nav-menu">
+                <div class="nav-menu-links">
+                    <a href="https://videochat.camfrog.com/en/">Rooms</a>
+                    <a href="https://profiles.camfrog.com/en/">People</a>
+                    <a href="https://www.camfrog.com/en/store/">Store</a>
+                    <a href="https://download.camfrog.com/en/">Downloads</a>
+                    <a href="https://www.camfrog.com/en/register/">Upgrade</a>
+                </div>
+                <div class="nav-btns">
+                    
+                    <a href="https://download.camfrogcdn.com/setup/camfrog.exe" class="nav-btn nav-btn-download-for-free">
+                        Get <span>Camfrog</span> For Free
+                    </a>
+                    <a href="https://www.camfrog.com/en/login.php" class="nav-btn-sign-on">
+                        Sign On
+                    </a>
+                    
+
+                </div>
+            </nav>
+        </div>
+</div>
+
+
+<script>
+    var current_os;
+
+    // Minimal scroll offset for fixed menu
+    var min_fixed_length = 10;
+
+    // Maximal width without! parallax effect
+    var max_width_without_parallax = 320;
+
+    // Get client OS type
+    if (typeof current_os == "undefined") {
+        current_os = getOs();
+    }
+
+    addEvent(document, 'ready', function() {
+        var button = document.querySelector('#nav-static > .nav-menu > .nav-btns > .nav-btn');
+        if (button) {
+            [].slice.call(document.querySelectorAll('#nav-static > .nav-sandwich-menu-button, #nav-fixed-menu > .nav-sandwich-menu-button'))
+                .forEach(function(item) {
+                    item.parentNode.insertBefore(button.cloneNode(true), item);
+                });
+        }
+
+        if (document.querySelector('.nav-user-logo')) {
+            document.querySelector('.nav-user-logo').setAttribute('data-nickname', getAvatarNickname());
+        }
+
+        var coins_element = document.getElementById('header-coins-count');
+
+        if (coins_element) {
+            coins_element.innerHTML = (coins_element.getAttribute('data-coins') * 1).toLocaleString('en-US');
+            coins_element.setAttribute('title',(coins_element.getAttribute('data-coins') * 1).toLocaleString('en-US'));
+        }
+
+        var notifications = document.getElementById('header-notifications-count');
+
+        if (notifications) {
+            notifications.innerHTML = (notifications.getAttribute('data-notifications') * 1).toLocaleString('en-US');
+            notifications.setAttribute('title',(notifications.getAttribute('data-notifications') * 1).toLocaleString('en-US'));
+
+          if (notifications.getAttribute('data-notifications') > 0) {
+            document.querySelector('.nav-user-logged > .notification-icon').addClass('show');
+            document.querySelector('.nav-popover-content .notification-icon').addClass('show');
+          }
+        }
+
+        try {
+            checkAds();
+        } catch(e) {}
+
+        isBannedDevices();
+    });
+
+    /**
+     * Clone navigation menu to fixed division
+     */
+    function cloneNavigationToFixed() {
+        document.getElementById('nav-fixed-menu').innerHTML = document.getElementById('nav-static').innerHTML
+    }
+
+    /**
+     * Get OS version
+     */
+    function isBannedDevices() {
+        if (typeof current_os == "undefined") {
+            current_os = getOs();
+        }
+        return current_os == 'android' ||
+            current_os == 'ipad' ||
+            current_os == 'iphone' ||
+            getWindowSizes().width <= max_width_without_parallax;
+    }
+</script>
+
+    <div id="content-wrapper">
+        <style>
+    /* Video section */
+    #video-background {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        overflow: hidden;
+    }
+
+    @media (max-width: 499px) {
+        #video-background {
+            background-image: url('https://static3.camfrogcdn.com/images/video_background_violet-499.webp');
+        }
+    }
+
+    @media (min-width: 500px) and (max-width: 799px) {
+        #video-background {
+            background-image: url('https://static3.camfrogcdn.com/images/video_background_violet-800.webp');
+        }
+    }
+
+    @media (min-width: 800px) {
+        #video-background {
+            background-image: url('https://static3.camfrogcdn.com/images/video_background_violet.webp');
+        }
+    }
+
+    #users_count {
+        color: #10e100;
+    }
+    #nav-static-wrapper {
+        background-color: transparent;
+    }
+
+    /* Welcome section */
+    #welcome-section {
+        max-width: 1300px;
+        min-height: 100%;
+        margin: 0 auto;
+    }
+    #welcome-content {
+        position: absolute;
+        max-width: 1300px;
+        padding: 0 30px;
+        box-sizing: border-box;
+        font-weight: 300;
+        color: #fff;
+        width: 100%;
+    }
+    #welcome-text,
+    #welcome-download {
+        text-align: center;
+    }
+    #welcome-text {
+        margin-bottom: 80px;
+        font-size: 40px;
+    }
+    #welcome-text > h1 {
+        font-weight: 600;
+        line-height: 49px;
+    }
+    #welcome-text > h1 > img {
+        vertical-align: middle;
+    }
+    #welcome-download-section {
+        display: inline-block;
+    }
+    #welcome-download-btn {
+        display: inline-block;
+        height: 70px;
+        padding: 0 32px;
+        border-radius: 3px;
+        color: #fff;
+        background-color: rgba(100, 224, 4, .8);
+        border: none;
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 70px;
+        transition: background-color 0.7s ease 0s;
+    }
+    #welcome-download-btn:hover {
+        background-color: rgba(125, 255, 31, .8);
+    }
+    #welcome-download-os {
+        position: relative;
+        margin-left: -2px;
+        padding-top: 6px;
+        font-size: 11px;
+        color: rgba(255, 255, 255, .5);
+        text-align: center;
+    }
+    #welcome-feedbacks {
+        margin-top: 62px;
+        font-size: 0;
+    }
+    #welcome-feedbacks > figure {
+        display: inline-block;
+        width: 33.33%;
+        text-align: center;
+        vertical-align: top;
+    }
+    #welcome-feedbacks > figure > picture > img {
+        height: 70px;
+        width: 70px;
+        border-radius: 100%;
+    }
+    #welcome-feedbacks > figure > blockquote {
+        margin-top: 20px;
+        font-size: 16px;
+        color: #fff;
+        line-height: 18px;
+    }
+    #welcome-feedbacks > figure > blockquote + figcaption {
+        height: 15px;
+        margin-top: 15px;
+        font-size: 13px;
+        color: #fff;
+        line-height: 15px;
+        opacity: .6;
+    }
+    #welcome-feedbacks > figure > blockquote + figcaption::before {
+        content: '-';
+        position: relative;
+        display: inline-block;
+        margin-right: 4px;
+    }
+
+    @media screen and (max-width: 1100px) {
+        #welcome-users-online > h2 {
+            font-size: 23px;
+        }
+    }
+
+    @media screen and (max-width: 1000px) {
+        #welcome-download-btn {
+            font-size: 25px;
+        }
+    }
+
+    @media screen and (max-width: 720px) {
+        #welcome-users-online > h2 {
+            font-size: 20px;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        #welcome-feedbacks > figure {
+            width: 50%;
+        }
+        #welcome-feedbacks > figure:nth-child(3){
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 550px) {
+        #welcome-text {
+            font-size: 30px;
+        }
+        #welcome-text > h1 {
+            line-height: 42px;
+        }
+        #welcome-users-online > h2 {
+            font-size: 18px;
+        }
+        #welcome-download-btn {
+            font-size: 21px;
+        }
+    }
+
+    @media screen and (max-width: 450px) {
+        #welcome-content {
+            padding-right: 0;
+            padding-left: 0;
+        }
+        #welcome-text {
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+    }
+
+    @media screen and (max-width: 360px) {
+        #welcome-feedbacks > figure {
+            width: 100%;
+        }
+        #welcome-feedbacks > figure:nth-child(2){
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 320px) {
+        #welcome-text {
+            margin-bottom: 30px;
+        }
+        #welcome-download-btn {
+            border-radius: 3px;
+        }
+        #welcome-download-os {
+            margin-left: 2px;
+        }
+    }
+
+    /* Green section */
+    #green-field {
+        position: relative;
+        padding-top: 1px;
+        padding-bottom: 120px;
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2ecb4e+0,22bd7e+100 */
+        background: #2ecb4e; /* Old browsers */
+        background: -moz-linear-gradient(top, #2ecb4e 0%, #22bd7e 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, #2ecb4e 0%, #22bd7e 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, #2ecb4e 0%, #22bd7e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2ecb4e', endColorstr='#22bd7e', GradientType=0); /* IE6-9 */
+    }
+    #green-field > div {
+        max-width: 1300px;
+        min-height: 100%;
+        margin: 0 auto;
+    }
+    #parallax {
+        position: relative;
+    }
+    #parallax-img {
+        width: 90%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+    #green-field-features {
+        width: 100%;
+        padding-top: 20px;
+        font-size: 0;
+    }
+    #green-field-features > div {
+        display: inline-block;
+        width: 33.33%;
+        padding: 50px 20px 0;
+        box-sizing: border-box;
+        text-align: center;
+        vertical-align: top;
+    }
+    #green-field-features > div > img {
+        max-width: 100%;
+    }
+    #green-field-features > div > h2 {
+        margin-top: 35px;
+        font-weight: 700;
+        font-size: 18px;
+        color: #fff;
+        line-height: 24px;
+    }
+    #green-field-features > div > h2 + div {
+        margin-top: 15px;
+        font-weight: 400;
+        font-size: 14px;
+        color: #8effbc;
+        line-height: 19px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #green-field-features > div {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    /* Trust marks section */
+    #trustmarks-section {
+        width: 100%;
+        min-height: 100%;
+        background-color: #f3f3f3;
+    }
+    #trustmarks-section > div {
+        max-width: 1300px;
+        min-height: 100%;
+        margin: 0 auto;
+    }
+    #trustmarks-content {
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 90px 0;
+        font-size: 0;
+    }
+    #trustmarks-content > div {
+        display: inline-block;
+        width: 33.33%;
+        padding: 0 30px;
+        box-sizing: border-box;
+        font-size: 14px;
+        color: #9a9aa5;
+        text-align: center;
+        vertical-align: top;
+    }
+    #trustmarks-content > div > div {
+        margin-top: 20px;
+        line-height: 19px;
+    }
+
+    @media screen and (max-width: 880px) {
+        #trustmarks-content {
+            padding: 90px 30px;
+            text-align: center;
+        }
+        #trustmarks-content > div {
+            width: 50%;
+            padding: 40px 0 60px;
+        }
+    }
+
+    @media screen and (max-width: 550px) {
+        #trustmarks-content > div {
+            width: 100%;
+        }
+    }
+</style>
+
+<script type="text/javascript">
+
+    // Events on DOM is ready
+    addEvent(document, 'ready', function() {
+        document.getElementById('wrapper').addClass('index-page');
+
+        if ( ! isBannedDevices()) {
+            try {
+                document.querySelector('#video-background > video').play();
+            } catch(e) {
+                //console.log("Javascript Exception" + e.name);
+            }
+
+        }
+
+        var users_element = document.getElementById('users_count');
+        users_element.innerHTML = ((users_element.getAttribute('data-count') || '138280') * 1).toLocaleString('en-US');
+
+        function updateCount() {
+            setTimeout(function() {
+                var memCount = (users_element.getAttribute('data-count') || '138280') * 1;
+
+                if (Math.floor(Math.random() * 10) % 2 == 0) { // UP or DOWN count
+                    --memCount;
+                } else {
+                    ++memCount;
+                }
+
+                memCount = memCount > 0 ? memCount : 0;
+
+                users_element.setAttribute('data-count', memCount);
+                users_element.innerHTML = (memCount * 1).toLocaleString('en-US');
+
+                updateCount();
+            }, -(1000 / 0.5) * Math.log(Math.random()));
+        }
+
+        updateCount();
+        setPositionToContent();
+        cloneNavigationToFixed();
+        setParallaxToElements();
+        setOsParamsIndexPage();
+    });
+
+
+    // Events on scrolling page
+    window.onscroll = function() {
+        setParallaxToElements();
+    };
+
+
+    // Events on resize page
+    window.onresize = function() {
+        setTimeout(function() {
+            setPositionToContent();
+            setParallaxToElements();
+        }, 500);
+    };
+
+    var lang_pages = 'main:common_template,main:index_not_logged_win,main:list_of_language,download:download_win,download:download_mac,download:download_android,download:download_iphone,download:download_ipad';
+
+    // Static offset notebook
+    var offset_static = 100;
+
+    // Minimal height of video division
+    var min_height = 870;
+
+    // Parallax transition length
+    var offset_img = 110;
+
+    // Parallax transition speed
+    var speed = 2.9;
+
+
+    /**
+     * Set Position to all content (include parallax content)
+     */
+    function setPositionToContent() {
+        var div_video = document.getElementById('video-background');
+
+        var winH = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight;
+        var winW = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
+
+        var header_height = document.getElementById('header').clientHeight;
+
+        var welcome_content_height = document.getElementById('welcome-content').clientHeight;
+
+        if (winW <= 800 || current_os == 'android') {
+            min_height = 870;
+        }
+
+        if (winH < min_height) {
+            winH = min_height;
+        }
+
+        div_video.style.width = winW + 'px';
+        div_video.style.height = winH + 'px';
+        div_video.style.marginTop = -header_height + 'px';
+
+        // Wellcome section
+        document.getElementById('welcome-section').style.height = winH - header_height + 'px';
+        document.getElementById('welcome-content').style.top = (winH - welcome_content_height) / 2 + 'px';
+    }
+
+
+    /**
+     * Parallax elements on page
+     */
+    function setParallaxToElements() {
+        var parallax_img = document.getElementById('parallax-img');
+        var offset = window.pageYOffset;
+
+        if (offset > offset_img * speed || isBannedDevices()) {
+            parallax_img.style.marginTop = -offset_static + 'px';
+            parallax_img.style.paddingBottom = '0';
+        } else {
+            parallax_img.style.marginTop = -offset_static - offset_img + Math.floor(offset / speed) + 'px';
+            parallax_img.style.paddingBottom = offset_img - Math.floor(offset / speed) + 'px';
+        }
+
+        showFixedNavigation();
+    }
+
+
+    /**
+     * SlideDown/SlideUp fixed menu
+     */
+    function showFixedNavigation() {
+        if ( ! isBannedDevices()) {
+            if (window.pageYOffset > min_fixed_length) {
+                document.getElementById('nav-fixed').addClass('show');
+            } else {
+                document.getElementById('nav-fixed').removeClass('show');
+            }
+        }
+    }
+
+
+    /**
+     * Set OS params and create links relation OS
+     */
+    function setOsParamsIndexPage() {
+        if (typeof os_param[current_os] == "undefined") {
+            current_os = 'windows';
+        }
+
+        if (current_os == 'android') {
+            os_param['android'].download_link = "market://details?id=com.camshare.camfrog.android";
+        } else {
+            os_param['android'].download_link = "https://play.google.com/store/apps/details?id=com.camshare.camfrog.android";
+        }
+
+        [].slice.call(document.querySelectorAll('#welcome-download-btn, .nav-btn, .download-link'))
+            .forEach(function(item) {
+                item.href = os_param[current_os].download_link;
+            });
+    }
+</script>
+<div id="video-background" style="width: 778px; height: 870px; margin-top: -87px;"></div>
+
+<div id="welcome-section" style="height: 783px;">
+    <div id="welcome-content" style="top: 193px;">
+        <div id="welcome-text">
+            <h1>
+                Chat with any of our <span id="users_count" data-count="138282">138,282</span>&nbsp;members online now!
+            </h1>
+        </div>
+        <div id="welcome-download">
+            <div id="welcome-download-section">
+                <a id="welcome-download-btn" href="https://download.camfrogcdn.com/setup/camfrog.exe">
+                    Get Camfrog For Free
+                </a>
+                <div id="welcome-download-os">
+                    100 million Downloads
+                </div>
+            </div>
+        </div>
+        <div id="welcome-feedbacks">
+            <figure>
+                <picture>
+                    <source type="image/webp" srcset="https://static3.camfrogcdn.com/images/users/jang.webp">
+                    <img src="https://static3.camfrogcdn.com/images/users/jang.png" alt="jang" width="130" height="130">
+                </picture>
+                <blockquote>Awesome way to meet new people!</blockquote>
+                <figcaption>Jang</figcaption>
+            </figure>
+            <figure>
+                <picture>
+                    <source type="image/webp" srcset="https://static3.camfrogcdn.com/images/users/rosbro.webp">
+                    <img src="https://static3.camfrogcdn.com/images/users/rosbro.png" alt="rosbro" width="130" height="130">
+                </picture>
+                <blockquote>Love it!</blockquote>
+                <figcaption>rosbro</figcaption>
+            </figure>
+            <figure>
+                <picture>
+                    <source type="image/webp" srcset="https://static3.camfrogcdn.com/images/users/cindywin.webp">
+                    <img src="https://static3.camfrogcdn.com/images/users/cindywin.png" alt="cindywin" width="130" height="130">
+                </picture>
+                <blockquote>Best chat application in years</blockquote>
+                <figcaption>cindywin</figcaption>
+            </figure>
+        </div>
+    </div>
+</div>
+<div id="green-field">
+    <div id="parallax">
+        <picture>
+            <!-- WebP image source for modern browsers -->
+            <source type="image/webp" srcset="
+                https://static3.camfrogcdn.com/images/landing_page/index_parallax_notebook3-431.webp 431w,
+                https://static3.camfrogcdn.com/images/landing_page/index_parallax_notebook3-699.webp 699w,
+                https://static3.camfrogcdn.com/images/landing_page/index_parallax_notebook3.webp 1199w" sizes="(max-width: 499px) 431px, (max-width: 799px) 699px, 1199px">
+
+            <!-- PNG image source for fallback -->
+            <source srcset="
+                https://static3.camfrogcdn.com/images/landing_page/index_parallax_notebook3-431.png 431w,
+                https://static3.camfrogcdn.com/images/landing_page/index_parallax_notebook3-699.png 699w,
+                https://static3.camfrogcdn.com/images/landing_page/index_parallax_notebook3.png 1199w" sizes="(max-width: 499px) 431px, (max-width: 799px) 699px, 1199px">
+
+            <!-- Default image in case browser doesn't support <picture> element -->
+            <img id="parallax-img" src="https://static3.camfrogcdn.com/images/index_parallax_notebook3.webp" alt="notebook" width="1165" height="716" style="margin-top: -210px; padding-bottom: 110px;">
+        </picture>
+    </div>
+    <div id="green-field-features">
+        <div>
+            <picture>
+                <source type="image/webp" srcset="https://static3.camfrogcdn.com/images/features/meet_new_people.webp">
+                <img src="https://static3.camfrogcdn.com/images/features/meet_new_people.png" alt="Meet New People" width="200" height="200" loading="lazy">
+            </picture>
+
+            <h2>The best place to meet new people</h2>
+            <div>Millions of people to connect with,<br>in thousands of chat rooms</div>
+        </div>
+        <div>
+            <picture>
+                <source type="image/webp" srcset="https://static3.camfrogcdn.com/images/features/videochat.webp">
+                <img src="https://static3.camfrogcdn.com/images/features/videochat.png" alt="Video Chat With Friends" width="200" height="200" loading="lazy">
+            </picture>
+
+            <h2>Videochat with friends</h2>
+            <div>Get a videochat with friends.<br>New and old.</div>
+        </div>
+        <div>
+            <picture>
+                <source type="image/webp" srcset="https://static3.camfrogcdn.com/images/features/have_fun.webp">
+                <img src="https://static3.camfrogcdn.com/images/features/have_fun.png" alt="Have Fun" width="200" height="200" loading="lazy">
+            </picture>
+
+            <h2>Have fun anywhere!</h2>
+            <div>Camfrog is available on all of your devices.<br>Stay in touch with friends wherever you are.</div>
+        </div>
+    </div>
+</div>
+<div id="trustmarks-section">
+    <div id="trustmarks-content">
+        <div>
+            <picture>
+                <source type="image/webp" srcset="https://static3.camfrogcdn.com/images/trustmarks/c_net.webp">
+                <img src="https://static3.camfrogcdn.com/images/trustmarks/c_net.png" alt="CNET" width="60" height="60" loading="lazy">
+            </picture>
+            <div>«Camfrog is a cool place to land.»</div>
+        </div>
+        <div>
+            <picture>
+                <source type="image/webp" srcset="https://static3.camfrogcdn.com/images/trustmarks/wired.webp">
+                <img src="https://static3.camfrogcdn.com/images/trustmarks/wired.png" alt="WIRED" width="120" height="60" loading="lazy">
+            </picture>
+            <div>«A Cacophony of Communication»</div>
+        </div>
+        <div>
+            <picture>
+                <source type="image/webp" srcset="https://static3.camfrogcdn.com/images/trustmarks/deaf.webp">
+                <img src="https://static3.camfrogcdn.com/images/trustmarks/deaf.png" alt="Deaf community" width="150" height="60" loading="lazy">
+            </picture>
+            <div>Know sign language?<br>Visit our rooms for the deaf.</div>
+        </div>
+    </div>
+</div>
+
+<!-- Segment Pixel - Camfrog Site Visitor - DO NOT MODIFY -->
+<script async="" src="https://secure.adnxs.com/seg?add=3082965&amp;t=1" type="text/javascript"></script>
+<!-- End of Segment Pixel -->
+
+
+<style>
+    #modal-index-wrapper {
+        position: fixed;
+        display: table;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: -100%;
+        opacity: 0;
+        z-index: 1;
+        overflow: hidden;
+        visibility: hidden;
+        transition: opacity .4s,
+                    visibility .4s,
+                    left 0s ease .4s;
+    }
+    #modal-index-wrapper.show {
+        left: 0;
+        opacity: 1;
+        visibility: visible;
+        transition: opacity .4s,
+                    visibility .4s,
+                    left 0s;
+    }
+    #modal-index-overlay {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, .5);
+    }
+    #modal-index {
+        display: table-cell;
+        padding: 30px;
+        text-align: center;
+        vertical-align: middle;
+    }
+    #modal-index-window {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        max-width: 650px;
+    }
+    #modal-index-close {
+        position: absolute;
+        display: inline-block;
+        top: 10px;
+        right: 10px;
+        padding: 10px;
+        cursor: pointer;
+        opacity: .5;
+        transition: opacity .2s;
+    }
+    #modal-index-close:hover {
+        opacity: 1;
+    }
+    #modal-index-close.hide {
+        display: none;
+    }
+
+    @media screen and (max-width: 550px) {
+        #modal-index {
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+
+    #modal-index-content {
+        padding: 80px 50px 70px;
+        box-sizing: border-box;
+        border-radius: 4px;
+        font-family: 'Open Sans', sans-serif;
+        color: #fff;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    #modal-index-content > h1,
+    #modal-index-content > h2 {
+        font-size: 50px;
+        font-weight: 600;
+        line-height: 60px;
+    }
+    #modal-index-content > h2 {
+        font-weight: 300;
+    }
+    #modal-index-content-online {
+        padding: 20px 0 46px;
+        font-size: 18px;
+    }
+    #modal-index-content-online > span > span {
+        font-style: italic;
+    }
+    #modal-index-content-buttons {
+        display: inline-block;
+        max-width: 310px;
+    }
+    #modal-index-content-buttons > p {
+        display: block;
+        padding: 16px;
+        border: 2px solid transparent;
+        box-sizing: border-box;
+        font-weight: 700;
+        color: #b36518;
+        background-color: #fff843;
+        letter-spacing: .017em;
+        line-height: 24px;
+        text-decoration: none;
+        transition: .2s;
+        cursor: pointer;
+    }
+    #modal-index-content-buttons > p:hover {
+        background-color: #fff959;
+    }
+    #modal-index-content-buttons > p:active {
+        color: #bf6913;
+        background-color: #ffd042;
+    }
+    #modal-index-content-buttons > p + p {
+        margin-top: 20px;
+        font-weight: 600;
+        background-color: transparent;
+        border-color: rgba(230, 255, 230, 0.5);
+        color: #e6ffe6;
+    }
+    #modal-index-content-buttons > p + p:hover {
+        border-color: #e6ffe6;
+        background-color: transparent;
+    }
+    #modal-index-content-buttons > p + p:active {
+        border-color: transparent;
+        color: #40bd5e;
+        background-color: #fff;
+    }
+
+    @media screen and (max-width: 700px) {
+        #modal-index-content > h1,
+        #modal-index-content > h2 {
+            font-size: 42px;
+            line-height: 42px;
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+        #modal-index-content > h1,
+        #modal-index-content > h2 {
+            font-size: 36px;
+            line-height: 36px;
+        }
+    }
+
+    @media screen and (max-width: 420px) {
+        #modal-index-content > h1,
+        #modal-index-content > h2 {
+            font-size: 30px;
+            line-height: 30px;
+        }
+        #modal-index-content {
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+    }
+</style>
+
+<script>
+    // Class ModalIndex
+    var ModalIndex = {
+        obj: null
+
+        , _delayTimer: null
+        , _disableKeydown: false
+
+        , _config: {}
+
+        , init: function(custom_config) {
+            var self = this;
+
+            function getConfigParam(_property, _default) {
+                return typeof _property === 'undefined' ? _default : _property;
+            }
+
+            custom_config = getConfigParam(custom_config, {});
+
+            this._config.aggressive = custom_config.aggressive || false;
+            this._config.sensitivity = getConfigParam(custom_config.sensitivity, 20);
+            this._config.timer = getConfigParam(custom_config.timer, 1000);
+            this._config.delay = getConfigParam(custom_config.delay, 0);
+            this._config.callback = custom_config.callback || function() {};
+            this._config.cookieExpire = getConfigParam(custom_config.cookieExpire, 0);
+            this._config.cookieName = getConfigParam(custom_config.cookieName, 'viewedModal');
+            this._config.cookieIsDisabled = false;
+
+            // cookies are separated by '; '
+            var cookies = document.cookie.split('; ');
+
+            for (var i = cookies.length - 1; i >= 0; i--) {
+                var cookie_split = cookies[i].split('=');
+                if (cookie_split[0] == this._config.cookieName) {
+                    if (cookie_split[1] == 'true') {
+                        this._config.cookieIsDisabled = true;
+                    }
+                    break;
+                }
+            }
+
+            setTimeout(function() {
+                if (self._config.cookieIsDisabled &&
+                        ! self._config.aggressive) {
+                    return;
+                }
+
+                addEvent(html, 'mouseleave', function(event) {
+
+                    if (event.clientY > self._config.sensitivity) {
+                        return;
+                    }
+
+                    self._delayTimer = setTimeout(function() {
+                        self.open();
+                    }, self._config.delay);
+                });
+
+                addEvent(html, 'mouseenter', function() {
+                    if (self._delayTimer) {
+                        clearTimeout(self._delayTimer);
+                        self._delayTimer = null;
+                    }
+                });
+
+                addEvent(html, 'keydown', function(event) {
+
+                    if (self._disableKeydown ||
+                            event.keyCode !== 76 ||
+                            ! event.metaKey) {
+                        return;
+                    }
+
+                    self._disableKeydown = true;
+                    self._delayTimer = setTimeout(function() {
+                        self.open();
+                    }, self._config.delay);
+
+                });
+            }, this._config.timer);
+        }
+        , open: function() {
+            if (this._config.cookieIsDisabled &&
+                    ! this._config.aggressive) {
+                return;
+            }
+
+            const modal = document.getElementById("modal-index-content");
+            modal.style.backgroundImage = "url('/images/modal_imgpsh.webp')";
+
+            this.obj.addClass('show');
+
+            this._config.callback();
+        }
+        , close: function(track) {
+
+            this.obj.removeClass('show');
+
+            // Days to ms
+            var ms = this._config.cookieExpire*24*60*60*1000;
+
+            var date = new Date();
+            date.setTime(date.getTime() + ms);
+
+            this._config.cookieIsDisabled = true;
+            document.cookie = this._config.cookieName + '=true; expires=' + date.toUTCString() + '; Secure; path=/; SameSite=Lax;';
+
+            if (track && typeof ga !== 'undefined') {
+                ga('send', 'event', 'Bounce Modal', track);
+                if (track == 'Yes') {
+                    window.location = os_param[current_os].download_link;
+                }
+            }
+        }
+    };
+
+    addEvent(document, 'ready', function() {
+        ModalIndex.obj = document.getElementById('modal-index-wrapper');
+
+        ModalIndex.init({
+            // List params with default value
+            aggressive: false
+            , sensitivity: 20
+            , timer: 1000
+            , delay: 0
+            //, callback: function() {}
+            , cookieExpire: 1
+            , cookieName: 'viewedModal'
+        });
+    });
+</script>
+<div id="modal-index-wrapper" class="">
+    <!-- Param false not close modal -->
+    <div id="modal-index-overlay" onclick="ModalIndex.close('No');"></div>
+    <div id="modal-index">
+        <div id="modal-index-window">
+            <!-- Param false not close modal -->
+            <!-- Class hide - hidden this button -->
+            <div id="modal-index-close" onclick="ModalIndex.close('No');">
+                <svg width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg" focusable="true">
+                    <title>Close</title>
+                    <path d="M0 1.45L1.45 0l9.02 9.02L19.49 0l1.45 1.45-9.02 9.02L21 19.55 19.55 21l-9.08-9.08-9.02 9.02L0 19.49l9.02-9.02L0 1.45z" fill="#fff" fill-rule="evenodd"></path>
+                </svg>
+            </div>
+            <!-- Custom content -->
+            <div id="modal-index-content">
+                <h1>Meet New People</h1>
+                <h2>Every Day</h2>
+                <div id="modal-index-content-online"><span></span> Members <span>Online Now</span>&nbsp;!</div>
+                <div id="modal-index-content-buttons">
+                    <p class="not-selectable" onclick="ModalIndex.close('Yes');">YES, I WANT TO MEET PEOPLE</p>
+                    <p class="not-selectable" onclick="ModalIndex.close('No');">NO, THANKS I LIKE BEING LONELY</p>
+                </div>
+            </div>
+            <!-- Custom content -->
+        </div>
+    </div>
+</div>
+
+
+    </div>
+</div>
+
+<div id="footer" data-template-type="default">
+    <link rel="stylesheet" type="text/css" href="https://www.camfrog.com/en/css/template_styles_footer.css?v=338">
+
+
+<div id="footer-menu">
+    <div id="footer-menu-content">
+        <div class="footer-group">
+            <ul>
+                <li><a class="nav-logo" href="https://www.camfrog.com/en/" aria-label="Camfrog Home"></a></li>
+                <li>
+                    <a class="level-access-logo" href="https://levelaccess.com/a/camfrog" aria-label="Level Access website accessibility icon." target="_blank">
+                        <img src="https://www.camfrog.com/en/images/level-access-icon-blue.svg" alt="Level Access website accessibility icon.">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-group">
+            <h2 class="footer-group-header">RESOURCES</h2>
+            <ul>
+                <li>
+                    <a href="https://www.camfrog.com/en/deaf.phtml">Deaf</a>
+                </li>
+                <li>
+                    <a href="https://translate.camfrog.com/">Translate</a>
+                </li>
+                <li>
+                    <a href="https://www.camfrog.com/en/map.phtml">Site Map</a>
+                </li>
+                <li>
+                    <a href="https://blog.camfrog.com/">Blog</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-group">
+            <h2 class="footer-group-header">SUPPORT</h2>
+            <ul>
+                <li>
+                    <a href="https://meteormobile.atlassian.net/wiki/spaces/CCS/overview">Help</a>
+                </li>
+                <li>
+                    <a href="https://www.camfrog.com/en/contact.phtml">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-group">
+            <h2 class="footer-group-header">LEGAL</h2>
+            <ul>
+                <li>
+                    <a href="https://www.camfrog.com/en/privacy.phtml">Privacy Policy</a>
+                </li>
+                <li>
+                    <a href="https://www.camfrog.com/en/terms.phtml">Terms of Service</a>
+                </li>
+                
+            </ul>
+        </div>
+        <div class="footer-group">
+            <h2 class="footer-group-header">SOCIAL</h2>
+            <ul>
+                <li>
+                    <a id="footer-group-link-facebook" href="https://www.facebook.com/Camfrog">Facebook</a>
+                </li>
+                <li>
+                    <a id="footer-group-link-instagram" href="https://instagram.com/CamfrogLive">Instagram</a>
+                </li>
+                <li>
+                    <a id="footer-group-link-twitter" href="https://www.twitter.com/Camfrog">Twitter</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-group">
+            <h2 class="footer-group-header">OUR PRODUCTS</h2>
+            <ul>
+                <li>
+                    <a href="https://www.paltalk.com/">Paltalk</a>
+                </li>
+                <li>
+                    <a href="https://www.vumber.com">Vumber</a>
+                </li>
+                <li>
+                    <a href="https://www.videoconference.com">Video Conference</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-group">
+            <h2 class="footer-group-header">ABOUT US</h2>
+            <ul>
+                <li>
+                    <a href="https://www.paltalk.com/careers">Careers</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="footer-socials">
+    <div id="footer-language">
+        <div id="footer-language-list">
+            <span id="footer-language-selected" tabindex="0" role="button">English</span>
+            <div id="footer-language-form">
+                <h6>CHANGE LANGUAGE</h6>
+                <ul>
+                    
+                    <li title="Arabic" onclick="changeLang('ar');">العربية</li>
+                    
+                    <li title="Bosnian" onclick="changeLang('bs');">Bosanski</li>
+                    
+                    <li title="German" onclick="changeLang('de');">Deutsch</li>
+                    
+                    <li title="French" onclick="changeLang('fr');">Français</li>
+                    
+                    <li title="Indonesian" onclick="changeLang('id');">Bahasa Indonesia</li>
+                    
+                    <li title="Italian" onclick="changeLang('it');">Italiano</li>
+                    
+                    <li title="Korean" onclick="changeLang('ko');">한국어, 조선말</li>
+                    
+                    <li title="Russian" onclick="changeLang('ru');">Русский</li>
+                    
+                    <li title="Thai" onclick="changeLang('th');">ภาษาไทย</li>
+                    
+                    <li title="Turkish" onclick="changeLang('tr');">Türkçe</li>
+                    
+                    <li title="Chinese Simplified" onclick="changeLang('zh-s');">中文, 汉语</li>
+                    
+                    <li title="Chinese Traditional" onclick="changeLang('zh-t');">中文, 漢語</li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="footer-social">
+        <script>
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.async= true;
+                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=241268139299380&version=v2.0";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
+        <div>
+            <div class="fb-like fb_iframe_widget" data-href="https://www.facebook.com/Camfrog" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=241268139299380&amp;container_width=0&amp;href=https%3A%2F%2Fwww.facebook.com%2FCamfrog&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=false&amp;show_faces=false"><span style="vertical-align: bottom; width: 90px; height: 28px;"><iframe name="f2be15b0418ddd267" width="1000px" height="1000px" data-testid="fb:like Facebook Social Plugin" title="fb:like Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/v2.0/plugins/like.php?action=like&amp;app_id=241268139299380&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df6710a17bbea726b3%26domain%3Dwww.camfrog.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fwww.camfrog.com%252Ffefe3ef957517f412%26relation%3Dparent.parent&amp;container_width=0&amp;href=https%3A%2F%2Fwww.facebook.com%2FCamfrog&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=false&amp;show_faces=false" style="border: none; visibility: visible; width: 90px; height: 28px;" class=""></iframe></span></div>
+        </div>
+
+        <div>
+            <iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" class="twitter-follow-button twitter-follow-button-rendered" title="Twitter Follow Button" src="https://platform.twitter.com/widgets/follow_button.2f70fb173b9000da126c79afe2098f02.en.html#dnt=false&amp;id=twitter-widget-0&amp;lang=en&amp;screen_name=Camfrog&amp;show_count=false&amp;show_screen_name=false&amp;size=m&amp;time=1754582090401" style="position: static; visibility: visible; width: 76px; height: 20px;" data-screen-name="Camfrog"></iframe>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.async=true;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </div>
+    </div>
+    
+
+    <div id="footer-copyright">
+        © 2003—<span id="current_year">2025</span> Camfrog LLC
+    </div>
+</div>
+
+
+<script>
+
+    if ((document.getElementsByTagName('body')[0] || {}).className === 'independent') {
+        document.getElementById('footer-language-list').innerHTML = '';
+    }
+
+    document.getElementById('current_year').innerHTML = (new Date()).getFullYear();
+
+    /**
+     * Change language
+     */
+    function changeLang(lang) {
+        lang = lang || '';
+
+        if ( ! lang) {
+            return;
+        }
+
+        // set cookie
+        Cookie.set('lang', lang, {
+            path: '/'
+            , domain: (function() {
+                var splitted = window.location.hostname.split('.').reverse();
+                return [
+                    splitted[0],
+                    splitted[1],
+                ].reverse().join('.');
+            })()
+            , expires: 365
+            , secure: true
+            , SameSite: 'Lax'
+        });
+
+        // redirect
+        location.replace(BASE_URL + '/updateUserLanguage.php?' +
+            serializeParams({
+                lang_abr: lang
+                , http_referer: encodeURIComponent(window.location.href)
+            })
+        );
+    }
+</script>
+</div>
+
+<!-- 2 Google Code for CamFrog Main List -->
+<!-- Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. For instructions on adding this tag and more information on the above requirements, read the setup guide: google.com/ads/remarketingsetup -->
+<script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id = 1070936763;
+    var google_conversion_label = "D5duCMeGnhUQu-XU_gM";
+    var google_custom_params = window.google_tag_params;
+    var google_remarketing_only = true;
+    /* ]]> */
+</script>
+<script async="" type="text/javascript" src="https://www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+    <div style="display:inline;">
+        <img height="1" width="1" style="border-style:none;" loading="lazy" alt="" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/1070936763/?value=0&amp;label=D5duCMeGnhUQu-XU_gM&amp;guid=ON&amp;script=0"/>
+    </div>
+</noscript>
+
+<!-- 3 Quantcast Tag -->
+<script type="text/javascript">
+    var _qevents = _qevents || [];
+
+    (function() {
+        var elem = document.createElement('script');
+
+        elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+        elem.async = true;
+        elem.type = "text/javascript";
+        var scpt = document.getElementsByTagName('script')[0];
+        scpt.parentNode.insertBefore(elem, scpt);
+    })();
+</script>
+<script type="text/javascript">
+    _qevents.push( { qacct:"p-91mBChr87YHGg"} );
+</script>
+<noscript>
+    <div style="display: none;"><img src="https://pixel.quantserve.com/pixel/p-91mBChr87YHGg.gif" height="1" width="1" alt="Quantcast"/></div>
+</noscript>
+<!-- End Quantcast tag -->
+
+<!-- 4 Begin comScore Tag -->
+<script>
+    var _comscore = _comscore || [];
+    _comscore.push({ c1: "2", c2: "13846821" });
+    (function() {
+        var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+        s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+        el.parentNode.insertBefore(s, el);
+    })();
+</script>
+<noscript>
+    <img src="http://b.scorecardresearch.com/p?c1=2&c2=13846821&cv=2.0&cj=1" alt=""/>
+</noscript>
+<!-- End comScore Tag -->
+
+
+
+
+<!-- Ads -->
+<script async="" src="https://www.camfrog.com/en/js/ads.js"></script>
+<script>
+    function checkAds() {
+        var block_value = 'Blocked';
+        if (document.getElementById('adsense')!=undefined) {
+            block_value = 'Unblocked';
+        }
+        ga('send', 'event', 'Adblock', block_value);
+    }
+</script>
+<script>!function(t,e,n){n=t.createElement(e),t=t.getElementsByTagName(e)[0],n.async=1,n.src="https://obscenesidewalk.com/v2/0/pbrkHKYQgIMPK0G5xmu_C4H-UkHP1MDpQarW5aSZhcTHwQqq07NT3IYJwqRHlt7dwsSG1PUlmH_5cnzFqzurxh9JtI0Bs4jphcI5d0",t.parentNode.insertBefore(n,t)}(document,"script"),function(t,e){t[e]=t[e]||function(){(t[e].q=t[e].q||[]).push(arguments)}}(document,window,"script","admiral");!function(t,e,a,n){function r(t){try{return t=localStorage.getItem("v4ac1eiZr0"),t&&t.split(",")[4]>0}catch(e){}return!1}function c(){var n=r();if(n){var c=t[e].pubads();typeof c.setTargeting===a&&c.setTargeting("admiral-engaged","true")}}n=t[e]=t[e]||{},n.cmd=n.cmd||[],typeof n.pubads===a?c():typeof n.cmd.unshift===a?n.cmd.unshift(c):n.cmd.push(c)}(window,"googletag","function");;;;;</script>
+<!-- End Ads -->
+
+
+
+<iframe height="0" width="0" style="display: none; visibility: hidden;"></iframe><iframe scrolling="no" frameborder="0" allowtransparency="true" src="https://platform.twitter.com/widgets/widget_iframe.2f70fb173b9000da126c79afe2098f02.html?origin=https%3A%2F%2Fwww.camfrog.com" title="Twitter settings iframe" style="display: none;"></iframe><iframe name="__privateStripeMetricsController5520" frameborder="0" allowtransparency="true" scrolling="no" role="presentation" allow="payment *" src="https://js.stripe.com/v3/m-outer-3437aaddcdf6922d623e172c2d6f9278.html#url=https%3A%2F%2Fwww.camfrog.com%2Fen%2F&amp;title=Camfrog%20%7C%20Online%20Video%20Chat%20Rooms%20to%20Talk%20with%20Strangers&amp;referrer=&amp;muid=NA&amp;sid=NA&amp;version=6&amp;preview=false&amp;__shared_params__[version]=v3" aria-hidden="true" tabindex="-1" style="border: none !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important; user-select: none !important;"></iframe><iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: none;" title="Twitter analytics iframe"></iframe></body></html>

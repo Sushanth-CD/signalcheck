@@ -1,0 +1,38 @@
+{
+  "model_id": "sms_05_b_char",
+  "fit_time_seconds": 6.017,
+  "overall_metrics": {
+    "n_samples": 6123,
+    "n_pos": 2380,
+    "n_neg": 3743,
+    "tp": 2273,
+    "fp": 48,
+    "tn": 3695,
+    "fn": 107,
+    "precision": 0.9793,
+    "recall": 0.955,
+    "specificity": 0.9872,
+    "f1": 0.967,
+    "balanced_accuracy": 0.9711,
+    "accuracy": 0.9747,
+    "roc_auc": 0.9974,
+    "average_precision": 0.9962
+  },
+  "category_rates": {
+    "ham_total": 2450,
+    "ham_false_positives": 6,
+    "ham_false_positive_rate": 0.0024,
+    "commercial_spam_total": 1293,
+    "commercial_spam_false_positives": 42,
+    "commercial_spam_false_positive_rate": 0.0325,
+    "smishing_total": 2380,
+    "smishing_true_positives": 2273,
+    "smishing_recall": 0.955,
+    "smishing_linkless_total": 1190,
+    "smishing_linkless_true_positives": 1112,
+    "smishing_linkless_recall": 0.9345,
+    "smishing_url_bearing_total": 1190,
+    "smishing_url_bearing_true_positives": 1161,
+    "smishing_url_bearing_recall": 0.9756
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "manifest_name": "SMS-05 Linkless Generalization Selected Model Freeze Manifest",
+  "freeze_timestamp_utc": "2026-11-02T16:22:39Z",
+  "selected_model_id": "sms_05_c_combined",
+  "selected_model_name": "SMS-05-C: Combined Word + Character FeatureUnion + Logistic Regression",
+  "operating_threshold": 0.5,
+  "runtime_environment": {
+    "python": "3.14.6 (tags/v3.14.6:c63aec6, Jun 10 2026, 10:26:10) [MSC v.1944 64 bit (AMD64)]",
+    "scikit_learn": "C:\\Users\\Sushanth CD\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\site-packages\\sklearn\\metrics\\__init__.py",
+    "seed": 20261102
+  },
+  "model_artifact": {
+    "relative_path": "backend\\reports\\ml\\sms_05_linkless_generalization\\experiments\\sms_05_c_combined\\sms_05_model.joblib",
+    "size_bytes": 2884128,
+    "sha256": "6b7ae684cde6bf041deb4963e6e5b4adf7c31ba12ceed2b6b1f838ccd7b77587",
+    "architecture": "Hybrid word (1-2) and character boundary (3-5) TF-IDF feature union with balanced logistic regression."
+  },
+  "validation_evidence": {
+    "balanced_accuracy": 0.9553,
+    "f1_score": 0.9482,
+    "smishing_recall": 0.9333,
+    "smishing_linkless_recall": 0.9059,
+    "smishing_url_bearing_recall": 0.9608,
+    "ham_fpr": 0.0076,
+    "commercial_spam_fpr": 0.0517,
+    "roc_auc": 0.9904
+  }
+}

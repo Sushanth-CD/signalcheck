@@ -1,0 +1,214 @@
+<html data-adblockkey="MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBANDrp2lz7AOmADaN8tA50LsWcjLFyQFcb/P2Txc58oYOeILb3vBw7J6f4pamkAQVSQuqYsKx3YzdUHCvbVZvFUsCAwEAAQ==_As0lJgF/3FAAOW/FKHQUPqhjEZ7hYcY/DTa87pS53BzZS9Vq6Ey8C4IYEzZRkenMu/WNoDKBGnPpzm2lucHP8Q==" lang="en" style="background: #2B2B2B;"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAADElEQVQI12P4//8/AAX+Av7czFnnAAAAAElFTkSuQmCC">
+    <link rel="preconnect" href="https://www.google.com" crossorigin="">
+<title>tvad.me</title><meta name="description" content="See relevant content for tvad.me"><style>* {
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  width: 100%;
+  margin: 0;
+}
+
+html {
+  background-color: #2B2B2B;
+  height: 100%;
+}
+
+body {
+  min-height: 90%;
+  font-family: Arial, sans-serif;
+  letter-spacing: 1.2px;
+  color: #ccc;
+  text-align: center;
+}
+
+/* App Target - This starts hidden until we apply a class to "activate" it */
+
+#target {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Status Messages - These are displayed when we are not rendering ad blocks or Related Search */
+
+#pk-status-message {
+  height: 75vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Sales Box - Default State */
+
+#sales-box {
+  display: block;
+  width: 100%;
+  padding: 3px;
+  text-align: center;
+  text-decoration: none;
+  color: #8EABC0;
+}
+
+#sales-box a {
+  display: block;
+  width: 100%;
+  text-decoration: inherit;
+  color: #8EABC0;
+  cursor: pointer;
+}
+
+/* Sales Box - Highlighted State */
+
+#sales-box.is-highlighted {
+  position: relative;
+  z-index: 1;
+  background: #032438 linear-gradient(to top, #044368 0%, #000 100%);
+  box-shadow: 0 0 15px 0 #000;
+  border-bottom: 3px solid #262626;
+}
+
+#sales-box.is-highlighted a {
+  line-height: 1.3;
+  display: inline-block;
+  font-size: 18px;
+  color: #fff;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+  background: none;
+}
+
+/* Ellipsis Loader */
+
+.pk-loader {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.pk-loader div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #ccc;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.pk-loader div:nth-child(1) {
+  left: 8px;
+  animation: pk-anim-1 0.6s infinite;
+}
+
+.pk-loader div:nth-child(2) {
+  left: 8px;
+  animation: pk-anim-2 0.6s infinite;
+}
+
+.pk-loader div:nth-child(3) {
+  left: 32px;
+  animation: pk-anim-2 0.6s infinite;
+}
+
+.pk-loader div:nth-child(4) {
+  left: 56px;
+  animation: pk-anim-1 0.6s infinite;
+  animation-direction: reverse;
+}
+
+.pk-loader-text {
+  position: fixed;
+  font-size: 12px;
+  right: 20px;
+  bottom: 20px;
+  font-weight: lighter;
+}
+
+/* Utilities */
+
+.pk-message-title {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.pk-page-ready {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.hide-sales-banner > #sales-banner {
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .hidden-xs {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* Animation */
+
+@keyframes pk-anim-1 {
+  0% {
+      transform: scale(0);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+@keyframes pk-anim-2 {
+  0% {
+      transform: translate(0, 0);
+  }
+  100% {
+      transform: translate(24px, 0);
+  }
+}
+</style></head>
+<body>
+<div id="target" style="opacity: 0">
+    <div id="sales-banner" class="top">
+        <iframe id="plFrame" data-domain="tvad.me" width="100%" height="180px" frameborder="0" marginheight="0" marginwidth="0" scrolling="no"></iframe>
+    </div>
+
+
+<main>
+    
+      <header>
+        <h1>tvad.me</h1>
+      </header>
+    
+    <section>
+        <div class="ad-block">
+            <div class="ads">
+                <div id="ad-1"></div>
+                <div id="ad-2"></div>
+            </div>
+        </div>
+        <div id="rs"></div>
+    </section>
+    <footer>
+        <span>Copyright 2025</span>
+	    <span style="padding:0px 8px;">•</span>
+	    <a href="/privacy" target="_blank">Privacy Policy</a>
+	    <span style="padding:0px 8px;">•</span>
+	    <a href="/legal" target="_blank">Legal</a>
+        <p id="imprint-text"></p>
+    </footer>
+</main>
+
+</div>
+<script>window.park = "eyJ1dWlkIjoiODJlODgzNjctOTZjYy00ZmYyLWI3ODAtNTlhYTg3NjM1M2U0IiwicGFnZV90aW1lIjoxNzUzNjIzNTY0LCJwYWdlX3VybCI6Imh0dHBzOi8vdHZhZC5tZS8iLCJwYWdlX21ldGhvZCI6IkdFVCIsInBhZ2VfcmVxdWVzdCI6e30sInBhZ2VfaGVhZGVycyI6e30sImhvc3QiOiJ0dmFkLm1lIiwiaXAiOiIxNTIuNTcuMzcuMjA3In0K";</script>
+<script src="/bxWcgyrFF.js"></script>
+
+
+<script type="text/javascript" src="https://www.google.com/adsense/domains/caf.js?abp=1&amp;bodis=true"></script></body></html>

@@ -1,0 +1,33 @@
+{
+  "source_record_id": "combined_reduced.json:source_record_14145",
+  "source_record_index": 14145,
+  "ground_truth_label": 1,
+  "text_length": 126,
+  "text_snippet": "chegalogo.com.br/verfied.par.visa/update/secure/672bfcaa73dbfe28bff5bc77604084fa/f38a762ac3ee6a66a49",
+  "v2_eligibility_reason": "eligible destination-bearing combined component",
+  "v2_evaluation_scope": "secondary_no_confident_destination",
+  "domain_evaluation_eligible": false,
+  "predictions": {
+    "V2": {
+      "score": 0.934487,
+      "prediction": 1,
+      "correct": true
+    },
+    "content_only": {
+      "score": 0.792831,
+      "prediction": 1,
+      "correct": true
+    },
+    "url_only": {
+      "score": 0.785004,
+      "prediction": 1,
+      "correct": true
+    },
+    "dual_channel_v3": {
+      "score": 0.836793,
+      "prediction": 1,
+      "correct": true
+    }
+  },
+  "population_explanation": "V2 metrics.json reports two evaluation scopes: 'all_model_eligible_unique_texts' (n=2005) and 'primary_domain_evaluation' (n=2004). The difference of exactly 1 record is source_record_index 14145 (combined_reduced.json:source_record_14145). In V2, this record has no accepted confident destination key (ambiguous bare domain without scheme) and was therefore excluded from the primary unseen-domain evaluation cohort, but retained in the all-eligible validation partition. In V3 experiments, all 2,005 validation representatives were evaluated together. All four models correctly classify this record as phishing (label=1)."
+}

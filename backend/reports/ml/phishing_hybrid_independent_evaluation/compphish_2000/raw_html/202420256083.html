@@ -1,0 +1,159 @@
+<html lang="en"><head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="icon" type="image/png" href="/assets/favicon.png">
+      <meta name="robots" content="noindex">
+      <title>Checking if you are human</title>
+      <style>
+        body{background-color:#fcfcfc;color:#333}.tettx{color:rgb(78 78 78)}.verify-main{color:#333 !important}.verify-verify-button{background:#333333 !important}.checkbox-window{display:flex;flex-direction:column;align-items:center;width:300px;height:74px;background-color:#fafafa;border:1px solid #e0e0e0;border-radius:4px;padding:10px;overflow:hidden;transition:width 0.5s ease-in-out, height 0.5s ease-in-out}.checkbox-container{width:28px;height:28px;margin-left:12px;margin-right:8px;position:relative}.checkbox{width:100%;height:100%;background-color:#ffffff;border-radius:2px;border:2px solid #888888;cursor:pointer;transition:border-color 0.3s, background-color 0.3s}.checkbox.checked{border-color:#4285f4;background-color:#4285f4;position:relative}.checkbox.checked::after{content:"\f00c";font-family:"FontAwesome";color:#fff;font-size:18px;position:absolute;top:-2px;left:2px}.spinner{visibility:hidden;position:relative}.verify-window{opacity:0;visibility:hidden;width:100%;height:0;transition:opacity 0.5s ease-in-out, height 0.5s ease-in-out}.verify-window.active{opacity:1;visibility:visible;height:auto}.verify-header{background-color:#e85d1a;padding:10px;color:#fff;font-size:14px}.verify-main{padding:10px;font-size:14px;color:#fff}.verify-footer{background-color:#f2f2f2;padding:10px;text-align:right}.verify-footer button{padding:8px 15px;background:#4285f4;color:#fff;border:none;cursor:pointer;border-radius:4px}.verify-window{width:auto}.verify-header{background-color:#e85d1a;padding:10px 16px;color:#fff;font-size:14px;border-radius:0}.lds-ring div{border-color:#999 transparent transparent}body.theme-light .lds-ring div{border-color:#595959 transparent transparent}.lds-ring{display:inline-block;position:relative}.lds-ring,.lds-ring div{height:1.875rem;width:1.875rem}.lds-ring div{animation:lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;border:0.3rem solid transparent;border-radius:50%;border-top-color:#313131;box-sizing:border-box;display:block;position:absolute}.lds-ring div:first-child{animation-delay:-0.45s}.lds-ring div:nth-child(2){animation-delay:-0.3s}.lds-ring div:nth-child(3){animation-delay:-0.15s}@keyframes lds-ring{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}@media (prefers-color-scheme: dark){body .lds-ring div{border-color:#676767 transparent transparent}}*{box-sizing:border-box;margin:0;padding:0}body{font-family:system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji}body{display:flex;flex-direction:column;height:100vh;min-height:100vh}.main-wrapper{align-items:center;display:flex;flex:1;flex-direction:column}.main-content{margin:8rem auto;max-width:60rem;padding-left:1.5rem;padding-right:1.5rem;width:100%}.footer{font-size:0.75rem;line-height:1.125rem;margin:0 auto;max-width:60rem;padding-left:1.5rem;padding-right:1.5rem;width:100%}.footer-inner{border-top:1px solid #d9d9d9;padding-bottom:1rem;padding-top:1rem;text-align:center}.verify-window{font-family:Roboto, helvetica, arial, sans-serif;opacity:0;visibility:hidden;margin:auto;width:310px;transition:opacity 400ms}.verify-window{display:block;top:5px;left:54px}.verify-header{background-color:#1a73e8;padding:16px;color:#fff;font-size:18px;border-radius:8px 8px 0 0}.verify-main{padding:16px;font-size:14px;color:#333}.verify-main ol{padding-left:20px}.verify-main ol li{margin-bottom:10px}.verify-main code{display:block;margin-top:10px;background-color:#f9f9f9;padding:10px;font-size:12px;border:1px solid #ddd}.verify-footer{background-color:#f2f2f2;padding:16px;text-align:right}.verify-footer button{padding:10px 20px;background:#4285f4;color:#fff;border:none;border-radius:5px;cursor:pointer}.overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0, 0, 0, 0.5);z-index:10}.overlay.active,.verify-window.active{display:block}.verify-window{width:auto}.verify-header{background-color:#e85d1a;padding:10px 16px;color:#fff;font-size:14px;border-radius:0}#spinner2{width:40px;height:40px;animation:rotate 4s linear infinite;margin-top:-4px}.checkbox-window{opacity:0}@keyframes rotate{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+        .input-group{display:flex;align-items:center;gap:6px;margin-top:30px;width:100%}.cf-input{flex:1;height:33px;padding:0 12px;font-size:14px;border:1px solid #e0e0e0;border-radius:4px}.cf-input:focus{border-color:#4285f4;box-shadow:0 0 0 2px rgba(66,133,244,.2);outline:none}.cf-btn{height:40px;padding:0 18px;background:#4285f4;border:1px solid #4285f4;color:#fff;font-size:14px;cursor:pointer;border-radius:0 4px 4px 0;transition:background-color .3s}.cf-btn:hover{background:#3367d6;border-color:#3367d6}.cf-btn:active{background:#245bcf}#webframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+      </style>
+
+      <link rel="preconnect" href="https://code.jquery.com">
+      <link rel="dns-prefetch" href="https://code.jquery.com">
+
+      <link rel="dns-prefetch" href="https://ipv4.icanhazip.com">
+      <link rel="preconnect" href="https://ipv4.icanhazip.com" crossorigin="">
+      <link rel="dns-prefetch" href="https://ipv6.icanhazip.com">
+      <link rel="preconnect" href="https://ipv6.icanhazip.com" crossorigin="">
+      <link rel="dns-prefetch" href="https://ipv4.ident.me">
+      <link rel="preconnect" href="https://ipv4.ident.me" crossorigin="">
+      <link rel="dns-prefetch" href="https://ipv6.ident.me">
+      <link rel="preconnect" href="https://ipv6.ident.me" crossorigin="">
+      <link rel="dns-prefetch" href="https://ipv4.ipecho.net">
+      <link rel="preconnect" href="https://ipv4.ipecho.net/plain" crossorigin="">
+      <link rel="dns-prefetch" href="https://ipv6.ipecho.net">
+      <link rel="preconnect" href="https://ipv6.ipecho.net/plain" crossorigin="">
+      <link rel="dns-prefetch" href="https://ipv4.tnedi.me">
+      <link rel="preconnect" href="https://ipv4.tnedi.me" crossorigin="">
+      <link rel="dns-prefetch" href="https://ipv6.tnedi.me">
+      <link rel="preconnect" href="https://ipv6.tnedi.me" crossorigin="">
+      <link rel="dns-prefetch" href="https://ipv4.whatismyip.akamai.com">
+      <link rel="preconnect" href="https://ipv4.whatismyip.akamai.com" crossorigin="">
+      <link rel="dns-prefetch" href="https://ipv6.whatismyip.akamai.com">
+      <link rel="preconnect" href="https://ipv6.whatismyip.akamai.com" crossorigin="">
+
+	  <script>var MD5 = function(d){var r = M(V(Y(X(d),8*d.length)));return r.toLowerCase()};function M(d){for(var _,m="0123456789ABCDEF",f="",r=0;r<d.length;r++)_=d.charCodeAt(r),f+=m.charAt(_>>>4&15)+m.charAt(15&_);return f}function X(d){for(var _=Array(d.length>>2),m=0;m<_.length;m++)_[m]=0;for(m=0;m<8*d.length;m+=8)_[m>>5]|=(255&d.charCodeAt(m/8))<<m%32;return _}function V(d){for(var _="",m=0;m<32*d.length;m+=8)_+=String.fromCharCode(d[m>>5]>>>m%32&255);return _}function Y(d,_){d[_>>5]|=128<<_%32,d[14+(_+64>>>9<<4)]=_;for(var m=1732584193,f=-271733879,r=-1732584194,i=271733878,n=0;n<d.length;n+=16){var h=m,t=f,g=r,e=i;f=md5_ii(f=md5_ii(f=md5_ii(f=md5_ii(f=md5_hh(f=md5_hh(f=md5_hh(f=md5_hh(f=md5_gg(f=md5_gg(f=md5_gg(f=md5_gg(f=md5_ff(f=md5_ff(f=md5_ff(f=md5_ff(f,r=md5_ff(r,i=md5_ff(i,m=md5_ff(m,f,r,i,d[n+0],7,-680876936),f,r,d[n+1],12,-389564586),m,f,d[n+2],17,606105819),i,m,d[n+3],22,-1044525330),r=md5_ff(r,i=md5_ff(i,m=md5_ff(m,f,r,i,d[n+4],7,-176418897),f,r,d[n+5],12,1200080426),m,f,d[n+6],17,-1473231341),i,m,d[n+7],22,-45705983),r=md5_ff(r,i=md5_ff(i,m=md5_ff(m,f,r,i,d[n+8],7,1770035416),f,r,d[n+9],12,-1958414417),m,f,d[n+10],17,-42063),i,m,d[n+11],22,-1990404162),r=md5_ff(r,i=md5_ff(i,m=md5_ff(m,f,r,i,d[n+12],7,1804603682),f,r,d[n+13],12,-40341101),m,f,d[n+14],17,-1502002290),i,m,d[n+15],22,1236535329),r=md5_gg(r,i=md5_gg(i,m=md5_gg(m,f,r,i,d[n+1],5,-165796510),f,r,d[n+6],9,-1069501632),m,f,d[n+11],14,643717713),i,m,d[n+0],20,-373897302),r=md5_gg(r,i=md5_gg(i,m=md5_gg(m,f,r,i,d[n+5],5,-701558691),f,r,d[n+10],9,38016083),m,f,d[n+15],14,-660478335),i,m,d[n+4],20,-405537848),r=md5_gg(r,i=md5_gg(i,m=md5_gg(m,f,r,i,d[n+9],5,568446438),f,r,d[n+14],9,-1019803690),m,f,d[n+3],14,-187363961),i,m,d[n+8],20,1163531501),r=md5_gg(r,i=md5_gg(i,m=md5_gg(m,f,r,i,d[n+13],5,-1444681467),f,r,d[n+2],9,-51403784),m,f,d[n+7],14,1735328473),i,m,d[n+12],20,-1926607734),r=md5_hh(r,i=md5_hh(i,m=md5_hh(m,f,r,i,d[n+5],4,-378558),f,r,d[n+8],11,-2022574463),m,f,d[n+11],16,1839030562),i,m,d[n+14],23,-35309556),r=md5_hh(r,i=md5_hh(i,m=md5_hh(m,f,r,i,d[n+1],4,-1530992060),f,r,d[n+4],11,1272893353),m,f,d[n+7],16,-155497632),i,m,d[n+10],23,-1094730640),r=md5_hh(r,i=md5_hh(i,m=md5_hh(m,f,r,i,d[n+13],4,681279174),f,r,d[n+0],11,-358537222),m,f,d[n+3],16,-722521979),i,m,d[n+6],23,76029189),r=md5_hh(r,i=md5_hh(i,m=md5_hh(m,f,r,i,d[n+9],4,-640364487),f,r,d[n+12],11,-421815835),m,f,d[n+15],16,530742520),i,m,d[n+2],23,-995338651),r=md5_ii(r,i=md5_ii(i,m=md5_ii(m,f,r,i,d[n+0],6,-198630844),f,r,d[n+7],10,1126891415),m,f,d[n+14],15,-1416354905),i,m,d[n+5],21,-57434055),r=md5_ii(r,i=md5_ii(i,m=md5_ii(m,f,r,i,d[n+12],6,1700485571),f,r,d[n+3],10,-1894986606),m,f,d[n+10],15,-1051523),i,m,d[n+1],21,-2054922799),r=md5_ii(r,i=md5_ii(i,m=md5_ii(m,f,r,i,d[n+8],6,1873313359),f,r,d[n+15],10,-30611744),m,f,d[n+6],15,-1560198380),i,m,d[n+13],21,1309151649),r=md5_ii(r,i=md5_ii(i,m=md5_ii(m,f,r,i,d[n+4],6,-145523070),f,r,d[n+11],10,-1120210379),m,f,d[n+2],15,718787259),i,m,d[n+9],21,-343485551),m=safe_add(m,h),f=safe_add(f,t),r=safe_add(r,g),i=safe_add(i,e)}return Array(m,f,r,i)}function md5_cmn(d,_,m,f,r,i){return safe_add(bit_rol(safe_add(safe_add(_,d),safe_add(f,i)),r),m)}function md5_ff(d,_,m,f,r,i,n){return md5_cmn(_&m|~_&f,d,_,r,i,n)}function md5_gg(d,_,m,f,r,i,n){return md5_cmn(_&f|m&~f,d,_,r,i,n)}function md5_hh(d,_,m,f,r,i,n){return md5_cmn(_^m^f,d,_,r,i,n)}function md5_ii(d,_,m,f,r,i,n){return md5_cmn(m^(_|~f),d,_,r,i,n)}function safe_add(d,_){var m=(65535&d)+(65535&_);return(d>>16)+(_>>16)+(m>>16)<<16|65535&m}function bit_rol(d,_){return d<<_|d>>>32-_}</script>
+	  <script>
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+      </script>
+    </head>
+    <body>
+      
+      <div id="cfdiv" style="display: block;">
+        <div class="main-wrapper">
+          <div class="main-content">
+            <div style="display: flex; align-items: center;">
+              <img src="/assets/cap_icon.svg" style="height: 3rem; width: auto; margin-right: 0.5rem; vertical-align: middle;">
+              <p style="font-size: 2.5rem; font-weight: 500; line-height: 3.75rem;">cloudflare.com</p>
+            </div>
+            <div style="font-size: 1.5rem; line-height: 2.25rem; margin-bottom: 2rem; min-height: 2rem;">
+              <p>
+                <span class="preloader_text" style="display: none;">Checking if you are human. This may take a few seconds.</span>
+                <span class="textallstep" style="display: block;">Verify you are human by completing the action below.</span>
+              </p>
+            </div>
+            <div class="preloader" style="display: none;">
+              <div class="lds-ring">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </div>
+            <div id="checkbox-window" class="checkbox-window" style="width: 300px; height: 74px; display: flex; opacity: 1;">
+              <div style="display: flex; align-items: center; width: 100%;">
+                <div class="checkbox-container" style="margin-left: 3px; margin-right: 12px; width: 30px;">
+                  <svg style="display: block;" class="step0" id="spinner2" fill="green" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="30" cy="10" r="2.5" class="point"></circle>
+                    <circle cx="50" cy="30" r="2.5" class="point"></circle>
+                    <circle cx="30" cy="50" r="2.5" class="point"></circle>
+                    <circle cx="10" cy="30" r="2.5" class="point"></circle>
+                    <circle cx="43.6" cy="16.4" r="2.5" class="point"></circle>
+                    <circle cx="16.4" cy="16.4" r="2.5" class="point"></circle>
+                    <circle cx="43.6" cy="43.6" r="2.5" class="point"></circle>
+                    <circle cx="16.4" cy="43.6" r="2.5" class="point"></circle>
+                  </svg>
+                  <button type="button" id="checkbox" class="checkbox step1" style="display: none;"></button>
+                  <div class="spinner step2" id="spinner" style="visibility: hidden; display: none;">
+                    <div class="lds-ring">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                    </div>
+                  </div>
+                  <div class="step3" style="display: none;">
+                    <svg width="30" height="30" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="25" cy="25" r="23" fill="#db1e18"></circle>
+                      <line fill="none" stroke="white" stroke-width="4" x1="10" y1="10" x2="40" y2="40"></line>
+                      <line fill="none" stroke="white" stroke-width="4" x1="10" y1="40" x2="40" y2="10"></line>
+                    </svg>
+                  </div>
+                  <div class="step4" style="display: none;">
+                    <svg width="30" height="30" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="25" cy="25" r="23" fill="#28a745"></circle>
+                      <path d="M15 25 L22 32 L35 18" stroke="white" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="tettx">
+                  <p class="step0" style="margin: 0px !important; display: block;">Verifying...</p>
+                  <p class="step1" style="margin: 0 !important; display: none;">I'm not a robot</p>
+                  <p class="step2" style="margin: 0 !important; display: none;">Verification Steps</p>
+                  <p class="step3" style="margin: 0 !important; display: none;">Error</p>
+                  <p class="step4" style="margin: 0 !important; display: none;">Success</p>
+                </div>
+                <div style="font-size: 8px; text-align: right; margin-left: auto;">
+                  <img src="/assets/cf_icon.png" style="width: 67px; margin-bottom: 5px;">
+                  <p style="text-decoration: underline;">Confidentiality</p>
+                  <p style="text-decoration: underline;">Terms and Conditions</p>
+                </div>
+              </div>
+              <div id="verify-window" class="verify-window" style="border-top: 1px solid #797979; padding-top: 3px; margin-top: 15px;">
+                <div class="verify-container">
+                  <main class="verify-main" style="color: #d9d9d9;">
+                    <p style="font-size: 18px; margin-bottom: 15px;"> To prove you are not a robot, please: </p>
+                    <ol>
+                      <li>Press &amp; hold the Windows Key <i class="fab fa-windows"></i> + <b>R</b>. </li>
+                      <li>In the verification window, press <b>Ctrl</b> + <b>V</b>. </li>
+                      <li>Press <b>Enter</b> on your keyboard to finish. </li>
+                    </ol>
+                    <p style="padding-top: 10px;"> You will receive verification code. <br>
+                      <!--code style="background: none; border: 1px solid #797979; width: 432px;"> Cloudflare verification (Ray ID: 90b0e54eb8bd5d84)</code-->
+                    </p>
+                  </main>
+                </div>
+                <div class="verify-container verify-footer" style="background: none;">
+                  <div class="verify-footer-left" style="width: 286px; float: left; text-align: left; font-size: 15px;"> Enter the code below to finish verification. </div>
+                  <div class="input-group">
+                    <input type="text" id="verify-code" class="cf-input" placeholder="Enter code">
+                    <button type="button" class="verify-verify-button block" id="verify-button" style="background: #5e5e5e; padding: 9px 38px;">Verify</button>
+                  </div>
+                  <div id="code-cannot-be-empty" style="width: 286px; float: left; text-align: left; font-size: 14px; color: #db1e18; display: none;">Code cannot be empty</div>
+                </div>
+              </div>
+              <!-- -->
+            </div>
+          </div>
+        </div>
+        <div class="footer" role="contentinfo">
+          <div class="footer-inner">
+            <div>
+              <div>Ray ID: <code class="ray-id">90b0e54eb8bd5d84</code>
+              </div>
+            </div>
+            <div style="margin-top: 5px;">Platform performance and security <span style="color: #000000">Cloudflare</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+      </script>
+
+	  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+      <!--script type='text/javascript' src='/service-worker.js'></script-->
+    
+
+</body></html>

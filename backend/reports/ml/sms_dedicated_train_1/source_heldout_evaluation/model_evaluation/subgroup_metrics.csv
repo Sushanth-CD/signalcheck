@@ -1,0 +1,13 @@
+group_type,group_name,url_present,total_samples,positive_calls,negative_calls,rate_positive
+category_by_url,smishing,True,44,21,23,0.4773
+category_by_url,smishing,False,156,1,155,0.0064
+category_by_url,smishing,ALL,200,22,178,0.11
+category_by_url,ham,True,5,0,5,0.0
+category_by_url,ham,False,195,0,195,0.0
+category_by_url,ham,ALL,200,0,200,0.0
+category_by_url,commercial_spam,True,27,2,25,0.0741
+category_by_url,commercial_spam,False,73,1,72,0.0137
+category_by_url,commercial_spam,ALL,100,3,97,0.03
+length_tier,short,ALL,144,1,143,0.0069
+length_tier,medium,ALL,177,9,168,0.0508
+length_tier,long,ALL,179,15,164,0.0838

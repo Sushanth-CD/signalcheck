@@ -1,0 +1,1266 @@
+<html id="XenForo" lang="de-DE" dir="LTR" class="Public LoggedOut Sidebar Responsive pageIsLtr not_hasTabLinks hasSearch activeSmallLogo is-sidebarOpen hasRightSidebar is-setWidth navStyle_2 pageStyle_1 hasFlexbox hasJs Touch HasDragDrop rgba draganddrop csspositionsticky supports canvas canvastext emoji fontface no-touchevents borderradius cssanimations csstransforms csstransforms3d csstransitions flexbox flexboxlegacy no-flexboxtweener"><head> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="referrer" content="no-referrer" data-old="origin-when-cross-origin"> <script>
+window.addEventListener("DOMContentLoaded", function() { document.body.style.visibility="visible"; });
+window.setTimeout(function(){ if(document.body)document.body.style.visibility="visible"; },1337);
+</script> <link rel="preload" href="https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxK.woff2" as="font" type="font/woff2" crossorigin=""> <link rel="preload" href="https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fBBc4.woff2" as="font" type="font/woff2" crossorigin=""> <style> 
+@font-face {
+ font-family: 'Roboto';
+ font-style: normal;
+ font-weight: 400;
+ font-display: swap;
+ src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxK.woff2) format('woff2');
+ unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+ font-family: 'Roboto';
+ font-style: normal;
+ font-weight: 500;
+ font-display: swap;
+ src: local('Roboto Medium'), local('Roboto-Medium'), url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fBBc4.woff2) format('woff2');
+ unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style> <link rel="preload" href="https://raidrush.net/styles/material/uix/css/font-awesome.min.css" as="style"> <link rel="stylesheet" href="https://raidrush.net/styles/material/uix/css/font-awesome.min.css" media="all" onload="this.media='all'"> <link rel="preload" href="https://raidrush.net/styles/material/material/fonts/materialDesign-icons/materialdesignicons-webfont.woff2" as="font" type="font/woff2" crossorigin=""> <link rel="preload" href="https://raidrush.net/styles/material/uix/fonts/fontawesome-webfont.woff2" as="font" type="font/woff2" crossorigin=""> <base href="https://raidrush.net/"> <script>
+ var _b = document.getElementsByTagName('base')[0], _bH = "https://raidrush.net/";
+ if (_b && _b.href != _bH) _b.href = _bH;
+ </script> <title>Raid-Rush : News, Trends, Ratgeber | raid.rush</title>  <link rel="preload" href="https://raidrush.net/js/jquery/jquery.min.js" as="script"> <link rel="preload" href="https://raidrush.net/js/xenforo/xenforo.js" as="script"> <link rel="preload" href="https://raidrush.net/js/audentio/material/functions.min.js" as="script"> <script>if(top != self) top.location.replace(location);</script> <meta name="viewport" content="width=device-width" id="vp"> <script>
+var curVP=0;
+var xnode=0;
+var reqpath="/";
+if(xnode==162 || reqpath.indexOf('-livestream/')!==-1){ var tvstream=true; }else{ var tvstream=false; }
+var cx=dc=0;var nua = navigator.userAgent.toLowerCase(); var is_android = ((nua.indexOf('mozilla/5.0') > -1 && nua.indexOf('android ') > -1 && nua.indexOf('applewebkit') > -1) && !(nua.indexOf('chrome') > -1));
+function mobileresize(vp){ if(!vp){var vp=document.getElementById("vp"); } var vw = window.screen.width; if(vw>730 && curVP<=730){ vp.setAttribute("content","width=device-width"); curVP=730; }else if((vw>500 || tvstream) && curVP<=730){ vp.setAttribute("content","width=730"); curVP=730; }else if(curVP<484){ vp.setAttribute("content","width=484"); curVP=484; } vp.name="viewport"; }
+mobileresize();
+
+window.addEventListener("DOMContentLoaded", function() {
+window.addEventListener("resize", function() { mobileresize(); });
+window.addEventListener('orientationchange', function(){ mobileresize(); });
+});
+
+if(!tvstream){
+function getCookie(a){ let n=a+"="; let dcc = decodeURIComponent(document.cookie); let ca=dcc.split(';'); for(let i = 0; i <ca.length; i++) { let c=ca[i]; while(c.charAt(0) == ' ') { c = c.substring(1); } if (c.indexOf(n) == 0) { return c.substring(n.length, c.length); } } return ""; }
+function setCookie(cname, cvalue, exdays) { const d = new Date(); d.setTime(d.getTime() + (exdays*24*60*60*1000)); let expires = "expires="+ d.toUTCString(); document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/"; }
+function xinvertColor(){ if(document.getElementById("invertx") == null ){ setCookie('dark','on',5);var sheet = document.createElement('style'); sheet.id="invertx"; sheet.innerHTML = ".navTabs,footer,.breadBoxTop,#tvprogramm,.messageList,.discussionList, .messageList img, .messageList iframe, .titleBar:not(.isMetro), .mainContent > .xenForm, .pageNavLinkGroup, .tabs { filter: invert(1) hue-rotate(180deg); } body {background:#333!important;} #player:fullscreen { filter:0; } #stpd_close,#raidrush_net_1000x100_sticky_acnhorad_responsive {background:rgba(69,69,69,0.90)!important;z-index:1!important;}"; document.body.appendChild(sheet); }else{ setCookie('dark','off',5); document.getElementById("invertx").innerHTML=""; document.getElementById("invertx").remove(); } }
+document.addEventListener("DOMContentLoaded", function(){ if( (getCookie('dark')=="on" || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) && document.getElementById("invertx") == null){ xinvertColor(); } });
+}
+</script> <style>input,strong{font-style:inherit}.Popup,.itembit,.navTabs .navTab.PopupClosed{position:relative}#navigation.withSearch,#searchBar{z-index:52}.sidePanelWrapper,.sticky_wrapper{-webkit-backface-visibility:hidden}#tvbox details summary,.tvsender{cursor:pointer}.PageNav .pageNavHeader,.PageNav a{display:block;float:left;margin-bottom:.5em}.footer a,.footer a:visited{color:#7d8c97;padding-right:8px;padding-left:8px;display:block}@media (max-width:500px){.itemimg{max-width:none;width:100%}}@font-face{font-family:material design icons;src:url('https://raidrush.net/styles/material/material/fonts/materialDesign-icons/materialdesignicons-webfont.woff2') format("woff2");font-weight:400;font-style:normal;font-display:swap}.Popup .arrowWidget:before,.navTabs .SplitCtrl:before,.sidePanel__navTabs .navTab>.navLink:before,.uix_icon{line-height:inherit;font-size:inherit;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.footerLinks li a{height:34px;line-height:34px}.PageNav .pageNavHeader{background:#fff;border:1px solid #e0e0e0;max-height:30px;box-sizing:border-box;color:#546a7a;padding:0 8px}#headerMover,#navigation .navLink .menuIcon:before,#portalList{zoom:1}#portalList:after,.messageList .message:after,.titleBar:after,.xenForm .ctrlUnit:after{content:'.';display:block;height:0;clear:both;visibility:hidden}#portalList h2{font-size:1.35rem;color:#2f3b43;padding:5px;margin:1px}#portalList h2 a:link{color:#348}.author .itemDate{display:inline-block;vertical-align:top}.itemDate{padding:5px}.itembit{border-top:none!important;padding-top:0!important;margin-bottom:10px}.itembit .messageText{padding-top:15px;padding-bottom:15px;hyphens:auto;font-size:1rem!important}.itembit .sectionFooter{margin-top:10px}.itembit .contentSummary{float:left;display:block;font-size:.85rem;color:#568}.itemimg{background:#fff;float:left;display:block;padding:0;width:300px;max-height:300px;margin:15px 15px 15px 0;border-radius:4px}@media (max-width:610px){.Responsive .PageNav .pageNavHeader,.Responsive .footerLinks a.homeLink{display:none}.Responsive .itembit{float:none;width:auto}.itemDate{padding:5px 10px}.Responsive .message .messageInfo{margin-left:0;padding:0 10px}.Responsive .xenForm .ctrlUnit{padding:0}}#loginBar .pageContent{color:#fafafa;background-color:#546e7a;position:relative}.messageList .message{margin:25px auto;background-color:#fff;padding:0;border:0 solid #e0e0e0;border-radius:2px;box-shadow:0 2px 3px rgba(0,0,0,.25);zoom:1}.message .messageInfo{background-color:transparent;padding:0;border-bottom:1px #000;zoom:1}.message .messageMeta{font-size:.85rem;padding:15px;border-top:1px solid #e0e0e0;margin:15px -15px -15px;overflow:hidden;zoom:1;box-sizing:border-box}.Portal .message .messageMeta{padding:5px 10px;clear:both}.Portal .message .messageInfo{margin:15px}html{color:#000;background:#f0f0f0;overflow-y:scroll!important}blockquote,body,dd,div,dl,dt,fieldset,form,h1,h2,h3,input,li,ol,p,ul{margin:0;padding:0}fieldset,img{border:0}strong{font-weight:inherit}li{list-style:none}h1,h2,h3{font-size:100%;font-weight:500}sup{vertical-align:baseline}input{font-family:inherit;font-size:inherit;font-weight:inherit}img:-moz-broken,img:-moz-user-disabled{-moz-force-broken-image-icon:1}img:-moz-broken:not([width]),img:-moz-user-disabled:not([width]){width:50px}img:-moz-broken:not([height]),img:-moz-user-disabled:not([height]){height:50px}body{-webkit-text-size-adjust:100%;-moz-text-size-adjust:100%;-ms-text-size-adjust:100%;text-size-adjust:100%;font-size:1rem;font-family:Roboto,Source Sans Pro,arial,sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Noto Sans,Helvetica;color:#2f3b43;background-color:#f2f2f2;line-height:1.5}[dir=auto]{text-align:left}a:link,a:visited{text-decoration:none;color:inherit}.titleBar{margin-bottom:10px;zoom:1}.section,.sectionMain{margin:25px auto}.titleBar h1{font-size:1.5rem;color:#2f3b43;overflow:hidden;zoom:1;font-weight:500}#pageDescription{font-size:1.15rem;color:#546a7a;margin-top:4px}img{-ms-interpolation-mode:bicubic}.breadcrumb .crust:last-child a.crumb,.sectionFooter a,body .muted{color:#546a7a}.concealed{text-decoration:inherit!important;color:inherit!important}#logo_small a,.PageNav a,.button,a.PageNavPrev{text-decoration:none}.sectionMain{background-color:#fafafa;padding:15px;border:0 solid #e0e0e0;border-radius:2px}.textHeading{font-size:1.2rem;color:#2f3b43;padding-bottom:15px;margin:15px auto;border-bottom:1px solid #e0e0e0}.primaryContent,.secondaryContent{background-color:#fff;padding:15px;border-bottom:1px solid #e0e0e0}.Menu,.sectionFooter{background-color:#f5f5f5;overflow:hidden}.secondaryContent a{color:#78909c}.sectionFooter{zoom:1;font-size:11px;color:#546a7a;padding:10px 16px}.Popup .arrowWidget{background:-32px 0/160px 48px no-repeat;margin-top:0;margin-left:2px;display:inline-block;vertical-align:middle;height:auto!important;width:12px!important;text-align:center}#QuickSearch .secondaryControls,.Menu,.PageNav .hidden{display:none}.Menu{font-size:1rem;border-radius:2px;box-shadow:0 0 6px rgba(0,0,0,.16),0 6px 12px rgba(0,0,0,.32);min-width:200px;position:absolute}.PageNav a,.blockLinksList,.formPopup{background-color:#fff}.Menu .menuHeader,.pairsJustified dl{overflow:hidden;zoom:1}.Menu .menuHeader h3{font-size:1.1rem;color:#2f3b43}.Menu .menuHeader .muted{font-size:11px;color:#90a4ae}.Menu .primaryContent,.Menu .secondaryContent{background-color:rgba(255,255,255,.96)}.Menu .blockLinksList{max-height:400px;overflow:auto}.formPopup{width:250px}.formPopup .ctrlUnit{margin:5px auto}.formPopup .button,.formPopup .textCtrl{width:232px}.formPopup .ctrlUnit>dt label{display:block;margin-bottom:2px}.formPopup .submitUnit dd{text-align:center}.formPopup .ctrlUnit>dd .explain{margin:2px 0 0}.formPopup .primaryControls{zoom:1;white-space:nowrap;word-wrap:normal;padding:0 5px}.formPopup .primaryControls input.textCtrl{margin-bottom:0}.formPopup .secondaryControls{padding:0 5px}.formPopup .controlsWrapper{background:top repeat-x #fafafa;border-radius:5px;padding:5px;margin:5px 0;font-size:11px}.formPopup .controlsWrapper .textCtrl{width:222px}.PageNav a{display:block;float:left;margin-bottom:.5em;color:#7d8c97;border:1px solid #e0e0e0;border-radius:0;border-left-width:0!important;text-align:center;box-sizing:border-box}a.PageNavPrev{width:26px!important}.pairsJustified dt{float:left;max-width:100%;margin-right:5px}.pairsJustified dd{float:right;text-align:right;max-width:100%}.listInline li,.uix_navigationLogoText{display:inline}.blockLinksList{font-size:.85rem;padding:4px 0}.button,.textCtrl{font-size:1rem;background-color:transparent;outline:0;font-family:Roboto,Source Sans Pro,arial,sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Noto Sans,Helvetica}.blockLinksList a{font-size:13px;color:#546a7a;padding:10px 15px;display:block;outline:0;font-weight:400}input[type=search]{-webkit-appearance:textfield;box-sizing:content-box}.button,input[type=search],input[type=text]{-webkit-appearance:none}.xenForm{margin:10px auto;max-width:1170px}.xenForm .ctrlUnit>dd{width:68%;box-sizing:border-box;padding-right:5px;float:left;padding-top:4px}.xenForm .ctrlUnit>dd .textCtrl{box-sizing:border-box;width:100%}.xenForm .submitUnit{border-top:1px solid #fafafa}.xenForm .ctrlUnit.submitUnit dd{line-height:31px;padding-top:0}#QuickSearch .ctrlUnit.submitUnit dd,.Menu .ctrlUnit.submitUnit dd{border:none;background:0 0}.textCtrl{color:#546a7a;padding:5px 10px;margin-bottom:2px;border:0 solid #e0e0e0;border-bottom-width:1px;border-radius:0;box-sizing:border-box}.button,a.button{display:inline-block;color:#2196f3}.textCtrl:-moz-placeholder{color:#7d8c97}.textCtrl::-moz-placeholder{color:#7d8c97}.textCtrl::-webkit-input-placeholder{color:#7d8c97}.textCtrl:-ms-input-placeholder{color:#7d8c97}input.textCtrl[type=password]{font-family:Verdana,Geneva,Arial,Helvetica,sans-serif}.button{font-style:normal;padding:0 12px;border-width:0;border-style:solid;border-radius:2px;text-align:center;line-height:35px;box-sizing:content-box;font-weight:500;text-transform:uppercase;will-change:box-shadow;height:35px}.button.primary{color:#fff;background-color:#2196f3;box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12)}.button::-moz-focus-inner{border:none}.submitUnit .button{min-width:100px}.xenForm .ctrlUnit{position:relative;margin:10px auto;zoom:1}.xenForm .ctrlUnit.fullWidth{overflow:visible}.xenForm .ctrlUnit>dt{padding-top:4px;padding-right:15px;vertical-align:top;box-sizing:border-box;width:32%;float:left}.xenForm .ctrlUnit.fullWidth dt{float:none;width:auto;text-align:left;height:auto;margin-bottom:8px}.xenForm .ctrlUnit.submitUnit dt{height:19px;display:block}.xenForm .ctrlUnit.fullWidth>dd{float:none;width:auto;padding-left:5px;padding-top:0}.ctrlUnit>dd .explain{font-size:.85rem;color:#546a7a;margin-top:2px}.ctrlUnit>dd>*>li{margin:4px 0 8px;padding-left:1px}.xenForm .ctrlUnit>dd>input,.xenForm .ctrlUnit>dd>ul{margin-top:-4px}.mainContainer .mainContent>:first-child,.messageList .message:first-child,.xenForm .ctrlUnit.fullWidth>dd>input,.xenForm .ctrlUnit.submitUnit>dd>input{margin-top:0}@media (max-width:568px){.Responsive .textCtrl{font-size:16px}}.breadBoxTop{background-color:#f5f5f5;padding:0;border:0 solid #e0e0e0;border-bottom-width:1px;overflow:hidden;zoom:1;clear:both;box-sizing:border-box}.breadcrumb{color:#90a4ae;overflow:hidden;zoom:1;max-width:100%;box-sizing:border-box;height:50px}.breadcrumb .crust{display:block;float:left;position:relative;zoom:1;max-width:50%}.breadcrumb .crust a.crumb{font-size:14px;color:#7d8c97;text-decoration:none;padding:0 15px 0 18px;margin:0 0 -1px;border-bottom:1px solid #e0e0e0;display:block;outline:0;-moz-outline-style:0 none}.breadcrumb .crust a.crumb>span{display:block;text-overflow:ellipsis;word-wrap:normal;white-space:nowrap;overflow:hidden;max-width:100%}.breadcrumb .crust:first-child a.crumb{padding-left:15px}.breadcrumb .crust .arrow{font-size:16px;border:20px solid transparent;border-right:1px #000;border-left-width:10px;-moz-border-right-colors:#e0e0e0;display:block;position:absolute;right:-10px;top:0;z-index:50}.breadcrumb .jumpMenuTrigger{font-size:16px;color:#7d8c97;background-color:transparent;padding-right:15px;padding-left:15px;display:inline-block;float:right;white-space:nowrap;overflow:hidden}#navigation .menuIcon{position:relative;font-size:18px;width:16px;display:inline-block;text-indent:-9999px}#navigation .menuIcon:before{content:"";font-size:18px;position:absolute;top:1.9em;left:0;width:16px;height:2px;border-top:6px double currentColor;border-bottom:2px solid currentColor}.navTabs{font-size:1rem;color:#546a7a;background-color:#fff;border-color:#e0e0e0;border-radius:2px;background-clip:content-box;box-shadow:0 1px rgba(0,0,0,.075);height:75px}#logo_small,.navTabs .navLeft{float:left}#QuickSearch #commonSearches,.hasRightSidebar .uix_mainSidebar,.navTabs .navRight{float:right}.navTabs .navTab{float:left;white-space:nowrap;word-wrap:normal;font-weight:500}.navTabs .SplitCtrl,.navTabs .navLink{color:#546a7a;padding-right:15px;padding-left:15px;display:block;float:left;vertical-align:text-bottom;text-align:center;outline:0;text-transform:uppercase;box-sizing:border-box;height:75px;line-height:75px}.navTabs .navTab.selected .navLink{border:0 solid #e0e0e0;position:static}.navTabs .navLink .itemCount{font-weight:700;font-size:9px;color:#fff;background-color:#e91e63;padding:0 2px;border-radius:100%;position:absolute;right:2px;top:-12px;line-height:16px;min-width:16px;text-align:center;text-shadow:none;white-space:nowrap;word-wrap:normal;box-sizing:border-box;height:16px}#searchBar{position:relative;zoom:1}#QuickSearchPlaceholder{border-radius:5px;box-sizing:border-box;text-indent:-9999px;background:url('https://raidrush.net/styles/material/xenforo/xenforo-ui-sprite.png') -144px 0 no-repeat;overflow:hidden}#QuickSearch{margin:0;border-radius:5px;z-index:7500}#QuickSearch .submitUnit .button{min-width:0}#QuickSearch input.button.primary{float:left;width:110px;margin-right:5px}#QuickSearch #commonSearches .button{width:23px;padding:0}#QuickSearch .moreOptions{display:block;margin:0 24px 0 110px;width:auto}#headerMover #header{top:0;left:0;position:static;width:auto}.pageWidth{margin-right:auto;margin-left:auto;max-width:1170px}#content .pageContent{border:0 solid #e0e0e0;border-radius:2px;box-shadow:0 2px 6px rgba(0,0,0,.25);zoom:1}#content .pageContent:after{content:'.';display:block;height:0;clear:both;visibility:hidden;content:none}.mainContainer{float:left;margin-right:-310px;width:100%}.mainContent{margin-right:310px}.sidebar{float:right;font-size:.85rem;width:300px}.sidebar .section .secondaryContent h3{font-size:1rem;color:#2f3b43;background-color:#fff;padding:15px;border-width:0;border-bottom:1px solid #e0e0e0;border-radius:2px;margin:-15px -15px 15px}.sidebar .section .secondaryContent h3 a{font-size:1rem;color:#2f3b43}.sidebar .section .secondaryContent .footnote{color:#546a7a;margin-top:5px}.sidebar .userList .username{font-size:11px}.messageText{font-size:1.125rem;font-family:Roboto,Source Sans Pro,arial,sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Noto Sans,Helvetica;line-height:1.7;hyphens:auto}@media (max-width:500px){.itemDate{padding:10px 5px 10px 10px}.itemimg{max-width:none;width:100%}.messageText{font-size:1.25rem}}@media (max-width:800px){.Responsive .pageWidth{padding-right:15px;padding-left:15px;max-width:none!important}.Responsive #content .pageContent{padding-left:7.5px;padding-right:7.5px}.Responsive .blockLinksList a{padding:10px}}@media screen and (max-width:800px){.Responsive #navigation .publicTabs .navTab:not(.navTab--navPanelTrigger):not(.selected),.Responsive #navigation .publicTabs .selected .SplitCtrl,.Responsive #navigation .publicTabs .selected .navLink{display:none!important}.Responsive .navTab--navPanelTrigger{display:list-item!important}}.uix_panels{position:relative;overflow:hidden;width:100%;min-height:100vh}.mainPanelWrapper{position:relative;min-height:100vh;left:0}.sidePanelWrapper{position:absolute;top:0;bottom:0;color:#2f3b43;background-color:#f5f5f5;box-sizing:border-box;width:300px}@-webkit-keyframes panelMaskOut{from{opacity:.6}to{opacity:0}}@keyframes panelMaskOut{from{opacity:.6}to{opacity:0}}.uix_panelMask{visibility:hidden;width:100%;height:100%;z-index:1001;position:absolute;top:0;left:0;background:#607d8b;opacity:0;-webkit-animation:.1s linear panelMaskOut;animation:.1s linear panelMaskOut}.uix_panels:not(.is-animating):not(.is-leftShowing) .sidePanelWrapper--left,.uix_panels:not(.is-animating):not(.is-leftShowing) .sidePanelWrapper--left *{visibility:hidden!important}.mainPanelWrapper,.sidePanelWrapper{z-index:auto}.sidePanelWrapper--left{left:-300px}.sidePanel{height:100%;overflow-x:hidden;overflow-y:visible}.navTabs .navTab.PopupClosed .navLink,.sidePanel a{color:#546a7a}.sidePanel__blockLinksList .visibilityForm,.sidePanel__blockLinksList a{padding:8px 16px;display:block}#QuickSearch .primaryControls,#loginBar .pageWidth,#navigation,.mainContainer,.pageStyle_1 [id=navigation] .uix_minimalSearchWrapper,.sidePanel__navTabs .navTab,.sidePanel__tabPanels,.uix_mainSidebar{position:relative}.sidePanel__navTabs .navLink{display:block;color:#2f3b43;padding:0 50px 0 16px;border:1px solid rgba(255,255,255,.1);border-right-width:0;border-left-width:0;line-height:50px;font-weight:500;height:50px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.sidePanel__navTabs .navTab.selected .navLink{background-color:#e0e0e0}.sidePanel__navTabs .SplitCtrl{display:block;height:50px;width:50px;position:absolute;right:0;top:0;line-height:50px;text-align:center;color:#2f3b43}.sidePanel__navTabs .navTab .tabLinks{opacity:0;max-height:0;overflow:hidden}.sidePanel__navTabs .navTab .blockLinksList{padding:10px 0;background:0 0;border-bottom:none}.sidePanel__navTabs .navTab .blockLinksList a{color:#546a7a;padding:12px 16px;border-radius:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.sidePanel__tabPanel{height:0;float:left;width:100%}.sidePanel__tabPanel.is-right{-webkit-transform:translate3d(300px,0,0);-ms-transform:translate3d(300px,0,0);transform:translate3d(300px,0,0);position:absolute;top:0;overflow-y:hidden}.sidePanel__tabPanel.is-active{-webkit-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0);transform:translate3d(0,0,0);display:block;height:auto;overflow-y:auto}#QuickSearch,#navigation .navTabs .navLink .itemCount{-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);top:50%;vertical-align:top;position:relative}.sidePanel--visitor .sidePanel__tabPanel.is-active{margin-bottom:50px}.sidePanel__textHeading{font-size:1.1rem;color:#2f3b43;background-color:transparent;padding:15px;border-width:0;border-top-style:solid;border-top-color:#e0e0e0;border-bottom:1px solid #e0e0e0;font-weight:500}#navigation .pageContent{position:relative;border-radius:2px;height:75px}.uix_icon{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.uix_icon-close:before{content:"\f00d"}.uix_icon-search:before{content:"\f002"}.uix_icon-cog:before{content:"\f013"}.uix_icon-menu:before{content:"\f0c9"}.uix_icon-navOverflow:before{content:"\f141"}.uix_icon-sitemap:before{content:"\f0e8"}.uix_icon-jumpToTop:before{content:"\f062"}.uix_icon-signIn:before{content:"\f007"}.uix_icon-register:before{content:"\f09c"}.uix_icon-expandDropdown:before{content:"\f0d7"}.uix_icon-breadcrumbSeparator:before{content:"\f105"}.navTabs .navTab .navLink>.uix_icon{float:left;margin-right:.4em;line-height:inherit}.navTabs .navTab.navTab--justIcon .navLink>.uix_icon,.topLink.navTab .navLink>.uix_icon{margin-right:0}.navTab.topLink,.navTabs .navLink .itemCount.Zero,.uix_hide{display:none!important}body::-webkit-selection{color:#fff;background-color:#009688}.header__blockItem{margin-top:0;margin-bottom:0}.header__blockItem:last-of-type,.mainContainer .mainContent>:last-child,.sidebar>.section:last-child{margin-bottom:0}#content{margin-top:25px}.Menu{z-index:9000}#navigation .visitorTabs{min-width:1px}#navigation.withSearch .navTabs .pageWidth,.uix_contentFix{zoom:1}#navigation.withSearch .navTabs .pageWidth:after,.mainContainer .mainContent:after,.uix_contentFix:after{content:'.';display:block;height:0;clear:both;visibility:hidden}#QuickSearch,.navTabs .SplitCtrl{display:none}#headerMover #headerProxy{display:none;height:0}.navTabs .navTab.PopupClosed.selected .SplitCtrl,.navTabs .navTab.PopupClosed.selected .navLink,.navTabs .navTab.selected .navLink{color:#2196f3}#navigation .navTabs .navLink{-webkit-transform-style:preserve-3d;transform-style:preserve-3d}#navigation .navTabs .navLink .itemCount{display:inline-block;transform:translateY(-50%);margin-left:-4px;margin-top:-7px}.Popup .arrowWidget:before{content:'\f0d7'}#QuickSearch input[type=checkbox]{vertical-align:text-bottom}#QuickSearchQuery{min-height:0;padding-right:10px;padding-left:10px;line-height:normal;box-sizing:border-box;width:300px;height:35px}#QuickSearch .formPopup .controlsWrapper .textCtrl{width:280px;box-sizing:border-box}#QuickSearch{right:0;background-color:transparent;line-height:normal;text-align:left;transform:translateY(-50%);padding:0 10px}#QuickSearchPlaceholder{position:static;right:0;top:0;width:18px;box-sizing:content-box;text-align:center;text-indent:0;background-image:none;-webkit-transform-style:preserve-3d;transform-style:preserve-3d}#QuickSearch #commonSearches .arrowWidget{float:none;margin:0 auto}#QuickSearch .formPopup{background:0 0;width:auto}#QuickSearch .formPopup .controlsWrapper{background:0 0;padding:0;margin:0}#QuickSearch .formPopup .primaryControls,a.PageNavPrev{padding:0}#QuickSearch .formPopup .secondaryControls{width:300px;box-sizing:border-box;box-shadow:4px 4px 10px -2px rgba(0,0,0,.1);padding:10px;border:1px solid #e0e0e0;border-radius:2px;background:#fafafa;color:#2f3b43;position:absolute;top:45px;z-index:7500}#QuickSearch a.button.moreOptions{float:left;margin:0}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration,input[type=search]::-webkit-search-results-button,input[type=search]::-webkit-search-results-decoration{display:none}#QuickSearch .primaryControls .uix_icon{position:absolute;top:0;line-height:35px;text-align:center;right:0;font-size:16px;color:#fff;background-color:#2196f3;border-radius:0 2px 2px 0;box-sizing:border-box;width:35px;height:35px}#QuickSearch:not(.show) #QuickSearchQuery{padding-right:45px}#uix_searchMinimal{box-sizing:border-box;float:right;position:absolute;right:0;opacity:0;width:0;color:#546a7a}#navigation #logo_small,#navigation .navTabs .navTab>:not(.tabLinks),.light-off #fplayernav:hover{opacity:1}.hasFlexbox #uix_searchMinimal form{display:-ms-flexbox;display:-webkit-flex;display:flex}#fullscreenbutton,#kinobutton,#uix_searchMinimal form .uix_icon,.breadcrumb .crust:last-child .arrow,.sidePanel .navTab .uix_icon{display:none}#uix_searchMinimalClose{padding:0 25px 0 0;float:left;font-size:18px}.hasFlexbox #uix_searchMinimalClose{-ms-flex:0 0 auto;-webkit-flex:0 0 auto;flex:0 0 auto}#uix_searchMinimalOptions{padding:0 0 0 25px;float:right;font-size:18px}.hasFlexbox #uix_searchMinimalOptions{-ms-flex:0 0 auto;-webkit-flex:0 0 auto;flex:0 0 auto;-ms-flex-order:1;-webkit-order:1;order:1}#uix_searchMinimalInput{overflow:hidden}.hasFlexbox #uix_searchMinimalInput{-ms-flex:1 1 auto;-webkit-flex:1 1 auto;flex:1 1 auto}#uix_searchMinimal input{font-size:14px;font-family:Roboto,Source Sans Pro,arial,sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Noto Sans,Helvetica;background-color:transparent;border-style:none;border-radius:0;line-height:inherit;text-indent:10px;text-align:left;width:100%}#content .pageContent,.mainContainer .mainContent{background-color:transparent;padding:0;border:none;box-shadow:none;background-image:none}#uix_searchMinimal input::-webkit-input-placeholder{color:#546a7a}#uix_searchMinimal input:-moz-placeholder{color:#546a7a}#uix_searchMinimal input::-moz-placeholder{color:#546a7a}#uix_searchMinimal input:-ms-input-placeholder{color:#546a7a}#searchBar,#uix_searchMinimal form{line-height:75px;height:75px}#QuickSearchPlaceholder{display:inline-block;color:#546a7a;padding:0 10px;height:100%;font-size:24px}#QuickSearchPlaceholder:before{display:inline-block;position:relative;top:50%;vertical-align:top;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%)}.mainContainer .mainContent{zoom:1;margin:0}#content .pageContent{margin:0 0 1px}.Responsive #content .pageContent,.Responsive .xenForm.xenForm--uixLoginForm .ctrlUnit,.xenForm.xenForm--uixLoginForm .ctrlUnit>dd{padding-left:0;padding-right:0}.sticky_wrapper{position:relative;-webkit-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0);transform:translate3d(0,0,0);backface-visibility:hidden}.PageNav a{max-height:30px;line-height:28px;width:32px!important}.xenForm .submitUnit{border-top:none}#logo_small a{display:block;height:75px;line-height:75px;padding:0 15px;-webkit-transform-style:preserve-3d;transform-style:preserve-3d}#logo_small,.activeSmallLogo #logo_small,.light-off .light-overlay{display:block}.uix_navigationLogoText{font-size:20px;color:purple;font-weight:600}.uix_navigationLogoText span{color:green}.pairsJustified dt,a.PageNavPrev{color:#7d8c97}.uix_navigationLogoText .uix_icon{margin-right:.5em}.breadBoxTop{margin:0}.breadcrumb .crust,.breadcrumb .jumpMenuTrigger{line-height:50px}.breadcrumb .uix_icon{vertical-align:top}.breadcrumb .crust .arrow,.breadcrumb .crust a.crumb{line-height:inherit}.breadcrumb .crust .arrow{border-top-width:25px;border-bottom-width:25px;border:none;height:auto;width:auto}.uix_mainSidebar{width:300px}.sidebar .section .secondaryContent{background-color:#fff;border:1px solid #e0e0e0;border-radius:2px}.hasRightSidebar .mainContainer{margin-right:-325px}.hasRightSidebar .mainContent{margin-right:325px}.uix_mainSidebar .inner_wrapper{position:relative;-webkit-transform:translateZ(0);-ms-transform:translateZ(0);transform:translateZ(0)}@media (min-width:1021px){.sidebar .section:first-child{margin-top:0}}@media (max-width:1020px){.Responsive .mainContainer{margin-right:0;width:auto}.Responsive .mainContent,.Responsive.hasRightSidebar .mainContainer,.Responsive.hasRightSidebar .mainContent{margin-right:0}.Responsive .sidebar{margin:0 auto;width:auto}.Responsive .uix_mainSidebar{width:auto;float:none}.Responsive .mainContainer,.Responsive .sidebar{float:none}.hasFlexbox.Responsive .sidebar{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-wrap:wrap;margin-right:-10px;margin-left:-10px;margin-top:15px}.hasFlexbox .sidebar>.section{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:280px;flex-basis:280px;margin:10px;display:-webkit-box;display:-ms-flexbox;display:flex;flex-wrap:wrap;-ms-flex-wrap:wrap;-webkit-flex-wrap:wrap}.hasFlexbox .sidebar .section>.secondaryContent{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;float:none;width:auto}}#loginBar{position:relative;z-index:9999}.navTabs .navTab.login{display:list-item!important}#loginBar .pageContent{padding:0 25px}.xenForm.xenForm--uixLoginForm .ctrlUnit>dt label{margin-left:0}.xenForm.xenForm--uixLoginForm .ctrlUnit.submitUnit>dd{width:auto}.uix_nodeTitle_status{font-size:14px;color:#fff;background-color:#e91e63;padding:0 4px;margin-left:4px;border-radius:2px;display:inline-block}.message .messageInfo{margin-left:205px}.hasFlexbox .messageList .uix_message{display:-ms-flexbox;display:-webkit-flex;display:flex;-ms-flex-align:stretch;-webkit-align-items:stretch;align-items:stretch}.hasFlexbox .message .messageInfo{display:-ms-flexbox;display:-webkit-flex;display:flex;-ms-flex-direction:column;-webkit-flex-direction:column;flex-direction:column;-ms-flex:1 1 100%;-webkit-flex:1 1 100%;flex:1 1 100%;overflow:hidden}.Popup .arrowWidget:before,.mdi,.navTabs .SplitCtrl:before,.sidePanel__navTabs .navTab>.navLink:before,.sidebar .section .secondaryContent h3:before,.uix_icon{display:inline-block;font-family:material design icons;font-weight:400;letter-spacing:normal;font-size:inherit;font-style:normal;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.mdi{line-height:1;-webkit-transform:translate(0,0);-ms-transform:translate(0,0);transform:translate(0,0)}.mdi-account-circle:before{content:"\F009"}.mdi-checkbox-marked-outline:before{content:"\F135"}.mdi-comment:before{content:"\F17A"}.mdi-folder-outline:before{content:"\F256"}.mdi-layers:before{content:"\F328"}.Popup .arrowWidget:before,.navTabs .SplitCtrl:before,.sidePanel__navTabs .navTab>.navLink:before,.sidebar .section .secondaryContent h3:before,.uix_icon{line-height:inherit}.Popup .arrowWidget:before,.navTabs .SplitCtrl:before{content:"\F35D"}.sidePanel__navTabs .navTab.forums>.navLink:before{content:"\F28C"}.sidePanel__navTabs .navTab.crypto>.navLink:before{content:"\F127"}.sidePanel__navTabs .navTab.tvstream>.navLink:before{content:"\F567"}.sidePanel__navTabs .navTab.portal>.navLink:before{content:"\F2DC"}.uix_icon-close:before{content:"\F156"}.uix_icon-search:before{content:"\F349"}.uix_icon-cog:before{content:"\F493"}.uix_icon-menu:before{content:"\F35C"}.uix_icon-navOverflow:before{content:"\F1D8"}.uix_icon-sitemap:before{content:"\F4AA"}.uix_icon-expandDropdown:before,.uix_icon-jumpToTop:before{content:"\F143"}.uix_icon-signIn:before{content:"\f306"}.uix_icon-register:before{content:"\f14e"}.uix_icon-breadcrumbSeparator:before{content:"\F142"}input[type=checkbox],input[type=radio]{-webkit-appearance:none;vertical-align:sub;position:relative;padding:0!important;border:none}input[type=checkbox]:after{border:2px solid;border-radius:2px;content:'';display:block;height:12px;width:12px}input[type=checkbox]:checked:before{-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg);position:absolute;left:5px;top:1px;display:table;width:4px;height:8px;border:2px solid #fff;border-top:0;border-left:0;content:''}input[type=checkbox]:checked:after{background-color:#2196f3;border-color:#2196f3}input[type=radio]:after,input[type=radio]:before{content:'';border-radius:50%;display:block;height:12px;width:12px}input[type=radio]:after{border:2px solid}input[type=radio]:checked:after{border-color:#2196f3}input[type=radio]:before{background-color:#2196f3;position:absolute;top:2px;left:2px;-webkit-transform:scale(0);-ms-transform:scale(0);transform:scale(0)}input[type=radio]:checked:before{-webkit-transform:scale(.55);-ms-transform:scale(.55);transform:scale(.55)}.sidePanel .section{margin:15px auto}.sidePanel__navTabs .navLink:before{margin-right:25px;color:#546a7a;font-size:18px!important;vertical-align:bottom}.navTabs .navTab .navLink>.uix_icon,.sidePanel__navTabs .SplitCtrl{font-size:18px}.sidePanel__navTabs .blockLinksList{margin-left:43px}#navigation .navTabs .navTab.selected .navLink:before{height:3px;content:"";background-color:#2196f3;position:absolute;bottom:0;left:0;right:0}#QuickSearchPlaceholder,.navTabs .visitorTabs .navLink{padding-left:10px;padding-right:10px}@media (max-width:480px){.Responsive #copyright span{display:none}.Responsive .xenForm .ctrlUnit>dt{float:none;width:auto;text-align:left;height:auto}.Responsive .xenForm .ctrlUnit>dt label{margin-left:0}.Responsive .xenForm .ctrlUnit.submitUnit dt{height:auto}.Responsive .xenForm .ctrlUnit.fullWidth dd,.Responsive .xenForm .ctrlUnit>dd{float:none;width:auto;text-align:left;height:auto;padding-left:0;padding-right:0;overflow:hidden}.Responsive .xenForm .ctrlUnit>dd>input,.Responsive .xenForm .ctrlUnit>dd>ul{margin-top:0}.Responsive .pageWidth{padding-right:10px;padding-left:10px}.Responsive .header__blockItem{margin:0}.navTab.register{display:none!important}}.loginText,.registerText{font-size:12px}.pageTitle__icon{border-radius:2px;background-image:none!important;width:50px;height:50px;line-height:50px;text-align:center;background-color:#2196f3;font-size:24px;color:#fff}.sidebar .section>.secondaryContent{border:none;box-shadow:0 2px 2px rgba(0,0,0,.25)}.sidebar .secondaryContent dl:last-child,.sidebar .secondaryContent li:last-child{border-bottom:none}.uix_icon-expandDropdown{-webkit-transform:rotate(-180deg);-ms-transform:rotate(-180deg);transform:rotate(-180deg)}.titleBar.isMetro.metro-purple{background-color:#68198a}.titleBar{padding:25px 0}.isMetro.titleBar{color:#fff;background-color:#460564}.isMetro.titleBar a,.isMetro.titleBar h1{color:#fff}.isMetro.titleBar #pageDescription{color:rgba(255,255,255,.85)}.isMetro .pageTitle__icon{color:rgba(255,255,255,.5);background-color:rgba(255,255,255,.1)}.hasFlexbox .message .messageInfo{margin:0;padding:15px}a.PageNavPrev{background-color:#fff;border:1px solid #e0e0e0;border-radius:0;border-left-width:0!important;text-align:center;box-sizing:border-box;line-height:30px}.Menu .primaryContent{background-color:#f5f5f5}.pairsJustified dd{color:#546a7a}.pairsJustified{line-height:2}.media__container{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-align:start;-webkit-align-items:flex-start;-ms-flex-align:start;align-items:flex-start}.media__body{-webkit-box-flex:1;-webkit-flex:1;-ms-flex:1;flex:1}.media--left{margin-right:15px}@media (max-width:1469px) and (min-width:1260px){#aside_left{display:none}#aside_right{display:block;width:calc(-1120px + 100vw)!important}.pageWidth{max-width:1070px!important;margin-left:0!important}}@media (max-width:1260px){#aside_right{display:none}}body,html{min-width:484px!important;min-height:100%;margin:0}.discussionList .sectionHeaders,.discussionListItem{display:table;table-layout:fixed;width:100%;word-wrap:normal}.tvsender,.tvsender img{aspect-ratio:4/3;display:inline-block}.discussionList .sectionHeaders dd,.discussionList .sectionHeaders dt,.discussionListItem .listBlock{display:table-cell;vertical-align:middle}.PageNav{font-size:15px!important}.sigpic img{max-width:300px;max-height:90px;float:right;padding-left:15px}.spanlink .externalLink{color:#345!important}.forum_list #top_ga,.pagenode_container #top_ga,.thread_view #top_ga{margin-bottom:1rem;overflow:hidden}@media (max-width:610px){.Responsive .navTabs{padding-left:10px;padding-right:10px;font-size:1rem}.Responsive .pageWidth{padding-right:10px;padding-left:10px}.Responsive.hasFlexbox .messageList .uix_message{-ms-flex-direction:column;-webkit-flex-direction:column;flex-direction:column;-ms-flex-align:stretch;-webkit-align-items:stretch;align-items:stretch}.Responsive.hasFlexbox .message .messageInfo{-ms-flex:1 1 auto;-webkit-flex:1 1 auto;flex:1 1 auto}.Responsive #navigation .navTabs,.Responsive .navTabs .pageWidth{padding-left:0;padding-right:0}.Responsive .message .messageInfo{margin-left:0;padding:0 10px}#top_ga{height:424px;position:relative}#top_ga>div{display:flex;height:100%;align-items:flex-end;justify-content:center}}@media (min-width:611px){#top_ga{height:336px;position:relative}#top_ga>div{display:flex;height:100%;align-items:flex-end;justify-content:center}}@media (max-width:1779px){#aside_left,#aside_tv{display:none}}@media all and (display-mode:fullscreen){#raidrush_net_1000x100_sticky_acnhorad_responsive{opacity:.6;filter:grayscale(1)}#raidrush_net_1000x100_sticky_acnhorad_responsive:hover{opacity:1;filter:grayscale(0)}}.androidFix{overflow:hidden!important;overflow-y:hidden!important;overflow-x:hidden!important}#tvbox article.primaryContent{padding:.2em}#tvbox hr{color:#ddd}#player{width:100%;aspect-ratio:16/9;border:none;min-height:260px;position:relative;z-index:9998;}#horizontal_rr{height:160px;width:100%;text-align:center}#indexpage{text-align:center;border-radius:5px;background:#ababab57;padding-top:10px;padding-bottom:10px}.tvsender{width:12%;max-width:160px;margin:3px;background:#fff;border:1px solid #ccc;border-radius:5px;overflow:hidden}.tvsender:hover{border:1px solid red}.tvsender img{width:100%;height:100%;vertical-align:bottom}.light-overlay{position:fixed;left:0;top:0;right:0;bottom:0;z-index:99997;background-color:rgba(0,0,0,.95);display:none;pointer-events:none}.light-off .tvsender{width:10%!important}.light-off #fplayer{z-index:99998;position:fixed;top:10px;left:0;width:86%;margin:0 7%;text-align:center}.light-off #horizontal_rr{position:fixed;bottom:0;z-index:-2;left:0;background:#111}.light-off #horizontal_rr div{opacity:.6;filter:grayscale(1)}.light-off #horizontal_rr div:hover{filter:grayscale(0);opacity:1}.light-off #fplayernav{opacity:.3}.light-off #raidrush_net_1000x100_sticky_acnhorad_responsive{z-index:999!important}@media (max-width:800px){.navTabs .SplitCtrl,.navTabs .navLink{padding:0 10px}#logo_small{float:none}.activeSmallLogo #logo_small{display:inline-block}#logo_small a{padding:0}.pageWidth{padding-right:5px!important;padding-left:5px!important}#tvbox .messageInfo{padding:2px!important}}@media only screen and (min-width:1260px) and (min-device-height:600px){#fullscreenbutton,#kinobutton{display:block}}#raidrush_net_1000x100_sticky_acnhorad_responsive,#stpd_close{background:rgba(249,249,249,.95)!important}.nadzContainer{position:fixed}.light-off .avp-fixed { z-index:998!important; }</style> <script>window.setTimeout(function(){ document.head.insertAdjacentHTML('beforeend','<style>@media only screen and (max-width:1690px) { .avp-fixed { z-index:999!important; } }</style>'); },11000);</script> <link rel="preload" href="/css.php?css=el_portal,login_bar,message,moderator_bar&amp;style=7&amp;dir=LTR&amp;d=1752998123" as="style"> <link rel="stylesheet" href="/css.php?css=el_portal,login_bar,message,moderator_bar&amp;style=7&amp;dir=LTR&amp;d=1752998123"> <link rel="preload" href="https://raidrush.net/css.php?css=xenforo,form,public,uix,material&amp;style=7&amp;dir=LTR&amp;d=1752998123" as="style"> <link rel="stylesheet" href="https://raidrush.net/css.php?css=xenforo,form,public,uix,material&amp;style=7&amp;dir=LTR&amp;d=1752998123"> <style>
+/* Node Styling */
+.node.node_3 > .nodeInfo {}.node.node_11 > .nodeInfo {}.node.node_13 > .nodeInfo {background-color:rgb(136, 122, 89);}.node.node_14 > .nodeInfo {background-color:rgb(68, 166, 11);}.node.node_20 > .nodeInfo {background-color:rgb(147, 7, 28);}.node.node_21 > .nodeInfo {background-color:rgb(12, 122, 139);}.node.node_26 > .nodeInfo {background-color:rgb(21, 134, 62);}.node.node_27 > .nodeInfo {background-color:rgb(87, 69, 139);}.node.node_28 > .nodeInfo {background-image:url('/img/microsoft-windows.jpg');background-repeat:no-repeat;background-position:0 -40px;}.node.node_29 > .nodeInfo {background-color:rgb(12, 115, 136);}.node.node_33 > .nodeInfo {background-color:rgb(119, 176, 7);}.node.node_34 > .nodeInfo {background-image:url('/styles/material/material/images/background-6.jpg');background-repeat:no-repeat;}.node.node_45 > .nodeInfo {background-image:url('/img/linux.jpg');background-repeat:no-repeat;background-position:center;}.node.node_48 > .nodeInfo {background-color:rgb(56, 134, 143);}.node.node_52 > .nodeInfo {background-color:rgb(184, 103, 5);}.node.node_54 > .nodeInfo {background-color:rgb(159, 61, 25);}.node.node_55 > .nodeInfo {background-color:rgb(7, 174, 43);}.node.node_56 > .nodeInfo {background-image:url('/img/musik-kopfhoerer.jpg');background-repeat:no-repeat;background-position:center;}.node.node_57 > .nodeInfo {background-image:url('/img/kino-filme-serien.jpg');background-repeat:no-repeat;}.node.node_59 > .nodeInfo {background-color:rgb(157, 89, 115);}.node.node_67 > .nodeInfo {}.node.node_68 > .nodeInfo {background-image:url('/img/schule-studium.jpg');background-repeat:no-repeat;background-position:center;}.node.node_69 > .nodeInfo {background-color:rgb(140, 181, 27);}.node.node_79 > .nodeInfo {background-image:url('/img/autobahn.jpg');background-repeat:no-repeat;background-position:center;}.node.node_89 > .nodeInfo {}.node.node_90 > .nodeInfo {}.node.node_92 > .nodeInfo {background-color:rgb(60, 54, 122);}.node.node_95 > .nodeInfo {background-color:rgb(95, 141, 133);}.node.node_99 > .nodeInfo {background-color:rgb(170, 46, 77);}.node.node_100 > .nodeInfo {background:rgb(41, 116, 146) url('/styles/material/material/images/material_banner.png') no-repeat;}.node.node_105 > .nodeInfo {background-image:url('/img/gold.jpg');background-repeat:no-repeat;background-position:center;}.node.node_107 > .nodeInfo {background-color:rgb(161, 13, 87);}.node.node_111 > .nodeInfo {background-image:url('/img/buch-kunst.jpg');background-repeat:no-repeat;}.node.node_112 > .nodeInfo {background-color:rgb(124, 63, 27);}.node.node_116 > .nodeInfo {background-image:url('/img/apple.jpg');background-repeat:no-repeat;background-position:center;}.node.node_121 > .nodeInfo {background-color:rgb(74, 46, 186);}.node.node_127 > .nodeInfo {background-image:url('/img/urlaub-insel.jpg');background-repeat:no-repeat;background-position:center;}.node.node_128 > .nodeInfo {background-image:url('/img/wissenschaft-forschung.jpg');background-repeat:no-repeat;background-position:center;}.node.node_130 > .nodeInfo {background-image:url('/img/essen.jpg');background-repeat:no-repeat;background-position:center;}.node.node_131 > .nodeInfo {background-color:rgb(133, 185, 86);}.node.node_132 > .nodeInfo {background-image:url('/img/haus.jpg');background-repeat:no-repeat;}.node.node_138 > .nodeInfo {background-color:rgb(18, 158, 62);}.node.node_139 > .nodeInfo {background-color:rgb(45, 133, 168);}.node.node_145 > .nodeInfo {}.node.node_148 > .nodeInfo {background-color:rgb(218, 85, 8);}.node.node_149 > .nodeInfo {background-color:rgb(252, 108, 19);}.node.node_153 > .nodeInfo {}.node.node_154 > .nodeInfo {}.node.node_155 > .nodeInfo {background-color:rgb(145, 182, 104);}.node.node_156 > .nodeInfo {}.node.node_157 > .nodeInfo {background-color:rgb(67, 7, 180);}.node.node_158 > .nodeInfo {background-color:rgb(126, 0, 52);}.node.node_159 > .nodeInfo {background-color:rgb(224, 206, 14);}.node.node_162 > .nodeInfo {}.node.node_163 > .nodeInfo {}.node.node_164 > .nodeInfo {}.node.node_165 > .nodeInfo {}.node.node_166 > .nodeInfo {}.node.node_167 > .nodeInfo {}
+</style> <link rel="preload" as="script" href="https://cmp.inmobi.com/tcfv2/60/cmp2.js?referer=raidrush.net"> <script>
+(function() {
+ var host = 'raidrush.net';
+ var uspTries = 0;
+ var uspTriesLimit = 3;
+
+ function makeStub() {
+ var TCF_LOCATOR_NAME = '__tcfapiLocator';
+ var queue = [];
+ var win = window;
+ var cmpFrame;
+
+ function addFrame() {
+ var doc = win.document;
+ var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+
+ if (!otherCMP) {
+ if (doc.body) {
+ var iframe = doc.createElement('iframe');
+ iframe.style.cssText = 'display:none';
+ iframe.name = TCF_LOCATOR_NAME;
+ doc.body.appendChild(iframe);
+ } else {
+ setTimeout(addFrame, 5);
+ }
+ }
+ return !otherCMP;
+ }
+
+ function tcfAPIHandler() {
+ var gdprApplies;
+ var args = arguments;
+
+ if (!args.length) {
+ return queue;
+ } else if (args[0] === 'setGdprApplies') {
+ if (
+ args.length > 3 &&
+ args[2] === 2 &&
+ typeof args[3] === 'boolean'
+ ) {
+ gdprApplies = args[3];
+ if (typeof args[2] === 'function') {
+ args[2]('set', true);
+ }
+ }
+ } else if (args[0] === 'ping') {
+ var retr = {
+ gdprApplies: gdprApplies,
+ cmpLoaded: false,
+ cmpStatus: 'stub'
+ };
+
+ if (typeof args[2] === 'function') {
+ args[2](retr);
+ }
+ } else {
+ if(args[0] === 'init' && typeof args[3] === 'object') {
+ args[3] = Object.assign(args[3], { tag_version: 'V3' });
+ }
+ queue.push(args);
+ }
+ }
+
+ function postMessageEventHandler(event) {
+ var msgIsString = typeof event.data === 'string';
+ var json = {};
+
+ try {
+ if (msgIsString) {
+ json = JSON.parse(event.data);
+ } else {
+ json = event.data;
+ }
+ } catch (ignore) {}
+
+ var payload = json.__tcfapiCall;
+
+ if (payload) {
+ window.__tcfapi(
+ payload.command,
+ payload.version,
+ function(retValue, success) {
+ var returnMsg = {
+ __tcfapiReturn: {
+ returnValue: retValue,
+ success: success,
+ callId: payload.callId
+ }
+ };
+ if (msgIsString) {
+ returnMsg = JSON.stringify(returnMsg);
+ }
+ if (event && event.source && event.source.postMessage) {
+ event.source.postMessage(returnMsg, '*');
+ }
+ },
+ payload.parameter
+ );
+ }
+ }
+
+ while (win) {
+ try {
+ if (win.frames[TCF_LOCATOR_NAME]) {
+ cmpFrame = win;
+ break;
+ }
+ } catch (ignore) {}
+
+ if (win === window.top) {
+ break;
+ }
+ win = win.parent;
+ }
+ if (!cmpFrame) {
+ addFrame();
+ win.__tcfapi = tcfAPIHandler;
+ win.addEventListener('message', postMessageEventHandler, false);
+ }
+ };
+
+ makeStub();
+
+ function makeGppStub() {
+ const CMP_ID = 10;
+ const SUPPORTED_APIS = [
+ '2:tcfeuv2',
+ '6:uspv1',
+ '7:usnatv1',
+ '8:usca',
+ '9:usvav1',
+ '10:uscov1',
+ '11:usutv1',
+ '12:usctv1'
+ ];
+
+ window.__gpp_addFrame = function (n) {
+ if (!window.frames[n]) {
+ if (document.body) {
+ var i = document.createElement("iframe");
+ i.style.cssText = "display:none";
+ i.name = n;
+ document.body.appendChild(i);
+ } else {
+ window.setTimeout(window.__gpp_addFrame, 10, n);
+ }
+ }
+ };
+ window.__gpp_stub = function () {
+ var b = arguments;
+ __gpp.queue = __gpp.queue || [];
+ __gpp.events = __gpp.events || [];
+
+ if (!b.length || (b.length == 1 && b[0] == "queue")) {
+ return __gpp.queue;
+ }
+
+ if (b.length == 1 && b[0] == "events") {
+ return __gpp.events;
+ }
+
+ var cmd = b[0];
+ var clb = b.length > 1 ? b[1] : null;
+ var par = b.length > 2 ? b[2] : null;
+ if (cmd === "ping") {
+ clb(
+ {
+ gppVersion: "1.1", // must be “Version.Subversion”, current: “1.1”
+ cmpStatus: "stub", // possible values: stub, loading, loaded, error
+ cmpDisplayStatus: "hidden", // possible values: hidden, visible, disabled
+ signalStatus: "not ready", // possible values: not ready, ready
+ supportedAPIs: SUPPORTED_APIS, // list of supported APIs
+ cmpId: CMP_ID, // IAB assigned CMP ID, may be 0 during stub/loading
+ sectionList: [],
+ applicableSections: [-1],
+ gppString: "",
+ parsedSections: {},
+ },
+ true
+ );
+ } else if (cmd === "addEventListener") {
+ if (!("lastId" in __gpp)) {
+ __gpp.lastId = 0;
+ }
+ __gpp.lastId++;
+ var lnr = __gpp.lastId;
+ __gpp.events.push({
+ id: lnr,
+ callback: clb,
+ parameter: par,
+ });
+ clb(
+ {
+ eventName: "listenerRegistered",
+ listenerId: lnr, // Registered ID of the listener
+ data: true, // positive signal
+ pingData: {
+ gppVersion: "1.1", // must be “Version.Subversion”, current: “1.1”
+ cmpStatus: "stub", // possible values: stub, loading, loaded, error
+ cmpDisplayStatus: "hidden", // possible values: hidden, visible, disabled
+ signalStatus: "not ready", // possible values: not ready, ready
+ supportedAPIs: SUPPORTED_APIS, // list of supported APIs
+ cmpId: CMP_ID, // list of supported APIs
+ sectionList: [],
+ applicableSections: [-1],
+ gppString: "",
+ parsedSections: {},
+ },
+ },
+ true
+ );
+ } else if (cmd === "removeEventListener") {
+ var success = false;
+ for (var i = 0; i < __gpp.events.length; i++) {
+ if (__gpp.events[i].id == par) {
+ __gpp.events.splice(i, 1);
+ success = true;
+ break;
+ }
+ }
+ clb(
+ {
+ eventName: "listenerRemoved",
+ listenerId: par, // Registered ID of the listener
+ data: success, // status info
+ pingData: {
+ gppVersion: "1.1", // must be “Version.Subversion”, current: “1.1”
+ cmpStatus: "stub", // possible values: stub, loading, loaded, error
+ cmpDisplayStatus: "hidden", // possible values: hidden, visible, disabled
+ signalStatus: "not ready", // possible values: not ready, ready
+ supportedAPIs: SUPPORTED_APIS, // list of supported APIs
+ cmpId: CMP_ID, // CMP ID
+ sectionList: [],
+ applicableSections: [-1],
+ gppString: "",
+ parsedSections: {},
+ },
+ },
+ true
+ );
+ } else if (cmd === "hasSection") {
+ clb(false, true);
+ } else if (cmd === "getSection" || cmd === "getField") {
+ clb(null, true);
+ }
+ //queue all other commands
+ else {
+ __gpp.queue.push([].slice.apply(b));
+ }
+ };
+ window.__gpp_msghandler = function (event) {
+ var msgIsString = typeof event.data === "string";
+ try {
+ var json = msgIsString ? JSON.parse(event.data) : event.data;
+ } catch (e) {
+ var json = null;
+ }
+ if (typeof json === "object" && json !== null && "__gppCall" in json) {
+ var i = json.__gppCall;
+ window.__gpp(
+ i.command,
+ function (retValue, success) {
+ var returnMsg = {
+ __gppReturn: {
+ returnValue: retValue,
+ success: success,
+ callId: i.callId,
+ },
+ };
+ event.source.postMessage(msgIsString ? JSON.stringify(returnMsg) : returnMsg, "*");
+ },
+ "parameter" in i ? i.parameter : null,
+ "version" in i ? i.version : "1.1"
+ );
+ }
+ };
+ if (!("__gpp" in window) || typeof window.__gpp !== "function") {
+ window.__gpp = window.__gpp_stub;
+ window.addEventListener("message", window.__gpp_msghandler, false);
+ window.__gpp_addFrame("__gppLocator");
+ }
+ };
+
+ makeGppStub();
+
+ var uspStubFunction = function() {
+ var arg = arguments;
+ if (typeof window.__uspapi !== uspStubFunction) {
+ setTimeout(function() {
+ if (typeof window.__uspapi !== 'undefined') {
+ window.__uspapi.apply(window.__uspapi, arg);
+ }
+ }, 500);
+ }
+ };
+
+ var checkIfUspIsReady = function() {
+ uspTries++;
+ if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+ console.warn('USP is not accessible');
+ } else {
+ clearInterval(uspInterval);
+ }
+ };
+
+ if (typeof window.__uspapi === 'undefined') {
+ window.__uspapi = uspStubFunction;
+ var uspInterval = setInterval(checkIfUspIsReady, 3000);
+ }
+ 
+ 
+(function(){ 
+var autoDetectedLanguage='en';var gvlVersion=3;function splitLang(lang){if(lang.includes('pt')&&lang.length>2){return lang.split('-')[0]+'-'+lang.split('-')[1].toLowerCase();}
+return lang.length>2?lang.split('-')[0]:lang;};function isSupported(lang){var langs=['en','fr','de','it','es','da','nl','el','hu','pt','pt-br','pt-pt','ro','fi','pl','sk','sv','no','ru','bg','ca','cs','et','hr','lt','lv','mt','sl','tr','uk','zh','id','ko','ja','hi','vi','th','ms'];return langs.indexOf(lang)===-1?false:true;};if(gvlVersion===2&&isSupported(splitLang(document.documentElement.lang))){autoDetectedLanguage=splitLang(document.documentElement.lang);}else if(gvlVersion===3&&isSupported(document.documentElement.lang)){autoDetectedLanguage=document.documentElement.lang;}else if(isSupported(splitLang(navigator.language))){autoDetectedLanguage=splitLang(navigator.language);};var choiceMilliSeconds=(new Date).getTime();window.__tcfapi('init',2,function(){},{"coreConfig":{"siteUuid":"14b04260-2b67-4b95-975b-d991fc9cee66","themeUuid":"ac482c2a-1dba-4e71-9ca6-9b42efabe3ff","inmobiAccountId":"qW7D9QAgSsFms","privacyMode":["GDPR"],"gdprEncodingMode":"TCF_AND_GPP","consentLocations":["EEA"],"includeVendorsDisclosedSegment":false,"cmpVersion":"60","hashCode":"QUQyBXxAP9ijiWVyhSlUmA","publisherCountryCode":"TR","publisherName":"Raid-Rush","vendorPurposeIds":[1,2,7,10,3,5,4,9,6,8,11],"vendorFeaturesIds":[1,2,3],"vendorPurposeLegitimateInterestIds":[7,8,9,2,10,11],"vendorSpecialFeaturesIds":[2,1],"vendorSpecialPurposesIds":[1,2,3],"googleEnabled":true,"consentScope":"service","thirdPartyStorageType":"iframe","consentOnSafari":false,"displayUi":"inEU","defaultToggleValue":"off","initScreenRejectButtonShowing":false,"initScreenCloseButtonShowing":false,"softOptInEnabled":false,"showSummaryView":true,"persistentConsentLinkLocation":3,"displayPersistentConsentLink":false,"uiLayout":"popup","publisherLogo":"https://raidrush.net/logo.png?qc-size=160,127","vendorListUpdateFreq":6,"publisherPurposeIds":[],"initScreenBodyTextOption":1,"publisherConsentRestrictionIds":[],"publisherLIRestrictionIds":[],"stacks":[1,42],"lang_":"de","gvlVersion":3,"totalVendors":909,"gbcConfig":{"enabled":true,"urlPassThrough":true,"adsDataRedaction":true,"locations":["WORLDWIDE"],"applicablePurposes":[{"id":1,"defaultValue":"GRANTED"},{"id":2,"defaultValue":"GRANTED"},{"id":3,"defaultValue":"GRANTED"},{"id":4,"defaultValue":"GRANTED"},{"id":5,"defaultValue":"GRANTED"},{"id":6,"defaultValue":"GRANTED"},{"id":7,"defaultValue":"GRANTED"}]},"legitimateInterestOptIn":true,"features":{"visitEvents":true},"translationUrls":{"common":"https://cmp.inmobi.com/tcfv2/translations/${language}.json","theme":"https://cmp.inmobi.com/custom-translations/qW7D9QAgSsFms/ac482c2a-1dba-4e71-9ca6-9b42efabe3ff/${language}.json","all":"https://cmp.inmobi.com/consolidated-translations/qW7D9QAgSsFms/ac482c2a-1dba-4e71-9ca6-9b42efabe3ff/${language}.json"},"gdprEnabledInUS":false},"premiumUiLabels":{},"premiumProperties":{"googleWhitelist":[1]},"coreUiLabels":{},"theme":{},"nonIabVendorsInfo":{}});
+var cmpFile='noModule'in HTMLScriptElement.prototype?'cmp2.js':'cmp2-polyfilled.js'; var cmpScriptElement=document.createElement('script');cmpScriptElement.async=true;cmpScriptElement.onload=function(){console.log('cmp2.js loaded');};var cmpUrl;cmpUrl='https://cmp.inmobi.com/tcfv2/60/CMP_FILE?referer=raidrush.net'.replace('CMP_FILE',cmpFile);cmpScriptElement.src=cmpUrl;document.head.appendChild(cmpScriptElement);
+})(); 
+ 
+ 
+})();
+</script><script async="" src="https://cmp.inmobi.com/tcfv2/60/cmp2.js?referer=raidrush.net"></script> <style type="text/css">
+.qc-cmp-button.qc-cmp-secondary-button:hover { background-color: #368bd6 !important; border-color: transparent !important; } .qc-cmp-button.qc-cmp-secondary-button:hover { color: #ffffff !important; } 
+.qc-cmp-button.qc-cmp-secondary-button { color: #368bd6 !important; }
+.qc-cmp-button.qc-cmp-secondary-button { background-color: #eee !important; border-color: transparent !important; }
+#qc-cmp2-ui { height:auto; max-height:70%; border-radius:5px;overflow:hidden; }
+.qc-cmp2-summary-info { max-height:120px!important; }.qc-cmp-cleanslate { width:100%!important }
+.qc-cmp2-summary-buttons button span { font-size:1rem;font-weight:bold; }
+</style> <script>var doNoAD=1; var doFuse=0; var reqPath='/';</script>  <script>
+var AdsByG=0; var doNoAD=0; var req_path="/";
+//inView
+!function(t,e){"object"==typeof exports&&"object"==typeof module?module.exports=e():"function"==typeof define&&define.amd?define([],e):"object"==typeof exports?exports.inView=e():t.inView=e()}(this,function(){return function(t){function e(r){if(n[r])return n[r].exports;var i=n[r]={exports:{},id:r,loaded:!1};return t[r].call(i.exports,i,i.exports,e),i.loaded=!0,i.exports}var n={};return e.m=t,e.c=n,e.p="",e(0)}([function(t,e,n){"use strict";function r(t){return t&&t.__esModule?t:{"default":t}}var i=n(2),o=r(i);t.exports=o["default"]},function(t,e){function n(t){var e=typeof t;return null!=t&&("object"==e||"function"==e)}t.exports=n},function(t,e,n){"use strict";function r(t){return t&&t.__esModule?t:{"default":t}}Object.defineProperty(e,"__esModule",{value:!0});var i=n(9),o=r(i),u=n(3),f=r(u),s=n(4),c=function(){if("undefined"!=typeof window){var t=100,e=["scroll","resize","load"],n={history:[]},r={offset:{},threshold:0,test:s.inViewport},i=(0,o["default"])(function(){n.history.forEach(function(t){n[t].check()})},t);e.forEach(function(t){return addEventListener(t,i)}),window.MutationObserver&&addEventListener("DOMContentLoaded",function(){new MutationObserver(i).observe(document.body,{attributes:!0,childList:!0,subtree:!0})});var u=function(t){if("string"==typeof t){var e=[].slice.call(document.querySelectorAll(t));return n.history.indexOf(t)>-1?n[t].elements=e:(n[t]=(0,f["default"])(e,r),n.history.push(t)),n[t]}};return u.offset=function(t){if(void 0===t)return r.offset;var e=function(t){return"number"==typeof t};return["top","right","bottom","left"].forEach(e(t)?function(e){return r.offset[e]=t}:function(n){return e(t[n])?r.offset[n]=t[n]:null}),r.offset},u.threshold=function(t){return"number"==typeof t&&t>=0&&t<=1?r.threshold=t:r.threshold},u.test=function(t){return"function"==typeof t?r.test=t:r.test},u.is=function(t){return r.test(t,r)},u.offset(0),u}};e["default"]=c()},function(t,e){"use strict";function n(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(e,"__esModule",{value:!0});var r=function(){function t(t,e){for(var n=0;n<e.length;n++){var r=e[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(t,r.key,r)}}return function(e,n,r){return n&&t(e.prototype,n),r&&t(e,r),e}}(),i=function(){function t(e,r){n(this,t),this.options=r,this.elements=e,this.current=[],this.handlers={enter:[],exit:[]},this.singles={enter:[],exit:[]}}return r(t,[{key:"check",value:function(){var t=this;return this.elements.forEach(function(e){var n=t.options.test(e,t.options),r=t.current.indexOf(e),i=r>-1,o=n&&!i,u=!n&&i;o&&(t.current.push(e),t.emit("enter",e)),u&&(t.current.splice(r,1),t.emit("exit",e))}),this}},{key:"on",value:function(t,e){return this.handlers[t].push(e),this}},{key:"once",value:function(t,e){return this.singles[t].unshift(e),this}},{key:"emit",value:function(t,e){for(;this.singles[t].length;)this.singles[t].pop()(e);for(var n=this.handlers[t].length;--n>-1;)this.handlers[t][n](e);return this}}]),t}();e["default"]=function(t,e){return new i(t,e)}},function(t,e){"use strict";function n(t,e){var n=t.getBoundingClientRect(),r=n.top,i=n.right,o=n.bottom,u=n.left,f=n.width,s=n.height,c={t:o,r:window.innerWidth-u,b:window.innerHeight-r,l:i},a={x:e.threshold*f,y:e.threshold*s};return c.t>e.offset.top+a.y&&c.r>e.offset.right+a.x&&c.b>e.offset.bottom+a.y&&c.l>e.offset.left+a.x}Object.defineProperty(e,"__esModule",{value:!0}),e.inViewport=n},function(t,e){(function(e){var n="object"==typeof e&&e&&e.Object===Object&&e;t.exports=n}).call(e,function(){return this}())},function(t,e,n){var r=n(5),i="object"==typeof self&&self&&self.Object===Object&&self,o=r||i||Function("return this")();t.exports=o},function(t,e,n){function r(t,e,n){function r(e){var n=x,r=m;return x=m=void 0,E=e,w=t.apply(r,n)}function a(t){return E=t,j=setTimeout(h,e),M?r(t):w}function l(t){var n=t-O,r=t-E,i=e-n;return _?c(i,g-r):i}function d(t){var n=t-O,r=t-E;return void 0===O||n>=e||n<0||_&&r>=g}function h(){var t=o();return d(t)?p(t):void(j=setTimeout(h,l(t)))}function p(t){return j=void 0,T&&x?r(t):(x=m=void 0,w)}function v(){void 0!==j&&clearTimeout(j),E=0,x=O=m=j=void 0}function y(){return void 0===j?w:p(o())}function b(){var t=o(),n=d(t);if(x=arguments,m=this,O=t,n){if(void 0===j)return a(O);if(_)return j=setTimeout(h,e),r(O)}return void 0===j&&(j=setTimeout(h,e)),w}var x,m,g,w,j,O,E=0,M=!1,_=!1,T=!0;if("function"!=typeof t)throw new TypeError(f);return e=u(e)||0,i(n)&&(M=!!n.leading,_="maxWait"in n,g=_?s(u(n.maxWait)||0,e):g,T="trailing"in n?!!n.trailing:T),b.cancel=v,b.flush=y,b}var i=n(1),o=n(8),u=n(10),f="Expected a function",s=Math.max,c=Math.min;t.exports=r},function(t,e,n){var r=n(6),i=function(){return r.Date.now()};t.exports=i},function(t,e,n){function r(t,e,n){var r=!0,f=!0;if("function"!=typeof t)throw new TypeError(u);return o(n)&&(r="leading"in n?!!n.leading:r,f="trailing"in n?!!n.trailing:f),i(t,e,{leading:r,maxWait:e,trailing:f})}var i=n(7),o=n(1),u="Expected a function";t.exports=r},function(t,e){function n(t){return t}t.exports=n}])});
+
+function loadAdsByG(){ if(AdsByG===1){return;}var adsby=document.createElement('script'); adsby.async=true; adsby.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"; document.head.appendChild(adsby); AdsByG=1; }
+
+function genIns(slotID){ return '<ins class="adsbygoogle" style="display:block;width:100%;height:100%;min-height:90px;" data-ad-client="ca-pub-2150061187219409" data-ad-slot="'+slotID+'" data-ad-format="fluid" data-full-width-responsive="false" data-linktarget="_blank"> </ins>'; }
+ 
+function backfill(slot,fill,func){ if(slot){var id=slot.getSlotElementId(); }else{var id=false;} if(!id && doFuse!==0){ return; } var d=document.getElementById(id); if(d===null || slot.isBackfilled===1){return;} console.log('try-backfill: '+id); var dd=d.getElementsByTagName('div')[0]; var now=Math.floor(Date.now() / 1000); if( (!document.hidden || document.visibilityState=="visible") && inView.is(d) && ((d!=null && typeof d.dataset==='undefined') || (dd!=null && dd.style.height=='0px' || dd.style.height=='50px' ) || slot.lastRefresh < (now-65) )){ d.innerHTML=fill; if(typeof func==="function"){func(); } slot.isBackfilled=1; if(AdsByG!==1){ loadAdsByG(); } console.log('filled!'); slot.lastRefresh=now; } }
+
+function refreshSlot(adSlot){ if(!adSlot){ console.log("empty"); return false; }
+inView.threshold(0.9); var now=Math.floor(Date.now() / 1000); if(adSlot.lastRefresh > (now-45) || doFuse==1){ return; }
+var slotid=adSlot.getSlotElementId(); if(typeof slotid !== "undefined" && slotid !== null){ var adel=document.getElementById(slotid); }else{ console.log("noslot:"+adSlot); return false; } 
+if(adel && light==1 ||(document.fullscreenElement && document.fullscreenElement.id=="player")){ adel.scrollIntoView({ block:'nearest' }); }
+if(adel && inView.is(adel) && (!document.hidden || document.visibilityState=="visible")){ googletag.cmd.push(function() { console.log("refreshed:"+slotid); googletag.pubads().refresh([adSlot]); }); adSlot.isBackfilled=0; }
+return true;
+} 
+</script> <link rel="preload" href="https://securepubads.g.doubleclick.net/tag/js/gpt.js" as="script"> <script>
+var doFuse=0; var stpd1=0; var stpd2=0; var stpd3=0; var stpd4=0; var stpd5=0; var light=0; 
+inView.offset(0);
+
+
+(window.adsbygoogle = window.adsbygoogle || []).push({ google_ad_client: "ca-pub-2150061187219409", enable_page_level_ads: false });
+window.setTimeout(function(){ loadAdsByG(); },9000);
+
+
+window.googletag = window.googletag || {cmd: []};
+
+ 
+ 
+ googletag.cmd.push (function () { 
+ 
+ if(window.innerWidth >= 1780) {
+ stpd1=googletag.defineSlot('/171972652/raidrush.net_1000x100_sticky_acnhorad_desktop', [[1000,100],[970,90],[728,90],[990,90],[970,50],[960,90],[950,90],[980,90]], 'raidrush_net_1000x100_sticky_acnhorad_responsive').addService(googletag.pubads());
+ stpd2=googletag.defineSlot('/171972652/raidrush.net_300x600_sticky_sidebar_left_wide_desktop', [[300,1050],[300,600],[160,600],[300,250],[300,300]], 'raidrush_net_300x600_sticky_sidebar_left_wide_desktop').addService(googletag.pubads());
+ stpd3=googletag.defineSlot('/171972652/raidrush.net_300x600_sticky_sidebar_right_wide_desktop', [[300,1050],[300,600],[160,600],[300,250],[300,300],'fluid'], 'raidrush_net_300x600_sticky_sidebar_right_wide_desktop').addService(googletag.pubads());
+if(window.location.pathname != '/') stpd4=googletag.defineSlot('/171972652/raidrush.net_980x250_billboard_desktop_top', [[1170,336],[970,250],[970,90],[728,90],[970,200],[970,120],[950,90],[728,100],[728,250],'fluid'], 'raidrush_net_980x250_billboard_responsive_top').addService(googletag.pubads());
+ } else if(window.innerWidth >= 1470) {
+ stpd1=googletag.defineSlot('/171972652/raidrush.net_1000x100_sticky_acnhorad_desktop', [[1000,100],[970,90],[728,90],[990,90],[970,50],[960,90],[950,90],[980,90]], 'raidrush_net_1000x100_sticky_acnhorad_responsive').addService(googletag.pubads());
+ stpd2=googletag.defineSlot('/171972652/raidrush.net_160x600_sticky_sidebar_left_desktop', [[160,600],[120,600]], 'raidrush_net_160x600_sticky_sidebar_left_desktop').addService(googletag.pubads());
+ stpd3=googletag.defineSlot('/171972652/raidrush.net_160x600_sticky_sidebar_right_desktop', [[160,600],[120,600]], 'raidrush_net_160x600_sticky_sidebar_right_desktop').addService(googletag.pubads());
+if(window.location.pathname != '/') stpd4=googletag.defineSlot('/171972652/raidrush.net_980x250_billboard_desktop_top', [[970,336],[970,250],[970,90],[728,90],[970,200],[970,120],[950,90],[728,100],[728,250]], 'raidrush_net_980x250_billboard_responsive_top').addService(googletag.pubads());
+ } else if(window.innerWidth >= 1000) {
+ stpd1=googletag.defineSlot('/171972652/raidrush.net_1000x100_sticky_acnhorad_desktop', [[1000,100],[970,90],[728,90],[990,90],[970,50],[960,90],[950,90],[980,90]], 'raidrush_net_1000x100_sticky_acnhorad_responsive').addService(googletag.pubads());
+if(window.location.pathname != '/') stpd4=googletag.defineSlot('/171972652/raidrush.net_980x250_billboard_desktop_top', [[970,250],[970,90],[728,90],[970,200],[970,120],[950,90],[728,100],[728,250]], 'raidrush_net_980x250_billboard_responsive_top').addService(googletag.pubads());
+if(window.innerWidth>1260) stpd3=googletag.defineSlot('/171972652/raidrush.net_160x600_sticky_sidebar_right_desktop', [[160,600],[120,600]], 'raidrush_net_160x600_sticky_sidebar_right_desktop').addService(googletag.pubads()); 
+ } else {
+ stpd1=googletag.defineSlot('/171972652/raidrush.net_320x100_sticky_acnhorad_desktop', [[470,100],[320,100],[300,100],[320,50],[300,50],'fluid'], 'raidrush_net_1000x100_sticky_acnhorad_responsive').addService(googletag.pubads());
+if(window.location.pathname != '/') stpd4=googletag.defineSlot('/171972652/raidrush.net_336x336_billboard_mobile_top', [[300,250],[336,336],[336,320],[320,320],[300,300],[336,280],[320,250],[320,336],'fluid'], 'raidrush_net_980x250_billboard_responsive_top').addService(googletag.pubads());
+ 
+ } 
+ 
+ if(stpd1!=0){ stpd1.AdsensBackfill='8650176485'; }
+ if(stpd4!=0){ stpd4.AdsensBackfill='9818008400'; } 
+ if(stpd3!=0){ stpd3.AdsensBackfill='5269942011'; }
+ if(stpd2!=0){ stpd2.AdsensBackfill='6320159213'; }
+ //4730881612;1515768408;
+
+ googletag.pubads().addEventListener('slotRenderEnded', function(event) {
+ var now=Math.floor(Date.now() / 1000); var SlotElementId=event.slot.getSlotElementId();
+ if(event.isEmpty && doFuse==0){ console.log('emtpy: '+SlotElementId);
+ if(event.slot.isBackfilled!==1){ window.setTimeout(function(){ AdsensSlotID=event.slot.AdsensBackfill; if(typeof AdsensSlotID === 'string') backfill(event.slot,genIns(AdsensSlotID), function(){ (window.adsbygoogle = window.adsbygoogle || []).push({ params: { google_ad_slot:AdsensSlotID } }); } ); },1000); }
+ //else if(event.slot.lastRefresh < (now-65) && (!document.hidden || document.visibilityState=="visible")) { window.setTimeout(function(){ refreshSlot(event.slot); } ,1000); event.slot.refreshCount+=1; console.log("empty-refresh ( "+event.slot.refreshCount+" ):"+SlotElementId); }
+ }else{ event.slot.lastRefresh=now; }
+ 
+ });
+
+ 
+ 
+ 
+ googletag.pubads().addEventListener("slotRequested",function(event) {
+ if((document.fullscreenElement && document.fullscreenElement.id=="player") || light==1){
+ var slotid=event.slot.getSlotElementId(); document.getElementById(slotid).scrollIntoView({ block:'nearest' });
+ console.log("playerReq:"+slotid); 
+ }
+ }); 
+ 
+ 
+ googletag.pubads().disableInitialLoad();
+ googletag.pubads().enableSingleRequest(); 
+ //googletag.pubads().collapseEmptyDivs();
+ const pageConfig = { allowOverlayExpansion: true, allowPushExpansion: true }; 
+ //googletag.pubads().setSafeFrameConfig(pageConfig);
+ googletag.pubads().setForceSafeFrame(false); 
+ //googletag.enableServices();
+ 
+ });
+ 
+ 
+
+window.setInterval(function(){ refreshSlot(stpd1); },51000); 
+window.setInterval(function(){ refreshSlot(stpd2); },31000);
+window.setInterval(function(){ refreshSlot(stpd3); },21000);
+window.setInterval(function(){ refreshSlot(stpd4); },41000);
+ 
+
+
+
+window.setInterval(function(){ document.querySelectorAll("[id^='adg-']").forEach((e)=> e.remove() ); var ifr=document.querySelectorAll("[id^='AVLoaderaniview_slot'")[0]; if(ifr!=null){ var ifrDoc = ifr.contentDocument || ifr.contentWindow.document; ifrDoc.querySelectorAll("[http-equiv='origin-trial']").forEach((e)=> e.remove() ); } },91000);
+
+const stpd = { initializeAdUnit(adID){ googletag.cmd.push(function(){ console.log("display:"+adID); googletag.display(adID); googletag.pubads().getSlots().forEach(function(e) { var s=e.getSlotElementId(); if(s==adID){ return googletag.pubads().refresh([e]); } }); }); } }
+</script> <script>
+window.setTimeout(function(){
+doFuse=1;
+if (typeof googletag !== 'undefined' && googletag.apiReady) { googletag.cmd.push(function() { googletag.pubads().clear(); }); } var gads = document.querySelectorAll('ins.adsbygoogle'); gads.forEach(ad => ad.remove());
+var fus=document.createElement('script'); fus.id="fusescript"; fus.async=true; fus.src="https://cdn.fuseplatform.net/publift/tags/2/2216/fuse.js"; document.head.appendChild(fus);
+document.getElementById("raidrush_net_1000x100_sticky_acnhorad_responsive").remove();
+},723000);
+</script> <script>if(doFuse==0){ (adsbygoogle=window.adsbygoogle||[]).pauseAdRequests=1; }else{ (adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=0; }</script> <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon"> <link rel="apple-touch-icon" href="https://raidrush.net/img/rr_head_logo.png"> <link rel="alternate" type="application/rss+xml" title="RSS-Feed für raid.rush" href="forums/-/index.rss"> <meta name="description" content="Raid-Rush : Nachrichten, Zukunft Trends, Ratgeber. Netzwelt, Wissenschaft und Forschung, Technik, Hardware und Gamer sowie Szene News."> <link rel="next" href="https://raidrush.net/?page=2"> <link rel="canonical" href="https://raidrush.net/"> <meta name="robots" content="noarchive"> <meta name="theme-color" content="rgb(33, 150, 243)"> <meta name="msapplication-TileColor" content="rgb(33, 150, 243)"> <script defer="" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script><meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A9nrunKdU5m96PSN1XsSGr3qOP0lvPFUB2AiAylCDlN5DTl17uDFkpQuHj1AFtgWLxpLaiBZuhrtb2WOu7ofHwEAAACKeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A93bovR+QVXNx2/38qDbmeYYf1wdte9EO37K9eMq3r+541qo0byhYU899BhPB7Cv9QqD7wIbR1B6OAc9kEfYCA4AAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A1S5fojrAunSDrFbD8OfGmFHdRFZymSM/1ss3G+NEttCLfHkXvlcF6LGLH8Mo5PakLO1sCASXU1/gQf6XGuTBgwAAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><script src="https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202508070101/pubads_impl.js" async=""></script><link href="https://securepubads.g.doubleclick.net/pagead/managed/dict/m202508120101/gpt" rel="compression-dictionary"><script async="" src="https://fundingchoicesmessages.google.com/i/23178050824?ers=3"></script><script esp-signal="true" src="https://ads.pubmatic.com/AdServer/js/google-esp.js"></script><script esp-signal="true" src="https://cdn-ima.33across.com/ob.js"></script><script esp-signal="true" src="https://invstatic101.creativecdn.com/encrypted-signals/encrypted-tag-g.js"></script><script esp-signal="true" src="https://static.criteo.net/js/ld/publishertag.ids.js"></script><script esp-signal="true" src="https://cdn.id5-sync.com/api/1.0/esp.js"></script><script esp-signal="true" src="https://tags.crwdcntrl.net/lt/c/16589/sync.min.js"></script><script esp-signal="true" src="https://oa.openxcdn.net/esp.js"></script><script esp-signal="true" src="https://cdn.mgaru.dev/static/myGaruStandalone.js"></script><script esp-signal="true" src="https://cdn.prod.uidapi.com/uid2SecureSignal.js"></script><script esp-signal="true" src="https://connectid.analytics.yahoo.com/connectId-gpt.js"></script><script esp-signal="true" src="https://dmp.im-apps.net/secure-signal/provider.js"></script><script esp-signal="true" src="https://cdn.jsdelivr.net/gh/prebid/shared-id/pubcid.js/docs/pubcid.min.js"></script><script esp-signal="true" src="https://cdn.prod.euid.eu/euidSecureSignal.js"></script></head> <body itemscope="" itemtype="http://schema.org/WebPage" style="visibility: visible;"> <div id="loginBar"> <div class="pageContent"> <span class="helper"> </span> <form action="login/login" method="post" class="xenForm " id="login" style="display:none"> <div class="ctrlWrapper"> <dl class="ctrlUnit"> <dt> <label for="LoginControl">Benutzername oder E-Mail-Adresse:</label> </dt> <dd> <input type="text" name="login" id="LoginControl" class="textCtrl" tabindex="101"> </dd> </dl> <dl class="ctrlUnit"> <dt> <label for="ctrl_password">Besitzt du schon ein Benutzerkonto?</label> </dt> <dd> <ul> <li> <label for="ctrl_not_registered"> <input type="radio" name="register" value="1" id="ctrl_not_registered" tabindex="105">
+ Nein, erstelle jetzt ein Benutzerkonto.</label> </li> <li> <label for="ctrl_registered"> <input type="radio" name="register" value="0" id="ctrl_registered" tabindex="105" checked="checked" class="Disabler">
+ Ja, mein Passwort ist:</label> </li> <li id="ctrl_registered_Disabler"> <input type="password" name="password" class="textCtrl" id="ctrl_password" tabindex="102"> <div class="lostPassword"> <a href="lost-password/" class="OverlayTrigger OverlayCloser" tabindex="106">Hast du dein Passwort vergessen?</a> </div> </li> </ul> </dd> </dl> <dl class="ctrlUnit submitUnit"> <dt> </dt> <dd> <input type="submit" class="button primary" value="Anmelden" tabindex="104" data-loginphrase="Anmelden" data-signupphrase="Registrieren"> <input type="hidden" name="remember" value="1"> </dd> </dl> </div> <input type="hidden" name="cookie_check" value="1"> <input type="hidden" name="redirect" value="/"> <input type="hidden" name="_xfToken" value=""> </form></div> <div class="pageWidth"> </div> </div> <div class="js-uix_panels uix_panels"> <aside class="js-sidePanelWrapper sidePanelWrapper sidePanelWrapper--left" style="position: fixed;"> <a href="#" class="js-panelMask uix_panelMask"> </a> <a href="#" class="js-panelMask uix_panelMask"> </a> <div class="sidePanel sidePanel--nav sidePanel--visitor"> <div class="sidePanel__tabPanels"> <div class="is-active sidePanel__tabPanel js-navigationTabPanel"> <nav> <ul class="sidePanel__navTabs"> <li class="navTab portal selected is-active"> <a href="https://raidrush.net/" class="navLink">Portal</a> </li> <li class="navTab forums "> <a href="https://raidrush.net/forums/" class="navLink">Foren</a> <a href="https://raidrush.net/forums/" class="SplitCtrl"> <i class="uix_icon js-offcanvasIcon uix_icon-expandDropdown"> </i> </a> <div class="tabLinks"> <ul class="secondaryContent blockLinksList"> <li> <a href="s/?type=post">Foren durchsuchen</a> </li> <li> <a href="find-new/posts" rel="nofollow">Themen mit aktuellen Beiträgen</a> </li> </ul> </div> </li> <li class="navTab crypto "> <a href="/pages/cryptocoins/" title="Kryptowährungen Liste: Kurse mit Chart" class="navLink">CryptoCoins</a> </li> <li class="navTab tvstream "> <a href="/pages/online-fernsehen/" title="Online Fernsehen: TV Streaming kostenlos" class="navLink">TV Stream</a> </li> </ul> </nav> </div> <div class="is-right sidePanel__tabPanel js-visitorTabPanel"> <div class="section"> <ul class="sidePanel__blockLinksList"> <li> <a href="members/0/">Dein Profil</a> </li> <li> <a href="logout/" class="LogOut">Abmelden</a> </li> <li> <form action="account/toggle-visibility" method="post" class="AutoValidator visibilityForm"> <label> <input type="checkbox" name="visible" value="1" class="SubmitOnChange" checked="checked">
+ Sichtbar anwesend</label> <input type="hidden" name="_xfToken" value=""> </form> </li> </ul> </div> </div> <div class="is-right sidePanel__tabPanel js-convoTabPanel"> <h3 class="sidePanel__textHeading"> <span class="Progress InProgress"> </span> <a href="conversations/" class="concealed">Unterhaltungen</a> </h3> <ol class="js-convoPlaceholder sidePanel__mediaObjectList"> </ol> <div class="section"> <ul class="sidePanel__blockLinksList"> <li class="navTab"> <a class="navLink" href="conversations/">Alle anzeigen...</a> </li> </ul> </div> </div> <div class="is-right sidePanel__tabPanel js-alertTabPanel"> <h3 class="sidePanel__textHeading"> <span class="Progress InProgress"> </span> <a href="account/alerts" class="concealed">Hinweise</a> </h3> <ol class="js-alertPlaceholder sidePanel__mediaObjectList"> </ol> <div class="section"> <ul class="sidePanel__blockLinksList"> <li> <a href="account/alert-preferences">Benachrichtigungen</a> </li> <li> <a href="account/alerts">Alle anzeigen...</a> </li> </ul> </div> </div> </div> <script>
+ document.addEventListener("DOMContentLoaded", function(){
+ uix.offcanvas.registerTab({
+ trigger: $('.sidePanel__tabs .js-navigationTab'),
+ target: $('.sidePanel--visitor .js-navigationTabPanel'),
+ init: function() {},
+ view: function() {},
+ group: 'offcanvasVisitor'
+ });
+ });
+ </script> <script>
+
+document.addEventListener("DOMContentLoaded", function(){
+
+ uix.offcanvas.registerTab({
+ trigger: $('.sidePanel__tabs .js-visitorTab'),
+ target: $('.sidePanel--visitor .js-visitorTabPanel'),
+ init: function() {},
+ view: function() {},
+ group: 'offcanvasVisitor'
+ });
+ uix.offcanvas.registerTab({
+ trigger: $('.sidePanel__tabs .js-convoTab'),
+ target: $('.sidePanel--visitor .js-convoTabPanel'),
+ init: function() {
+ $('.sidePanel--visitor .js-convoPlaceholder').load('conversations/popup #content div:not(.sidebar) .secondaryContent li.listItem');
+ },
+ view: function() {
+ uix.fn.syncBaloon($('#ConversationsMenu_Counter'), $('#uix_ConversationsMenu_Counter'));
+ },
+ group: 'offcanvasVisitor'
+ });
+ uix.offcanvas.registerTab({
+ trigger: $('.sidePanel__tabs .js-alertTab'),
+ target: $('.sidePanel--visitor .js-alertTabPanel'),
+ init: function() {
+ $('.sidePanel--visitor .js-alertPlaceholder').load('account/alerts-popup #content div:not(.sidebar) .secondaryContent li.listItem');
+ },
+ view: function() {
+ var numConvos = 0,
+ convoEle = $('#ConversationsMenu_Counter');
+ if (convoEle.length) {
+ numConvos = parseInt(convoEle.find('span.Total').text());
+ }
+ XenForo.balloonCounterUpdate($('#VisitorExtraMenu_Counter'), numConvos);
+ uix.fn.syncBaloon($('#VisitorExtraMenu_Counter'), $('#uix_VisitorExtraMenu_Counter'));
+ XenForo.balloonCounterUpdate($('#AlertsMenu_Counter'), 0);
+ uix.fn.syncBaloon($('#AlertsMenu_Counter'), $('#uix_AlertsMenu_Counter'));
+ },
+ group: 'offcanvasVisitor'
+ });
+ 
+});
+</script> </div> </aside> <div class="mainPanelWrapper"> <a href="#" class="js-panelMask uix_panelMask"> </a> <div class="uix_wrapperFix" style="height: 1px; margin-bottom: -1px;"> </div> <div id="uix_wrapper"> <div class="uix_wrapperFix" style="height: 1px; margin-bottom: -1px;"> </div> <div id="headerMover"> <div id="headerProxy"> </div> <header> <div id="header"> <div id="navigation" class="header__blockItem withSearch stickyTop uix_noTabLinks inactiveSticky"> <div class="sticky_wrapper"> <div class="uix_navigationWrapper"> <div class="pageContent"> <nav> <div class="navTabs"> <div class="pageWidth"> <ul class="publicTabs navLeft"> <li id="logo_small"> <a href="https://raidrush.net" rel="home"> <strong class="uix_navigationLogoText"> <i class="uix_icon mdi-layers"> </i> <span>RAID.RUSH</span> </strong> </a> </li> <li class="navTab navTab--justIcon navTab--panelTrigger navTab--navPanelTrigger PopupClosed"> <a class="navLink js-leftPanelTrigger" href="#"> <i class="uix_icon uix_icon-menu"> </i> <strong class="itemCount Zero" id="uix_VisitorExtraMenu_Counter"> <span class="Total">0</span> </strong> </a> </li> <li class="navTab portal selected Popup PopupControl PopupClosed PopupContainerControl"> <a href="https://raidrush.net/" class="navLink NoPopupGadget" rel="Menu">Portal</a> <a href="https://raidrush.net/" class="SplitCtrl" rel="Menu"> </a>  </li> <li class="navTab forums Popup PopupControl PopupClosed PopupContainerControl" style="display: list-item;"> <a href="https://raidrush.net/forums/" class="navLink NoPopupGadget" rel="Menu">Foren</a> <a href="https://raidrush.net/forums/" class="SplitCtrl" rel="Menu"> </a>  </li> <li class="navTab crypto " style="display: list-item;"> <a href="/pages/cryptocoins/" title="Kryptowährungen Liste: Kurse mit Chart" class="navLink">CryptoCoins</a> </li> <li class="navTab tvstream " style="display: list-item;"> <a href="/pages/online-fernsehen/" title="Online Fernsehen: TV Streaming kostenlos" class="navLink">TV Stream</a> </li> <li class="navTab navigationHiddenTabs navTab--justIcon Popup PopupControl PopupClosed PopupContainerControl" style="display: none;"> <a rel="Menu" class="navLink NoPopupGadget uix_dropdownDesktopMenu"> <i class="uix_icon uix_icon-navOverflow"> </i> <span class="uix_hide menuIcon">Menü</span> </a>  </li> </ul> <ul class="navRight visitorTabs"> <li class="navTab login Popup PopupControl PopupClosed PopupContainerControl"> <a href="login/" class="navLink uix_dropdownDesktopMenu NoPopupGadget" rel="Menu"> <i class="uix_icon uix_icon-signIn"> </i> <strong class="loginText">Login</strong> </a>  </li> <li class="navTab register PopupClosed"> <a href="register/" class="navLink"> <i class="uix_icon uix_icon-register"> </i> <strong class="registerText">Registrieren</strong> </a> </li> <li class="navTab uix_searchTab"> <div id="searchBar" class="hasSearchButton"> <i id="QuickSearchPlaceholder" class="uix_icon uix_icon-search" title=" Suche"> </i> <fieldset id="QuickSearch"> <form action="s/search" method="post" class="formPopup"> <div class="primaryControls"> <i class="uix_icon uix_icon-search" onclick="$(&quot;#QuickSearch form&quot;).submit()"> </i> <input type="search" name="keywords" value="" class="textCtrl" placeholder=" Suche..." results="0" title="Gib deine Suche ein und verwende die Eingabetaste" id="QuickSearchQuery"> </div> <div class="secondaryControls"> <div class="controlsWrapper"> <dl class="ctrlUnit"> <dt> </dt> <dd> <ul> <li> <label> <input type="checkbox" name="title_only" value="1" id="search_bar_title_only" class="AutoChecker" data-uncheck="#search_bar_thread"> Nur die Titel durchsuchen</label> </li> </ul> </dd> </dl> <dl class="ctrlUnit"> <dt> <label for="searchBar_users">Erstellt von:</label> </dt> <dd> <input type="text" name="users" value="" class="textCtrl AutoComplete" id="searchBar_users" autocomplete="off"> <p class="explain">Trenne Benutzernamen durch Kommata.</p> </dd> </dl> <dl class="ctrlUnit"> <dt> <label for="searchBar_date">Neuer als:</label> </dt> <dd> <input type="text" data-orig-type="date" name="date" value="" class="textCtrl date" id="searchBar_date"> </dd> </dl> </div> <dl class="ctrlUnit submitUnit"> <dt> </dt> <dd> <input type="submit" value=" Suche" class="button primary Tooltip" title="Allgemeine Suche"> <a href="s/" class="button moreOptions Tooltip" title="Erweiterte Suche">Mehr...</a> <div class="Popup" id="commonSearches"> <a rel="Menu" class="button NoPopupGadget Tooltip PopupControl" title="Nützliche Suchen" data-tipclass="flipped"> <span class="arrowWidget"> </span> </a>  </div> </dd> </dl> </div> <input type="hidden" name="_xfToken" value=""> </form> </fieldset> </div> </li> <li class="topLink navTab" style="display: list-item;"> <a href="/#XenForo" class="navLink Tooltip" title="nach Oben scrollen"> <i class="uix_icon uix_icon-jumpToTop"> </i> <span class="uix_hide">Seitenanfang</span> </a> </li> </ul> <div class="uix_minimalSearchWrapper"> <div id="uix_searchMinimal"> <form action="s/search" method="post"> <i id="uix_searchMinimalClose" class="uix_icon uix_icon-close" title="Schließen"> </i> <i id="uix_searchMinimalOptions" class="uix_icon uix_icon-cog" title="Einstellungen"> </i> <div id="uix_searchMinimalInput"> <input type="search" name="keywords" value="" placeholder=" Suche..." results="0"> </div> <input type="hidden" name="_xfToken" value=""> </form> </div> </div> </div> </div> <span class="helper"> </span> </nav> </div> </div> </div> </div> </div> </header> <div class="breadBoxTop "> <div class="pageWidth"> <nav> <fieldset class="breadcrumb" itemprop="breadcrumb" style=""> <a rel="nofollow" href="misc/quick-navigation-menu" class="OverlayTrigger jumpMenuTrigger" data-cacheoverlay="true" title="Nützliche Links anzeigen"> <i class="uix_icon uix_icon-sitemap"> </i> </a> <ol class="crumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList"> <li class="crust selectedTabCrumb" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"> <a href="https://raidrush.net/" class="crumb" rel="up" itemprop="item"> <span itemprop="name">Portal</span> <meta itemprop="position" content="2"> </a> <span class="arrow"> <i class="uix_icon uix_icon-breadcrumbSeparator"> </i> </span> </li> </ol> </fieldset> </nav> </div> </div> <div id="content" class="el_portal_index"> <div class="pageWidth"> <div class="pageContent"> <div class="uix_contentFix"> <div class="mainContainer"> <div class="mainContent"> <style>
+@media (min-width: 1470px) { #aside_left,#aside_right {display:block;} } 
+@media (max-width: 1469px) and (min-width: 1260px) { #aside_left {display:none;} #aside_right {display:block;width:calc(100vw - 1120px)!important;} .pageWidth {max-width:1070px!important;margin-left:0!important;} } 
+@media (max-width: 1260px) { #aside_right {display:none;} }
+</style>   <div class="titleBar isMetro metro-purple"> <div> <div class="pageWidth"> <div class="media__container"> <div class="media__object media--left"> <div class="pageTitle__icon"> <i class="mdi mdi-comment"> </i> </div> </div> <div class="media__body"> <h1>Raid-Rush</h1> <p id="pageDescription" class="muted"> News, Trends, Ratgeber und Forum Community seit 2001.</p> <details class="messageMeta"> <summary>About: Informationen zur Seite</summary> <br> <p class="messageDetails">Die RaidRush Community wurde 2001 gegründet, die Forum-Basis entstand erst 2004 mit einer Neuinstallation. 
+RaidRush war anfangs überwiegend eine Gruppe von Technik-Begeisterten und digital Natives, die dem Forum viel Wissen in allen Bereiche eröffneten. 
+Heute ist das Forum facettenreich und hat sich in den unterschiedlichsten Bereichen etabliert.<br> <br> 
+Das RR-Board bietet dabei eine Plattform sowohl für Diskussionen und Unterhaltungsbereiche als auch Ratgeber, Beratung und Hilfe.
+Dabei spielen Alltags-Fragen, Zwischenmenschliches oder die Suche nach einem guten Rat, eine große Rolle. 
+Im Portal werden aktuelle Nachrichten, Artikel und Berichte von freien Journalisten veröffentlicht. 
+<a href="/about/" rel="about">Mehr über uns ...</a> </p> </details> </div> </div> </div> </div> </div> <div class="Portal"> <div id="messageList"> </div> <ol class="messageList moreItems" id="portalList" data-maxheight="400"> <li id="portalitem-2023" class="sectionMain message elportalItem itembit thread " data-contenttype="thread" data-contentid="864599" data-author="Carla Columna"> <div class="uix_message"> <div class="messageInfo"> <div class="Title"> <h2 class="textHeading"> <a href="https://raidrush.net/threads/warum-einige-menschen-keine-freude-an-musik-empfinden-koennen-die-wissenschaft-hinter-der-musikalischen-anhedonie.864599/">Warum einige Menschen keine Freude an Musik empfinden können – Die Wissenschaft hinter der musikalischen Anhedonie</a> <span style="float:right;"> </span> </h2> </div> <article> <a href="https://raidrush.net/threads/warum-einige-menschen-keine-freude-an-musik-empfinden-koennen-die-wissenschaft-hinter-der-musikalischen-anhedonie.864599/" title="Warum einige Menschen keine Freude an Musik empfinden können – Die Wissenschaft hinter der musikalischen Anhedonie"> <img src="https://raidrush.net/data/attachments/57/57274-d7b9431f8b44e8092a3ba0a44998d018.jpg" alt="Dont like listening to music Scientists now know why.jpg" class="itemimg LbImage" loading="lazy" style="aspect-ratio:1200/800"> <blockquote class="messageText ugc baseHtml">
+ Musik – für viele der Inbegriff von Genuss und Ausdruck. Doch nicht jeder Mensch empfindet Freude beim Hören. Ein paar schaffen es, das Wesen der Musik kalt zu lassen. Was steckt hinter diesem merkwürdigen Phänomen? Eine faszinierende Forschungsreise in die Neurowissenschaften zeigt auf, dass es an einer gewaltigen Disconnect zwischen dem Auditorischen Netzwerk des Gehirns und seinem Belohnungssystem liegen könnte.
+ </blockquote> </a> <span class="contentSummary" style="float:left;"> <i class="mdi mdi-folder-outline"> </i> Kategorie: <a href="thema/wissenschaft.1/">Wissenschaft</a> </span> <span class="contentSummary" style="float:right;">
+ 
+ 
+ &nbsp; <i class="mdi mdi-checkbox-marked-outline"> </i> Leser: 175
+ </span> </article> <div class="sectionFooter messageMeta"> <div class="author" style="float:left;"> <div class="itemDate"> <i class="mdi mdi-account-circle"> </i> <span class="username"> <a href="members/carla-columna.114780/" class="username" dir="auto" title="Ersteller des Themas">Carla Columna</a> </span> 
+ ,&nbsp; <time class="DateTime" data-time="1754908232" data-diff="201370" data-datestring="11. August 2025" data-timestring="12:30">11. August 2025 um 12:30 Uhr</time> </div> </div> </div> </div> </div> </li> <li id="portalitem-2022" class="sectionMain message elportalItem itembit thread " data-contenttype="thread" data-contentid="864595" data-author="Felix Lee"> <div class="uix_message"> <div class="messageInfo"> <div class="Title"> <h2 class="textHeading"> <a href="https://raidrush.net/threads/flower-power-reloaded-warum-jeder-trend-wieder-kommt.864595/">Flower Power Reloaded: Warum jeder Trend wieder kommt</a> <span style="float:right;"> </span> </h2> </div> <article> <a href="https://raidrush.net/threads/flower-power-reloaded-warum-jeder-trend-wieder-kommt.864595/" title="Flower Power Reloaded: Warum jeder Trend wieder kommt"> <img src="https://raidrush.net/data/attachments/57/57277-b002b86e09b7569b6a930a302c87b1a7.jpg" alt="flowerpower hippygirl 70ger mode.jpg" class="itemimg LbImage" loading="lazy" style="aspect-ratio:1500/1000"> <blockquote class="messageText ugc baseHtml">
+ Kaum ein Symbol verkörpert die Sehnsucht nach Freiheit, Liebe und kreativer Entfaltung so sehr wie die Flower-Power-Bewegung. Doch warum erleben scheinbar vergangene Trends wie dieser immer wieder ein beeindruckendes Comeback? Wer genauer hinsieht, entdeckt hinter der Renaissance des Flower Power Trends nicht nur nostalgische Rückblicke, sondern tiefe kulturelle Dynamiken und neue Ausdrucksformen. Diese Entwicklung zeigt, dass Flower Power mehr ist als bunte Muster.
+ </blockquote> </a> <span class="contentSummary" style="float:left;"> <i class="mdi mdi-folder-outline"> </i> Kategorie: <a href="thema/unterhaltung.10/">Unterhaltung</a> </span> <span class="contentSummary" style="float:right;">
+ 
+ 
+ &nbsp; <i class="mdi mdi-checkbox-marked-outline"> </i> Leser: 93
+ </span> </article> <div class="sectionFooter messageMeta"> <div class="author" style="float:left;"> <div class="itemDate"> <i class="mdi mdi-account-circle"> </i> <span class="username"> <a href="members/felix-lee.101348/" class="username" dir="auto" title="Ersteller des Themas">Felix Lee</a> </span> 
+ ,&nbsp; <time class="DateTime" data-time="1754900356" data-diff="209246" data-datestring="11. August 2025" data-timestring="10:19">11. August 2025 um 10:19 Uhr</time> </div> </div> </div> </div> </div> </li> <li id="portalitem-2021" class="sectionMain message elportalItem itembit thread " data-contenttype="thread" data-contentid="864391" data-author="Felix Lee"> <div class="uix_message"> <div class="messageInfo"> <div class="Title"> <h2 class="textHeading"> <a href="https://raidrush.net/threads/zufalls-videochats-sind-ein-wichtiger-teil-der-modernen-kommunikationskultur-geworden.864391/">Zufalls-Videochats sind ein wichtiger Teil der modernen Kommunikationskultur geworden</a> <span style="float:right;"> </span> </h2> </div> <article> <a href="https://raidrush.net/threads/zufalls-videochats-sind-ein-wichtiger-teil-der-modernen-kommunikationskultur-geworden.864391/" title="Zufalls-Videochats sind ein wichtiger Teil der modernen Kommunikationskultur geworden"> <img src="https://raidrush.net/data/attachments/57/57276-5e91719c35dc7a4c6485252cf9323f65.jpg" alt="frau mit handy freut sich lacht.jpg" class="itemimg LbImage" loading="lazy" style="aspect-ratio:1600/1066"> <blockquote class="messageText ugc baseHtml">
+ Noch vor zehn Jahren fanden Verabredungen hauptsächlich im realen Leben statt — in der Schule oder bei der Arbeit, in Cafés oder Clubs, durch gemeinsame Bekannte usw. Doch allmählich wurde das Internet zur wichtigsten Plattform für Partnersuche und Kommunikation. Anfangs nutzten die Menschen aktiv Foren, um interessante Chatpartner zu finden.
+ </blockquote> </a> <span class="contentSummary" style="float:right;">
+ 
+ 
+ &nbsp; <i class="mdi mdi-checkbox-marked-outline"> </i> Leser: 65
+ </span> </article> <div class="sectionFooter messageMeta"> <div class="author" style="float:left;"> <div class="itemDate"> <i class="mdi mdi-account-circle"> </i> <span class="username"> <a href="members/felix-lee.101348/" class="username" dir="auto" title="Ersteller des Themas">Felix Lee</a> </span> 
+ ,&nbsp; <span class="DateTime" title="14. April 2025 um 13:10 Uhr">14. April 2025</span> </div> </div> </div> </div> </div> </li> <li id="portalitem-2020" class="sectionMain message elportalItem itembit thread " data-contenttype="thread" data-contentid="864596" data-author="Miko Collard"> <div class="uix_message"> <div class="messageInfo"> <div class="Title"> <h2 class="textHeading"> <a href="https://raidrush.net/threads/der-sommer-ist-zurueck-so-schuetzt-du-dein-smartphone-vor-hitze.864596/">Der Sommer ist zurück: So schützt du dein Smartphone vor Hitze</a> <span style="float:right;"> </span> </h2> </div> <article> <a href="https://raidrush.net/threads/der-sommer-ist-zurueck-so-schuetzt-du-dein-smartphone-vor-hitze.864596/" title="Der Sommer ist zurück: So schützt du dein Smartphone vor Hitze"> <img src="https://raidrush.net/data/attachments/57/57268-af5946f72677644902e2a9d4b8260c09.jpg" alt="Der Sommer ist zurück So schützt du dein Smartphone vor Hitze.jpg" class="itemimg LbImage" loading="lazy" style="aspect-ratio:1200/800"> <blockquote class="messageText ugc baseHtml">
+ Der Sommer hat uns wieder erreicht – und mit ihm die Herausforderung, unsere Smartphones vor der erbarmungslosen Hitze zu schützen. Oftmals sind Smartphones nicht für extreme Temperaturen ausgelegt. Die Hersteller wie Apple oder Samsung betonen in den technischen Daten, dass ihre Geräte Temperaturen zwischen 0 und 35 Grad standhalten können. Wichtig ist, dass diese Werte im Schatten gemessen werden. Du lässt dein Smartphone bei angenehmen 25 Grad im Café auf dem Tisch liegen.
+ </blockquote> </a> <span class="contentSummary" style="float:left;"> <i class="mdi mdi-folder-outline"> </i> Kategorie: <a href="thema/ratgeber-wissen.8/">Ratgeber &amp; Wissen</a> </span> <span class="contentSummary" style="float:right;">
+ 
+ 
+ &nbsp; <i class="mdi mdi-checkbox-marked-outline"> </i> Leser: 162
+ </span> </article> <div class="sectionFooter messageMeta"> <div class="author" style="float:left;"> <div class="itemDate"> <i class="mdi mdi-account-circle"> </i> <span class="username"> <a href="members/miko-collard.119175/" class="username" dir="auto" title="Ersteller des Themas">Miko Collard</a> </span> 
+ ,&nbsp; <time class="DateTime" data-time="1754905769" data-diff="203833" data-datestring="11. August 2025" data-timestring="11:49">11. August 2025 um 11:49 Uhr</time> </div> </div> </div> </div> </div> </li> <li id="portalitem-2019" class="sectionMain message elportalItem itembit thread " data-contenttype="thread" data-contentid="864584" data-author="Burg und Er"> <div class="uix_message"> <div class="messageInfo"> <div class="Title"> <h2 class="textHeading"> <a href="https://raidrush.net/threads/schutz-fuer-das-gehirn-die-rolle-von-kupfer-in-der-kognitiven-gesundheit-aelterer-erwachsener.864584/">Schutz für das Gehirn: Die Rolle von Kupfer in der kognitiven Gesundheit älterer Erwachsener</a> <span style="float:right;"> </span> </h2> </div> <article> <a href="https://raidrush.net/threads/schutz-fuer-das-gehirn-die-rolle-von-kupfer-in-der-kognitiven-gesundheit-aelterer-erwachsener.864584/" title="Schutz für das Gehirn: Die Rolle von Kupfer in der kognitiven Gesundheit älterer Erwachsener"> <img src="https://raidrush.net/data/attachments/57/57273-39caea00ee5de33c0e603631cd665da9.jpg" alt="graph chart statistik auswertung kupfer aufnahme.jpg" class="itemimg LbImage" loading="lazy" style="aspect-ratio:1200/770"> <blockquote class="messageText ugc baseHtml">
+ Eine neue Forschung hat spannende Erkenntnisse über Kupfer – ein essenzielles Spurenelement – offenbart. Anhand von 2.354 Erwachsenen über 60 Jahren zeigt sich, dass eine gezielte Zufuhr dieses Minerals die kognitive Funktion wesentlich beeinflussen kann. Forscher des Vierten Krankenhauses der Hebei Medizinischen Universität in China haben diese Thematik eingehend untersucht. Aber wie genau funktioniert das?
+ </blockquote> </a> <span class="contentSummary" style="float:left;"> <i class="mdi mdi-folder-outline"> </i> Kategorie: <a href="thema/wissenschaft.1/">Wissenschaft</a> </span> <span class="contentSummary" style="float:right;">
+ 
+ 
+ &nbsp; <i class="mdi mdi-checkbox-marked-outline"> </i> Leser: 129
+ </span> </article> <div class="sectionFooter messageMeta"> <div class="author" style="float:left;"> <div class="itemDate"> <i class="mdi mdi-account-circle"> </i> <span class="username"> <a href="members/burg-und-er.90751/" class="username" dir="auto" title="Ersteller des Themas">Burg und Er</a> </span> 
+ ,&nbsp; <time class="DateTime" data-time="1754908105" data-diff="201497" data-datestring="11. August 2025" data-timestring="12:28">11. August 2025 um 12:28 Uhr</time> </div> </div> </div> </div> </div> </li> <li id="portalitem-2018" class="sectionMain message elportalItem itembit thread " data-contenttype="thread" data-contentid="864409" data-author="Jonas Hubertus"> <div class="uix_message"> <div class="messageInfo"> <div class="Title"> <h2 class="textHeading"> <a href="https://raidrush.net/threads/lokale-unternehmen-werden-smart-ki-loesungen-fuer-den-mittelstand.864409/">Lokale Unternehmen werden smart: KI-Lösungen für den Mittelstand</a> <span style="float:right;"> </span> </h2> </div> <article> <a href="https://raidrush.net/threads/lokale-unternehmen-werden-smart-ki-loesungen-fuer-den-mittelstand.864409/" title="Lokale Unternehmen werden smart: KI-Lösungen für den Mittelstand"> <img src="https://raidrush.net/data/attachments/57/57271-a045660aceb6c9e997e999fa122b7620.jpg" alt="roboterarm vitrinen lager.jpg" class="itemimg LbImage" loading="lazy" style="aspect-ratio:1200/795"> <blockquote class="messageText ugc baseHtml">
+ Der deutsche Mittelstand steht vor einer digitalen Revolution. Was noch vor wenigen Jahren als Science-Fiction galt, wird heute zur geschäftlichen Realität: Künstliche Intelligenz hält Einzug in mittelständische Unternehmen und verändert grundlegend die Art, wie Geschäfte geführt werden.
+ </blockquote> </a> <span class="contentSummary" style="float:right;">
+ 
+ 
+ &nbsp; <i class="mdi mdi-checkbox-marked-outline"> </i> Leser: 174
+ </span> </article> <div class="sectionFooter messageMeta"> <div class="author" style="float:left;"> <div class="itemDate"> <i class="mdi mdi-account-circle"> </i> <span class="username"> <a href="members/jonas-hubertus.118239/" class="username" dir="auto" title="Ersteller des Themas">Jonas Hubertus</a> </span> 
+ ,&nbsp; <time class="DateTime" data-time="1754907493" data-diff="202109" data-datestring="11. August 2025" data-timestring="12:18">11. August 2025 um 12:18 Uhr</time> </div> </div> </div> </div> </div> </li> <li id="portalitem-2017" class="sectionMain message elportalItem itembit thread " data-contenttype="thread" data-contentid="864594" data-author="Fabiane Herbst"> <div class="uix_message"> <div class="messageInfo"> <div class="Title"> <h2 class="textHeading"> <a href="https://raidrush.net/threads/perseiden-2025-ein-himmel-voller-herausforderungen-und-moeglichkeiten.864594/">Perseiden 2025: Ein Himmel voller Herausforderungen und Möglichkeiten</a> <span style="float:right;"> </span> </h2> </div> <article> <a href="https://raidrush.net/threads/perseiden-2025-ein-himmel-voller-herausforderungen-und-moeglichkeiten.864594/" title="Perseiden 2025: Ein Himmel voller Herausforderungen und Möglichkeiten"> <img src="https://raidrush.net/data/attachments/57/57263-a0a5265db0c525bceeb8c39ed0a0b250.jpg" alt="Perseiden 2025 Vollmond stört Sternschnuppennacht.jpeg" class="itemimg LbImage" loading="lazy" style="aspect-ratio:1200/800"> <blockquote class="messageText ugc baseHtml">
+ Der August – dieser Monat ruft nicht nur den Sommer in Erinnerung zurück. Er ist auch die Zeit der begehrten Perseiden. Dieses Ereignis fesselt Astronomie-Fans und die Nachtschwärmer gleichermaßen. Der Ursprung? Komet 109P/Swift-Tuttle, der über die Jahre winzige Staub- und Gesteinspartikel auf seiner Bahn hinterlassen hat. Die Höhepunkte bringen uns bis zu 100 Sternschnuppen pro Stunde in guten Jahren. Doch wie steht es 2025 mit den Perseiden?
+ </blockquote> </a> <span class="contentSummary" style="float:left;"> <i class="mdi mdi-folder-outline"> </i> Kategorie: <a href="thema/unterhaltung.10/">Unterhaltung</a> </span> <span class="contentSummary" style="float:right;">
+ 
+ 
+ &nbsp; <i class="mdi mdi-checkbox-marked-outline"> </i> Leser: 114
+ </span> </article> <div class="sectionFooter messageMeta"> <div class="author" style="float:left;"> <div class="itemDate"> <i class="mdi mdi-account-circle"> </i> <span class="username"> <a href="members/fabiane-herbst.118334/" class="username" dir="auto" title="Ersteller des Themas">Fabiane Herbst</a> </span> 
+ ,&nbsp; <time class="DateTime" data-time="1754897601" data-diff="212001" data-datestring="11. August 2025" data-timestring="09:33">11. August 2025 um 09:33 Uhr</time> </div> </div> </div> </div> </div> </li> <li id="portalitem-2016" class="sectionMain message elportalItem itembit thread " data-contenttype="thread" data-contentid="864592" data-author="Fabiane Herbst"> <div class="uix_message"> <div class="messageInfo"> <div class="Title"> <h2 class="textHeading"> <a href="https://raidrush.net/threads/west-nil-virus-in-italien-wichtige-informationen-fuer-reisende.864592/">West-Nil-Virus in Italien: Wichtige Informationen für Reisende</a> <span style="float:right;"> </span> </h2> </div> <article> <a href="https://raidrush.net/threads/west-nil-virus-in-italien-wichtige-informationen-fuer-reisende.864592/" title="West-Nil-Virus in Italien: Wichtige Informationen für Reisende"> <img src="https://raidrush.net/data/attachments/57/57261-1332d3e847d3f9391fffebf65dbd86d5.jpg" alt="WestNilFieber in Italien Wie gefährlich ist das Virus.jpeg" class="itemimg LbImage" loading="lazy" style="aspect-ratio:1200/800"> <blockquote class="messageText ugc baseHtml">
+ Die Übertragung des West-Nil-Virus erfolgt durch Stechmücken. Dies verursacht grippeähnliche Symptome. In seltenen Fällen kann eine schwere Gehirnentzündung die Folge sein. Bedeutsam ist der Anstieg der Stechmücken, die das Virus tragen. In Italien geht die Zahl der Fälle von West-Nil-Fieber rapide nach oben.
+ </blockquote> </a> <span class="contentSummary" style="float:left;"> <i class="mdi mdi-folder-outline"> </i> Kategorie: <a href="thema/ratgeber-wissen.8/">Ratgeber &amp; Wissen</a> </span> <span class="contentSummary" style="float:right;">
+ 
+ 
+ &nbsp; <i class="mdi mdi-checkbox-marked-outline"> </i> Leser: 144
+ </span> </article> <div class="sectionFooter messageMeta"> <div class="author" style="float:left;"> <div class="itemDate"> <i class="mdi mdi-account-circle"> </i> <span class="username"> <a href="members/fabiane-herbst.118334/" class="username" dir="auto" title="Ersteller des Themas">Fabiane Herbst</a> </span> 
+ ,&nbsp; <span class="DateTime" title="5. August 2025 um 20:34 Uhr">5. August 2025</span> </div> </div> </div> </div> </div> </li> <li id="portalitem-2015" class="sectionMain message elportalItem itembit thread " data-contenttype="thread" data-contentid="864588" data-author="Miko Collard"> <div class="uix_message"> <div class="messageInfo"> <div class="Title"> <h2 class="textHeading"> <a href="https://raidrush.net/threads/krypto-und-blockchain-grosse-veraenderungen-in-der-deutschen-wirtschaft.864588/">Krypto und Blockchain: Große Veränderungen in der deutschen Wirtschaft</a> <span style="float:right;"> </span> </h2> </div> <article> <a href="https://raidrush.net/threads/krypto-und-blockchain-grosse-veraenderungen-in-der-deutschen-wirtschaft.864588/" title="Krypto und Blockchain: Große Veränderungen in der deutschen Wirtschaft"> <img src="https://raidrush.net/data/attachments/57/57269-ecb6a3f78ce4962c30531f7dcb6e30e1.jpg" alt="getürmte container lager hafen ansicht von oben wie blöcke.jpg" class="itemimg LbImage" loading="lazy" style="aspect-ratio:1200/800"> <blockquote class="messageText ugc baseHtml">
+ Kryptowährungen und die damit verbundene Blockchain-Technologie vergrößern ihre Reichweite. In vielen Branchen wird die neue Technologie verwendet, die effizientere und sichere Prozesse erlaubt. Nicht zu vergessen die Kryptowährungen als Handelsbasis und finanzielles Mittel, das eine interessante Alternative zu den zentral kontrollierten Fiat-Währungen wie US-Dollar, Euro oder Yen darstellt. Auf die Wirtschaft haben beide Technologien einen enormen Einfluss.
+ </blockquote> </a> <span class="contentSummary" style="float:right;">
+ 
+ 
+ &nbsp; <i class="mdi mdi-checkbox-marked-outline"> </i> Leser: 95
+ </span> </article> <div class="sectionFooter messageMeta"> <div class="author" style="float:left;"> <div class="itemDate"> <i class="mdi mdi-account-circle"> </i> <span class="username"> <a href="members/miko-collard.119175/" class="username" dir="auto" title="Ersteller des Themas">Miko Collard</a> </span> 
+ ,&nbsp; <span class="DateTime" title="5. August 2025 um 11:03 Uhr">5. August 2025</span> </div> </div> </div> </div> </div> </li> <li id="portalitem-2014" class="sectionMain message elportalItem itembit thread " data-contenttype="thread" data-contentid="864371" data-author="Carla Columna"> <div class="uix_message"> <div class="messageInfo"> <div class="Title"> <h2 class="textHeading"> <a href="https://raidrush.net/threads/die-tricks-der-hacker-und-wie-man-sich-vor-ihnen-schuetzen-kann.864371/">Die Tricks der Hacker und wie man sich vor ihnen schützen kann</a> <span style="float:right;"> </span> </h2> </div> <article> <a href="https://raidrush.net/threads/die-tricks-der-hacker-und-wie-man-sich-vor-ihnen-schuetzen-kann.864371/" title="Die Tricks der Hacker und wie man sich vor ihnen schützen kann"> <img src="https://raidrush.net/data/attachments/57/57267-33842d90a94b6e0841d1f68c65e35116.jpg" alt="drei bildschirme multiscreen arbeitsplatz.jpg" class="itemimg LbImage" loading="lazy" style="aspect-ratio:1920/1280"> <blockquote class="messageText ugc baseHtml">
+ Cyberkriminalität ist inzwischen keine düstere Parallelwelt mehr, in der ein paar blasse Gestalten in Kapuzenpullis zwischen grünen Codeschlieren auf schwarze Bildschirme starren. Die Realität ist weitaus banaler und deshalb so gefährlich. Hacker nutzen oft keine Supertechnik, sondern schlicht die Schwächen ihrer Zielgruppe. Die menschlichen. Und diese Strategie funktioniert erschreckend gut.
+ </blockquote> </a> <span class="contentSummary" style="float:right;">
+ 
+ 
+ &nbsp; <i class="mdi mdi-checkbox-marked-outline"> </i> Leser: 388
+ </span> </article> <div class="sectionFooter messageMeta"> <div class="author" style="float:left;"> <div class="itemDate"> <i class="mdi mdi-account-circle"> </i> <span class="username"> <a href="members/carla-columna.114780/" class="username" dir="auto" title="Ersteller des Themas">Carla Columna</a> </span> 
+ ,&nbsp; <time class="DateTime" data-time="1754904320" data-diff="205282" data-datestring="11. August 2025" data-timestring="11:25">11. August 2025 um 11:25 Uhr</time> </div> </div> </div> </div> </div> </li> <li id="portalitem-2013" class="sectionMain message elportalItem itembit thread " data-contenttype="thread" data-contentid="864397" data-author="Felix Lee"> <div class="uix_message"> <div class="messageInfo"> <div class="Title"> <h2 class="textHeading"> <a href="https://raidrush.net/threads/die-macht-der-zahlen-wie-steuern-sie-unser-vertrauen-und-verhalten.864397/">Die Macht der Zahlen: Wie steuern sie unser Vertrauen und Verhalten?</a> <span style="float:right;"> </span> </h2> </div> <article> <a href="https://raidrush.net/threads/die-macht-der-zahlen-wie-steuern-sie-unser-vertrauen-und-verhalten.864397/" title="Die Macht der Zahlen: Wie steuern sie unser Vertrauen und Verhalten?"> <img src="https://raidrush.net/data/attachments/57/57266-4d719ab315cf5862c163d14d5b4ed7c3.jpg" alt="zahlen digitalanzeige.jpg" class="itemimg LbImage" loading="lazy" style="aspect-ratio:1200/800"> <blockquote class="messageText ugc baseHtml">
+ Zahlen haben kein Gesicht, keine Stimme und keine Emotion. Trotzdem schaffen sie es, Entscheidungen zu beeinflussen, Handlungen auszulösen und Meinungen zu formen, fast schon lautlos. Wer glaubt, rational zu handeln, nur weil ein Produkt mit „95 % Zufriedenheit“ wirbt, hat die stille Überzeugungskraft der Statistik vermutlich unterschätzt.
+ </blockquote> </a> <span class="contentSummary" style="float:right;">
+ 
+ 
+ &nbsp; <i class="mdi mdi-checkbox-marked-outline"> </i> Leser: 156
+ </span> </article> <div class="sectionFooter messageMeta"> <div class="author" style="float:left;"> <div class="itemDate"> <i class="mdi mdi-account-circle"> </i> <span class="username"> <a href="members/felix-lee.101348/" class="username" dir="auto" title="Ersteller des Themas">Felix Lee</a> </span> 
+ ,&nbsp; <time class="DateTime" data-time="1754903895" data-diff="205707" data-datestring="11. August 2025" data-timestring="11:18">11. August 2025 um 11:18 Uhr</time> </div> </div> </div> </div> </div> </li> <li id="portalitem-2012" class="sectionMain message elportalItem itembit thread " data-contenttype="thread" data-contentid="864531" data-author="Fritz E-laub"> <div class="uix_message"> <div class="messageInfo"> <div class="Title"> <h2 class="textHeading"> <a href="https://raidrush.net/threads/upgrade-oder-neuinstallation-so-bekommst-du-windows-11-home-auf-deinen-pc.864531/">Upgrade oder Neuinstallation? So bekommst du Windows 11 Home auf deinen PC</a> <span style="float:right;"> </span> </h2> </div> <article> <a href="https://raidrush.net/threads/upgrade-oder-neuinstallation-so-bekommst-du-windows-11-home-auf-deinen-pc.864531/" title="Upgrade oder Neuinstallation? So bekommst du Windows 11 Home auf deinen PC"> <img src="https://raidrush.net/data/attachments/57/57170-6ee3a48965180794dd354283a98dc162.jpg" alt="Lenovo Legion Pro 7i Ist das der ultimative GamerTraum.jpg" class="itemimg LbImage" loading="lazy" style="aspect-ratio:1200/800"> <blockquote class="messageText ugc baseHtml">
+ Wer mit dem Gedanken spielt, seinem Rechner ein frisches System zu spendieren, steht früher oder später vor der grundlegenden Frage: Lohnt sich ein Upgrade auf Windows 11 Home oder bietet eine saubere Neuinstallation nicht doch mehr Vorteile? Hardware-Anforderungen, Kompatibilität und individuelle Nutzerbedürfnisse spielen dabei eine entscheidende Rolle.
+ </blockquote> </a> <span class="contentSummary" style="float:right;">
+ 
+ 
+ &nbsp; <i class="mdi mdi-checkbox-marked-outline"> </i> Leser: 163
+ </span> </article> <div class="sectionFooter messageMeta"> <div class="author" style="float:left;"> <div class="itemDate"> <i class="mdi mdi-account-circle"> </i> <span class="username"> <a href="members/fritz-e-laub.24505/" class="username" dir="auto" title="Ersteller des Themas">Fritz E-laub</a> </span> 
+ ,&nbsp; <time class="DateTime" data-time="1754903932" data-diff="205670" data-datestring="11. August 2025" data-timestring="11:18">11. August 2025 um 11:18 Uhr</time> </div> </div> </div> </div> </div> </li> <li id="portalitem-2011" class="sectionMain message elportalItem itembit thread " data-contenttype="thread" data-contentid="864384" data-author="Jonas Hubertus"> <div class="uix_message"> <div class="messageInfo"> <div class="Title"> <h2 class="textHeading"> <a href="https://raidrush.net/threads/mehr-kilometer-pro-ladung-worauf-es-beim-e-bike-akku-wirklich-ankommt.864384/">Mehr Kilometer pro Ladung: Worauf es beim E-Bike Akku wirklich ankommt</a> <span style="float:right;"> </span> </h2> </div> <article> <a href="https://raidrush.net/threads/mehr-kilometer-pro-ladung-worauf-es-beim-e-bike-akku-wirklich-ankommt.864384/" title="Mehr Kilometer pro Ladung: Worauf es beim E-Bike Akku wirklich ankommt"> <img src="https://raidrush.net/data/attachments/57/57265-9e981d6866098152bec592433e75e37b.jpg" alt="ebike akku anzeige led ladestand.jpg" class="itemimg LbImage" loading="lazy" style="aspect-ratio:1500/1000"> <blockquote class="messageText ugc baseHtml">
+ Der Akku eines E-Bikes entscheidet maßgeblich darüber, wie weit man tatsächlich kommt – und ob die elektrische Unterstützung unterwegs ein verlässlicher Begleiter ist. Vor allem bei längeren Strecken oder unvorhergesehenen Zwischenstopps wird schnell klar, wie entscheidend es ist, die Reichweite mit einem passenden Akku zu erhöhen. Doch was bedeutet „passend“ in diesem Zusammenhang eigentlich? Reicht es, auf die technischen Daten zu schauen – oder steckt mehr dahinter?
+ </blockquote> </a> <span class="contentSummary" style="float:left;"> <i class="mdi mdi-folder-outline"> </i> Kategorie: <a href="thema/ratgeber-wissen.8/">Ratgeber &amp; Wissen</a> </span> <span class="contentSummary" style="float:right;">
+ 
+ 
+ &nbsp; <i class="mdi mdi-checkbox-marked-outline"> </i> Leser: 180
+ </span> </article> <div class="sectionFooter messageMeta"> <div class="author" style="float:left;"> <div class="itemDate"> <i class="mdi mdi-account-circle"> </i> <span class="username"> <a href="members/jonas-hubertus.118239/" class="username" dir="auto" title="Ersteller des Themas">Jonas Hubertus</a> </span> 
+ ,&nbsp; <time class="DateTime" data-time="1754901210" data-diff="208392" data-datestring="11. August 2025" data-timestring="10:33">11. August 2025 um 10:33 Uhr</time> </div> </div> </div> </div> </div> </li> <li id="portalitem-2010" class="sectionMain message elportalItem itembit thread " data-contenttype="thread" data-contentid="864580" data-author="Fritz E-laub"> <div class="uix_message"> <div class="messageInfo"> <div class="Title"> <h2 class="textHeading"> <a href="https://raidrush.net/threads/die-wichtigen-wechselwirkungen-zwischen-altersfaktor-mundmikrobiom-und-den-vorteilen-von-rote-beete.864580/">Die wichtigen Wechselwirkungen zwischen Altersfaktor, Mundmikrobiom und den Vorteilen von Rote Beete</a> <span style="float:right;"> </span> </h2> </div> <article> <a href="https://raidrush.net/threads/die-wichtigen-wechselwirkungen-zwischen-altersfaktor-mundmikrobiom-und-den-vorteilen-von-rote-beete.864580/" title="Die wichtigen Wechselwirkungen zwischen Altersfaktor, Mundmikrobiom und den Vorteilen von Rote Beete"> <img src="https://raidrush.net/data/attachments/57/57230-700f68f8c6855c29c16b14ebaecde8f3.jpg" alt="Why only older adults can naturally unlock the vascular power of beets.jpg" class="itemimg LbImage" loading="lazy" style="aspect-ratio:1200/800"> <blockquote class="messageText ugc baseHtml">
+ Rote Beete erhält zunehmend Aufmerksamkeit wegen ihrer potenziellen Vorteile zur Senkung des Blutdrucks. Aktuelle Forschungsergebnisse legen jedoch nahe, dass das Alter und die Gesundheit des Mundmikrobioms entscheidend für diese vorteilhaften Effekte sind. Insbesondere spielt die Bakterienzusammensetzung auf der Zunge eine zentrale Rolle.
+ </blockquote> </a> <span class="contentSummary" style="float:left;"> <i class="mdi mdi-folder-outline"> </i> Kategorie: <a href="thema/wissenschaft.1/">Wissenschaft</a> </span> <span class="contentSummary" style="float:right;">
+ 
+ 
+ &nbsp; <i class="mdi mdi-checkbox-marked-outline"> </i> Leser: 632
+ </span> </article> <div class="sectionFooter messageMeta"> <div class="author" style="float:left;"> <div class="itemDate"> <i class="mdi mdi-account-circle"> </i> <span class="username"> <a href="members/fritz-e-laub.24505/" class="username" dir="auto" title="Ersteller des Themas">Fritz E-laub</a> </span> 
+ ,&nbsp; <span class="DateTime" title="5. August 2025 um 20:37 Uhr">5. August 2025</span> </div> </div> </div> </div> </div> </li> <li id="portalitem-2009" class="sectionMain message elportalItem itembit thread " data-contenttype="thread" data-contentid="864587" data-author="Carla Columna"> <div class="uix_message"> <div class="messageInfo"> <div class="Title"> <h2 class="textHeading"> <a href="https://raidrush.net/threads/schattenpflanzen-fuer-den-garten-bluehende-vielfalt-auch-im-schatten.864587/">Schattenpflanzen für den Garten: Blühende Vielfalt auch im Schatten</a> <span style="float:right;"> </span> </h2> </div> <article> <a href="https://raidrush.net/threads/schattenpflanzen-fuer-den-garten-bluehende-vielfalt-auch-im-schatten.864587/" title="Schattenpflanzen für den Garten: Blühende Vielfalt auch im Schatten"> <img src="https://raidrush.net/data/attachments/57/57242-f0d506d3fb68e0ca091a0b1c0bef8bcc.jpg" alt="Welche Pflanzen auch im Schatten gut gedeihen.jpeg" class="itemimg LbImage" loading="lazy" style="aspect-ratio:1200/800"> <blockquote class="messageText ugc baseHtml">
+ Nicht jede Ecke im Garten erfreut sich an strahlendem Sonnenschein – seien es die schattigen Nordseiten oder die dunklen Innenhöfe. Dennoch muss niemand auf grüne Oasen oder sprudelnde Blüten verzichten. Selbst die schattigsten Bereiche lassen sich lebendig gestalten.
+ </blockquote> </a> <span class="contentSummary" style="float:left;"> <i class="mdi mdi-folder-outline"> </i> Kategorie: <a href="thema/ratgeber-wissen.8/">Ratgeber &amp; Wissen</a> </span> <span class="contentSummary" style="float:right;">
+ 
+ 
+ &nbsp; <i class="mdi mdi-checkbox-marked-outline"> </i> Leser: 546
+ </span> </article> <div class="sectionFooter messageMeta"> <div class="author" style="float:left;"> <div class="itemDate"> <i class="mdi mdi-account-circle"> </i> <span class="username"> <a href="members/carla-columna.114780/" class="username" dir="auto" title="Ersteller des Themas">Carla Columna</a> </span> 
+ ,&nbsp; <span class="DateTime" title="5. August 2025 um 19:59 Uhr">5. August 2025</span> </div> </div> </div> </div> </div> </li> <li id="portalitem-2008" class="sectionMain message elportalItem itembit thread " data-contenttype="thread" data-contentid="864585" data-author="Alex Hipp"> <div class="uix_message"> <div class="messageInfo"> <div class="Title"> <h2 class="textHeading"> <a href="https://raidrush.net/threads/spanischer-schinken-was-serrano-und-iberico-wirklich-unterscheidet.864585/">Spanischer Schinken: Was Serrano und Ibérico wirklich unterscheidet</a> <span style="float:right;"> </span> </h2> </div> <article> <a href="https://raidrush.net/threads/spanischer-schinken-was-serrano-und-iberico-wirklich-unterscheidet.864585/" title="Spanischer Schinken: Was Serrano und Ibérico wirklich unterscheidet"> <img src="https://raidrush.net/data/attachments/57/57260-b6aa3efa0524d560f419682736c64a65.jpg" alt="qualität schinken gesunde freiland schweine rasse iberico eichen.jpg" class="itemimg LbImage" loading="lazy" style="aspect-ratio:1280/853"> <blockquote class="messageText ugc baseHtml">
+ Spanien steht weltweit für eine kulinarische Tradition, die ihresgleichen sucht – und einer der Stars dieser Tradition ist ohne Zweifel der luftgetrocknete Schinken. Vor allem der Serrano-Schinken und der Ibérico-Schinken gelten als Aushängeschilder der spanischen Küche. Beide Sorten sind tief in der Kultur verankert und bieten einzigartigen Genuss, doch sie unterscheiden sich in vielerlei Hinsicht: von der Herkunft über die Herstellung bis hin zum Geschmack.
+ </blockquote> </a> <span class="contentSummary" style="float:right;">
+ 
+ 
+ &nbsp; <i class="mdi mdi-checkbox-marked-outline"> </i> Leser: 195
+ </span> </article> <div class="sectionFooter messageMeta"> <div class="author" style="float:left;"> <div class="itemDate"> <i class="mdi mdi-account-circle"> </i> <span class="username"> <a href="members/alex-hipp.102/" class="username" dir="auto" title="Ersteller des Themas">Alex Hipp</a> </span> 
+ ,&nbsp; <span class="DateTime" title="31. Juli 2025 um 09:11 Uhr">31. Juli 2025</span> </div> </div> </div> </div> </div> </li> <li id="portalitem-2007" class="sectionMain message elportalItem itembit thread " data-contenttype="thread" data-contentid="864579" data-author="Fabiane Herbst"> <div class="uix_message"> <div class="messageInfo"> <div class="Title"> <h2 class="textHeading"> <a href="https://raidrush.net/threads/die-optimale-schrittzahl-weniger-schritte-weniger-risiko-fuer-vorzeitigen-tod.864579/">Die optimale Schrittzahl: Weniger Schritte, weniger Risiko für vorzeitigen Tod</a> <span style="float:right;"> </span> </h2> </div> <article> <a href="https://raidrush.net/threads/die-optimale-schrittzahl-weniger-schritte-weniger-risiko-fuer-vorzeitigen-tod.864579/" title="Die optimale Schrittzahl: Weniger Schritte, weniger Risiko für vorzeitigen Tod"> <img src="https://raidrush.net/data/attachments/57/57229-eee7f613a33dbba9ff18dd5da4c0ceaa.jpg" alt="Reduced stepcount sweet spot cuts risk of early death by nearly half.jpg" class="itemimg LbImage" loading="lazy" style="aspect-ratio:1200/800"> <blockquote class="messageText ugc baseHtml">
+ Die Fitnessgemeinschaft empfiehlt oft, täglich 10.000 Schritte zu gehen - das Ziel soll gesundheitsfördernd wirken. Eine neue Studie weist jedoch darauf hin, dass bereits erheblich weniger Schritte bemerkenswerte Vorteile zeitigen. Forscher fanden heraus, dass sich mit einer täglichen Schrittzahl von 7.000 der Risiko vorzeitig zu sterben um fast 47% reduzieren lässt - eine beachtliche Statistik. Führen wir die Erkenntnisse im Detail aus.
+ </blockquote> </a> <span class="contentSummary" style="float:left;"> <i class="mdi mdi-folder-outline"> </i> Kategorie: <a href="thema/wissenschaft.1/">Wissenschaft</a> </span> <span class="contentSummary" style="float:right;">
+ 
+ 
+ &nbsp; <i class="mdi mdi-checkbox-marked-outline"> </i> Leser: 649
+ </span> </article> <div class="sectionFooter messageMeta"> <div class="author" style="float:left;"> <div class="itemDate"> <i class="mdi mdi-account-circle"> </i> <span class="username"> <a href="members/fabiane-herbst.118334/" class="username" dir="auto" title="Ersteller des Themas">Fabiane Herbst</a> </span> 
+ ,&nbsp; <span class="DateTime" title="5. August 2025 um 19:39 Uhr">5. August 2025</span> </div> </div> </div> </div> </div> </li> <li id="portalitem-2006" class="sectionMain message elportalItem itembit thread " data-contenttype="thread" data-contentid="864400" data-author="Felix Lee"> <div class="uix_message"> <div class="messageInfo"> <div class="Title"> <h2 class="textHeading"> <a href="https://raidrush.net/threads/emotional-bedeutungsvoll-persoenlich-der-neue-trend-rund-um-sternpatenschaften.864400/">Emotional, bedeutungsvoll, persönlich – Der neue Trend rund um Sternpatenschaften</a> <span style="float:right;"> </span> </h2> </div> <article> <a href="https://raidrush.net/threads/emotional-bedeutungsvoll-persoenlich-der-neue-trend-rund-um-sternpatenschaften.864400/" title="Emotional, bedeutungsvoll, persönlich – Der neue Trend rund um Sternpatenschaften"> <img src="https://raidrush.net/data/attachments/57/57258-cd7dc888c46a425175281b903492752f.jpg" alt="weltraum sterne nebel galaxien.jpg" class="itemimg LbImage" loading="lazy" style="aspect-ratio:1200/800"> <blockquote class="messageText ugc baseHtml">
+ Wer auf der Suche nach einem außergewöhnlichen Geschenk ist, das bleibenden Eindruck hinterlässt, stößt unweigerlich auf eine Idee, die nicht nur persönlich, sondern auch symbolträchtig ist: eine Sternpatenschaft. Warum Sternpatenschaften im Trend liegen, zeigt sich nicht nur an der wachsenden Beliebtheit dieser Geschenkidee, sondern auch daran, wie tief sie Menschen emotional berühren kann.
+ </blockquote> </a> <span class="contentSummary" style="float:right;">
+ 
+ 
+ &nbsp; <i class="mdi mdi-checkbox-marked-outline"> </i> Leser: 580
+ </span> </article> <div class="sectionFooter messageMeta"> <div class="author" style="float:left;"> <div class="itemDate"> <i class="mdi mdi-account-circle"> </i> <span class="username"> <a href="members/felix-lee.101348/" class="username" dir="auto" title="Ersteller des Themas">Felix Lee</a> </span> 
+ ,&nbsp; <span class="DateTime" title="5. August 2025 um 19:39 Uhr">5. August 2025</span> </div> </div> </div> </div> </div> </li> <li id="portalitem-2005" class="sectionMain message elportalItem itembit thread " data-contenttype="thread" data-contentid="864403" data-author="Marlene Riederer"> <div class="uix_message"> <div class="messageInfo"> <div class="Title"> <h2 class="textHeading"> <a href="https://raidrush.net/threads/was-edelmetallkaeufer-wirklich-wissen-muessen-ein-leitfaden-fuer-kluge-entscheidungen.864403/">Was Edelmetallkäufer wirklich wissen müssen – ein Leitfaden für kluge Entscheidungen</a> <span style="float:right;"> </span> </h2> </div> <article> <a href="https://raidrush.net/threads/was-edelmetallkaeufer-wirklich-wissen-muessen-ein-leitfaden-fuer-kluge-entscheidungen.864403/" title="Was Edelmetallkäufer wirklich wissen müssen – ein Leitfaden für kluge Entscheidungen"> <img src="https://raidrush.net/data/attachments/57/57257-78a98e228f798898285535b099f78921.jpg" alt="goldcubes würfel aus gold.jpg" class="itemimg LbImage" loading="lazy" style="aspect-ratio:1200/686"> <blockquote class="messageText ugc baseHtml">
+ In Zeiten globaler Unsicherheiten und wirtschaftlicher Umbrüche gewinnen Sachwerte wieder stark an Bedeutung. Besonders Edelmetalle wie Gold, Silber, Platin und Palladium gelten als klassische Anlagemittel mit stabilisierender Wirkung. Doch während viele Anleger von glänzenden Münzen und wertvollen Barren fasziniert sind, unterschätzen sie häufig die Komplexität, die mit dem Kauf und der Lagerung solcher Werte einhergeht.
+ </blockquote> </a> <span class="contentSummary" style="float:right;">
+ 
+ 
+ &nbsp; <i class="mdi mdi-checkbox-marked-outline"> </i> Leser: 591
+ </span> </article> <div class="sectionFooter messageMeta"> <div class="author" style="float:left;"> <div class="itemDate"> <i class="mdi mdi-account-circle"> </i> <span class="username"> <a href="members/marlene-riederer.98779/" class="username" dir="auto" title="Ersteller des Themas">Marlene Riederer</a> </span> 
+ ,&nbsp; <span class="DateTime" title="5. August 2025 um 19:05 Uhr">5. August 2025</span> </div> </div> </div> </div> </div> </li> <li id="portalitem-2004" class="sectionMain message elportalItem itembit thread " data-contenttype="thread" data-contentid="864408" data-author="Fritz E-laub"> <div class="uix_message"> <div class="messageInfo"> <div class="Title"> <h2 class="textHeading"> <a href="https://raidrush.net/threads/wie-krypto-betrug-funktioniert-und-woran-serioese-anbieter-zu-erkennen-sind.864408/">Wie Krypto-Betrug funktioniert und woran seriöse Anbieter zu erkennen sind</a> <span style="float:right;"> </span> </h2> </div> <article> <a href="https://raidrush.net/threads/wie-krypto-betrug-funktioniert-und-woran-serioese-anbieter-zu-erkennen-sind.864408/" title="Wie Krypto-Betrug funktioniert und woran seriöse Anbieter zu erkennen sind"> <img src="https://raidrush.net/data/attachments/57/57256-81fe6d6196ad7f266ddffd731be46184.jpg" alt="crypto schaubild.jpg" class="itemimg LbImage" loading="lazy" style="aspect-ratio:1500/1071"> <blockquote class="messageText ugc baseHtml">
+ Der Handel mit Kryptowährungen zieht seit Jahren sowohl Anleger als auch Betrüger an. Während digitale Währungen enorme Chancen bieten, nutzen Kriminelle die Unsicherheiten vieler Einsteiger, aber auch erfahrener Investoren aus. Wer den Markt verstehen möchte, sollte wissen, wie Betrüger vorgehen und wie sich seriöse Anbieter erkennen lassen.
+ </blockquote> </a> <span class="contentSummary" style="float:right;">
+ 
+ 
+ &nbsp; <i class="mdi mdi-checkbox-marked-outline"> </i> Leser: 103
+ </span> </article> <div class="sectionFooter messageMeta"> <div class="author" style="float:left;"> <div class="itemDate"> <i class="mdi mdi-account-circle"> </i> <span class="username"> <a href="members/fritz-e-laub.24505/" class="username" dir="auto" title="Ersteller des Themas">Fritz E-laub</a> </span> 
+ ,&nbsp; <span class="DateTime" title="29. April 2025 um 14:10 Uhr">29. April 2025</span> </div> </div> </div> </div> </div> </li> </ol> </div> <div class="pageNavLinkGroup"> <div class="linkGroup"> </div> <div class="PageNav" data-page="1" data-range="2" data-start="2" data-end="6" data-last="99" data-sentinel="{{sentinel}}" data-baseurl="https://raidrush.net/?page=%7B%7Bsentinel%7D%7D"> <span class="pageNavHeader">Seite 1 von 99</span> <nav> <a href="https://raidrush.net/" class="currentPage " rel="start">1</a> <a class="PageNavPrev hidden" style="display: none;">←</a> <span class="scrollable"> <span class="items"> <a href="https://raidrush.net/?page=2" class="">2</a> <a href="https://raidrush.net/?page=3" class="">3</a> <a href="https://raidrush.net/?page=4" class="">4</a> <a href="https://raidrush.net/?page=5" class="">5</a> <a href="https://raidrush.net/?page=6" class="">6</a> </span> </span> <a class="PageNavNext " style="">→</a> <a href="https://raidrush.net/?page=99" class="">99</a> <a href="https://raidrush.net/?page=2" class="text">Weiter &gt;</a> </nav> </div> </div> <div class="sectionMain funbox" id="gax" style="min-height:600px;"> <div class="funboxWrapper"> <ins class="xadsbygoogle" style="display:block" data-ad-client="ca-pub-2150061187219409" data-ad-slot="5362958692" data-ad-format="autorelaxed" data-linktarget="_blank"> </ins> </div> </div>  </div> </div> <aside class="uix_mainSidebar"> <div class="inner_wrapper"> <div class="sidebar"> <div class="section"> <div class="secondaryContent portalCategoryListSidebar"> <h3>Kategorien</h3> <div class="pairsJustified"> <dl class="discussionCount"> <dt> <a href="thema/wissenschaft.1/" class=""> <h4>Wissenschaft</h4> </a> </dt> <dd>466</dd> </dl> <dl class="discussionCount"> <dt> <a href="thema/technik.2/" class=""> <h4>Technik</h4> </a> </dt> <dd>177</dd> </dl> <dl class="discussionCount"> <dt> <a href="thema/wirtschaft.3/" class=""> <h4>Wirtschaft</h4> </a> </dt> <dd>118</dd> </dl> <dl class="discussionCount"> <dt> <a href="thema/test-vergleich.4/" class=""> <h4>Test &amp; Vergleich</h4> </a> </dt> <dd>37</dd> </dl> <dl class="discussionCount"> <dt> <a href="thema/trend-lifestyle.5/" class=""> <h4>Trend &amp; Lifestyle</h4> </a> </dt> <dd>181</dd> </dl> <dl class="discussionCount"> <dt> <a href="thema/it-sicherheit.6/" class=""> <h4>IT &amp; Sicherheit</h4> </a> </dt> <dd>128</dd> </dl> <dl class="discussionCount"> <dt> <a href="thema/politik-recht.7/" class=""> <h4>Politik &amp; Recht</h4> </a> </dt> <dd>86</dd> </dl> <dl class="discussionCount"> <dt> <a href="thema/ratgeber-wissen.8/" class=""> <h4>Ratgeber &amp; Wissen</h4> </a> </dt> <dd>246</dd> </dl> <dl class="discussionCount"> <dt> <a href="thema/games.9/" class=""> <h4>Games</h4> </a> </dt> <dd>55</dd> </dl> <dl class="discussionCount"> <dt> <a href="thema/unterhaltung.10/" class=""> <h4>Unterhaltung</h4> </a> </dt> <dd>63</dd> </dl> <h4> <a href="https://raidrush.info/" title="Für Fragen und Probleme finden wir eine Antwort!">Weitere Ratgeber auf RaidRush.INFO</a> </h4> </div> </div> </div> <div class="section membersOnline userList"> <div class="secondaryContent"> <h3> <a href="online/" title="Alle zurzeit aktiven Benutzer anzeigen">Zurzeit aktive Besucher</a> <sup style="float:right;" class="uix_nodeTitle_status">2.045</sup> </h3> <ol class="listInline"> <li> <a href="members/czybulski.125303/" dir="auto" class="username">czybulski</a>,
+ 
+ </li> <li> <a href="members/mimisalena.126171/" dir="auto" class="username">MimiSalena</a>,
+ 
+ </li> <li> <a href="members/l-town-typ.125288/" dir="auto" class="username">L.Town.Typ</a>,
+ 
+ </li> <li> <a href="members/pmg.124646/" dir="auto" class="username">PMG</a>,
+ 
+ </li> <li> <a href="members/432.125799/" dir="auto" class="username">432</a>,
+ 
+ </li> <li> <a href="members/uwe0815.125152/" dir="auto" class="username">Uwe0815</a>,
+ 
+ </li> <li> <a href="members/tojolc72.126134/" dir="auto" class="username">TojoLC72</a>,
+ 
+ </li> <li> <a href="members/fiffy.125147/" dir="auto" class="username">fiffy</a>,
+ 
+ </li> <li> <a href="members/karl-kommnichklar.125233/" dir="auto" class="username">Karl.Kommnichklar</a>,
+ 
+ </li> <li> <a href="members/hans-albert.123755/" dir="auto" class="username">Hans Albert</a>,
+ 
+ </li> <li> <a href="members/ollikaefer.123487/" dir="auto" class="username">ollikaefer</a>,
+ 
+ </li> <li> <a href="members/atasa.123438/" dir="auto" class="username">Atasa</a>,
+ 
+ </li> <li> <a href="members/finn84m.125321/" dir="auto" class="username">finn84m</a>,
+ 
+ </li> <li> <a href="members/sven141082.123605/" dir="auto" class="username">Sven141082</a>,
+ 
+ </li> <li> <a href="members/sneakinralle.125552/" dir="auto" class="username">sneakinralle</a>,
+ 
+ </li> <li> <a href="members/cmscyprus.125728/" dir="auto" class="username">cmscyprus</a>,
+ 
+ </li> <li> <a href="members/bill74.125855/" dir="auto" class="username">bill74</a>,
+ 
+ </li> <li> <a href="members/lenzz.124383/" dir="auto" class="username">LenzZ</a>,
+ 
+ </li> <li> <a href="members/walter-hobein.124915/" dir="auto" class="username">Walter Hobein</a>,
+ 
+ </li> <li> <a href="members/ladyanna.125234/" dir="auto" class="username">LadyAnna</a>,
+ 
+ </li> <li> <a href="members/kessy-cello.126154/" dir="auto" class="username">Kessy-Cello</a>,
+ 
+ </li> <li> <a href="members/p388.123898/" dir="auto" class="username">P388</a>,
+ 
+ </li> <li> <a href="members/and.120520/" dir="auto" class="username">and</a>,
+ 
+ </li> <li> <a href="members/garfild.125972/" dir="auto" class="username">Garfild</a>,
+ 
+ </li> <li> <a href="members/thomas-w.123865/" dir="auto" class="username">Thomas.w</a>,
+ 
+ </li> <li> <a href="members/saja45.126012/" dir="auto" class="username">Saja45</a>,
+ 
+ </li> <li> <a href="members/sidison.126141/" dir="auto" class="username">sidison</a>,
+ 
+ </li> <li> <a href="members/ingobingo.123925/" dir="auto" class="username">ingobingo</a>,
+ 
+ </li> <li> <a href="members/geistermeister.122592/" dir="auto" class="username">Geistermeister</a>,
+ 
+ </li> <li> <a href="members/hannover96.125592/" dir="auto" class="username">Hannover96</a>,
+ 
+ </li> <li> <a href="members/walter-plska.121699/" dir="auto" class="username">Walter-Plska</a>,
+ 
+ </li> <li> <a href="members/melissayasmin.126126/" dir="auto" class="username">melissayasmin</a>,
+ 
+ </li> <li> <a href="members/michi.1453/" dir="auto" class="username">Michi</a>,
+ 
+ </li> <li> <a href="members/loewenbrut.120610/" dir="auto" class="username">löwenbrut</a>,
+ 
+ </li> <li> <a href="members/pascal-stermann.125265/" dir="auto" class="username">Pascal Stermann</a>,
+ 
+ </li> <li> <a href="members/wmm.125866/" dir="auto" class="username">wmm</a>,
+ 
+ </li> <li> <a href="members/axel078.125673/" dir="auto" class="username">axel078</a>,
+ 
+ </li> <li> <a href="members/yvi85614.125937/" dir="auto" class="username">Yvi85614</a>,
+ 
+ </li> <li> <a href="members/jollyface.124329/" dir="auto" class="username">jollyface</a>,
+ 
+ </li> <li> <a href="members/feldsalat.125266/" dir="auto" class="username">Feldsalat</a>,
+ 
+ </li> <li> <a href="members/fuzzy05.125990/" dir="auto" class="username">Fuzzy05</a>,
+ 
+ </li> <li> <a href="members/veronika-kannstaetter.125922/" dir="auto" class="username">Veronika kannstätter</a>,
+ 
+ </li> <li> <a href="members/maddalena.125464/" dir="auto" class="username">Maddalena</a>,
+ 
+ </li> <li> <a href="members/ferdia.124965/" dir="auto" class="username">Ferdia</a>,
+ 
+ </li> <li> <a href="members/fulexyhi.123129/" dir="auto" class="username">Fulexyhi</a>,
+ 
+ </li> <li> <a href="members/staetzchen.126039/" dir="auto" class="username">Stätzchen</a>,
+ 
+ </li> <li> <a href="members/klatuba.125968/" dir="auto" class="username">klatuba</a>,
+ 
+ </li> <li> <a href="members/sodex.126097/" dir="auto" class="username">Sodex</a>,
+ 
+ </li> <li> <a href="members/snoopy231170.125601/" dir="auto" class="username">snoopy231170</a>,
+ 
+ </li> <li> <a href="members/mb666.125299/" dir="auto" class="username">MB—666</a> </li> </ol> <div class="footnote">
+ Mitglieder: 61 , Gäste: 1.948 , Robots: 36
+ </div> </div> </div> <div class="section"> <div class="secondaryContent statsList" id="boardStats"> <h3>Statistik des Forums</h3> <div class="pairsJustified"> <dl class="discussionCount"> <dt>Themen:</dt> <dd>339.626</dd> </dl> <dl class="messageCount"> <dt>Beiträge:</dt> <dd>4.134.834</dd> </dl> <dl class="memberCount"> <dt>Mitglieder:</dt> <dd>104.805</dd> </dl> </div> </div> </div> </div> </div> </aside> </div> </div> </div> </div> </div> <footer role="contentinfo"> <div id="uix_stickyFooterSpacer"> </div> <div class="breadBoxBottom"> <div class="pageWidth"> <nav> <fieldset class="breadcrumb" itemprop="breadcrumb" style=""> <a rel="nofollow" href="misc/quick-navigation-menu" class="OverlayTrigger jumpMenuTrigger" data-cacheoverlay="true" title="Nützliche Links anzeigen"> <i class="uix_icon uix_icon-sitemap"> </i> </a> <ol class="crumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList"> <li class="crust selectedTabCrumb"> <a href="https://raidrush.net/" class="crumb"> <span>Portal</span> <meta itemprop="position" content="2"> </a> <span class="arrow"> <i class="uix_icon uix_icon-breadcrumbSeparator"> </i> </span> </li> </ol> </fieldset> </nav> </div> </div> <div class="bigFooter"> <div class="pageWidth"> <div class="section" id="foot_ga" style="text-align:center;"> </div> </div> </div> <div class="footerLegal"> <div class="pageContent"> <div class="pageWidth"> <div itemscope="" itemtype="http://schema.org/Organization"> <meta itemprop="name" content="Raid-Rush"> <meta itemprop="url" content="https://raidrush.net"> <meta itemprop="logo" content="https://raidrush.net/logo.png"> <ul class="uix_socialMediaLinks"> <li class="uix_socialLink uix_socialLink--mastodon"> <a rel="me noopener" data-itemprop="sameAs" href="https://mastodon.social/@raidrush" target="_blank" title="Mastodon @raidrush"> <i class="uix_icon uix_icon-mastodon"> </i> </a> </li> <li class="uix_socialLink uix_socialLink--facebook"> <a rel="me noopener" data-itemprop="sameAs" href="https://www.facebook.com/raidrush.RR" target="_blank" title="RaidRush auf Facebook"> <i class="uix_icon uix_icon-facebook"> </i> </a> </li> <li class="uix_socialLink uix_socialLink--twitter"> <a rel="me noopener" data-itemprop="sameAs" href="https://twitter.com/raidrush" target="_blank" title="Twitter @raidrush"> <i class="uix_icon uix_icon-twitter"> </i> </a> </li> <li class="uix_socialLink uix_socialLink--contact"> <a rel="contact" href="misc/contact" class="OverlayTrigger" data-overlayoptions="{&quot;fixed&quot;:false}"> <i class="uix_icon uix_icon-email"> </i> </a> </li> <li class="uix_socialLink uix_socialLink--rss"> <a href="forums/-/index.rss" rel="alternate" target="_blank" title="RSS: Forum &amp; News"> <i class="uix_icon uix_icon-rss"> </i> </a> </li> </ul> </div> <div id="copyright"> <span>© <span itemprop="copyrightYear">2025</span> RaidRush.net</span> <br> <small>Forum software by XenForo™</small> <script> window.setTimeout(function(){ let i=document.createElement('img'); i.alt="."; i.style.display="none"; i.onload=function(){document.getElementById("copyright").appendChild(this);}; i.src='https://www.imcounter.com/fcounter.php?rnd='+Date.now()+'&id=10888&s=&l=' + encodeURIComponent(navigator.language) + '&u=' + encodeURIComponent(document.referrer) + '&w=' + encodeURIComponent(screen.width) + '&h=' + encodeURIComponent(screen.height); },5777);</script> </div> <span class="helper"> </span> </div> </div> </div> <div class="footer"> <div class="pageContent"> <div class="pageWidth"> <ul class="footerLinks"> <li> <a href="https://raidrush.net" class="homeLink" rel="home" title="Raid-Rush">Startseite</a> </li> <li> <a href="/misc/contact" rel="contact">Kontakt</a> </li> <li> <a href="help/" rel="help">Hilfe</a> </li> <li> <a href="/about/" rel="about" itemprop="publishingPrinciples">Über Uns</a> </li> <li> <a href="/privacy/" rel="privacy">Datenschutz</a> </li> <li> <a href="/impressum/" rel="copyright contact" itemprop="copyrightHolder">Impressum</a> </li> <li class="topLink"> <a href="/#XenForo"> <i class="uix_icon uix_icon-jumpToTop"> </i> <span class="uix_hide">Seitenanfang</span> </a> </li> </ul> <span class="helper"> </span> </div> </div> </div> </footer> <script src="https://raidrush.net/js/jquery/jquery.min.js" id="jqueryscript"> </script> <script src="https://raidrush.net/js/xenforo/xenforo.js" id="JSxenforo"> </script> <script>
+ uix = {
+ elm: {},
+ fn:{},
+ init: function(){
+ if (uix.betaMode) {
+ console.group('uix.%cinit()', 'color:#3498DB');
+ }
+ for(var x=0;x<uix.events.init.length;x++){
+ uix.events.init[x]()
+ }
+ console.groupEnd('uix.%cinit()','color:#3498DB')
+ },
+ events: {init:[]},
+ on: function(event, fn){
+ if(event=='init'){
+ uix.events.init.push(fn)
+ }
+ },
+
+ betaMode : parseInt('0'),
+ jsPathUsed : 'material',
+ jsGlobal : parseInt('0'),
+
+
+ version : '1.5.12.0',
+ jsHeadVersion : '1.5.12.0',
+ addonVersion : '1010174',
+ jsCacheBust : '1',
+ contentTemplate : 'el_portal_index',
+
+ javascriptInitHide : parseInt('0'),
+ globalPadding : parseInt('25px'),
+ sidebarWidth : parseInt('300px'),
+ mainContainerMargin : '325px',
+ maxResponsiveWideWidth : parseInt('800px'),
+ maxResponsiveMediumWidth : parseInt('610px'),
+ maxResponsiveNarrowWidth : parseInt('480px'),
+ sidebarMaxResponsiveWidth : parseInt('1020px'),
+ 
+ responsiveMessageBreakpoint : parseInt('610px'),
+ 
+ sidebarMaxResponsiveWidthStr : '1020px',
+
+ 
+ offCanvasRightTriggerWidth : 99999,
+ 
+
+ 
+ offCanvasLeftTriggerWidth : parseInt('800px'),
+ 
+
+ 
+ offCanvasNavTriggerWidth : 99999,
+ 
+ 
+ offCanvasVisitorTriggerWidth : 99999,
+ 
+
+ offcanvasTriggerAnimationDuration : parseInt('300ms'),
+
+ dropdownMenuAnimationSpeed : parseInt('0ms'),
+ inlineAlertBalloons : (parseInt('1') && !parseInt('0')) || parseInt('0'),
+ jumpToFixedDelayHide : parseInt('0'),
+
+ stickyNavigationMinWidth : parseInt('0'),
+ stickyNavigationMinHeight : parseInt('600'),
+ stickyNavigationMaxWidth : parseInt('0'),
+ stickyNavigationMaxHeight : parseInt('0'),
+ stickyNavigationPortraitMinWidth : parseInt('320'),
+ stickyNavigationPortraitMinHeight : parseInt('500'),
+ stickyNavigationPortraitMaxWidth : parseInt('0'),
+ stickyNavigationPortraitMaxHeight : parseInt('0'),
+ stickySidebar : 1,
+ 
+ sidebarInnerFloat : "right",
+ 
+ RTL : 0,
+ stickyItems : {},
+ stickyGlobalMinimumPosition : parseInt('200px'),
+ stickyGlobalScrollUp : parseInt('0'),
+ stickyDisableIOSThirdParty : parseInt('1'),
+ preventAlwaysSticky : parseInt('1'),
+
+ searchMinimalSize : parseInt('610px'),
+
+ searchPosition : parseInt('2'),
+
+ nodeStyle : parseInt('3'),
+ pageStyle : parseInt('1'),
+
+ enableBorderCheck : parseInt('0'),
+ enableULManager : parseInt('0'),
+
+ threadSlidingAvatar : parseInt('0'),
+ threadSlidingExtra : parseInt('0'),
+ threadSlidingHover : parseInt('0'),
+ threadSlidingStaffShow : parseInt('0'),
+ threadSlidingGlobalEnable : parseInt('1'),
+
+ signatureHidingEnabled : parseInt('0'),
+ signatureHidingEnabledAddon : parseInt('1'),
+ signatureMaxHeight : parseInt('100px'),
+ signatureHoverEnabled : parseInt('0'),
+
+ enableStickyFooter : parseInt('0'),
+ stickyFooterBottomOffset : parseInt('25px') * 2,
+
+ 
+ sidebarStickyBottomOffset : parseInt('7.5'),
+ 
+
+ 
+ offCanvasSidebar : 1,
+
+ 
+ offCanvasSidebarVisitorTabs : 0,
+ 
+
+ 
+
+ offcanvasLeftStatic : 1 && parseInt('0') && parseInt('1'),
+ offcanvasRightStatic : 1 && parseInt('0') && parseInt('1'),
+ offcanvasLeftStaticBreakpoint : parseInt('1300px'),
+ offcanvasRightStaticBreakpoint : parseInt('1300px'),
+
+ reinsertWelcomeBlock : parseInt('0'),
+
+ sidebarCookieExpire : '',
+ canCollapseSidebar : '',
+
+ cookiePrefix : 'xf_',
+ sidebarLocation : parseInt('0'),
+
+ collapsibleSidebar : parseInt('1'),
+ collapsedNodesDefault : '',
+ nodeGridCollapseEnabled : parseInt('1'), 
+ widthToggleUpper : '100%',
+ widthToggleLower : '1170px',
+ 
+ toggleWidthEnabled : parseInt('0'),
+ 
+ toggleWidthBreakpoint : parseInt('1220'),
+ collapsibleNodes : parseInt('1'),
+ collapsibleSticky : parseInt('0'),
+ ajaxWidthToggleLink : 'uix/toggle-width',
+ ajaxStickyThreadToggleLink : 'uix/toggle-sticky-threads',
+ ajaxStickyThreadExpandLink : 'uix/expand-sticky-threads',
+ ajaxStickyThreadCollapseLink : 'uix/collapse-sticky-threads',
+ ajaxSidebarToggleLink : 'uix/toggle-sidebar',
+
+ stickySidebarDelayInit : parseInt('1'),
+ stickySidebarLegacy : parseInt('0'),
+ stickySidebarDisableIOS : parseInt('1'),
+
+ user : {
+ 'themeName' : 'RR-Material',
+ '-themeParents' : '7,6,0',
+ '-themeModified' : '1752998123',
+ '-themeSelectable' : '1',
+ languageName : 'Deutsch [Du]',
+ stickyEnableUserbar : (parseInt('') == parseInt('')) ? parseInt('') : true,
+ stickyEnableNav : (parseInt('') == parseInt('')) ? parseInt('') : true,
+ stickyEnableSidebar : (parseInt('') == parseInt('')) ? parseInt('') : true,
+ widthToggleState : (parseInt('0') == parseInt('0')) ? parseInt('0') : parseInt('0'),
+ stickyThreadsState : (parseInt('') == parseInt('')) ? (parseInt('') > 0) : 0,
+ 
+ sidebarState : 0,
+ 
+ 
+ collapseUserInfo : 1,
+ 
+ 
+ signatureHiding : 1,
+ 
+ isAdmin : parseInt('0"')
+ }
+ };
+
+ if(uix.stickyNavigationMaxWidth == 0){uix.stickyNavigationMaxWidth = 999999}
+ if(uix.stickyNavigationMaxHeight == 0){uix.stickyNavigationMaxHeight = 999999}
+ if(uix.stickyNavigationPortraitMaxWidth == 0){uix.stickyNavigationPortraitMaxWidth = 999999}
+ if(uix.stickyNavigationPortraitMaxHeight == 0){uix.stickyNavigationPortraitMaxHeight = 999999}
+
+ 
+ uix.stickyItems['#navigation'] = {normalHeight:parseInt('75'), stickyHeight:parseInt('60')}
+
+ var subElement = null;
+ 
+ uix.stickyItems['#navigation'].options = {scrollSticky: uix.stickyGlobalScrollUp }
+ 
+
+ 
+
+ 
+
+ 
+
+ uix.debug = function() {
+ result = "\n\n############============ Begin Copying Here ============############\n\n";
+ result += "Error: the functions file was not found.";
+ result += "\n\n############============ End Copying Here ============############\n\n";
+
+ uix.fixJsVisibility();
+
+ console.log(result);
+ }
+
+</script> <script src="https://raidrush.net/js/audentio/material/functions.min.js" id="audentio"> </script> <script>
+ try {
+ uix.dateHelper.phrase = {
+ now: 'now',
+ second: 's',
+ minute: 'm',
+ hour: 'h',
+ day: 'd',
+ week: 'w',
+ year: 'y',
+ century: 'c',
+ ago: '{time} ago',
+ future: 'in {time}'
+ }
+
+
+ uix.sticky.stickyMinDist = parseInt('150');
+
+ $(document).ready(function(){
+ try {
+ 
+ audentio.grid.parse('{"default":{"maximum_columns":{"value":"6"},"minimum_column_width":{"value":"330"},"fill_last_row":{"value":"0"},"column_widths":{"value":"0"},"custom_column_widths":{"count":"","layouts":{"1":{"1":""},"2":{"1":"","2":""},"3":{"1":"","2":"","3":""},"4":{"1":"","2":"","3":"","4":""},"5":{"1":"","2":"","3":"","4":"","5":""},"6":{"1":"","2":"","3":"","4":"","5":"","6":""}}},"separator":true,"separator_type":"grid","separator_max_width":0},"category":{"maximum_columns":{"value":"1"},"minimum_column_width":{"value":""},"fill_last_row":{"value":"0"},"column_widths":{"value":"0"},"custom_column_widths":{"count":""},"separator":true,"separator_type":"grid","separator_max_width":0}}');
+ 
+
+audentio.grid.addSizeListener('global', 'audentio_grid_xs', 200, 0);
+audentio.grid.addSizeListener('global', 'audentio_grid_sm', 300, 0);
+audentio.grid.addSizeListener('global', 'audentio_grid_md', 400, 0);
+audentio.grid.addSizeListener('global', 'audentio_grid_lg', 600, 0);
+audentio.grid.addSizeListener('global', 'audentio_grid_xl', 1000, 0);
+
+audentio.grid.addSizeListener('global', 'below-xs', 200, 0);
+audentio.grid.addSizeListener('global', 'below-sm', 300, 0);
+audentio.grid.addSizeListener('global', 'below-md', 400, 0);
+audentio.grid.addSizeListener('global', 'below-lg', 600, 0);
+audentio.grid.addSizeListener('global', 'below-xl', 1000, 0);
+
+audentio.grid.addSizeListener('global', 'above-xs', 99999, 201);
+audentio.grid.addSizeListener('global', 'above-sm', 99999, 301);
+audentio.grid.addSizeListener('global', 'above-md', 99999, 401);
+audentio.grid.addSizeListener('global', 'above-lg', 99999, 601);
+audentio.grid.addSizeListener('global', 'above-xl', 99999, 1001);
+
+audentio.grid.addSizeListener('global', 'node--xs', 300, 0);
+audentio.grid.addSizeListener('global', 'node--sm', 400, 301);
+audentio.grid.addSizeListener('global', 'node--md', 600, 401);
+audentio.grid.addSizeListener('global', 'node--lg', 1000, 601);
+audentio.grid.addSizeListener('global', 'node--xl', 99999, 1001);
+ 
+ 
+
+ uix.initFunc();
+ } catch (err) {
+ uix.catchJsError(err);
+ }
+ });
+ 
+ } catch (err) {
+ uix.catchJsError(err);
+ }
+</script> <script>
+
+
+jQuery.extend(true, XenForo,
+{
+ visitor: { user_id: 0 },
+ serverTimeInfo:
+ {
+ now: 1755109602,
+ today: 1755036000,
+ todayDow: 3
+ },
+ _lightBoxUniversal: "1",
+ _enableOverlays: "1",
+ _animationSpeedMultiplier: "0.5",
+ _overlayConfig:
+ {
+ top: "10%",
+ speed: 100,
+ closeSpeed: 50,
+ mask:
+ {
+ color: "rgb(96,125,139)",
+ opacity: "0.6",
+ loadSpeed: 100,
+ closeSpeed: 50
+ }
+ },
+ _ignoredUsers: [],
+ _loadedScripts: {"el_portal":true,"message":true,"login_bar":true,"moderator_bar":true},
+ _cookieConfig: { path: "/", domain: "", prefix: "xf_"},
+ _csrfToken: "",
+ _csrfRefreshUrl: "login/csrf-token-refresh",
+ _jsVersion: "b6581178",
+ _noRtnProtect: false,
+ _noSocialLogin: false
+});
+jQuery.extend(XenForo.phrases,
+{
+ cancel: "Abbrechen",
+
+ a_moment_ago: "Vor einem Moment",
+ one_minute_ago: "Vor einer Minute",
+ x_minutes_ago: "Vor %minutes% Minuten",
+ today_at_x: "Heute um %time% Uhr",
+ yesterday_at_x: "Gestern um %time% Uhr",
+ day_x_at_time_y: "%day% um %time% Uhr",
+
+ day0: "Sonntag",
+ day1: "Montag",
+ day2: "Dienstag",
+ day3: "Mittwoch",
+ day4: "Donnerstag",
+ day5: "Freitag",
+ day6: "Samstag",
+
+ _months: "Januar,Februar,März,April,Mai,Juni,Juli,August,September,Oktober,November,Dezember",
+ _daysShort: "So,Mo,Di,Mi,Do,Fr,Sa",
+
+ following_error_occurred: "Folgende Fehler sind aufgetreten",
+ server_did_not_respond_in_time_try_again: "Der Server antwortet nicht. Bitte versuche es noch einmal.",
+ logging_in: "Anmelden",
+ click_image_show_full_size_version: "Klicke auf dieses Bild, um es in vollständiger Größe anzuzeigen.",
+ show_hidden_content_by_x: "Verborgene Inhalte von {names} anzeigen"
+});
+
+
+
+
+</script> <script type="application/ld+json">
+{
+ "@context": "http://schema.org",
+ "@type": "WebSite",
+ "url": "https://raidrush.net/",
+ "potentialAction": {
+ "@type": "SearchAction",
+ "target": "https://raidrush.net/s/search?keywords={search_keywords}",
+ "query-input": "required name=search_keywords"
+ }
+}
+</script> </div> <div class="uix_wrapperFix" style="height: 1px; margin-top: -1px;"> </div> </div> </div><iframe name="__tcfapiLocator" style="display: none;"></iframe><iframe name="__gppLocator" style="display: none;"></iframe> <script>
+function setVheight(t){ var w = parseInt(window.getComputedStyle(t).width)||t.clientWidth||t.offsetWidth||t.naturalWidth;var h = Math.round((w/16)*9); if(h>320){ t.style.height = h+"px"; } }
+
+function lazyload(){
+
+;(function($) {
+ $.fn.changeElementType = function(newType,ev=1) {
+ if (this.tagName === newType.toUpperCase()) { return this; }
+ if (typeof this == 'undefined' || this == 'undefined') { return; }
+ if (this.length>1){ 
+ this.each(function(){ return $(this).changeElementType(newType); });
+ return;
+ }
+ 
+ var attrs = {}; var tat = false;
+ try{ tat = this.attributes; }catch(e){ }
+ try{ tat = $(this)[0].attributes; }catch(e){ } 
+ 
+ var events = $.extend(true, {}, $._data(this, 'events')); 
+ if (typeof tat != 'undefined' && tat!=false) {
+ $.each(tat, function(idx, attr) {
+ attrs[attr.nodeName] = attr.nodeValue;
+ });
+ }
+ var newElement = $("<" + newType + "/>", attrs).append($(this).contents());
+ this.replaceWith(newElement); 
+ 
+ if (typeof events != 'undefined' && ev==1) {
+ $.each(events, function(event, handlers) {
+ $.each(handlers, function(j, handler) {
+ newElement.bind(event, handler);
+ });
+ });
+ } 
+ 
+ return newElement;
+ };
+})(jQuery);
+
+
+
+;(function($) {
+ $.fn.unveil = function(threshold, callback) {
+ var $w = $(window),th = threshold || 0, attrib = "data-src", images = this, loaded;
+
+ this.one("unveil", function() {
+ var source = this.getAttribute(attrib);
+ if(this.getAttribute("class")=="xadsbygoogle"){ this.classList.replace('xadsbygoogle','adsbygoogle'); this.className="adsbygoogle"; }
+ 
+ if (source) {
+ this.setAttribute("src", source);
+ if ($(this).is("a-script")){ $(this).changeElementType("script"); }
+ if ($(this).is("a-img")){ $(this).changeElementType("img"); } 
+ if (this.classList.contains("ivideo")) { setVheight(this); }
+ if (typeof callback === "function") callback.call(this);
+ } 
+ 
+ if($(this).is("a-a")){ this.setAttribute("href", this.getAttribute("data-href")); $(this).changeElementType("a"); }
+ if(this.className=="adsbygoogle" && this.dataset.adsbygoogleStatus!="done"){ (adsbygoogle = window.adsbygoogle || []).push({ params: { google_ad_slot: this.dataset.adSlot } }); }
+ });
+
+ function unveil() {
+ var inview = images.filter(function() {
+ var $e = $(this);
+ if ($e.is(":hidden")) return;
+ var wt = $w.scrollTop(), wb = wt + $w.height(), et = $e.offset().top, eb = et + $e.height();
+ return eb >= wt - th && et <= wb + th;
+ });
+
+ loaded = inview.trigger("unveil");
+ images = images.not(loaded);
+ }
+
+ $w.on("scroll.unveil resize.unveil lookup.unveil", unveil);
+ 
+ unveil();
+ return this;
+ };
+})(jQuery);
+
+;(function($){
+$(".ivideo").changeElementType("iframe"); $(".ivideo").attr("allowfullscreen",true);
+$("img").unveil(); 
+$("iframe").unveil(200);
+$("a-script").unveil(600);
+$("a-a").unveil(200);
+$("a-img").unveil();
+$("details,summary").click( function(){ setTimeout(function() { $("iframe,img").unveil(); },500); } );
+$("a-a").trigger("unveil");
+$("ins.xadsbygoogle").unveil(300);
+})(jQuery);
+
+
+};
+jQuery(window).on("DOMContentLoaded",function(){ lazyload(); } );
+</script> <script src="/js/wrpx.js" defer=""> </script> <script>
+var iv=window.setInterval(function(){ var oImg=document.createElement("img");oImg.src=window.location.href;oImg.alt='.';oImg.style.height='1px';oImg.style.width='1px';oImg.style.display='none';document.body.appendChild(oImg); },891000);
+function gor(){ $('article:not(.article) section > a').each(function () { if (this.host !== location.host) { if($(this).attr('data-href')){ $(this).click(function() { if ($(this).hostname !== location.host) { $(this).attr('href','https://raidrush.net/go/?'+$(this).attr('href')); $(this).mouseup(function(){ $(this).attr('href',$(this).data('href'));}); } return true; } ); } } }); } window.setTimeout(function(){ gor(); },3000);
+</script> <aside style="position:fixed;bottom:0px;text-align:center;padding:0px;width:100%;z-index:9999;"> <div id="raidrush_net_1000x100_sticky_acnhorad_responsive" style="min-height:50px;max-height:150px;height:100%;"> <script>
+ if(doFuse==0){
+ googletag.cmd.push(function() { googletag.display('raidrush_net_1000x100_sticky_acnhorad_responsive'); });
+ }else{
+ var stpd1=0; 
+ googletag.cmd.push(function() {
+ if(window.innerWidth >= 1000) { stpd1=googletag.defineSlot('/171972652/raidrush.net_1000x100_sticky_acnhorad_desktop', [[1000,100],[970,90],[728,90],[990,90],[970,50],[960,90],[950,90],[980,90],'fluid'], 'raidrush_net_1000x100_sticky_acnhorad_responsive').addService(googletag.pubads()).setCollapseEmptyDiv(false);
+ }else{ stpd1=googletag.defineSlot('/171972652/raidrush.net_320x100_sticky_acnhorad_desktop', [[470,100],[320,100],[300,100],[320,50],[300,50],'fluid'], 'raidrush_net_1000x100_sticky_acnhorad_responsive').addService(googletag.pubads()).setCollapseEmptyDiv(false); } 
+ });
+ googletag.cmd.push(function() { googletag.display('raidrush_net_1000x100_sticky_acnhorad_responsive'); }); 
+ //document.getElementById('raidrush_net_1000x100_sticky_acnhorad_responsive').parentElement.remove();
+ window.setInterval(function(){ var d=document.getElementById('raidrush_net_1000x100_sticky_acnhorad_responsive');d.style.display='block';d.style.minHeight='90px'; refreshSlot(stpd1); },71000); 
+ 
+ }
+ </script> <div id="google_ads_iframe_/171972652/raidrush.net_320x100_sticky_acnhorad_desktop_0__container__" style="border: 0pt none; width: 470px; height: 50px;"></div></div> <div id="stpd_close" onclick="this.parentElement.remove();" style="right: 0px; width: 30px; height: 30px; position: absolute; z-index: 2147483647; cursor: pointer; background: rgba(255, 255, 255, 0.3); border-left: 1px solid rgba(170, 170, 170, 0.3); top: -30px; margin-bottom: -1px; border-radius: 10px 0px 0px; border-top: 1px solid rgba(170, 170, 170, 0.3);"> <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="30px" height="30px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"> <g> <g fill="black"> <polygon points="405,136.798 375.202,107 256,226.202 136.798,107 107,136.798 226.202,256 107,375.202 136.798,405 256,285.798 375.202,405 405,375.202 285.798,256 "> </polygon> </g> </g> </svg> </div> </aside> <script>
+if(doFuse==0){
+const xcallback = (tcData, success) => {
+ if (!success || (!tcData.eventStatus && tcData.gdprApplies)) { console.log('Debug: tcData.eventStatus: ', tcData.eventStatus); return; } 
+ if (tcData.eventStatus === "tcloaded" || tcData.eventStatus === "useractioncomplete") { console.log(tcData.eventStatus+" - gdprApplies="+tcData.gdprApplies); 
+ (adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=0; (adsbygoogle=window.adsbygoogle||[]).pauseAdRequests=0; 
+ googletag.cmd.push(function() { googletag.pubads().setPrivacySettings({ nonPersonalizedAds: false }); googletag.enableServices(); googletag.pubads().refresh(); }); 
+ console.log("loadADs=1;"); 
+ window.__tcfapi('removeEventListener', 2, function(){ }, tcData.listenerId);
+ var s=document.createElement("script"); s.defer=true; s.src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"; s.onload=function(){ console.log('gpt.js loaded'); }; document.head.appendChild(s);
+ } 
+ else{ console.log('Debug: tcData.eventStatus: ', tcData.eventStatus); } 
+};
+window.addEventListener('DOMContentLoaded', function(){ if(typeof window.__tcfapi !== 'undefined') { __tcfapi('addEventListener', 2, xcallback); }else{ var xci=window.setInterval(function(){ if(typeof window.__tcfapi !== 'undefined') { __tcfapi('addEventListener', 2, xcallback); window.clearInterval(xci); } },50); } });
+}else{
+window.setTimeout(function(){ var s=document.createElement("script"); s.defer=true; s.src="https://cdn.fuseplatform.net/publift/tags/2/2216/fuse.js"; s.onload=function(){ console.log('fuse.js loaded'); }; document.head.appendChild(s); },100);
+}
+window.setTimeout(function(){ var qc=document.querySelector(".qc-cmp2-summary-buttons button[mode='primary']"); if(qc === null && getCookie('xcleardone')!='y') __tcfapi('displayConsentUi',2, function() { var qci=window.setInterval(function(){ var qc=document.querySelectorAll(".qc-cmp2-header-links button[mode='link']")[1]; if(typeof qc !== "undefined"){ qc.click(); console.log("qc=1;"); } var qc=document.querySelector(".qc-cmp2-buttons-desktop button[mode='primary']"); if(typeof qc !== "undefined"){ qc.click(); clearInterval(qci); setCookie("xcleardone","y",6); window.setTimeout(function(){ var event = new KeyboardEvent('keydown', { key: 'Escape', code: 'Escape', keyCode: 27, which: 27, bubbles: false }); document.documentElement.dispatchEvent(event); },311); console.log("qc=2;"); } },300); }); },12337);
+</script><iframe src="https://2c67e3dc693401c096d820c827c5c1cf.safeframe.googlesyndication.com/safeframe/1-0-45/html/container.html" style="visibility: hidden; display: none;"></iframe>  <style id="invertx">.navTabs,footer,.breadBoxTop,#tvprogramm,.messageList,.discussionList, .messageList img, .messageList iframe, .titleBar:not(.isMetro), .mainContent > .xenForm, .pageNavLinkGroup, .tabs { filter: invert(1) hue-rotate(180deg); } body {background:#333!important;} #player:fullscreen { filter:0; } #stpd_close,#raidrush_net_1000x100_sticky_acnhorad_responsive {background:rgba(69,69,69,0.90)!important;z-index:1!important;}</style><div id="calroot" style="display: none; position: absolute;"><div id="calhead"><a id="calprev">←</a><div id="caltitle"></div><a id="calnext">→</a></div><div id="calbody"><div id="caldays"><span>So</span><span>Mo</span><span>Di</span><span>Mi</span><span>Do</span><span>Fr</span><span>Sa</span></div><div id="calweeks"></div></div></div><div class="Menu JsOnly tabMenu portalTabLinks" id="XenForoUniq0"> <div class="primaryContent menuHeader"> <h3>Portal</h3> <div class="muted">Direktauswahl</div> </div> </div><div class="Menu JsOnly tabMenu forumsTabLinks" id="XenForoUniq1"> <div class="primaryContent menuHeader"> <h3>Foren</h3> <div class="muted">Direktauswahl</div> </div> <ul class="secondaryContent blockLinksList"> <li> <a href="s/?type=post">Foren durchsuchen</a> </li> <li> <a href="find-new/posts" rel="nofollow">Themen mit aktuellen Beiträgen</a> </li> </ul> </div><div class="Menu JsOnly blockLinksList primaryContent" id="NavigationHiddenMenu"> </div><div class="Menu JsOnly tabMenu uix_fixIOSClick" id="XenForoUniq2"> <div class="secondaryContent"> <form action="login/login" method="post" class="xenForm--uixLoginForm xenForm"> <dl class="ctrlUnit fullWidth"> <dt> <label for="ctrl_pageLogin_login">Benutzername oder E-Mail-Adresse:</label> </dt> <dd> <input type="text" name="login" value="" id="ctrl_pageLogin_login" class="textCtrl uix_fixIOSClickInput" tabindex="1"> </dd> </dl> <dl class="ctrlUnit fullWidth"> <dt> <label for="ctrl_pageLogin_password">Passwort:</label> </dt> <dd> <input type="password" name="password" class="textCtrl uix_fixIOSClickInput" id="ctrl_pageLogin_password" tabindex="2"> <div> <a href="lost-password/" class="OverlayTrigger OverlayCloser" tabindex="6">Hast du dein Passwort vergessen?</a> </div> </dd> </dl> <dl class="ctrlUnit submitUnit"> <dd> <input type="submit" class="button primary" value="Anmelden" data-loginphrase="Anmelden" data-signupphrase="Registrieren" tabindex="4"> <input type="hidden" name="remember" value="1"> </dd> </dl> <input type="hidden" name="cookie_check" value="1"> <input type="hidden" name="_xfToken" value=""> <input type="hidden" name="redirect" value="/"> </form> </div> </div><div class="Menu" id="XenForoUniq3"> <div class="primaryContent menuHeader"> <h3>Nützliche Suchen</h3> </div> <ul class="secondaryContent blockLinksList"> <li> <a href="find-new/posts?recent=1" rel="nofollow">Themen mit aktuellen Beiträgen</a> </li> </ul> </div><iframe name="googlefcPresent" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="googlefcInactive" src="about:blank" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="googlefcLoaded" src="about:blank" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe></body><iframe name="goog_topics_frame" src="https://securepubads.g.doubleclick.net/static/topics/topics_frame.html" style="display: none;"></iframe></html>

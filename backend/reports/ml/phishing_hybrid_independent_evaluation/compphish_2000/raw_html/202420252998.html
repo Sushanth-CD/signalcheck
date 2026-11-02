@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amazon Clone</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="tablet.css" media="(max-width: 1216px)" />
+    <link rel="stylesheet" href="miniTab.css" media="(max-width: 900px)" />
+    <link rel="stylesheet" href="mobile.css" media="(max-width: 768px)" />
+    
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <div class="icon1"><i class="fa-solid fa-bars"></i></div>
+        <div class="nav-logo border">
+          <div class="logo"></div>
+        </div>
+
+    
+       
+        <div class="signin-mob">
+          <div class="signin-1"><p id="signin1-mob">Sign in ></p></div>
+        
+          <!-- Wrapping Icons to Push to Right -->
+          <div class="icons-container">
+            <div class="user-icon-mob"><i class="fa-regular fa-user"></i></div>
+            <div class="carticon-mob">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <div class="zero-icon-mob">0</div>
+            </div>
+          </div>
+        </div>
+    
+        
+      
+        
+
+        <div class="nav-address border">
+          <div class="address-icon">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+          
+          <div class="address-text">
+            <p class="address-first">Deliver to</p>
+            <p class="address-second">India</p>
+          </div>
+        </div>
+
+        <div class="outer-nav-search">
+          <div class="nav-search">
+            <select class="search-select">
+              <option>All</option>
+            </select>
+            <input placeholder="Search Amazon" class="search-input" />
+            <div class="search-icon">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="language border">
+          <div class="language-all">
+            <div class="india-logo"></div>
+            <div class="india-name"><p>IND</p></div>
+            <select class="language-icon">
+              <option>English</option>
+              <option>Hindi</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="nav-signin border">
+          <div class="singnin">
+            <p><span>Hello, sign in</span></p>
+            <p id="signin1">Sign in ></p>
+            <p class="nav-second">Account & Lists</p>
+          </div>
+          <div class="nav-list">
+            <select class="ListAndSignin">
+              <option>Create Account</option>
+              <option>Setting</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="return border">
+          <div>
+            <p><span>Returns</span></p>
+            <p class="nav-second">& Orders</p>
+          </div>
+        </div>
+
+        <div class="nav-cart border">
+          <div class="cart-icon">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <div class="zero-icon-desk">0</div>
+          </div>
+          <div class="cart">Cart</div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-all">
+          <i class="fa-solid fa-bars"></i>
+          All
+        </div>
+        <div class="panel-ops">
+          <p>Today's Deals</p>
+          <p>Customer Service</p>
+          <p>Registry</p>
+          <p>Gift Cards</p>
+          <p>Sell</p>
+        </div>
+        <div class="panel-mobile-ops">
+          <p>Deals</p>
+          <p>Amazon Basics</p>
+          <p>Livestreams</p>
+          <p>Music</p>
+          <p>Best Sellers</p>
+          <p>Video</p>
+          <p>Home</p>
+          <p>New Releases</p>
+          <p>Books</p>
+          <p>PC</p>
+        </div>
+        <div class="panel-deals">Shop deals in Electronics</div>
+      </div>
+
+      <div class="mobile-deliver">
+        <i class="fa-solid fa-location-dot"></i>
+        <p>Deliver to India</p>
+        <select id="select-deliver"></select>
+      </div>
+    </header>
+
+    <div class="hero-section">
+      <div class="hero-message">
+        <p>
+          You are on amazon.com. You can also shop on Amazon India for millions
+          of products with fast local delivery.
+          <a href="https://www.amazon.in/?ref=aisgw_intl_stripe_in"
+            >Click here to go to amazon.in</a
+          >
+        </p>
+      </div>
+      <div class="hero-products">
+        <div
+          class="hero-box1"
+          style="background-image: url('Photos/hero-box-img1.jpg')"
+        ></div>
+
+        <div
+          class="hero-box2"
+          style="background-image: url('Photos/hero-box-img2.jpg')"
+        ></div>
+        <div
+          class="hero-box1"
+          style="background-image: url('Photos/hero-box-img3.jpg')"
+        ></div>
+        <div
+          class="hero-box2"
+          style="background-image: url('Photos/hero-box-img4.jpg')"
+        ></div>
+        <div
+          class="hero-box1"
+          style="background-image: url('Photos/hero-box-img5.jpg')"
+        ></div>
+        <div
+          class="hero-box2"
+          style="background-image: url('Photos/hero-box-img6.jpg')"
+        ></div>
+        <div
+          class="hero-box1"
+          style="background-image: url('Photos/hero-box-img7.jpg')"
+        ></div>
+        <div
+          class="hero-box2"
+          style="background-image: url('Photos/hero-box-img8.jpg')"
+        ></div>
+        <div
+          class="hero-box1"
+          style="background-image: url('Photos/hero-box-img9.jpg')"
+        ></div>
+      </div>
+    </div>
+
+    <div class="space-div">
+      <div class="amazonin-message">
+        <p>
+          You are on amazon.com. You can also shop on Amazon India for millions
+          of products with fasr local delivery.
+        </p>
+        <a href="https://www.amazon.in/?ref=aisgw_intl_stripe_in"
+          >Click here to go to amazon.in</a
+        >
+      </div>
+    </div>
+
+    <div class="mobile-signin">
+      <p>Sign in for the best experience.</p>
+      <button class="mob-sign-1">
+        <a
+          href="https://www.amazon.com/ap/signin?openid.mode=checkid_setup&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.return_to=https%3A%2F%2Fwww.amazon.com%2Fref%3Dgw_sgn_ib%3F_encoding%3DUTF8%26pd_rd_w%3D77WCG%26content-id%3Damzn1.sym.c53eea0b-0794-41ef-8270-20d3bd873376%26pf_rd_p%3Dc53eea0b-0794-41ef-8270-20d3bd873376%26pf_rd_r%3DADAKYSX8D8DAZ26FFT3P%26pd_rd_wg%3DZ2WCN%26pd_rd_r%3D904c30f9-49d6-44bd-876e-839227547897&openid.assoc_handle=anywhere_v2_us&openid.pape.max_auth_age=0&pf_rd_r=F9W9EM9G0CLLNDIC8VHQ"
+          >Sign in securely</a
+        >
+      </button>
+      <a class="createAccount" href="https://www.amazon.com/ap/register">
+        Create an account
+      </a>
+    </div>
+
+    <div class="shop-section">
+      <div class="box1 box">
+        <div class="box-content">
+          <h2>Top kitchen appliances</h2>
+          <div
+            class="box-image"
+            style="background-image: url('Photos/topKitchen.webp')"
+          ></div>
+          <p>See more</p>
+        </div>
+      </div>
+
+      <div class="box2 box">
+        <div class="box-content">
+          <h2>New year, new supplies</h2>
+          <div
+            class="box-image"
+            style="background-image: url('Photos/box2_image.jpg')"
+          ></div>
+          <p>See more</p>
+        </div>
+      </div>
+
+      <div class="box3 box">
+        <div class="box-content">
+          <h2>Get your game on</h2>
+          <div
+            class="box-image"
+            style="background-image: url('Photos/gaming.jpg')"
+          ></div>
+          <p>See more</p>
+        </div>
+      </div>
+
+      <div class="box4 box">
+        <div class="box-content">
+          <h2>Best in bikes</h2>
+          <div
+            class="box-image"
+            style="background-image: url('Photos/suitcase.webp')"
+          ></div>
+          <p>See more</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="shop-section2">
+      <div class="box5 boxTwo">
+        <div class="box-twoInner">
+          <h2>Level up your gaming</h2>
+          <div class="inner-box">
+            <div
+              class="innerbox1"
+              style="background-image: url('Photos/g1.jpg')"
+            ></div>
+            <div
+              class="innerbox1"
+              style="background-image: url('Photos/g2.jpg')"
+            ></div>
+            <div
+              class="innerbox1"
+              style="background-image: url('Photos/g3.jpg')"
+            ></div>
+            <div
+              class="innerbox1"
+              style="background-image: url('Photos/g4.jpg')"
+            ></div>
+          </div>
+          <p>See more</p>
+        </div>
+      </div>
+
+      <div class="box6 boxTwo">
+        <div class="box-twoInner">
+          <h2>Shop deals in fashion</h2>
+          <div class="inner-box">
+            <div
+              class="innerbox1"
+              style="background-image: url('Photos/fas1.jpg')"
+            ></div>
+            <div
+              class="innerbox1"
+              style="background-image: url('Photos/fas2.jpg')"
+            ></div>
+            <div
+              class="innerbox1"
+              style="background-image: url('Photos/fas3.jpg')"
+            ></div>
+            <div
+              class="innerbox1"
+              style="background-image: url('Photos/fas4.jpg')"
+            ></div>
+          </div>
+          <p>See more</p>
+        </div>
+      </div>
+      <div class="box7 boxTwo">
+        <div class="box-twoInner">
+          <h2>Refresh your home</h2>
+          <div class="inner-box">
+            <div
+              class="innerbox1"
+              style="background-image: url('Photos/r1.jpg')"
+            ></div>
+            <div
+              class="innerbox1"
+              style="background-image: url('Photos/r2.jpg')"
+            ></div>
+            <div
+              class="innerbox1"
+              style="background-image: url('Photos/r3.jpg')"
+            ></div>
+            <div
+              class="innerbox1"
+              style="background-image: url('Photos/r4.jpg')"
+            ></div>
+          </div>
+          <p>See more</p>
+        </div>
+      </div>
+      <div class="box8 boxTwo">
+        <div class="box-twoInner">
+          <h2>Wireless Tech</h2>
+          <div class="inner-box">
+            <div
+              class="innerbox1"
+              style="background-image: url('Photos/t1.jpg')"
+            ></div>
+            <div
+              class="innerbox1"
+              style="background-image: url('Photos/t2.jpg')"
+            ></div>
+            <div
+              class="innerbox1"
+              style="background-image: url('Photos/t3.jpg')"
+            ></div>
+            <div
+              class="innerbox1"
+              style="background-image: url('Photos/t4.jpg')"
+            ></div>
+          </div>
+          <p>See more</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="top-pics">
+      <div class="toppics-inner">
+        <h2>Best Sellers in Home & Kitchen</h2>
+        <div class="image-container">
+          <div
+            class="top-img1"
+            style="background-image: url('Photos/hk8.jpg')"
+          ></div>
+          <div
+            class="top-img1"
+            style="background-image: url('Photos/hk1.jpg')"
+          ></div>
+          <div
+            class="top-img2"
+            style="background-image: url('Photos/hk2.jpg')"
+          ></div>
+          <div
+            class="top-img1"
+            style="background-image: url('Photos/hk3.jpg')"
+          ></div>
+          <div
+            class="top-img2"
+            style="background-image: url('Photos/hk4.jpg')"
+          ></div>
+          <div
+            class="top-img1"
+            style="background-image: url('Photos/hk5.jpg')"
+          ></div>
+          <div
+            class="top-img2"
+            style="background-image: url('Photos/hk7.jpg')"
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="top-pics">
+      <div class="toppics-inner2">
+        <h2>Top picks for India</h2>
+        <div class="image-container">
+          <div
+            class="top-img1"
+            style="background-image: url('Photos/ind1.jpg')"
+          ></div>
+          <div
+            class="top-img1"
+            style="background-image: url('Photos/ind2.jpg')"
+          ></div>
+          <div
+            class="top-img2"
+            style="background-image: url('Photos/ind3.jpg')"
+          ></div>
+          <div
+            class="top-img1"
+            style="background-image: url('Photos/ind6.jpg')"
+          ></div>
+          <div
+            class="top-img2"
+            style="background-image: url('Photos/ind4.jpg')"
+          ></div>
+          <div
+            class="top-img1"
+            style="background-image: url('Photos/ind5.jpg')"
+          ></div>
+          <div
+            class="top-img2"
+            style="background-image: url('Photos/ind7.jpg')"
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="top-pics">
+      <div class="toppics-inner3">
+        <h2>Best Sellers in Books</h2>
+        <div class="image-container">
+          <div
+            class="top-img1"
+            style="background-image: url('Photos/b2l.jpg')"
+          ></div>
+          <div
+            class="top-img1"
+            style="background-image: url('Photos/b1.jpg')"
+          ></div>
+          <div
+            class="top-img2"
+            style="background-image: url('Photos/b3.jpg')"
+          ></div>
+          <div
+            class="top-img1"
+            style="background-image: url('Photos/b4l.jpg')"
+          ></div>
+          <div
+            class="top-img2"
+            style="background-image: url('Photos/b6.jpg')"
+          ></div>
+          <div
+            class="top-img1"
+            style="background-image: url('Photos/b5l.jpg')"
+          ></div>
+          <div
+            class="top-img2"
+            style="background-image: url('Photos/b8.jpg')"
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sign-in">
+      <div class="line1"></div>
+      <div class="sign-inInner">
+        <h2>See personalized recommendations</h2>
+        <div class="sign-button">
+          <a
+            href="https://www.amazon.com/ap/signin?openid.mode=checkid_setup&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.return_to=https%3A%2F%2Fwww.amazon.com%2Fref%3Drhf_sign_in&openid.assoc_handle=usflex&openid.pape.max_auth_age=0"
+            ><button>Sign in</button></a
+          >
+        </div>
+        <p>
+          New Customer?<a
+            id="a1"
+            href="https://www.amazon.com/ap/register?openid.mode=checkid_setup&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.return_to=https%3A%2F%2Fwww.amazon.com%2Fref%3Drhf_sign_in&openid.assoc_handle=usflex"
+            >Start here.
+          </a>
+        </p>
+      </div>
+      <div class="line2"></div>
+    </div>
+
+    <footer>
+      <div class="back-to-top"><p>Back to top</p></div>
+
+      <div class="mobile-foot-1">
+        <ul>
+          <a>Amazon.com</a>
+          <a>Your Lists</a>
+          <a>Registry & Gifts List</a>
+          <a>Your Account</a>
+          <a>Sell products on Amazon</a>
+          <a>Recalls and Product Safety Alerts</a>
+          <a>Customer Service</a>
+        </ul>
+
+        <ul>
+          <a>Your Orders</a>
+          <a>Gift Cards</a>
+          <a>Find a Gift</a>
+          <a>Browsing History</a>
+          <a>Your Returns</a>
+        </ul>
+      </div>
+
+      <div class="foot-panel2">
+        <ul>
+          <p>Get to Know Us</p>
+          <a href="https://www.amazon.jobs/en/">Careers</a>
+          <a>Blog</a>
+          <a
+            href="https://www.aboutamazon.com/?utm_source=gateway&utm_medium=footer"
+            >About Amazon</a
+          >
+          <a>Investor Relations</a>
+          <a> Amazon Devices</a>
+          <a>Amazon Science</a>
+        </ul>
+
+        <ul>
+          <p>Make Money with Us</p>
+          <a>Sell products on Amazon</a>
+          <a>Sell on Amazon Business</a>
+          <a>Sell apps on Amazon</a>
+          <a>Become an Affiliate</a>
+          <a>Advertise Your Products</a>
+          <a>Self-Publish with Us</a>
+          <a>Host an Amazon Hub</a>
+          <a>› See More Make Money with Us</a>
+        </ul>
+
+        <ul>
+          <p>Amazon Payment Products</p>
+          <a>Amazon Business Card</a>
+          <a>Shop with Points</a>
+          <a>Reload Your Balance</a>
+          <a>Amazon Currency Converter</a>
+        </ul>
+
+        <ul>
+          <p>Let Us Help You</p>
+          <a>Amazon and COVID-19</a>
+          <a href="https://www.amazon.com/gp/css/homepage.html?ref_=footer_ya"
+            >Your Account</a
+          >
+          <a
+            href="https://www.amazon.com/ap/signin?openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.com%2Fyour-orders%2Forders%3F_encoding%3DUTF8%26ref_%3Dfooter_yo&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=amzn_retail_yourorders_us&openid.mode=checkid_setup&language=en_US&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0"
+            >Your Orders</a
+          >
+          <a
+            href="https://www.amazon.com/gp/help/customer/display.html?nodeId=468520&ref_=footer_shiprates"
+            >Shipping Rates & Policies</a
+          >
+          <a>Returns & Replacements</a>
+          <a>Manage Your Content and Devices</a>
+          <a>Help</a>
+        </ul>
+      </div>
+
+      <div class="foot-panel3">
+        <div class="logo2"></div>
+        <div class="foot-panel3-inner">
+          <div class="foot-pan3-lan">
+            <i class="fa-solid fa-globe"></i>
+            <p>English</p>
+          </div>
+          <div class="foot-pan3-currency">
+            <i class="fa-solid fa-indian-rupee-sign"></i>
+            <p>INR I.N.D Rupees</p>
+          </div>
+          <div class="foot-pan3-flag">
+            <div class="india-logo2"></div>
+            <p>India</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mobile-already-customer"><a href="https://www.amazon.com/ap/signin?openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.com%2F%3F_encoding%3DUTF8%26ref_%3Dnav_m_foot_si&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=anywhere_v2_us&openid.mode=checkid_setup&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0">Already a customer? Sign in</a></p></div>
+
+      <div class="foot-panel4">
+        <ul class="ul2">
+          <p>Amazon Music</p>
+          <a>Stream millions</a>
+          <a> of songs</a>
+
+          <p>Amazon Business</p>
+          <a>Everything For </a>
+          <a>Your Business</a>
+
+          <p>IMDbPro</p>
+          <a>Get Info </a>
+          <a>Entertainment</a>
+          <a>Professionals Need</a>
+        </ul>
+
+        <ul class="ul2">
+          <p>Amazon Ads</p>
+          <a>Reach customers </a>
+          <a> wherever they</a>
+          <a>spend their time</a>
+
+          <p>AmazonGlobal</p>
+          <a>Ship Orders </a>
+          <a>Internationally </a>
+
+          <p>Kindle Direct</p>
+          <a class="a1">Publishing</a>
+          <a>Indie Digital & </a>
+          <a>Print Publishing</a>
+          <a>Made Easy</a>
+
+          <p>eero WiFi</p>
+
+          <a>Stream 4K Video </a>
+          <a>in Every Room</a>
+        </ul>
+
+        <ul class="ul2">
+          <p>6pm</p>
+          <a>Score deals </a>
+          <a> on fashion brands</a>
+
+          <p>Amazon Web</p>
+          <a class="a1">Services</a>
+          <a>Scalable Cloud </a>
+          <a>Computing </a>
+          <a>Services</a>
+
+          <p>Prime Video Direct</p>
+
+          <a>Video Distribution </a>
+          <a> Made Easy</a>
+
+          <p>Blink</p>
+
+          <a>Smart Security </a>
+          <a>for Every Home</a>
+        </ul>
+
+        <ul class="ul2">
+          <p>AbeBooks</p>
+          <a>Books, art </a>
+          <a> & collectibles</a>
+
+          <p>Audible</p>
+
+          <a>Listen to Books & </a>
+          <a>Original </a>
+          <a> Audio</a>
+          <a>Performances</a>
+
+          <p>Shopbop</p>
+
+          <a>Designer </a>
+          <a>Fashion Brands</a>
+
+          <p>Neighbors App</p>
+
+          <a>Real-Time Crime </a>
+          <a> & Safety Alerts</a>
+        </ul>
+
+        <ul class="ul2">
+          <p>ACX</p>
+          <a>Audiobook </a>
+          <a>Publishing</a>
+          <a> Made Easy</a>
+
+          <p>Box Office Mojo</p>
+
+          <a>Find Movie </a>
+          <a>Box Office Data </a>
+
+          <p>Woot!</p>
+
+          <a>Deals and </a>
+          <a> Shenanigans</a>
+
+          <p>Amazon</p>
+          <a class="a1">Subscription Boxes</a>
+
+          <a>Top subscription</a>
+          <a>boxes – right to</a>
+          <a>your door</a>
+        </ul>
+
+        <ul class="ul2">
+          <p>Sell on Amazon</p>
+          <a>Start a Selling </a>
+          <a>Account</a>
+
+          <p>Goodreads</p>
+
+          <a>Book reviews </a>
+          <a>&</a>
+          <a>recommendations</a>
+
+          <p>Zappos</p>
+
+          <a>Shoes & </a>
+          <a>Clothing</a>
+
+          <p>PillPack</p>
+
+          <a>Pharmacy </a>
+          <a>Simplified</a>
+        </ul>
+
+        <ul class="ul2">
+          <p>Veeqo</p>
+          <a>Shipping Software </a>
+          <a> Inventory </a>
+          <a> Management</a>
+
+          <p>IMDb</p>
+
+          <a>Movies, TV </a>
+          <a>& Celebrities</a>
+
+          <p>Ring</p>
+
+          <a>Smart Home </a>
+          <a>Security Systems</a>
+        </ul>
+      </div>
+
+<div class="foot-panel5-mobile">
+  <div class="foot-panel5-m-inner1">
+    <a>Conditions of Use</a>
+          <a>Privacy Notice</a>
+
+  </div>
+  <div class="foot-panel5-m-inner2">
+    <a>Consumer Health Data Privacy Disclosure</a>
+
+  </div>
+  <div class="foot-panel5-m-inner3">
+    <a>Your Ads Privacy Choices</a>
+
+  </div>
+  <div class="foot-panel5-m-inner4">
+    <a>© 1996-2025, Amazon.com, Inc. or its affiliates</a>
+  </div>
+
+  
+</div>
+
+      <div class="foot-panel5">
+        <div class="foot-panel5-inner1">
+          <a>Conditions of Use</a>
+          <a>Privacy Notice</a>
+          <a>Consumer Health Data Privacy Disclosure</a>
+          <a>Your Ads Privacy Choices</a>
+        </div>
+        <div class="foot-panel5-inner2">
+          <a>© 1996-2025, Amazon.com, Inc. or its affiliates</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

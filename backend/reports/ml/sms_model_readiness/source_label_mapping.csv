@@ -1,0 +1,5 @@
+source_dataset,original_records,original_labels,project_label_mapping,destination_bearing_count,no_destination_count,quarantined_count,train_representation_count,leakage_risk
+Mishra_and_Soni_2022,5971,"Ham: 4844, Smishing: 638, Spam: 489","Ham->0, Smishing->1, Spam->1",109,5814,48,13,Critical (ingested into combined_reduced.json)
+UCI_SMS_Spam_Collection_2011,5574,"Ham: 4827, Spam: 747","Ham->0, Spam->1",78,5448,48,13,High (heavily ingested into Mishra & Soni subcorpus)
+ExAIS_SMS_2023,5240,"Ham: 2890, Spam: 2350","Ham->0, Spam->0 (nuisance spam)",0,0,0,0,Zero (fully independent outside training data)
+WSPR_NCSU_Smishing_2024,68029,"Smishing: 68029 across 35128 campaigns",Smishing->1,0,0,0,0,Zero (fully independent outside training data)

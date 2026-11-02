@@ -1,0 +1,498 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>InterPals: Meet the World. Make friends, travel and learn languages today!</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="charset" content="utf-8"/>
+    <meta name="keywords" content="penpals, meet people, new friends, pen pals, make friends, native speakers,
+    make friends online, language exchange, email penpals, international, language lessons,
+    free, online penpals, language partners, language practice, learn languages, cultural exchange, learn english, travel buddies,
+    learn spanish, hello talk, couchsurfing, italki"/>
+    <meta name="description" content="InterPals is a friendly community of over 5 million friends, language learners,
+    travelers and penpals. use Interpals to meet people and travelers from other countries, practice languages with native speakers,
+    make new friends and make your world more connected and fun!
+    Learn English, Spanish, German, French, Chinese and more."/>
+    <meta property="og:url" content="//www.interpals.net"/>
+    <meta property="fb:page_id" content="190988203544"/>
+    <meta property="og:description" content="InterPals is a friendly community of over 5 million friends, language learners,
+    travelers and penpals. use Interpals to connect with native speakers, travelers and people from other countries to
+    practice languages, make new friends and make your world more connected and fun!
+    Learn English, Spanish, German, French, Chinese and more."/>
+
+    <link rel='shortcut icon' href="/images/icons/env-blu-16.png" type='image/png'/>
+    <style type="text/css">@font-face {font-family:Open Sans;font-style:normal;font-weight:400;src:url(/cf-fonts/s/open-sans/5.0.20/hebrew/400/normal.woff2);unicode-range:U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F;font-display:swap;}@font-face {font-family:Open Sans;font-style:normal;font-weight:400;src:url(/cf-fonts/s/open-sans/5.0.20/greek-ext/400/normal.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Open Sans;font-style:normal;font-weight:400;src:url(/cf-fonts/s/open-sans/5.0.20/cyrillic/400/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Open Sans;font-style:normal;font-weight:400;src:url(/cf-fonts/s/open-sans/5.0.20/latin/400/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Open Sans;font-style:normal;font-weight:400;src:url(/cf-fonts/s/open-sans/5.0.20/greek/400/normal.woff2);unicode-range:U+0370-03FF;font-display:swap;}@font-face {font-family:Open Sans;font-style:normal;font-weight:400;src:url(/cf-fonts/s/open-sans/5.0.20/latin-ext/400/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Open Sans;font-style:normal;font-weight:400;src:url(/cf-fonts/s/open-sans/5.0.20/vietnamese/400/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Open Sans;font-style:normal;font-weight:400;src:url(/cf-fonts/s/open-sans/5.0.20/cyrillic-ext/400/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}</style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <meta property="og:type" content="website "/>
+    <meta property="og:site_name" content="InterPals"/>
+    <meta property="og:title" content="InterPals Penpals"/>
+    <meta name="csrf_token" content="ODE2NWViNWU="/>
+    <meta property="og:image" content="https://ipstatic.net/images/logo-rounded-corners.png"/>
+
+    <style>
+                :root {
+            --color-brightblue: #17c7ff;
+            --color-brightblue-bg: rgba(25, 181, 254, 0.85);
+            --color-yellow: #f1c40f;
+            --color-orange: #f39c12;
+            --color-green: #2ecc71;
+            --color-red: #e74c3c;
+            --color-blue: #139CFF;
+            --color-purple: #C731FF;
+
+            --text-color-default: #ffffff;
+            --text-color-lightgray: #828282;
+            --text-color-darkgray: #505050;
+
+            --rotate-cw: 3deg;
+            --rotate-ccw: calc(-1 * var(--rotate-cw));
+        }
+
+        body a,
+        body a:visited,
+        body a:hover,
+        body a:active {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        body, html {
+            margin: 0;
+            height: 100%;
+        }
+
+        body {
+            font-family: Open Sans, -apple-system, sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 140%;
+        }
+
+        .bg {
+            position: absolute;
+            left: 0%;
+            right: 0%;
+            top: 0%;
+            bottom: 0%;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0) 66.67%, rgba(0, 0, 0, 0.11) 100%),
+            linear-gradient(180deg, #159DFF 0%, rgba(255, 255, 255, 0.1) 100%),
+            url(/images/hp-bg6.jpg)                #159DFF;
+            background-position: center center;
+            background-size: cover;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            color: var(--text-color-default);
+        }
+
+        .font-large {
+            font-size: 16px;
+        }
+
+        .font-small {
+            font-size: 13px;
+        }
+
+        .welcome-center-row {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: nowrap;
+        }
+
+        .welcome-container {
+            width: 480px;
+            padding: 30px;
+
+            background: var(--color-brightblue-bg);
+            border-radius: 40px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+        }
+
+        .logo {
+            margin: 0 auto 30px auto;
+            width: 233px;
+            height: 49.38px;
+        }
+
+
+        .welcome-intro-text {
+            width: 100%;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .welcome-buttons {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 30px;
+
+            width: 100%;
+        }
+
+        .btn {
+            display: inline-block;
+            text-align: center;
+            vertical-align: middle;
+            padding: 10px;
+            min-width: 210px;
+            border-radius: 100px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            filter: brightness(0.95);
+        }
+
+        .btn:active {
+            transform: scale(.98);
+            filter: brightness(0.90);
+        }
+
+        .btn:focus {
+            outline: none;
+        }
+
+        .btn-outline {
+            border: 1px solid #ffffff;
+            box-sizing: border-box;
+            border-radius: 100px;
+            color: #fff;
+            background: transparent;
+        }
+
+        .fb-btn {
+            background: #4267B2;
+        }
+
+        .join-btn {
+            background: #fff;
+            color: var(--color-brightblue);
+        }
+
+        a.join-btn, a.join-btn:visited, a.join-btn:active, a.join-btn:hover {
+            color: var(--color-brightblue);
+            text-decoration: none;
+        }
+
+        .already-member {
+            margin-top: 30px;
+        }
+
+        .link {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .info-tags {
+            display: flex;
+            flex-direction: column;
+            flex-basis: content;
+            margin: 30px;
+        }
+
+        .slidein-left {
+            animation: __slidein-left .5s ease-in-out 0s 1;
+        }
+
+        .slidein-right {
+            animation: __slidein-right .5s ease-in-out 0s 1;
+        }
+
+        .info-tags div {
+            padding: 10px 30px;
+            border-radius: 10px;
+            font-size: 18px;
+            line-height: 100%;
+            color: #fff;
+            text-align: center;
+            margin: 15px auto;
+        }
+
+        .info-tags div:hover {
+            filter: brightness(1.05);
+        }
+
+        .tag-rotation-cw {
+            transform: rotate(var(--rotate-ccw));
+            animation: turn-cw .07s linear .5s 4 alternate;
+        }
+
+        .tag-rotation-ccw {
+            transform: rotate(var(--rotate-cw));
+            animation: turn-ccw .07s linear 0.5s 4 alternate;
+        }
+
+        .tag1 {
+            background: var(--color-green);
+        }
+
+        .tag2 {
+            background: var(--color-orange);
+        }
+
+        .tag3 {
+            background: var(--color-purple);
+        }
+
+        .tag4 {
+            background: var(--color-orange);
+        }
+
+        .tag5 {
+            background: var(--color-purple);
+        }
+
+        .tag6 {
+            background: var(--color-green);
+        }
+
+        #signin-body {
+            display: none;
+        }
+
+        #signin-body form, #signin-body input {
+            all: unset;
+        }
+
+        #signin-body form {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #signin-body input[type=text],
+        #signin-body input[type=password] {
+            width: 300px;
+            background: #ffffff;
+            border-radius: 10px;
+            margin: 15px;
+            padding: 10px 15px;
+            color: var(--text-color-darkgray);
+
+            /* 'all: unset' above cleared these values on Safari: */
+            -webkit-text-fill-color: var(--text-color-darkgray);
+            caret-color: var(--text-color-darkgray);
+        }
+
+        #signin-btn {
+            padding: 10px;
+            margin: 30px 0 0 0;
+        }
+
+        #forgot-password {
+            margin: -10px auto 0 30px;
+        }
+
+        #bottom-links {
+            position: absolute;
+            bottom: 0;
+            padding: 10px 50px;
+            width: 100%;
+            box-sizing: border-box;
+            background: rgba(0, 0, 0, 0.50);
+            color: #eee;
+
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        #bottom-links:hover {
+            background: rgba(0, 0, 0, 0.60);
+        }
+
+        #bottom-links a {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+
+        #alert_bar {
+            padding: 0;
+            width: 400px;
+        }
+
+        @keyframes turn-ccw {
+            to {
+                transform: rotate(var(--rotate-ccw));
+            }
+        }
+
+        @keyframes turn-cw {
+            to {
+                transform: rotate(var(--rotate-cw));
+            }
+        }
+
+        @keyframes __slidein-left {
+            from {
+                transform: translateX(-400px);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes __slidein-right {
+            from {
+                transform: translateX(400px);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+            </style>
+
+    <script>
+        $(function () {
+            $(".link").click(function () {
+                $("#welcome-body").toggle();
+                $("#signin-body").toggle();
+                $("input:text:visible:first").focus();
+            });
+        });
+    </script>
+
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="886838556226-iqp1h490atsthtv2rj8p5cuush39eb67.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+<div id="g_id_onload"
+     data-client_id="886838556226-iqp1h490atsthtv2rj8p5cuush39eb67.apps.googleusercontent.com"
+     data-login_uri="https://www.interpals.net/app/auth/google">
+</div>
+
+<script>
+    fb_login = function() {
+        FB.login(function (response) {
+            console.log(response);
+            if (response.authResponse) {
+                window.location.href = '/app/auth/fb';
+            }
+        }, {scope: 'email, public_profile'});
+       // After re-approval
+       // }, {scope: 'email, user_birthday, public_profile, user_gender, user_hometown, user_location'});
+    }
+
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '200381430048956',
+            xfbml      : true,
+            cookie     : true,
+            version    : 'v9.0'
+        });
+        FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div class="bg font-large">
+    <div class="welcome-center-row">
+        <div class="info-tags slidein-left">
+            <div class="tag1 tag-rotation-ccw">Make new friends</div>
+            <div class="tag2 tag-rotation-cw">Learn with native speakers</div>
+            <div class="tag3 tag-rotation-cw">Meet people everywhere</div>
+        </div>
+
+        <div class="welcome-container">
+            <img src="/images/newlogo.svg" width="233" height="50" class="logo">
+
+            <div id="welcome-body">
+                <div class="welcome-intro-text">
+                    InterPals is the top platform to make new friends, practice languages with native speakers and meet
+                    travelers!
+                </div>
+
+                <div class="welcome-buttons">
+                    <div class="btn fb-btn" onclick="fb_login();">Join using Facebook</div>
+                    <a class="btn join-btn" href="/app/signup">Join with email</a>
+                </div>
+
+                <div class="already-member">
+                    Already a member?
+                    <span class="link" id="signin-link">Sign in</span>
+                </div>
+            </div>
+            <div id="signin-body">
+                <form action="/app/auth/login" method="post">
+                    <input type="hidden" name="csrf_token" value="ODE2NWViNWU=" />
+                    
+
+
+
+                    <input type="text" name="username" placeholder="Email or username">
+                    <input type="password" name="password" placeholder="Password">
+                    <div id="forgot-password">
+                        <a href="/app/forgot" class="font-small">Forgot your password?</a>
+                    </div>
+
+                    <button type="submit" class="btn btn-outline font-large" id="signin-btn">Sign in</button>
+
+                    <div class="already-member">
+                        Not a member yet?
+                        <span class="link" id="signup-link">Sign up</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="info-tags slidein-right">
+            <div class="tag4 tag-rotation-cw">Get a virtual pen pal</div>
+            <div class="tag5 tag-rotation-ccw">Find a language partner</div>
+            <div class="tag6 tag-rotation-ccw">100% free and simple</div>
+        </div>
+    </div>
+    <div style="color: rgba(255,255,255,.9); font-size: 13px; margin-top: 15px; background: rgba(0,0,0,0.15); padding: 3px 10px; border-radius: 5px;">
+        7.5 million members
+    </div>
+
+</div>
+
+<div id="bottom-links" class="font-small">
+    <div style="text-align: left; flex-grow: 1;">&copy; 1998 - 2025 Interpals.</div>
+    <a href="/app/about">About</a> |
+    <a href="/app/feedback">Help & Feedback</a> |
+    <a href="/app/tos">Terms of Service</a> |
+    <a href="/app/privacy">Privacy Policy</a>
+    <div style="width: 120px;"></div>
+</div>
+
+<script>var online_update_domain = '';</script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/assets/fce6f09b1094dc8d9ebb/vendor.fce6f09b1094dc8d9ebb.min.js" defer></script>
+<script type="text/javascript" src="/assets/fce6f09b1094dc8d9ebb/interpals.fce6f09b1094dc8d9ebb.min.js" defer></script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0QW3XVG74P"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-0QW3XVG74P');
+</script>
+</body>
+</html>

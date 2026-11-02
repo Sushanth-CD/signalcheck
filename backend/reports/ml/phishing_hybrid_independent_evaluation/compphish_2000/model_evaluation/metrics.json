@@ -1,0 +1,474 @@
+{
+  "timestamp_utc": "2026-11-01T13:58:55.218191+00:00",
+  "evaluation_dataset": "CompPhish V4 2,000-sample independent evaluation corpus",
+  "sample_counts": {
+    "total": 2000,
+    "legitimate": 1062,
+    "phishing": 938,
+    "unique_domain_keys": 2000
+  },
+  "routing_statistics": {
+    "html_detected_count": 2000,
+    "policy_3_branches": {
+      "V3_Dual": 2000
+    },
+    "policy_4_branches": {
+      "V3_Dual": 2000
+    }
+  },
+  "models": {
+    "V2_Baseline": {
+      "operating_thresholds": {
+        "th_0.50": {
+          "threshold": 0.5,
+          "n": 2000,
+          "confusion_matrix": {
+            "TN": 1038,
+            "FP": 24,
+            "FN": 855,
+            "TP": 83
+          },
+          "accuracy": 0.5605,
+          "precision": 0.775701,
+          "recall": 0.088486,
+          "specificity": 0.977401,
+          "f1": 0.158852,
+          "balanced_accuracy": 0.532944,
+          "roc_auc": 0.812464,
+          "average_precision": 0.754692,
+          "false_positive_count": 24,
+          "false_negative_count": 855,
+          "sample_false_positives": [
+            202420256010,
+            202420256040,
+            202420255947,
+            202420256121,
+            202420256119,
+            202420256141,
+            202420253956,
+            202420255950,
+            202420256106,
+            202420256124
+          ],
+          "sample_false_negatives": [
+            202420259312,
+            202420250978,
+            202420255163,
+            202420256529,
+            202420257447,
+            202420258412,
+            202420259078,
+            202420255597,
+            202420255271,
+            202420253200
+          ]
+        },
+        "th_0.26": {
+          "threshold": 0.26,
+          "n": 2000,
+          "confusion_matrix": {
+            "TN": 700,
+            "FP": 362,
+            "FN": 187,
+            "TP": 751
+          },
+          "accuracy": 0.7255,
+          "precision": 0.674753,
+          "recall": 0.80064,
+          "specificity": 0.659134,
+          "f1": 0.732326,
+          "balanced_accuracy": 0.729887,
+          "roc_auc": 0.812464,
+          "average_precision": 0.754692,
+          "false_positive_count": 362,
+          "false_negative_count": 187,
+          "sample_false_positives": [
+            2308,
+            975,
+            2441,
+            2906,
+            2016,
+            1235,
+            2304,
+            202420256010,
+            202420256071,
+            202420254451
+          ],
+          "sample_false_negatives": [
+            202420255163,
+            202420258412,
+            202420259078,
+            202420255597,
+            202420255271,
+            202420253200,
+            202420255067,
+            202420250861,
+            202420250168,
+            202420251163
+          ]
+        },
+        "th_0.68": {
+          "threshold": 0.68,
+          "n": 2000,
+          "confusion_matrix": {
+            "TN": 1062,
+            "FP": 0,
+            "FN": 938,
+            "TP": 0
+          },
+          "accuracy": 0.531,
+          "precision": 0.0,
+          "recall": 0.0,
+          "specificity": 1.0,
+          "f1": 0.0,
+          "balanced_accuracy": 0.5,
+          "roc_auc": 0.812464,
+          "average_precision": 0.754692,
+          "false_positive_count": 0,
+          "false_negative_count": 938,
+          "sample_false_positives": [],
+          "sample_false_negatives": [
+            202420259312,
+            202420250978,
+            202420255163,
+            202420256529,
+            202420258796,
+            202420257447,
+            202420258412,
+            202420259078,
+            202420250813,
+            202420255597
+          ]
+        }
+      }
+    },
+    "V3_Content_Only": {
+      "operating_thresholds": {
+        "th_0.50": {
+          "threshold": 0.5,
+          "n": 2000,
+          "confusion_matrix": {
+            "TN": 698,
+            "FP": 364,
+            "FN": 647,
+            "TP": 291
+          },
+          "accuracy": 0.4945,
+          "precision": 0.444275,
+          "recall": 0.310235,
+          "specificity": 0.65725,
+          "f1": 0.365348,
+          "balanced_accuracy": 0.483743,
+          "roc_auc": 0.599497,
+          "average_precision": 0.53762,
+          "false_positive_count": 364,
+          "false_negative_count": 647,
+          "sample_false_positives": [
+            1711,
+            2975,
+            258,
+            931,
+            2441,
+            2016,
+            885,
+            1235,
+            202420253510,
+            202420256010
+          ],
+          "sample_false_negatives": [
+            202420259312,
+            202420255163,
+            202420256529,
+            202420258412,
+            202420259078,
+            202420250813,
+            202420255597,
+            202420255271,
+            202420253200,
+            202420255035
+          ]
+        }
+      }
+    },
+    "V3_URL_Only": {
+      "operating_thresholds": {
+        "th_0.50": {
+          "threshold": 0.5,
+          "n": 2000,
+          "confusion_matrix": {
+            "TN": 683,
+            "FP": 379,
+            "FN": 108,
+            "TP": 830
+          },
+          "accuracy": 0.7565,
+          "precision": 0.686518,
+          "recall": 0.884861,
+          "specificity": 0.643126,
+          "f1": 0.773172,
+          "balanced_accuracy": 0.763994,
+          "roc_auc": 0.832941,
+          "average_precision": 0.793119,
+          "false_positive_count": 379,
+          "false_negative_count": 108,
+          "sample_false_positives": [
+            2308,
+            3325,
+            2441,
+            2906,
+            1105,
+            2304,
+            202420253510,
+            202420256010,
+            202420253972,
+            202420254115
+          ],
+          "sample_false_negatives": [
+            202420255163,
+            202420258412,
+            202420259078,
+            202420255067,
+            202420251163,
+            9159983,
+            9160029,
+            202420259468,
+            202420250792,
+            202420256383
+          ]
+        }
+      }
+    },
+    "V3_Dual_Channel": {
+      "operating_thresholds": {
+        "th_0.50": {
+          "threshold": 0.5,
+          "n": 2000,
+          "confusion_matrix": {
+            "TN": 805,
+            "FP": 257,
+            "FN": 302,
+            "TP": 636
+          },
+          "accuracy": 0.7205,
+          "precision": 0.712206,
+          "recall": 0.678038,
+          "specificity": 0.758004,
+          "f1": 0.694702,
+          "balanced_accuracy": 0.718021,
+          "roc_auc": 0.786158,
+          "average_precision": 0.726568,
+          "false_positive_count": 257,
+          "false_negative_count": 302,
+          "sample_false_positives": [
+            2441,
+            202420253510,
+            202420256010,
+            202420253972,
+            202420254115,
+            202420261615,
+            202420260590,
+            202420251577,
+            202420251326,
+            202420256024
+          ],
+          "sample_false_negatives": [
+            202420259312,
+            202420255163,
+            202420258412,
+            202420259078,
+            202420255597,
+            202420255271,
+            202420253200,
+            202420255067,
+            202420250168,
+            202420255231
+          ]
+        },
+        "th_0.35": {
+          "threshold": 0.35,
+          "n": 2000,
+          "confusion_matrix": {
+            "TN": 626,
+            "FP": 436,
+            "FN": 143,
+            "TP": 795
+          },
+          "accuracy": 0.7105,
+          "precision": 0.645816,
+          "recall": 0.847548,
+          "specificity": 0.589454,
+          "f1": 0.733057,
+          "balanced_accuracy": 0.718501,
+          "roc_auc": 0.786158,
+          "average_precision": 0.726568,
+          "false_positive_count": 436,
+          "false_negative_count": 143,
+          "sample_false_positives": [
+            815,
+            2308,
+            1711,
+            258,
+            931,
+            2441,
+            2906,
+            2016,
+            885,
+            1105
+          ],
+          "sample_false_negatives": [
+            202420255163,
+            202420258412,
+            202420259078,
+            202420255597,
+            202420255067,
+            202420251163,
+            202420255624,
+            9159983,
+            9160029,
+            202420259468
+          ]
+        },
+        "th_0.70": {
+          "threshold": 0.7,
+          "n": 2000,
+          "confusion_matrix": {
+            "TN": 942,
+            "FP": 120,
+            "FN": 550,
+            "TP": 388
+          },
+          "accuracy": 0.665,
+          "precision": 0.76378,
+          "recall": 0.413646,
+          "specificity": 0.887006,
+          "f1": 0.536653,
+          "balanced_accuracy": 0.650326,
+          "roc_auc": 0.786158,
+          "average_precision": 0.726568,
+          "false_positive_count": 120,
+          "false_negative_count": 550,
+          "sample_false_positives": [
+            2441,
+            202420253510,
+            202420256010,
+            202420253972,
+            202420260590,
+            202420253750,
+            202420251785,
+            202420253331,
+            202420256040,
+            202420251882
+          ],
+          "sample_false_negatives": [
+            202420259312,
+            202420255163,
+            202420256529,
+            202420258412,
+            202420259078,
+            202420250813,
+            202420255597,
+            202420255271,
+            202420253200,
+            202420255035
+          ]
+        }
+      }
+    },
+    "Hybrid_Policy_3": {
+      "operating_thresholds": {
+        "th_0.50": {
+          "threshold": 0.5,
+          "n": 2000,
+          "confusion_matrix": {
+            "TN": 805,
+            "FP": 257,
+            "FN": 302,
+            "TP": 636
+          },
+          "accuracy": 0.7205,
+          "precision": 0.712206,
+          "recall": 0.678038,
+          "specificity": 0.758004,
+          "f1": 0.694702,
+          "balanced_accuracy": 0.718021,
+          "roc_auc": 0.786158,
+          "average_precision": 0.726568,
+          "false_positive_count": 257,
+          "false_negative_count": 302,
+          "sample_false_positives": [
+            2441,
+            202420253510,
+            202420256010,
+            202420253972,
+            202420254115,
+            202420261615,
+            202420260590,
+            202420251577,
+            202420251326,
+            202420256024
+          ],
+          "sample_false_negatives": [
+            202420259312,
+            202420255163,
+            202420258412,
+            202420259078,
+            202420255597,
+            202420255271,
+            202420253200,
+            202420255067,
+            202420250168,
+            202420255231
+          ]
+        }
+      }
+    },
+    "Hybrid_Policy_4": {
+      "operating_thresholds": {
+        "th_0.50": {
+          "threshold": 0.5,
+          "n": 2000,
+          "confusion_matrix": {
+            "TN": 805,
+            "FP": 257,
+            "FN": 302,
+            "TP": 636
+          },
+          "accuracy": 0.7205,
+          "precision": 0.712206,
+          "recall": 0.678038,
+          "specificity": 0.758004,
+          "f1": 0.694702,
+          "balanced_accuracy": 0.718021,
+          "roc_auc": 0.786158,
+          "average_precision": 0.726568,
+          "false_positive_count": 257,
+          "false_negative_count": 302,
+          "sample_false_positives": [
+            2441,
+            202420253510,
+            202420256010,
+            202420253972,
+            202420254115,
+            202420261615,
+            202420260590,
+            202420251577,
+            202420251326,
+            202420256024
+          ],
+          "sample_false_negatives": [
+            202420259312,
+            202420255163,
+            202420258412,
+            202420259078,
+            202420255597,
+            202420255271,
+            202420253200,
+            202420255067,
+            202420250168,
+            202420255231
+          ]
+        }
+      }
+    }
+  }
+}

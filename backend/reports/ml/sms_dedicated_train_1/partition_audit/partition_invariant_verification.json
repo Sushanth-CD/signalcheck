@@ -1,0 +1,24 @@
+{
+  "total_records_checked": 5400,
+  "all_records_unique": true,
+  "component_id_overlap": {
+    "train_val": 0,
+    "train_test": 0,
+    "val_test": 0
+  },
+  "exact_hash_overlap": {
+    "train_val": 0,
+    "train_test": 0,
+    "val_test": 0
+  },
+  "wspr_campaign_overlap": {
+    "train_val": 0,
+    "train_test": 0,
+    "val_test": 0
+  },
+  "pilot_contamination": {
+    "hash_collisions": 0,
+    "campaign_collisions": 0
+  },
+  "invariants_satisfied": true
+}

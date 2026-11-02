@@ -1,0 +1,274 @@
+{
+  "experiment": "Phishing TF-IDF + Logistic Regression: registrable-domain holdout",
+  "created_utc": "2026-10-30T14:05:25.197708+00:00",
+  "interpretation": "Exploratory within-dataset domain-held-out evaluation; not independently collected data or real-world validation.",
+  "target": {
+    "field": "label_original",
+    "0": "benign according to the source dataset",
+    "1": "phishing according to the source dataset",
+    "positive_label": 1,
+    "source_dataset": [
+      "combined_reduced.json"
+    ],
+    "source_semantics_note": "The candidate file identifies combined_reduced.json; its public source labels have not been independently adjudicated and no finer record-level source provenance is available."
+  },
+  "input": {
+    "path": "backend\\data\\processed\\phishing_text_candidates.jsonl",
+    "sha256": "9d351c5da6ae6304a9036bc8b08d4f7a923013544ee8caa3b29fa1425f5147cc",
+    "candidate_records": 77676,
+    "schema_fields": [
+      "content_signals",
+      "duplicate_count",
+      "duplicate_group_sha256",
+      "duplicate_label_conflict",
+      "inferred_input_type",
+      "label_original",
+      "review_reason",
+      "review_required",
+      "source_dataset",
+      "source_record_index",
+      "text"
+    ],
+    "label_counts": {
+      "0": 44975,
+      "1": 32701
+    },
+    "review_reason_counts": {
+      "possible_promotional_or_non_phishing_spam_review": 696
+    },
+    "input_type_counts": {
+      "html": 15758,
+      "url": 41195,
+      "plain_text": 18929,
+      "email": 1794
+    },
+    "source_dataset_values": [
+      "combined_reduced.json"
+    ]
+  },
+  "baseline_reference": {
+    "metrics_path": "backend\\reports\\ml\\text_phishing_baseline\\metrics.json",
+    "baseline_test_metrics": {
+      "records": 11496,
+      "class_counts": {
+        "0": 6738,
+        "1": 4758
+      },
+      "confusion_matrix_labels_0_1": [
+        [
+          6236,
+          502
+        ],
+        [
+          465,
+          4293
+        ]
+      ],
+      "TN": 6236,
+      "FP": 502,
+      "FN": 465,
+      "TP": 4293,
+      "precision": 0.8953076120959332,
+      "recall": 0.9022698612862547,
+      "f1": 0.8987752538469591,
+      "specificity": 0.9254971801721579,
+      "accuracy": 0.915883785664579,
+      "roc_auc": 0.9738565944644512,
+      "roc_auc_note": null
+    },
+    "baseline_split_method": "StratifiedGroupKFold",
+    "baseline_test_unique_text_count": 11496,
+    "baseline_scikit_learn": "1.9.1",
+    "comparability": "Different test components and split objective; metrics are contextual, not directly equivalent. This experiment also uses the currently active scikit-learn version recorded below."
+  },
+  "preprocessing": {
+    "group_normalization": "Unicode NFKC, casefold, collapsed whitespace (existing train_text_baseline.normalize_for_group)",
+    "model_preprocessing": "Unicode NFKC, lowercase, collapsed whitespace (existing text_normalization.normalize_for_model)",
+    "near_duplicate": {
+      "normalization": "Unicode NFKC, casefold, collapsed whitespace",
+      "shingles": "unique character 5-grams",
+      "simhash": "first 64 bits of SHA-256 per shingle",
+      "maximum_simhash_hamming_distance": 3,
+      "minimum_character_shingle_jaccard": 0.9,
+      "connected_component_id": "SHA-256 of sorted normalized-text hashes"
+    },
+    "quarantine_policy": "Reuse existing component-wide promotional-review and conflicting-label quarantine; quarantine propagates through all domain-connected components."
+  },
+  "domain_extraction": {
+    "offline_only": true,
+    "urls_opened_or_resolved": false,
+    "normalization": "Parse URL authority locally; lowercase, remove trailing dot, IDNA ASCII encoding, validate DNS labels; canonicalize IP literals.",
+    "scheme_policy": "HTTP/HTTPS and protocol-relative URLs are parsed; candidates without a scheme receive an HTTPS parse prefix. URL_RE from preparation is reused to identify scheme-bearing, www, and bare-domain URL-like tokens.",
+    "html_policy": "Prefer canonical URL, then og:url, then form actions, then all anchor destinations; do not group image, script, stylesheet, or other resource URLs.",
+    "multi_url_policy": "All extracted destination domains on a record are unioned with its existing near-duplicate component, preventing their domains from crossing partitions.",
+    "public_suffix_list": {
+      "implementation": "Oracle JDK sun.security.util.RegisteredDomain",
+      "jdk_version": "java version \"27.0.1.0.3\" 2026-10-25",
+      "psl_snapshot_path": "backend\\notebooks\\oracleJdk-27\\lib\\security\\public_suffix_list.dat",
+      "psl_snapshot_sha256": "37e71e43c8605f29b9072f152d0ea4708735cdf335a5b68b2bc2f875760806c3",
+      "network_access": false,
+      "note": "Uses the local JDK-bundled PSL through an internal JDK API; pin the JDK and PSL file hash for reproduction."
+    },
+    "ip_policy": "IP literals use exact canonical IP grouping keys.",
+    "unclassified_hostname_policy": "If the local PSL does not return a registrable domain, use exact normalized host grouping only and mark it as fallback; never infer registrable domains using the last two labels.",
+    "no_domain_policy": "Retain records and group by normalized/near-duplicate text component only; report separately because they cannot demonstrate unseen-domain generalization.",
+    "no_source_split": "Only combined_reduced.json provenance is available; no source-level holdout is feasible."
+  },
+  "model": {
+    "pipeline": [
+      "TfidfVectorizer",
+      "LogisticRegression"
+    ],
+    "vectorizer": {
+      "analyzer": "word",
+      "ngram_range": [
+        1,
+        2
+      ],
+      "min_df": 2,
+      "max_df": 0.995,
+      "max_features": 200000,
+      "sublinear_tf": true,
+      "preprocessor": "normalize_for_model",
+      "lowercase": false
+    },
+    "logistic_regression": {
+      "C": 1.0,
+      "solver": "liblinear",
+      "class_weight": null,
+      "max_iter": 2000,
+      "random_state": 20261026
+    },
+    "input_features": [
+      "text only"
+    ],
+    "threshold": 0.5,
+    "threshold_policy": "Fixed at 0.5 for comparability; no threshold selection or hyperparameter tuning was performed on validation or test data."
+  },
+  "split": {
+    "algorithm": "StratifiedGroupKFold",
+    "n_splits": 20,
+    "shuffle": true,
+    "random_seed": 20261026,
+    "fold_assignment": {
+      "test": [
+        0,
+        1,
+        2
+      ],
+      "validation": [
+        3,
+        4,
+        5
+      ],
+      "train": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ]
+    },
+    "target_proportions": {
+      "train": 0.7,
+      "validation": 0.15,
+      "test": 0.15
+    },
+    "actual": {
+      "train": {
+        "unique_text_groups": 45034,
+        "source_records": 45196,
+        "unique_text_class_counts": {
+          "0": 23895,
+          "1": 21139
+        },
+        "source_record_class_counts": {
+          "0": 23919,
+          "1": 21277
+        },
+        "unique_text_percentage_of_primary": 0.6998508112140237,
+        "source_record_percentage_of_primary": 0.6999426987347261
+      },
+      "validation": {
+        "unique_text_groups": 9658,
+        "source_records": 9693,
+        "unique_text_class_counts": {
+          "0": 5124,
+          "1": 4534
+        },
+        "source_record_class_counts": {
+          "0": 5129,
+          "1": 4564
+        },
+        "unique_text_percentage_of_primary": 0.1500901348915273,
+        "source_record_percentage_of_primary": 0.15011382818912514
+      },
+      "test": {
+        "unique_text_groups": 9656,
+        "source_records": 9682,
+        "unique_text_class_counts": {
+          "0": 5124,
+          "1": 4532
+        },
+        "source_record_class_counts": {
+          "0": 5124,
+          "1": 4558
+        },
+        "unique_text_percentage_of_primary": 0.15005905389444893,
+        "source_record_percentage_of_primary": 0.14994347307614875
+      }
+    },
+    "quarantine_source_records": 13105,
+    "quarantine_unique_text_groups": 13063,
+    "explicit_promotional_review_records": 696,
+    "base_near_duplicate_quarantine_records_before_domain_propagation": 781,
+    "records_without_destination_hosts_in_primary": 21916,
+    "primary_hostname_grouping_status_counts": {
+      "registrable_domain": 42275,
+      "no_extractable_destination_domain": 21916,
+      "ip_or_exact_host_fallback": 380
+    }
+  },
+  "verification": {
+    "source_records_in_manifest": 77676,
+    "source_record_id_duplicates": 0,
+    "normalized_text_overlap_train_validation": 0,
+    "normalized_text_overlap_train_test": 0,
+    "normalized_text_overlap_validation_test": 0,
+    "near_duplicate_component_overlap_train_validation": 0,
+    "near_duplicate_component_overlap_train_test": 0,
+    "near_duplicate_component_overlap_validation_test": 0,
+    "registrable_domain_overlap_train_validation": 0,
+    "registrable_domain_overlap_train_test": 0,
+    "registrable_domain_overlap_validation_test": 0,
+    "all_domain_group_key_overlap_train_validation": 0,
+    "all_domain_group_key_overlap_train_test": 0,
+    "all_domain_group_key_overlap_validation_test": 0,
+    "quarantined_records_in_primary": 0,
+    "validation_method": "Computed by set-intersection assertions immediately before and after partition assignment."
+  },
+  "environment": {
+    "python": "3.14.6",
+    "scikit_learn": "1.8.0",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "joblib": "1.6.0"
+  },
+  "outputs": {
+    "experiment_config": "experiment_config.json",
+    "split_manifest": "split_manifest.csv",
+    "metrics": "metrics.json",
+    "classification_report": "classification_report.txt",
+    "audit_report": "domain_split_audit.md",
+    "model": "model.joblib"
+  }
+}

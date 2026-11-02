@@ -1,0 +1,43 @@
+{
+  "candidate_dataset": "reportsmishing/Smishing-Dataset-IMC25 (English Subset)",
+  "screening_timestamp_utc": "2026-11-02T14:45:00Z",
+  "total_candidate_records_screened": 22078,
+  "unique_candidate_hashes": 15530,
+  "screening_results_against_targets": {
+    "sms_03_training_split_3789": {
+      "exact_matches": 0,
+      "near_duplicates": 0
+    },
+    "sms_03_validation_split_805": {
+      "exact_matches": 0,
+      "near_duplicates": 0
+    },
+    "sms_03_internal_test_split_806": {
+      "exact_matches": 0,
+      "near_duplicates": 0
+    },
+    "diagnostic_pilot_250": {
+      "exact_matches": 0,
+      "near_duplicates": 0
+    },
+    "quarantined_mishra_soni_benchmark_500": {
+      "exact_matches": 0,
+      "near_duplicates": 1,
+      "notes": "1 near-duplicate (pyatm wallet KYC) matched benchmark row 209 and was excluded (3 rows in IMC)."
+    },
+    "remaining_mishra_soni_pool_4174": {
+      "exact_matches": 0,
+      "near_duplicates": 0
+    },
+    "baseline_project_corpus_77677": {
+      "exact_matches": 0,
+      "near_duplicates": 0
+    }
+  },
+  "internal_dataset_duplication": {
+    "total_english_rows": 22078,
+    "unique_normalized_texts": 15530,
+    "internal_duplicate_occurrences": 6548
+  },
+  "screening_summary_verdict": "PASSED (Zero training leakage; benchmark near-match excluded)"
+}

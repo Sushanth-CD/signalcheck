@@ -1,0 +1,410 @@
+{
+  "experiment": "Phishing Classifier V2: domain-held-out TF-IDF + Logistic Regression",
+  "created_utc": "2026-10-31T13:10:49.085404+00:00",
+  "interpretation": "Within-dataset domain-held-out evaluation; not independent real-world validation.",
+  "classification_threshold": 0.5,
+  "threshold_selection": "Fixed at 0.5; no threshold tuning performed.",
+  "versions": {
+    "python": "3.14.6",
+    "scikit_learn": "1.8.0",
+    "scipy": "1.18.1",
+    "numpy": "2.5.4",
+    "joblib": "1.6.0"
+  },
+  "summary": {
+    "training_partition_manifest_records": 9481,
+    "validation_partition_manifest_records": 2032,
+    "test_partition_manifest_records": 2032,
+    "training_unique_text_groups": 9481,
+    "validation_unique_text_groups": 2005,
+    "test_unique_text_groups": 1997,
+    "training_label_counts_after_representative_selection": {
+      "0": 2419,
+      "1": 7062
+    },
+    "validation_domain_evaluation_groups": 2004,
+    "validation_secondary_groups": 1,
+    "test_domain_evaluation_records": 1993,
+    "test_secondary_model_eligible_records": 4,
+    "source_records_joined": 77677,
+    "model_eligible_partition_records_joined": 13545,
+    "partition_record_counts": {
+      "test": 2032,
+      "validation": 2032,
+      "train": 9481
+    },
+    "partition_unique_text_counts": {
+      "test": 1997,
+      "validation": 2005,
+      "train": 9481
+    },
+    "partition_unique_text_label_counts": {
+      "test": {
+        "0": 513,
+        "1": 1484
+      },
+      "validation": {
+        "0": 515,
+        "1": 1490
+      },
+      "train": {
+        "0": 2419,
+        "1": 7062
+      }
+    },
+    "domain_group_key_counts": {
+      "test": 1352,
+      "validation": 1339,
+      "train": 10358
+    },
+    "representative_policy": "Minimum source_record_index within each normalized_text_group_id; one representative per normalized-text group in each partition."
+  },
+  "validation_metrics": {
+    "all_model_eligible_unique_texts": {
+      "records": 2005,
+      "class_counts": {
+        "0": 515,
+        "1": 1490
+      },
+      "confusion_matrix_labels_0_1": [
+        [
+          389,
+          126
+        ],
+        [
+          162,
+          1328
+        ]
+      ],
+      "TN": 389,
+      "FP": 126,
+      "FN": 162,
+      "TP": 1328,
+      "precision": 0.9133425034387895,
+      "recall": 0.8912751677852349,
+      "f1": 0.9021739130434783,
+      "specificity": 0.7553398058252427,
+      "false_positive_rate": 0.2446601941747573,
+      "false_negative_rate": 0.1087248322147651,
+      "accuracy": 0.856359102244389,
+      "roc_auc": 0.9215149540626831,
+      "average_precision": 0.9698448613636137,
+      "undefined_ranking_metric_note": null
+    },
+    "primary_domain_evaluation": {
+      "records": 2004,
+      "class_counts": {
+        "0": 515,
+        "1": 1489
+      },
+      "confusion_matrix_labels_0_1": [
+        [
+          389,
+          126
+        ],
+        [
+          162,
+          1327
+        ]
+      ],
+      "TN": 389,
+      "FP": 126,
+      "FN": 162,
+      "TP": 1327,
+      "precision": 0.9132828630419821,
+      "recall": 0.8912021490933513,
+      "f1": 0.902107409925221,
+      "specificity": 0.7553398058252427,
+      "false_positive_rate": 0.2446601941747573,
+      "false_negative_rate": 0.10879785090664876,
+      "accuracy": 0.8562874251497006,
+      "roc_auc": 0.921472676651431,
+      "average_precision": 0.9698123216413426,
+      "undefined_ranking_metric_note": null
+    },
+    "secondary_no_confident_destination": {
+      "records": 1,
+      "class_counts": {
+        "0": 0,
+        "1": 1
+      },
+      "confusion_matrix_labels_0_1": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "TN": 0,
+      "FP": 0,
+      "FN": 0,
+      "TP": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "specificity": null,
+      "false_positive_rate": null,
+      "false_negative_rate": 0.0,
+      "accuracy": 1.0,
+      "roc_auc": null,
+      "average_precision": null,
+      "undefined_ranking_metric_note": "ROC-AUC and average precision are undefined for a one-class subset."
+    }
+  },
+  "test_metrics": {
+    "all_model_eligible_unique_texts": {
+      "records": 1997,
+      "class_counts": {
+        "0": 513,
+        "1": 1484
+      },
+      "confusion_matrix_labels_0_1": [
+        [
+          383,
+          130
+        ],
+        [
+          176,
+          1308
+        ]
+      ],
+      "TN": 383,
+      "FP": 130,
+      "FN": 176,
+      "TP": 1308,
+      "precision": 0.9095966620305981,
+      "recall": 0.8814016172506739,
+      "f1": 0.8952772073921971,
+      "specificity": 0.746588693957115,
+      "false_positive_rate": 0.253411306042885,
+      "false_negative_rate": 0.11859838274932614,
+      "accuracy": 0.8467701552328493,
+      "roc_auc": 0.9113999621695748,
+      "average_precision": 0.96518833754098,
+      "undefined_ranking_metric_note": null
+    },
+    "primary_domain_evaluation": {
+      "records": 1993,
+      "class_counts": {
+        "0": 513,
+        "1": 1480
+      },
+      "confusion_matrix_labels_0_1": [
+        [
+          383,
+          130
+        ],
+        [
+          176,
+          1304
+        ]
+      ],
+      "TN": 383,
+      "FP": 130,
+      "FN": 176,
+      "TP": 1304,
+      "precision": 0.9093444909344491,
+      "recall": 0.8810810810810811,
+      "f1": 0.8949897048730268,
+      "specificity": 0.746588693957115,
+      "false_positive_rate": 0.253411306042885,
+      "false_negative_rate": 0.11891891891891893,
+      "accuracy": 0.8464626191670848,
+      "roc_auc": 0.9113330435698856,
+      "average_precision": 0.9651017977204599,
+      "undefined_ranking_metric_note": null
+    },
+    "secondary_no_confident_destination": {
+      "records": 4,
+      "class_counts": {
+        "0": 0,
+        "1": 4
+      },
+      "confusion_matrix_labels_0_1": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "TN": 0,
+      "FP": 0,
+      "FN": 0,
+      "TP": 4,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "specificity": null,
+      "false_positive_rate": null,
+      "false_negative_rate": 0.0,
+      "accuracy": 1.0,
+      "roc_auc": null,
+      "average_precision": null,
+      "undefined_ranking_metric_note": "ROC-AUC and average precision are undefined for a one-class subset."
+    }
+  },
+  "metric_unit": "one representative per normalized-text group",
+  "score_kind": "uncalibrated logistic-regression model score from predict_proba; calibration was not assessed",
+  "experiment_config": {
+    "experiment": "Phishing Classifier V2: domain-held-out TF-IDF + Logistic Regression",
+    "created_utc": "2026-10-31T13:10:49.085404+00:00",
+    "interpretation": "Within-dataset domain-held-out evaluation; not independent real-world validation.",
+    "target": {
+      "field": "label",
+      "0": "benign according to source",
+      "1": "phishing according to source",
+      "positive_label": 1
+    },
+    "classification_threshold": 0.5,
+    "threshold_selection": "Fixed at 0.5; no threshold tuning performed.",
+    "random_seed": 20261026,
+    "versions": {
+      "python": "3.14.6",
+      "scikit_learn": "1.8.0",
+      "scipy": "1.18.1",
+      "numpy": "2.5.4",
+      "joblib": "1.6.0"
+    },
+    "source": {
+      "path": "backend\\data\\raw\\combined_reduced.json",
+      "sha256": "222fd5f841a0565841f8ede2e21b9b48cfea933a6b5c3a7da3e3a2cbc156d3d5",
+      "record_count": 77677,
+      "label_counts": {
+        "0": 44975,
+        "1": 32702
+      }
+    },
+    "split": {
+      "path": "backend\\reports\\ml\\phishing_domain_extraction_v2\\domain_holdout_split_v2",
+      "manifest_sha256": "5de3fa006c025bee918446729ac5c0381de43fd6149cc1a56f1a2208b595cd65",
+      "config_sha256": "f26354f87651f4c8eb2bb47d1034a09b3cd70a69ec72e1089898e35ab7ef9475",
+      "policy": "Scenario A/D: all accepted V2 registrable-domain and IP keys plus saved exact/near-duplicate components",
+      "leakage_invariants_sha256": "f6d8372af093e49d7064ce3cd788e0a1d75f3b657b610efaec44feebd0a7d252",
+      "leakage_invariants_passed": true,
+      "target_proportions": {
+        "train": 0.7,
+        "validation": 0.15,
+        "test": 0.15
+      },
+      "row_level_splitting": false
+    },
+    "grouping": {
+      "normalized_text": "Existing baseline NFKC/casefold/whitespace-collapse SHA-256 ID from split manifest",
+      "near_duplicate_and_domain_grouping": "Existing verified Scenario A/D split; no grouping rules modified",
+      "representative_per_normalized_text_group": true
+    },
+    "model_configuration": {
+      "pipeline": [
+        "TfidfVectorizer",
+        "LogisticRegression"
+      ],
+      "vectorizer": {
+        "analyzer": "word",
+        "ngram_range": [
+          1,
+          2
+        ],
+        "min_df": 2,
+        "max_df": 0.995,
+        "max_features": 200000,
+        "sublinear_tf": true,
+        "preprocessing": "Unicode NFKC, lowercase, collapsed whitespace via backend.ml.text_normalization.normalize_for_model",
+        "lowercase": false,
+        "fit_data": "training partition normalized-text representatives only"
+      },
+      "logistic_regression": {
+        "C": 1.0,
+        "solver": "liblinear",
+        "class_weight": null,
+        "max_iter": 2000,
+        "random_state": 20261026
+      },
+      "model_input_fields": [
+        "raw source text only"
+      ]
+    },
+    "summary": {
+      "training_partition_manifest_records": 9481,
+      "validation_partition_manifest_records": 2032,
+      "test_partition_manifest_records": 2032,
+      "training_unique_text_groups": 9481,
+      "validation_unique_text_groups": 2005,
+      "test_unique_text_groups": 1997,
+      "training_label_counts_after_representative_selection": {
+        "0": 2419,
+        "1": 7062
+      },
+      "validation_domain_evaluation_groups": 2004,
+      "validation_secondary_groups": 1,
+      "test_domain_evaluation_records": 1993,
+      "test_secondary_model_eligible_records": 4,
+      "source_records_joined": 77677,
+      "model_eligible_partition_records_joined": 13545,
+      "partition_record_counts": {
+        "test": 2032,
+        "validation": 2032,
+        "train": 9481
+      },
+      "partition_unique_text_counts": {
+        "test": 1997,
+        "validation": 2005,
+        "train": 9481
+      },
+      "partition_unique_text_label_counts": {
+        "test": {
+          "0": 513,
+          "1": 1484
+        },
+        "validation": {
+          "0": 515,
+          "1": 1490
+        },
+        "train": {
+          "0": 2419,
+          "1": 7062
+        }
+      },
+      "domain_group_key_counts": {
+        "test": 1352,
+        "validation": 1339,
+        "train": 10358
+      },
+      "representative_policy": "Minimum source_record_index within each normalized_text_group_id; one representative per normalized-text group in each partition."
+    },
+    "outputs": {
+      "model": "model.joblib",
+      "metrics": "metrics.json",
+      "config": "experiment_config.json",
+      "classification_report": "classification_report.txt",
+      "test_predictions": "test_predictions.csv",
+      "validation_predictions": "validation_predictions.csv",
+      "training_summary": "training_summary.md"
+    }
+  },
+  "validation_reproducibility": "checked against reloaded joblib pipeline before publishing outputs",
+  "model_reload_verification": {
+    "passed": true,
+    "validation_scores_exactly_equal": true,
+    "test_scores_exactly_equal": true,
+    "model_classes": [
+      0,
+      1
+    ],
+    "model_feature_count": 168757
+  },
+  "outputs": {
+    "model": "model.joblib",
+    "metrics": "metrics.json",
+    "config": "experiment_config.json",
+    "classification_report": "classification_report.txt",
+    "test_predictions": "test_predictions.csv",
+    "validation_predictions": "validation_predictions.csv",
+    "training_summary": "training_summary.md"
+  }
+}

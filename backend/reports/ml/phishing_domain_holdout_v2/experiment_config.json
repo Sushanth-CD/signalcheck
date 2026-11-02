@@ -1,0 +1,136 @@
+{
+  "experiment": "Phishing Classifier V2: domain-held-out TF-IDF + Logistic Regression",
+  "created_utc": "2026-10-31T13:10:49.085404+00:00",
+  "interpretation": "Within-dataset domain-held-out evaluation; not independent real-world validation.",
+  "target": {
+    "field": "label",
+    "0": "benign according to source",
+    "1": "phishing according to source",
+    "positive_label": 1
+  },
+  "classification_threshold": 0.5,
+  "threshold_selection": "Fixed at 0.5; no threshold tuning performed.",
+  "random_seed": 20261026,
+  "versions": {
+    "python": "3.14.6",
+    "scikit_learn": "1.8.0",
+    "scipy": "1.18.1",
+    "numpy": "2.5.4",
+    "joblib": "1.6.0"
+  },
+  "source": {
+    "path": "backend\\data\\raw\\combined_reduced.json",
+    "sha256": "222fd5f841a0565841f8ede2e21b9b48cfea933a6b5c3a7da3e3a2cbc156d3d5",
+    "record_count": 77677,
+    "label_counts": {
+      "0": 44975,
+      "1": 32702
+    }
+  },
+  "split": {
+    "path": "backend\\reports\\ml\\phishing_domain_extraction_v2\\domain_holdout_split_v2",
+    "manifest_sha256": "5de3fa006c025bee918446729ac5c0381de43fd6149cc1a56f1a2208b595cd65",
+    "config_sha256": "f26354f87651f4c8eb2bb47d1034a09b3cd70a69ec72e1089898e35ab7ef9475",
+    "policy": "Scenario A/D: all accepted V2 registrable-domain and IP keys plus saved exact/near-duplicate components",
+    "leakage_invariants_sha256": "f6d8372af093e49d7064ce3cd788e0a1d75f3b657b610efaec44feebd0a7d252",
+    "leakage_invariants_passed": true,
+    "target_proportions": {
+      "train": 0.7,
+      "validation": 0.15,
+      "test": 0.15
+    },
+    "row_level_splitting": false
+  },
+  "grouping": {
+    "normalized_text": "Existing baseline NFKC/casefold/whitespace-collapse SHA-256 ID from split manifest",
+    "near_duplicate_and_domain_grouping": "Existing verified Scenario A/D split; no grouping rules modified",
+    "representative_per_normalized_text_group": true
+  },
+  "model_configuration": {
+    "pipeline": [
+      "TfidfVectorizer",
+      "LogisticRegression"
+    ],
+    "vectorizer": {
+      "analyzer": "word",
+      "ngram_range": [
+        1,
+        2
+      ],
+      "min_df": 2,
+      "max_df": 0.995,
+      "max_features": 200000,
+      "sublinear_tf": true,
+      "preprocessing": "Unicode NFKC, lowercase, collapsed whitespace via backend.ml.text_normalization.normalize_for_model",
+      "lowercase": false,
+      "fit_data": "training partition normalized-text representatives only"
+    },
+    "logistic_regression": {
+      "C": 1.0,
+      "solver": "liblinear",
+      "class_weight": null,
+      "max_iter": 2000,
+      "random_state": 20261026
+    },
+    "model_input_fields": [
+      "raw source text only"
+    ]
+  },
+  "summary": {
+    "training_partition_manifest_records": 9481,
+    "validation_partition_manifest_records": 2032,
+    "test_partition_manifest_records": 2032,
+    "training_unique_text_groups": 9481,
+    "validation_unique_text_groups": 2005,
+    "test_unique_text_groups": 1997,
+    "training_label_counts_after_representative_selection": {
+      "0": 2419,
+      "1": 7062
+    },
+    "validation_domain_evaluation_groups": 2004,
+    "validation_secondary_groups": 1,
+    "test_domain_evaluation_records": 1993,
+    "test_secondary_model_eligible_records": 4,
+    "source_records_joined": 77677,
+    "model_eligible_partition_records_joined": 13545,
+    "partition_record_counts": {
+      "test": 2032,
+      "validation": 2032,
+      "train": 9481
+    },
+    "partition_unique_text_counts": {
+      "test": 1997,
+      "validation": 2005,
+      "train": 9481
+    },
+    "partition_unique_text_label_counts": {
+      "test": {
+        "0": 513,
+        "1": 1484
+      },
+      "validation": {
+        "0": 515,
+        "1": 1490
+      },
+      "train": {
+        "0": 2419,
+        "1": 7062
+      }
+    },
+    "domain_group_key_counts": {
+      "test": 1352,
+      "validation": 1339,
+      "train": 10358
+    },
+    "representative_policy": "Minimum source_record_index within each normalized_text_group_id; one representative per normalized-text group in each partition."
+  },
+  "outputs": {
+    "model": "model.joblib",
+    "metrics": "metrics.json",
+    "config": "experiment_config.json",
+    "classification_report": "classification_report.txt",
+    "test_predictions": "test_predictions.csv",
+    "validation_predictions": "validation_predictions.csv",
+    "training_summary": "training_summary.md"
+  }
+}

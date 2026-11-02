@@ -1,0 +1,26 @@
+{
+  "manifest_name": "SMS-DEDICATED-TRAIN-1 Selected Model Freeze Manifest",
+  "freeze_timestamp_utc": "2026-11-02T12:48:01Z",
+  "selected_model_id": "sms_03_combined",
+  "selected_model_name": "SMS-03: Combined Word + Character TF-IDF + Logistic Regression",
+  "operating_threshold": 0.5,
+  "runtime_environment": {
+    "python": "3.14.6 (tags/v3.14.6:c63aec6, Jun 10 2026, 10:26:10) [MSC v.1944 64 bit (AMD64)]",
+    "scikit_learn": "C:\\Users\\Sushanth CD\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\site-packages\\sklearn\\metrics\\__init__.py",
+    "seed": 20261102
+  },
+  "model_artifact": {
+    "relative_path": "backend\\reports\\ml\\sms_dedicated_train_1\\experiments\\sms_03_combined\\sms_model.joblib",
+    "size_bytes": 2134240,
+    "sha256": "8dd043a3b8322b2e55ca34581466b6dd64bbbf0f24422952156c1176942644df",
+    "architecture": "Pipeline([('features', FeatureUnion([('word_branch', TfidfVectorizer(1,2)), ('char_branch', TfidfVectorizer(3,5))])), ('classifier', LogisticRegression(class_weight='balanced', L2))])"
+  },
+  "validation_evidence": {
+    "smishing_recall": 0.9476,
+    "ham_fpr": 0.0053,
+    "commercial_spam_fpr": 0.0271,
+    "balanced_accuracy": 0.9671,
+    "f1_score": 0.9544,
+    "roc_auc": 0.9978
+  }
+}

@@ -1,0 +1,1620 @@
+<html dir="rtl" lang="ar" class="h-100 " style="overflow-x:hidden"><head>
+<style>
+@charset "UTF-8";
+/*!
+ * Bootstrap v5.0.1 (https://getbootstrap.com/)
+ * Copyright 2011-2021 The Bootstrap Authors
+ * Copyright 2011-2021 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ */@font-face {
+  font-family: 'Almarai';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/almarai/v12/tssoApxBaigK_hnnS_qjtnqWow.woff2) format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0898-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EFD-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1, U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}:root{--bs-blue:#87C4FF;--bs-indigo:#427D9D;--bs-purple:#D67BFF;--bs-pink:#FFB6D9;--bs-red:#F31559;--bs-orange:#FFC26F;--bs-yellow:#ffc107;--bs-green:#39b900;--bs-teal:#E4E6EB;--bs-light-teal:#fdfdf6;--bs-cyan:#BAD7E9;--bs-white:#fff;--bs-gray:#6c757d;--bs-gray-dark:#343a40;--bs-primary:#FFB6D9;--bs-secondary:#6c757d;--bs-success:#39b900;--bs-info:#BAD7E9;--bs-warning:#ffc107;--bs-danger:#F31559;--bs-light:#f8f9fa;--bs-dark:#202327;--bs-gray:#e9ecef;--bs-teal:#E4E6EB;--bs-light-teal:#fdfdf6;--bs-font-sans-serif:"system-ui",-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";--bs-font-monospace:"Almarai",sans-serif,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;--bs-gradient:linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0))}*,::after,::before{box-sizing:border-box}@media (prefers-reduced-motion:no-preference){:root{scroll-behavior:smooth}}body{margin:0;font-family:var(--bs-font-sans-serif);font-size:1rem;font-weight:400;line-height:1.5;color:#343a40;background-color:#fff;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent;}.h1,.h2,.h4,.h5,.h6,h1,h2,h4,h5,h6{margin-top:0;margin-bottom:.5rem;font-family:Almarai,sans-serif,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;font-weight:500;line-height:1.2;}.h1,h1{font-size:calc(1.325rem + .9vw)}@media (min-width:1200px){.h1,h1{font-size:2rem}}.h2,h2{font-size:calc(1.275rem + .3vw)}@media (min-width:1200px){.h2,h2{font-size:1.5rem}}.h4,h4{font-size:calc(1.26rem + .12vw)}@media (min-width:1200px){.h4,h4{font-size:1.35rem}}.h5,h5{font-size:1.25rem}.h6,h6{font-size:1rem}p{margin-top:0;margin-bottom:1rem}ul{padding-right:2rem}ul{margin-top:0;margin-bottom:1rem}ul ul{margin-bottom:0}.small,small{font-size:.875em}a{color:#f31559;text-decoration:none}a:hover{color:#c21147;text-decoration:none}a:not([href]):not([class]),a:not([href]):not([class]):hover{color:inherit;text-decoration:none}code{font-family:var(--bs-font-monospace);font-size:1em;direction:ltr;unicode-bidi:bidi-override;}code{font-size:.875em;color:#ffb6d9;word-wrap:break-word}a>code{color:inherit}img,svg{vertical-align:middle}label{display:inline-block}button{border-radius:0}button:focus:not(:focus-visible){outline:0}button,input,select{margin:0;font-family:inherit;font-size:inherit;line-height:inherit;}button,select{text-transform:none}[role=button]{cursor:pointer}select{word-wrap:normal}select:disabled{opacity:1}[type=button],[type=submit],button{-webkit-appearance:button}[type=button]:not(:disabled),[type=submit]:not(:disabled),button:not(:disabled){cursor:pointer}::-moz-focus-inner{padding:0;border-style:none}::-webkit-datetime-edit-day-field,::-webkit-datetime-edit-fields-wrapper,::-webkit-datetime-edit-hour-field,::-webkit-datetime-edit-minute,::-webkit-datetime-edit-month-field,::-webkit-datetime-edit-text,::-webkit-datetime-edit-year-field{padding:0}::-webkit-inner-spin-button{height:auto}[type=search]{outline-offset:-2px;-webkit-appearance:textfield}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-color-swatch-wrapper{padding:0}::file-selector-button{font:inherit}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}[hidden]{display:none!important}.img-fluid{max-width:100%;height:auto}.container,.container-fluid{width:100%;padding-left:var(--bs-gutter-x,.75rem);padding-right:var(--bs-gutter-x,.75rem);margin-left:auto;margin-right:auto}@media (min-width:576px){.container{max-width:540px}}@media (min-width:768px){.container{max-width:720px}}@media (min-width:992px){.container{max-width:960px}}@media (min-width:1200px){.container{max-width:1140px}}@media (min-width:1400px){.container{max-width:1170px}}.row{--bs-gutter-x:1.5rem;--bs-gutter-y:0;display:flex;flex-wrap:wrap;margin-top:calc(var(--bs-gutter-y) * -1);margin-left:calc(var(--bs-gutter-x)/ -2);margin-right:calc(var(--bs-gutter-x)/ -2)}.row>*{flex-shrink:0;width:100%;max-width:100%;padding-left:calc(var(--bs-gutter-x)/ 2);padding-right:calc(var(--bs-gutter-x)/ 2);margin-top:var(--bs-gutter-y)}.col{flex:1 0 0%}.row-cols-1>*{flex:0 0 auto;width:100%}.col-3{flex:0 0 auto;width:25%}.col-4{flex:0 0 auto;width:33.3333333333%}.col-5{flex:0 0 auto;width:41.6666666667%}.col-6{flex:0 0 auto;width:50%}.col-12{flex:0 0 auto;width:100%}.g-2{--bs-gutter-x:0.5rem}.g-2{--bs-gutter-y:0.5rem}.g-3{--bs-gutter-x:1rem}.g-3{--bs-gutter-y:1rem}@media (min-width:576px){.col-sm-4{flex:0 0 auto;width:33.3333333333%}}@media (min-width:768px){.row-cols-md-2>*{flex:0 0 auto;width:50%}.col-md-1{flex:0 0 auto;width:8.3333333333%}.col-md-4{flex:0 0 auto;width:33.3333333333%}.col-md-7{flex:0 0 auto;width:58.3333333333%}}@media (min-width:992px){.row-cols-lg-3>*{flex:0 0 auto;width:33.3333333333%}.col-lg-3{flex:0 0 auto;width:25%}.col-lg-4{flex:0 0 auto;width:33.3333333333%}}@media (min-width:1200px){.col-xl-2{flex:0 0 auto;width:16.6666666667%}.col-xl-3{flex:0 0 auto;width:25%}}.form-label{margin-bottom:.5rem}.form-control{display:block;width:100%;padding:.375rem .75rem;font-size:1rem;font-weight:400;line-height:1.5;color:#343a40;background-color:#fff;background-clip:padding-box;border:1px solid #ced4da;-webkit-appearance:none;-moz-appearance:none;appearance:none;border-radius:.25rem;transition:border-color .15s ease-in-out,box-shadow .15s ease-in-out}@media (prefers-reduced-motion:reduce){.form-control{transition:none}}.form-control:focus{color:#343a40;background-color:#fff;border-color:#ffdbec;outline:0;box-shadow:0 0}.form-control::-webkit-date-and-time-value{height:1.5em}.form-control::-moz-placeholder{color:#6c757d;opacity:1}.form-control::placeholder{color:#6c757d;opacity:1}.form-control:disabled{background-color:#e9ecef;opacity:1}.form-control::file-selector-button{padding:.375rem .75rem;margin:-.375rem -.75rem;-webkit-margin-end:.75rem;margin-inline-end:.75rem;color:#343a40;background-color:#e9ecef;pointer-events:none;border-color:inherit;border-style:solid;border-width:0;border-inline-end-width:1px;border-radius:0;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out}@media (prefers-reduced-motion:reduce){.form-control::file-selector-button{transition:none}}.form-control:hover:not(:disabled):not([readonly])::file-selector-button{background-color:#dde0e3}.form-control::-webkit-file-upload-button{padding:.375rem .75rem;margin:-.375rem -.75rem;-webkit-margin-end:.75rem;margin-inline-end:.75rem;color:#343a40;background-color:#e9ecef;pointer-events:none;border-color:inherit;border-style:solid;border-width:0;border-inline-end-width:1px;border-radius:0;-webkit-transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out}@media (prefers-reduced-motion:reduce){.form-control::-webkit-file-upload-button{-webkit-transition:none;transition:none}}.form-control:hover:not(:disabled):not([readonly])::-webkit-file-upload-button{background-color:#dde0e3}.form-control-lg{min-height:calc(1.5em + 1rem + 2px);padding:.5rem 1rem;font-size:1.25rem;border-radius:.3rem}.form-control-lg::file-selector-button{padding:.5rem 1rem;margin:-.5rem -1rem;-webkit-margin-end:1rem;margin-inline-end:1rem}.form-control-lg::-webkit-file-upload-button{padding:.5rem 1rem;margin:-.5rem -1rem;-webkit-margin-end:1rem;margin-inline-end:1rem}.form-select{display:block;width:100%;padding:.375rem .75rem .375rem 2.25rem;font-size:1rem;font-weight:400;line-height:1.5;color:#343a40;background-color:#fff;background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");background-repeat:no-repeat;background-position:left .75rem center;background-size:16px 12px;border:1px solid #ced4da;border-radius:.25rem;-webkit-appearance:none;-moz-appearance:none;appearance:none}.form-select:focus{border-color:#ffdbec;outline:0;box-shadow:0 0 0 .1rem rgba(255,182,217,.25)}.form-select:disabled{background-color:#e9ecef}.form-select:-moz-focusring{color:transparent;text-shadow:0 0 0 #343a40}.form-check{display:block;min-height:1.5rem;padding-right:1.5em;margin-bottom:.125rem}.form-check-inline{display:inline-block;margin-left:1rem}.btn-check{position:absolute;clip:rect(0,0,0,0);pointer-events:none}.btn-check:disabled+.btn{pointer-events:none;filter:none;opacity:.65}.input-group{position:relative;display:flex;flex-wrap:wrap;align-items:stretch;width:100%}.input-group>.form-control,.input-group>.form-select{position:relative;flex:1 1 auto;width:1%;min-width:0}.input-group>.form-control:focus,.input-group>.form-select:focus{z-index:3}.input-group .btn{position:relative;z-index:2}.input-group .btn:focus{z-index:3}.input-group-text{display:flex;align-items:center;padding:.375rem .75rem;font-size:1rem;font-weight:400;line-height:1.5;color:#343a40;text-align:center;white-space:nowrap;background-color:#e9ecef;border:1px solid #ced4da;border-radius:.25rem}.input-group:not(.has-validation)>:not(:last-child):not(.dropdown-toggle):not(.dropdown-menu){border-top-left-radius:0;border-bottom-left-radius:0}.input-group>:not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback){margin-left:-1px;border-top-right-radius:0;border-bottom-right-radius:0}.btn{display:inline-block;font-weight:400;line-height:1.5;color:#343a40;text-align:center;vertical-align:middle;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;user-select:none;background-color:transparent;border:1px solid transparent;padding:.375rem .75rem;font-size:1rem;border-radius:.25rem;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out}@media (prefers-reduced-motion:reduce){.btn{transition:none}}.btn:hover{color:#343a40}.btn-check:focus+.btn,.btn:focus{outline:0;box-shadow:0 0}.btn:disabled{pointer-events:none;opacity:.65}.btn-warning{color:#000;background-color:#ffc107;border-color:#cc9a06}.btn-warning:hover{color:#000;background-color:#ffca2c;border-color:#ffc720}.btn-check:focus+.btn-warning,.btn-warning:focus{color:#000;background-color:#ffca2c;border-color:#ffc720;box-shadow:0 0 0 .1rem rgba(217,164,6,.5)}.btn-check:active+.btn-warning,.btn-check:checked+.btn-warning,.btn-warning.active,.btn-warning:active{color:#000;background-color:#ffcd39;border-color:#ffc720}.btn-check:active+.btn-warning:focus,.btn-check:checked+.btn-warning:focus,.btn-warning.active:focus,.btn-warning:active:focus{box-shadow:0 0 0 .1rem rgba(217,164,6,.5)}.btn-warning:disabled{color:#000;background-color:#ffc107;border-color:#ffc107}.btn-danger{color:#000;background-color:#f31559;border-color:#c21147}.btn-danger:hover{color:#000;background-color:#f53872;border-color:#f42c6a}.btn-check:focus+.btn-danger,.btn-danger:focus{color:#000;background-color:#f53872;border-color:#f42c6a;box-shadow:0 0 0 .1rem rgba(207,18,76,.5)}.btn-check:active+.btn-danger,.btn-check:checked+.btn-danger,.btn-danger.active,.btn-danger:active{color:#000;background-color:#f5447a;border-color:#f42c6a}.btn-check:active+.btn-danger:focus,.btn-check:checked+.btn-danger:focus,.btn-danger.active:focus,.btn-danger:active:focus{box-shadow:0 0 0 .1rem rgba(207,18,76,.5)}.btn-danger:disabled{color:#000;background-color:#f31559;border-color:#f31559}.btn-dark{color:#fff;background-color:#202327;border-color:#1a1c1f}.btn-dark:hover{color:#fff;background-color:#1b1e21;border-color:#1a1c1f}.btn-check:focus+.btn-dark,.btn-dark:focus{color:#fff;background-color:#1b1e21;border-color:#1a1c1f;box-shadow:0 0 0 .1rem rgba(65,68,71,.5)}.btn-check:active+.btn-dark,.btn-check:checked+.btn-dark,.btn-dark.active,.btn-dark:active{color:#fff;background-color:#1a1c1f;border-color:#181a1d}.btn-check:active+.btn-dark:focus,.btn-check:checked+.btn-dark:focus,.btn-dark.active:focus,.btn-dark:active:focus{box-shadow:0 0 0 .1rem rgba(65,68,71,.5)}.btn-dark:disabled{color:#fff;background-color:#202327;border-color:#202327}.btn-outline-secondary{color:#6c757d;border-color:#6c757d}.btn-outline-secondary:hover{color:#fff;background-color:#6c757d;border-color:#6c757d}.btn-check:focus+.btn-outline-secondary,.btn-outline-secondary:focus{box-shadow:0 0 0 .1rem rgba(108,117,125,.5)}.btn-check:active+.btn-outline-secondary,.btn-check:checked+.btn-outline-secondary,.btn-outline-secondary.active,.btn-outline-secondary:active{color:#fff;background-color:#6c757d;border-color:#6c757d}.btn-check:active+.btn-outline-secondary:focus,.btn-check:checked+.btn-outline-secondary:focus,.btn-outline-secondary.active:focus,.btn-outline-secondary:active:focus{box-shadow:0 0 0 .1rem rgba(108,117,125,.5)}.btn-outline-secondary:disabled{color:#6c757d;background-color:transparent}.btn-outline-dark{color:#202327;border-color:#202327}.btn-outline-dark:hover{color:#fff;background-color:#202327;border-color:#202327}.btn-check:focus+.btn-outline-dark,.btn-outline-dark:focus{box-shadow:0 0 0 .1rem rgba(32,35,39,.5)}.btn-check:active+.btn-outline-dark,.btn-check:checked+.btn-outline-dark,.btn-outline-dark.active,.btn-outline-dark:active{color:#fff;background-color:#202327;border-color:#202327}.btn-check:active+.btn-outline-dark:focus,.btn-check:checked+.btn-outline-dark:focus,.btn-outline-dark.active:focus,.btn-outline-dark:active:focus{box-shadow:0 0 0 .1rem rgba(32,35,39,.5)}.btn-outline-dark:disabled{color:#202327;background-color:transparent}.btn-sm{padding:.25rem .5rem;font-size:.875rem;border-radius:.2rem}.fade{transition:opacity .15s linear}@media (prefers-reduced-motion:reduce){.fade{transition:none}}.fade:not(.show){opacity:0}.nav{display:flex;flex-wrap:wrap;padding-right:0;margin-bottom:0;list-style:none}.nav-link{display:block;padding:.5rem 1rem;color:#f31559;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out}@media (prefers-reduced-motion:reduce){.nav-link{transition:none}}.nav-link:focus,.nav-link:hover{color:#c21147}.navbar{position:relative;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;padding-top:.5rem;padding-bottom:.5rem}.navbar>.container,.navbar>.container-fluid{display:flex;flex-wrap:inherit;align-items:center;justify-content:space-between}.navbar-brand{padding-top:.3125rem;padding-bottom:.3125rem;margin-left:1rem;font-size:1.25rem;white-space:nowrap}.navbar-toggler{padding:.25rem .75rem;font-size:1.25rem;line-height:1;background-color:transparent;border:1px solid transparent;border-radius:.25rem;transition:box-shadow .15s ease-in-out}@media (prefers-reduced-motion:reduce){.navbar-toggler{transition:none}}.navbar-toggler:hover{text-decoration:none}.navbar-toggler:focus{text-decoration:none;outline:0;box-shadow:0 0 0 .1rem}.navbar-toggler-icon{display:inline-block;width:1.5em;height:1.5em;vertical-align:middle;background-repeat:no-repeat;background-position:center;background-size:100%}@media (min-width:992px){.navbar-expand-lg{flex-wrap:nowrap;justify-content:flex-start}.navbar-expand-lg .navbar-toggler{display:none}}.navbar-light .navbar-brand{color:rgba(0,0,0,.9)}.navbar-light .navbar-brand:focus,.navbar-light .navbar-brand:hover{color:rgba(0,0,0,.9)}.navbar-light .navbar-toggler{color:rgba(0,0,0,.55);border-color:rgba(0,0,0,.1)}.navbar-light .navbar-toggler-icon{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e")}.card{position:relative;display:flex;flex-direction:column;min-width:0;word-wrap:break-word;background-color:#fff;background-clip:border-box;border:1px solid rgba(0,0,0,.125);border-radius:.25rem}.card-body{flex:1 1 auto;padding:1rem 1rem}.card-title{margin-bottom:.5rem}.card-subtitle{margin-top:-.25rem;margin-bottom:0}.card-text:last-child{margin-bottom:0}.card-link:hover{text-decoration:none}.card-link+.card-link{margin-right:1rem}.card-footer{padding:.5rem 1rem;background-color:rgba(0,0,0,.03);border-top:1px solid rgba(0,0,0,.125)}.card-footer:last-child{border-radius:0 0 calc(.25rem - 1px) calc(.25rem - 1px)}.pagination{display:flex;padding-right:0;list-style:none}.page-link{position:relative;display:block;color:#f31559;background-color:#fff;border:1px solid #dee2e6;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out}@media (prefers-reduced-motion:reduce){.page-link{transition:none}}.page-link:hover{z-index:2;color:#c21147;background-color:#e9ecef;border-color:#dee2e6}.page-link:focus{z-index:3;color:#c21147;background-color:#e9ecef;outline:0;box-shadow:0 0}.page-item:not(:first-child) .page-link{margin-right:-1px}.page-item.active .page-link{z-index: 3;
+  color: #fff;
+  background-color: #212529;}.page-link{padding: 0.5rem .8rem;
+  border: none;
+  background-color: #f6f6f6;
+  margin: 0px 3px !important;
+  border-radius: 5px;
+ }.page-item:first-child .page-link{border-top-right-radius:.25rem;border-bottom-right-radius:.25rem}.page-item:last-child .page-link{border-top-left-radius:.25rem;border-bottom-left-radius:.25rem}@-webkit-keyframes progress-bar-stripes{0%{background-position-x:1rem}}@keyframes progress-bar-stripes{0%{background-position-x:1rem}}.list-group-item-action{width:100%;color:#495057;text-align:inherit}.list-group-item-action:focus,.list-group-item-action:hover{z-index:1;color:#495057;text-decoration:none;background-color:#f8f9fa}.list-group-item-action:active{color:#343a40;background-color:#e9ecef}.list-group-item{position:relative;display:block;padding:.5rem 1rem;color:#202327;background-color:#fff;border:1px solid rgba(0,0,0,.125)}.list-group-item:first-child{border-top-right-radius:inherit;border-top-left-radius:inherit}.list-group-item:last-child{border-bottom-left-radius:inherit;border-bottom-right-radius:inherit}.list-group-item:disabled{color:#6c757d;pointer-events:none;background-color:#fff}.list-group-item.active{z-index:2;color:#fff;background-color:#ffb6d9;border-color:#ffb6d9}.list-group-item+.list-group-item{border-top-width:0}.list-group-item+.list-group-item.active{margin-top:-1px;border-top-width:1px}.btn-close{box-sizing:content-box;width:1em;height:1em;padding:.25em .25em;color:#000;background:transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;border:0;border-radius:1rem;opacity:.5}.btn-close:hover{color:#000;text-decoration:none;opacity:.75}.btn-close:focus{outline:0;box-shadow:0 0;opacity:1}.btn-close:disabled{pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none;opacity:.25}.modal{position:fixed;top:0;right:0;z-index:1060;display:none;width:100%;height:100%;overflow-x:hidden;overflow-y:auto;outline:0}.modal-dialog{position:relative;width:auto;margin:.5rem;pointer-events:none}.modal.fade .modal-dialog{transition:transform .3s ease-out;transform:translate(0,-50px)}@media (prefers-reduced-motion:reduce){.modal.fade .modal-dialog{transition:none}}.modal-dialog-centered{display:flex;align-items:center;min-height:calc(100% - 1rem)}.modal-content{position:relative;display:flex;flex-direction:column;width:100%;pointer-events:auto;background-color:#fff;background-clip:padding-box;border:1px solid rgba(0,0,0,.2);border-radius:.3rem;outline:0}.modal-header{display:flex;flex-shrink:0;align-items:center;justify-content:space-between;padding:1rem 1rem;border-bottom:1px solid #dee2e6;border-top-right-radius:calc(.3rem - 1px);border-top-left-radius:calc(.3rem - 1px)}.modal-header .btn-close{padding:.5rem .5rem;margin:-.5rem auto -.5rem -.5rem}.modal-title{margin-bottom:0;line-height:1.5}.modal-body{position:relative;flex:1 1 auto;padding:1rem}.modal-footer{display:flex;flex-wrap:wrap;flex-shrink:0;align-items:center;justify-content:flex-end;padding:.75rem;border-top:1px solid #dee2e6;border-bottom-left-radius:calc(.3rem - 1px);border-bottom-right-radius:calc(.3rem - 1px)}.modal-footer>*{margin:.25rem}@media (min-width:576px){.modal-dialog{max-width:500px;margin:1.75rem auto}.modal-dialog-centered{min-height:calc(100% - 3.5rem)}.modal-sm{max-width:300px}}.modal-fullscreen{width:100vw;max-width:none;height:100%;margin:0}.modal-fullscreen .modal-content{height:100%;border:0;border-radius:0}.modal-fullscreen .modal-header{border-radius:0}.modal-fullscreen .modal-body{overflow-y:auto}.modal-fullscreen .modal-footer{border-radius:0}@-webkit-keyframes spinner-border{to{transform:rotate(360deg)}}@keyframes spinner-border{to{transform:rotate(360deg)}}@-webkit-keyframes spinner-grow{0%{transform:scale(0)}50%{opacity:1;transform:none}}@keyframes spinner-grow{0%{transform:scale(0)}50%{opacity:1;transform:none}}.offcanvas{position:fixed;bottom:0;z-index:1050;display:flex;flex-direction:column;max-width:100%;visibility:hidden;background-color:#fff;background-clip:padding-box;outline:0;transition:transform .3s ease-in-out}@media (prefers-reduced-motion:reduce){.offcanvas{transition:none}}.offcanvas-header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1rem}.offcanvas-header .btn-close{padding:.5rem .5rem;margin:-.5rem auto -.5rem -.5rem}.offcanvas-title{margin-bottom:0;line-height:1.5}.offcanvas-body{flex-grow:1;padding:1rem 1rem;overflow-y:auto}.offcanvas-start{top:0;right:0;width:400px;border-left:1px solid rgba(0,0,0,.2);transform:translateX(100%)}.offcanvas-end{top:0;left:0;width:400px;border-right:1px solid rgba(0,0,0,.2);transform:translateX(-100%)}.link-dark{color:#202327}.link-dark:focus,.link-dark:hover{color:#1a1c1f}.fixed-top{position:fixed;top:0;left:0;right:0;z-index:1030}.float-start{float:left!important}.float-end{float:right!important}.d-inline-block{display:inline-block!important}.d-flex{display:flex!important}.d-inline-flex{display:inline-flex!important}.d-none{display:none!important}.shadow-sm{box-shadow:0 .125rem .25rem rgba(0,0,0,.075)!important}.border{border:1px solid #dee2e6!important}.border-0{border:0!important}.border-bottom{border-bottom:1px solid #dee2e6!important}.border-secondary{border-color:#6c757d!important}.border-dark{border-color:#202327!important}.border-gray{border-color:#e9ecef!important}.border-1{border-width:1px!important}.w-50{width:50%!important}.w-75{width:75%!important}.w-100{width:100%!important}.h-100{height:100%!important}.flex-column{flex-direction:column!important}.justify-content-center{justify-content:center!important}.justify-content-between{justify-content:space-between!important}.align-items-center{align-items:center!important}.align-content-center{align-content:center!important}.m-0{margin:0!important}.m-2{margin:.5rem!important}.mx-0{margin-left:0!important;margin-right:0!important}.mx-2{margin-left:.5rem!important;margin-right:.5rem!important}.mx-auto{margin-left:auto!important;margin-right:auto!important}.my-0{margin-top:0!important;margin-bottom:0!important}.my-1{margin-top:.25rem!important;margin-bottom:.25rem!important}.my-2{margin-top:.5rem!important;margin-bottom:.5rem!important}.my-5{margin-top:3rem!important;margin-bottom:3rem!important}.mt-0{margin-top:0!important}.mt-2{margin-top:.5rem!important}.mt-4{margin-top:1.5rem!important}.mt-5{margin-top:3rem!important}.me-2{margin-left:.5rem!important}.mb-0{margin-bottom:0!important}.mb-2{margin-bottom:.5rem!important}.mb-3{margin-bottom:1rem!important}.ms-0{margin-right:0!important}.ms-1{margin-right:.25rem!important}.ms-2{margin-right:.5rem!important}.p-0{padding:0!important}.p-1{padding:.25rem!important}.p-2{padding:.5rem!important}.px-0{padding-left:0!important;padding-right:0!important}.px-1{padding-left:.25rem!important;padding-right:.25rem!important}.px-2{padding-left:.5rem!important;padding-right:.5rem!important}.px-3{padding-left:1rem!important;padding-right:1rem!important}.py-0{padding-top:0!important;padding-bottom:0!important}.py-1{padding-top:.25rem!important;padding-bottom:.25rem!important}.py-2{padding-top:.5rem!important;padding-bottom:.5rem!important}.py-3{padding-top:1rem!important;padding-bottom:1rem!important}.py-4{padding-top:1.5rem!important;padding-bottom:1.5rem!important}.pt-2{padding-top:.5rem!important}.pb-0{padding-bottom:0!important}.pb-1{padding-bottom:.25rem!important}.pb-2{padding-bottom:.5rem!important}.fs-1{font-size:calc(1.325rem + .9vw)!important}.fs-2{font-size:calc(1.275rem + .3vw)!important}.fs-5{font-size:1.15rem!important}.fs-6{font-size:1rem!important}.fs-7{font-size:.75rem!important}.fw-bold{font-weight:700!important}.fw-bolder{font-weight:bolder!important}.text-start{text-align:right!important}.text-end{text-align:left!important}.text-center{text-align:center!important}.text-decoration-none{text-decoration:none!important}.text-primary{color:#ffb6d9!important}.text-secondary{color:#6c757d!important}.text-success{color:#39b900!important}.text-info{color:#bad7e9!important}.text-danger{color:#f31559!important}.text-light{color:#f8f9fa!important}.text-dark{color:#202327!important}.text-white{color:#fff!important}.text-muted{color:#6c757d!important}.text-reset{color:inherit!important}.bg-secondary{background-color:#6c757d!important}.bg-light{background-color:#f8f9fa!important}.bg-dark{background-color:#202327!important}.rounded-0{border-radius:0!important}.rounded-circle{border-radius:50%!important}@media (min-width:576px){.m-sm-0{margin:0!important}}@media (min-width:992px){.d-lg-block{display:block!important}.d-lg-flex{display:flex!important}.d-lg-none{display:none!important}.m-lg-5{margin:3rem!important}}@media (min-width:1200px){.fs-1{font-size:2rem!important}.fs-2{font-size:1.5rem!important}}
+    .password {
+      direction: ltr!important;
+      text-align: right; 
+    }
+    img{
+      opacity: 0; 
+    }
+      .show-smooth{
+      transition: opacity .4s ease-in-out;
+      opacity: 1;
+    }
+      .offcanvas.show {
+  transform: none;
+}
+.w-75 {
+  width: 75% !important;
+}
+   
+.offcanvas-end {
+  top: 0;
+  left: 0;
+  width: 400px;
+  border-right: 1px solid rgba(0,0,0,.2);
+  transform: translateX(-100%);
+}
+.offcanvas {
+  position: fixed;
+  bottom: 0;
+  z-index: 1050;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  visibility: hidden;
+  background-color: #fff;
+  background-clip: padding-box;
+  outline: 0;
+  transition: transform .3s ease-in-out;
+}
+
+.modal-backdrop.fade {
+  opacity: 0;
+}
+    .modal-backdrop.show {
+  opacity: .5;
+}
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1020;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+}
+.modal.show .modal-dialog {
+  transform: none;
+}
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+    .truncate-container{
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: normal; 
+    }
+    .profile-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .2rem;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+  }
+
+  .profile-item-card {
+      flex: 1 1 calc(50% - .2rem); /* 2 profiles per row on small devices */
+      max-width: calc(50%);
+  }
+
+  @media (min-width: 992px) {
+      .profile-item-card {
+          flex: 1 1 calc(25% - 1rem); /* 4 profiles per row on large devices */
+          max-width: calc(25% );
+      }
+      .mx-lg-4{margin-right:1.5rem!important;margin-left:1.5rem!important}
+  }
+
+    .profile-image-container {
+      width: 175px;
+      height: 175px;
+      border-radius: 50%;
+      padding: 5px;
+      background: linear-gradient(135deg, rgba(201, 201, 201, 0.46), rgba(255, 255, 255, 0.8), rgba(140, 142, 143, 0.35));
+  background-blend-mode: overlay;
+  }
+
+  .profile-image {
+      border-radius: 50%;
+      width: 165px;
+      height: 165px;
+      object-fit: cover;
+  }
+
+  @media (max-width: 767.98px) {
+      .profile-image-container {
+          width: 160px;
+          height: 160px;
+      }
+
+      .profile-image {
+          width: 155px;
+          height: 155px;
+          margin: 2.5px;
+          border:none;
+      }
+  }
+
+  .btn-dating {
+    background-color: #ff69b4;
+    border-color: #ff69b4;
+    color: white;
+    font-weight: 500;
+    padding: 0.375rem 0.75rem;
+    border-radius: 30px;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-dating:hover {
+    background-color: #ff1493;
+    border-color: #ff1493;
+}
+
+.btn-dating:focus {
+    box-shadow: none;
+}
+.me-auto {
+  margin-right: auto !important;
+}
+.custom-menu{
+  border-top: 1px solid #efc4d1;
+}
+.custom-menu a {
+  font-family: Almarai,sans-serif,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+.custom-menu a:hover {
+  color: #ff1493;
+  text-decoration: none;
+}
+.custom-header {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  direction: rtl; 
+  text-align: right; 
+  background: linear-gradient(90deg, rgb(255, 255, 255), rgb(242, 242, 242));
+  padding: 0px;
+}
+.custom-menu i {
+  font-size: 1.2em;
+}
+.justify-content-start {
+  justify-content: left !important;
+}
+
+.alert {
+  position: relative;
+  padding: 1rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  border-radius: 0.25rem;
+}
+.alert-danger {
+  color: #842029;
+  background-color: #f8d7da;
+  border-color: #f5c2c7;
+}
+.alert-success{color:#226f00;background-color:#d7f1cc;border-color:#c4eab3}.alert-success .alert-link{color:#1b5900}
+.alert-warning {
+  color: #664d03;
+  background-color: #fff3cd;
+  border-color: #ffecb5;
+}
+.alert-info {
+  color: #055160;
+  background-color: #cff4fc;
+  border-color: #b6effb;
+}
+.btn-secondary {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+@media (min-width: 768px) {
+  .col-md-6 {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+}
+.list-group-numbered{list-style-type:none;counter-reset:section}.list-group-numbered > li::before{content:counters(section,".") ". ";counter-increment:section}
+.btn-menu{
+  border-color: #2ac3e8;
+  border-radius: 30px;
+  color: #fff;
+  background-color: #18afd3;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  padding: .3rem !important;
+}
+.btn-menu:hover{
+  color: #000;
+  background-color: #bbdcf9;
+} 
+</style>
+<title>موقع زواج وتعارف مجاني - يازواج</title>
+<base href="https://www.yazawaj.com/assets/members/images/" target="_self">
+<meta name="description" content="يازواج، موقع زواج وتعارف مجاني، يركز على الجدية والمصداقية في العروض والطلبات. يقدم يازواج خدمات مجانية تمامًا وبدون أي اشتراكات، مما يتيح لك محادثة مباشرة مع الأعضاء بسهولة. يمكنك البحث عن شريك حياتك المثالي والتواصل معه في بيئة آمنة وموثوقة. سجل الآن مجانًا وابدأ رحلتك في العثور على شريك حياتك بدون أي تكاليف.">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=yes">
+<meta name="verify-v1" content="5WidHCz1gE1OasqJVV44y+6I/OX7bB7V0rV/xRzx88g=">
+<meta name="google-site-verification" content="RbUuY0cfeeUDKPgHrPK0oEpctNpwlN_kTfZxFupQgp8">
+<meta name="wot-verification" content="78edaf725cccc64bba18">
+<meta name="theme-color" content="#f31559">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="stylesheet" type="text/css" href=" https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css " media="all" onload="if(media!='all')media='all'">
+<link rel="stylesheet" type="text/css" href=" https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css " media="all" onload="if(media!='all')media='all'">
+<link rel="canonical" href="https://www.yazawaj.com/"><link rel="preload" href="https://fonts.gstatic.com/s/almarai/v12/tssoApxBaigK_hnnS_qjtnqWow.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<script src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202508070101/reactive_library.js?bust=31094003"></script><script src="//e.dtscout.com/e/?v=1a&amp;pid=5200&amp;site=1&amp;l=https%3A%2F%2Fwww.yazawaj.com%2F&amp;j=" async="" type="text/javascript"></script><script src="//e.dtscout.com/e/?v=1a&amp;pid=5200&amp;site=1&amp;l=https%3A%2F%2Fwww.yazawaj.com%2F&amp;j=" async="" type="text/javascript"></script><script src="//e.dtscout.com/e/?v=1a&amp;pid=5200&amp;site=1&amp;l=https%3A%2F%2Fwww.yazawaj.com%2F&amp;j=" async="" type="text/javascript"></script><script src="//e.dtscout.com/e/?v=1a&amp;pid=5200&amp;site=1&amp;l=https%3A%2F%2Fwww.yazawaj.com%2F&amp;j=" async="" type="text/javascript"></script><script src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202508070101/show_ads_impl.js?bust=31094003"></script><script type="text/javascript" async="" src="//s10.histats.com/js15_as.js"></script><script type="text/javascript" async="" src="//s10.histats.com/js15_as.js"></script><meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A9nrunKdU5m96PSN1XsSGr3qOP0lvPFUB2AiAylCDlN5DTl17uDFkpQuHj1AFtgWLxpLaiBZuhrtb2WOu7ofHwEAAACKeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A93bovR+QVXNx2/38qDbmeYYf1wdte9EO37K9eMq3r+541qo0byhYU899BhPB7Cv9QqD7wIbR1B6OAc9kEfYCA4AAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A1S5fojrAunSDrFbD8OfGmFHdRFZymSM/1ss3G+NEttCLfHkXvlcF6LGLH8Mo5PakLO1sCASXU1/gQf6XGuTBgwAAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A9nrunKdU5m96PSN1XsSGr3qOP0lvPFUB2AiAylCDlN5DTl17uDFkpQuHj1AFtgWLxpLaiBZuhrtb2WOu7ofHwEAAACKeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A93bovR+QVXNx2/38qDbmeYYf1wdte9EO37K9eMq3r+541qo0byhYU899BhPB7Cv9QqD7wIbR1B6OAc9kEfYCA4AAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A1S5fojrAunSDrFbD8OfGmFHdRFZymSM/1ss3G+NEttCLfHkXvlcF6LGLH8Mo5PakLO1sCASXU1/gQf6XGuTBgwAAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><script async="" src="https://fundingchoicesmessages.google.com/i/ca-pub-4305924041911758?href=https%3A%2F%2Fwww.yazawaj.com&amp;ers=2"></script><script async="" src="https://fundingchoicesmessages.google.com/f/AGSKWxX4VFeCd7uNnQ2XqaPmKXTHHQT29NMXKwWiHH8PDIdoBsJhXR4YrIrMcJrCG5mUksPIW_COMxlrxJEg-bB9ZSQAbgVg_MaQYMzMCcevwDTqI0OhaJg7BLty9gBMlPb9H2WwO3FeSw==?fccs=W251bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLFsxNzU1MTIwNjUwLDQxNjAwMDAwMF0sbnVsbCxudWxsLG51bGwsW251bGwsWzcsMTldXSwiaHR0cHM6Ly93d3cueWF6YXdhai5jb20vIixudWxsLFtbMjYsIjEyIl0sWzgsInZHaVRBVHFjRnBRIl0sWzksImVuLVVTIl0sWzIzLCIxNzU1MTIwNjQ2Il0sWzE5LCIyIl0sWzE3LCJbMF0iXSxbMjQsIiJdLFsyNSwiW1s5NTM1OTI2Ml1dIl0sWzI5LCJmYWxzZSJdXV0"></script><script async="" src="https://fundingchoicesmessages.google.com/f/AGSKWxWWg5CtS1XVHOG4PmGB1D3RvkTUYDUiTLTlYy7qoxeX-5o93-PTvorvfs2cMR7OQ_SSysED3vJciolLy9Yogp7ArcoJHE1yJGK1Z0jmowCgXSE70-jPUMmFSB7MkgiaYaaePIB3FQ==?fccs=W251bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLFsxNzU1MTIwNjUwLDU1ODAwMDAwMF0sbnVsbCxudWxsLG51bGwsW251bGwsWzcsMTksOV0sbnVsbCwyLG51bGwsImVuIl0sImh0dHBzOi8vd3d3LnlhemF3YWouY29tLyIsbnVsbCxbWzI2LCIxMiJdLFs4LCJ2R2lUQVRxY0ZwUSJdLFs5LCJlbi1VUyJdLFsyMywiMTc1NTEyMDY0NiJdLFsxOSwiMiJdLFsxNywiWzBdIl0sWzI0LCIiXSxbMjUsIltbOTUzNTkyNjJdXSJdLFsyOSwiZmFsc2UiXV1d"></script><meta http-equiv="origin-trial" content="AxjhRadLCARYRJawRjMjq4U8V8okQvSnrBIJWdMajuEkN3/DfVAcLcFhMVrUWnOXagwlI8dQD84FwJDGj9ohqAYAAABveyJvcmlnaW4iOiJodHRwczovL2dvb2dsZWFkc2VydmljZXMuY29tOjQ0MyIsImZlYXR1cmUiOiJGZXRjaExhdGVyQVBJIiwiZXhwaXJ5IjoxNzI1NDA3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9"><script async="" src="https://fundingchoicesmessages.google.com/f/AGSKWxUgRPdJOBdhMcUIO4tKE8kemtlUFn650dABJ25c5mCbj6owLES2skbPq8Cwk2HDn_cmdCjIcxYi5WaqzeYGaKI8l0PVjobkbjb6dYR2lc8fjR8sJTtevOO0xYYmgvfQ4JakOnx2sQ==?fccs=W251bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLFsxNzU1MTIwNjUxLDQ5MjAwMDAwMF0sbnVsbCxudWxsLG51bGwsW251bGwsWzcsMTksOSw2XSxudWxsLDIsbnVsbCwiZW4iLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCwxXSwiaHR0cHM6Ly93d3cueWF6YXdhai5jb20vIixudWxsLFtbMjYsIjEyIl0sWzgsInZHaVRBVHFjRnBRIl0sWzksImVuLVVTIl0sWzIzLCIxNzU1MTIwNjQ2Il0sWzE5LCIyIl0sWzE3LCJbMF0iXSxbMjQsIiJdLFsyNSwiW1s5NTM1OTI2Ml1dIl0sWzI5LCJmYWxzZSJdXV0"></script><script async="" src="https://fundingchoicesmessages.google.com/f/AGSKWxVYT3HenfL0DH7CQA8wmTz8MXmgZ6i7AMS3TE139IXmUTXm87C7gC-peelN_BZI6KsQpSOSnIlJoTlRZiUAQogKZmqAdsMwRbOJYhGg_7ECRMXmp3X6Y8grwAsQzM-_tdmpgESF2A==?fccs=W251bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLFsxNzU1MTIwNjUxLDc5MTAwMDAwMF0sbnVsbCxudWxsLG51bGwsW251bGwsWzcsMTksOSw2LDE1XSxudWxsLDIsbnVsbCwiZW4iLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCwxXSwiaHR0cHM6Ly93d3cueWF6YXdhai5jb20vIixudWxsLFtbMjYsIjEyIl0sWzgsInZHaVRBVHFjRnBRIl0sWzksImVuLVVTIl0sWzIzLCIxNzU1MTIwNjQ2Il0sWzE5LCIyIl0sWzE3LCJbMF0iXSxbMjQsIiJdLFsyNSwiW1s5NTM1OTI2Ml1dIl0sWzI5LCJmYWxzZSJdLFsyOCwiW251bGwsW251bGwsMSxbMTc1NTEyMDY1MiwxODkyOTQwMDBdXV0iXV1d"></script></head>
+<body aria-hidden="false">
+  <header>                                    
+                                             <div class="modal fade   d-lg-none" id="signInModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="signinmodalLabel" aria-hidden="true">
+  <div class="modal-dialog  modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header py-2 px-0 mx-2">
+        <p class="h5 modal-title " id="signinmodalLabel"><span class="mx-2 d-inline-block "><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="32" height="32" class="img-fluid p-1 bi bi-box-arrow-in-right" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"></path><path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"></path></svg></span>تسجيل الدخول</p>
+        <button data-bs-dismiss="modal" class="btn border-0 text-start p-0 my-0 mx-0 ">
+          <span class="d-inline-block "> <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="img-fluid p-1 bi bi-arrow-left" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"></path></svg></span></button>
+      </div>
+      <div class="modal-body d-flex align-items-center">
+        <form class="signInForm container form mb-0" style="max-width:350px" data-errormsg1="المعلومات المدخلة غير صحيحة" data-errormsg2="اسم المستخدم أو كلمة المرور غير صحيحة">
+          <div class="text-center pt-2 pb-2"><img class="img-fluid rounded-circle bg-light show-smooth" src="https://www.yazawaj.com/themes/default/assets/images/logo.png" title="أكبر موقع عربي للتعارف والزواج" alt="أكبر موقع عربي للتعارف والزواج" height="64" width="64">
+          </div>
+          <div class="row  g-3">
+          <div class="col col-12 ">
+            <div class="input-group">
+              <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="img-fluid p-1 bi bi-person" viewBox="0 0 16 16"><path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"></path></svg></span>
+              <input type="text" class="form-control form-control-lg username" name="username" placeholder="إسم المستخدم/إيميل" aria-label="إسم المستخدم/إيميل">
+            </div>
+          </div>
+          <div class="col col-12">
+            <div class="input-group ">
+            <span class="input-group-text  " data-toggled="false" data-svg="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot; fill=&quot;currentColor&quot; class=&quot;img-fluid p-1 bi bi-eye-slash&quot; viewBox=&quot;0 0 16 16&quot;><path d=&quot;M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7.028 7.028 0 0 0-2.79.588l.77.771A5.944 5.944 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.134 13.134 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755-.165.165-.337.328-.517.486l.708.709z&quot;/><path d=&quot;M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829l.822.822zm-2.943 1.299.822.822a3.5 3.5 0 0 1-4.474-4.474l.823.823a2.5 2.5 0 0 0 2.829 2.829z&quot;/><path d=&quot;M3.35 5.47c-.18.16-.353.322-.518.487A13.134 13.134 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7.029 7.029 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709zm10.296 8.884-12-12 .708-.708 12 12-.708.708z&quot;/></svg>"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="img-fluid p-1 bi bi-eye" viewBox="0 0 16 16"><path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"></path><path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"></path></svg></span>                               
+              <input type="password" class="form-control form-control-lg password" name="password" placeholder="كلمة المرور" aria-label="كلمة المرور">
+            </div>
+          </div>
+          </div>
+          <div class="row   g-2 mt-2">
+          <div class="col col-12">
+            <button type="submit" class="btn btn-danger  py-3 w-100">تسجيل الدخول</button>
+          </div>
+          <div class="col col-6">
+              <a href="https://www.yazawaj.com/signup/">
+                اشترك الان مجانا
+              </a>
+              </div>
+            <div class="col col-6 text-end">
+              <a href="https://www.yazawaj.com/forgot-pw/">
+                نسيت كلمة السر؟
+              </a>
+            </div>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class=" errorSignIn d-lg-none">
+<div class="signInError modal animate__animated animate__slideInUp " id="invalidUsernameModal" tabindex="-1" role="dialog" aria-labelledby="invalidUsernameModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+    <div style="position: fixed;bottom: 0; left: 0;  right: 0;  margin: 0 auto;" class="modal-content  rounded-0 border-0 bg-dark text-secondary">
+      <div class="modal-header border-secondary">
+        <p class="h5 modal-title" id="invalidUsernameModalLabel">خطأ</p>
+        <button type="button" class="btn-close bg-secondary" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-light">
+        المعلومات المدخلة غير صحيحة.
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="errorSignIn d-none d-lg-flex">
+<div class="signInError modal " id="invalidUsernameModalLg" tabindex="-1" role="dialog" aria-labelledby="invalidUsernameModalLabelLg" aria-hidden="true">
+  <div class="modal-dialog modal modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p class="h5 modal-title" id="invalidUsernameModalLabelLg">خطأ</p>
+        <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-danger">
+        المعلومات المدخلة غير صحيحة.
+      </div>
+      <div class="modal-footer ">
+        <button type="button" class="btn btn-dark cancelDeleteBtn" data-bs-dismiss="modal">نعم</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="d-lg-none ">
+<nav class="custom-header shadow-sm navbar fixed-top navbar-light navbar-expand-lg rounded-0 ">
+  <div class="p-2 container-fluid">
+    <button data-bs-toggle="offcanvas" data-bs-target="#menucanvas" aria-controls="menucanvas" class="px-1 py-0 navbar-toggler">
+      <span class="navbar-toggler-icon">&nbsp;</span>
+    </button>
+    <a class="h6 fw-bold fs-1 mb-2" href="/" style="text-decoration: none;">
+      <span class="text-danger" style="color: red;">يازواج</span>
+      <span class="text-dark" style="color: black;">.كوم</span>
+    </a>
+    <a href="/">
+      <img class="img-fluid float-end rounded-circle bg-light show-smooth" src="https://www.yazawaj.com/themes/default/assets/images/logo-sm.png" title="أكبر موقع عربي للتعارف والزواج" alt="أكبر موقع عربي للتعارف والزواج" height="32" width="32">
+    </a>
+  </div>
+  <div class=" offcanvas offcanvas-end w-75" style="max-width: 350px;" tabindex="-1" id="menucanvas" aria-labelledby="menucanvasLabel">
+ <div class="px-0 offcanvas-header border-bottom border-darck py-2 mx-2">
+ <p class="h5 offcanvas-title" id="menucanvasLabel">
+ <span class="mx-2 d-inline-block "><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="32" height="32" class="img-fluid p-1 bi bi-list" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"></path></svg></span>القائمة
+ </p>
+ <button type="button" class="btn-close text-reset my-0 mx-0" data-bs-dismiss="offcanvas" aria-label="Close">&nbsp;</button>
+ </div>
+ <div class="offcanvas-body">
+ <a href="https://www.yazawaj.com/" class="px-0 border-0 list-group-item list-group-item-action"><span class="d-inline-block"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="img-fluid p-1 bi bi-house" viewBox="0 0 16 16"><path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"></path></svg></span><span class="px-2 ">الرئيسية</span></a>
+ <a href="https://www.yazawaj.com/recent_signin/" class="px-0 border-0 list-group-item list-group-item-action"><span class="d-inline-block"><svg width="32" height="32" class="img-fluid p-1 bi" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 8V12L15 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M20.94 11A9 9 0 1 0 12 21C13.73 21 15.36 20.47 16.73 19.58L21 23L22 22L18 18C19.47 16.82 20.5 15.12 20.94 13H20.94Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span class=" px-2">الأعضاء الجدد</span></a>
+ <a href="https://www.yazawaj.com/look-women/" class="px-0 border-0 list-group-item list-group-item-action"><span class="d-inline-block"><svg width="32" height="32" class="img-fluid p-1 bi" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 12C15.866 12 19 8.866 19 5C19 1.13401 15.866 -2 12 -2C8.13401 -2 5 1.13401 5 5C5 8.866 8.13401 12 12 12Z" stroke="black" stroke-width="2"></path><path d="M5 21V17C5 15.9391 5.42143 14.9217 6.17157 14.1716C6.92172 13.4214 7.93913 13 9 13H15C16.0609 13 17.0783 13.4214 17.8284 14.1716C18.5786 14.9217 19 15.9391 19 17V21" stroke="black" stroke-width="2"></path></svg></span><span class=" px-2">يبحثون عن شريكة</span></a>
+ <a href="https://www.yazawaj.com/look-men/" class="px-0 border-0 list-group-item list-group-item-action"><span class="d-inline-block"><svg width="32" height="32" class="img-fluid p-1 bi" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 12C15.866 12 19 8.866 19 5C19 1.13401 15.866 -2 12 -2C8.13401 -2 5 1.13401 5 5C5 8.866 8.13401 12 12 12Z" stroke="black" stroke-width="2"></path><path d="M5 21H19L15.5 13.5H8.5L5 21Z" stroke="black" stroke-width="2"></path></svg></span><span class=" px-2">يبحثن عن شريك</span></a>
+ <a href="https://www.yazawaj.com/topmen/" class="px-0 border-0 list-group-item list-group-item-action"><span class="d-inline-block"><svg width="32" height="32" class="img-fluid p-1 bi" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 12C15.866 12 19 8.866 19 5C19 1.13401 15.866 -2 12 -2C8.13401 -2 5 1.13401 5 5C5 8.866 8.13401 12 12 12Z" stroke="black" stroke-width="2"></path><path d="M12 21V16" stroke="black" stroke-width="2"></path><path d="M9 24H15" stroke="black" stroke-width="2"></path></svg></span><span class=" px-2">الرجال الأكثر زيارة</span></a>
+ <a href="https://www.yazawaj.com/topwomen/" class="px-0 border-0 list-group-item list-group-item-action"><span class="d-inline-block"><svg width="32" height="32" class="img-fluid p-1 bi" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 12C15.866 12 19 8.866 19 5C19 1.13401 15.866 -2 12 -2C8.13401 -2 5 1.13401 5 5C5 8.866 8.13401 12 12 12Z" stroke="black" stroke-width="2"></path><path d="M12 21V16" stroke="black" stroke-width="2"></path><path d="M6 24H18" stroke="black" stroke-width="2"></path></svg></span><span class=" px-2">البنات الأكثر زيارة</span></a>
+ <a href="https://www.yazawaj.com/connected/" class="px-0 border-0 list-group-item list-group-item-action"><span class="d-inline-block"><svg width="32" height="32" class="img-fluid p-1 bi" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 12L12 2L22 12" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M2 12V20H10V16H14V20H22V12" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span class=" px-2">المتصلون حاليا</span></a>
+ <a href="https://www.yazawaj.com/online24/" class="px-0 border-0 list-group-item list-group-item-action"><span class="d-inline-block"><svg width="32" height="32" class="img-fluid p-1 bi" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20Z" stroke="black" stroke-width="2"></path><path d="M12 6V12L16 14" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span class=" px-2">المتصلون خلال 24 ساعة</span></a>
+ <a href="https://www.yazawaj.com/help/" class="px-0 border-0 list-group-item list-group-item-action"><span class="d-inline-block"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="32" height="32" class="img-fluid p-1 bi bi-question-circle" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path><path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"></path></svg></span><span class=" px-2">مساعدة</span></a>
+ </div>
+</div>
+  <div class="content d-none d-lg-block">
+ <div class="row g-3 my-1">
+ <div class="col-md-4"></div>
+ <div class="col-md-4 text-end">
+ <a class="text-decoration-none" href="https://www.yazawaj.com/signup/">اشترك الان مجانا</a>
+ </div>
+ <div class="col-md-4 px-3 text-end">
+ <a class="text-decoration-none" href="https://www.yazawaj.com/forgot-pw/">نسيت كلمة السر؟</a>
+ </div>
+ </div>
+ <form class="signInForm-lg " data-errormsg1="المعلومات المدخلة غير صحيحة" data-errormsg2="اسم المستخدم أو كلمة المرور غير صحيحة">
+ <div class="row g-3">
+ <div class="col-md-4">
+ <div class="input-group">
+ <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="img-fluid p-1 bi bi-person" viewBox="0 0 16 16"><path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"></path></svg></span>
+ <input type="text" class="form-control username" name="username" placeholder="إسم المستخدم/إيميل" aria-label="إسم المستخدم/إيميل" required="">
+ </div>
+ </div>
+ <div class="col-md-4">
+ <div class="input-group">
+ <span class="input-group-text" data-toggled="false" data-svg="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot; fill=&quot;currentColor&quot; class=&quot;img-fluid p-1 bi bi-eye-slash&quot; viewBox=&quot;0 0 16 16&quot;><path d=&quot;M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7.028 7.028 0 0 0-2.79.588l.77.771A5.944 5.944 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.134 13.134 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755-.165.165-.337.328-.517.486l.708.709z&quot;/><path d=&quot;M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829l.822.822zm-2.943 1.299.822.822a3.5 3.5 0 0 1-4.474-4.474l.823.823a2.5 2.5 0 0 0 2.829 2.829z&quot;/><path d=&quot;M3.35 5.47c-.18.16-.353.322-.518.487A13.134 13.134 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7.029 7.029 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709zm10.296 8.884-12-12 .708-.708 12 12-.708.708z&quot;/></svg>"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="img-fluid p-1 bi bi-eye" viewBox="0 0 16 16"><path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"></path><path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"></path></svg></span>
+ <input type="password" class="form-control password" name="password" placeholder="كلمة المرور" aria-label="كلمة المرور" required="">
+ </div>
+ </div>
+ <div class="col-md-4 px-3">
+ <button type="submit" class="nav-link link-dark btn btn-danger border border-1 border-secondary text-light h-100 w-100">تسجيل الدخول</button>
+ </div>
+ </div>
+ </form>
+</div>
+<div class="d-flex row justify-content-between w-100 mx-0 fs-6 d-lg-none custom-menu">
+ <a class="p-2 bd-highlight col-3 d-flex align-items-center" data-bs-toggle="offcanvas" href="#searchcanvas" role="button" aria-controls="searchcanvas">
+ <i class="bi bi-person-plus"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="32" height="32" class="img-fluid p-1 bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path></svg></i>
+ بحث
+ </a>
+ <a role="button" data-bs-toggle="modal" data-bs-target="#signInModal" href="#signinModal" class="p-2 bd-highlight col-5 d-flex align-items-center justify-content-center">
+ تسجيل الدخول
+ </a>
+ <a href="https://www.yazawaj.com/signup/" class="p-2 bd-highlight col-4 d-flex align-items-center justify-content-start">
+ اشترك مجانا</a>
+</div>
+</nav>
+</div>
+<nav class="navbar border-bottom fixed-top navbar-light d-none d-lg-block p-0" style="font-family: 'Amiri', serif; direction: rtl; text-align: right; background: linear-gradient(90deg, #ffffff, #f2f2f2); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+  <div class="container-fluid p-0">
+    <div class="row ms-0 w-100">
+      <div class="col-md-4">
+        <a href="/" aria-label="Logo" class="fs-1 fw-bolder" style="text-decoration: none;">
+          <p class="h4 m-0 fs-1 fw-bolder" style="font-size: 2.5rem;">
+            <span class="hudge" style="color: red;">يازواج</span>
+            <span class="hudge text-dark" style="color: black;">.كوم</span>
+          </p>
+        </a>
+        <p class="h5 mb-0 fs-2">
+          <small>أكبر موقع عربي للتعارف والزواج</small>
+        </p>
+        <p class="fs-7 m-0">موقع زواج وتعارف يتمتع بخدمات مميزة, اكبر موقع عربي للتعارف والزواج بنات وشباب 100% مجاني.</p>
+      </div>
+      <div class="col-md-7">
+        <div class="content d-none d-lg-block">
+ <div class="row g-3 my-1">
+ <div class="col-md-4"></div>
+ <div class="col-md-4 text-end">
+ <a class="text-decoration-none" href="https://www.yazawaj.com/signup/">اشترك الان مجانا</a>
+ </div>
+ <div class="col-md-4 px-3 text-end">
+ <a class="text-decoration-none" href="https://www.yazawaj.com/forgot-pw/">نسيت كلمة السر؟</a>
+ </div>
+ </div>
+ <form class="signInForm-lg " data-errormsg1="المعلومات المدخلة غير صحيحة" data-errormsg2="اسم المستخدم أو كلمة المرور غير صحيحة">
+ <div class="row g-3">
+ <div class="col-md-4">
+ <div class="input-group">
+ <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="img-fluid p-1 bi bi-person" viewBox="0 0 16 16"><path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"></path></svg></span>
+ <input type="text" class="form-control username" name="username" placeholder="إسم المستخدم/إيميل" aria-label="إسم المستخدم/إيميل" required="">
+ </div>
+ </div>
+ <div class="col-md-4">
+ <div class="input-group">
+ <span class="input-group-text" data-toggled="false" data-svg="<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;32&quot; height=&quot;32&quot; fill=&quot;currentColor&quot; class=&quot;img-fluid p-1 bi bi-eye-slash&quot; viewBox=&quot;0 0 16 16&quot;><path d=&quot;M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7.028 7.028 0 0 0-2.79.588l.77.771A5.944 5.944 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.134 13.134 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755-.165.165-.337.328-.517.486l.708.709z&quot;/><path d=&quot;M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829l.822.822zm-2.943 1.299.822.822a3.5 3.5 0 0 1-4.474-4.474l.823.823a2.5 2.5 0 0 0 2.829 2.829z&quot;/><path d=&quot;M3.35 5.47c-.18.16-.353.322-.518.487A13.134 13.134 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7.029 7.029 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709zm10.296 8.884-12-12 .708-.708 12 12-.708.708z&quot;/></svg>"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="img-fluid p-1 bi bi-eye" viewBox="0 0 16 16"><path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"></path><path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"></path></svg></span>
+ <input type="password" class="form-control password" name="password" placeholder="كلمة المرور" aria-label="كلمة المرور" required="">
+ </div>
+ </div>
+ <div class="col-md-4 px-3">
+ <button type="submit" class="nav-link link-dark btn btn-danger border border-1 border-secondary text-light h-100 w-100">تسجيل الدخول</button>
+ </div>
+ </div>
+ </form>
+</div>
+<div class="d-flex row justify-content-between w-100 mx-0 fs-6 d-lg-none custom-menu">
+ <a class="p-2 bd-highlight col-3 d-flex align-items-center" data-bs-toggle="offcanvas" href="#searchcanvas" role="button" aria-controls="searchcanvas">
+ <i class="bi bi-person-plus"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="32" height="32" class="img-fluid p-1 bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path></svg></i>
+ بحث
+ </a>
+ <a role="button" data-bs-toggle="modal" data-bs-target="#signInModal" href="#signinModal" class="p-2 bd-highlight col-5 d-flex align-items-center justify-content-center">
+ تسجيل الدخول
+ </a>
+ <a href="https://www.yazawaj.com/signup/" class="p-2 bd-highlight col-4 d-flex align-items-center justify-content-start">
+ اشترك مجانا</a>
+</div>
+      </div>
+      <div class="col-md-1 p-0 align-content-top">
+        <a class="navbar-brand" href="/" aria-label="Logo">
+          <img width="468" height="468" src="https://www.yazawaj.com/themes/default/assets/images/logo.png" title="أكبر موقع عربي للتعارف والزواج" alt="أكبر موقع عربي للتعارف والزواج" class="img-fluid h-100 show-smooth">
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+  </header>                    
+<main style="padding-top: 15vh; height: auto !important;">
+<div class="container-fluid h-100 p-2 m-sm-0" style="height: auto !important;">
+<div class="container ">
+                                            <div style="margin-top:50px" class="border  container d-none d-lg-block">
+  <div class=" row d-flex justify-content-between">
+    <div class="col p-0">  
+    <nav class="nav justify-content-center py-1">
+    <a class="nav-link p-1 ms-1 btn btn-menu" href="https://www.yazawaj.com/recent_signin/"><span class="text-dark"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8"></circle></svg></span> الأعضاء الجدد</a>
+    <a class="nav-link p-1 ms-1 btn btn-menu" href="https://www.yazawaj.com/look-women/"><span class="text-info"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8"></circle></svg></span> يبحثون عن شريكة</a>
+    <a class="nav-link p-1 ms-1 btn btn-menu" href="https://www.yazawaj.com/look-men/"><span class="text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8"></circle></svg></span> يبحثن عن شريك</a>
+    <a class="nav-link p-1 ms-1 btn btn-menu" href="https://www.yazawaj.com/topmen/"><span class="text-info"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8"></circle></svg></span> الرجال الأكثر زيارة</a>
+    <a class="nav-link p-1 ms-1 btn btn-menu" href="https://www.yazawaj.com/topwomen/"><span class="text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8"></circle></svg></span> البنات الأكثر زيارة</a>
+    <a class="nav-link p-1 ms-1 btn btn-menu" href="https://www.yazawaj.com/connected/"><span class="text-success"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8"></circle></svg></span> المتصلون حاليا</a>
+    <a class="nav-link p-1 ms-1 btn btn-menu" href="https://www.yazawaj.com/online24/"><span class="text-secondary"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8"></circle></svg></span> المتصلون خلال 24 ساعة</a>
+</nav>
+    </div>
+  </div>
+  <form class="row " method="post" action="/search/">
+    <div class="col-xl-2 col-lg-3 my-2 pt-2 pb-1 ">
+      <label>بحث عن :</label>
+      <input type="radio" class=" btn-check " name="gender" id="success-outlined" value="w" checked="">
+      <label class=" btn btn-sm btn-outline-dark mt-0 " for="success-outlined">بنات</label>
+      <input type="radio" class=" btn-check" name="gender" id="danger-outlined" value="m">
+      <label class=" btn  btn-sm btn-outline-dark  mt-0 " for="danger-outlined">رجال</label>
+    </div>
+    <div class="col-xl-3 col-lg-4 my-2 pt-2 pb-1 ">
+      <label> السن </label>
+      <label for="agemin"> من: </label>
+      <select name="agemin" class=" custom-select py-0 mr-sm-2 mt-0 " id="agemin">
+        <option value="18" selected="">--</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+        <option value="32">32</option>
+        <option value="33">33</option>
+        <option value="34">34</option>
+        <option value="35">35</option>
+        <option value="36">36</option>
+        <option value="37">37</option>
+        <option value="38">38</option>
+        <option value="39">39</option>
+        <option value="40">40</option>
+        <option value="41">41</option>
+        <option value="42">42</option>
+        <option value="43">43</option>
+        <option value="44">44</option>
+        <option value="45">45</option>
+        <option value="46">46</option>
+        <option value="47">47</option>
+        <option value="48">48</option>
+        <option value="49">49</option>
+        <option value="50">50</option>
+        <option value="51">51</option>
+        <option value="52">52</option>
+        <option value="53">53</option>
+        <option value="54">54</option>
+        <option value="55">55</option>
+        <option value="56">56</option>
+        <option value="57">57</option>
+        <option value="58">58</option>
+        <option value="59">59</option>
+        <option value="60">60</option>
+        <option value="61">61</option>
+        <option value="62">62</option>
+        <option value="63">63</option>
+        <option value="64">64</option>
+        <option value="65">65</option>
+        <option value="66">66</option>
+        <option value="67">67</option>
+        <option value="68">68</option>
+        <option value="69">69</option>
+        <option value="70">70</option>
+        <option value="71">71</option>
+        <option value="72">72</option>
+        <option value="73">73</option>
+        <option value="74">74</option>
+        <option value="75">75</option>
+        <option value="76">76</option>
+        <option value="77">77</option>
+        <option value="78">78</option>
+        <option value="79">79</option>
+        <option value="80">80</option>
+        <option value="81">81</option>
+        <option value="82">82</option>
+        <option value="83">83</option>
+        <option value="84">84</option>
+        <option value="85">85</option>
+        <option value="86">86</option>
+        <option value="87">87</option>
+        <option value="88">88</option>
+        <option value="89">89</option>
+        <option value="90">90</option>
+        <option value="91">91</option>
+        <option value="92">92</option>
+        <option value="93">93</option>
+        <option value="94">94</option>
+        <option value="95">95</option>
+        <option value="96">96</option>
+        <option value="97">97</option>
+        <option value="98">98</option>
+        <option value="99">99</option>
+      </select>
+      <label for="agemax">الى</label>
+      <select name="agemax" class=" custom-select  py-0 mr-sm-2" id="agemax">
+        <option value="99" selected="">--</option>
+        <option value="99">99</option>
+        <option value="98">98</option>
+        <option value="97">97</option>
+        <option value="96">96</option>
+        <option value="95">95</option>
+        <option value="94">94</option>
+        <option value="93">93</option>
+        <option value="92">92</option>
+        <option value="91">91</option>
+        <option value="90">90</option>
+        <option value="89">89</option>
+        <option value="88">88</option>
+        <option value="87">87</option>
+        <option value="86">86</option>
+        <option value="85">85</option>
+        <option value="84">84</option>
+        <option value="83">83</option>
+        <option value="82">82</option>
+        <option value="81">81</option>
+        <option value="80">80</option>
+        <option value="79">79</option>
+        <option value="78">78</option>
+        <option value="77">77</option>
+        <option value="76">76</option>
+        <option value="75">75</option>
+        <option value="74">74</option>
+        <option value="73">73</option>
+        <option value="72">72</option>
+        <option value="71">71</option>
+        <option value="70">70</option>
+        <option value="69">69</option>
+        <option value="68">68</option>
+        <option value="67">67</option>
+        <option value="66">66</option>
+        <option value="65">65</option>
+        <option value="64">64</option>
+        <option value="63">63</option>
+        <option value="62">62</option>
+        <option value="61">61</option>
+        <option value="60">60</option>
+        <option value="59">59</option>
+        <option value="58">58</option>
+        <option value="57">57</option>
+        <option value="56">56</option>
+        <option value="55">55</option>
+        <option value="54">54</option>
+        <option value="53">53</option>
+        <option value="52">52</option>
+        <option value="51">51</option>
+        <option value="50">50</option>
+        <option value="49">49</option>
+        <option value="48">48</option>
+        <option value="47">47</option>
+        <option value="46">46</option>
+        <option value="45">45</option>
+        <option value="44">44</option>
+        <option value="43">43</option>
+        <option value="42">42</option>
+        <option value="41">41</option>
+        <option value="40">40</option>
+        <option value="39">39</option>
+        <option value="38">38</option>
+        <option value="37">37</option>
+        <option value="36">36</option>
+        <option value="35">35</option>
+        <option value="34">34</option>
+        <option value="33">33</option>
+        <option value="32">32</option>
+        <option value="31">31</option>
+        <option value="30">30</option>
+        <option value="29">29</option>
+        <option value="28">28</option>
+        <option value="27">27</option>
+        <option value="26">26</option>
+        <option value="25">25</option>
+        <option value="24">24</option>
+        <option value="23">23</option>
+        <option value="22">22</option>
+        <option value="21">21</option>
+        <option value="20">20</option>
+        <option value="19">19</option>
+        <option value="18">18</option>
+      </select>
+      <label class="mx-2">سنة</label>
+    </div>
+    <div class="col d-inline-flex input-group my-2 px-0   ">
+      <span style="width:50px" class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="img-fluid p-1 bi bi-geo-alt" viewBox="0 0 16 16"><path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"></path><path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path></svg></span>
+      <input id="location" name="location" type="text" class="w-50 form-control" placeholder="الدولة/المحافظة/المدينة..." aria-label="الدولة/المحافظة/المدينة...">
+    </div>
+    <button type="submit" class="m-2  col-md-1 btn btn-warning  float-start">بحث</button>
+  </form>
+</div>
+<div class="offcanvas offcanvas-start d-flex align-items-center justify-content-center" tabindex="-1" id="searchcanvas" aria-labelledby="searchcanvasLabel">
+  <div class="offcanvas-header border-bottom border-dark py-2 px-2 w-100">
+    <p class="h5 offcanvas-title" id="searchcanvasLabel">
+      <span class="mx-2 d-inline-block"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="32" height="32" class="img-fluid p-1 bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path></svg></span>بحث
+    </p>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body d-flex flex-column align-items-center justify-content-center w-100">
+    <form class="row w-100" method="post" action="/search/">
+      <div class="mb-3 w-100">
+        <label class="form-label">بحث عن:</label>
+        <div class="form-check form-check-inline">
+        <input type="radio" class=" btn-check " name="gender_m" id="success-outlined_m" value="w" checked="">
+        <label class="btn btn-sm btn-outline-dark" for="success-outlined_m">بنات</label>
+        </div>
+        <div class="form-check form-check-inline">
+        <input type="radio" class=" btn-check" name="gender_m" id="danger-outlined_m" value="m">
+        <label class="btn btn-sm btn-outline-dark" for="danger-outlined_m">رجال</label>
+        </div>
+      </div>
+      <div class="mb-3 w-100">
+        <label class="form-label">السن من:</label>
+        <select name="agemin_m" class="form-select" id="agemin_m">
+          <option value="18" selected="">--</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+          <option value="21">21</option>
+          <option value="22">22</option>
+          <option value="23">23</option>
+          <option value="24">24</option>
+          <option value="25">25</option>
+          <option value="26">26</option>
+          <option value="27">27</option>
+          <option value="28">28</option>
+          <option value="29">29</option>
+          <option value="30">30</option>
+          <option value="31">31</option>
+          <option value="32">32</option>
+          <option value="33">33</option>
+          <option value="34">34</option>
+          <option value="35">35</option>
+          <option value="36">36</option>
+          <option value="37">37</option>
+          <option value="38">38</option>
+          <option value="39">39</option>
+          <option value="40">40</option>
+          <option value="41">41</option>
+          <option value="42">42</option>
+          <option value="43">43</option>
+          <option value="44">44</option>
+          <option value="45">45</option>
+          <option value="46">46</option>
+          <option value="47">47</option>
+          <option value="48">48</option>
+          <option value="49">49</option>
+          <option value="50">50</option>
+          <option value="51">51</option>
+          <option value="52">52</option>
+          <option value="53">53</option>
+          <option value="54">54</option>
+          <option value="55">55</option>
+          <option value="56">56</option>
+          <option value="57">57</option>
+          <option value="58">58</option>
+          <option value="59">59</option>
+          <option value="60">60</option>
+          <option value="61">61</option>
+          <option value="62">62</option>
+          <option value="63">63</option>
+          <option value="64">64</option>
+          <option value="65">65</option>
+          <option value="66">66</option>
+          <option value="67">67</option>
+          <option value="68">68</option>
+          <option value="69">69</option>
+          <option value="70">70</option>
+          <option value="71">71</option>
+          <option value="72">72</option>
+          <option value="73">73</option>
+          <option value="74">74</option>
+          <option value="75">75</option>
+          <option value="76">76</option>
+          <option value="77">77</option>
+          <option value="78">78</option>
+          <option value="79">79</option>
+          <option value="80">80</option>
+          <option value="81">81</option>
+          <option value="82">82</option>
+          <option value="83">83</option>
+          <option value="84">84</option>
+          <option value="85">85</option>
+          <option value="86">86</option>
+          <option value="87">87</option>
+          <option value="88">88</option>
+          <option value="89">89</option>
+          <option value="90">90</option>
+          <option value="91">91</option>
+          <option value="92">92</option>
+          <option value="93">93</option>
+          <option value="94">94</option>
+          <option value="95">95</option>
+          <option value="96">96</option>
+          <option value="97">97</option>
+          <option value="98">98</option>
+          <option value="99">99</option>
+        </select>
+        <label class="form-label">الى</label>
+        <select name="agemax_m" class="form-select" id="agemax_m">
+          <option value="99" selected="">--</option>
+          <option value="99">99</option>
+          <option value="98">98</option>
+          <option value="97">97</option>
+          <option value="96">96</option>
+          <option value="95">95</option>
+          <option value="94">94</option>
+          <option value="93">93</option>
+          <option value="92">92</option>
+          <option value="91">91</option>
+          <option value="90">90</option>
+          <option value="89">89</option>
+          <option value="88">88</option>
+          <option value="87">87</option>
+          <option value="86">86</option>
+          <option value="85">85</option>
+          <option value="84">84</option>
+          <option value="83">83</option>
+          <option value="82">82</option>
+          <option value="81">81</option>
+          <option value="80">80</option>
+          <option value="79">79</option>
+          <option value="78">78</option>
+          <option value="77">77</option>
+          <option value="76">76</option>
+          <option value="75">75</option>
+          <option value="74">74</option>
+          <option value="73">73</option>
+          <option value="72">72</option>
+          <option value="71">71</option>
+          <option value="70">70</option>
+          <option value="69">69</option>
+          <option value="68">68</option>
+          <option value="67">67</option>
+          <option value="66">66</option>
+          <option value="65">65</option>
+          <option value="64">64</option>
+          <option value="63">63</option>
+          <option value="62">62</option>
+          <option value="61">61</option>
+          <option value="60">60</option>
+          <option value="59">59</option>
+          <option value="58">58</option>
+          <option value="57">57</option>
+          <option value="56">56</option>
+          <option value="55">55</option>
+          <option value="54">54</option>
+          <option value="53">53</option>
+          <option value="52">52</option>
+          <option value="51">51</option>
+          <option value="50">50</option>
+          <option value="49">49</option>
+          <option value="48">48</option>
+          <option value="47">47</option>
+          <option value="46">46</option>
+          <option value="45">45</option>
+          <option value="44">44</option>
+          <option value="43">43</option>
+          <option value="42">42</option>
+          <option value="41">41</option>
+          <option value="40">40</option>
+          <option value="39">39</option>
+          <option value="38">38</option>
+          <option value="37">37</option>
+          <option value="36">36</option>
+          <option value="35">35</option>
+          <option value="34">34</option>
+          <option value="33">33</option>
+          <option value="32">32</option>
+          <option value="31">31</option>
+          <option value="30">30</option>
+          <option value="29">29</option>
+          <option value="28">28</option>
+          <option value="27">27</option>
+          <option value="26">26</option>
+          <option value="25">25</option>
+          <option value="24">24</option>
+          <option value="23">23</option>
+          <option value="22">22</option>
+          <option value="21">21</option>
+          <option value="20">20</option>
+          <option value="19">19</option>
+          <option value="18">18</option>
+        </select>
+      </div>
+      <div class="col d-flex input-group mb-3 w-100">
+        <span class="input-group-text" style="width:50px"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="img-fluid p-1 bi bi-geo-alt" viewBox="0 0 16 16"><path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"></path><path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path></svg></span>
+        <input id="location_m" name="location_m" type="text" class="w-50 form-control" placeholder="📍 الدولة/المحافظة/المدينة..." aria-label="الدولة/المحافظة/المدينة...">
+      </div>
+      <button type="submit" class="btn btn-warning">بحث</button>
+    </form>
+  </div>
+</div>
+</div>                                            
+  <section class="container" style="height: auto !important;">                                         
+                                                <div style="height:280px;" class=" text-center m-2"><script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4305924041911758" crossorigin="anonymous" data-checked-head="true"></script> <!-- h_all_top_large --> <ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-4305924041911758" data-ad-slot="7698500828" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done" data-ad-status="unfilled"><div id="aswift_1_host" style="border: none; height: 280px; width: 680px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: visible;"><iframe id="aswift_1" name="aswift_1" browsingtopics="true" style="left:0;position:absolute;top:0;border:0;width:680px;height:280px;min-height:auto;max-height:none;min-width:auto;max-width:none;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="680" height="280" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting; run-ad-auction" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-4305924041911758&amp;output=html&amp;h=280&amp;slotname=7698500828&amp;adk=3622111869&amp;adf=3606159749&amp;pi=t.ma~as.7698500828&amp;w=680&amp;abgtt=6&amp;fwrn=4&amp;fwrnh=100&amp;lmt=1755120645&amp;rafmt=1&amp;format=680x280&amp;url=https%3A%2F%2Fwww.yazawaj.com%2F&amp;fwr=0&amp;fwrattr=true&amp;rpe=1&amp;resp_fmts=3&amp;wgl=1&amp;uach=WyJXaW5kb3dzIiwiIiwiIiwiIiwiIixudWxsLDAsbnVsbCwiIixudWxsLDBd&amp;dt=1755120644938&amp;bpp=8&amp;bdt=1082&amp;idt=301&amp;shv=r20250812&amp;mjsv=m202508070101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie_enabled=1&amp;eoidce=1&amp;prev_fmts=0x0&amp;nras=1&amp;correlator=4662304818778&amp;frm=20&amp;pv=1&amp;u_tz=330&amp;u_his=2&amp;u_h=600&amp;u_w=800&amp;u_ah=600&amp;u_aw=800&amp;u_cd=24&amp;u_sd=1&amp;dmc=8&amp;adx=42&amp;ady=82&amp;biw=763&amp;bih=439&amp;scr_x=0&amp;scr_y=0&amp;eid=31093861%2C31093925%2C31093928%2C31093933%2C31093974%2C31093983%2C95362655%2C95367636%2C95369084%2C31094003%2C95344790%2C95359266&amp;oid=2&amp;pvsid=6342983145828325&amp;tmod=844765105&amp;uas=0&amp;nvt=1&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C800%2C0%2C800%2C600%2C778%2C439&amp;vis=1&amp;rsz=%7C%7CeE%7C&amp;abl=CS&amp;pfx=0&amp;fu=128&amp;bc=31&amp;bz=1.03&amp;td=1&amp;tdf=2&amp;psd=W251bGwsbnVsbCxudWxsLDNd&amp;nt=1&amp;ifi=2&amp;uci=a!2&amp;fsb=1&amp;dtd=337" data-google-container-id="a!2" tabindex="0" title="Advertisement" aria-label="Advertisement" data-load-complete="true" data-google-query-id="CMf2u_XdiI8DFVK_SwUdbBIWYg"></iframe></div></ins> <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script></div>
+    <div class="card mb-3">
+        <div class="card-body">
+            <h1 class="h4 card-title">موقع زواج وتعارف مجاني - آخر المتصلين</h1>
+            <p class="card-text">
+            </p>
+        </div>
+    </div>
+<div class="fluid-container mx-lg-4">
+    <ul class="profile-list list-unstyled">
+        <li class="profile-item-card">
+            <div class="card pt-1 shadow-sm h-100">
+                <div class="profile-image-container d-flex justify-content-center align-items-center p-0 mx-auto ">
+                    <a href="https://www.yazawaj.com/profile/همس" class="d-block overflow-hidden position-relative">
+                        <img src="165/3935.jpg" width="323" height="165" title="انا عزباء، 31 سنة هنا من أجل البحث عن شريك لتحقيق 0 تعرف عليّ أكثر من خلال بروفايلي، فربّ صدفة خير من ألف ميعاد." alt="انا عزباء، 31 سنة هنا من أجل البحث عن شريك لتحقيق 0 تعرف عليّ أكثر من خلال بروفايلي، فربّ صدفة خير من ألف ميعاد." class="img-fluid profile-image show-smooth">
+                    </a>
+                </div>
+                <div class="card-body d-none d-lg-block text-center">
+                    <a href="https://www.yazawaj.com/profile/همس" class="d-block text-dark fw-bold">
+                        <p class="h6">همس</p>
+                    </a>
+                    <p class="card-text  small text-muted mb-2">
+                        انا عزباء، 31 سنة هنا من أجل البحث عن شريك لتحقيق 0 تعرف عليّ أكثر من خلال بروفايلي، فربّ صدفة خير من ألف ميعاد.
+                    </p>
+                </div>
+                <div class="card-body p-1 d-block d-lg-none text-center truncate-container ">
+                    <a href="https://www.yazawaj.com/profile/همس" class="small d-block text-dark fw-bold text-truncate">
+                        همس 
+                    </a>
+                    <small class="text-muted text-truncate">
+                    0/31 سنة
+                    </small>
+                </div>
+                <div class="d-flex me-auto px-3 d-none d-lg-block justify-content-between align-items-center">
+                       <form method="post" action="#" class="m-0">
+                           <input type="hidden" name="sendTo" value="4887">
+                           <button type="button" data-forbiddenmsg="عذرا، يجب عليك تسجيل الدخول لتتمكن من إرسال الرسائل" class="sndMsg_front btn btn-dating btn-sm">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16"><path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"></path></svg> أرسل رسالة
+                           </button>
+                       </form>
+                   </div>
+                <div class="p-2 d-flex text-truncate align-items-center">
+                <small class="text-muted text-truncate ">
+                <a href="https://www.yazawaj.com/dating/country/egypt/women/"><span class="flag-icon flag-icon-eg me-2"></span></a>
+                <a href="https://www.yazawaj.com/dating/egypt/women/البحر+الاحمر/البحرالأحمر/" class="text-dark ">البحر الاحمر</a>,  <a href="https://www.yazawaj.com/dating/country/egypt/women/" class="text-dark">مصر</a>
+                        </small>
+            </div>
+            </div>
+        </li>
+        <li class="profile-item-card">
+            <div class="card pt-1 shadow-sm h-100">
+                <div class="profile-image-container d-flex justify-content-center align-items-center p-0 mx-auto ">
+                    <a href="https://www.yazawaj.com/profile/نهيلة8" class="d-block overflow-hidden position-relative">
+                        <img src="165/19316.jpg" width="248" height="165" title="انا عزباء، 36 سنة هنا من أجل البحث عن شريك لتحقيق زواج عادي تعرف عليّ أكثر من خلال بروفايلي، فربّ صدفة خير من ألف ميعاد." alt="انا عزباء، 36 سنة هنا من أجل البحث عن شريك لتحقيق زواج عادي تعرف عليّ أكثر من خلال بروفايلي، فربّ صدفة خير من ألف ميعاد." class="img-fluid profile-image show-smooth">
+                    </a>
+                </div>
+                <div class="card-body d-none d-lg-block text-center">
+                    <a href="https://www.yazawaj.com/profile/نهيلة8" class="d-block text-dark fw-bold">
+                        <p class="h6">نهيلة8</p>
+                    </a>
+                    <p class="card-text  small text-muted mb-2">
+                        انا عزباء، 36 سنة هنا من أجل البحث عن شريك لتحقيق زواج عادي تعرف عليّ أكثر من خلال بروفايلي، فربّ صدفة خير من ألف ميعاد.
+                    </p>
+                </div>
+                <div class="card-body p-1 d-block d-lg-none text-center truncate-container ">
+                    <a href="https://www.yazawaj.com/profile/نهيلة8" class="small d-block text-dark fw-bold text-truncate">
+                        نهيلة8 
+                    </a>
+                    <small class="text-muted text-truncate">
+                    زواج عادي/36 سنة
+                    </small>
+                </div>
+                <div class="d-flex me-auto px-3 d-none d-lg-block justify-content-between align-items-center">
+                       <form method="post" action="#" class="m-0">
+                           <input type="hidden" name="sendTo" value="18938">
+                           <button type="button" data-forbiddenmsg="عذرا، يجب عليك تسجيل الدخول لتتمكن من إرسال الرسائل" class="sndMsg_front btn btn-dating btn-sm">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16"><path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"></path></svg> أرسل رسالة
+                           </button>
+                       </form>
+                   </div>
+                <div class="p-2 d-flex text-truncate align-items-center">
+                <small class="text-muted text-truncate ">
+                <a href="https://www.yazawaj.com/dating/country/morocco/women/"><span class="flag-icon flag-icon-ma me-2"></span></a>
+                <a href="https://www.yazawaj.com/dating/morocco/women/الرباط/الرباط+ـ+سلا+ـ+زمور+ـ+زعير/" class="text-dark ">الرباط</a>,  <a href="https://www.yazawaj.com/dating/country/morocco/women/" class="text-dark">المغرب</a>
+                        </small>
+            </div>
+            </div>
+        </li>
+        <li class="profile-item-card">
+            <div class="card pt-1 shadow-sm h-100">
+                <div class="profile-image-container d-flex justify-content-center align-items-center p-0 mx-auto ">
+                    <a href="https://www.yazawaj.com/profile/ميساء3" class="d-block overflow-hidden position-relative">
+                        <img src="165/243952.jpg" width="165" height="175" title="انا عزباء، 33 سنة هنا من أجل البحث عن شريك لتحقيق زواج عادي تعرف عليّ أكثر من خلال بروفايلي، فربّ صدفة خير من ألف ميعاد." alt="انا عزباء، 33 سنة هنا من أجل البحث عن شريك لتحقيق زواج عادي تعرف عليّ أكثر من خلال بروفايلي، فربّ صدفة خير من ألف ميعاد." class="img-fluid profile-image show-smooth">
+                    </a>
+                </div>
+                <div class="card-body d-none d-lg-block text-center">
+                    <a href="https://www.yazawaj.com/profile/ميساء3" class="d-block text-dark fw-bold">
+                        <p class="h6">ميساء3</p>
+                    </a>
+                    <p class="card-text  small text-muted mb-2">
+                        انا عزباء، 33 سنة هنا من أجل البحث عن شريك لتحقيق زواج عادي تعرف عليّ أكثر من خلال بروفايلي، فربّ صدفة خير من ألف ميعاد.
+                    </p>
+                </div>
+                <div class="card-body p-1 d-block d-lg-none text-center truncate-container ">
+                    <a href="https://www.yazawaj.com/profile/ميساء3" class="small d-block text-dark fw-bold text-truncate">
+                        ميساء3 
+                    </a>
+                    <small class="text-muted text-truncate">
+                    زواج عادي/33 سنة
+                    </small>
+                </div>
+                <div class="d-flex me-auto px-3 d-none d-lg-block justify-content-between align-items-center">
+                       <form method="post" action="#" class="m-0">
+                           <input type="hidden" name="sendTo" value="339127">
+                           <button type="button" data-forbiddenmsg="عذرا، يجب عليك تسجيل الدخول لتتمكن من إرسال الرسائل" class="sndMsg_front btn btn-dating btn-sm">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16"><path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"></path></svg> أرسل رسالة
+                           </button>
+                       </form>
+                   </div>
+                <div class="p-2 d-flex text-truncate align-items-center">
+                <small class="text-muted text-truncate ">
+                <a href="https://www.yazawaj.com/dating/country/morocco/women/"><span class="flag-icon flag-icon-ma me-2"></span></a>
+                <a href="https://www.yazawaj.com/dating/morocco/women/Casa/الدار+البيضاء+الكبرى/" class="text-dark ">Casa</a>,  <a href="https://www.yazawaj.com/dating/country/morocco/women/" class="text-dark">المغرب</a>
+                        </small>
+            </div>
+            </div>
+        </li>
+        <li class="profile-item-card">
+            <div class="card pt-1 shadow-sm h-100">
+                <div class="profile-image-container d-flex justify-content-center align-items-center p-0 mx-auto ">
+                    <a href="https://www.yazawaj.com/profile/مناه" class="d-block overflow-hidden position-relative">
+                        <img src="165/216992.jpg" width="220" height="165" title="انا عزباء، 40 سنة هنا من أجل البحث عن شريك لتحقيق زواج مسيار تعرف عليّ أكثر من خلال بروفايلي، فربّ صدفة خير من ألف ميعاد." alt="انا عزباء، 40 سنة هنا من أجل البحث عن شريك لتحقيق زواج مسيار تعرف عليّ أكثر من خلال بروفايلي، فربّ صدفة خير من ألف ميعاد." class="img-fluid profile-image show-smooth">
+                    </a>
+                </div>
+                <div class="card-body d-none d-lg-block text-center">
+                    <a href="https://www.yazawaj.com/profile/مناه" class="d-block text-dark fw-bold">
+                        <p class="h6">مناه</p>
+                    </a>
+                    <p class="card-text  small text-muted mb-2">
+                        انا عزباء، 40 سنة هنا من أجل البحث عن شريك لتحقيق زواج مسيار تعرف عليّ أكثر من خلال بروفايلي، فربّ صدفة خير من ألف ميعاد.
+                    </p>
+                </div>
+                <div class="card-body p-1 d-block d-lg-none text-center truncate-container ">
+                    <a href="https://www.yazawaj.com/profile/مناه" class="small d-block text-dark fw-bold text-truncate">
+                        مناه 
+                    </a>
+                    <small class="text-muted text-truncate">
+                    زواج مسيار/40 سنة
+                    </small>
+                </div>
+                <div class="d-flex me-auto px-3 d-none d-lg-block justify-content-between align-items-center">
+                       <form method="post" action="#" class="m-0">
+                           <input type="hidden" name="sendTo" value="311463">
+                           <button type="button" data-forbiddenmsg="عذرا، يجب عليك تسجيل الدخول لتتمكن من إرسال الرسائل" class="sndMsg_front btn btn-dating btn-sm">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16"><path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"></path></svg> أرسل رسالة
+                           </button>
+                       </form>
+                   </div>
+                <div class="p-2 d-flex text-truncate align-items-center">
+                <small class="text-muted text-truncate ">
+                <a href="https://www.yazawaj.com/dating/country/egypt/women/"><span class="flag-icon flag-icon-eg me-2"></span></a>
+                <a href="https://www.yazawaj.com/dating/egypt/women/عائشه/الإسكندرية/" class="text-dark ">عائشه</a>,  <a href="https://www.yazawaj.com/dating/country/egypt/women/" class="text-dark">مصر</a>
+                        </small>
+            </div>
+            </div>
+        </li>
+        <li class="profile-item-card">
+            <div class="card pt-1 shadow-sm h-100">
+                <div class="profile-image-container d-flex justify-content-center align-items-center p-0 mx-auto ">
+                    <a href="https://www.yazawaj.com/profile/مغتري1994" class="d-block overflow-hidden position-relative">
+                        <img src="165/330816.jpeg" width="220" height="165" title="انا مطلق، 60 سنة هنا من أجل البحث عن شريك لتحقيق زواج عادي تعرف عليّ أكثر من خلال بروفايلي، فربّ صدفة خير من ألف ميعاد." alt="انا مطلق، 60 سنة هنا من أجل البحث عن شريك لتحقيق زواج عادي تعرف عليّ أكثر من خلال بروفايلي، فربّ صدفة خير من ألف ميعاد." class="img-fluid profile-image show-smooth">
+                    </a>
+                </div>
+                <div class="card-body d-none d-lg-block text-center">
+                    <a href="https://www.yazawaj.com/profile/مغتري1994" class="d-block text-dark fw-bold">
+                        <p class="h6">مغتري1994</p>
+                    </a>
+                    <p class="card-text  small text-muted mb-2">
+                        انا مطلق، 60 سنة هنا من أجل البحث عن شريك لتحقيق زواج عادي تعرف عليّ أكثر من خلال بروفايلي، فربّ صدفة خير من ألف ميعاد.
+                    </p>
+                </div>
+                <div class="card-body p-1 d-block d-lg-none text-center truncate-container ">
+                    <a href="https://www.yazawaj.com/profile/مغتري1994" class="small d-block text-dark fw-bold text-truncate">
+                        مغتري1994 
+                    </a>
+                    <small class="text-muted text-truncate">
+                    زواج عادي/60 سنة
+                    </small>
+                </div>
+                <div class="d-flex me-auto px-3 d-none d-lg-block justify-content-between align-items-center">
+                       <form method="post" action="#" class="m-0">
+                           <input type="hidden" name="sendTo" value="444588">
+                           <button type="button" data-forbiddenmsg="عذرا، يجب عليك تسجيل الدخول لتتمكن من إرسال الرسائل" class="sndMsg_front btn btn-dating btn-sm">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16"><path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"></path></svg> أرسل رسالة
+                           </button>
+                       </form>
+                   </div>
+                <div class="p-2 d-flex text-truncate align-items-center">
+                <small class="text-muted text-truncate ">
+                <a href="https://www.yazawaj.com/dating/country/algeria/men/"><span class="flag-icon flag-icon-dz me-2"></span></a>
+                <a href="https://www.yazawaj.com/dating/algeria/men/باتنة‎/ولاية+باتنة/" class="text-dark ">باتنة‎</a>,  <a href="https://www.yazawaj.com/dating/country/algeria/men/" class="text-dark">الجزائر</a>
+                        </small>
+            </div>
+            </div>
+        </li>
+        <li class="profile-item-card">
+            <div class="card pt-1 shadow-sm h-100">
+                <div class="profile-image-container d-flex justify-content-center align-items-center p-0 mx-auto ">
+                    <a href="https://www.yazawaj.com/profile/مايا" class="d-block overflow-hidden position-relative">
+                        <img src="165/12541.jpg" width="165" height="220" title="انا عزباء، 40 سنة هنا من أجل البحث عن شريك لتحقيق علاقة تعارف تعرف عليّ أكثر من خلال بروفايلي، فربّ صدفة خير من ألف ميعاد." alt="انا عزباء، 40 سنة هنا من أجل البحث عن شريك لتحقيق علاقة تعارف تعرف عليّ أكثر من خلال بروفايلي، فربّ صدفة خير من ألف ميعاد." class="img-fluid profile-image show-smooth">
+                    </a>
+                </div>
+                <div class="card-body d-none d-lg-block text-center">
+                    <a href="https://www.yazawaj.com/profile/مايا" class="d-block text-dark fw-bold">
+                        <p class="h6">مايا</p>
+                    </a>
+                    <p class="card-text  small text-muted mb-2">
+                        انا عزباء، 40 سنة هنا من أجل البحث عن شريك لتحقيق علاقة تعارف تعرف عليّ أكثر من خلال بروفايلي، فربّ صدفة خير من ألف ميعاد.
+                    </p>
+                </div>
+                <div class="card-body p-1 d-block d-lg-none text-center truncate-container ">
+                    <a href="https://www.yazawaj.com/profile/مايا" class="small d-block text-dark fw-bold text-truncate">
+                        مايا 
+                    </a>
+                    <small class="text-muted text-truncate">
+                    علاقة تعارف/40 سنة
+                    </small>
+                </div>
+                <div class="d-flex me-auto px-3 d-none d-lg-block justify-content-between align-items-center">
+                       <form method="post" action="#" class="m-0">
+                           <input type="hidden" name="sendTo" value="13676">
+                           <button type="button" data-forbiddenmsg="عذرا، يجب عليك تسجيل الدخول لتتمكن من إرسال الرسائل" class="sndMsg_front btn btn-dating btn-sm">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16"><path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"></path></svg> أرسل رسالة
+                           </button>
+                       </form>
+                   </div>
+                <div class="p-2 d-flex text-truncate align-items-center">
+                <small class="text-muted text-truncate ">
+                <a href="https://www.yazawaj.com/dating/country/syrian+arab+republic/women/"><span class="flag-icon flag-icon-sy me-2"></span></a>
+                <a href="https://www.yazawaj.com/dating/syrian+arab+republic/women/دمشق/دمشق/" class="text-dark ">دمشق</a>,  <a href="https://www.yazawaj.com/dating/country/syrian+arab+republic/women/" class="text-dark">سوريا</a>
+                        </small>
+            </div>
+            </div>
+        </li>
+        <li class="profile-item-card">
+            <div class="card pt-1 shadow-sm h-100">
+                <div class="profile-image-container d-flex justify-content-center align-items-center p-0 mx-auto ">
+                    <a href="https://www.yazawaj.com/profile/ف123456789" class="d-block overflow-hidden position-relative">
+                        <img src="165/154836.jpg" width="165" height="169" title="انا مطلقة، 42 سنة هنا من أجل البحث عن شريك لتحقيق زواج عادي تعرف عليّ أكثر من خلال بروفايلي، فربّ صدفة خير من ألف ميعاد." alt="انا مطلقة، 42 سنة هنا من أجل البحث عن شريك لتحقيق زواج عادي تعرف عليّ أكثر من خلال بروفايلي، فربّ صدفة خير من ألف ميعاد." class="img-fluid profile-image show-smooth">
+                    </a>
+                </div>
+                <div class="card-body d-none d-lg-block text-center">
+                    <a href="https://www.yazawaj.com/profile/ف123456789" class="d-block text-dark fw-bold">
+                        <p class="h6">ف123456789</p>
+                    </a>
+                    <p class="card-text  small text-muted mb-2">
+                        انا مطلقة، 42 سنة هنا من أجل البحث عن شريك لتحقيق زواج عادي تعرف عليّ أكثر من خلال بروفايلي، فربّ صدفة خير من ألف ميعاد.
+                    </p>
+                </div>
+                <div class="card-body p-1 d-block d-lg-none text-center truncate-container ">
+                    <a href="https://www.yazawaj.com/profile/ف123456789" class="small d-block text-dark fw-bold text-truncate">
+                        ف123456789 
+                    </a>
+                    <small class="text-muted text-truncate">
+                    زواج عادي/42 سنة
+                    </small>
+                </div>
+                <div class="d-flex me-auto px-3 d-none d-lg-block justify-content-between align-items-center">
+                       <form method="post" action="#" class="m-0">
+                           <input type="hidden" name="sendTo" value="215642">
+                           <button type="button" data-forbiddenmsg="عذرا، يجب عليك تسجيل الدخول لتتمكن من إرسال الرسائل" class="sndMsg_front btn btn-dating btn-sm">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16"><path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"></path></svg> أرسل رسالة
+                           </button>
+                       </form>
+                   </div>
+                <div class="p-2 d-flex text-truncate align-items-center">
+                <small class="text-muted text-truncate ">
+                <a href="https://www.yazawaj.com/dating/country/algeria/women/"><span class="flag-icon flag-icon-dz me-2"></span></a>
+                <a href="https://www.yazawaj.com/dating/algeria/women/بشار/بشار/" class="text-dark ">بشار</a>,  <a href="https://www.yazawaj.com/dating/country/algeria/women/" class="text-dark">الجزائر</a>
+                        </small>
+            </div>
+            </div>
+        </li>
+        <li class="profile-item-card">
+            <div class="card pt-1 shadow-sm h-100">
+                <div class="profile-image-container d-flex justify-content-center align-items-center p-0 mx-auto ">
+                    <a href="https://www.yazawaj.com/profile/شيشي" class="d-block overflow-hidden position-relative">
+                        <img src="165/238014.jpg" width="165" height="220" title="انا u، 44 سنة هنا من أجل البحث عن شريك لتحقيق زواج عادي تعرف عليّ أكثر من خلال بروفايلي، فربّ صدفة خير من ألف ميعاد." alt="انا u، 44 سنة هنا من أجل البحث عن شريك لتحقيق زواج عادي تعرف عليّ أكثر من خلال بروفايلي، فربّ صدفة خير من ألف ميعاد." class="img-fluid profile-image show-smooth">
+                    </a>
+                </div>
+                <div class="card-body d-none d-lg-block text-center">
+                    <a href="https://www.yazawaj.com/profile/شيشي" class="d-block text-dark fw-bold">
+                        <p class="h6">شيشي</p>
+                    </a>
+                    <p class="card-text  small text-muted mb-2">
+                        انا u، 44 سنة هنا من أجل البحث عن شريك لتحقيق زواج عادي تعرف عليّ أكثر من خلال بروفايلي، فربّ صدفة خير من ألف ميعاد.
+                    </p>
+                </div>
+                <div class="card-body p-1 d-block d-lg-none text-center truncate-container ">
+                    <a href="https://www.yazawaj.com/profile/شيشي" class="small d-block text-dark fw-bold text-truncate">
+                        شيشي 
+                    </a>
+                    <small class="text-muted text-truncate">
+                    زواج عادي/44 سنة
+                    </small>
+                </div>
+                <div class="d-flex me-auto px-3 d-none d-lg-block justify-content-between align-items-center">
+                       <form method="post" action="#" class="m-0">
+                           <input type="hidden" name="sendTo" value="331331">
+                           <button type="button" data-forbiddenmsg="عذرا، يجب عليك تسجيل الدخول لتتمكن من إرسال الرسائل" class="sndMsg_front btn btn-dating btn-sm">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16"><path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"></path></svg> أرسل رسالة
+                           </button>
+                       </form>
+                   </div>
+                <div class="p-2 d-flex text-truncate align-items-center">
+                <small class="text-muted text-truncate ">
+                <a href="https://www.yazawaj.com/dating/country/morocco/women/"><span class="flag-icon flag-icon-ma me-2"></span></a>
+                <a href="https://www.yazawaj.com/dating/morocco/women/الدار+البيضاء/الدار+البيضاء+الكبرى/" class="text-dark ">الدار البيضاء</a>,  <a href="https://www.yazawaj.com/dating/country/morocco/women/" class="text-dark">المغرب</a>
+                        </small>
+            </div>
+            </div>
+        </li>
+        <li class="profile-item-card">
+            <div class="card pt-1 shadow-sm h-100">
+                <div class="profile-image-container d-flex justify-content-center align-items-center p-0 mx-auto ">
+                    <a href="https://www.yazawaj.com/profile/شمسليل" class="d-block overflow-hidden position-relative">
+                        <img src="165/200451.jpg" width="165" height="275" title="انا عزباء، 35 سنة هنا من أجل البحث عن شريك لتحقيق زواج عادي تعرف عليّ أكثر من خلال بروفايلي، فربّ صدفة خير من ألف ميعاد." alt="انا عزباء، 35 سنة هنا من أجل البحث عن شريك لتحقيق زواج عادي تعرف عليّ أكثر من خلال بروفايلي، فربّ صدفة خير من ألف ميعاد." class="img-fluid profile-image show-smooth">
+                    </a>
+                </div>
+                <div class="card-body d-none d-lg-block text-center">
+                    <a href="https://www.yazawaj.com/profile/شمسليل" class="d-block text-dark fw-bold">
+                        <p class="h6">شمسليل</p>
+                    </a>
+                    <p class="card-text  small text-muted mb-2">
+                        انا عزباء، 35 سنة هنا من أجل البحث عن شريك لتحقيق زواج عادي تعرف عليّ أكثر من خلال بروفايلي، فربّ صدفة خير من ألف ميعاد.
+                    </p>
+                </div>
+                <div class="card-body p-1 d-block d-lg-none text-center truncate-container ">
+                    <a href="https://www.yazawaj.com/profile/شمسليل" class="small d-block text-dark fw-bold text-truncate">
+                        شمسليل 
+                    </a>
+                    <small class="text-muted text-truncate">
+                    زواج عادي/35 سنة
+                    </small>
+                </div>
+                <div class="d-flex me-auto px-3 d-none d-lg-block justify-content-between align-items-center">
+                       <form method="post" action="#" class="m-0">
+                           <input type="hidden" name="sendTo" value="285824">
+                           <button type="button" data-forbiddenmsg="عذرا، يجب عليك تسجيل الدخول لتتمكن من إرسال الرسائل" class="sndMsg_front btn btn-dating btn-sm">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16"><path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"></path></svg> أرسل رسالة
+                           </button>
+                       </form>
+                   </div>
+                <div class="p-2 d-flex text-truncate align-items-center">
+                <small class="text-muted text-truncate ">
+                <a href="https://www.yazawaj.com/dating/country/morocco/women/"><span class="flag-icon flag-icon-ma me-2"></span></a>
+                <a href="https://www.yazawaj.com/dating/morocco/women/تيفلت/الرباط+ـ+سلا+ـ+زمور+ـ+زعير/" class="text-dark ">تيفلت</a>,  <a href="https://www.yazawaj.com/dating/country/morocco/women/" class="text-dark">المغرب</a>
+                        </small>
+            </div>
+            </div>
+        </li>
+        <li class="profile-item-card">
+            <div class="card pt-1 shadow-sm h-100">
+                <div class="profile-image-container d-flex justify-content-center align-items-center p-0 mx-auto ">
+                    <a href="https://www.yazawaj.com/profile/سومه+سمير" class="d-block overflow-hidden position-relative">
+                        <img src="165/121319.jpg" width="165" height="220" title="انا بنت مصريه من محافظه السويس هاديه طيوبه جميله مؤمنه بوجود الحب وبالقدر رومانسيه طويله طولي 173 ووزني 68 حنونه بقدس الحياه الزوجيه مرحه مؤدبه من عيله محترمه حاصله علي..." alt="انا بنت مصريه من محافظه السويس هاديه طيوبه جميله مؤمنه بوجود الحب وبالقدر رومانسيه طويله طولي 173 ووزني 68 حنونه بقدس الحياه الزوجيه مرحه مؤدبه من عيله محترمه حاصله علي..." class="img-fluid profile-image show-smooth">
+                    </a>
+                </div>
+                <div class="card-body d-none d-lg-block text-center">
+                    <a href="https://www.yazawaj.com/profile/سومه+سمير" class="d-block text-dark fw-bold">
+                        <p class="h6">سومه سمير</p>
+                    </a>
+                    <p class="card-text  small text-muted mb-2">
+                        انا بنت مصريه من محافظه السويس هاديه طيوبه جميله مؤمنه بوجود الحب وبالقدر رومانسيه طويله طولي 173 ووزني 68 حنونه بقدس الحياه الزوجيه مرحه مؤدبه من عيله محترمه حاصله علي...
+                    </p>
+                </div>
+                <div class="card-body p-1 d-block d-lg-none text-center truncate-container ">
+                    <a href="https://www.yazawaj.com/profile/سومه+سمير" class="small d-block text-dark fw-bold text-truncate">
+                        سومه سمير 
+                    </a>
+                    <small class="text-muted text-truncate">
+                    زواج عادي/44 سنة
+                    </small>
+                </div>
+                <div class="d-flex me-auto px-3 d-none d-lg-block justify-content-between align-items-center">
+                       <form method="post" action="#" class="m-0">
+                           <input type="hidden" name="sendTo" value="73245">
+                           <button type="button" data-forbiddenmsg="عذرا، يجب عليك تسجيل الدخول لتتمكن من إرسال الرسائل" class="sndMsg_front btn btn-dating btn-sm">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16"><path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"></path></svg> أرسل رسالة
+                           </button>
+                       </form>
+                   </div>
+                <div class="p-2 d-flex text-truncate align-items-center">
+                <small class="text-muted text-truncate ">
+                <a href="https://www.yazawaj.com/dating/country/egypt/women/"><span class="flag-icon flag-icon-eg me-2"></span></a>
+                <a href="https://www.yazawaj.com/dating/egypt/women/مدينه+الصباح/السويس/" class="text-dark ">مدينه الصباح</a>,  <a href="https://www.yazawaj.com/dating/country/egypt/women/" class="text-dark">مصر</a>
+                        </small>
+            </div>
+            </div>
+        </li>
+        <li class="profile-item-card">
+            <div class="card pt-1 shadow-sm h-100">
+                <div class="profile-image-container d-flex justify-content-center align-items-center p-0 mx-auto ">
+                    <a href="https://www.yazawaj.com/profile/سوسن.برادة" class="d-block overflow-hidden position-relative">
+                        <img src="165/268510.jpg" width="165" height="165" title="انا عزباء، 28 سنة هنا من أجل البحث عن شريك لتحقيق زواج عادي تعرف عليّ أكثر من خلال بروفايلي، فربّ صدفة خير من ألف ميعاد." alt="انا عزباء، 28 سنة هنا من أجل البحث عن شريك لتحقيق زواج عادي تعرف عليّ أكثر من خلال بروفايلي، فربّ صدفة خير من ألف ميعاد." class="img-fluid profile-image show-smooth">
+                    </a>
+                </div>
+                <div class="card-body d-none d-lg-block text-center">
+                    <a href="https://www.yazawaj.com/profile/سوسن.برادة" class="d-block text-dark fw-bold">
+                        <p class="h6">سوسن.برادة</p>
+                    </a>
+                    <p class="card-text  small text-muted mb-2">
+                        انا عزباء، 28 سنة هنا من أجل البحث عن شريك لتحقيق زواج عادي تعرف عليّ أكثر من خلال بروفايلي، فربّ صدفة خير من ألف ميعاد.
+                    </p>
+                </div>
+                <div class="card-body p-1 d-block d-lg-none text-center truncate-container ">
+                    <a href="https://www.yazawaj.com/profile/سوسن.برادة" class="small d-block text-dark fw-bold text-truncate">
+                        سوسن.برادة 
+                    </a>
+                    <small class="text-muted text-truncate">
+                    زواج عادي/28 سنة
+                    </small>
+                </div>
+                <div class="d-flex me-auto px-3 d-none d-lg-block justify-content-between align-items-center">
+                       <form method="post" action="#" class="m-0">
+                           <input type="hidden" name="sendTo" value="374020">
+                           <button type="button" data-forbiddenmsg="عذرا، يجب عليك تسجيل الدخول لتتمكن من إرسال الرسائل" class="sndMsg_front btn btn-dating btn-sm">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16"><path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"></path></svg> أرسل رسالة
+                           </button>
+                       </form>
+                   </div>
+                <div class="p-2 d-flex text-truncate align-items-center">
+                <small class="text-muted text-truncate ">
+                <a href="https://www.yazawaj.com/dating/country/morocco/women/"><span class="flag-icon flag-icon-ma me-2"></span></a>
+                <a href="https://www.yazawaj.com/dating/morocco/women/Media/الدار+البيضاء+الكبرى/" class="text-dark ">Media</a>,  <a href="https://www.yazawaj.com/dating/country/morocco/women/" class="text-dark">المغرب</a>
+                        </small>
+            </div>
+            </div>
+        </li>
+        <li class="profile-item-card">
+            <div class="card pt-1 shadow-sm h-100">
+                <div class="profile-image-container d-flex justify-content-center align-items-center p-0 mx-auto ">
+                    <a href="https://www.yazawaj.com/profile/سميحة41258" class="d-block overflow-hidden position-relative">
+                        <img src="165/326380.jpeg" width="165" height="208" title="انا مطلقة، 30 سنة هنا من أجل البحث عن شريك لتحقيق زواج عادي تعرف عليّ أكثر من خلال بروفايلي، فربّ صدفة خير من ألف ميعاد." alt="انا مطلقة، 30 سنة هنا من أجل البحث عن شريك لتحقيق زواج عادي تعرف عليّ أكثر من خلال بروفايلي، فربّ صدفة خير من ألف ميعاد." class="img-fluid profile-image show-smooth">
+                    </a>
+                </div>
+                <div class="card-body d-none d-lg-block text-center">
+                    <a href="https://www.yazawaj.com/profile/سميحة41258" class="d-block text-dark fw-bold">
+                        <p class="h6">سميحة41258</p>
+                    </a>
+                    <p class="card-text  small text-muted mb-2">
+                        انا مطلقة، 30 سنة هنا من أجل البحث عن شريك لتحقيق زواج عادي تعرف عليّ أكثر من خلال بروفايلي، فربّ صدفة خير من ألف ميعاد.
+                    </p>
+                </div>
+                <div class="card-body p-1 d-block d-lg-none text-center truncate-container ">
+                    <a href="https://www.yazawaj.com/profile/سميحة41258" class="small d-block text-dark fw-bold text-truncate">
+                        سميحة41258 
+                    </a>
+                    <small class="text-muted text-truncate">
+                    زواج عادي/30 سنة
+                    </small>
+                </div>
+                <div class="d-flex me-auto px-3 d-none d-lg-block justify-content-between align-items-center">
+                       <form method="post" action="#" class="m-0">
+                           <input type="hidden" name="sendTo" value="433914">
+                           <button type="button" data-forbiddenmsg="عذرا، يجب عليك تسجيل الدخول لتتمكن من إرسال الرسائل" class="sndMsg_front btn btn-dating btn-sm">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16"><path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"></path></svg> أرسل رسالة
+                           </button>
+                       </form>
+                   </div>
+                <div class="p-2 d-flex text-truncate align-items-center">
+                <small class="text-muted text-truncate ">
+                <a href="https://www.yazawaj.com/dating/country/belgium/women/"><span class="flag-icon flag-icon-be me-2"></span></a>
+                <a href="https://www.yazawaj.com/dating/belgium/women/تشارلوري/والونيا/" class="text-dark ">تشارلوري</a>,  <a href="https://www.yazawaj.com/dating/country/belgium/women/" class="text-dark">بلجيكا</a>
+                        </small>
+            </div>
+            </div>
+        </li>
+        <li class="profile-item-card">
+            <div class="card pt-1 shadow-sm h-100">
+                <div class="profile-image-container d-flex justify-content-center align-items-center p-0 mx-auto ">
+                    <a href="https://www.yazawaj.com/profile/سارة458" class="d-block overflow-hidden position-relative">
+                        <img src="165/41732.jpg" width="220" height="165" title="انسانه متواضعه انيقه متفاهمه احب السفر احب العلاقات الجتماعيه متفاهمه ابحت ع الانسان المتفاهم ارغب في الزواج شاب محترم صالح ابن عيله لايحب الخيانه . ربي يعطيکم محبت الناس..." alt="انسانه متواضعه انيقه متفاهمه احب السفر احب العلاقات الجتماعيه متفاهمه ابحت ع الانسان المتفاهم ارغب في الزواج شاب محترم صالح ابن عيله لايحب الخيانه . ربي يعطيکم محبت الناس..." class="img-fluid profile-image show-smooth">
+                    </a>
+                </div>
+                <div class="card-body d-none d-lg-block text-center">
+                    <a href="https://www.yazawaj.com/profile/سارة458" class="d-block text-dark fw-bold">
+                        <p class="h6">سارة458</p>
+                    </a>
+                    <p class="card-text  small text-muted mb-2">
+                        انسانه متواضعه انيقه متفاهمه احب السفر احب العلاقات الجتماعيه متفاهمه ابحت ع الانسان المتفاهم ارغب في الزواج شاب محترم صالح ابن عيله لايحب الخيانه . ربي يعطيکم محبت الناس...
+                    </p>
+                </div>
+                <div class="card-body p-1 d-block d-lg-none text-center truncate-container ">
+                    <a href="https://www.yazawaj.com/profile/سارة458" class="small d-block text-dark fw-bold text-truncate">
+                        سارة458 
+                    </a>
+                    <small class="text-muted text-truncate">
+                    زواج عادي/96 سنة
+                    </small>
+                </div>
+                <div class="d-flex me-auto px-3 d-none d-lg-block justify-content-between align-items-center">
+                       <form method="post" action="#" class="m-0">
+                           <input type="hidden" name="sendTo" value="36008">
+                           <button type="button" data-forbiddenmsg="عذرا، يجب عليك تسجيل الدخول لتتمكن من إرسال الرسائل" class="sndMsg_front btn btn-dating btn-sm">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16"><path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"></path></svg> أرسل رسالة
+                           </button>
+                       </form>
+                   </div>
+                <div class="p-2 d-flex text-truncate align-items-center">
+                <small class="text-muted text-truncate ">
+                <a href="https://www.yazawaj.com/dating/country/saudi+arabia/women/"><span class="flag-icon flag-icon-sa me-2"></span></a>
+                <a href="https://www.yazawaj.com/dating/saudi+arabia/women/الرياض/الرياض/" class="text-dark ">الرياض</a>,  <a href="https://www.yazawaj.com/dating/country/saudi+arabia/women/" class="text-dark">السعودية</a>
+                        </small>
+            </div>
+            </div>
+        </li>
+        <li class="profile-item-card">
+            <div class="card pt-1 shadow-sm h-100">
+                <div class="profile-image-container d-flex justify-content-center align-items-center p-0 mx-auto ">
+                    <a href="https://www.yazawaj.com/profile/سابين" class="d-block overflow-hidden position-relative">
+                        <img src="165/159971.jpg" width="165" height="165" title="انا عزباء، 38 سنة هنا من أجل البحث عن شريك لتحقيق زواج عادي تعرف عليّ أكثر من خلال بروفايلي، فربّ صدفة خير من ألف ميعاد." alt="انا عزباء، 38 سنة هنا من أجل البحث عن شريك لتحقيق زواج عادي تعرف عليّ أكثر من خلال بروفايلي، فربّ صدفة خير من ألف ميعاد." class="img-fluid profile-image show-smooth">
+                    </a>
+                </div>
+                <div class="card-body d-none d-lg-block text-center">
+                    <a href="https://www.yazawaj.com/profile/سابين" class="d-block text-dark fw-bold">
+                        <p class="h6">سابين</p>
+                    </a>
+                    <p class="card-text  small text-muted mb-2">
+                        انا عزباء، 38 سنة هنا من أجل البحث عن شريك لتحقيق زواج عادي تعرف عليّ أكثر من خلال بروفايلي، فربّ صدفة خير من ألف ميعاد.
+                    </p>
+                </div>
+                <div class="card-body p-1 d-block d-lg-none text-center truncate-container ">
+                    <a href="https://www.yazawaj.com/profile/سابين" class="small d-block text-dark fw-bold text-truncate">
+                        سابين 
+                    </a>
+                    <small class="text-muted text-truncate">
+                    زواج عادي/38 سنة
+                    </small>
+                </div>
+                <div class="d-flex me-auto px-3 d-none d-lg-block justify-content-between align-items-center">
+                       <form method="post" action="#" class="m-0">
+                           <input type="hidden" name="sendTo" value="223547">
+                           <button type="button" data-forbiddenmsg="عذرا، يجب عليك تسجيل الدخول لتتمكن من إرسال الرسائل" class="sndMsg_front btn btn-dating btn-sm">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16"><path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"></path></svg> أرسل رسالة
+                           </button>
+                       </form>
+                   </div>
+                <div class="p-2 d-flex text-truncate align-items-center">
+                <small class="text-muted text-truncate ">
+                <a href="https://www.yazawaj.com/dating/country/algeria/women/"><span class="flag-icon flag-icon-dz me-2"></span></a>
+                <a href="https://www.yazawaj.com/dating/algeria/women/تبسة/تبسة/" class="text-dark ">تبسة</a>,  <a href="https://www.yazawaj.com/dating/country/algeria/women/" class="text-dark">الجزائر</a>
+                        </small>
+            </div>
+            </div>
+        </li>
+        <li class="profile-item-card">
+            <div class="card pt-1 shadow-sm h-100">
+                <div class="profile-image-container d-flex justify-content-center align-items-center p-0 mx-auto ">
+                    <a href="https://www.yazawaj.com/profile/زهراءالمغربية" class="d-block overflow-hidden position-relative">
+                        <img src="165/274552.jpg" width="165" height="307" title="انا مطلقة، 31 سنة هنا من أجل البحث عن شريك لتحقيق زواج عادي تعرف عليّ أكثر من خلال بروفايلي، فربّ صدفة خير من ألف ميعاد." alt="انا مطلقة، 31 سنة هنا من أجل البحث عن شريك لتحقيق زواج عادي تعرف عليّ أكثر من خلال بروفايلي، فربّ صدفة خير من ألف ميعاد." class="img-fluid profile-image show-smooth">
+                    </a>
+                </div>
+                <div class="card-body d-none d-lg-block text-center">
+                    <a href="https://www.yazawaj.com/profile/زهراءالمغربية" class="d-block text-dark fw-bold">
+                        <p class="h6">زهراءالمغربية</p>
+                    </a>
+                    <p class="card-text  small text-muted mb-2">
+                        انا مطلقة، 31 سنة هنا من أجل البحث عن شريك لتحقيق زواج عادي تعرف عليّ أكثر من خلال بروفايلي، فربّ صدفة خير من ألف ميعاد.
+                    </p>
+                </div>
+                <div class="card-body p-1 d-block d-lg-none text-center truncate-container ">
+                    <a href="https://www.yazawaj.com/profile/زهراءالمغربية" class="small d-block text-dark fw-bold text-truncate">
+                        زهراءالمغربية 
+                    </a>
+                    <small class="text-muted text-truncate">
+                    زواج عادي/31 سنة
+                    </small>
+                </div>
+                <div class="d-flex me-auto px-3 d-none d-lg-block justify-content-between align-items-center">
+                       <form method="post" action="#" class="m-0">
+                           <input type="hidden" name="sendTo" value="381646">
+                           <button type="button" data-forbiddenmsg="عذرا، يجب عليك تسجيل الدخول لتتمكن من إرسال الرسائل" class="sndMsg_front btn btn-dating btn-sm">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16"><path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"></path></svg> أرسل رسالة
+                           </button>
+                       </form>
+                   </div>
+                <div class="p-2 d-flex text-truncate align-items-center">
+                <small class="text-muted text-truncate ">
+                <a href="https://www.yazawaj.com/dating/country/morocco/women/"><span class="flag-icon flag-icon-ma me-2"></span></a>
+                <a href="https://www.yazawaj.com/dating/morocco/women/مراكش/مراكش+ـ+تانسيفت+ـ+الحوز/" class="text-dark ">مراكش</a>,  <a href="https://www.yazawaj.com/dating/country/morocco/women/" class="text-dark">المغرب</a>
+                        </small>
+            </div>
+            </div>
+        </li>
+        <li class="profile-item-card">
+            <div class="card pt-1 shadow-sm h-100">
+                <div class="profile-image-container d-flex justify-content-center align-items-center p-0 mx-auto ">
+                    <a href="https://www.yazawaj.com/profile/ربيعةحسني" class="d-block overflow-hidden position-relative">
+                        <img src="165/261035.jpg" width="165" height="293" title="انا مطلقة، 69 سنة هنا من أجل البحث عن شريك لتحقيق زواج عادي تعرف عليّ أكثر من خلال بروفايلي، فربّ صدفة خير من ألف ميعاد." alt="انا مطلقة، 69 سنة هنا من أجل البحث عن شريك لتحقيق زواج عادي تعرف عليّ أكثر من خلال بروفايلي، فربّ صدفة خير من ألف ميعاد." class="img-fluid profile-image show-smooth">
+                    </a>
+                </div>
+                <div class="card-body d-none d-lg-block text-center">
+                    <a href="https://www.yazawaj.com/profile/ربيعةحسني" class="d-block text-dark fw-bold">
+                        <p class="h6">ربيعةحسني</p>
+                    </a>
+                    <p class="card-text  small text-muted mb-2">
+                        انا مطلقة، 69 سنة هنا من أجل البحث عن شريك لتحقيق زواج عادي تعرف عليّ أكثر من خلال بروفايلي، فربّ صدفة خير من ألف ميعاد.
+                    </p>
+                </div>
+                <div class="card-body p-1 d-block d-lg-none text-center truncate-container ">
+                    <a href="https://www.yazawaj.com/profile/ربيعةحسني" class="small d-block text-dark fw-bold text-truncate">
+                        ربيعةحسني 
+                    </a>
+                    <small class="text-muted text-truncate">
+                    زواج عادي/69 سنة
+                    </small>
+                </div>
+                <div class="d-flex me-auto px-3 d-none d-lg-block justify-content-between align-items-center">
+                       <form method="post" action="#" class="m-0">
+                           <input type="hidden" name="sendTo" value="364143">
+                           <button type="button" data-forbiddenmsg="عذرا، يجب عليك تسجيل الدخول لتتمكن من إرسال الرسائل" class="sndMsg_front btn btn-dating btn-sm">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16"><path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"></path></svg> أرسل رسالة
+                           </button>
+                       </form>
+                   </div>
+                <div class="p-2 d-flex text-truncate align-items-center">
+                <small class="text-muted text-truncate ">
+                <a href="https://www.yazawaj.com/dating/country/morocco/women/"><span class="flag-icon flag-icon-ma me-2"></span></a>
+                <a href="https://www.yazawaj.com/dating/morocco/women/سلا/الرباط+ـ+سلا+ـ+زمور+ـ+زعير/" class="text-dark ">سلا</a>,  <a href="https://www.yazawaj.com/dating/country/morocco/women/" class="text-dark">المغرب</a>
+                        </small>
+            </div>
+            </div>
+        </li>
+    </ul>
+</div>
+<div class="container-fluid mx-lg-4 mt-4">
+  <div class="google-auto-placed" style="width: 100%; height: auto; clear: both; text-align: center;"><ins data-ad-format="auto" class="adsbygoogle adsbygoogle-noablate" data-ad-client="ca-pub-4305924041911758" data-adsbygoogle-status="done" style="display: block; margin: 10px auto; background-color: transparent; height: 280px;"><div id="aswift_3_host" style="border: none; height: 280px; width: 672px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"></div></ins></div><nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+      <li class="page-item  active "><span class="page-link text-secondary  text-light ">1</span></li>
+      <li class="page-item">
+        <form action="https://www.yazawaj.com/" method="POST" style="display:inline;">
+          <input type="hidden" name="num" value="2">
+          <button type="submit" class="page-link text-secondary">2</button>
+        </form>
+      </li>
+      <li class="page-item">
+        <form action="https://www.yazawaj.com/" method="POST" style="display:inline;">
+          <input type="hidden" name="num" value="3">
+          <button type="submit" class="page-link text-secondary">3</button>
+        </form>
+      </li>
+      <li class="page-item "><span class="page-link text-secondary ">…</span></li>
+      <li class="page-item">
+        <form action="https://www.yazawaj.com/" method="POST" style="display:inline;">
+          <input type="hidden" name="num" value="12">
+          <button type="submit" class="page-link text-secondary">»</button>
+        </form>
+      </li>
+    </ul>
+  </nav>
+</div>
+<div class="container text-center my-2"> <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4305924041911758" crossorigin="anonymous" data-checked-head="true"></script> <!-- desktop_middle_large --> <ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-4305924041911758" data-ad-slot="5911943224" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done"><div id="aswift_2_host" style="border: none; height: 280px; width: 672px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"></div></ins><script>     (adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+<div class="card-body">
+            <p class="card-text">
+            مرحبًا بكم في يا زواج، أفضل موقع زواج مجاني للعثور على شريكة الحياة بسهولة. بفضل واجهتنا البسيطة ، يمكنك التواصل مع آلاف الأشخاص الباحثين عن التعارف أو الزواج. ابدأ رحلتك نحو علاقة زواج مستقرة.إذا كنت تبحث عن برامج تعارف أو عربيات للزواج، فإننا نقدم لك أفضل الحلول من خلال مواقع تعارف مجانية. أفضل موقع تعارف مجاني لتستمتع بتجربة فريدة في أفضل موقع تعارف يناسب احتياجاتك.انطلق عبر الإنترنت حول العالم وابحث عن شريكة الحياة المناسبة لك عبر مواقع التعارف التي تقدم لك الفرص لتتعرف على أشخاص من العالم العربي، أوروبا وباقي أنحاء العالم. من خلال هذه المواقع، يمكنك التواصل مع أشخاص جدد من الوطن العربي والعالم، وتخصيص ملفك الشخصي لتحديد المواصفات التي تبحث عنها في الطرف الآخر. سواء كنت تبحث عن التعارف عبر الإنترنت أو تريد الوصول إلى الشخص المناسب من خلال مواقع الزواج، ستجد في يا زواج بيئة آمنة تمكّنك من لقاء شريك حياتك وبناء علاقة جادة ومستقرة.
+            </p>
+</div>
+  </section>                                         
+ </div>
+</main>
+<div class="google-auto-placed" style="width: 100%; height: auto; clear: both; text-align: center;"><ins data-ad-format="auto" class="adsbygoogle adsbygoogle-noablate" data-ad-client="ca-pub-4305924041911758" data-adsbygoogle-status="done" style="display: block; margin: 10px auto; background-color: transparent; height: 250px;"><div id="aswift_4_host" style="border: none; height: 250px; width: 763px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"></div></ins></div><footer>
+                                           <div class="container-fluid h-100 p-2 m-sm-0">
+<div class="container mt-2 py-3 border text-center">
+  <a href="https://www.yazawaj.com/dating/india/women/بنغالور/KA/" class="h6 m-0 mx-2 text-decoration-none">- بنات بنغالور</a>
+  <a href="https://www.yazawaj.com/dating/india/women/Bengaluru/كارنتكا/" class="h6 m-0 mx-2 text-decoration-none">- بنات Bengaluru</a>
+  <a href="https://www.yazawaj.com/dating/india/women/Bangalore/Karnataka/" class="h6 m-0 mx-2 text-decoration-none">- بنات Bangalore</a>
+  <a href="https://www.yazawaj.com/dating/india/women/Bengaluru/Bengaluru/" class="h6 m-0 mx-2 text-decoration-none">- بنات Bengaluru</a>
+  <a href="https://www.yazawaj.com/dating/india/women/Karnataka/Bengaluru/" class="h6 m-0 mx-2 text-decoration-none">- بنات Karnataka</a>
+</div>
+</div>
+     <div class="container-fluid">
+        <div style="font-family: arial;border-top: 1px solid #dee2e6 ;" class="row bg-light shadow-sm py-3 border border-top-1">
+    <div class="col-12 col-md-6 text-center text-md-start">
+        <ul class="list-group list-group-horizontal fs-7 d-inline-flex justify-content-center justify-content-md-start align-items-center p-0 m-0">
+            <li class="list-group-item p-0 px-1 border-0 bg-light"><a href="https://www.yazawaj.com/signup/">اشترك الان مجانا</a></li>
+            <li class="list-group-item p-0 border-0 bg-light">|</li>
+            <li class="list-group-item p-0 px-1 border-0 bg-light"><a href="https://www.yazawaj.com/conditions.html">شروط الإستعمال</a></li>
+            <li class="list-group-item p-0 border-0 bg-light">|</li>
+            <li class="list-group-item p-0 px-1 border-0 bg-light"><a href="https://www.yazawaj.com/privacy-policy.html">قواعد الخصوصية</a></li>
+            <li class="list-group-item p-0 border-0 bg-light">|</li>
+            <li class="list-group-item p-0 px-1 border-0 bg-light"><a href="https://www.yazawaj.com/help/">مساعدة</a></li>
+        </ul>
+    </div> 
+    <div class="col-12 col-md-6 text-center text-md-end fs-7">
+        <span class="text-dark">يازواج.كوم, موقع زواج و تعارف مجاني جميع الحقوق محفوظة ©2025</span>
+        <a class="fw-bold text-danger ms-1" href="https://www.yazawaj.com/contact/">اﺗﺼﻞ ﺑﻨﺎ</a>
+    </div>
+</div>
+</div>
+                                             <script defer="" src=" https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script defer="" src=" https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script defer="" src=" https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+<script defer="" src=" https://www.gstatic.com/firebasejs/7.14.4/firebase-messaging.js"></script>
+<script defer="" src=" https://www.yazawaj.com/themes/default/assets/js/firebase.js?v=3.1"></script>
+<script defer="" src=" https://www.yazawaj.com/themes/default/assets/js/main.js?v=1.14"></script>
+<script defer="" src=" https://www.yazawaj.com/themes/default/assets/js/signin.js?v=3.3"></script>
+</footer>
+<script>var _Hasync=_Hasync||[];_Hasync.push(['Histats.start','1,2560251,4,0,0,0,00010000']);_Hasync.push(['Histats.fasi','1']);_Hasync.push(['Histats.track_hits','']);(function(){var hs=document.createElement('script');hs.type='text/javascript';hs.async=true;hs.src=('//s10.histats.com/js15_as.js');(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(hs);})();</script><script>var _Hasync=_Hasync||[];_Hasync.push(['Histats.start','1,4261255,4,0,0,0,00010000']);_Hasync.push(['Histats.fasi','1']);_Hasync.push(['Histats.track_hits','']);(function(){var hs=document.createElement('script');hs.type='text/javascript';hs.async=true;hs.src=('//s10.histats.com/js15_as.js');(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(hs);})();</script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-6PK84TXXJV"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-6PK84TXXJV");</script><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "موقع زواج وتعارف مجاني - يازواج",
+   "url": "https://www.yazawaj.com/",
+  "operatingSystem": "All",
+  "applicationCategory": "Social Networking",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.5",
+    "reviewCount": "150"
+  }
+}
+</script>
+
+<script async="" type="text/javascript" src="https://s4.histats.com/stats/0.php?2560251&amp;@f16&amp;@g1&amp;@h1&amp;@i1&amp;@j1755120644737&amp;@k0&amp;@l1&amp;@m%D9%85%D9%88%D9%82%D8%B9%20%D8%B2%D9%88%D8%A7%D8%AC%20%D9%88%D8%AA%D8%B9%D8%A7%D8%B1%D9%81%20%D9%85%D8%AC%D8%A7%D9%86%D9%8A%20-%20%D9%8A%D8%A7%D8%B2%D9%88%D8%A7%D8%AC&amp;@n0&amp;@o1000&amp;@q0&amp;@r0&amp;@s0&amp;@ten-US&amp;@u800&amp;@b1:-123701080&amp;@b3:1755120645&amp;@b4:js15_as.js&amp;@b5:330&amp;@a-_0.2.1&amp;@vhttps%3A%2F%2Fwww.yazawaj.com%2F&amp;@w"></script><script async="" type="text/javascript" src="https://s4.histats.com/stats/0.php?4261255&amp;@f16&amp;@g1&amp;@h1&amp;@i1&amp;@j1755120644737&amp;@k0&amp;@l1&amp;@m%D9%85%D9%88%D9%82%D8%B9%20%D8%B2%D9%88%D8%A7%D8%AC%20%D9%88%D8%AA%D8%B9%D8%A7%D8%B1%D9%81%20%D9%85%D8%AC%D8%A7%D9%86%D9%8A%20-%20%D9%8A%D8%A7%D8%B2%D9%88%D8%A7%D8%AC&amp;@n0&amp;@o1000&amp;@q0&amp;@r0&amp;@s0&amp;@ten-US&amp;@u800&amp;@b1:132899915&amp;@b3:1755120645&amp;@b4:js15_as.js&amp;@b5:330&amp;@a-_0.2.1&amp;@vhttps%3A%2F%2Fwww.yazawaj.com%2F&amp;@w"></script><script async="" type="text/javascript" src="https://s4.histats.com/stats/0.php?2560251&amp;@f16&amp;@g0&amp;@h2&amp;@i1&amp;@j1755120644746&amp;@k9&amp;@l2&amp;@m%D9%85%D9%88%D9%82%D8%B9%20%D8%B2%D9%88%D8%A7%D8%AC%20%D9%88%D8%AA%D8%B9%D8%A7%D8%B1%D9%81%20%D9%85%D8%AC%D8%A7%D9%86%D9%8A%20-%20%D9%8A%D8%A7%D8%B2%D9%88%D8%A7%D8%AC&amp;@n0&amp;@o1000&amp;@q0&amp;@r0&amp;@s0&amp;@ten-US&amp;@u800&amp;@b1:38106334&amp;@b3:1755120645&amp;@b4:js15_as.js&amp;@b5:330&amp;@a-_0.2.1&amp;@vhttps%3A%2F%2Fwww.yazawaj.com%2F&amp;@w"></script><script async="" type="text/javascript" src="https://s4.histats.com/stats/0.php?4261255&amp;@f16&amp;@g0&amp;@h2&amp;@i1&amp;@j1755120644746&amp;@k9&amp;@l2&amp;@m%D9%85%D9%88%D9%82%D8%B9%20%D8%B2%D9%88%D8%A7%D8%AC%20%D9%88%D8%AA%D8%B9%D8%A7%D8%B1%D9%81%20%D9%85%D8%AC%D8%A7%D9%86%D9%8A%20-%20%D9%8A%D8%A7%D8%B2%D9%88%D8%A7%D8%AC&amp;@n0&amp;@o1000&amp;@q0&amp;@r0&amp;@s0&amp;@ten-US&amp;@u800&amp;@b1:161023983&amp;@b3:1755120645&amp;@b4:js15_as.js&amp;@b5:330&amp;@a-_0.2.1&amp;@vhttps%3A%2F%2Fwww.yazawaj.com%2F&amp;@w"></script><ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;" data-ad-status="unfilled"><div id="aswift_0_host" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_0" name="aswift_0" browsingtopics="true" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;min-height:auto;max-height:none;min-width:auto;max-width:none;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting; run-ad-auction" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-4305924041911758&amp;output=html&amp;adk=1812271804&amp;adf=3025194257&amp;abgtt=6&amp;lmt=1755120645&amp;plat=1%3A8%2C2%3A16777224%2C3%3A2162688%2C4%3A2162688%2C9%3A32776%2C16%3A8388608%2C17%3A32%2C24%3A32%2C25%3A32%2C30%3A1048576%2C32%3A32%2C41%3A32%2C42%3A32&amp;format=0x0&amp;url=https%3A%2F%2Fwww.yazawaj.com%2F&amp;pra=5&amp;wgl=1&amp;aihb=0&amp;asro=0&amp;aifxl=29_18~30_19&amp;aiapm=0.1542&amp;aiapmd=0.25178&amp;aiapmi=0.16&amp;aiapmid=1&amp;aiact=0.5423&amp;aiactd=0.7&amp;aicct=0.7&amp;aicctd=0.5799&amp;ailct=0.5849&amp;ailctd=0.65&amp;aimart=4&amp;aimartd=4&amp;uach=WyJXaW5kb3dzIiwiIiwiIiwiIiwiIixudWxsLDAsbnVsbCwiIixudWxsLDBd&amp;dt=1755120644843&amp;bpp=95&amp;bdt=986&amp;idt=242&amp;shv=r20250812&amp;mjsv=m202508070101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie_enabled=1&amp;eoidce=1&amp;nras=1&amp;correlator=4662304818778&amp;frm=20&amp;pv=2&amp;u_tz=330&amp;u_his=2&amp;u_h=600&amp;u_w=800&amp;u_ah=600&amp;u_aw=800&amp;u_cd=24&amp;u_sd=1&amp;dmc=8&amp;adx=-12245933&amp;ady=-12245933&amp;biw=763&amp;bih=439&amp;scr_x=0&amp;scr_y=0&amp;eid=31093861%2C31093925%2C31093928%2C31093933%2C31093974%2C31093983%2C95362655%2C95367636%2C95369084%2C31094003%2C95344790%2C95359266&amp;oid=2&amp;pvsid=6342983145828325&amp;tmod=844765105&amp;uas=0&amp;nvt=1&amp;fsapi=1&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C800%2C0%2C800%2C600%2C778%2C439&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=32768&amp;bc=31&amp;bz=1.03&amp;td=1&amp;tdf=2&amp;psd=W251bGwsbnVsbCxudWxsLDNd&amp;nt=1&amp;ifi=1&amp;uci=a!1&amp;fsb=1&amp;dtd=382" data-google-container-id="a!1" tabindex="0" title="Advertisement" aria-label="Advertisement" data-load-complete="true"></iframe></div></ins><iframe src="https://t.dtscout.com/idg/?su=4C301755120647A7995773B559683B13" width="0" height="0" style="display: none;"></iframe><script src="https://p.mrktmtrcs.net/mm.js" async=""></script><iframe src="https://t.dtscout.com/idg/?su=4C301755120647A7995773B559683B13" width="0" height="0" style="display: none;"></iframe><script src="https://p.mrktmtrcs.net/mm.js" async=""></script><iframe src="https://t.dtscout.com/idg/?su=4C301755120647A7995773B559683B13" width="0" height="0" style="display: none;"></iframe><script src="https://p.mrktmtrcs.net/mm.js" async=""></script><iframe src="https://t.dtscout.com/idg/?su=4C301755120647A7995773B559683B13" width="0" height="0" style="display: none;"></iframe><script src="https://p.mrktmtrcs.net/mm.js" async=""></script><script async="" src="https://tags.crwdcntrl.net/lt/c/3825/lt.min.js"></script><img src="https://pixel.onaudience.com/?partner=137085098&amp;mapped=4C301755120647A7995773B559683B13" width="1" height="1" border="0" style="display: none;"><script async="" src="https://t.dtscdn.com/widget/?d=4C301755120647A7995773B559683B13&amp;nid=300&amp;p=2114454483&amp;t=-330&amp;s=800x600x24&amp;u=https%3A%2F%2Fwww.yazawaj.com%2F&amp;r="></script><img src="https://pixel.onaudience.com/?partner=137085098&amp;mapped=4C301755120647A7995773B559683B13" width="1" height="1" border="0" style="display: none;"><script async="" src="https://t.dtscdn.com/widget/?d=4C301755120647A7995773B559683B13&amp;nid=300&amp;p=2114454483&amp;t=-330&amp;s=800x600x24&amp;u=https%3A%2F%2Fwww.yazawaj.com%2F&amp;r="></script><img src="https://pixel.onaudience.com/?partner=137085098&amp;mapped=4C301755120647A7995773B559683B13" width="1" height="1" border="0" style="display: none;"><script async="" src="https://t.dtscdn.com/widget/?d=4C301755120647A7995773B559683B13&amp;nid=300&amp;p=2114454483&amp;t=-330&amp;s=800x600x24&amp;u=https%3A%2F%2Fwww.yazawaj.com%2F&amp;r="></script><img src="https://pixel.onaudience.com/?partner=137085098&amp;mapped=4C301755120647A7995773B559683B13" width="1" height="1" border="0" style="display: none;"><script async="" src="https://t.dtscdn.com/widget/?d=4C301755120647A7995773B559683B13&amp;nid=300&amp;p=2114454483&amp;t=-330&amp;s=800x600x24&amp;u=https%3A%2F%2Fwww.yazawaj.com%2F&amp;r="></script><img src="https://pixel.onaudience.com/?partner=137085098&amp;mapped=4C301755120647A7995773B559683B13" width="1" height="1" border="0" style="display: none;"><script async="" src="https://t.dtscdn.com/widget/?d=4C301755120647A7995773B559683B13&amp;nid=300&amp;p=2114454483&amp;t=-330&amp;s=800x600x24&amp;u=https%3A%2F%2Fwww.yazawaj.com%2F&amp;r="></script><img src="https://pixel.onaudience.com/?partner=137085098&amp;mapped=4C301755120647A7995773B559683B13" width="1" height="1" border="0" style="display: none;"><script async="" src="https://t.dtscdn.com/widget/?d=4C301755120647A7995773B559683B13&amp;nid=300&amp;p=2114454483&amp;t=-330&amp;s=800x600x24&amp;u=https%3A%2F%2Fwww.yazawaj.com%2F&amp;r="></script><img src="https://pixel.onaudience.com/?partner=137085098&amp;mapped=4C301755120647A7995773B559683B13" width="1" height="1" border="0" style="display: none;"><script async="" src="https://t.dtscdn.com/widget/?d=4C301755120647A7995773B559683B13&amp;nid=300&amp;p=2114454483&amp;t=-330&amp;s=800x600x24&amp;u=https%3A%2F%2Fwww.yazawaj.com%2F&amp;r="></script><img src="https://pixel.onaudience.com/?partner=137085098&amp;mapped=4C301755120647A7995773B559683B13" width="1" height="1" border="0" style="display: none;"><script async="" src="https://t.dtscdn.com/widget/?d=4C301755120647A7995773B559683B13&amp;nid=300&amp;p=2114454483&amp;t=-330&amp;s=800x600x24&amp;u=https%3A%2F%2Fwww.yazawaj.com%2F&amp;r="></script><iframe name="googlefcPresent" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><img src="https://pixel.onaudience.com/?partner=137085098&amp;mapped=4C301755120647A7995773B559683B13" width="1" height="1" border="0" style="display: none;"><script async="" src="https://t.dtscdn.com/widget/?d=4C301755120647A7995773B559683B13&amp;nid=300&amp;p=2114454483&amp;t=-330&amp;s=800x600x24&amp;u=https%3A%2F%2Fwww.yazawaj.com%2F&amp;r="></script><img src="https://pixel.onaudience.com/?partner=137085098&amp;mapped=4C301755120647A7995773B559683B13" width="1" height="1" border="0" style="display: none;"><script async="" src="https://t.dtscdn.com/widget/?d=4C301755120647A7995773B559683B13&amp;nid=300&amp;p=2114454483&amp;t=-330&amp;s=800x600x24&amp;u=https%3A%2F%2Fwww.yazawaj.com%2F&amp;r="></script><img src="https://pixel.onaudience.com/?partner=137085098&amp;mapped=4C301755120647A7995773B559683B13" width="1" height="1" border="0" style="display: none;"><script async="" src="https://t.dtscdn.com/widget/?d=4C301755120647A7995773B559683B13&amp;nid=300&amp;p=2114454483&amp;t=-330&amp;s=800x600x24&amp;u=https%3A%2F%2Fwww.yazawaj.com%2F&amp;r="></script><img src="https://pixel.onaudience.com/?partner=137085098&amp;mapped=4C301755120647A7995773B559683B13" width="1" height="1" border="0" style="display: none;"><script async="" src="https://t.dtscdn.com/widget/?d=4C301755120647A7995773B559683B13&amp;nid=300&amp;p=2114454483&amp;t=-330&amp;s=800x600x24&amp;u=https%3A%2F%2Fwww.yazawaj.com%2F&amp;r="></script><img src="https://pixel.onaudience.com/?partner=137085098&amp;mapped=4C301755120647A7995773B559683B13" width="1" height="1" border="0" style="display: none;"><script async="" src="https://t.dtscdn.com/widget/?d=4C301755120647A7995773B559683B13&amp;nid=300&amp;p=2114454483&amp;t=-330&amp;s=800x600x24&amp;u=https%3A%2F%2Fwww.yazawaj.com%2F&amp;r="></script><img src="https://pixel.onaudience.com/?partner=137085098&amp;mapped=4C301755120647A7995773B559683B13" width="1" height="1" border="0" style="display: none;"><script async="" src="https://t.dtscdn.com/widget/?d=4C301755120647A7995773B559683B13&amp;nid=300&amp;p=2114454483&amp;t=-330&amp;s=800x600x24&amp;u=https%3A%2F%2Fwww.yazawaj.com%2F&amp;r="></script><img src="https://pixel.onaudience.com/?partner=137085098&amp;mapped=4C301755120647A7995773B559683B13" width="1" height="1" border="0" style="display: none;"><script async="" src="https://t.dtscdn.com/widget/?d=4C301755120647A7995773B559683B13&amp;nid=300&amp;p=2114454483&amp;t=-330&amp;s=800x600x24&amp;u=https%3A%2F%2Fwww.yazawaj.com%2F&amp;r="></script><img src="https://pixel.onaudience.com/?partner=137085098&amp;mapped=4C301755120647A7995773B559683B13" width="1" height="1" border="0" style="display: none;"><script async="" src="https://t.dtscdn.com/widget/?d=4C301755120647A7995773B559683B13&amp;nid=300&amp;p=2114454483&amp;t=-330&amp;s=800x600x24&amp;u=https%3A%2F%2Fwww.yazawaj.com%2F&amp;r="></script><iframe name="__tcfapiLocator" src="about:blank" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="googlefcInactive" src="about:blank" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="googlefcLoaded" src="about:blank" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe id="lt_3p_3825" src="https://tags.crwdcntrl.net/lt/shared/2/lt.iframe.html?c=3825" title="empty" tabindex="-1" role="presentation" aria-hidden="true" style="border: 0px; width: 0px; height: 0px; display: block;"></iframe><iframe src="https://ep2.adtrafficquality.google/sodar/sodar2/237/runner.html" width="0" height="0" style="display: none;"></iframe><iframe src="https://www.google.com/recaptcha/api2/aframe" width="0" height="0" style="display: none;"></iframe></body><iframe id="google_esf" name="google_esf" src="https://googleads.g.doubleclick.net/pagead/html/r20250812/r20190131/zrt_lookup.html" style="display: none;"></iframe><ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important; width: 100vw !important; height: 100vh !important; inset: 0px auto auto 0px !important; clear: none !important; float: none !important; margin: 0px !important; max-height: none !important; max-width: none !important; opacity: 1 !important; overflow: visible !important; padding: 0px !important; position: fixed !important; vertical-align: baseline !important; visibility: visible !important; z-index: 2147483647 !important; background: transparent !important;" aria-hidden="true" data-ad-status="filled" data-vignette-loaded="true"><div id="aswift_5_host" style="border: none !important; height: 100vh !important; width: 100vw !important; margin: 0px !important; padding: 0px !important; position: relative !important; visibility: visible !important; background-color: transparent !important; display: inline-block !important; inset: auto !important; clear: none !important; float: none !important; max-height: none !important; max-width: none !important; opacity: 1 !important; overflow: visible !important; vertical-align: baseline !important; z-index: auto !important;"><iframe id="aswift_5" name="aswift_5" browsingtopics="true" style="min-height: auto !important; max-height: none !important; min-width: auto !important; max-width: none !important; width: 100vw !important; height: 100vh !important; inset: 0px auto auto 0px !important; position: absolute !important; clear: none !important; display: inline !important; float: none !important; margin: 0px !important; opacity: 1 !important; overflow: visible !important; padding: 0px !important; vertical-align: baseline !important; visibility: visible !important; z-index: auto !important;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="" height="" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting; run-ad-auction" src="https://googleads.g.doubleclick.net/pagead/html/r20250812/r20190131/zrt_lookup.html#RS-0-&amp;adk=1812271808&amp;client=ca-pub-4305924041911758&amp;fa=8&amp;ifi=6&amp;uci=a!6" data-google-container-id="a!6" tabindex="0" title="Advertisement" aria-label="Advertisement" data-google-query-id="CO-HuPXdiI8DFUcEgwMdT7gTdQ" data-load-complete="true"></iframe></div></ins></html>

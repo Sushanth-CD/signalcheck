@@ -1,0 +1,10 @@
+model,partition,subgroup_type,subgroup_name,total_samples,flagged_positive,rate,metric_summary
+sms_01_word,validation,source_category,UCI_ham,187,0,0.0,False Positive Rate
+sms_01_word,validation,source_category,UCI_commercial_spam,5,0,0.0,False Positive Rate
+sms_01_word,validation,source_category,ExAIS_ham,187,3,0.016,False Positive Rate
+sms_01_word,validation,source_category,ExAIS_commercial_spam,216,6,0.0278,False Positive Rate
+sms_01_word,validation,source_category,WSPR_NCSU_smishing,210,197,0.9381,Recall
+sms_01_word,validation,modality_subgroup,url_present,331,204,0.6163,"F1=0.9517, Recall=0.9381, Spec=0.9421"
+sms_01_word,validation,modality_subgroup,url_absent,474,2,0.0042,"F1=0.0, Recall=0.0, Spec=0.9958"
+sms_01_word,validation,modality_subgroup,length_short,435,89,0.2046,"F1=0.9071, Recall=0.883, Spec=0.9824"
+sms_01_word,validation,modality_subgroup,length_long,370,117,0.3162,"F1=0.9785, Recall=0.9828, Spec=0.9882"

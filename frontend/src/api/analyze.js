@@ -3,39 +3,59 @@ const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:800
 function messageFromError(payload, statusCode) {
   if (payload && typeof payload.message === "string") return payload.message;
   if (payload && typeof payload.detail === "string") return payload.detail;
+  if (payload && payload.detail && typeof payload.detail.message === "string") {
+    return payload.detail.message;
+  }
   return `The analysis service returned an error (HTTP ${statusCode}). Please try again.`;
 }
 
-function isAnalysisResponse(value) {
+function isMLAnalysisResponse(value) {
   return (
     value &&
-    Number.isInteger(value.risk_score) &&
-    value.risk_score >= 0 &&
-    value.risk_score <= 100 &&
-    ["low", "medium", "high"].includes(value.risk_level) &&
-    typeof value.summary === "string" &&
-    Array.isArray(value.detected_indicators) &&
-    Array.isArray(value.recommendations) &&
+    ["phishing", "benign"].includes(value.classification) &&
+    typeof value.phishing_score === "number" &&
+    Number.isFinite(value.phishing_score) &&
+    value.phishing_score >= 0 &&
+    value.phishing_score <= 1 &&
+    value.score_kind === "uncalibrated_model_score" &&
+    typeof value.threshold === "number" &&
+    Number.isFinite(value.threshold) &&
+    value.threshold >= 0 &&
+    value.threshold <= 1 &&
+    typeof value.model_id === "string" &&
+    value.model_id.length > 0 &&
     typeof value.disclaimer === "string" &&
-    value.detected_indicators.every(
-      (item) =>
-        item &&
-        typeof item.rule_id === "string" &&
-        typeof item.category === "string" &&
-        typeof item.title === "string" &&
-        typeof item.explanation === "string" &&
-        Number.isInteger(item.score_contribution),
-    )
+    value.disclaimer.length > 0
   );
 }
 
-export async function analyzeContent(content) {
+function isAndroidAnalysisResponse(value) {
+  return (
+    value &&
+    ["malicious", "non_malicious"].includes(value.classification) &&
+    typeof value.malware_score === "number" &&
+    Number.isFinite(value.malware_score) &&
+    value.malware_score >= 0 &&
+    value.malware_score <= 1 &&
+    value.score_kind === "uncalibrated_model_score" &&
+    typeof value.threshold === "number" &&
+    Number.isFinite(value.threshold) &&
+    value.threshold >= 0 &&
+    value.threshold <= 1 &&
+    typeof value.model_id === "string" &&
+    value.model_id.length > 0 &&
+    typeof value.disclaimer === "string" &&
+    value.disclaimer.length > 0
+  );
+}
+
+async function postJson(path, body, isValidResponse) {
   let response;
   try {
-    response = await fetch(`${API_BASE_URL}/api/analyze`, {
+    response = await fetch(`${API_BASE_URL}${path}`, {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify({ content }),
+      body: JSON.stringify(body),
     });
   } catch {
     throw new Error("Could not reach the analysis service. Check that the backend is running and try again.");
@@ -49,8 +69,20 @@ export async function analyzeContent(content) {
   }
 
   if (!response.ok) throw new Error(messageFromError(payload, response.status));
-  if (!isAnalysisResponse(payload)) {
+  if (!isValidResponse(payload)) {
     throw new Error("The analysis service returned an unexpected response. Please try again later.");
   }
   return payload;
+}
+
+export function analyzeWithML(content) {
+  return postJson("/api/ml/analyze", { content }, isMLAnalysisResponse);
+}
+
+export function analyzeAndroid(features) {
+  return postJson(
+    "/api/ml/analyze-android",
+    { features },
+    isAndroidAnalysisResponse,
+  );
 }

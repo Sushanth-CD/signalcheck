@@ -1,0 +1,487 @@
+<html lang="ru"><head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Быстрый вход на сайты ВК, Одноклассники, Mail.ru и любые другие. Визуальные закладки в браузере для сайтов, которыми вы часто пользуетесь. Уведомления из социальных сетей и почты, удобный поиск">
+<meta name="keywords" content="вход, вход.ру, сайт, стартовая страница, начальная страница, визуальные закладки, соцсети, социальные сети, почта, браузер, уведомления, поиск">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Вход.ру: стартовая страница, помощь, сообщество">
+<meta property="og:description" content="Быстрый вход на сайты ВК, Одноклассники, Mail.ru и любые другие. Визуальные закладки в браузере для сайтов, которыми вы часто пользуетесь. Уведомления из социальных сетей и почты, удобный поиск">
+<meta property="og:image" content="https://vhod.ru/img/snippets/vhod-ru.jpg?v=1">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="640">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:url" content="https://vhod.ru/">
+<meta property="og:site_name" content="Вход.ру">
+<title>Вход.ру: стартовая страница, помощь, сообщество</title>
+<link href="/include/mainpage/css/bundle-8fd686c404.css" rel="stylesheet" type="text/css">
+<link href="/include/mainpage/css/themes/light.css" rel="stylesheet" type="text/css" media="(prefers-color-scheme: light)">
+<link href="/include/mainpage/css/themes/dark.css" rel="stylesheet" type="text/css" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://vhod.ru/">
+<link rel="icon" href="https://vhod.ru/favicon.svg" type="image/svg">
+<link rel="manifest" href="/manifest.json">
+</head>
+
+<body class="page">
+<!-- Yandex.Metrika counter --> <script async="" src="https://mc.yandex.ru/metrika/tag.js"></script><script> (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date(); for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }} k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(33572144, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true }); </script> <noscript><div><img src="https://mc.yandex.ru/watch/33572144" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
+
+<div class="viewport">
+
+<header class="header">
+	<nav class="nav-top">
+		<button class="nav-top__button nav-top__button_menu" type="button" aria-label="Меню">
+			<svg class="nav-top__icon nav-top__icon_menu" aria-hidden="true"><use href="/img/icons.svg#icon-menu"></use></svg>
+			<svg class="nav-top__icon nav-top__icon_check" aria-hidden="true"><use href="/img/icons.svg#icon-check"></use></svg>
+			<svg class="nav-top__icon nav-top__icon_cross" aria-hidden="true"><use href="/img/icons.svg#icon-cross"></use></svg>
+		</button>
+	</nav>
+	<h1 class="header__title">Вход.ру</h1>
+</header>
+<main class="main">
+<div class="search">
+	<div class="search__bar">
+		<div id="search-form">
+			<div class="current" id="search-web-form"><form action="https://ya.ru/search/" target="_blank" id="cse-search-box">
+					<div class="search__block">
+						<input class="search__input" type="search" inputmode="search" name="text" id="q" aria-label="В&nbsp;интернете">
+						<input class="search__button" type="submit" value="Найти">
+					</div>
+				</form>
+			</div>
+			<div id="search-wiki-form" style="display:none">
+				<form action="https://ru.wikipedia.org/w/index.php" target="_blank" id="wiki-search-box">
+					<div class="search__block">
+						<input class="search__input" type="search" inputmode="search" name="search" id="wiki-input" value="" aria-label="В Википедии">
+						<input class="search__button" type="submit" value="Найти">
+					</div>
+				</form>
+			</div>
+			<div id="search-video-form" style="display:none">
+				<form action="/redirect-video-search.php" target="_blank" id="video-search-box">
+					<div class="search__block">
+						<input class="search__input" type="search" inputmode="search" name="query" id="video-input" value="" aria-label="Видео">
+						<div class="search__select-wrapper">
+							<select class="search__select" id="video-select" name="engine">
+								<option value="yt">YouTube</option>
+								<option value="vk" selected="">ВК</option>
+								<option value="rt">Rutube</option>
+							</select>
+						</div>
+						<input type="hidden" name="token" value="7ee6808b9cb27c7dceb65bb15711082e91c86871">
+						<input class="search__button" type="submit" value="Найти">
+					</div>
+				</form>
+			</div>
+			<div id="search-people-form" style="display:none">
+				<form action="/redirect-people-search.php" target="_blank" id="people-search-box">
+					<input type="hidden" name="filter" value="people">
+					<div class="search__block">
+						<input class="search__input" type="search" inputmode="search" name="name" id="people-input" value="" aria-label="Человека" placeholder="Имя Фамилия">
+						<input class="search__input" type="search" inputmode="search" name="city" id="people-input2" value="" aria-label="В городе" placeholder="Город">
+						<button class="search__button search__button_secondary" type="button" onclick="searchPeopleSecondary(event)">Найти в&nbsp;ВК</button>
+						<input type="hidden" name="token" value="7ee6808b9cb27c7dceb65bb15711082e91c86871">
+						<input class="search__button" type="submit" value="Найти">
+					</div>
+				</form>
+			</div>
+			<div id="search-maps-form" style="display:none">
+				<form action="https://yandex.ru/maps" target="_blank" id="maps-search-box">
+					<div class="search__block">
+						<input class="search__input" type="search" inputmode="search" name="text" id="maps-input" value="" aria-label="Место на&nbsp;карте">
+						<button class="search__button search__button_secondary" type="button" onclick="searchMapsSecondary(event)">Показать мое</button>
+						<input class="search__button" type="submit" value="Найти">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="search__scroll-wrapper">
+		<ul class="search__switches">
+			<li><a href="#" id="search-web" class="search__switch search__switch_active">В&nbsp;интернете</a></li>
+			<li><a href="#" id="search-wiki" class="search__switch">В Википедии</a></li>
+			<li><a href="#" id="search-video" class="search__switch">Видео</a></li>
+			<li><a href="#" id="search-people" class="search__switch">Человека</a></li>
+			<li><a href="#" id="search-maps" class="search__switch">Место на&nbsp;карте</a></li>
+		</ul>
+	</div>
+</div>
+
+<div class="start-pad">
+<aside class="tab-bar no-auth">
+<ul class="tab-switches ui-sortable">
+			<li class="tab-switch ui-droppable ui-sortable-handle" id="tab-switch_0" data-id="0" data-index="0" style="width: 112px;">
+				<div class="tweaks tweaks_type_tab-switch">
+					<button class="tweaks__button tweaks__button_type_edit" data-handler="openEditTab" aria-label="Изменить сайт">
+						<svg class="tweaks__icon" aria-hidden="true"><use href="/img/icons.svg#icon-edit"></use></svg>
+					</button>
+					<button class="tweaks__button tweaks__button_type_delete" data-handler="deleteTab" aria-label="Удалить сайт">
+						<svg class="tweaks__icon" aria-hidden="true"><use href="/img/icons.svg#icon-cross"></use></svg>
+					</button>
+				</div>
+				<button type="button" class="tab-switch__button tab-switch__button_active" title="Вкладка 1" aria-label="Вкладка 1"></button>
+			</li>
+</ul>
+<button type="button" class="tab-adder tab-adder_shown" data-handler="openNotAuthorized" title="Добавить вкладку" aria-label="Добавить вкладку"><svg class="tab-adder__icon" aria-hidden="true"><use href="/img/icons.svg#icon-plus"></use></svg></button>
+</aside>
+<section class="tiles no-auth">
+<ul class="tabs">
+<li class="tab" data-index="0">
+<ul class="grid ui-sortable" id="grid0">
+<li class="tile tile_type_common ui-sortable-handle" id="tile_vk" data-tab="0" data-index="0" data-id="vk" data-handler="openLogin">
+	<div class="tweaks">
+		<button class="tweaks__button tweaks__button_type_delete" data-handler="deleteTile">
+			<svg class="tweaks__icon"><use href="/img/icons.svg#icon-cross"></use></svg>
+		</button>
+	</div>
+	<div class="tile__content tile__content_active tile__content_vk">
+		<h2 class="tile__header" title="https://vk.com/">ВКонтакте</h2>
+		<div class="tile__info" id="vk-inner">
+			<div id="vk-main-data">
+	<a class="user-pic" href="#" title="Открыть мою страницу" data-handler="openLogin">
+		<svg class="user-pic__icon" aria-hidden="true"><use href="/img/icons.svg#icon-user"></use></svg>
+		<span class="visually-hidden">Открыть мою страницу</span>
+	</a>
+	<div class="user-data">
+		<div class="user-data__unit">
+			<a class="user-data__link" href="#" title="Открыть сообщения" data-handler="openLogin">
+				<svg class="user-data__icon" aria-hidden="true"><use href="/img/icons.svg#icon-messages"></use></svg>1 <span class="visually-hidden">Открыть сообщения</span>
+			</a>
+		</div>
+		<div class="user-data__unit">
+			<a class="user-data__link" href="#" title="Здесь будут показаны друзья в&nbsp;онлайне" id="vk-friends-link" data-handler="openLogin">
+				<svg class="user-data__icon" aria-hidden="true"><use href="/img/icons.svg#icon-friends"></use></svg> <span class="visually-hidden">Здесь будут показаны друзья в&nbsp;онлайне</span>
+			</a>
+		</div>
+		<div class="user-data__unit desktop">
+			<a href="#" class="user-data__link" id="vk-counters-link" title="Здесь будут показаны дополнительные уведомления из ВК">...<span class="visually-hidden">Здесь будут показаны дополнительные уведомления из ВК</span></a>
+		</div>
+		<div class="user-data__block">
+			<a href="#" id="vk-explainer-link" class="main__link main__link_pseudo">
+				<span class="desktop">Войдите в&nbsp;ВК кнопкой <em>Вход,</em> чтобы видеть уведомления</span>
+				<span class="mobile">Подробнее</span>
+			</a>
+		</div>
+	</div>
+</div>
+<div id="vk-info" class="user-events"></div>
+<button type="button" class="tile__button" title="Подключить аккаунт ВКонтакте" data-id="vk" data-handler="openLogin">Вход</button>
+		</div>
+	</div>
+</li>
+
+<li class="tile tile_type_common ui-sortable-handle" id="tile_ok" data-tab="0" data-index="1" data-id="ok" data-handler="openLogin">
+	<div class="tweaks">
+		<button class="tweaks__button tweaks__button_type_delete" data-handler="deleteTile">
+			<svg class="tweaks__icon"><use href="/img/icons.svg#icon-cross"></use></svg>
+		</button>
+	</div>
+	<div class="tile__content tile__content_active tile__content_ok">
+		<h2 class="tile__header" title="https://ok.ru/">Одноклассники</h2>
+		<div class="tile__info" id="ok-inner">
+			<div id="ok-main-data">
+  <a class="user-pic" href="#" title="Открыть мою страницу" data-handler="openLogin">
+    <svg class="user-pic__icon" aria-hidden="true"><use href="/img/icons.svg#icon-user"></use></svg>
+		<span class="visually-hidden">Открыть мою страницу</span>
+  </a>
+  <div class="user-data">
+    <div class="user-data__block">
+      <div class="user-data__unit">
+        <a class="user-data__link" href="#" title="Открыть сообщения" data-handler="openLogin">
+          <svg class="user-data__icon" aria-hidden="true"><use href="/img/icons.svg#icon-messages"></use></svg>1 <span class="visually-hidden">Открыть сообщения</span>
+        </a>
+      </div>
+      <div class="user-data__unit">
+        <a class="user-data__link" href="#" title="Открыть обсуждения" data-handler="openLogin">
+          <svg class="user-data__icon" aria-hidden="true"><use href="/img/icons.svg#icon-list"></use></svg> <span class="visually-hidden">Открыть обсуждения</span>
+        </a>
+      </div>
+      <div class="user-data__unit desktop">
+        <a class="user-data__link" href="#" title="Открыть оповещения" data-handler="openLogin">
+          <svg class="user-data__icon" aria-hidden="true"><use href="/img/icons.svg#icon-bell"></use></svg> <span class="visually-hidden">Открыть оповещения</span>
+        </a>
+      </div>
+    </div>
+    <div class="user-data__block">
+      <div class="user-data__unit user-data__unit_text">
+        <a href="#" id="ok-explainer-link" class="main__link main__link_pseudo">
+          Подробнее        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<button type="button" class="tile__button" title="Подключить аккаунт Одноклассники" data-id="ok" data-handler="openLogin">Вход</button>
+		</div>
+	</div>
+</li>
+
+<li class="tile tile_type_common ui-sortable-handle" id="tile_ma" data-tab="0" data-index="2" data-id="ma" data-handler="openLogin">
+	<div class="tweaks">
+		<button class="tweaks__button tweaks__button_type_delete" data-handler="deleteTile">
+			<svg class="tweaks__icon"><use href="/img/icons.svg#icon-cross"></use></svg>
+		</button>
+	</div>
+	<div class="tile__content tile__content_active tile__content_ma">
+		<h2 class="tile__header" title="https://e.mail.ru/inbox/">Mail.ru</h2>
+		<div class="tile__info" id="ma-inner">
+			<div id="ma-main-data">
+  <a class="user-pic" href="#" title="Открыть Мой Мир" data-handler="openLogin">
+		<svg class="user-pic__icon" aria-hidden="true"><use href="/img/icons.svg#icon-user"></use></svg>
+		<span class="visually-hidden">Открыть Мой Мир</span>
+  </a>
+	<div class="user-data">
+		<div class="user-data__block">
+			mail@mail.ru		</div>
+		<div class="user-data__block">
+			<div class="user-data__unit">
+				<a class="user-data__link" href="#" title="Открыть входящие" data-handler="openLogin">
+					<svg class="user-data__icon" aria-hidden="true"><use href="/img/icons.svg#icon-mail"></use></svg>1 <span class="visually-hidden">Открыть входящие</span>
+				</a>
+			</div>
+			<div class="user-data__unit">
+				<a class="user-data__link" href="#" title="Написать письмо" data-handler="openLogin">
+					<svg class="user-data__icon" aria-hidden="true"><use href="/img/icons.svg#icon-new"></use></svg> <span class="visually-hidden">Написать письмо</span>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+<button type="button" class="tile__button" title="Подключить аккаунт Mail.ru" data-id="ma" data-handler="openLogin">Вход</button>
+		</div>
+	</div>
+</li>
+
+<li class="tile tile_type_common ui-sortable-handle" id="tile_rbc" data-tab="0" data-index="3" data-id="rbc" data-url="https://rbc.ru/">
+	<div class="tweaks">
+		<button class="tweaks__button tweaks__button_type_delete" data-handler="deleteTile">
+			<svg class="tweaks__icon"><use href="/img/icons.svg#icon-cross"></use></svg>
+		</button>
+	</div>
+	<div class="tile__content tile__content_active tile__content_rbc">
+		<h2 class="tile__header" title="https://rbc.ru/">РБК</h2>
+		<div class="tile__img" id="rbc-inner" style="background-image:url('/img/ico/rbc.png');"></div>
+	</div>
+</li>
+<li class="tile tile_type_common ui-sortable-handle" id="tile_gis" data-tab="0" data-index="4" data-id="gis" data-url="https://gismeteo.ru/">
+	<div class="tweaks">
+		<button class="tweaks__button tweaks__button_type_delete" data-handler="deleteTile">
+			<svg class="tweaks__icon"><use href="/img/icons.svg#icon-cross"></use></svg>
+		</button>
+	</div>
+	<div class="tile__content tile__content_active tile__content_gis">
+		<h2 class="tile__header" title="https://gismeteo.ru/">Гисметео</h2>
+		<div class="tile__img" id="gis-inner" style="background-image:url('/img/ico/gis.png');"></div>
+	</div>
+</li>
+<li class="tile tile_type_common ui-sortable-handle" id="tile_yt" data-tab="0" data-index="5" data-id="yt" data-url="https://youtube.com/">
+	<div class="tweaks">
+		<button class="tweaks__button tweaks__button_type_delete" data-handler="deleteTile">
+			<svg class="tweaks__icon"><use href="/img/icons.svg#icon-cross"></use></svg>
+		</button>
+	</div>
+	<div class="tile__content tile__content_active tile__content_yt">
+		<h2 class="tile__header" title="https://youtube.com/">YouTube</h2>
+		<div class="tile__img" id="yt-inner" style="background-image:url('/img/ico/youtube.png');"></div>
+	</div>
+</li>
+
+<li class="tile tile_type_adder" id="tile_add" data-id="add" data-tab="0" data-index="6" data-handler="openNotAuthorized" title="Добавить сайт"><svg class="tile__icon"><use href="/img/icons.svg#icon-plus"></use></svg></li>
+</ul>
+</li>
+</ul>
+</section>
+</div>
+<div id="info"></div><div class="resources">
+	<nav class="nav-main">
+		<ul class="nav-main__items">
+			<li><a class="nav-main__link" href="/map/">Помощь, инструкции</a></li>
+			<li><a class="nav-main__link" href="/vopros/">У&nbsp;меня вопрос</a></li>
+			<li><a class="nav-main__link" href="https://vk.com/vhod_ru" target="_blank" rel="nofollow">Наше сообщество в&nbsp;ВК</a></li>
+		</ul>
+	</nav>
+	<div class="resources__intro">
+		<p class="resources__text"><span class="resources__accent">Вход.ру</span>&nbsp;— стартовая страница браузера и&nbsp;сообщество. Мы&nbsp;делаем вход на&nbsp;сайты быстрым и&nbsp;удобным, пишем о&nbsp;ВКонтакте, Одноклассниках, Mail.ru, Телеграме, других социальных сетях и&nbsp;мессенджерах, рассказываем о&nbsp;безопасности, помогаем решать проблемы, даем полезные советы. Найдите здесь готовое решение или ответ на&nbsp;свой вопрос. Чтобы спросить о&nbsp;чем-то, вступайте в&nbsp;наше сообщество в&nbsp;ВК.</p>
+		<p class="resources__text">Войдите через ВК, ОК или Mail.ru кнопкой <em>Вход,</em> чтобы создать свой профиль. Эта&nbsp;страница станет максимально чистой&nbsp;— никакой лишней информации. Только вход на&nbsp;сайты, которые вы&nbsp;сами добавите, кнопки вкладок и&nbsp;строка поиска.</p>
+		<p class="resources__text"><a class="resources__link" href="/set-start/">Как сделать Вход.ру стартовой страницей в&nbsp;браузере</a></p>
+	</div>
+</div>
+</main>
+</div>
+<div class="content">
+	<section class="info">
+	<h2 class="content__header">Возможности</h2>
+	<p class="content__text">Через Вход.ру легко открывать любые сайты, которые вы&nbsp;часто посещаете. Также у&nbsp;вас под рукой расширенный поиск в&nbsp;интернете. Это удобная начальная страница для вашего браузера, которая может открываться в&nbsp;новой вкладке.</p>
+	<p class="content__text">Вход.ру умеет показывать уведомления из&nbsp;ваших соцсетей и&nbsp;почты. Вы&nbsp;видите, кто из&nbsp;друзей сейчас в&nbsp;онлайне, есть&nbsp;ли новые сообщения, комментарии, лайки, письма и&nbsp;прочее. Мы&nbsp;используем программные интерфейсы, которые официально предоставляют подключаемые сайты.</p>
+	<p class="content__text">В&nbsp;визуальные закладки можно добавить любые сайты, которые вам нужны. Они будут доступны на&nbsp;всех ваших устройствах. Можно создать несколько вкладок, чтобы разделить сайты на&nbsp;группы.</p>
+	<p class="content__text">Удобно <a href="/set-start/" onclick="this.style.behavior='url(#default#homepage)'; var ohp=this.isHomePage('https://vhod.ru/'); this.setHomePage('https://vhod.ru/'); var nhp=this.isHomePage('https://vhod.ru/'); r(this, 'shp/o=' + ohp + '/n=' + nhp); return false;">поставить Вход.ру стартовой страницей</a> в&nbsp;браузере.</p>
+
+	<h2 class="content__header">Ответы на&nbsp;ваши вопросы</h2>
+	<p class="content__text">Откройте <a class="content__link" href="/map/">Помощь, инструкции</a>, чтобы посмотреть все статьи по&nbsp;темам: проблемы входа на&nbsp;сайты, восстановление доступа, технические проблемы, вопросы безопасности, общие вопросы по&nbsp;соцсетям и&nbsp;приложениям.</p>
+	<p class="content__text">Откройте <a class="content__link" href="/vopros/">У&nbsp;меня вопрос</a>, чтобы найти ответ за&nbsp;2–3 простых шага. Выберите тему, далее уточните вопрос или проблему.</p>
+	<p class="content__text">Если у&nbsp;вас есть доступ в&nbsp;ВК, заходите в&nbsp;<a class="content__link" href="https://vk.com/vhod_ru" target="_blank" rel="nofollow">наше сообщество</a>, чтобы задать вопрос, получить ответ, подписаться на&nbsp;новые публикации.</p>
+
+	<h2 class="content__header">Решатель проблем</h2>
+	<p class="content__text">В&nbsp;большинстве случаев самый быстрый способ решения проблемы&nbsp;— это решить ее&nbsp;самостоятельно с&nbsp;нашей небольшой помощью:</p>
+	<p class="content__text"><a class="content__link" href="/rp/" target="_blank">Решатель проблем</a></p>
+	
+	<h2 class="content__header">Популярно у&nbsp;посетителей</h2>
+	<ul class="content__list">
+		<li class="content__list-item"><a class="content__link" href="/vkontakte/kak/otklyuchit-bezopasnyi-poisk-video/">Как отключить безопасный поиск видео в&nbsp;ВК</a></li>
+		<li class="content__list-item"><a class="content__link" href="/vkontakte/kak/naiti-cheloveka/">Поиск человека ВКонтакте</a></li>
+		<li class="content__list-item"><a class="content__link" href="/vkontakte/kak/zaiti-v-polnuyu-versiyu/">Как зайти в&nbsp;полную версию ВКонтакте</a></li>
+		<li class="content__list-item"><a class="content__link" href="/vkontakte/kak/posmotret-svoi-reaktsii-laiki-i-zakladki/">Как посмотреть свои реакции (лайки) и&nbsp;закладки в&nbsp;ВК</a></li>
+		<li class="content__list-item"><a class="content__link" href="/mail-ru/vhod-cherez-vk-id/">Вход в Mail.ru через VK&nbsp;ID. Разбор всех вопросов</a></li>
+	</ul>
+
+	<h2 class="content__header">Материалы по&nbsp;темам</h2>
+	<ul class="content__list">
+		<li class="content__list-item"><a class="content__link" href="/map/#vk">ВКонтакте</a></li>
+		<li class="content__list-item"><a class="content__link" href="/map/#ok">Одноклассники</a></li>
+		<li class="content__list-item"><a class="content__link" href="/map/#mail">Mail.ru</a></li>
+		<li class="content__list-item"><a class="content__link" href="/map/#tg">Телеграм</a></li>
+		<li class="content__list-item"><a class="content__link" href="/map/#social">Другие соцсети, сайты</a></li>
+		<li class="content__list-item"><a class="content__link" href="/map/#general">Общие вопросы</a></li>
+		<li class="content__list-item"><a class="content__link" href="/map/#rp">Решение проблем</a></li>
+	</ul>	</section>
+  <section class="news">
+		<h2 class="content__header">Новости</h2>
+<p class="content__date">29&nbsp;июля 2025</p><h3 class="content__subheader">Непрочитанные сообщения в&nbsp;ВК</h3><p class="content__text">Как заставить&nbsp;ВК показать только диалоги с&nbsp;непрочитанными (новыми) сообщениями на&nbsp;телефоне или на&nbsp;компьютере: <a href="/vkontakte/kak/posmotret-neprochitannye-soobscheniya/" target="_top">Как&nbsp;посмотреть непрочитанные сообщения в&nbsp;ВК</a>.</p><p class="content__date">6&nbsp;июля 2025</p><h3 class="content__subheader">Размер шрифта на&nbsp;сайтах в&nbsp;Хроме на&nbsp;мобильных устройствах</h3><p class="content__text">Расскажем, как изменить слишком мелкий или крупный размер шрифта на&nbsp;любом сайте (или на&nbsp;всех сайтах сразу) в&nbsp;браузере Chrome на&nbsp;телефоне или планшете под управлением Android или iOS: <a href="/browser/chrome/kak/izmenit-razmer-shrifta/" target="_top">Как изменить размер шрифта в&nbsp;Хроме на&nbsp;телефоне или планшете</a>.</p><p class="content__date">9&nbsp;июня 2025</p><h3 class="content__subheader">Как заказать СМС для входа в&nbsp;ВК вместо уведомления</h3><p class="content__text">Нередкая проблема: ВК&nbsp;отправляет код подтверждения пуш-уведомлением на&nbsp;телефон, но&nbsp;его нет под рукой или он&nbsp;сломан. Как быть в&nbsp;этом случае? Мы&nbsp;выяснили это: <a href="/vkontakte/kak/voiti-po-sms-a-ne-po-push-uvedomleniyu/" target="_top">ВКонтакте: как войти по&nbsp;СМС или звонку на&nbsp;телефон, а&nbsp;не&nbsp;по&nbsp;пуш-уведомлению</a>.</p><p class="content__date">8&nbsp;мая 2025</p><h3 class="content__subheader">Невидимка в&nbsp;ВК</h3><p class="content__text">Рассказываем о&nbsp;специальном режиме, который скрывает ваш онлайн-статус в&nbsp;ВК от&nbsp;других пользователей (режим невидимки): <a href="/vkontakte/kak/skryt-svoi-status-onlain/" target="_top">Как скрыть свой статус онлайн в&nbsp;ВК или вернуть его</a>.</p>
+		<div class="content__unit"><p class="content__text"><a class="content__link" href="/news/">Посмотреть все</a></p></div>
+	</section>
+</div>
+
+<footer class="footer">
+	<div class="footer__section">
+		<div class="footer__block">
+			<h3 class="footer__header">VHOD.RU</h3>
+			<nav class="footer__links">
+				<a class="footer__link" href="/contacts/">Обратная связь</a>
+				<a class="footer__link" href="/privacy/" rel="nofollow">Политика обработки персональных данных</a>
+				<a class="footer__link" href="/terms/" rel="nofollow">Правила пользования сайтом</a>
+			</nav>
+		</div>
+		<div class="footer__block">
+			<p class="footer__text">Сайт НЕ&nbsp;ПРЕДОСТАВЛЯЕТ анонимный доступ к&nbsp;ресурсам интернета. Ознакомьтесь с&nbsp;политикой обработки персональных данных и&nbsp;правилами пользования сайтом</p>
+		</div>
+		<div class="footer__block">
+			<nav class="footer__links">
+				<a class="footer__link" href="/map/">Карта сайта</a>
+			</nav>
+						<div>
+						<!--LiveInternet counter--><a href="https://www.liveinternet.ru/click" target="_blank" aria-label="LiveInternet: рейтинг сайтов"><img id="licntA934" width="31" height="31" style="border:0" title="LiveInternet" src="https://counter.yadro.ru/hit?t45.4;r;s800*600*24;uhttps%3A//vhod.ru/;h%u0412%u0445%u043E%u0434.%u0440%u0443%3A%20%u0441%u0442%u0430%u0440%u0442%u043E%u0432%u0430%u044F%20%u0441%u0442%u0440%u0430%u043D%u0438%u0446%u0430%2C%20%u043F%u043E%u043C%u043E%u0449%u044C%2C%20%u0441%u043E%u043E%u0431%u0449%u0435%u0441%u0442%u0432%u043E;0.4946110774501199" alt=""></a>
+		<script>
+		document.addEventListener('DOMContentLoaded', () => {	setTimeout(function() {
+			(function(d,s){d.getElementById("licntA934").src=
+			"https://counter.yadro.ru/hit?t45.4;r"+escape(d.referrer)+
+			((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+			(s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+			";h"+escape(d.title.substring(0,150))+";"+Math.random()})
+			(document,screen)
+		}, 1500); });
+		</script><!--/LiveInternet-->
+			</div>
+					</div>
+	</div>
+</footer>
+
+<script>
+const resources = {
+  tabs: [{"index":0,"id":0,"title":""}],
+  tiles: {"vk":[],"ok":[],"ma":[],"rbc":[],"gis":[],"yt":[]},
+  prefs: {"search":1,"search_video":2,"new_window":1,"add_button":1},
+  token: "7ee6808b9cb27c7dceb65bb15711082e91c86871",
+  authButtons: {},
+  messages: {'no-auth': 'Войдите через любой сайт кнопкой <em>Вход,</em> чтобы создать свой профиль или открыть его, если он уже есть.'},
+};
+</script>
+<div class="menu menu_type_main">
+  <ul class="menu__items">
+      <li class="menu__item">
+      <button class="menu__button button__show-tweaks" data-handler="openNotAuthorized">Редактировать</button>
+    </li>
+    <li class="menu__item">
+      <button class="menu__button button__open-settings" data-handler="openNotAuthorized">Настройки</button>
+    </li>
+    <li class="menu__item">
+      <button class="menu__button button__open-map" data-handler="showMap">Помощь</button>
+    </li>
+    </ul>
+</div>
+<div class="popup popup_type_login">
+<div class="popup__window" role="dialog">
+	<h2 class="popup__header">Вход на сайт</h2>
+	<form class="form popup__form" id="form-login" method="post" accept-charset="utf-8" autocomplete="off" action="/actions/login.php">
+		<p class="popup_type_login__message">Сейчас сайт&nbsp;покажет список ваших данных, которые мы&nbsp;запрашиваем, и&nbsp;спросит разрешения на&nbsp;их&nbsp;передачу. Они нужны для входа в&nbsp;аккаунт и&nbsp;для того, чтобы показывать вам уведомления. Нажимая <em>Продолжить,</em> вы&nbsp;соглашаетесь с&nbsp;<a class="popup__link" href="/privacy/" target="_blank">политикой обработки персональных данных</a> и&nbsp;<a class="popup__link" href="/terms/" target="_blank">правилами пользования сайтом</a>. Отозвать свое согласие можно в&nbsp;любое время.</p>
+		<div class="popup__buttons">
+			<button class="popup__button popup__button_type_submit" type="submit">Продолжить</button>
+			<button class="popup__button popup__button_type_cancel" type="button">Отмена</button>
+		</div>
+		<input type="hidden" id="form-login-type" name="type" value="">
+		<input type="hidden" name="token" value="7ee6808b9cb27c7dceb65bb15711082e91c86871">
+	</form>
+</div>
+</div>
+<div class="popup popup_type_info">
+<div class="popup__window" role="dialog">
+	<p class="popup__message popup_type_info__message"></p>
+	<div class="popup__buttons">
+		<button class="popup__button popup__button_type_ok" type="button">ОК</button>
+	</div>
+</div>
+</div>
+<div class="popup-consent" role="dialog" aria-label="Уведомление">
+	<p class="popup-consent__text">Мы используем куки, чтобы сайт работал. <a class="popup-consent__link" href="/privacy/" target="_blank">Подробнее</a></p>
+	<button class="popup-consent__button" type="button">Хорошо</button>
+</div>
+
+<script>
+	const popupConsent = document.querySelector('.popup-consent');
+	const buttonConsent = popupConsent.querySelector('.popup-consent__button');
+	buttonConsent.addEventListener('click', () => {
+		setCookie('consent');
+		popupConsent.remove();
+	});
+</script>
+<script src="/lib/jquery/jquery-3.7.0.min.js"></script>
+<script src="/include/js/bundle1-f30e95a0ae.js"></script>
+<div id="vk-friends-hint" class="popup-hint"></div>
+<div id="vk-counters-hint" class="popup-hint"></div>
+<div id="vk-explainer" class="popup-hint"><p>Вход.ру показывает уведомления из&nbsp;ВК, используя его программный интерфейс для приложений (API).</p><ol><li>Вы&nbsp;нажимаете <em>Вход</em> и&nbsp;разрешаете сайту получать от&nbsp;ВК необходимые данные.</li> <li>Сайт показывает, кто из&nbsp;друзей сейчас в&nbsp;онлайне, есть&nbsp;ли новые сообщения, лайки, комментарии, заявки в&nbsp;друзья, отметки на&nbsp;фото и&nbsp;прочее. При этом вы&nbsp;не&nbsp;появляетесь в&nbsp;онлайне и&nbsp;остаетесь невидимкой.</li> <li>Вход в&nbsp;ВК&nbsp;— одним нажатием.</li> <li>Можно подключить другие соцсети, почту, добавить любые сайты, которые вы&nbsp;часто посещаете, а&nbsp;Вход.ру поставить стартовой страницей в&nbsp;браузере.</li> <li>Получаемые из&nbsp;ВК данные видите только&nbsp;вы. Отозвать разрешение на&nbsp;доступ можно в&nbsp;любой момент.</li></ol> <p>Не&nbsp;является анонимайзером и&nbsp;не&nbsp;предоставляет доступ к&nbsp;запрещенным сайтам.</p></div>
+<script>
+resources.authButtons['vk'] = '<button class="auth-button auth-button_type_vk" type="submit"><img class="auth-button__icon auth-button__icon_type_vk" src="/img/ico/button-logo-vk.svg" alt="">Войти с VK ID</button>';
+resources.messages['vk'] = 'Сейчас ВК покажет список ваших данных, которые мы запрашиваем, и спросит разрешения на их передачу. Они нужны для входа в аккаунт и для того, чтобы показывать вам уведомления из ВК. Нажимая <em>Войти с VK ID,</em> вы соглашаетесь с <a class="popup__link" href="/privacy/" target="_blank">политикой обработки персональных данных</a> и <a class="popup__link" href="/terms/" target="_blank">правилами пользования сайтом</a>. Отозвать свое согласие можно в любое время.';
+function openFriendsOnlineVK() {
+	if (!touchDevice) {
+		userGoTo('https://vk.com/friends?section=online');
+	}
+}
+showOnHover('#vk-explainer-link', '#vk-explainer', true);
+showOnTouch('#vk-explainer-link', '#vk-explainer');
+</script>
+<div id="ok-explainer" class="popup-hint">Подключите Одноклассники кнопкой <em>Вход,</em> чтобы видеть здесь уведомления о&nbsp;новых сообщениях, комментариях, гостях страницы, оценках и&nbsp;других событиях в&nbsp;ОК.</div>
+<script>
+resources.authButtons['ok'] = '<button class="auth-button auth-button_type_ok" type="submit"><img class="auth-button__icon auth-button__icon_type_ok" src="/img/ico/button-logo-ok.svg" alt="">Войти через OK</button>';
+resources.messages['ok'] = 'Сейчас Одноклассники покажут список ваших данных, которые мы запрашиваем, и спросят разрешения на их передачу. Они нужны для входа в аккаунт и для того, чтобы показывать вам уведомления из ОК. Нажимая <em>Войти через OK,</em> вы соглашаетесь с <a class="popup__link" href="/privacy/" target="_blank">политикой обработки персональных данных</a> и <a class="popup__link" href="/terms/" target="_blank">правилами пользования сайтом</a>. Отозвать свое согласие можно в любое время.';
+showOnHover('#ok-explainer-link', '#ok-explainer', true);
+showOnTouch('#ok-explainer-link', '#ok-explainer');
+</script>
+<script>
+resources.authButtons['ma'] = '<button class="auth-button auth-button_type_ma" type="submit"><img class="auth-button__icon auth-button__icon_type_ma" src="/img/ico/button-logo-ma.svg" alt="">Почта Mail</button>';
+resources.messages['ma'] = 'Если вы входите в первый раз, то сейчас Mail.ru покажет список ваших данных, которые мы запрашиваем, и спросит разрешения на их передачу. Они нужны для входа в аккаунт и для того, чтобы показывать количество новых писем. Это работает только при условии, что у вас не удален аккаунт Мой Мир в Mail.ru. Нажимая <em>Почта Mail,</em> вы соглашаетесь с <a class="popup__link" href="/privacy/" target="_blank">политикой обработки персональных данных</a> и <a class="popup__link" href="/terms/" target="_blank">правилами пользования сайтом</a>. Отозвать свое согласие можно в любое время.';
+</script>
+<script>
+function runLoaders() {
+  tileLoaders.forEach(func => func());
+}
+
+if (tileLoaders.length) {
+  runLoaders();
+  setInterval(runLoaders, LOADERS_INTERVAL);
+}
+</script>
+
+<script defer="" src="/lib/jquery-ui/jquery-ui.min.js"></script>
+<script defer="" src="/include/js/bundle2-51be379c8e.js"></script>
+
+
+</body></html>

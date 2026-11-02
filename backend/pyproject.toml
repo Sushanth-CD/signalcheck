@@ -5,11 +5,13 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "cyber-security-awareness-backend"
 version = "0.1.0"
-description = "FastAPI foundation for the Cyber Security Awareness Platform"
+description = "ML inference API for the Cyber Security Awareness Platform"
 requires-python = ">=3.11"
 dependencies = [
     "fastapi>=0.115,<1.0",
     "uvicorn[standard]>=0.30,<1.0",
+    "joblib==1.5.3",
+    "scikit-learn==1.8.0",
 ]
 
 [project.optional-dependencies]

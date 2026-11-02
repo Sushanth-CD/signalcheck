@@ -1,0 +1,77 @@
+{
+  "dataset_name": "CompPhish",
+  "version": 4,
+  "doi": "10.17632/fmbs4kp9wz.4",
+  "repository_url": "https://data.mendeley.com/datasets/fmbs4kp9wz/4",
+  "licence": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "publisher": "Mendeley Data / Elsevier",
+  "collection_period": "September 2024 to August 2025",
+  "reported_statistics": {
+    "total_samples": 15358,
+    "phishing_samples": 7204,
+    "legitimate_samples": 8154,
+    "labels": {
+      "0": "legitimate",
+      "1": "phishing"
+    }
+  },
+  "official_files": [
+    {
+      "filename": "All_HTML.zip",
+      "size_bytes": 725995327,
+      "size_mb": 692.36,
+      "sha256": "12440e4f911fabf4ec2c712ae014cb43e638e9a6adc6c7c6a506a8a7df24fcf7"
+    },
+    {
+      "filename": "Mapping_File.xlsx",
+      "size_bytes": 635936,
+      "size_mb": 0.61,
+      "sha256": "e6dda6a21d925f8aba36090f295b08e9808a5dfe8dd3276bf8cd82022855f14a"
+    },
+    {
+      "filename": "All_Features_threshold90.xlsx",
+      "size_bytes": 4726765,
+      "size_mb": 4.51,
+      "sha256": "6e87b7997c2d0e9e3f1e02fd5ee1240442385f9bea5f0a40e46e7b6e43ada21b"
+    },
+    {
+      "filename": "Data_Dictionary.xlsx",
+      "size_bytes": 18182,
+      "size_mb": 0.02,
+      "sha256": "a4237dd99d7f4a55edc3ffe88a416db77b1734f7c5d52677f8f0c86bf8b88470"
+    },
+    {
+      "filename": "Readme.docx",
+      "size_bytes": 18710,
+      "size_mb": 0.02,
+      "sha256": "b6bb0dcec059a5fa0e01a380c711ea5d27d2577727f3d407a0012276a72b9083"
+    },
+    {
+      "filename": "dataset Creator.zip",
+      "size_bytes": 9710,
+      "size_mb": 0.01,
+      "sha256": "0462b4c4d8e1b4b68eb516c1657ec6d3646ec8dab81e1a2f2dc08eb5a13b3fa2"
+    },
+    {
+      "filename": "feature extractor.zip",
+      "size_bytes": 34276,
+      "size_mb": 0.03,
+      "sha256": "0e72f280a189fdc91c65aa3035334676df26018da8d5b751a0d3f980007b858a"
+    },
+    {
+      "filename": "requirements.txt",
+      "size_bytes": 166,
+      "size_mb": 0.0,
+      "sha256": "d8c1469acf0841ef38323e0050abe6757b376e919bc3a1b8bb13155c13d12eef"
+    }
+  ],
+  "selective_retrieval_feasibility": {
+    "supported": true,
+    "mechanism": "HTTP byte-range requests on underlying S3 archive (All_HTML.zip)",
+    "central_directory_size_bytes": 1417823,
+    "total_bytes_transferred_in_pilot": 504274,
+    "total_bytes_transferred_mb": 0.48,
+    "bulk_download_avoided_mb": 692.36
+  },
+  "created_utc": "2026-11-01T09:30:30.743199+00:00"
+}

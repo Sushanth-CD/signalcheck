@@ -1,0 +1,226 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=11,IE=EDGE">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="keywords" content="ASRock">
+	<title>ASRock</title>
+	<link rel="shortcut Icon" href="/favicon.ico">
+	<link rel="bookmark" href="/favicon.ico">
+	<link rel="stylesheet" href="/silver.css?v=20220923">
+	<script type="text/javascript" src="/includes/jquery.min.1.12.4.js"></script>
+	<script type="text/javascript" src="/includes/jquery.slick.1.8.1.min.js"></script>
+	<link rel="stylesheet" href="/includes/jquery.slick.1.8.1.css">
+	<!--[if lt IE 9]>
+	<script src="/includes/html5shiv.js"></script>
+	<script src="/includes/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+
+<section id="Header" role="navigation">
+	<a href="/index.asp"><div id="Logo"><h1 style="display:none;">ASRock</h1></div></a>
+	<div id="Menu"><img src="/images/menu.gif" alt="Menu button"> Menu</div>
+	<div class="nav">
+		<ul>
+			<li><a onclick="$('#Products').slideToggle();$('#Campaigns').fadeOut();">Products</a></li>
+			<li><a onclick="$('#Campaigns').slideToggle();$('#Products').fadeOut();">Campaigns</a></li>
+			<li><a href="/news/index.asp">News</a></li>
+			<li><a href="/support/index.asp">Support</a></li>
+			<li><a href="/general/buy.asp">Where to Buy</a></li>
+			<li><form action="/support/index.asp"><label for="SearchAll" style="display:none;">Search</label><input type=text name="Model" id="SearchAll" placeholder="Model"><input type=submit  id="SearchBtn" value="&nbsp;"></form></li>
+			<li><a onclick="location.href='https://asrock.com/index.html';"><div id="Language"></div></a></li>
+		</ul>
+	</div>
+</section>
+<style>
+#Products .inner div{width:13.6%;float:left;}
+@media screen and (max-width: 480px) {
+    #Products .inner div {
+        width: 33.3%;
+    }
+}
+</style>
+<section class="Products-wrapper wrapper" id="Products" role="product_type">
+	<div class="inner">
+		<div><a href="/mb/index.asp"><img src="/images/menu-MB.png" class="image" alt="Motherboards button"><br>Motherboards</a></div>
+		<div><a href="/Graphics-Card/index.asp"><img src="/images/menu-GraphicsCard.png" class="image" alt="Graphics Card button"><br>Graphics Card</a></div>
+		<div><a href="/Monitors/index.asp"><img src="/images/menu-Monitors.png" class="image" alt="Monitors button"><br>Gaming Monitor</a></div>
+		<div><a href="/Power-Supply/index.asp"><img src="/images/menu-PSU.png" class="image" alt="Power Supply button"><br>Power Supply</a></div>
+		<div><a href="/nettop/index.asp"><img src="/images/menu-MiniPC.png" class="image" alt="Mini PC button"><br>Mini PC</a></div>
+		<div><a href="https://www.asrockind.com/"><img src="/images/menu-IPC.png" class="image" alt="Industrial PC button"><br>Industrial PC</a></div>
+		<div><a href="https://www.asrockrack.com/" target=_blank><img src="/images/menu-Server.png" class="image" alt="Server/WS button"><br>Server/WS</a></div>
+	</div>
+</section>
+<section class="wrapper" id="Campaigns" role="campaigns_page">
+	<div class="inner">
+		<div class="wide-30-1 left"><a href="/microsite/ASRockElite/index.html"><img src="/images/pro_2024Elite.jpg" class="image" alt="ASRock Elite"><br>ASRock Elite</a></div>
+		<div class="wide-30-1 left"><a href="https://pg.asrock.com/index.asp" target=_blank><img src="/images/PG_OfficialWebsite.jpg" class="image" alt="Phantom Gaming Official Website"><br>Phantom Gaming<br>Official Website</a></div>
+		<div class="wide-30-1 left"><a href="https://event.asrock.com/2025/IntelGamerDaysQ2/" target=_blank><img src="/images/pro_IntelGamerDays2025Q2.jpg" class="image" alt="2025 Intel Q2 Gamer Days"><br>Intel Gamer Days Q2</a></div>
+		<div class="wide-30-1 left"><a href="https://event.asrock.com/2025/IntelGamerDaysQ1/"><img src="/images/pro_IntelGamerDays2025Q1.jpg" class="image" alt="Intel Arc Day"><br>Intel Gamer Days Q1</a></div>
+		<!--<div class="wide-30-1 left"><a href="https://www.asrock.com/microsite/PGMonitor/"><img src="/images/pro_PGMonitors.jpg" class="image" alt="PG Monitor microsite"><br>PG Monitors</a></div>-->
+		<div class="wide-30-1 left"><a href="https://www.asrock.com/microsite/MeetARKY/"><img src="/images/pro_MeetARKY.jpg" class="image" alt="MeetARKY microsite"><br>Meet ARKY</a></div>
+		<div class="wide-30-1 left"><a href="https://pg.asrock.com/microsite/PhantomGamingRoom/ReadyToGame/index.asp"><img src="/images/pro_PGRoom.jpg" class="image" alt="PGRoom microsite"><br>Phantom Gaming<br>Room</a></div>
+		<!--<div class="wide-25-1 left"><a href="/microsite/PhantomGamingAlliance/"><img src="/images/pro_PhantomGamingAlliance.jpg" class="image" alt="Phantom Gaming Alliance button"><br>Phantom Gaming Alliance</a></div>-->
+	</div>
+</section>
+
+<img src="/images/loading.svg" id="loading" alt="Loading" style="z-index: 100;left: 49%; top: 49%; position: fixed; filter: drop-shadow(5px 5px 10px black); margin-top:-30px;margin-left:-30px;">
+
+<a id=GoTop onclick="$('html,body').animate({scrollTop:0}, 'slow');"></a>
+
+<script>
+var url=document.location.href; if(url.indexOf('http://')==0 && url.indexOf('66.')==-1 && url.indexOf('localhost')==-1){window.location.replace(url.replace('http://', 'https://').replace('.tw/', '/'))};
+
+$(function(){
+	$('#Menu').click(function() { $('#Header>.nav').slideToggle('fast'); if($('#Products').is(':visible')){$('#Products').fadeOut();} if($('#Campaigns').is(':visible')){$('#Campaigns').fadeOut();} });
+	$(window).on('resize', function(){if($(window).width()>1024){$('#Header>.nav').fadeIn()};});
+	$(window).scroll(function(event){if($(window).scrollTop()>100){$('#GoTop').show()}else{$('#GoTop').hide()};});
+	$('#SearchAll').hover(function(){$(this).focus().animate({width:'120'}, 'slow', 'linear')}, function(){$(this).animate({width:'100'}, 'fast')})
+	$(window).load(function(){$('#loading').fadeOut('normal');});
+});
+function SetCookie(name,value){var exp=new Date();exp.setTime(exp.getTime()+30*24*60*60*1000);document.cookie=name+"="+escape(value)+";expires="+exp.toGMTString()+";path=/";}
+function getCookie(name){const value = `; ${document.cookie}`; const parts = value.split(`; ${name}=`); if (parts.length === 2) return parts.pop().split(';').shift();}
+</script>
+<!-- Facebook Pixel Code --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', '375024969733413'); fbq('track', 'PageView');</script>
+<!-- Global site tag (gtag.js) - Google Ads: 772752591 --> <script async src="https://www.googletagmanager.com/gtag/js?id=AW-772752591"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-772752591'); </script><!-- End Google Code --> 
+<!-- Google Tag Manager (noscript) --> <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K8HZTL4" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> <!-- End Google Tag Manager (noscript) -->
+
+
+
+<section id="AcceptCookies" role="accpet cookies">
+	<p style="padding:20px 10px;">
+		We use cookies to offer you a more personalized and smoother experience. By visiting this website, you agree to our use of cookies. If you prefer not to accept cookies or require more information, please visit our <a href="/general/TermsPrivacy.asp?cat=Privacy" style="color:#6cf;-webkit-text-stroke-width: thin;text-underline-position: under;text-decoration-thickness: 2px;">Privacy Policy</a>.
+		<input type="Button" class="Buttons" value="Accept" onclick="SetCookie('AcceptCookies', 'Yes');$('#AcceptCookies').fadeOut();">
+	</p>
+</section>
+
+<style>
+#AcceptCookies {position:fixed;bottom:0;background: rgb(0 23 37 / 90%);z-index:999; border-top:1px solid #fff;width:100%;color:white;}
+</style>
+
+
+<section class="posRelative">
+	<div class="slider-nav">
+		<div class="slider-right"></div>
+		<div class="slider-left"></div>
+	</div>
+	<div class="slider">
+		<div><a href="/Graphics-Card/index.asp#RX9070XT"><img src="/images/index_AMDRX9070Series.jpg" alt="AMD Radeon RX 9070 Series" class="desktop"><img src="/images/index_AMDRX9070Seriesm.jpg" alt="AMD Radeon RX 9070 Series" class="mobile"></a></div>
+		<div><a href="/microsite/AMDGameBundle2025Q1/"><img src="/images/index_AMDGameBundle2025Q1.jpg" alt="AMD Game Bundle 2025 Q1" class="desktop"><img src="/images/index_AMDGameBundle2025Q1m.jpg" alt="AMD Game Bundle 2025 Q1" class="mobile"></a></div>
+		<div><a href="https://event.asrock.com/2025/IntelGamerDaysQ2/"><img src="/images/index_IntelGamerDays2025Q2.jpg" alt="Intel Gamer Day" class="desktop"><img src="/images/index_IntelGamerDays2025Q2m.jpg" alt="Intel Gamer Day" class="mobile"></a></div>
+		<div><a href="/Power-Supply/index.asp" target=_blank><img src="/images/index_2025PSUReady.jpg" alt="2025 PSU Ready" class="desktop"><img src="/images/index_2025PSUReadym.jpg" alt="2025 PSU Ready" class="mobile"></a></div>
+		<div><a href="/microsite/AMDB850/"><img src="/images/index_AMDB850Series.jpg" alt="AMD B850 Series" class="desktop"><img src="/images/index_AMDB850Seriesm.jpg" alt="AMD B850 Series" class="mobile"></a></div>
+		<div><a href="/microsite/IntelB860"><img src="/images/index_IntelB860Series.jpg" alt="Intel B860 Series" class="desktop"><img src="/images/index_IntelB860Seriesm.jpg" alt="Intel B860 Series" class="mobile"></a></div>
+		<div><a href="/mb/index.asp#LiveMixer"><img src="/images/index_B850B860LiveMixer.jpg" alt="2025 LiveMixer Series" class="desktop"><img src="/images/index_B850B860LiveMixerm.jpg" alt="2025 LiveMixer Series" class="mobile"></a></div>
+		<div><a href="/news/index.asp?iD=5555"><img src="/images/index_PG27FX.jpg" alt="PG27FX" class="desktop"><img src="/images/index_PG27FXm.jpg" alt="PG27FX Monitors" class="mobile"></a></div>
+		<div><a href="/Monitors/index.asp#tOLED"><img src="/images/index_OLEDMonitors.jpg" alt="OLED Monitors" class="desktop"><img src="/images/index_OLEDMonitorsm.jpg" alt="OLED Monitors" class="mobile"></a></div>
+		<div><a href="/news/index.asp?iD=5550"><img src="/images/index_Intel ArcB-Series.jpg" alt="Intel Arc B-serese Launch" class="desktop"><img src="/images/index_Intel ArcB-Seriesm.jpg" alt="Intel Arc B-serese Launch" class="mobile"></a></div>		
+		<div><a href="/Power-Supply/index.asp#Taichi"><img src="/images/index_PSUTaichi.jpg" alt="2024 Tachi Series" class="desktop"><img src="/images/index_PSUTaichim.jpg" alt="2024 Tachi Series" class="mobile"></a></div>
+		<div><a href="/Power-Supply/index.asp#Steel"><img src="/images/index_PSUSL.jpg" alt="2024 Steel Legend Series" class="desktop"><img src="/images/index_PSUSLm.jpg" alt="2024 Steel Legend Series" class="mobile"></a></div>
+		<div><a href="/Power-Supply/index.asp#Phantom"><img src="/images/index_PSUPG.jpg" alt="2024 PG Series" class="desktop"><img src="/images/index_PSUPGm.jpg" alt="2024 PG Series" class="mobile"></a></div>
+		<div><a href="/Power-Supply/index.asp#Challenger"><img src="/images/index_PSUCL.jpg" alt="2024 Challenger Series" class="desktop"><img src="/images/index_PSUCLm.jpg" alt="2024 Challenger Series" class="mobile"></a></div>
+		<div><a href="/mb/Intel/Z890 Taichi AQUA/"><img src="/images/index_IntelZ890.jpg" alt="Z890 Taichi AQUA Launch" class="desktop"><img src="/images/index_IntelZ890m.jpg" alt="Z890 Taichi AQUA Launch" class="mobile"></a></div>
+		<div><a href="/mb/Intel/Z890 Nova WiFi/"><img src="/images/index_IntelZ890PG.jpg" alt="Z890 Nova WiFi Launch" class="desktop"><img src="/images/index_IntelZ890PGm.jpg" alt="Z890 Nova WiFi Launch" class="mobile"></a></div>
+		<div><a href="/mb/Intel/Z890 LiveMixer WiFi/"><img src="/images/index_IntelZ890LiveMixer.jpg" alt="Z890 LiveMixer Launch" class="desktop"><img src="/images/index_IntelZ890LiveMixerm.jpg" alt="Z890 LiveMixer Launch" class="mobile"></a></div>
+		<div><a href="/mb/Intel/Z890 Steel Legend WiFi/"><img src="/images/index_LightandBright.jpg" alt="Z890 Steel Legend WiFi Launch" class="desktop"><img src="/images/index_LightandBrightm.jpg" alt="Z890 Steel Legend WiFi Launch" class="mobile"></a></div>
+		<div><a href="/microsite/AMDX800/"><img src="/images/index_X870EX870.jpg" alt="X870EX870" class="desktop"><img src="/images/index_X870EX870m.jpg" alt="X870EX870" class="mobile"></a></div>
+		<div><a href="https://event.asrock.com/2024/IntelArcDay/index.asp" target=_blank><img src="/images/index_IntelArcDay.jpg" alt="Intel Arc Day" class="desktop"><img src="/images/index_IntelArcDaym.jpg" alt="Intel Arc Day" class="mobile"></a></div>
+		<div><a href="https://pg.asrock.com/microsite/PhantomGamingRoom/ReadyToGame/index.asp" target=_blank><img src="/images/index_PGRoom.jpg" alt="PGRoom" class="desktop"><img src="/images/index_PGRoomm.jpg" alt="PGRoom" class="mobile"></a></div>
+		<div><a href="/Graphics-Card/index.asp#Passive"><img src="/images/index_RX7900PASSIVE.jpg" alt="AMD Radeon RX 7900 PASSIVE Launch" class="desktop"><img src="/images/index_RX7900PASSIVEm.jpg" alt="AMD Radeon RX 7900 PASSIVE Launch" class="mobile"></a></div>
+		<div><a href="/Graphics-Card/index.asp#Creator"><img src="/images/index_RX7900Creator.jpg" alt="AMD Radeon RX 7900 Creator Launch" class="desktop"><img src="/images/index_RX7900Creatorm.jpg" alt="AMD Radeon RX 7900 Creator Launch" class="mobile"></a></div>		
+		<div>
+			<div class="wide-70 left"><a href="/mb/Intel/W790%20WS/index.asp"><img src="/images/index_W790 WS Series-L.jpg" alt="W790 WS Series" class="desktop"></a></div>
+			<div class="wide-30 left"><a href="/mb/Intel/W790%20WS%20R2.0/index.asp"><img src="/images/index_W790 WS Series-R.jpg" alt="W790 WS Series" class="desktop"></a></div>
+			<a href="/mb"><img src="/images/index_W790 WS Seriesm.jpg" alt="W790 WS Series" class="mobile"></a>			
+		</div>
+		<div><a href="/microsite/aiquickset/index.html"><img src="/images/index_AIQuickSet_IntelAMD.jpg" alt="AI quickset" class="desktop"><img src="/images/index_AIQuickSet_IntelAMDm.jpg" alt="AI quickset" class="mobile"></a></div>
+		<div><a href="/graphics-Card/index.asp#tRX7600XT"><img src="/images/index_RX7600XT.jpg" alt="AMD Radeon RX 7600 XT Launch" class="desktop"><img src="/images/index_RX7600XTm.jpg" alt="AMD Radeon RX 7600 XT Launch" class="mobile"></a></div>
+		<div><a href="https://pg.asrock.com/Graphics-Card/AMD/Radeon%20RX%207900%20XT%20Phantom%20Gaming%20White%2020GB%20OC/index.asp" target=_blank><img src="/images/index_RX7900XTPGWhite.jpg" alt="RX7900XTPGWhite" class="desktop"><img src="/images/index_RX7900XTPGWhitem.jpg" alt="RX7900XTPGWhite" class="mobile"></a></div>
+		<div><a href="/mb/AMD/WRX90%20WS%20EVO/index.asp"><img src="/images/index_TRX50WRX90.jpg" alt="TRX50 WRX90" class="desktop"><img src="/images/index_TRX50WRX90m.jpg" alt="TRX50 WRX90" class="mobile"></a></div>
+		<div><a href="/Graphics-Card/"><img src="/images/index_RX7800XT7700XT.jpg" alt="AMD Radeon RX 7700 XT & 7700 XT Launch" class="desktop"><img src="/images/index_RX7800XT7700XTm.jpg" alt="AMD Radeon RX 7700 XT & 7700 XT Launch" class="mobile"></a></div>
+		
+		<div><a href="/Graphics-Card/"><img src="/images/index_RX7600.jpg" alt="AMD Radeon RX 7600 Launch" class="desktop"><img src="/images/index_RX7600m.jpg" alt="AMD Radeon RX 7600 Launch" class="mobile"></a></div>
+		<div><a href="/Graphics-Card/AMD/Radeon RX 7900 XTX Taichi White 24GB OC/"><img src="/images/index_RX7900XTXTCW24GO.jpg" alt="AMD Radeon RX 7900 XTX Taichi White 24GB OC Launch" class="desktop"><img src="/images/index_RX7900XTXTCW24GOm.jpg" alt="AMD Radeon RX 7900 XTX Taichi White 24GB OC Launch" class="mobile"></a></div>
+<div><a href="/Graphics-Card"><img src="/images/index_RX7900Series.jpg" alt="RX7900Series" class="desktop"><img src="/images/index_RX7900Seriesm.jpg" alt="RX7900Series" class="mobile"></a></div>
+		<div><a href="/nettop/AMD/DeskMeet X600 Series/index.asp"><img src="/images/index_DeskMeetX600.jpg" alt="DeskMeet X600 Series" class="desktop"><img src="/images/index_DeskMeetX600m.jpg" alt="DeskMeet X600 Series" class="mobile"></a></div>
+		<div><a href="/nettop/Intel/Mars RPL Series/index.asp"><img src="/images/index_MarsRPL.jpg" alt="Mars RPL Series" class="desktop"><img src="/images/index_MarsRPLm.jpg" alt="Mars RPL Series" class="mobile"></a></div>
+		<div><a href="/nettop/AMD/Jupiter X600/index.asp"><img src="/images/index_JupiterX600.jpg" alt="Jupiter X600 Series" class="desktop"><img src="/images/index_JupiterX600m.jpg" alt="Jupiter X600 Series" class="mobile"></a></div>
+		<div><a href="/mb/AMD/X600TM-ITX/index.asp"><img src="/images/index_X600TM-ITX.jpg" alt="X600TM-ITX" class="desktop"><img src="/images/index_X600TM-ITXm.jpg" alt="X600TM-ITX" class="mobile"></a></div>
+	</div>
+</section>
+
+<section class="wrapper" style="background:url('/images/bg_index.jpg') repeat-x;">
+	<div class="inner">
+		<div class="wide-25 left"><a href="/nettop/index.asp"><img src="/images/index-MPC.png" alt="Mini PC" class="image TransIn"></a></div>
+		<div class="wide-50 left"><a href="/mb/index.asp"><img src="/images/index-MB.png" alt="Motherboards" class="image TransIn"></a></div>
+		<div class="wide-25 left"><a href="/Graphics-Card/index.asp"><img src="/images/index-GraphicsCard.png" alt="Graphics Card" class="image TransIn"></a></div>
+		<div class="left" style="width: 25%;"><a href="https://www.asrockrack.com/" target=_blank><img src="/images/index-Server.png" alt="Server/WS" class="image TransIn"></a></div>
+		<div class="left" style="width: 25%;"><a href="https://www.asrockind.com/en-gb/"><img src="/images/index-IPC.png" alt="industrial Computer" class="image TransIn"></a></div>
+		<div class="left" style="width: 25%;"><a href="/Monitors/index.asp"><img src="/images/index-Monitors.png" alt="Monitors" class="image TransIn"></a></div>
+		<div class="left" style="width: 25%;"><a href="/Power-Supply/index.asp"><img src="/images/index-PSU.png" alt="Power Supply" class="image TransIn"></a></div>
+		<!--<div class="wide-25 left"><a href="/networking/index.asp"><img src="/images/index-Networking.png" alt="Networking" class="image TransIn"></a></div>-->
+	</div>
+	<div class="clear"></div>
+</section>
+
+<section id="footer">
+	<div class="inner">
+		<ul class="left wide-25-2">
+			<li>ABOUT</li>
+			<li><a href="/general/about.asp">About ASRock</a></li>
+			<li><a href="/support/index.asp?item=ContactUS">Contact Us</a></li>
+			<li><a href="/general/about.asp?cat=Organization">Organization</a></li>
+			<li><a href="/general/about.asp?cat=Responsibility">Corporate Social Responsibility</a></li>
+			<li><a href="/general/Investor.asp">Investor Services</a></li>
+			<li>&nbsp;</li>
+		</ul>
+		<ul class="left wide-25-2">
+			<li>NEWS</li>
+			<li><a href="/news/index.asp">Press Release</a></li>
+			<li><a href="/news/index.asp?cat=Awards">Awards</a></li>
+			
+			<li>&nbsp;</li>
+			<li>&nbsp;</li>
+		</ul>
+		<ul class="left wide-25-2">
+			<li>SUPPORT</li>
+			<li><a href="/support/index.asp">Download</a></li>
+			<li><a href="/support/faq.asp">FAQ</a></li>
+			<li><a href="https://event.asrock.com/tsd.asp" target=_blank>Technical Support</a></li>
+			
+		</ul>
+		<ul class="left wide-25-2">
+			<li>COMMUNITY</li>
+			
+			<li><a href="https://www.facebook.com/ASRockInfo" target=_blank>Facebook</a></li>
+			<li><a href="https://www.youtube.com/user/ASRockInfo" target=_blank>YouTube</a></li>
+			<li><a href="https://www.instagram.com/asrock_official/" target=_blank>Instagram</a></li>
+			
+			<li><a href="/support/forum.asp">Forum</a></li>
+			<li><a href="https://event.asrock.com/Dealer/" target=_blank>Dealer & Media Zone</a></li>
+			<li><a href="/general/wallpaper.asp">Wallpaper</a></li>
+			<li></li>
+		</ul>
+		<div class="copyright clear">Â© 2025 ASRock Inc. All rights reserved. Information published on ASRock.com is subject to change without notice.&nbsp;|&nbsp;<a href="/general/TermsPrivacy.asp">Terms of Use Notice</a>&nbsp;|&nbsp;<a href="/general/TermsPrivacy.asp?cat=Privacy">Privacy Policy</a>|&nbsp;<a href="/general/TermsPrivacy.asp?cat=NFT">NFT Terms & Condition</a></div>
+	</div>
+</section>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CG23NQ5S7K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CG23NQ5S7K');
+</script>
+
+<script>
+function Open2(url1,url2){window.open(url1);window.location.replace(url2);}
+$(function(){$('.slider').slick({autoplay: true, dots: true, speed: 1000, prevArrow: $('.slider-left'), nextArrow: $('.slider-right')});});
+function GA(evt){ga('send', 'event', {eventCategory: 'banner', eventAction: 'click', eventLabel: evt});}
+</script>
+</body>
+</html>

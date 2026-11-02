@@ -1,0 +1,46 @@
+{
+  "freeze_manifest_sha256": "652a23e59700c7a117354746a9c93dba920f4ddbb70e7a69ad8888ab5a80526e",
+  "overall_status": "PASS",
+  "artifacts_checked": {
+    "v2_baseline": {
+      "relative_path": "backend/reports/ml/phishing_domain_holdout_v2/model.joblib",
+      "expected_sha256": "97ca5d41ea4322965eec838968e80838113be130684f9703f77a51e663355921",
+      "actual_sha256": "97ca5d41ea4322965eec838968e80838113be130684f9703f77a51e663355921",
+      "expected_size_bytes": 8296368,
+      "actual_size_bytes": 8296368,
+      "sha256_match": true,
+      "size_match": true,
+      "status": "PASS"
+    },
+    "v3_dual_channel": {
+      "relative_path": "backend/reports/ml/phishing_v3_experiments/dual_channel_v3_model.joblib",
+      "expected_sha256": "c0b514d976f88b025a3ebd101120cbbd1266dde6799564b65dba87023a16dfd9",
+      "actual_sha256": "c0b514d976f88b025a3ebd101120cbbd1266dde6799564b65dba87023a16dfd9",
+      "expected_size_bytes": 2812543,
+      "actual_size_bytes": 2812543,
+      "sha256_match": true,
+      "size_match": true,
+      "status": "PASS"
+    },
+    "v3_content_only": {
+      "relative_path": "backend/reports/ml/phishing_v3_experiments/content_only_model.joblib",
+      "expected_sha256": "ff837956a76e31e12b0e47b9139f57cffe2894c104c677a0bcc788769bc71faf",
+      "actual_sha256": "ff837956a76e31e12b0e47b9139f57cffe2894c104c677a0bcc788769bc71faf",
+      "expected_size_bytes": 2379487,
+      "actual_size_bytes": 2379487,
+      "sha256_match": true,
+      "size_match": true,
+      "status": "PASS"
+    },
+    "v3_url_only": {
+      "relative_path": "backend/reports/ml/phishing_v3_experiments/url_only_model.joblib",
+      "expected_sha256": "d180be6e80207bbce0720bd4d846334247d8266a18f5860be6d204b1ab5dfd72",
+      "actual_sha256": "d180be6e80207bbce0720bd4d846334247d8266a18f5860be6d204b1ab5dfd72",
+      "expected_size_bytes": 434335,
+      "actual_size_bytes": 434335,
+      "sha256_match": true,
+      "size_match": true,
+      "status": "PASS"
+    }
+  }
+}

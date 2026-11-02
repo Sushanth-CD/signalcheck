@@ -1,0 +1,14 @@
+{
+  "model_id": "sms_05_d_two_channel",
+  "model_name": "SMS-05-D: Structured Two-Channel Content + Structural Model",
+  "description": "Dual-channel pipeline uniting lexical/subword TF-IDF with derived text-level structural indicators (has_url, has_phone_number, is_premium_rate_prefix, has_currency_symbol, uppercase_ratio, punctuation_density).",
+  "fit_time_seconds": 11.214,
+  "seed": 20261102,
+  "dataset": {
+    "manifest": "sms05_split_manifest.csv",
+    "train_samples": 6123,
+    "val_samples": 1305,
+    "test_samples": 1307
+  },
+  "operating_threshold": 0.5
+}

@@ -1,0 +1,10 @@
+{
+  "model_artifact_path": "C:\\Projects\\cyber-security-awareness-platform\\backend\\reports\\ml\\sms_dedicated_train_1\\experiments\\sms_03_combined\\sms_model.joblib",
+  "expected_sha256": "8dd043a3b8322b2e55ca34581466b6dd64bbbf0f24422952156c1176942644df",
+  "pre_inference_sha256": "8dd043a3b8322b2e55ca34581466b6dd64bbbf0f24422952156c1176942644df",
+  "post_inference_sha256": "8dd043a3b8322b2e55ca34581466b6dd64bbbf0f24422952156c1176942644df",
+  "sha256_match_confirmed": true,
+  "operating_threshold": 0.5,
+  "inference_timestamp_utc": "2026-11-02T14:10:00Z",
+  "records_scored": 500
+}

@@ -1,0 +1,52 @@
+{
+  "timestamp_utc": "2026-11-01T09:30:30.742718+00:00",
+  "project_reference_corpus": {
+    "source_file": "backend/data/raw/combined_reduced.json",
+    "unique_normalized_text_hashes": 77411,
+    "project_domain_grouping_keys": 38972,
+    "simhash_index_persisted": false,
+    "simhash_rebuilt_in_pilot": false,
+    "simhash_limitation_note": "No persisted 77k SimHash index file exists on disk. Full SimHash index was NOT rebuilt in this bounded pilot."
+  },
+  "screening_results": {
+    "total_acquired": 10,
+    "accepted_legitimate": 5,
+    "accepted_phishing": 5,
+    "rejected_count": 3,
+    "exact_text_collisions": 0,
+    "domain_collisions": 3,
+    "fully_independent": false
+  },
+  "accepted_serial_numbers": [
+    202420251915,
+    202420251984,
+    202420253678,
+    202420261706,
+    815,
+    9156427,
+    202420259312,
+    37600,
+    202420250978,
+    202420255163
+  ],
+  "rejected_details": [
+    {
+      "serial_number": 202420252078,
+      "url": "https://wynk.in/music",
+      "label": "legitimate",
+      "reason": "domain_collision:registrable:wynk.in"
+    },
+    {
+      "serial_number": 202420251288,
+      "url": "https://genius.com/",
+      "label": "legitimate",
+      "reason": "domain_collision:registrable:genius.com"
+    },
+    {
+      "serial_number": 9156997,
+      "url": "https://sites.google.com/view/loginwebmail1/home",
+      "label": "phishing",
+      "reason": "domain_collision:registrable:google.com"
+    }
+  ]
+}

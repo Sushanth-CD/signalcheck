@@ -1,0 +1,275 @@
+{
+  "analysis": "Phishing Classifier Hybrid Routing Evaluation",
+  "date_utc": "2026-10-31T14:23:22.069620+00:00",
+  "validation_records": 2005,
+  "policies": {
+    "Policy 1 (V2 All)": {
+      "description": "V2 for all inputs",
+      "v3_routed_records": 0,
+      "v2_routed_records": 2005
+    },
+    "Policy 2 (V3 Dual All)": {
+      "description": "V3 Dual for all inputs",
+      "v3_routed_records": 2005,
+      "v2_routed_records": 0
+    },
+    "Policy 3 (HTML -> V3 Dual, else V2)": {
+      "description": "V3 Dual for reliably detected HTML; V2 for all other inputs",
+      "v3_routed_records": 377,
+      "v2_routed_records": 1628
+    },
+    "Policy 4 (HTML or Long -> V3 Dual, else V2)": {
+      "description": "V3 Dual for HTML or inputs longer than 1,000 characters; V2 otherwise",
+      "v3_routed_records": 415,
+      "v2_routed_records": 1590
+    },
+    "Policy 5 (Short URL -> V2, HTML/Long -> V3 Dual, else V2)": {
+      "description": "V2 for short URL-only inputs (<= 100 chars); V3 Dual for HTML and long inputs (> 1000 chars); V2 otherwise",
+      "v3_routed_records": 415,
+      "v2_routed_records": 1590
+    }
+  },
+  "detection_rules": {
+    "html_detection_regex": "(?is)<\\s*(?:!doctype\\s+html|html|head|body|meta|link|a|form|div|p)\\b",
+    "long_message_threshold_chars": 1000,
+    "short_message_threshold_chars": 100,
+    "short_url_only_criteria": "text_len <= 100 AND has_urls == True AND is_html == False"
+  },
+  "threshold_summary": {
+    "Policy 1 (V2 All)": {
+      "ref_0_50": {
+        "n": 2005.0,
+        "TP": 1328.0,
+        "TN": 389.0,
+        "FP": 126.0,
+        "FN": 162.0,
+        "precision": 0.913343,
+        "recall": 0.891275,
+        "f1": 0.902174,
+        "specificity": 0.75534,
+        "accuracy": 0.856359,
+        "roc_auc": 0.921515,
+        "average_precision": 0.969845,
+        "threshold": 0.5
+      },
+      "max_f1": {
+        "n": 2005.0,
+        "TP": 1457.0,
+        "TN": 265.0,
+        "FP": 250.0,
+        "FN": 33.0,
+        "precision": 0.853544,
+        "recall": 0.977852,
+        "f1": 0.91148,
+        "specificity": 0.514563,
+        "accuracy": 0.858853,
+        "roc_auc": 0.921515,
+        "average_precision": 0.969845,
+        "threshold": 0.26
+      },
+      "best_spec_ge_90": {
+        "n": 2005.0,
+        "TP": 1167.0,
+        "TN": 465.0,
+        "FP": 50.0,
+        "FN": 323.0,
+        "precision": 0.958915,
+        "recall": 0.783221,
+        "f1": 0.862209,
+        "specificity": 0.902913,
+        "accuracy": 0.813965,
+        "roc_auc": 0.921515,
+        "average_precision": 0.969845,
+        "threshold": 0.68
+      }
+    },
+    "Policy 2 (V3 Dual All)": {
+      "ref_0_50": {
+        "n": 2005.0,
+        "TP": 1299.0,
+        "TN": 396.0,
+        "FP": 119.0,
+        "FN": 191.0,
+        "precision": 0.916079,
+        "recall": 0.871812,
+        "f1": 0.893398,
+        "specificity": 0.768932,
+        "accuracy": 0.845387,
+        "roc_auc": 0.916659,
+        "average_precision": 0.970865,
+        "threshold": 0.5
+      },
+      "max_f1": {
+        "n": 2005.0,
+        "TP": 1371.0,
+        "TN": 322.0,
+        "FP": 193.0,
+        "FN": 119.0,
+        "precision": 0.876598,
+        "recall": 0.920134,
+        "f1": 0.897839,
+        "specificity": 0.625243,
+        "accuracy": 0.844389,
+        "roc_auc": 0.916659,
+        "average_precision": 0.970865,
+        "threshold": 0.35
+      },
+      "best_spec_ge_90": {
+        "n": 2005.0,
+        "TP": 1188.0,
+        "TN": 467.0,
+        "FP": 48.0,
+        "FN": 302.0,
+        "precision": 0.961165,
+        "recall": 0.797315,
+        "f1": 0.871607,
+        "specificity": 0.906796,
+        "accuracy": 0.825436,
+        "roc_auc": 0.916659,
+        "average_precision": 0.970865,
+        "threshold": 0.7
+      }
+    },
+    "Policy 3 (HTML -> V3 Dual, else V2)": {
+      "ref_0_50": {
+        "n": 2005.0,
+        "TP": 1378.0,
+        "TN": 376.0,
+        "FP": 139.0,
+        "FN": 112.0,
+        "precision": 0.908372,
+        "recall": 0.924832,
+        "f1": 0.916528,
+        "specificity": 0.730097,
+        "accuracy": 0.874813,
+        "roc_auc": 0.922457,
+        "average_precision": 0.970647,
+        "threshold": 0.5
+      },
+      "max_f1": {
+        "n": 2005.0,
+        "TP": 1390.0,
+        "TN": 368.0,
+        "FP": 147.0,
+        "FN": 100.0,
+        "precision": 0.904359,
+        "recall": 0.932886,
+        "f1": 0.918401,
+        "specificity": 0.714563,
+        "accuracy": 0.876808,
+        "roc_auc": 0.922457,
+        "average_precision": 0.970647,
+        "threshold": 0.48
+      },
+      "best_spec_ge_90": {
+        "n": 2005.0,
+        "TP": 1182.0,
+        "TN": 465.0,
+        "FP": 50.0,
+        "FN": 308.0,
+        "precision": 0.959416,
+        "recall": 0.793289,
+        "f1": 0.868479,
+        "specificity": 0.902913,
+        "accuracy": 0.821446,
+        "roc_auc": 0.922457,
+        "average_precision": 0.970647,
+        "threshold": 0.71
+      }
+    },
+    "Policy 4 (HTML or Long -> V3 Dual, else V2)": {
+      "ref_0_50": {
+        "n": 2005.0,
+        "TP": 1374.0,
+        "TN": 379.0,
+        "FP": 136.0,
+        "FN": 116.0,
+        "precision": 0.909934,
+        "recall": 0.922148,
+        "f1": 0.916,
+        "specificity": 0.735922,
+        "accuracy": 0.874314,
+        "roc_auc": 0.923195,
+        "average_precision": 0.970869,
+        "threshold": 0.5
+      },
+      "max_f1": {
+        "n": 2005.0,
+        "TP": 1385.0,
+        "TN": 371.0,
+        "FP": 144.0,
+        "FN": 105.0,
+        "precision": 0.905821,
+        "recall": 0.92953,
+        "f1": 0.917522,
+        "specificity": 0.720388,
+        "accuracy": 0.87581,
+        "roc_auc": 0.923195,
+        "average_precision": 0.970869,
+        "threshold": 0.48
+      },
+      "best_spec_ge_90": {
+        "n": 2005.0,
+        "TP": 1189.0,
+        "TN": 465.0,
+        "FP": 50.0,
+        "FN": 301.0,
+        "precision": 0.959645,
+        "recall": 0.797987,
+        "f1": 0.871381,
+        "specificity": 0.902913,
+        "accuracy": 0.824938,
+        "roc_auc": 0.923195,
+        "average_precision": 0.970869,
+        "threshold": 0.71
+      }
+    },
+    "Policy 5 (Short URL -> V2, HTML/Long -> V3 Dual, else V2)": {
+      "ref_0_50": {
+        "n": 2005.0,
+        "TP": 1374.0,
+        "TN": 379.0,
+        "FP": 136.0,
+        "FN": 116.0,
+        "precision": 0.909934,
+        "recall": 0.922148,
+        "f1": 0.916,
+        "specificity": 0.735922,
+        "accuracy": 0.874314,
+        "roc_auc": 0.923195,
+        "average_precision": 0.970869,
+        "threshold": 0.5
+      },
+      "max_f1": {
+        "n": 2005.0,
+        "TP": 1385.0,
+        "TN": 371.0,
+        "FP": 144.0,
+        "FN": 105.0,
+        "precision": 0.905821,
+        "recall": 0.92953,
+        "f1": 0.917522,
+        "specificity": 0.720388,
+        "accuracy": 0.87581,
+        "roc_auc": 0.923195,
+        "average_precision": 0.970869,
+        "threshold": 0.48
+      },
+      "best_spec_ge_90": {
+        "n": 2005.0,
+        "TP": 1189.0,
+        "TN": 465.0,
+        "FP": 50.0,
+        "FN": 301.0,
+        "precision": 0.959645,
+        "recall": 0.797987,
+        "f1": 0.871381,
+        "specificity": 0.902913,
+        "accuracy": 0.824938,
+        "roc_auc": 0.923195,
+        "average_precision": 0.970869,
+        "threshold": 0.71
+      }
+    }
+  }
+}

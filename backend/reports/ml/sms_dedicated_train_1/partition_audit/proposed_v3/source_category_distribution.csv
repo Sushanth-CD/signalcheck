@@ -1,0 +1,16 @@
+partition,source,original_category,record_count,percentage_within_partition,percentage_within_source_category
+train,ExAIS,commercial_spam,1037,27.37,70.64
+train,ExAIS,ham,875,23.09,70.0
+train,UCI,commercial_spam,22,0.58,68.75
+train,UCI,ham,875,23.09,70.0
+train,WSPR_NCSU,smishing,980,25.86,70.0
+validation,ExAIS,commercial_spam,216,26.83,14.71
+validation,ExAIS,ham,187,23.23,14.96
+validation,UCI,commercial_spam,5,0.62,15.62
+validation,UCI,ham,187,23.23,14.96
+validation,WSPR_NCSU,smishing,210,26.09,15.0
+test,ExAIS,commercial_spam,215,26.67,14.65
+test,ExAIS,ham,188,23.33,15.04
+test,UCI,commercial_spam,5,0.62,15.62
+test,UCI,ham,188,23.33,15.04
+test,WSPR_NCSU,smishing,210,26.05,15.0

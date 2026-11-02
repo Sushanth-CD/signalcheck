@@ -1,0 +1,41 @@
+{
+  "dataset_name": "CompPhish V4 (Comprehensive Phishing and Legitimate Web Pages)",
+  "version": "4",
+  "doi": "10.17632/fmbs4kp9wz.4",
+  "repository_url": "https://data.mendeley.com/datasets/fmbs4kp9wz/4",
+  "licence": "CC BY 4.0",
+  "publisher": "Mendeley Data / Elsevier",
+  "collection_period": "September 2024 to August 2025",
+  "corpus_2000_execution": {
+    "target_total": 2000,
+    "target_legitimate": 1062,
+    "target_phishing": 938,
+    "actual_accepted_total": 2000,
+    "actual_accepted_legitimate": 1062,
+    "actual_accepted_phishing": 938,
+    "total_candidates_examined": 4810,
+    "total_candidates_excluded": 2810,
+    "unique_domains": 1999,
+    "strata_distribution": {
+      "legitimate_crawl_2024_2025_batch1": 392,
+      "legitimate_top_sites_seed": 383,
+      "legitimate_crawl_2025_batch2": 287,
+      "phishing_crawl_2024_2025_batch1": 502,
+      "phishing_phishtank_feed": 314,
+      "phishing_openphish_feed": 90,
+      "phishing_crawl_2025_batch2": 32
+    },
+    "html_payload_transferred_bytes": 87694815,
+    "html_payload_transferred_mb": 83.63,
+    "total_bytes_transferred_bytes": 87694815,
+    "total_bytes_transferred_mb": 83.63,
+    "total_elapsed_seconds": 255.37,
+    "limits_enforced": {
+      "max_accepted_samples": 2000,
+      "max_bytes_limit_mb": 250.0,
+      "timeout_seconds": 600
+    },
+    "bulk_archive_download_avoided_mb": 608.73
+  },
+  "created_utc": "2026-11-01T10:21:11.622487+00:00"
+}

@@ -1,0 +1,6 @@
+n,TP,TN,FP,FN,precision,recall,f1,specificity,accuracy,roc_auc,average_precision,policy,description,routed_to_v3_count,routed_to_v2_count
+2005,1328,389,126,162,0.913343,0.891275,0.902174,0.75534,0.856359,0.921515,0.969845,Policy 1 (V2 All),V2 for all inputs,0,2005
+2005,1299,396,119,191,0.916079,0.871812,0.893398,0.768932,0.845387,0.916659,0.970865,Policy 2 (V3 Dual All),V3 Dual for all inputs,2005,0
+2005,1378,376,139,112,0.908372,0.924832,0.916528,0.730097,0.874813,0.922457,0.970647,"Policy 3 (HTML -> V3 Dual, else V2)",V3 Dual for reliably detected HTML; V2 for all other inputs,377,1628
+2005,1374,379,136,116,0.909934,0.922148,0.916,0.735922,0.874314,0.923195,0.970869,"Policy 4 (HTML or Long -> V3 Dual, else V2)","V3 Dual for HTML or inputs longer than 1,000 characters; V2 otherwise",415,1590
+2005,1374,379,136,116,0.909934,0.922148,0.916,0.735922,0.874314,0.923195,0.970869,"Policy 5 (Short URL -> V2, HTML/Long -> V3 Dual, else V2)",V2 for short URL-only inputs (<= 100 chars); V3 Dual for HTML and long inputs (> 1000 chars); V2 otherwise,415,1590

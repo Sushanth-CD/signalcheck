@@ -1,0 +1,78 @@
+Domain-held-out phishing classifier; source labels: 0=benign, 1=phishing; threshold=0.5
+
+OVERALL TEST (unique normalized text groups)
+                         precision    recall  f1-score   support
+
+  benign_source_label_0   0.910012  0.876269  0.892822      5124
+phishing_source_label_1   0.865735  0.902030  0.883510      4532
+
+               accuracy                       0.888360      9656
+              macro avg   0.887874  0.889149  0.888166      9656
+           weighted avg   0.889231  0.888360  0.888451      9656
+
+URL-CONTAINING TEST
+URL-containing test
+                         precision    recall  f1-score   support
+
+  benign_source_label_0   0.900695  0.845431  0.872189      3830
+phishing_source_label_1   0.846194  0.901217  0.872839      3614
+
+               accuracy                       0.872515      7444
+              macro avg   0.873445  0.873324  0.872514      7444
+           weighted avg   0.874235  0.872515  0.872505      7444
+
+NON-URL TEST
+Non-URL test
+                         precision    recall  f1-score   support
+
+  benign_source_label_0   0.935026  0.967543  0.951006      1294
+phishing_source_label_1   0.951890  0.905229  0.927973       918
+
+               accuracy                       0.941682      2212
+              macro avg   0.943458  0.936386  0.939490      2212
+           weighted avg   0.942025  0.941682  0.941447      2212
+
+INPUT TYPE: email
+email
+                         precision    recall  f1-score   support
+
+  benign_source_label_0   0.888889  0.727273  0.800000        22
+phishing_source_label_1   0.818182  0.931034  0.870968        29
+
+               accuracy                       0.843137        51
+              macro avg   0.853535  0.829154  0.835484        51
+           weighted avg   0.848683  0.843137  0.840354        51
+
+INPUT TYPE: html
+html
+                         precision    recall  f1-score   support
+
+  benign_source_label_0   0.934524  0.947925  0.941176      1325
+phishing_source_label_1   0.890650  0.864615  0.877440       650
+
+               accuracy                       0.920506      1975
+              macro avg   0.912587  0.906270  0.909308      1975
+           weighted avg   0.920084  0.920506  0.920200      1975
+
+INPUT TYPE: plain_text
+plain_text
+                         precision    recall  f1-score   support
+
+  benign_source_label_0   0.929518  0.973684  0.951089      1368
+phishing_source_label_1   0.962025  0.900296  0.930138      1013
+
+               accuracy                       0.942461      2381
+              macro avg   0.945772  0.936990  0.940613      2381
+           weighted avg   0.943349  0.942461  0.942175      2381
+
+INPUT TYPE: url
+url
+                         precision    recall  f1-score   support
+
+  benign_source_label_0   0.881720  0.782897  0.829376      2409
+phishing_source_label_1   0.831833  0.910915  0.869580      2840
+
+               accuracy                       0.852162      5249
+              macro avg   0.856777  0.846906  0.849478      5249
+           weighted avg   0.854728  0.852162  0.851128      5249
+

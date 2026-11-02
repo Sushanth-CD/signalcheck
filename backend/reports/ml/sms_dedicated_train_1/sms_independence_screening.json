@@ -1,0 +1,24 @@
+{
+  "timestamp_utc": "2026-11-02T01:02:47Z",
+  "baseline_corpus_records": 77677,
+  "pilot_records_excluded": 250,
+  "pilot_campaigns_excluded": 100,
+  "candidate_counts": {
+    "total_screened_and_allocated": 5400,
+    "smishing": 1400,
+    "ham": 2500,
+    "commercial_spam": 1500
+  },
+  "exclusions_by_reason": {
+    "pilot_campaign_exclusion": 517,
+    "exact_corpus_collision": 1202,
+    "exact_pilot_collision": 181,
+    "corpus_simhash_hamming_le3": 24
+  },
+  "invariants": {
+    "zero_campaign_leakage": true,
+    "zero_partition_text_overlap": true,
+    "zero_corpus_collision": true,
+    "zero_pilot_collision": true
+  }
+}

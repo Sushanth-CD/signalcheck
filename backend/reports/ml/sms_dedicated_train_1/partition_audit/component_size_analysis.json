@@ -1,0 +1,141 @@
+{
+  "total_components": 2626,
+  "total_records": 5400,
+  "largest_component_id": "sms_comp_02595",
+  "largest_component_size": 2621,
+  "singleton_component_count": 2578,
+  "components_with_multiple_sources": 1,
+  "components_with_multiple_categories": 4,
+  "max_participants_per_component": 17,
+  "max_campaigns_per_component": 2,
+  "size_distribution_percentiles": {
+    "min": 1,
+    "median": 1.0,
+    "p75": 1.0,
+    "p90": 1.0,
+    "p99": 2.0,
+    "max": 2621
+  },
+  "top_10_largest_components": [
+    {
+      "component_id": "sms_comp_02595",
+      "size": 2621,
+      "sources": [
+        "ExAIS_USER 11",
+        "ExAIS_USER 3",
+        "ExAIS_USER 7",
+        "ExAIS_USER 17",
+        "ExAIS_USER 12",
+        "ExAIS_USER 10",
+        "ExAIS_USER 13",
+        "ExAIS_USER 5",
+        "ExAIS_USER 9",
+        "ExAIS_USER 15",
+        "ExAIS_USER 14",
+        "ExAIS_USER 6",
+        "ExAIS_USER 19",
+        "ExAIS_USER 20",
+        "ExAIS_USER 4",
+        "ExAIS_USER 18",
+        "ExAIS_USER 16"
+      ],
+      "categories": [
+        "commercial_spam",
+        "ham"
+      ]
+    },
+    {
+      "component_id": "sms_comp_02596",
+      "size": 55,
+      "sources": [
+        "ExAIS_USER 2"
+      ],
+      "categories": [
+        "commercial_spam",
+        "ham"
+      ]
+    },
+    {
+      "component_id": "sms_comp_02597",
+      "size": 27,
+      "sources": [
+        "ExAIS_USER 1"
+      ],
+      "categories": [
+        "commercial_spam",
+        "ham"
+      ]
+    },
+    {
+      "component_id": "sms_comp_02598",
+      "size": 15,
+      "sources": [
+        "ExAIS_USER 8"
+      ],
+      "categories": [
+        "commercial_spam",
+        "ham"
+      ]
+    },
+    {
+      "component_id": "sms_comp_01528",
+      "size": 10,
+      "sources": [
+        "UCI"
+      ],
+      "categories": [
+        "ham"
+      ]
+    },
+    {
+      "component_id": "sms_comp_01653",
+      "size": 5,
+      "sources": [
+        "UCI"
+      ],
+      "categories": [
+        "ham"
+      ]
+    },
+    {
+      "component_id": "sms_comp_02608",
+      "size": 4,
+      "sources": [
+        "UCI"
+      ],
+      "categories": [
+        "commercial_spam"
+      ]
+    },
+    {
+      "component_id": "sms_comp_01612",
+      "size": 3,
+      "sources": [
+        "UCI"
+      ],
+      "categories": [
+        "ham"
+      ]
+    },
+    {
+      "component_id": "sms_comp_02141",
+      "size": 3,
+      "sources": [
+        "UCI"
+      ],
+      "categories": [
+        "ham"
+      ]
+    },
+    {
+      "component_id": "sms_comp_01772",
+      "size": 3,
+      "sources": [
+        "UCI"
+      ],
+      "categories": [
+        "ham"
+      ]
+    }
+  ]
+}

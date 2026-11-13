@@ -1,4 +1,5 @@
-const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:8000").replace(/\/$/, "");
+const rawBaseUrl = import.meta.env.VITE_API_BASE_URL;
+const API_BASE_URL = typeof rawBaseUrl === "string" ? rawBaseUrl.replace(/\/$/, "") : "";
 
 function messageFromError(payload, statusCode) {
   if (payload && typeof payload.message === "string") return payload.message;
@@ -49,6 +50,44 @@ function isAndroidAnalysisResponse(value) {
   );
 }
 
+function isSMSAnalysisResponse(value) {
+  return (
+    value &&
+    ["smishing", "not_smishing"].includes(value.classification) &&
+    typeof value.smishing_score === "number" &&
+    Number.isFinite(value.smishing_score) &&
+    value.smishing_score >= 0 &&
+    value.smishing_score <= 1 &&
+    value.score_kind === "uncalibrated_model_score" &&
+    typeof value.threshold === "number" &&
+    Number.isFinite(value.threshold) &&
+    value.threshold >= 0 &&
+    value.threshold <= 1 &&
+    typeof value.model_id === "string" &&
+    value.model_id.length > 0 &&
+    typeof value.disclaimer === "string" &&
+    value.disclaimer.length > 0
+  );
+}
+
+function isAPKAnalysisResponse(value) {
+  return (
+    value &&
+    value.analysis_version === "apk-static-v1" &&
+    typeof value.sha256 === "string" &&
+    value.sha256.length === 64 &&
+    typeof value.file_size === "number" &&
+    value.app &&
+    value.permissions &&
+    value.components &&
+    value.signing &&
+    value.code_indicators &&
+    Array.isArray(value.findings) &&
+    ["no_notable_indicators", "some_indicators", "many_indicators"].includes(value.indicator_level) &&
+    Array.isArray(value.limitations)
+  );
+}
+
 async function postJson(path, body, isValidResponse) {
   let response;
   try {
@@ -85,4 +124,41 @@ export function analyzeAndroid(features) {
     { features },
     isAndroidAnalysisResponse,
   );
+}
+
+export function analyzeSMS(content) {
+  return postJson("/api/ml/analyze-sms", { content }, isSMSAnalysisResponse);
+}
+
+export async function analyzeAPK(file, onProgress, signal) {
+  const formData = new FormData();
+  formData.append("file", file);
+
+  let response;
+  try {
+    response = await fetch(`${API_BASE_URL}/api/apk/analyze`, {
+      method: "POST",
+      headers: { Accept: "application/json" },
+      body: formData,
+      signal,
+    });
+  } catch (err) {
+    if (err.name === "AbortError") {
+      throw new Error("Upload was cancelled.");
+    }
+    throw new Error("Could not reach the analysis service. Check that the backend is running and try again.");
+  }
+
+  let payload;
+  try {
+    payload = await response.json();
+  } catch {
+    throw new Error("The analysis service returned an unreadable response. Please try again.");
+  }
+
+  if (!response.ok) throw new Error(messageFromError(payload, response.status));
+  if (!isAPKAnalysisResponse(payload)) {
+    throw new Error("The analysis service returned an unexpected response. Please try again later.");
+  }
+  return payload;
 }

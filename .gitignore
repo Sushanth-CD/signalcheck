@@ -1,6 +1,20 @@
-﻿# Python
+﻿# Virtual environments
 .venv/
 **/.venv/
+.venv*/
+**/.venv*/
+
+# Research APK artifacts and large files
+*.apk
+backend/data/raw/andromd/
+backend/reports/ml/android_v2_runs/
+backend/reports/ml/android_v3_runs/
+backend/reports/ml/android_apk_detection/
+
+# Temporary and test outputs
+scratch/
+test_scripts.py
+extract_hw_2000.py
 __pycache__/
 *.py[cod]
 .pytest_cache/
@@ -13,6 +27,10 @@ frontend/dist/
 .env
 .env.*
 !.env.example
+nginx/certs/*.pem
+nginx/certs/*.key
+nginx/certs/*.crt
+nginx/certs/*.pfx
 
 # Editor and operating-system files
 .vscode/

@@ -1,5 +1,10 @@
-import { useState, useRef } from "react";
-import { analyzeAPK } from "../api/analyze.js";
+import { useState, useRef, useEffect } from "react";
+import {
+  analyzeAPK,
+  fetchAPKHistory,
+  fetchAPKReportJson,
+  getAPKReportPdfUrl,
+} from "../api/analyze.js";
 import {
   FileTextIcon,
   ShieldAlertIcon,
@@ -21,8 +26,31 @@ export default function APKStaticAnalysis() {
   const [copiedSha, setCopiedSha] = useState(false);
   const [expandedSection, setExpandedSection] = useState(null);
 
+  // History & Export States
+  const [historyItems, setHistoryItems] = useState([]);
+  const [isHistoryLoading, setIsHistoryLoading] = useState(false);
+  const [historyError, setHistoryError] = useState("");
+  const [isHistoryOpen, setIsHistoryOpen] = useState(true);
+
   const fileInputRef = useRef(null);
   const abortControllerRef = useRef(null);
+
+  async function loadHistory() {
+    setIsHistoryLoading(true);
+    setHistoryError("");
+    try {
+      const data = await fetchAPKHistory(20, 0);
+      setHistoryItems(data.items || []);
+    } catch (err) {
+      setHistoryError(err instanceof Error ? err.message : "Failed to load history.");
+    } finally {
+      setIsHistoryLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    loadHistory();
+  }, []);
 
   function handleFileSelected(selectedFile) {
     if (!selectedFile) return;
@@ -78,6 +106,8 @@ export default function APKStaticAnalysis() {
     try {
       const response = await analyzeAPK(file, null, controller.signal);
       setResult(response);
+      // Reload history to show the newly saved record
+      loadHistory();
     } catch (err) {
       setError(err instanceof Error ? err.message : "Failed to analyze APK.");
     } finally {
@@ -100,6 +130,20 @@ export default function APKStaticAnalysis() {
     setError("");
     if (fileInputRef.current) {
       fileInputRef.current.value = "";
+    }
+  }
+
+  async function handleLoadHistoryItem(recordId) {
+    setIsLoading(true);
+    setError("");
+    try {
+      const fullReport = await fetchAPKReportJson(recordId);
+      setResult(fullReport);
+      window.scrollTo({ top: 300, behavior: "smooth" });
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to load historical report.");
+    } finally {
+      setIsLoading(false);
     }
   }
 
@@ -279,7 +323,7 @@ export default function APKStaticAnalysis() {
               <p className="sc-analysis-summary__desc">{levelInfo.desc}</p>
             </div>
 
-            {/* SHA-256 and App Meta Grid */}
+            {/* SHA-256, App Meta, and PDF Download Button */}
             <div className="sc-apk-meta-grid">
               <div className="sc-apk-meta-item">
                 <span className="sc-apk-meta-label">SHA-256 Fingerprint:</span>
@@ -293,6 +337,18 @@ export default function APKStaticAnalysis() {
                   >
                     {copiedSha ? "Copied!" : "Copy"}
                   </button>
+
+                  {/* Download PDF Report Button */}
+                  {result.id && (
+                    <a
+                      href={getAPKReportPdfUrl(result.id)}
+                      download={`signalcheck-report-${result.app.package_name || "apk"}.pdf`}
+                      className="button button-primary sc-download-pdf-btn"
+                      style={{ marginLeft: "auto", textDecoration: "none" }}
+                    >
+                      Download PDF Report ↓
+                    </a>
+                  )}
                 </div>
               </div>
 
@@ -461,6 +517,90 @@ export default function APKStaticAnalysis() {
           </section>
         </div>
       )}
+
+      {/* Historical Analyses Panel */}
+      <section className="sc-apk-section sc-apk-history-section" aria-labelledby="history-heading" style={{ marginTop: "2rem" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1rem" }}>
+          <h3 id="history-heading" className="sc-section-title" style={{ margin: 0 }}>
+            Recent Static Analyses ({historyItems.length})
+          </h3>
+          <button
+            type="button"
+            className="button button-quiet"
+            onClick={loadHistory}
+            disabled={isHistoryLoading}
+            style={{ fontSize: "var(--sc-text-xs)" }}
+          >
+            {isHistoryLoading ? "Refreshing…" : "Refresh History"}
+          </button>
+        </div>
+
+        {historyError && (
+          <p className="sc-history-error" style={{ color: "var(--sc-color-danger-600)", fontSize: "var(--sc-text-xs)" }}>
+            {historyError}
+          </p>
+        )}
+
+        {isHistoryLoading && historyItems.length === 0 ? (
+          <p className="sc-empty-state">Loading analysis history…</p>
+        ) : historyItems.length === 0 ? (
+          <p className="sc-empty-state">No previous static APK analyses found on this server.</p>
+        ) : (
+          <div className="sc-history-list" style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+            {historyItems.map((item) => (
+              <div
+                key={item.id}
+                className="sc-history-item"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  padding: "0.75rem 1rem",
+                  backgroundColor: "var(--sc-surface-subtle)",
+                  border: "1px solid var(--sc-border-subtle)",
+                  borderRadius: "var(--sc-radius-md)",
+                  gap: "1rem",
+                  flexWrap: "wrap",
+                }}
+              >
+                <div style={{ display: "flex", flexDirection: "column", gap: "0.25rem", minWidth: "200px" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                    <strong>{item.package_name || "Unknown Package"}</strong>
+                    <span className={`sc-severity-pill sc-severity-pill--${item.indicator_level === "many_indicators" ? "high" : item.indicator_level === "some_indicators" ? "medium" : "low"}`}>
+                      {item.indicator_level.replace("_", " ")}
+                    </span>
+                  </div>
+                  <span style={{ fontSize: "var(--sc-text-xs)", color: "var(--sc-text-muted)" }}>
+                    SHA-256: <code>{item.sha256.slice(0, 16)}…</code> | {(item.file_size / (1024 * 1024)).toFixed(2)} MB
+                  </span>
+                  <span style={{ fontSize: "0.7rem", color: "var(--sc-text-muted)" }}>
+                    {item.created_at ? new Date(item.created_at).toLocaleString() : ""}
+                  </span>
+                </div>
+
+                <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginLeft: "auto" }}>
+                  <button
+                    type="button"
+                    className="button button-quiet"
+                    onClick={() => handleLoadHistoryItem(item.id)}
+                    style={{ fontSize: "var(--sc-text-xs)" }}
+                  >
+                    View Report
+                  </button>
+                  <a
+                    href={getAPKReportPdfUrl(item.id)}
+                    download={`signalcheck-report-${item.package_name || "apk"}-${item.sha256.slice(0, 8)}.pdf`}
+                    className="button button-quiet"
+                    style={{ fontSize: "var(--sc-text-xs)", textDecoration: "none" }}
+                  >
+                    PDF ↓
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </section>
     </section>
   );
 }

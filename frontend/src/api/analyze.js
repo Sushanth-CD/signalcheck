@@ -162,3 +162,52 @@ export async function analyzeAPK(file, onProgress, signal) {
   }
   return payload;
 }
+
+export async function fetchAPKHistory(limit = 20, offset = 0) {
+  let response;
+  try {
+    response = await fetch(`${API_BASE_URL}/api/apk/history?limit=${limit}&offset=${offset}`, {
+      method: "GET",
+      headers: { Accept: "application/json" },
+    });
+  } catch {
+    throw new Error("Could not load analysis history.");
+  }
+
+  let payload;
+  try {
+    payload = await response.json();
+  } catch {
+    throw new Error("Failed to parse history response.");
+  }
+
+  if (!response.ok) throw new Error(messageFromError(payload, response.status));
+  return payload;
+}
+
+export async function fetchAPKReportJson(recordId) {
+  let response;
+  try {
+    response = await fetch(`${API_BASE_URL}/api/apk/report/${recordId}`, {
+      method: "GET",
+      headers: { Accept: "application/json" },
+    });
+  } catch {
+    throw new Error("Could not load analysis report.");
+  }
+
+  let payload;
+  try {
+    payload = await response.json();
+  } catch {
+    throw new Error("Failed to parse report response.");
+  }
+
+  if (!response.ok) throw new Error(messageFromError(payload, response.status));
+  return payload;
+}
+
+export function getAPKReportPdfUrl(recordId) {
+  return `${API_BASE_URL}/api/apk/report/${recordId}?format=pdf`;
+}
+

@@ -40,3 +40,6 @@ Thumbs.db
 *.egg-info/
 .callcode/
 tempCodeRunnerFile.*
+signalcheck.db
+*.db
+

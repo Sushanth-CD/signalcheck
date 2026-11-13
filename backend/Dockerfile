@@ -22,7 +22,9 @@ RUN pip install --no-cache-dir --upgrade pip setuptools && \
     "slowapi>=0.1.9,<1.0" \
     "redis>=5.0.0,<9.0.0" \
     "androguard>=4.1.4,<5.0" \
-    "python-multipart>=0.0.9,<1.0"
+    "python-multipart>=0.0.9,<1.0" \
+    "sqlalchemy>=2.0.0,<3.0.0" \
+    "reportlab>=4.0.0,<6.0.0"
 
 # --- Production Runner Stage ---
 FROM python:3.11-slim AS runner
@@ -47,7 +49,7 @@ COPY backend/models /app/backend/models
 COPY backend/reports/ml/android_malware_sklearn_1_8_0/experiment_config.json /app/backend/reports/ml/android_malware_sklearn_1_8_0/experiment_config.json
 
 # Fix ownership
-RUN chown -R signalcheck:signalcheck /app
+RUN mkdir -p /app/data && chown -R signalcheck:signalcheck /app /app/data
 
 # Switch to non-root user
 USER signalcheck

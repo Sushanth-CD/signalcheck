@@ -7,11 +7,12 @@ import uuid
 import tempfile
 import hashlib
 import asyncio
+from typing import Optional
 from concurrent.futures import ThreadPoolExecutor, TimeoutError as FuturesTimeoutError
 from urllib.parse import urlparse
 from contextlib import asynccontextmanager
 
-from fastapi import FastAPI, HTTPException, Request, Response, UploadFile, File, status
+from fastapi import FastAPI, HTTPException, Request, Response, UploadFile, File, Query, status
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
@@ -44,6 +45,8 @@ from app.schemas import (
     AndroidMLAnalysisRequest,
     AndroidMLAnalysisResponse,
     APKAnalysisResponse,
+    APKHistoryItem,
+    APKHistoryResponse,
     HealthResponse,
     MLAnalysisResponse,
     SMSAnalysisRequest,
@@ -54,6 +57,13 @@ from app.apk_analyzer import (
     validate_zip_structure,
     analyze_apk_file,
 )
+from app.apk_db import (
+    init_db,
+    save_apk_result,
+    get_apk_history,
+    get_apk_record_by_id,
+)
+from app.apk_pdf import generate_apk_pdf_report
 
 
 @asynccontextmanager
@@ -80,6 +90,11 @@ async def lifespan(application: FastAPI):
         # this experimental artifact cannot be loaded.
         application.state.sms_model = None
         application.state.sms_model_load_error = exc
+    # Initialize SQLite database for APK history
+    try:
+        init_db()
+    except Exception as exc:
+        print(f"Warning: Failed to initialize APK database: {exc}")
     try:
         yield
     finally:
@@ -513,6 +528,20 @@ async def analyze_apk(
             ) from exc
 
         outcome_code = "SUCCESS"
+        # Persist JSON result to SQLite history (never APK file bytes)
+        try:
+            record_id = save_apk_result(
+                sha256=sha256_digest,
+                package_name=analysis_dict.get("app", {}).get("package_name", ""),
+                file_size=bytes_received,
+                indicator_level=analysis_dict.get("indicator_level", "no_notable_indicators"),
+                outcome=outcome_code,
+                result_data=analysis_dict,
+            )
+            analysis_dict["id"] = record_id
+        except Exception as db_exc:
+            print(f"Warning: Failed to persist APK result: {db_exc}")
+
         return APKAnalysisResponse(**analysis_dict)
 
     finally:
@@ -537,4 +566,64 @@ async def analyze_apk(
             f"duration_sec={duration_sec} "
             f"outcome={outcome_code}"
         )
+
+
+@app.get(
+    "/api/apk/history",
+    response_model=APKHistoryResponse,
+)
+@limiter.limit(lambda: get_rate_limit("apk_history", "30/minute"))
+def get_apk_analysis_history(
+    request: Request,
+    limit: int = Query(default=20, ge=1, le=50),
+    offset: int = Query(default=0, ge=0),
+) -> APKHistoryResponse:
+    """Retrieve paginated historical APK static analysis summaries."""
+    items, total = get_apk_history(limit=limit, offset=offset)
+    return APKHistoryResponse(
+        items=[APKHistoryItem(**item) for item in items],
+        total=total,
+        limit=limit,
+        offset=offset,
+    )
+
+
+@app.get(
+    "/api/apk/report/{record_id}",
+)
+@limiter.limit(lambda: get_rate_limit("apk_report", "30/minute"))
+def get_apk_analysis_report(
+    request: Request,
+    record_id: int,
+    format: Optional[str] = Query(default=None),
+) -> Response:
+    """Retrieve full JSON result or generate one-page PDF technical report."""
+    record = get_apk_record_by_id(record_id)
+    if not record:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail={
+                "error": "report_not_found",
+                "message": f"No APK analysis record found with ID {record_id}.",
+            },
+        )
+
+    result_data = record["result"]
+
+    if format == "pdf":
+        pdf_bytes = generate_apk_pdf_report(result_data)
+        package_clean = result_data.get("app", {}).get("package_name") or "apk"
+        filename = f"signalcheck-report-{package_clean}-{record['sha256'][:8]}.pdf"
+        return Response(
+            content=pdf_bytes,
+            media_type="application/pdf",
+            headers={
+                "Content-Disposition": f'attachment; filename="{filename}"',
+                "Content-Length": str(len(pdf_bytes)),
+            },
+        )
+
+    # Default: return JSON result
+    return JSONResponse(content=result_data)
+
 

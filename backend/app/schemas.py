@@ -207,6 +207,7 @@ class APKAnalysisResponse(BaseModel):
 
     model_config = ConfigDict(extra="forbid")
 
+    id: int | None = Field(default=None)
     analysis_version: Literal["apk-static-v1"] = "apk-static-v1"
     sha256: str = Field(min_length=64, max_length=64)
     file_size: int = Field(ge=0)
@@ -218,4 +219,30 @@ class APKAnalysisResponse(BaseModel):
     findings: list[APKFinding] = Field(default_factory=list)
     indicator_level: Literal["no_notable_indicators", "some_indicators", "many_indicators"]
     limitations: list[str] = Field(default_factory=list)
+
+
+class APKHistoryItem(BaseModel):
+    """Summary item in paginated APK history list."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    id: int
+    sha256: str
+    package_name: str
+    file_size: int
+    indicator_level: str
+    outcome: str
+    created_at: str
+
+
+class APKHistoryResponse(BaseModel):
+    """Paginated list of historical APK analyses."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    items: list[APKHistoryItem]
+    total: int
+    limit: int
+    offset: int
+
 

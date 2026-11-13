@@ -291,3 +291,148 @@ def test_apk_rate_limiting_enforced(client, monkeypatch):
     )
     assert r3.status_code == 429
     assert r3.json()["error"] == "rate_limit_exceeded"
+
+
+# ---------------------------------------------------------------------------
+# Stage C2: Result History & Report Export Tests
+# ---------------------------------------------------------------------------
+
+def test_apk_analysis_persists_to_history(client):
+    """Confirm that analyzing an APK stores a JSON record in history."""
+    with open(REAL_FIXTURE_PATH, "rb") as f:
+        file_bytes = f.read()
+
+    response = client.post(
+        "/api/apk/analyze",
+        files={"file": ("TestActivity.apk", file_bytes, "application/vnd.android.package-archive")},
+    )
+    assert response.status_code == 200
+    data = response.json()
+    record_id = data.get("id")
+    assert record_id is not None
+    assert isinstance(record_id, int)
+
+    # Check history endpoint contains this record
+    hist_resp = client.get("/api/apk/history?limit=10")
+    assert hist_resp.status_code == 200
+    hist_data = hist_resp.json()
+    assert hist_data["total"] >= 1
+    found = any(item["id"] == record_id for item in hist_data["items"])
+    assert found
+
+
+def test_apk_history_ordering_newest_first(client):
+    """History entries must be ordered by descending creation time."""
+    hist_resp = client.get("/api/apk/history?limit=10")
+    assert hist_resp.status_code == 200
+    items = hist_resp.json()["items"]
+    if len(items) >= 2:
+        assert items[0]["id"] >= items[1]["id"]
+
+
+def test_apk_history_pagination_bounds(client):
+    """Limit > 50 or limit < 1 or offset < 0 must return 422."""
+    r_toolarge = client.get("/api/apk/history?limit=51")
+    assert r_toolarge.status_code == 422
+
+    r_toosmall = client.get("/api/apk/history?limit=0")
+    assert r_toosmall.status_code == 422
+
+    r_negoffset = client.get("/api/apk/history?offset=-1")
+    assert r_negoffset.status_code == 422
+
+    r_valid = client.get("/api/apk/history?limit=5&offset=0")
+    assert r_valid.status_code == 200
+    assert len(r_valid.json()["items"]) <= 5
+
+
+def test_apk_report_by_id_json(client):
+    """GET /api/apk/report/{id} returns the full JSON result."""
+    # First get a valid ID from history
+    hist_resp = client.get("/api/apk/history?limit=1")
+    assert hist_resp.status_code == 200
+    items = hist_resp.json()["items"]
+    assert len(items) > 0
+    rec_id = items[0]["id"]
+
+    report_resp = client.get(f"/api/apk/report/{rec_id}")
+    assert report_resp.status_code == 200
+    report_data = report_resp.json()
+    assert report_data["analysis_version"] == "apk-static-v1"
+    assert report_data["sha256"] == items[0]["sha256"]
+    assert "findings" in report_data
+    assert "permissions" in report_data
+    assert "signing" in report_data
+
+
+def test_apk_report_unknown_id_returns_444_or_404(client):
+    """Querying an unknown report ID returns 404."""
+    resp = client.get("/api/apk/report/9999999")
+    assert resp.status_code == 404
+    assert resp.json()["detail"]["error"] == "report_not_found"
+
+
+def test_apk_report_pdf_export(client):
+    """GET /api/apk/report/{id}?format=pdf returns valid application/pdf bytes."""
+    hist_resp = client.get("/api/apk/history?limit=1")
+    assert hist_resp.status_code == 200
+    rec_id = hist_resp.json()["items"][0]["id"]
+
+    pdf_resp = client.get(f"/api/apk/report/{rec_id}?format=pdf")
+    assert pdf_resp.status_code == 200
+    assert pdf_resp.headers["content-type"] == "application/pdf"
+    assert len(pdf_resp.content) > 1000  # Non-trivial PDF size
+    # Check PDF magic header %PDF
+    assert pdf_resp.content.startswith(b"%PDF")
+    assert "attachment;" in pdf_resp.headers["content-disposition"]
+
+
+def test_apk_history_retention_cap(monkeypatch, client):
+    """Enforce retention setting SIGNALCHECK_APK_HISTORY_MAX=5 trimmings."""
+    monkeypatch.setenv("SIGNALCHECK_APK_HISTORY_MAX", "5")
+    from app.apk_db import save_apk_result, get_apk_history
+
+    dummy_result = {
+        "analysis_version": "apk-static-v1",
+        "sha256": "0" * 64,
+        "file_size": 100,
+        "app": {},
+        "permissions": {},
+        "components": {},
+        "signing": {},
+        "code_indicators": {},
+        "findings": [],
+        "indicator_level": "no_notable_indicators",
+        "limitations": [],
+    }
+
+    # Insert 8 dummy results
+    for i in range(8):
+        save_apk_result(
+            sha256="a" * 64,
+            package_name=f"test.app.{i}",
+            file_size=1000,
+            indicator_level="no_notable_indicators",
+            outcome="SUCCESS",
+            result_data=dummy_result,
+        )
+
+    items, total = get_apk_history(limit=50)
+    # Total count must not exceed the cap of 5
+    assert total <= 5
+
+
+def test_no_apk_bytes_persisted_in_database():
+    """Verify that SQLite database stores only JSON and metadata, never raw APK bytes."""
+    from app.apk_db import get_session, APKAnalysisRecord
+    session = get_session()
+    try:
+        records = session.query(APKAnalysisRecord).all()
+        for r in records:
+            # result_json should be text
+            assert isinstance(r.result_json, str)
+            # Must not contain zip magic bytes PK\x03\x04
+            assert "PK\x03\x04" not in r.result_json
+    finally:
+        session.close()
+

@@ -547,3 +547,161 @@ def test_no_apk_bytes_persisted_in_database():
     finally:
         session.close()
 
+
+# ---------------------------------------------------------------------------
+# Stage C3: Educational Finding Explanations Tests
+# ---------------------------------------------------------------------------
+
+
+def test_finding_explanations_completeness():
+    """Every rule ID in finding_explanations.py must have all required non-empty fields."""
+    from app.finding_explanations import FINDING_EXPLANATIONS
+
+    expected_rules = [
+        "RULE_SMS_EXFILTRATION_CAPABILITY",
+        "RULE_ACCESSIBILITY_OVERLAY_COMBO",
+        "RULE_DEVICE_ADMIN_PRIVILEGE",
+        "RULE_COMMAND_EXECUTION",
+        "RULE_DYNAMIC_CODE_LOADING",
+        "RULE_BOOT_PERSISTENCE",
+        "RULE_UNSIGNED_PACKAGE",
+        "RULE_DEBUG_SIGNED_CERT",
+        "RULE_PACKAGE_INSTALLER",
+        "RULE_HARDCODED_IP_URL",
+        "RULE_OBFUSCATION_HINT",
+    ]
+
+    for rule_id in expected_rules:
+        assert rule_id in FINDING_EXPLANATIONS, f"Missing explanation for {rule_id}"
+        entry = FINDING_EXPLANATIONS[rule_id]
+
+        assert isinstance(entry.get("what_it_means"), str) and len(entry["what_it_means"].strip()) > 10
+        assert isinstance(entry.get("why_attackers_use_it"), str) and len(entry["why_attackers_use_it"].strip()) > 10
+        assert isinstance(entry.get("legit_uses"), list) and len(entry["legit_uses"]) >= 1
+        for legit in entry["legit_uses"]:
+            assert isinstance(legit, str) and len(legit.strip()) > 5
+
+        assert isinstance(entry.get("what_to_do"), str) and len(entry["what_to_do"].strip()) > 10
+        assert isinstance(entry.get("learn_more_tags"), list) and len(entry["learn_more_tags"]) >= 1
+        for tag in entry["learn_more_tags"]:
+            assert isinstance(tag, str) and len(tag.strip()) > 1
+
+
+def test_unknown_rule_degrades_gracefully():
+    """Unknown or future rule IDs must degrade gracefully without crash or exception."""
+    from app.finding_explanations import get_finding_explanation, attach_explanations_to_payload
+
+    assert get_finding_explanation("RULE_FUTURE_UNKNOWN_HEURISTIC_999") is None
+    assert get_finding_explanation("") is None
+    assert get_finding_explanation(None) is None
+
+    synthetic_payload = {
+        "analysis_version": "apk-static-v1",
+        "findings": [
+            {
+                "id": "RULE_FUTURE_UNKNOWN_HEURISTIC_999",
+                "category": "future",
+                "severity": "low",
+                "title": "Future unknown finding",
+                "evidence": "synthetic",
+                "why_it_matters": "testing fallback",
+            }
+        ],
+    }
+
+    enriched = attach_explanations_to_payload(synthetic_payload)
+    assert len(enriched["findings"]) == 1
+    # Unknown rule should NOT crash and should not have explanation field attached
+    assert "explanation" not in enriched["findings"][0]
+
+
+def test_explanation_present_on_analyze():
+    """POST /api/apk/analyze response includes structured educational explanation on triggered findings."""
+    with open(REAL_FIXTURE_PATH, "rb") as f:
+        file_bytes = f.read()
+
+    client = TestClient(app)
+    response = client.post(
+        "/api/apk/analyze",
+        files={"file": ("VulnApp.apk", file_bytes, "application/vnd.android.package-archive")},
+    )
+    assert response.status_code == 200
+    data = response.json()
+    findings = data.get("findings", [])
+    assert len(findings) > 0
+
+    for f in findings:
+        explanation = f.get("explanation")
+        assert explanation is not None, f"Expected explanation on finding {f.get('id')}"
+        assert "what_it_means" in explanation
+        assert "why_attackers_use_it" in explanation
+        assert "legit_uses" in explanation
+        assert "what_to_do" in explanation
+        assert "learn_more_tags" in explanation
+
+
+def test_explanation_attached_on_stored_report_fetch():
+    """GET /api/apk/report/{id} dynamically attaches educational explanation to persisted records."""
+    with open(REAL_FIXTURE_PATH, "rb") as f:
+        file_bytes = f.read()
+
+    client = TestClient(app)
+    post_resp = client.post(
+        "/api/apk/analyze",
+        files={"file": ("StoredCheck.apk", file_bytes, "application/vnd.android.package-archive")},
+    )
+    assert post_resp.status_code == 200
+    rec_id = post_resp.json()["id"]
+
+    # Fetch via report endpoint
+    rep_resp = client.get(f"/api/apk/report/{rec_id}")
+    assert rep_resp.status_code == 200
+    rep_data = rep_resp.json()
+    findings = rep_data.get("findings", [])
+    assert len(findings) > 0
+
+    for f in findings:
+        exp = f.get("explanation")
+        assert exp is not None
+        assert len(exp["what_it_means"]) > 0
+
+
+def test_pdf_export_with_explanations():
+    """PDF generator renders successfully when explanations are attached to findings."""
+    with open(REAL_FIXTURE_PATH, "rb") as f:
+        file_bytes = f.read()
+
+    client = TestClient(app)
+    post_resp = client.post(
+        "/api/apk/analyze",
+        files={"file": ("PdfCheck.apk", file_bytes, "application/vnd.android.package-archive")},
+    )
+    assert post_resp.status_code == 200
+    rec_id = post_resp.json()["id"]
+
+    pdf_resp = client.get(f"/api/apk/report/{rec_id}?format=pdf")
+    assert pdf_resp.status_code == 200
+    assert pdf_resp.headers["content-type"] == "application/pdf"
+    assert len(pdf_resp.content) > 1000
+    assert pdf_resp.content.startswith(b"%PDF-")
+
+
+def test_no_explanation_text_persisted_in_db():
+    """Database must never store educational explanation text; only dynamic attachment at serialization."""
+    from app.apk_db import get_session, APKAnalysisRecord
+    import json
+
+    session = get_session()
+    try:
+        records = session.query(APKAnalysisRecord).all()
+        assert len(records) > 0
+        for r in records:
+            raw_data = json.loads(r.result_json)
+            findings = raw_data.get("findings", [])
+            for f in findings:
+                # Raw stored database JSON must NOT contain 'explanation'
+                assert "explanation" not in f, "Found persisted 'explanation' key inside SQLite database record!"
+    finally:
+        session.close()
+
+

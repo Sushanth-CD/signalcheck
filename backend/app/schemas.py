@@ -189,6 +189,18 @@ class APKCodeIndicators(BaseModel):
     discovered_urls: list[str] = Field(default_factory=list)
 
 
+class FindingExplanation(BaseModel):
+    """Educational details attached to a heuristic finding."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    what_it_means: str = Field(min_length=1)
+    why_attackers_use_it: str = Field(min_length=1)
+    legit_uses: list[str] = Field(default_factory=list)
+    what_to_do: str = Field(min_length=1)
+    learn_more_tags: list[str] = Field(default_factory=list)
+
+
 class APKFinding(BaseModel):
     """Single security heuristic finding."""
 
@@ -200,6 +212,7 @@ class APKFinding(BaseModel):
     title: str = Field(min_length=1)
     evidence: str = Field(min_length=1)
     why_it_matters: str = Field(min_length=1)
+    explanation: FindingExplanation | None = Field(default=None)
 
 
 class APKAnalysisResponse(BaseModel):

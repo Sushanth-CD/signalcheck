@@ -151,10 +151,14 @@ def generate_apk_pdf_report(data: dict[str, Any]) -> bytes:
         ]
         for f in findings[:6]:  # Limit to 6 on one-page summary
             sev = f.get("severity", "info").upper()
+            detail_text = f"{f.get('evidence', '')} — {f.get('why_it_matters', '')}"
+            explanation = f.get("explanation")
+            if isinstance(explanation, dict) and explanation.get("what_it_means"):
+                detail_text += f"<br/><b>What this means:</b> {explanation['what_it_means']}"
             findings_table_data.append([
                 Paragraph(f"<b>{sev}</b>", body_style),
                 Paragraph(f.get("title", ""), body_style),
-                Paragraph(f"{f.get('evidence', '')} — {f.get('why_it_matters', '')}", body_style),
+                Paragraph(detail_text, body_style),
             ])
         findings_table = Table(findings_table_data, colWidths=[0.8 * inch, 2.4 * inch, 4.3 * inch])
         findings_table.setStyle(

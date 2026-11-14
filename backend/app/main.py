@@ -67,6 +67,7 @@ from app.apk_db import (
     get_apk_record_by_id,
 )
 from app.apk_pdf import generate_apk_pdf_report
+from app.finding_explanations import attach_explanations_to_payload
 
 
 @asynccontextmanager
@@ -534,7 +535,7 @@ async def analyze_apk(
         # Extract or issue anonymous session token for APK history privacy
         session_token, session_hash, is_new_session = get_or_create_apk_session(request)
 
-        # Persist JSON result to SQLite history (never APK file bytes)
+        # Persist JSON result to SQLite history (never APK file bytes and without attached static explanations)
         try:
             record_id = save_apk_result(
                 sha256=sha256_digest,
@@ -549,6 +550,8 @@ async def analyze_apk(
         except Exception as db_exc:
             print(f"Warning: Failed to persist APK result: {db_exc}")
 
+        # Attach educational explanations dynamically at serialization time
+        analysis_dict = attach_explanations_to_payload(analysis_dict)
         resp_payload = APKAnalysisResponse(**analysis_dict)
         json_resp = JSONResponse(content=resp_payload.model_dump())
         if is_new_session:
@@ -623,6 +626,8 @@ def get_apk_analysis_report(
         )
 
     result_data = record["result"]
+    # Attach educational explanations dynamically to stored record
+    result_data = attach_explanations_to_payload(result_data)
 
     if format == "pdf":
         pdf_bytes = generate_apk_pdf_report(result_data)

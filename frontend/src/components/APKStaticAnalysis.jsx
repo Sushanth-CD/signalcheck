@@ -32,6 +32,16 @@ export default function APKStaticAnalysis() {
   const [historyError, setHistoryError] = useState("");
   const [isHistoryOpen, setIsHistoryOpen] = useState(true);
 
+  // Stage C3: Educational expanded findings state
+  const [expandedFindings, setExpandedFindings] = useState({});
+
+  function toggleFindingExplanation(findingId) {
+    setExpandedFindings((prev) => ({
+      ...prev,
+      [findingId]: !prev[findingId],
+    }));
+  }
+
   const fileInputRef = useRef(null);
   const abortControllerRef = useRef(null);
 
@@ -375,28 +385,152 @@ export default function APKStaticAnalysis() {
 
           {/* Security Findings Table / Cards */}
           <section className="sc-apk-section" aria-labelledby="findings-title">
-            <h3 id="findings-title" className="sc-section-title">
-              Static Security Findings ({result.findings.length})
-            </h3>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", flexWrap: "wrap", gap: "8px" }}>
+              <h3 id="findings-title" className="sc-section-title" style={{ margin: 0 }}>
+                Static Security Findings ({result.findings.length})
+              </h3>
+            </div>
+
+            {/* Severity Guidance Legend */}
+            <div className="sc-severity-legend" role="region" aria-label="Severity rating guide" style={{
+              background: "var(--color-surface, #ffffff)",
+              border: "1px solid var(--color-border, #e2e8f0)",
+              borderRadius: "8px",
+              padding: "12px 16px",
+              margin: "12px 0 16px 0",
+              fontSize: "0.85rem",
+              lineHeight: 1.5,
+              color: "var(--color-text-secondary, #475569)"
+            }}>
+              <div style={{ fontWeight: 600, marginBottom: "6px", color: "var(--color-text, #1e293b)" }}>
+                Understanding Indicator Severity (Signals, Not Conclusive Verdicts):
+              </div>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "12px" }}>
+                <div>
+                  <span className="sc-severity-pill sc-severity-pill--high" style={{ marginRight: "6px" }}>HIGH</span>
+                  <strong>High Sensitivity Signal:</strong> Capabilities frequently abused by malware (e.g. SMS exfiltration, accessibility overlays, unsigned packages). Check carefully against intended app functionality.
+                </div>
+                <div>
+                  <span className="sc-severity-pill sc-severity-pill--medium" style={{ marginRight: "6px" }}>MEDIUM</span>
+                  <strong>Moderate Scrutiny Signal:</strong> Common dual-use features (e.g. boot receivers, dynamic class loading, debug certs, package installer) that require context to evaluate.
+                </div>
+                <div>
+                  <span className="sc-severity-pill sc-severity-pill--low" style={{ marginRight: "6px" }}>LOW</span>
+                  <strong>Informational Indicator:</strong> Typical software hygiene or build characteristics (e.g. code minification or naming obfuscation) standard across commercial software.
+                </div>
+              </div>
+            </div>
+
             {result.findings.length === 0 ? (
               <p className="sc-empty-state">No specific high-severity heuristic rules triggered.</p>
             ) : (
               <div className="sc-findings-list">
-                {result.findings.map((f) => (
-                  <div key={f.id} className={`sc-finding-card sc-finding-card--${f.severity}`}>
-                    <div className="sc-finding-card__header">
-                      <span className={`sc-severity-pill sc-severity-pill--${f.severity}`}>
-                        {f.severity.toUpperCase()}
-                      </span>
-                      <span className="sc-finding-card__category">{f.category}</span>
-                      <h4 className="sc-finding-card__title">{f.title}</h4>
+                {result.findings.map((f) => {
+                  const isExpanded = !!expandedFindings[f.id];
+                  return (
+                    <div key={f.id} className={`sc-finding-card sc-finding-card--${f.severity}`}>
+                      <div className="sc-finding-card__header">
+                        <span className={`sc-severity-pill sc-severity-pill--${f.severity}`}>
+                          {f.severity.toUpperCase()}
+                        </span>
+                        <span className="sc-finding-card__category">{f.category}</span>
+                        <h4 className="sc-finding-card__title">{f.title}</h4>
+                      </div>
+                      <div className="sc-finding-card__body">
+                        <p><strong>Evidence:</strong> <code>{f.evidence}</code></p>
+                        <p><strong>Why It Matters:</strong> {f.why_it_matters}</p>
+
+                        {/* Expandable Learn More Teaching Section */}
+                        {f.explanation && (
+                          <div style={{ marginTop: "12px", borderTop: "1px dashed var(--color-border, #e2e8f0)", paddingTop: "8px" }}>
+                            <button
+                              type="button"
+                              className="button button-quiet"
+                              onClick={() => toggleFindingExplanation(f.id)}
+                              aria-expanded={isExpanded}
+                              aria-controls={`explanation-${f.id}`}
+                              style={{
+                                display: "inline-flex",
+                                alignItems: "center",
+                                gap: "6px",
+                                fontSize: "0.85rem",
+                                padding: "4px 8px",
+                                cursor: "pointer",
+                                color: "var(--color-primary, #0284c7)",
+                                background: "transparent",
+                                border: "none",
+                                fontWeight: 500,
+                              }}
+                            >
+                              {isExpanded ? <ChevronUpIcon size={14} /> : <ChevronDownIcon size={14} />}
+                              <span>{isExpanded ? "Hide detailed guidance" : "Learn more: what this signal means & safe uses"}</span>
+                            </button>
+
+                            {isExpanded && (
+                              <div
+                                id={`explanation-${f.id}`}
+                                className="sc-finding-explanation"
+                                style={{
+                                  marginTop: "8px",
+                                  padding: "12px",
+                                  background: "var(--color-surface-subtle, #f8fafc)",
+                                  borderRadius: "6px",
+                                  border: "1px solid var(--color-border, #e2e8f0)",
+                                  fontSize: "0.875rem",
+                                  lineHeight: 1.55,
+                                  color: "var(--color-text, #1e293b)",
+                                }}
+                              >
+                                <div style={{ marginBottom: "8px" }}>
+                                  <strong style={{ color: "var(--color-text, #0f172a)" }}>What It Means: </strong>
+                                  <span>{f.explanation.what_it_means}</span>
+                                </div>
+                                <div style={{ marginBottom: "8px" }}>
+                                  <strong style={{ color: "var(--color-text, #0f172a)" }}>Why Attackers Use It: </strong>
+                                  <span>{f.explanation.why_attackers_use_it}</span>
+                                </div>
+                                {f.explanation.legit_uses && f.explanation.legit_uses.length > 0 && (
+                                  <div style={{ marginBottom: "8px" }}>
+                                    <strong style={{ color: "var(--color-text, #0f172a)" }}>Legitimate Uses (False-Alarm Awareness):</strong>
+                                    <ul style={{ margin: "4px 0 0 16px", padding: 0 }}>
+                                      {f.explanation.legit_uses.map((use, idx) => (
+                                        <li key={idx} style={{ marginBottom: "2px" }}>{use}</li>
+                                      ))}
+                                    </ul>
+                                  </div>
+                                )}
+                                <div style={{ marginBottom: "8px" }}>
+                                  <strong style={{ color: "var(--color-text, #0f172a)" }}>What To Do: </strong>
+                                  <span>{f.explanation.what_to_do}</span>
+                                </div>
+                                {f.explanation.learn_more_tags && f.explanation.learn_more_tags.length > 0 && (
+                                  <div style={{ display: "flex", gap: "6px", flexWrap: "wrap", alignItems: "center", marginTop: "8px" }}>
+                                    <span style={{ fontSize: "0.75rem", color: "var(--color-text-secondary, #64748b)" }}>Topic Tags:</span>
+                                    {f.explanation.learn_more_tags.map((tag) => (
+                                      <span
+                                        key={tag}
+                                        style={{
+                                          fontSize: "0.75rem",
+                                          padding: "2px 8px",
+                                          background: "var(--color-surface, #ffffff)",
+                                          border: "1px solid var(--color-border, #cbd5e1)",
+                                          borderRadius: "12px",
+                                          color: "var(--color-text-secondary, #475569)",
+                                        }}
+                                      >
+                                        #{tag}
+                                      </span>
+                                    ))}
+                                  </div>
+                                )}
+                              </div>
+                            )}
+                          </div>
+                        )}
+                      </div>
                     </div>
-                    <div className="sc-finding-card__body">
-                      <p><strong>Evidence:</strong> <code>{f.evidence}</code></p>
-                      <p><strong>Why It Matters:</strong> {f.why_it_matters}</p>
-                    </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             )}
           </section>

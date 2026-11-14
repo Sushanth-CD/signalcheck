@@ -141,6 +141,7 @@ export async function analyzeAPK(file, onProgress, signal) {
       headers: { Accept: "application/json" },
       body: formData,
       signal,
+      credentials: "same-origin",
     });
   } catch (err) {
     if (err.name === "AbortError") {
@@ -169,6 +170,7 @@ export async function fetchAPKHistory(limit = 20, offset = 0) {
     response = await fetch(`${API_BASE_URL}/api/apk/history?limit=${limit}&offset=${offset}`, {
       method: "GET",
       headers: { Accept: "application/json" },
+      credentials: "same-origin",
     });
   } catch {
     throw new Error("Could not load analysis history.");
@@ -191,6 +193,7 @@ export async function fetchAPKReportJson(recordId) {
     response = await fetch(`${API_BASE_URL}/api/apk/report/${recordId}`, {
       method: "GET",
       headers: { Accept: "application/json" },
+      credentials: "same-origin",
     });
   } catch {
     throw new Error("Could not load analysis report.");

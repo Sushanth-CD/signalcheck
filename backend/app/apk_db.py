@@ -1,9 +1,10 @@
 """SQLite result persistence and retention management for APK static analysis (apk-static-v1).
 
 HARD PRIVACY AND INTEGRITY CONSTRAINTS:
-- Stores ONLY the apk-static-v1 JSON result, SHA-256 digest, timestamp, package_name, file_size, indicator_level, and outcome.
+- Stores ONLY the apk-static-v1 JSON result, SHA-256 digest, timestamp, package_name, file_size, indicator_level, outcome, and session_hash.
 - NEVER stores the APK file, binary slices, or raw uploaded bytes.
-- Automatic retention enforcement: trims records beyond SIGNALCHECK_APK_HISTORY_MAX (default: 200).
+- Automatic retention enforcement: trims records beyond SIGNALCHECK_APK_HISTORY_MAX (default: 200) per session.
+- Isolation: All records are strictly partitioned by session_hash.
 - Pure SQLAlchemy with SQLite.
 """
 
@@ -23,6 +24,7 @@ from sqlalchemy import (
     create_engine,
     desc,
     select,
+    text,
 )
 from sqlalchemy.orm import declarative_base, sessionmaker
 
@@ -35,6 +37,7 @@ class APKAnalysisRecord(Base):
     __tablename__ = "apk_analysis_history"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
+    session_hash = Column(String(64), nullable=False, default="", index=True)
     sha256 = Column(String(64), nullable=False, index=True)
     package_name = Column(String(255), nullable=False, default="")
     file_size = Column(Integer, nullable=False, default=0)
@@ -67,6 +70,19 @@ def init_db(db_path: Optional[str] = None) -> None:
         echo=False,
     )
     Base.metadata.create_all(_engine)
+
+    # Lightweight migration: Ensure session_hash column exists if table was pre-existing
+    try:
+        with _engine.connect() as conn:
+            result = conn.execute(text("PRAGMA table_info(apk_analysis_history)")).fetchall()
+            col_names = [row[1] for row in result]
+            if "session_hash" not in col_names and len(col_names) > 0:
+                conn.execute(text("ALTER TABLE apk_analysis_history ADD COLUMN session_hash VARCHAR(64) DEFAULT ''"))
+                conn.execute(text("CREATE INDEX IF NOT EXISTS ix_apk_analysis_history_session_hash ON apk_analysis_history (session_hash)"))
+                conn.commit()
+    except Exception as exc:
+        print(f"Warning checking/updating apk_analysis_history schema: {exc}")
+
     _SessionFactory = sessionmaker(bind=_engine)
 
 
@@ -85,11 +101,13 @@ def save_apk_result(
     indicator_level: str,
     outcome: str,
     result_data: dict[str, Any],
+    session_hash: str = "",
 ) -> int:
-    """Persist an APK static analysis JSON payload and enforce history retention cap."""
+    """Persist an APK static analysis JSON payload and enforce history retention cap per session."""
     session = get_session()
     try:
         record = APKAnalysisRecord(
+            session_hash=session_hash,
             sha256=sha256,
             package_name=package_name[:255] if package_name else "",
             file_size=file_size,
@@ -102,15 +120,19 @@ def save_apk_result(
         session.commit()
         record_id = record.id
 
-        # Retention Enforcement: Delete oldest records beyond max cap
+        # Retention Enforcement: Delete oldest records beyond max cap for THIS session
         max_history = int(os.getenv("SIGNALCHECK_APK_HISTORY_MAX", "200"))
-        if max_history > 0:
-            total_count = session.query(APKAnalysisRecord).count()
-            if total_count > max_history:
-                # Find IDs of records to delete (oldest beyond max_history)
-                excess = total_count - max_history
+        if max_history > 0 and session_hash:
+            session_count = (
+                session.query(APKAnalysisRecord)
+                .filter(APKAnalysisRecord.session_hash == session_hash)
+                .count()
+            )
+            if session_count > max_history:
+                excess = session_count - max_history
                 oldest_records = (
                     session.query(APKAnalysisRecord.id)
+                    .filter(APKAnalysisRecord.session_hash == session_hash)
                     .order_by(APKAnalysisRecord.created_at.asc(), APKAnalysisRecord.id.asc())
                     .limit(excess)
                     .all()
@@ -127,14 +149,23 @@ def save_apk_result(
         session.close()
 
 
-def get_apk_history(limit: int = 20, offset: int = 0) -> tuple[list[dict[str, Any]], int]:
-    """Retrieve paginated APK analysis history ordered by newest first."""
+def get_apk_history(
+    limit: int = 20,
+    offset: int = 0,
+    session_hash: str = "",
+) -> tuple[list[dict[str, Any]], int]:
+    """Retrieve paginated APK analysis history ordered by newest first for the given session."""
+    if not session_hash:
+        return [], 0
+
     session = get_session()
     try:
-        total = session.query(APKAnalysisRecord).count()
+        query = session.query(APKAnalysisRecord).filter(
+            APKAnalysisRecord.session_hash == session_hash
+        )
+        total = query.count()
         records = (
-            session.query(APKAnalysisRecord)
-            .order_by(desc(APKAnalysisRecord.created_at), desc(APKAnalysisRecord.id))
+            query.order_by(desc(APKAnalysisRecord.created_at), desc(APKAnalysisRecord.id))
             .offset(offset)
             .limit(limit)
             .all()
@@ -155,11 +186,21 @@ def get_apk_history(limit: int = 20, offset: int = 0) -> tuple[list[dict[str, An
         session.close()
 
 
-def get_apk_record_by_id(record_id: int) -> Optional[dict[str, Any]]:
-    """Retrieve the full stored JSON result and metadata for a specific record ID."""
+def get_apk_record_by_id(record_id: int, session_hash: str = "") -> Optional[dict[str, Any]]:
+    """Retrieve full stored JSON result and metadata for a specific record ID belonging to the session."""
+    if not session_hash:
+        return None
+
     session = get_session()
     try:
-        record = session.query(APKAnalysisRecord).filter_by(id=record_id).first()
+        record = (
+            session.query(APKAnalysisRecord)
+            .filter(
+                APKAnalysisRecord.id == record_id,
+                APKAnalysisRecord.session_hash == session_hash,
+            )
+            .first()
+        )
         if not record:
             return None
         parsed_result = json.loads(record.result_json)

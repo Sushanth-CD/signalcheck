@@ -298,7 +298,7 @@ def test_apk_rate_limiting_enforced(client, monkeypatch):
 # ---------------------------------------------------------------------------
 
 def test_apk_analysis_persists_to_history(client):
-    """Confirm that analyzing an APK stores a JSON record in history."""
+    """Confirm that analyzing an APK stores a JSON record in session history and sets session cookie."""
     with open(REAL_FIXTURE_PATH, "rb") as f:
         file_bytes = f.read()
 
@@ -307,12 +307,14 @@ def test_apk_analysis_persists_to_history(client):
         files={"file": ("TestActivity.apk", file_bytes, "application/vnd.android.package-archive")},
     )
     assert response.status_code == 200
+    # Confirm session cookie was issued
+    assert "signalcheck_apk_sid" in response.cookies
     data = response.json()
     record_id = data.get("id")
     assert record_id is not None
     assert isinstance(record_id, int)
 
-    # Check history endpoint contains this record
+    # Check history endpoint with the client's session contains this record
     hist_resp = client.get("/api/apk/history?limit=10")
     assert hist_resp.status_code == 200
     hist_data = hist_resp.json()
@@ -347,19 +349,23 @@ def test_apk_history_pagination_bounds(client):
 
 
 def test_apk_report_by_id_json(client):
-    """GET /api/apk/report/{id} returns the full JSON result."""
-    # First get a valid ID from history
-    hist_resp = client.get("/api/apk/history?limit=1")
-    assert hist_resp.status_code == 200
-    items = hist_resp.json()["items"]
-    assert len(items) > 0
-    rec_id = items[0]["id"]
+    """GET /api/apk/report/{id} returns the full JSON result for the owner session."""
+    with open(REAL_FIXTURE_PATH, "rb") as f:
+        file_bytes = f.read()
+
+    # Analyze an APK to ensure the session has an owned record
+    analyze_resp = client.post(
+        "/api/apk/analyze",
+        files={"file": ("TestActivity.apk", file_bytes, "application/vnd.android.package-archive")},
+    )
+    assert analyze_resp.status_code == 200
+    rec_id = analyze_resp.json()["id"]
 
     report_resp = client.get(f"/api/apk/report/{rec_id}")
     assert report_resp.status_code == 200
     report_data = report_resp.json()
     assert report_data["analysis_version"] == "apk-static-v1"
-    assert report_data["sha256"] == items[0]["sha256"]
+    assert report_data["sha256"] == analyze_resp.json()["sha256"]
     assert "findings" in report_data
     assert "permissions" in report_data
     assert "signing" in report_data
@@ -373,10 +379,17 @@ def test_apk_report_unknown_id_returns_444_or_404(client):
 
 
 def test_apk_report_pdf_export(client):
-    """GET /api/apk/report/{id}?format=pdf returns valid application/pdf bytes."""
-    hist_resp = client.get("/api/apk/history?limit=1")
-    assert hist_resp.status_code == 200
-    rec_id = hist_resp.json()["items"][0]["id"]
+    """GET /api/apk/report/{id}?format=pdf returns valid application/pdf bytes for owner session."""
+    with open(REAL_FIXTURE_PATH, "rb") as f:
+        file_bytes = f.read()
+
+    # Analyze an APK to ensure the session has an owned record
+    analyze_resp = client.post(
+        "/api/apk/analyze",
+        files={"file": ("TestActivity.apk", file_bytes, "application/vnd.android.package-archive")},
+    )
+    assert analyze_resp.status_code == 200
+    rec_id = analyze_resp.json()["id"]
 
     pdf_resp = client.get(f"/api/apk/report/{rec_id}?format=pdf")
     assert pdf_resp.status_code == 200
@@ -387,10 +400,17 @@ def test_apk_report_pdf_export(client):
     assert "attachment;" in pdf_resp.headers["content-disposition"]
 
 
-def test_apk_history_retention_cap(monkeypatch, client):
-    """Enforce retention setting SIGNALCHECK_APK_HISTORY_MAX=5 trimmings."""
+def test_apk_history_retention_cap_per_session(monkeypatch):
+    """Enforce retention setting SIGNALCHECK_APK_HISTORY_MAX=5 trimmings per session."""
     monkeypatch.setenv("SIGNALCHECK_APK_HISTORY_MAX", "5")
-    from app.apk_db import save_apk_result, get_apk_history
+    from app.apk_db import save_apk_result, get_apk_history, get_session, APKAnalysisRecord
+    from app.security import hash_session_token
+    import uuid
+
+    # Use unique session tokens for isolation from previous test runs
+    uid = uuid.uuid4().hex
+    session_a_hash = hash_session_token(f"session_a_{uid}")
+    session_b_hash = hash_session_token(f"session_b_{uid}")
 
     dummy_result = {
         "analysis_version": "apk-static-v1",
@@ -406,20 +426,111 @@ def test_apk_history_retention_cap(monkeypatch, client):
         "limitations": [],
     }
 
-    # Insert 8 dummy results
+    # Insert 8 dummy results into session A
     for i in range(8):
         save_apk_result(
             sha256="a" * 64,
-            package_name=f"test.app.{i}",
+            package_name=f"test.app.a.{i}",
             file_size=1000,
             indicator_level="no_notable_indicators",
             outcome="SUCCESS",
             result_data=dummy_result,
+            session_hash=session_a_hash,
         )
 
-    items, total = get_apk_history(limit=50)
-    # Total count must not exceed the cap of 5
-    assert total <= 5
+    # Insert 3 dummy results into session B
+    for i in range(3):
+        save_apk_result(
+            sha256="b" * 64,
+            package_name=f"test.app.b.{i}",
+            file_size=2000,
+            indicator_level="no_notable_indicators",
+            outcome="SUCCESS",
+            result_data=dummy_result,
+            session_hash=session_b_hash,
+        )
+
+    items_a, total_a = get_apk_history(limit=50, session_hash=session_a_hash)
+    # Session A must be capped at 5
+    assert total_a == 5
+    assert len(items_a) == 5
+
+    # Session B must retain all 3 items (unaffected by Session A's cap)
+    items_b, total_b = get_apk_history(limit=50, session_hash=session_b_hash)
+    assert total_b == 3
+    assert len(items_b) == 3
+
+
+def test_apk_cross_session_isolation_and_id_probing():
+    """Verify that records from Session A are completely invisible to Session B and vice versa.
+
+    Session B cannot see Session A's history or probe Session A's report IDs (returns 404).
+    """
+    with open(REAL_FIXTURE_PATH, "rb") as f:
+        file_bytes = f.read()
+
+    # Session A client
+    client_a = TestClient(app)
+    resp_a = client_a.post(
+        "/api/apk/analyze",
+        files={"file": ("SessionA.apk", file_bytes, "application/vnd.android.package-archive")},
+    )
+    assert resp_a.status_code == 200
+    rec_a_id = resp_a.json()["id"]
+    sid_a = resp_a.cookies["signalcheck_apk_sid"]
+    assert sid_a
+
+    # Session B client (clean client, separate cookie jar)
+    client_b = TestClient(app)
+
+    # 1. Before session B has analyzed anything, its history is empty
+    hist_b_empty = client_b.get("/api/apk/history")
+    assert hist_b_empty.status_code == 200
+    assert hist_b_empty.json()["total"] == 0
+    assert len(hist_b_empty.json()["items"]) == 0
+
+    # 2. Session B attempts to probe/access Session A's report ID -> must return 404
+    probe_resp = client_b.get(f"/api/apk/report/{rec_a_id}")
+    assert probe_resp.status_code == 404
+    assert probe_resp.json()["detail"]["error"] == "report_not_found"
+
+    # 3. Session B attempts to download PDF of Session A's report ID -> must return 404
+    probe_pdf = client_b.get(f"/api/apk/report/{rec_a_id}?format=pdf")
+    assert probe_pdf.status_code == 404
+
+    # 4. Session B analyzes an APK -> receives its own distinct session cookie
+    resp_b = client_b.post(
+        "/api/apk/analyze",
+        files={"file": ("SessionB.apk", file_bytes, "application/vnd.android.package-archive")},
+    )
+    assert resp_b.status_code == 200
+    rec_b_id = resp_b.json()["id"]
+    sid_b = resp_b.cookies["signalcheck_apk_sid"]
+    assert sid_b != sid_a
+
+    # 5. Session B sees ONLY its own record in history
+    hist_b = client_b.get("/api/apk/history")
+    assert hist_b.status_code == 200
+    b_ids = [item["id"] for item in hist_b.json()["items"]]
+    assert rec_b_id in b_ids
+    assert rec_a_id not in b_ids
+
+    # 6. Session A sees ONLY its own records in history
+    hist_a = client_a.get("/api/apk/history")
+    assert hist_a.status_code == 200
+    a_ids = [item["id"] for item in hist_a.json()["items"]]
+    assert rec_a_id in a_ids
+    assert rec_b_id not in a_ids
+
+    # 7. Session A can access its own report and PDF
+    rep_a = client_a.get(f"/api/apk/report/{rec_a_id}")
+    assert rep_a.status_code == 200
+    rep_a_pdf = client_a.get(f"/api/apk/report/{rec_a_id}?format=pdf")
+    assert rep_a_pdf.status_code == 200
+
+    # 8. Session A probing Session B's report returns 404
+    probe_a_of_b = client_a.get(f"/api/apk/report/{rec_b_id}")
+    assert probe_a_of_b.status_code == 404
 
 
 def test_no_apk_bytes_persisted_in_database():

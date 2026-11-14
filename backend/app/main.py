@@ -27,6 +27,9 @@ from app.security import (
     get_client_ip,
     get_rate_limit,
     get_rate_limit_storage_uri,
+    get_or_create_apk_session,
+    get_apk_session_hash,
+    set_apk_session_cookie,
 )
 
 from app.android_classifier import (
@@ -528,6 +531,9 @@ async def analyze_apk(
             ) from exc
 
         outcome_code = "SUCCESS"
+        # Extract or issue anonymous session token for APK history privacy
+        session_token, session_hash, is_new_session = get_or_create_apk_session(request)
+
         # Persist JSON result to SQLite history (never APK file bytes)
         try:
             record_id = save_apk_result(
@@ -537,12 +543,18 @@ async def analyze_apk(
                 indicator_level=analysis_dict.get("indicator_level", "no_notable_indicators"),
                 outcome=outcome_code,
                 result_data=analysis_dict,
+                session_hash=session_hash,
             )
             analysis_dict["id"] = record_id
         except Exception as db_exc:
             print(f"Warning: Failed to persist APK result: {db_exc}")
 
-        return APKAnalysisResponse(**analysis_dict)
+        resp_payload = APKAnalysisResponse(**analysis_dict)
+        json_resp = JSONResponse(content=resp_payload.model_dump())
+        if is_new_session:
+            is_secure = request.url.scheme == "https" or request.headers.get("x-forwarded-proto") == "https"
+            set_apk_session_cookie(json_resp, session_token, is_secure=is_secure)
+        return json_resp
 
     finally:
         # Ephemeral guarantee: file must be unlinked under all conditions
@@ -578,8 +590,9 @@ def get_apk_analysis_history(
     limit: int = Query(default=20, ge=1, le=50),
     offset: int = Query(default=0, ge=0),
 ) -> APKHistoryResponse:
-    """Retrieve paginated historical APK static analysis summaries."""
-    items, total = get_apk_history(limit=limit, offset=offset)
+    """Retrieve paginated historical APK static analysis summaries for the caller's session."""
+    session_hash = get_apk_session_hash(request)
+    items, total = get_apk_history(limit=limit, offset=offset, session_hash=session_hash)
     return APKHistoryResponse(
         items=[APKHistoryItem(**item) for item in items],
         total=total,
@@ -597,8 +610,9 @@ def get_apk_analysis_report(
     record_id: int,
     format: Optional[str] = Query(default=None),
 ) -> Response:
-    """Retrieve full JSON result or generate one-page PDF technical report."""
-    record = get_apk_record_by_id(record_id)
+    """Retrieve full JSON result or generate one-page PDF technical report for the caller's session."""
+    session_hash = get_apk_session_hash(request)
+    record = get_apk_record_by_id(record_id, session_hash=session_hash)
     if not record:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,

@@ -2,10 +2,17 @@
 
 from __future__ import annotations
 
+import hashlib
 import ipaddress
 import os
+import secrets
+from typing import Tuple
 from urllib.parse import urlparse
 from starlette.requests import Request
+from starlette.responses import Response
+
+APK_SESSION_COOKIE_NAME = "signalcheck_apk_sid"
+APK_SESSION_MAX_AGE = 60 * 60 * 24 * 30  # 30 days in seconds
 
 
 def get_trusted_proxies() -> set[str]:
@@ -47,7 +54,6 @@ def get_client_ip(request: Request) -> str:
                 return client_candidate
             except ValueError:
                 pass
-
     return direct_peer
 
 
@@ -96,3 +102,46 @@ def get_allowed_hosts() -> list[str]:
         if host and host not in hosts:
             hosts.append(host)
     return hosts if hosts else default_hosts
+
+
+def hash_session_token(token: str) -> str:
+    """Compute SHA-256 hash of a session token for storage and lookup."""
+    return hashlib.sha256(token.encode("utf-8")).hexdigest()
+
+
+def get_or_create_apk_session(request: Request) -> Tuple[str, str, bool]:
+    """Extract or create an anonymous APK session token and its hash.
+
+    Returns:
+        (raw_token, token_hash, is_new)
+    """
+    existing = request.cookies.get(APK_SESSION_COOKIE_NAME)
+    if existing and len(existing) >= 32:
+        return existing, hash_session_token(existing), False
+
+    new_token = secrets.token_urlsafe(32)
+    return new_token, hash_session_token(new_token), True
+
+
+def get_apk_session_hash(request: Request) -> str:
+    """Extract existing APK session token hash without creating a new session.
+
+    Returns empty string if cookie is absent or invalid.
+    """
+    existing = request.cookies.get(APK_SESSION_COOKIE_NAME)
+    if existing and len(existing) >= 32:
+        return hash_session_token(existing)
+    return ""
+
+
+def set_apk_session_cookie(response: Response, token: str, is_secure: bool = True) -> None:
+    """Attach the httpOnly, SameSite=Strict anonymous session cookie to the response."""
+    response.set_cookie(
+        key=APK_SESSION_COOKIE_NAME,
+        value=token,
+        max_age=APK_SESSION_MAX_AGE,
+        httponly=True,
+        samesite="strict",
+        secure=is_secure,
+        path="/",
+    )

@@ -16,12 +16,13 @@ The platform provides focused, transparent machine-learning-based classification
 7. [Frontend Installation & Setup](#frontend-installation--setup)
 8. [Environment Configuration](#environment-configuration)
 9. [Running SignalCheck Locally](#running-signalcheck-locally)
-10. [API Endpoints Reference](#api-endpoints-reference)
-11. [Testing & Quality Verification](#testing--quality-verification)
-12. [Machine Learning Models & Lineage](#machine-learning-models--lineage)
-13. [Research Lab & Android Limitations](#research-lab--android-limitations)
-14. [Known Limitations & Disclaimers](#known-limitations--disclaimers)
-15. [University & Hackathon Demonstration Guide](#university--hackathon-demonstration-guide)
+10. [Run without Docker (Windows PowerShell)](#run-without-docker-windows-powershell)
+11. [API Endpoints Reference](#api-endpoints-reference)
+12. [Testing & Quality Verification](#testing--quality-verification)
+13. [Machine Learning Models & Lineage](#machine-learning-models--lineage)
+14. [Research Lab & Android Limitations](#research-lab--android-limitations)
+15. [Known Limitations & Disclaimers](#known-limitations--disclaimers)
+16. [University & Hackathon Demonstration Guide](#university--hackathon-demonstration-guide)
 
 ---
 
@@ -196,7 +197,56 @@ Open your browser and navigate to: `http://127.0.0.1:5173` (or `http://127.0.0.1
 
 ---
 
-## 10. API Endpoints Reference
+## 10. Run without Docker (Windows PowerShell)
+
+When Docker or Docker Desktop is unavailable, SignalCheck runs entirely natively on Windows without container virtualization or external services.
+
+### Key Behaviors without Docker
+- **In-Memory Rate Limiting (`memory://`):** If no Redis URL is configured (`REDIS_URL` or `SIGNALCHECK_RATE_LIMIT_STORAGE_URL` unset), the SlowAPI rate limiter automatically defaults to process-local in-memory storage (`memory://`). When `REDIS_URL` is set, Redis remains the default storage backend.
+- **Frontend Vite Dev Proxy:** The Vite development server automatically proxies all `/api` requests from `http://127.0.0.1:5173/api/*` directly to the backend at `http://127.0.0.1:8000/api/*`, resolving CORS and routing seamlessly.
+- **SQLite Database Persistence:** APK static analysis history persists automatically to local SQLite storage without requiring Docker volumes.
+
+### PowerShell Terminal 1: Start the Backend Service
+```powershell
+cd "C:\Projects\cyber-security-awareness-platform"
+
+# Activate the virtual environment
+.\.venv-py311-test\Scripts\Activate.ps1
+
+# Optional: Ensure CORS allows local Vite development origins
+$env:SIGNALCHECK_CORS_ORIGINS="http://127.0.0.1:5173,http://localhost:5173,http://127.0.0.1:4173,http://localhost:4173"
+
+# Optional: In-memory rate limiting is automatically used when REDIS_URL is empty
+# $env:REDIS_URL=""
+
+# Start the FastAPI Uvicorn server on port 8000
+python -m uvicorn app.main:app --app-dir backend --host 127.0.0.1 --port 8000 --reload
+```
+
+Verify backend health:
+```powershell
+curl.exe http://127.0.0.1:8000/health
+# Expected: {"status":"ok"}
+```
+
+### PowerShell Terminal 2: Start the Frontend Dev Server
+```powershell
+cd "C:\Projects\cyber-security-awareness-platform\frontend"
+
+# Install npm dependencies (if not already installed)
+npm install
+
+# Start the Vite development server with API proxying
+npm run dev
+```
+
+Open the application:
+- Web App: `http://127.0.0.1:5173`
+- Backend API Docs: `http://127.0.0.1:8000/docs`
+
+---
+
+## 11. API Endpoints Reference
 
 All endpoints enforce strict Pydantic schemas (`extra="forbid"`). Content is processed strictly in-memory and is never logged or written to disk.
 

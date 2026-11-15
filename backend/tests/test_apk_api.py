@@ -771,6 +771,53 @@ def test_unknown_job_id_returns_404(client):
     assert data["detail"]["error"] == "job_not_found"
 
 
+@pytest.mark.slow
+def test_cross_session_job_id_probing_returns_404(session_client):
+    """Confirm GET /api/apk/jobs/{id} returns 404 when probed from a different session (for active and cached results)."""
+    with open(REAL_FIXTURE_PATH, "rb") as f:
+        file_bytes = f.read()
+
+    # Session A enqueues job
+    session_client.cookies.set("signalcheck_apk_sid", "session_A_valid_token_string_32chars_long")
+    post_resp = session_client.post(
+        "/api/apk/analyze?async_mode=true",
+        files={"file": ("JobSessionA.apk", file_bytes, "application/vnd.android.package-archive")},
+    )
+    assert post_resp.status_code == 202
+    job_id = post_resp.json()["job_id"]
+
+    # Session B attempts to poll Session A's job immediately (while queued/running)
+    session_client.cookies.set("signalcheck_apk_sid", "session_B_attacker_token_32chars_long")
+    probe_resp_running = session_client.get(f"/api/apk/jobs/{job_id}")
+    assert probe_resp_running.status_code == 404
+    assert probe_resp_running.json()["detail"]["error"] == "job_not_found"
+
+    # Switch back to Session A and poll until terminal 'done'
+    session_client.cookies.set("signalcheck_apk_sid", "session_A_valid_token_string_32chars_long")
+    poll_start = time.time()
+    terminal_status = None
+    while time.time() - poll_start < 15:
+        get_resp = session_client.get(f"/api/apk/jobs/{job_id}")
+        assert get_resp.status_code == 200
+        if get_resp.json()["status"] in ("done", "failed", "timeout"):
+            terminal_status = get_resp.json()["status"]
+            break
+        time.sleep(0.3)
+    assert terminal_status == "done"
+
+    # Session B attempts to probe the cached terminal result
+    session_client.cookies.set("signalcheck_apk_sid", "session_B_attacker_token_32chars_long")
+    probe_resp_cached = session_client.get(f"/api/apk/jobs/{job_id}")
+    assert probe_resp_cached.status_code == 404
+    assert probe_resp_cached.json()["detail"]["error"] == "job_not_found"
+
+    # Session A can still read the cached terminal result
+    session_client.cookies.set("signalcheck_apk_sid", "session_A_valid_token_string_32chars_long")
+    resp_owner = session_client.get(f"/api/apk/jobs/{job_id}")
+    assert resp_owner.status_code == 200
+    assert resp_owner.json()["status"] == "done"
+
+
 def test_oversized_input_rejected_before_enqueue(client):
     """Files exceeding 25 MB are rejected with 413 before enqueuing."""
     large_payload = b"0" * (26 * 1024 * 1024)

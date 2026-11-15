@@ -97,6 +97,7 @@ def get_job_status(job_id: str) -> Optional[Dict[str, Any]]:
                 "error": err,
                 "created_at": meta.get("created_at", time.time()),
                 "duration_sec": meta.get("duration_sec"),
+                "session_hash": meta.get("session_hash", ""),
             }
 
             # If terminal state reached, cache briefly in memory and delete job from Redis/RQ

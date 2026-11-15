@@ -640,8 +640,20 @@ def get_apk_job(
     job_id: str,
 ) -> APKJobStatusResponse:
     """Retrieve status and results for an asynchronous APK static analysis job."""
+    session_hash = get_apk_session_hash(request)
     job_info = get_job_status(job_id)
     if not job_info:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail={
+                "error": "job_not_found",
+                "message": f"No analysis job found with ID {job_id}.",
+            },
+        )
+
+    # Session Isolation: Check that the job belongs to the requesting session
+    job_session_hash = job_info.get("session_hash")
+    if job_session_hash and session_hash != job_session_hash:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail={

@@ -56,3 +56,75 @@ jobs:
         run: |
           cd frontend
           npm run build
+
+  worker-container-hardening:
+    name: Worker Container Hardening Verification
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build backend worker image
+        run: |
+          docker build -t signalcheck-apk-worker:ci -f backend/Dockerfile .
+
+      - name: Create internal-only bridge network
+        run: |
+          docker network create --internal signalcheck-ci-internal
+
+      - name: Assert 1 - Non-root user execution
+        run: |
+          UID_GID=$(docker run --rm \
+            --user 10001:10001 \
+            --read-only \
+            --tmpfs /tmp:size=64m,noexec,nosuid,nodev \
+            --cap-drop ALL \
+            --security-opt no-new-privileges:true \
+            signalcheck-apk-worker:ci id -u)
+          echo "Worker executed with UID: $UID_GID"
+          if [ "$UID_GID" != "10001" ]; then
+            echo "FAILED: Worker is running as UID $UID_GID instead of 10001 (non-root)"
+            exit 1
+          fi
+
+      - name: Assert 2 - Read-only root filesystem prevents writing outside /tmp
+        run: |
+          set +e
+          docker run --rm \
+            --user 10001:10001 \
+            --read-only \
+            --tmpfs /tmp:size=64m,noexec,nosuid,nodev \
+            --cap-drop ALL \
+            --security-opt no-new-privileges:true \
+            signalcheck-apk-worker:ci touch /app/evil_probe.txt 2>&1 | grep -i "Read-only file system"
+          EXIT_CODE=$?
+          set -e
+          if [ $EXIT_CODE -ne 0 ]; then
+            echo "FAILED: Root filesystem allowed writing outside /tmp!"
+            exit 1
+          fi
+          echo "Verified: Writes outside /tmp are blocked with 'Read-only file system'."
+
+      - name: Assert 3 - Outbound network access is strictly blocked
+        run: |
+          set +e
+          # Attempt outbound ping/curl to external IP on internal network
+          docker run --rm \
+            --network signalcheck-ci-internal \
+            --user 10001:10001 \
+            --read-only \
+            --tmpfs /tmp:size=64m,noexec,nosuid,nodev \
+            --cap-drop ALL \
+            --security-opt no-new-privileges:true \
+            signalcheck-apk-worker:ci python -c "import urllib.request; urllib.request.urlopen('http://1.1.1.1', timeout=3)" 2>&1 | grep -iE "Network is unreachable|timed out|URLError"
+          EXIT_CODE=$?
+          set -e
+          if [ $EXIT_CODE -ne 0 ]; then
+            echo "FAILED: Outbound network egress was not blocked!"
+            exit 1
+          fi
+          echo "Verified: Outbound network egress failed as expected on internal network."

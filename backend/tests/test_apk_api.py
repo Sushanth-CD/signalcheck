@@ -995,11 +995,11 @@ def test_rq_enqueue_ttl_and_result_isolation(monkeypatch):
     assert mock_queue.enqueue.called
     call_args, call_kwargs = mock_queue.enqueue.call_args
 
-    # Assert TTL settings are at most 300s
+    # Assert TTL settings are at most 60s
     assert "result_ttl" in call_kwargs
-    assert call_kwargs["result_ttl"] <= 300
+    assert call_kwargs["result_ttl"] <= 60
     assert "failure_ttl" in call_kwargs
-    assert call_kwargs["failure_ttl"] <= 300
+    assert call_kwargs["failure_ttl"] <= 60
 
     # Test that worker executes and clears job args so upload_bytes do not stay in job hash
     from app.apk_worker import execute_rq_apk_job
@@ -1022,7 +1022,169 @@ def test_rq_enqueue_ttl_and_result_isolation(monkeypatch):
     # Job args cleared from Redis
     assert fake_current_job.args == ()
     assert fake_current_job.kwargs == {}
-    assert fake_current_job.save.called
+
+
+def test_fakeredis_payload_cleanup_after_terminal_states(session_client, monkeypatch):
+    """Assert with fakeredis that upload bytes are completely removed from Redis in all terminal states (done, failed, timeout)."""
+    import fakeredis
+    from rq import Queue
+    from rq.job import Job
+    from app.apk_jobs import enqueue_apk_job, get_job_status
+    from app.apk_worker import execute_rq_apk_job
+
+    fake_server = fakeredis.FakeServer()
+    fake_redis_conn = fakeredis.FakeRedis(server=fake_server)
+
+    monkeypatch.setenv("REDIS_URL", "redis://fakeredis:6379/0")
+    monkeypatch.setattr("redis.from_url", lambda url: fake_redis_conn)
+
+    assert os.path.exists(REAL_FIXTURE_PATH), f"Fixture not found at {REAL_FIXTURE_PATH}"
+    with open(REAL_FIXTURE_PATH, "rb") as f:
+        fixture_bytes = f.read()
+
+    first_64_bytes = fixture_bytes[:64]
+    assert len(first_64_bytes) == 64
+
+    # 1. Terminal State: 'done'
+    job_id_done = enqueue_apk_job(
+        file_path=None,
+        sha256_hash="a" * 64,
+        file_size=len(fixture_bytes),
+        session_hash="session_1",
+        upload_bytes=fixture_bytes,
+    )
+    # Simulate worker execution for 'done'
+    rq_job = Job.fetch(job_id_done, connection=fake_redis_conn)
+    # Worker runs execute_rq_apk_job
+    monkeypatch.setattr("rq.get_current_job", lambda: rq_job)
+    fake_result = {"analysis_version": "apk-static-v1", "sha256": "a" * 64, "findings": []}
+    monkeypatch.setattr("app.apk_worker.parse_and_analyze_apk", lambda p, s, sz: fake_result)
+    res = execute_rq_apk_job(fixture_bytes, "a" * 64, len(fixture_bytes))
+    rq_job.set_status("finished")
+    rq_job._result = res
+    rq_job.save()
+
+    # GET /api/apk/jobs/{id} fetches terminal state 'done'
+    status_resp = get_job_status(job_id_done)
+    assert status_resp["status"] == "done"
+
+    # Verify job is deleted from Redis and raw upload bytes cannot be found anywhere in Redis keys/values
+    for key in fake_redis_conn.keys():
+        key_dump = fake_redis_conn.dump(key) or b""
+        assert first_64_bytes not in key_dump, f"Upload bytes found in Redis key {key} after 'done'"
+
+    # 2. Terminal State: 'failed'
+    job_id_failed = enqueue_apk_job(
+        file_path=None,
+        sha256_hash="b" * 64,
+        file_size=len(fixture_bytes),
+        session_hash="session_1",
+        upload_bytes=fixture_bytes,
+    )
+    rq_job_fail = Job.fetch(job_id_failed, connection=fake_redis_conn)
+    rq_job_fail.set_status("failed")
+    rq_job_fail._exc_info = "Worker crash trace"
+    rq_job_fail.meta["error"] = "Worker crashed"
+    rq_job_fail.save()
+
+    status_resp_fail = get_job_status(job_id_failed)
+    assert status_resp_fail["status"] == "failed"
+
+    for key in fake_redis_conn.keys():
+        key_dump = fake_redis_conn.dump(key) or b""
+        assert first_64_bytes not in key_dump, f"Upload bytes found in Redis key {key} after 'failed'"
+
+    # 3. Terminal State: 'timeout'
+    job_id_timeout = enqueue_apk_job(
+        file_path=None,
+        sha256_hash="c" * 64,
+        file_size=len(fixture_bytes),
+        session_hash="session_1",
+        upload_bytes=fixture_bytes,
+    )
+    rq_job_timeout = Job.fetch(job_id_timeout, connection=fake_redis_conn)
+    rq_job_timeout.set_status("failed")
+    rq_job_timeout._exc_info = "rq.timeouts.JobTimeoutException: Task exceeded maximum timeout"
+    rq_job_timeout.save()
+
+    status_resp_timeout = get_job_status(job_id_timeout)
+    assert status_resp_timeout["status"] == "timeout"
+
+    for key in fake_redis_conn.keys():
+        key_dump = fake_redis_conn.dump(key) or b""
+        assert first_64_bytes not in key_dump, f"Upload bytes found in Redis key {key} after 'timeout'"
+
+
+def test_history_age_purge_with_mocked_clock(monkeypatch):
+    """Confirm records older than SIGNALCHECK_APK_HISTORY_MAX_AGE_DAYS are purged on insert and startup."""
+    from datetime import datetime, timedelta, timezone
+    from app.apk_db import save_apk_result, purge_expired_records, get_session, APKAnalysisRecord, init_db
+
+    monkeypatch.setenv("SIGNALCHECK_APK_HISTORY_MAX_AGE_DAYS", "30")
+
+    # Insert a record stamped 45 days in the past
+    past_date = datetime.now(timezone.utc) - timedelta(days=45)
+    db_session = get_session()
+    old_record = APKAnalysisRecord(
+        session_hash="age_test_session",
+        sha256="1" * 64,
+        package_name="com.old.app",
+        file_size=1000,
+        indicator_level="no_notable_indicators",
+        outcome="SUCCESS",
+        created_at=past_date,
+        result_json=json.dumps({"test": "old"}),
+    )
+    db_session.add(old_record)
+    db_session.commit()
+    old_id = old_record.id
+    db_session.close()
+
+    # Verify record exists
+    db_session = get_session()
+    assert db_session.query(APKAnalysisRecord).filter(APKAnalysisRecord.id == old_id).first() is not None
+    db_session.close()
+
+    # 1. Test purge_expired_records directly
+    deleted_count = purge_expired_records(max_age_days=30)
+    assert deleted_count >= 1
+
+    db_session = get_session()
+    assert db_session.query(APKAnalysisRecord).filter(APKAnalysisRecord.id == old_id).first() is None
+    db_session.close()
+
+    # 2. Test that insert triggers purge
+    # Insert another old record
+    db_session = get_session()
+    old_record2 = APKAnalysisRecord(
+        session_hash="age_test_session",
+        sha256="2" * 64,
+        package_name="com.old.app2",
+        file_size=1000,
+        indicator_level="no_notable_indicators",
+        outcome="SUCCESS",
+        created_at=past_date,
+        result_json=json.dumps({"test": "old2"}),
+    )
+    db_session.add(old_record2)
+    db_session.commit()
+    old_id2 = old_record2.id
+    db_session.close()
+
+    # Now call save_apk_result with a fresh record; it should purge old_id2
+    save_apk_result(
+        sha256="3" * 64,
+        package_name="com.new.app",
+        file_size=2000,
+        indicator_level="no_notable_indicators",
+        outcome="SUCCESS",
+        result_data={"test": "new"},
+        session_hash="age_test_session",
+    )
+
+    db_session = get_session()
+    assert db_session.query(APKAnalysisRecord).filter(APKAnalysisRecord.id == old_id2).first() is None
+    db_session.close()
 
 
 

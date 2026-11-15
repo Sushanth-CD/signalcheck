@@ -651,9 +651,10 @@ def get_apk_job(
             },
         )
 
-    # Session Isolation: Check that the job belongs to the requesting session
+    # Session Isolation: Fail-closed ownership check.
+    # Allow only when the job has a non-empty session_hash AND it matches the requester's session_hash.
     job_session_hash = job_info.get("session_hash")
-    if job_session_hash and session_hash != job_session_hash:
+    if not job_session_hash or not session_hash or session_hash != job_session_hash:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail={

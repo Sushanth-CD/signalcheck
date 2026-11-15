@@ -818,6 +818,90 @@ def test_cross_session_job_id_probing_returns_404(session_client):
     assert resp_owner.json()["status"] == "done"
 
 
+def test_job_with_no_session_hash_returns_404_to_everyone(session_client):
+    """A job missing a session_hash fails closed and returns 404 to all requesters."""
+    from app import apk_jobs
+    job_id = "orphan-job-without-session"
+    with apk_jobs._LOCAL_JOBS_LOCK:
+        apk_jobs._LOCAL_JOBS[job_id] = {
+            "job_id": job_id,
+            "status": "done",
+            "result": {"analysis_version": "apk-static-v1", "findings": []},
+            "error": None,
+            "created_at": time.time(),
+            "session_hash": "",  # Empty session hash
+        }
+
+    # Requester with no session cookie
+    session_client.cookies.clear()
+    resp_anon = session_client.get(f"/api/apk/jobs/{job_id}")
+    assert resp_anon.status_code == 404
+    assert resp_anon.json()["detail"]["error"] == "job_not_found"
+
+    # Requester with a session cookie
+    session_client.cookies.set("signalcheck_apk_sid", "arbitrary_valid_session_token_32chars")
+    resp_sess = session_client.get(f"/api/apk/jobs/{job_id}")
+    assert resp_sess.status_code == 404
+    assert resp_sess.json()["detail"]["error"] == "job_not_found"
+
+
+def test_rq_job_retains_session_hash_after_worker_save(monkeypatch):
+    """In RQ mode, verify that session_hash in job.meta survives worker execution and job.save()."""
+    import fakeredis
+    from rq import Queue
+    from rq.job import Job
+    from app.apk_jobs import enqueue_apk_job, get_job_status
+    from app.apk_worker import execute_rq_apk_job
+
+    fake_server = fakeredis.FakeServer()
+    fake_redis_conn = fakeredis.FakeRedis(server=fake_server)
+
+    monkeypatch.setenv("REDIS_URL", "redis://fakeredis:6379/0")
+    monkeypatch.setattr("redis.from_url", lambda url: fake_redis_conn)
+
+    session_hash = "my_custom_session_hash_value_123456"
+
+    # Enqueue an RQ job with session_hash
+    job_id = enqueue_apk_job(
+        file_path=None,
+        sha256_hash="e" * 64,
+        file_size=100,
+        session_hash=session_hash,
+        upload_bytes=b"PK\x03\x04sample",
+    )
+
+    rq_job = Job.fetch(job_id, connection=fake_redis_conn)
+    assert rq_job.meta.get("session_hash") == session_hash
+
+    # Simulate worker execution: worker receives job, runs execute_rq_apk_job
+    monkeypatch.setattr("rq.get_current_job", lambda: rq_job)
+    fake_result = {"analysis_version": "apk-static-v1", "sha256": "e" * 64, "findings": []}
+    monkeypatch.setattr("app.apk_worker.parse_and_analyze_apk", lambda p, s, sz: fake_result)
+
+    execute_rq_apk_job(b"PK\x03\x04sample", "e" * 64, 100)
+    rq_job.set_status("finished")
+    rq_job._result = fake_result
+    rq_job.save()
+
+    # Re-fetch from Redis and check metadata
+    reloaded_job = Job.fetch(job_id, connection=fake_redis_conn)
+    assert reloaded_job.meta.get("session_hash") == session_hash
+
+    # Check status and terminal cache snapshot
+    status_info = get_job_status(job_id)
+    assert status_info is not None
+    assert status_info["status"] == "done"
+    assert status_info["session_hash"] == session_hash
+
+    # Check that in-memory terminal cache snapshot also preserved session_hash
+    from app.apk_jobs import _TERMINAL_JOB_CACHE, _TERMINAL_CACHE_LOCK
+    with _TERMINAL_CACHE_LOCK:
+        cached_entry = _TERMINAL_JOB_CACHE.get(job_id)
+        assert cached_entry is not None
+        cached_time, cached_payload = cached_entry
+        assert cached_payload["session_hash"] == session_hash
+
+
 def test_oversized_input_rejected_before_enqueue(client):
     """Files exceeding 25 MB are rejected with 413 before enqueuing."""
     large_payload = b"0" * (26 * 1024 * 1024)

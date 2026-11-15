@@ -136,7 +136,7 @@ export async function analyzeAPK(file, onProgress, signal) {
 
   let response;
   try {
-    response = await fetch(`${API_BASE_URL}/api/apk/analyze`, {
+    response = await fetch(`${API_BASE_URL}/api/apk/analyze?async_mode=true`, {
       method: "POST",
       headers: { Accept: "application/json" },
       body: formData,
@@ -144,7 +144,7 @@ export async function analyzeAPK(file, onProgress, signal) {
       credentials: "same-origin",
     });
   } catch (err) {
-    if (err.name === "AbortError") {
+    if (err.name === "AbortError" || signal?.aborted) {
       throw new Error("Upload was cancelled.");
     }
     throw new Error("Could not reach the analysis service. Check that the backend is running and try again.");
@@ -158,10 +158,72 @@ export async function analyzeAPK(file, onProgress, signal) {
   }
 
   if (!response.ok) throw new Error(messageFromError(payload, response.status));
-  if (!isAPKAnalysisResponse(payload)) {
-    throw new Error("The analysis service returned an unexpected response. Please try again later.");
+
+  // If already full analysis response (e.g. mock or sync backend)
+  if (isAPKAnalysisResponse(payload)) {
+    return payload;
   }
-  return payload;
+
+  const jobId = payload.job_id;
+  if (!jobId) {
+    throw new Error("Failed to enqueue APK analysis job.");
+  }
+
+  if (onProgress && typeof onProgress === "function") {
+    onProgress("queued");
+  }
+
+  // Poll job status until terminal state (done, failed, timeout)
+  while (true) {
+    if (signal?.aborted) throw new Error("Upload was cancelled.");
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    if (signal?.aborted) throw new Error("Upload was cancelled.");
+
+    let jobResponse;
+    try {
+      jobResponse = await fetch(`${API_BASE_URL}/api/apk/jobs/${jobId}`, {
+        method: "GET",
+        headers: { Accept: "application/json" },
+        credentials: "same-origin",
+        signal,
+      });
+    } catch (err) {
+      if (err.name === "AbortError" || signal?.aborted) {
+        throw new Error("Upload was cancelled.");
+      }
+      throw new Error("Could not check APK analysis job status.");
+    }
+
+    let jobPayload;
+    try {
+      jobPayload = await jobResponse.json();
+    } catch {
+      throw new Error("Failed to parse job status response.");
+    }
+
+    if (!jobResponse.ok) {
+      throw new Error(messageFromError(jobPayload, jobResponse.status));
+    }
+
+    if (onProgress && typeof onProgress === "function") {
+      onProgress(jobPayload.status);
+    }
+
+    if (jobPayload.status === "done") {
+      if (!isAPKAnalysisResponse(jobPayload.result)) {
+        throw new Error("The analysis service returned an unexpected result schema.");
+      }
+      return jobPayload.result;
+    }
+
+    if (jobPayload.status === "timeout") {
+      throw new Error("APK analysis timed out after 30 seconds. The worker process was terminated.");
+    }
+
+    if (jobPayload.status === "failed") {
+      throw new Error(jobPayload.error || "APK analysis worker encountered a fatal error during extraction.");
+    }
+  }
 }
 
 export async function fetchAPKHistory(limit = 20, offset = 0) {

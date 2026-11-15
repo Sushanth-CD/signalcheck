@@ -35,6 +35,9 @@ export default function APKStaticAnalysis() {
   // Stage C3: Educational expanded findings state
   const [expandedFindings, setExpandedFindings] = useState({});
 
+  // Stage C4: Asynchronous worker job state
+  const [jobStatus, setJobStatus] = useState(""); // "queued", "running", "done", "failed", "timeout"
+
   function toggleFindingExplanation(findingId) {
     setExpandedFindings((prev) => ({
       ...prev,
@@ -109,17 +112,24 @@ export default function APKStaticAnalysis() {
     setIsLoading(true);
     setError("");
     setResult(null);
+    setJobStatus("queued");
 
     const controller = new AbortController();
     abortControllerRef.current = controller;
 
     try {
-      const response = await analyzeAPK(file, null, controller.signal);
+      const response = await analyzeAPK(
+        file,
+        (status) => setJobStatus(status),
+        controller.signal
+      );
       setResult(response);
+      setJobStatus("done");
       // Reload history to show the newly saved record
       loadHistory();
     } catch (err) {
       setError(err instanceof Error ? err.message : "Failed to analyze APK.");
+      setJobStatus("failed");
     } finally {
       setIsLoading(false);
       abortControllerRef.current = null;
@@ -131,6 +141,7 @@ export default function APKStaticAnalysis() {
       abortControllerRef.current.abort();
     }
     setIsLoading(false);
+    setJobStatus("");
   }
 
   function handleReset() {
@@ -138,6 +149,7 @@ export default function APKStaticAnalysis() {
     setFile(null);
     setResult(null);
     setError("");
+    setJobStatus("");
     if (fileInputRef.current) {
       fileInputRef.current.value = "";
     }
@@ -271,7 +283,13 @@ export default function APKStaticAnalysis() {
             type="submit"
             disabled={!file || isLoading}
           >
-            {isLoading ? "Analyzing APK…" : "Start Static Analysis →"}
+            {isLoading ? (
+              jobStatus === "running"
+                ? "Running isolated worker…"
+                : jobStatus === "queued"
+                ? "Queued in worker pool…"
+                : "Analyzing APK…"
+            ) : "Start Static Analysis →"}
           </button>
           {isLoading && (
             <button
@@ -293,6 +311,38 @@ export default function APKStaticAnalysis() {
           )}
         </div>
       </form>
+
+      {/* Asynchronous Worker Status Indicator */}
+      {isLoading && (
+        <div
+          className="sc-worker-status-card"
+          role="status"
+          style={{
+            marginTop: "1.25rem",
+            padding: "14px 18px",
+            background: "var(--color-surface, #ffffff)",
+            border: "1px solid var(--color-border, #e2e8f0)",
+            borderRadius: "10px",
+            display: "flex",
+            alignItems: "center",
+            gap: "12px",
+          }}
+        >
+          <span className="spinner" aria-hidden="true" style={{ width: "20px", height: "20px", borderTopColor: "var(--color-primary, #0284c7)" }} />
+          <div>
+            <div style={{ fontWeight: 600, fontSize: "0.9rem", color: "var(--color-text, #0f172a)" }}>
+              {jobStatus === "running"
+                ? "Static Analysis Worker In Progress"
+                : "Job Queued in Isolated Worker"}
+            </div>
+            <div style={{ fontSize: "0.8rem", color: "var(--color-text-secondary, #64748b)" }}>
+              {jobStatus === "running"
+                ? "Parsing manifest, Dalvik bytecode, and digital certificates in sandboxed process (max 30s timeout)..."
+                : "Waiting for worker process allocation..."}
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* ARIA Live Status Region */}
       <div aria-live="polite" className="sr-only">

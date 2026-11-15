@@ -9,21 +9,22 @@ The platform provides focused, transparent machine-learning-based classification
 ## Table of Contents
 1. [Key Features](#key-features)
 2. [System Architecture](#system-architecture)
-3. [Technology Stack](#technology-stack)
-4. [Repository Structure](#repository-structure)
-5. [Prerequisites](#prerequisites)
-6. [Backend Installation & Setup](#backend-installation--setup)
-7. [Frontend Installation & Setup](#frontend-installation--setup)
-8. [Environment Configuration](#environment-configuration)
-9. [Running SignalCheck Locally](#running-signalcheck-locally)
-10. [Run without Docker (Windows PowerShell)](#run-without-docker-windows-powershell)
-11. [How to Run the APK Heuristic Evaluation](#how-to-run-the-apk-heuristic-evaluation)
-12. [API Endpoints Reference](#api-endpoints-reference)
-13. [Testing & Quality Verification](#testing--quality-verification)
-13. [Machine Learning Models & Lineage](#machine-learning-models--lineage)
-14. [Research Lab & Android Limitations](#research-lab--android-limitations)
-15. [Known Limitations & Disclaimers](#known-limitations--disclaimers)
-16. [University & Hackathon Demonstration Guide](#university--hackathon-demonstration-guide)
+3. [Documentation & Guides](#documentation--guides)
+4. [Technology Stack](#technology-stack)
+5. [Repository Structure](#repository-structure)
+6. [Prerequisites](#prerequisites)
+7. [Backend Installation & Setup](#backend-installation--setup)
+8. [Frontend Installation & Setup](#frontend-installation--setup)
+9. [Environment Configuration](#environment-configuration)
+10. [Running SignalCheck Locally](#running-signalcheck-locally)
+11. [Run without Docker (Windows PowerShell)](#run-without-docker-windows-powershell)
+12. [How to Run the APK Heuristic Evaluation](#how-to-run-the-apk-heuristic-evaluation)
+13. [API Endpoints Reference](#api-endpoints-reference)
+14. [Testing & Quality Verification](#testing--quality-verification)
+15. [Machine Learning Models & Lineage](#machine-learning-models--lineage)
+16. [Research Lab & Android Limitations](#research-lab--android-limitations)
+17. [Known Limitations & Disclaimers](#known-limitations--disclaimers)
+18. [University & Hackathon Demonstration Guide](#university--hackathon-demonstration-guide)
 
 ---
 
@@ -65,9 +66,23 @@ SignalCheck operates as a decoupled client-server application:
 +-----------------------------------------------------------------------------------------+
 ```
 
+For the complete architectural design, container isolation boundaries, Redis lifecycle, and Mermaid diagrams, see:
+- [System Architecture & Isolation Guide](docs/architecture.md)
+- [Technical Limitations & Operating Parameters](docs/limitations.md)
+- [3-Minute Live Demonstration Script](docs/demo-script.md)
+
 ---
 
-## 3. Technology Stack
+## 3. Documentation & Guides
+
+Comprehensive documentation files are available in [`docs/`](docs/):
+- **[Architecture & Isolation (docs/architecture.md)](docs/architecture.md):** Detailed layer breakdown, Mermaid flowcharts, non-root user execution, read-only root filesystems, and tmpfs boundaries.
+- **[Demonstration Script (docs/demo-script.md)](docs/demo-script.md):** 3-minute presentation walkthrough covering APK upload, findings, educational "Learn more" explanations, PDF export, and private history.
+- **[Technical Limitations (docs/limitations.md)](docs/limitations.md):** Detailed boundaries covering static-only analysis, deterministic heuristic rules, lack of verdicts, and subprocess development fallback.
+
+---
+
+## 4. Technology Stack
 
 - **Frontend:** React 18, Vite 6, Tailwind/CSS Variables Design System, Native SVG Icons.
 - **Backend API:** FastAPI 0.115+, Uvicorn 0.30+, Pydantic V2, Starlette.

@@ -146,3 +146,153 @@ jobs:
             exit 1
           fi
           echo "Verified: Outbound network egress failed as expected on internal network."
+
+  compose-integration-apk-pipeline:
+    name: Compose Integration APK Worker Pipeline
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Start Docker Compose services (redis, backend, apk-worker)
+        run: |
+          docker compose up -d redis backend apk-worker
+
+      - name: Wait for backend service health
+        run: |
+          echo "Waiting for backend to be healthy..."
+          for i in {1..30}; do
+            STATUS=$(docker inspect --format='{{json .State.Health.Status}}' signalcheck-backend 2>/dev/null || echo '"starting"')
+            if [ "$STATUS" = '"healthy"' ]; then
+              echo "Backend is healthy!"
+              break
+            fi
+            echo "Backend status: $STATUS (waiting $i/30)..."
+            sleep 2
+          done
+
+      - name: Assert worker is running as non-root with read-only rootfs
+        run: |
+          WORKER_USER=$(docker inspect --format='{{.Config.User}}' signalcheck-apk-worker)
+          echo "Worker user configured: $WORKER_USER"
+          if [ "$WORKER_USER" != "10001:10001" ]; then
+            echo "FAILED: apk-worker user is not 10001:10001!"
+            exit 1
+          fi
+
+          WORKER_READONLY=$(docker inspect --format='{{.HostConfig.ReadonlyRootfs}}' signalcheck-apk-worker)
+          echo "Worker read-only rootfs: $WORKER_READONLY"
+          if [ "$WORKER_READONLY" != "true" ]; then
+            echo "FAILED: apk-worker does not have read-only rootfs!"
+            exit 1
+          fi
+
+          ACTUAL_UID=$(docker exec signalcheck-apk-worker id -u)
+          echo "Live worker process UID: $ACTUAL_UID"
+          if [ "$ACTUAL_UID" != "10001" ]; then
+            echo "FAILED: Live worker process is not running as UID 10001!"
+            exit 1
+          fi
+
+      - name: Run APK static analysis through container stack and assert results
+        id: test_pipeline
+        run: |
+          set -e
+          FIXTURE_PATH="backend/reports/ml/android_v3_runs/run_017_dataset_acquisition/acquired_apks/ANDROGUARD_TESTS_TestActivity.apk"
+          if [ ! -f "$FIXTURE_PATH" ]; then
+            echo "FAILED: Fixture APK not found at $FIXTURE_PATH"
+            exit 1
+          fi
+
+          # Upload APK via backend container port/exec
+          echo "Submitting APK to backend..."
+          POST_RES=$(docker exec -i signalcheck-backend python -c "
+          import urllib.request, json
+          # Read fixture and post via internal loopback
+          with open('/app/backend/reports/ml/android_v3_runs/run_017_dataset_acquisition/acquired_apks/ANDROGUARD_TESTS_TestActivity.apk', 'rb') as f:
+              data = f.read()
+          boundary = '----WebKitFormBoundary7MA4YWxkTrZu0gW'
+          body = (
+              f'--{boundary}\r\n'
+              'Content-Disposition: form-data; name=\"file\"; filename=\"TestActivity.apk\"\r\n'
+              'Content-Type: application/vnd.android.package-archive\r\n\r\n'
+          ).encode() + data + f'\r\n--{boundary}--\r\n'.encode()
+          req = urllib.request.Request(
+              'http://127.0.0.1:8000/api/apk/analyze?async_mode=true',
+              data=body,
+              headers={'Content-Type': f'multipart/form-data; boundary={boundary}'},
+              method='POST'
+          )
+          with urllib.request.urlopen(req) as resp:
+              print(resp.read().decode())
+          ")
+          echo "Enqueue response: $POST_RES"
+          JOB_ID=$(echo "$POST_RES" | jq -r '.job_id')
+          if [ -z "$JOB_ID" ] || [ "$JOB_ID" = "null" ]; then
+            echo "FAILED: Did not obtain valid job_id from enqueue endpoint!"
+            exit 1
+          fi
+          echo "Enqueued Job ID: $JOB_ID"
+
+          # Poll for job completion
+          STATUS=""
+          RESULT=""
+          for i in {1..30}; do
+            POLL_RES=$(docker exec signalcheck-backend python -c "
+            import urllib.request
+            with urllib.request.urlopen('http://127.0.0.1:8000/api/apk/jobs/$JOB_ID') as resp:
+                print(resp.read().decode())
+            ")
+            STATUS=$(echo "$POLL_RES" | jq -r '.status')
+            echo "Poll attempt $i: status = $STATUS"
+            if [ "$STATUS" = "done" ]; then
+              RESULT=$(echo "$POLL_RES" | jq '.result')
+              break
+            fi
+            if [ "$STATUS" = "failed" ] || [ "$STATUS" = "timeout" ]; then
+              echo "FAILED: Job entered terminal failure state: $STATUS"
+              exit 1
+            fi
+            sleep 1
+          done
+
+          if [ "$STATUS" != "done" ]; then
+            echo "FAILED: Job did not complete within 30 seconds!"
+            exit 1
+          fi
+
+          # Assertions on result
+          SCHEMA_VER=$(echo "$RESULT" | jq -r '.analysis_version')
+          echo "Analysis version: $SCHEMA_VER"
+          if [ "$SCHEMA_VER" != "apk-static-v1" ]; then
+            echo "FAILED: schema_version is '$SCHEMA_VER', expected 'apk-static-v1'!"
+            exit 1
+          fi
+
+          FINDINGS_COUNT=$(echo "$RESULT" | jq '.findings | length')
+          echo "Findings count: $FINDINGS_COUNT"
+          if [ "$FINDINGS_COUNT" -lt 0 ]; then
+            echo "FAILED: findings list is missing!"
+            exit 1
+          fi
+
+          echo "Container-mode pipeline completed successfully!"
+
+      - name: Dump container logs on failure
+        if: failure()
+        run: |
+          echo "=== Backend Logs ==="
+          docker logs signalcheck-backend --tail 100
+          echo "=== APK Worker Logs ==="
+          docker logs signalcheck-apk-worker --tail 100
+          echo "=== Redis Logs ==="
+          docker logs signalcheck-redis --tail 100
+
+      - name: Tear down compose stack
+        if: always()
+        run: |
+          docker compose down -v

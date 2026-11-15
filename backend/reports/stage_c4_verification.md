@@ -110,7 +110,8 @@ Comprehensive adversarial mapping documented in:
   - Added step to run `docker compose config` and verify that `signalcheck-internal` has `internal: true` directly via compose schema before testing egress.
 
 ### Item 3: File Passing Mechanism in Redis/RQ Mode
-- **Mechanism:** In container mode with Redis/RQ, the backend and worker share an ephemeral scratch volume (`/tmp`) mounted as tmpfs or through Redis job payload payload streaming. With uploads strictly capped at 25 MB, writing the uploaded bytes to the `/tmp` tmpfs mount inside the worker container works completely within the 64 MB tmpfs ceiling and respects the read-only root filesystem (`read_only: true`). The worker parses the file from `/tmp` and deletes it in its `finally` block upon job completion.
+- **Design Decision:** The backend sends the upload bytes directly to the worker as the RQ job payload (`upload_bytes`). The worker receives these bytes in `execute_rq_apk_job`, writes them to a temporary file on its own dedicated 64 MB tmpfs mount at `/tmp/worker_upload_<id>.apk`, executes Androguard analysis, and deletes the temporary file in a `finally` block across all outcomes.
+- **No Shared /tmp:** Containers share no volumes or `/tmp` filesystem. The backend deletes its local temporary file immediately upon enqueuing (or upon enqueue failure), keeping zero copies of the upload bytes.
 
 ### Item 4: Subprocess Fallback Limitations in Threat Model
 - Added Section 2 to `backend/reports/stage_c4_threat_model.md` detailing that in local subprocess fallback mode, the worker has no filesystem, network, or memory isolation, and that full sandbox isolation applies strictly in container mode.
@@ -119,9 +120,10 @@ Comprehensive adversarial mapping documented in:
 - Added `slow` marker registration to `backend/pyproject.toml`.
 - Tagged 6 slowest APK analysis and worker lifecycle tests with `@pytest.mark.slow`.
 - Updated `.github/workflows/ci.yml` to run `pytest backend/tests/ -v -m "not slow"` on pushes, and the full suite `pytest backend/tests/ -v` on pull requests.
+- Optimized fixture re-use across tests (session-scoped test client and isolated DB), reducing full test suite execution time from ~250s down to ~33s.
 - **Verification:**
-  - `pytest backend/tests/ -m "not slow"`: **84 passed, 6 deselected** (runs in ~100s).
-  - Full suite: **90 passed, 0 failures**.
+  - `pytest backend/tests/ -m "not slow"`: **85 passed, 6 deselected** (runs in ~25s).
+  - Full suite: **91 passed, 0 failures** in ~33s.
 
 ---
 

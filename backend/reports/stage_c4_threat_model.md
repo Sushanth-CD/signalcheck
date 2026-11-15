@@ -19,7 +19,7 @@ When accepting untrusted binary artifacts (Android APK archives) from public web
 | **Command Execution & Native Binaries** | APK containing ELF binaries or trying to spawn host shell processes via shell injection. | **Capability Drop (`cap_drop: ALL`):** All Linux capabilities are dropped. `security_opt: [no-new-privileges:true]` prevents privilege escalation even if a SUID binary were present. |
 | **Network Exfiltration / C2 Callbacks** | Malicious bytecode or parsing exploit making outbound network connections to attacker C2 servers to exfiltrate session data or environment secrets. | **Internal-Only Network (`internal: true`):** The worker and backend reside on `signalcheck-internal` with zero external ingress and zero external gateway/NAT routing. Outbound requests immediately fail with `Network is unreachable`. |
 | **Privilege Escalation** | Attacker attempting to escape container boundaries or control host Docker daemon. | **Non-Root Execution (`user: "10001:10001"`):** Worker processes run under unprivileged user `signalcheck` without sudo access or Docker socket mount. |
-| **Ephemeral File Leakage** | Storing uploaded APK bytes on disk or retaining sensitive extracted strings in logs. | Ephemeral guarantee: uploaded `.apk` temp file is unlinked in a `finally` block across all states (`done`, `failed`, `timeout`, crash). DB stores only JSON indicators and SHA-256; audit logs record only request ID, byte size, duration, and outcome code. |
+| **Ephemeral File Leakage** | Storing uploaded APK bytes on disk or retaining sensitive extracted strings in logs. | Ephemeral guarantee: in container mode, the backend passes uploaded bytes as the RQ job payload and immediately unlinks its local temporary file (retaining zero copy). The worker receives the bytes, writes them to a temporary file on its own 64 MB tmpfs mount at `/tmp`, analyzes them, and deletes the temporary file in a `finally` block across all outcomes (`done`, `failed`, `timeout`, crash). Containers do not share `/tmp`. DB stores only JSON indicators and SHA-256; audit logs record only request ID, byte size, duration, and outcome code. |
 
 ---
 
@@ -49,7 +49,26 @@ It is critical to distinguish between the isolation provided in **container mode
 
 ---
 
-## 3. Part B: Container Hardening Verification in CI
+## 3. Container File Handoff Design (No Shared Filesystem)
+
+In container mode (`REDIS_URL` set), SignalCheck uses an explicit **byte-payload handoff design**:
+
+1. **Upload Processing & Immediate Deletion on Backend:**
+   - The user streams an APK upload to the backend (`POST /api/apk/analyze`), subject to the 25 MB limit and zip-structure validation.
+   - The backend buffers the upload to a short-lived local temp file solely to stream-validate magic bytes and compute the SHA-256 digest.
+   - Upon enqueuing the RQ job to Redis, the backend passes the raw upload bytes as the RQ task argument (`upload_bytes`), and **immediately deletes its local temp file in the same turn**.
+   - If Redis is unreachable or enqueueing fails, the backend immediately unlinks the temporary file and raises a `503 Service Unavailable` error (`queue_unavailable`), ensuring the backend retains no leftover APK bytes.
+
+2. **Ephemeral /tmp tmpfs on Worker:**
+   - The isolated `apk-worker` container shares **no volumes or filesystem mounts** with the backend container.
+   - The worker container root filesystem is strictly immutable (`read_only: true`).
+   - The worker writes the received bytes to its own dedicated ephemeral tmpfs at `/tmp/worker_upload_<id>.apk` (capped at 64 MB with `noexec,nosuid,nodev`).
+   - Androguard processes the APK file on `/tmp`.
+   - In a `finally` block, the worker deletes `/tmp/worker_upload_<id>.apk` unconditionally on every outcome (`done`, `failed`, `timeout`, or error), leaving zero bytes persisted.
+
+---
+
+## 4. Part B: Container Hardening Verification in CI
 
 The assertions below are embedded in `.github/workflows/ci.yml` under job `worker-container-hardening` running on an `ubuntu-latest` Linux runner.
 

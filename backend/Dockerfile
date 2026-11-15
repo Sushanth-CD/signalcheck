@@ -24,7 +24,8 @@ RUN pip install --no-cache-dir --upgrade pip setuptools && \
     "androguard>=4.1.4,<5.0" \
     "python-multipart>=0.0.9,<1.0" \
     "sqlalchemy>=2.0.0,<3.0.0" \
-    "reportlab>=4.0.0,<6.0.0"
+    "reportlab>=4.0.0,<6.0.0" \
+    "rq>=1.16.0,<4.0.0"
 
 # --- Production Runner Stage ---
 FROM python:3.11-slim AS runner

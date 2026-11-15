@@ -61,7 +61,7 @@ from app.apk_analyzer import (
     APKValidationError,
     validate_zip_structure,
 )
-from app.apk_jobs import enqueue_apk_job, get_job_status
+from app.apk_jobs import enqueue_apk_job, get_job_status, get_redis_url
 from app.apk_db import (
     init_db,
     save_apk_result,
@@ -512,16 +512,44 @@ async def analyze_apk(
                 except Exception as db_exc:
                     print(f"Warning: Failed to persist async APK result: {db_exc}")
 
-        # Enqueue job to worker (worker owns deletion of temp_path on completion/timeout/failure)
-        job_id = enqueue_apk_job(
-            file_path=temp_path,
-            sha256_hash=sha256_digest,
-            file_size=bytes_received,
-            session_hash=session_hash,
-            on_complete_cb=on_job_completed,
-        )
-        enqueued_successfully = True
-        outcome_code = "JOB_ENQUEUED"
+        # Enqueue job to worker
+        # In Redis/RQ mode, read upload bytes to send in payload and delete backend temp file immediately.
+        redis_configured = bool(get_redis_url())
+        upload_bytes_payload = None
+        if redis_configured:
+            with open(temp_path, "rb") as f:
+                upload_bytes_payload = f.read()
+
+        try:
+            job_id = enqueue_apk_job(
+                file_path=temp_path,
+                sha256_hash=sha256_digest,
+                file_size=bytes_received,
+                session_hash=session_hash,
+                upload_bytes=upload_bytes_payload,
+                on_complete_cb=on_job_completed,
+            )
+            enqueued_successfully = True
+            outcome_code = "JOB_ENQUEUED"
+        except Exception as enq_exc:
+            outcome_code = "QUEUE_FAILED"
+            # Explicit cleanup of backend temp file if enqueueing fails or Redis is unreachable
+            if temp_path and os.path.exists(temp_path):
+                try:
+                    os.remove(temp_path)
+                except OSError:
+                    pass
+            raise HTTPException(
+                status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+                detail={"error": "queue_unavailable", "message": f"Worker queue unavailable: {enq_exc}"},
+            ) from enq_exc
+
+        # In Redis/RQ mode, backend does not need the temp file anymore; delete immediately so backend keeps no copy.
+        if redis_configured and temp_path and os.path.exists(temp_path):
+            try:
+                os.remove(temp_path)
+            except OSError:
+                pass
 
         # If client requested async job mode, return 202 Accepted with job_id immediately
         if async_mode:

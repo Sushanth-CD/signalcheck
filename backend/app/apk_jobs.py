@@ -178,44 +178,60 @@ def _execute_subprocess_job(job_id: str, file_path: str, sha256_hash: str, file_
 
 
 def enqueue_apk_job(
-    file_path: str,
+    file_path: Optional[str],
     sha256_hash: str,
     file_size: int,
     session_hash: str,
+    upload_bytes: Optional[bytes] = None,
     on_complete_cb=None,
 ) -> str:
     """Enqueue an APK static analysis job.
 
-    Returns the unique job_id.
+    In Redis/RQ container mode:
+    - Sends the raw uploaded bytes (upload_bytes) directly as the job argument.
+    - Does not rely on or require a shared filesystem between containers.
+
+    In Local Subprocess Fallback mode:
+    - Runs a child process pointing to the local temporary file_path.
+
+    Returns the unique job_id. Raises an exception if Redis enqueue fails when REDIS_URL is configured.
     """
     job_id = str(uuid.uuid4())
     redis_url = get_redis_url()
 
     if redis_url:
-        try:
-            import redis
-            from rq import Queue
-            conn = redis.from_url(redis_url)
-            q = Queue("apk-analysis", connection=conn)
-            # Enqueue to RQ worker with 30s job timeout
-            from app.apk_worker import execute_rq_apk_job
-            rq_job = q.enqueue(
-                execute_rq_apk_job,
-                file_path,
-                sha256_hash,
-                file_size,
-                job_id=job_id,
-                job_timeout=JOB_TIMEOUT_SECONDS,
-                result_ttl=3600,
-            )
-            rq_job.meta["session_hash"] = session_hash
-            rq_job.meta["created_at"] = time.time()
-            rq_job.save_meta()
-            return job_id
-        except Exception as redis_exc:
-            print(f"Notice: Redis enqueue failed ({redis_exc}), falling back to local worker process.")
+        import redis
+        from rq import Queue
+        conn = redis.from_url(redis_url)
+        q = Queue("apk-analysis", connection=conn)
+        from app.apk_worker import execute_rq_apk_job
 
-    # Local Subprocess Fallback
+        payload_bytes = upload_bytes
+        if payload_bytes is None and file_path and os.path.exists(file_path):
+            with open(file_path, "rb") as f:
+                payload_bytes = f.read()
+
+        if payload_bytes is None:
+            raise ValueError("No upload bytes or file provided to enqueue_apk_job.")
+
+        rq_job = q.enqueue(
+            execute_rq_apk_job,
+            payload_bytes,
+            sha256_hash,
+            file_size,
+            job_id=job_id,
+            job_timeout=JOB_TIMEOUT_SECONDS,
+            result_ttl=3600,
+        )
+        rq_job.meta["session_hash"] = session_hash
+        rq_job.meta["created_at"] = time.time()
+        rq_job.save_meta()
+        return job_id
+
+    # Local Subprocess Fallback (when REDIS_URL is unset)
+    if not file_path or not os.path.exists(file_path):
+        raise ValueError("file_path is required for local subprocess worker execution.")
+
     with _LOCAL_JOBS_LOCK:
         _LOCAL_JOBS[job_id] = {
             "job_id": job_id,

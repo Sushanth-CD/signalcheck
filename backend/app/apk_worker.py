@@ -522,9 +522,28 @@ def parse_and_analyze_apk(file_path: str, sha256_hash: str, file_size: int) -> d
     }
 
 
-def execute_rq_apk_job(file_path: str, sha256_hash: str, file_size: int) -> dict[str, Any]:
-    """Entry point for Redis Queue (RQ) jobs."""
-    return parse_and_analyze_apk(file_path, sha256_hash, file_size)
+def execute_rq_apk_job(upload_bytes: bytes, sha256_hash: str, file_size: int) -> dict[str, Any]:
+    """Entry point for Redis Queue (RQ) jobs in container mode.
+
+    Receives the uploaded APK bytes in the job payload, writes them to a temporary
+    file on the worker's own ephemeral /tmp tmpfs, analyzes the APK using Androguard,
+    and unconditionally deletes the temporary file in a finally block.
+    """
+    import tempfile
+    temp_path = None
+    try:
+        # Create temp file on worker's /tmp tmpfs
+        with tempfile.NamedTemporaryFile(prefix="worker_upload_", suffix=".apk", dir="/tmp", delete=False) as f:
+            f.write(upload_bytes)
+            temp_path = f.name
+
+        return parse_and_analyze_apk(temp_path, sha256_hash, file_size)
+    finally:
+        if temp_path and os.path.exists(temp_path):
+            try:
+                os.remove(temp_path)
+            except OSError:
+                pass
 
 
 def main():

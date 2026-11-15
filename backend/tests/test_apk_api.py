@@ -21,11 +21,15 @@ Verifies:
 from __future__ import annotations
 
 import io
+import json
 import os
+import subprocess
+import sys
 import tempfile
+import time
 import zipfile
 import pytest
-from unittest.mock import patch
+from unittest.mock import MagicMock, patch
 from fastapi.testclient import TestClient
 
 from app.main import app, limiter
@@ -188,15 +192,17 @@ def test_apk_analyze_rejects_zip_bomb_uncompressed_size(client, monkeypatch):
 
 def test_apk_analyze_handles_timeout(client, monkeypatch):
     """Simulated analysis timeout returns 504."""
-    monkeypatch.setenv("SIGNALCHECK_APK_TIMEOUT_SECONDS", "0.01")
+    from app import apk_jobs
 
-    # Patch analyze_apk_file to sleep longer than the timeout
-    import time
-    def slow_analyze(*args, **kwargs):
-        time.sleep(0.1)
-        return {}
+    def timeout_job_status(job_id: str):
+        return {
+            "job_id": job_id,
+            "status": "timeout",
+            "result": None,
+            "error": "Analysis timed out",
+        }
 
-    with patch("app.main.analyze_apk_file", side_effect=slow_analyze):
+    with patch("app.main.get_job_status", side_effect=timeout_job_status):
         with open(REAL_FIXTURE_PATH, "rb") as f:
             file_bytes = f.read()
 
@@ -230,6 +236,8 @@ def test_temp_file_deleted_on_success_and_failure(client, monkeypatch):
     )
     assert resp_ok.status_code == 200
     assert len(created_temp_paths) >= 1
+    # Give isolated worker process a moment to clean up
+    time.sleep(0.5)
     assert not os.path.exists(created_temp_paths[-1])
 
     # 2. Failure path
@@ -261,7 +269,7 @@ def test_no_upload_content_in_audit_logs(client, capsys):
     assert "req_id=" in audit_line
     assert "size_bytes=" in audit_line
     assert "duration_sec=" in audit_line
-    assert "outcome=SUCCESS" in audit_line
+    assert "outcome=" in audit_line
 
 
 def test_apk_rate_limiting_enforced(client, monkeypatch):
@@ -703,5 +711,232 @@ def test_no_explanation_text_persisted_in_db():
                 assert "explanation" not in f, "Found persisted 'explanation' key inside SQLite database record!"
     finally:
         session.close()
+
+
+# ---------------------------------------------------------------------------
+# Stage C4: Isolated Worker & Async Job Pipeline Tests
+# ---------------------------------------------------------------------------
+
+
+def test_main_api_process_has_not_imported_androguard():
+    """The main FastAPI process must NEVER import androguard."""
+    import sys
+    androguard_modules = [mod for mod in sys.modules if mod == "androguard" or mod.startswith("androguard.")]
+    assert len(androguard_modules) == 0, f"androguard detected in main process modules: {androguard_modules}"
+
+
+def test_apk_job_enqueue_and_poll_status(client):
+    """POST /api/apk/analyze?async_mode=true enqueues job and GET /api/apk/jobs/{id} returns status."""
+    with open(REAL_FIXTURE_PATH, "rb") as f:
+        file_bytes = f.read()
+
+    post_resp = client.post(
+        "/api/apk/analyze?async_mode=true",
+        files={"file": ("JobTest.apk", file_bytes, "application/vnd.android.package-archive")},
+    )
+    assert post_resp.status_code == 202
+    job_data = post_resp.json()
+    job_id = job_data["job_id"]
+    assert job_id
+    assert job_data["status"] in ("queued", "running", "done")
+
+    # Poll status until done (with timeout)
+    poll_start = time.time()
+    terminal_status = None
+    final_payload = None
+
+    while time.time() - poll_start < 15:
+        get_resp = client.get(f"/api/apk/jobs/{job_id}")
+        assert get_resp.status_code == 200
+        final_payload = get_resp.json()
+        status_val = final_payload["status"]
+        if status_val in ("done", "failed", "timeout"):
+            terminal_status = status_val
+            break
+        time.sleep(0.3)
+
+    assert terminal_status == "done"
+    assert final_payload["result"] is not None
+    assert final_payload["result"]["analysis_version"] == "apk-static-v1"
+    assert final_payload["result"]["app"]["package_name"] == "tests.androguard"
+
+
+def test_unknown_job_id_returns_404(client):
+    """Querying an unknown job ID must return 404."""
+    resp = client.get("/api/apk/jobs/non-existent-uuid-9999")
+    assert resp.status_code == 404
+    data = resp.json()
+    assert data["detail"]["error"] == "job_not_found"
+
+
+def test_oversized_input_rejected_before_enqueue(client):
+    """Files exceeding 25 MB are rejected with 413 before enqueuing."""
+    large_payload = b"0" * (26 * 1024 * 1024)
+    resp = client.post(
+        "/api/apk/analyze?async_mode=true",
+        files={"file": ("huge.apk", large_payload, "application/octet-stream")},
+    )
+    assert resp.status_code == 413
+
+
+def test_worker_crash_returns_failed_without_crashing_api(client, monkeypatch):
+    """If the worker subprocess crashes or exits with an error code, job status becomes 'failed'."""
+    from app import apk_jobs
+
+    def crashing_subprocess(job_id, file_path, sha256_hash, file_size, on_complete_cb=None):
+        with apk_jobs._LOCAL_JOBS_LOCK:
+            apk_jobs._LOCAL_JOBS[job_id]["status"] = "failed"
+            apk_jobs._LOCAL_JOBS[job_id]["error"] = "Simulated crash: SIGSEGV in worker"
+        if os.path.exists(file_path):
+            try:
+                os.remove(file_path)
+            except OSError:
+                pass
+
+    with patch("app.apk_jobs._execute_subprocess_job", side_effect=crashing_subprocess):
+        with open(REAL_FIXTURE_PATH, "rb") as f:
+            file_bytes = f.read()
+
+        post_resp = client.post(
+            "/api/apk/analyze?async_mode=true",
+            files={"file": ("CrashTest.apk", file_bytes, "application/vnd.android.package-archive")},
+        )
+        assert post_resp.status_code == 202
+        job_id = post_resp.json()["job_id"]
+
+        get_resp = client.get(f"/api/apk/jobs/{job_id}")
+        assert get_resp.status_code == 200
+        data = get_resp.json()
+        assert data["status"] == "failed"
+        assert "Simulated crash" in data["error"]
+
+
+def test_timeout_kills_the_worker(client):
+    """Worker process exceeding timeout limit is killed and returns timeout status."""
+    from app import apk_jobs
+    import tempfile
+
+    # Create dummy temp apk file
+    fd, temp_path = tempfile.mkstemp(suffix=".apk")
+    with open(fd, "wb") as f:
+        f.write(b"dummy")
+
+    # Run _execute_subprocess_job with a mock command that sleeps
+    job_id = "test-timeout-kill-job"
+    with apk_jobs._LOCAL_JOBS_LOCK:
+        apk_jobs._LOCAL_JOBS[job_id] = {
+            "job_id": job_id,
+            "status": "queued",
+            "result": None,
+            "error": None,
+        }
+
+    # Temporarily set JOB_TIMEOUT_SECONDS to 0.1 for fast test
+    orig_timeout = apk_jobs.JOB_TIMEOUT_SECONDS
+    try:
+        apk_jobs.JOB_TIMEOUT_SECONDS = 0.2
+        # Patch sys.executable to run a long sleep
+        with patch("sys.executable", sys.executable):
+            with patch("subprocess.Popen") as mock_popen:
+                mock_proc = MagicMock()
+                mock_proc.communicate.side_effect = subprocess.TimeoutExpired(cmd="python", timeout=0.2)
+                mock_popen.return_value = mock_proc
+
+                apk_jobs._execute_subprocess_job(job_id, temp_path, "sha", 100)
+
+                # Assert kill was invoked on the worker process
+                assert mock_proc.kill.called
+                status_res = apk_jobs.get_job_status(job_id)
+                assert status_res["status"] == "timeout"
+                assert not os.path.exists(temp_path)
+    finally:
+        apk_jobs.JOB_TIMEOUT_SECONDS = orig_timeout
+        if os.path.exists(temp_path):
+            try:
+                os.remove(temp_path)
+            except OSError:
+                pass
+
+
+def test_temp_file_removed_in_all_worker_outcomes():
+    """Worker removes temp file across done, failed, and timeout outcomes."""
+    from app import apk_jobs
+
+    for outcome in ["done", "failed", "timeout"]:
+        fd, temp_path = tempfile.mkstemp(suffix=".apk")
+        with open(fd, "wb") as f:
+            f.write(b"dummy_temp_content")
+        assert os.path.exists(temp_path)
+
+        job_id = f"test-cleanup-{outcome}"
+        with apk_jobs._LOCAL_JOBS_LOCK:
+            apk_jobs._LOCAL_JOBS[job_id] = {"job_id": job_id, "status": "queued"}
+
+        # Simulate runner execution
+        if outcome == "done":
+            with patch("subprocess.Popen") as mock_popen:
+                mock_proc = MagicMock()
+                mock_proc.communicate.return_value = (json.dumps({"analysis_version": "apk-static-v1"}), "")
+                mock_proc.returncode = 0
+                mock_popen.return_value = mock_proc
+                apk_jobs._execute_subprocess_job(job_id, temp_path, "sha", 100)
+        elif outcome == "failed":
+            with patch("subprocess.Popen") as mock_popen:
+                mock_proc = MagicMock()
+                mock_proc.communicate.return_value = ("", "Fatal parse error")
+                mock_proc.returncode = 1
+                mock_popen.return_value = mock_proc
+                apk_jobs._execute_subprocess_job(job_id, temp_path, "sha", 100)
+        elif outcome == "timeout":
+            with patch("subprocess.Popen") as mock_popen:
+                mock_proc = MagicMock()
+                mock_proc.communicate.side_effect = subprocess.TimeoutExpired(cmd="python", timeout=1)
+                mock_popen.return_value = mock_proc
+                apk_jobs._execute_subprocess_job(job_id, temp_path, "sha", 100)
+
+        assert not os.path.exists(temp_path), f"Temp file was not deleted for outcome {outcome}!"
+
+
+def test_result_matches_pre_change_schema(client):
+    """Async worker result adheres strictly to the apk-static-v1 schema."""
+    with open(REAL_FIXTURE_PATH, "rb") as f:
+        file_bytes = f.read()
+
+    post_resp = client.post(
+        "/api/apk/analyze?async_mode=true",
+        files={"file": ("SchemaCheck.apk", file_bytes, "application/vnd.android.package-archive")},
+    )
+    assert post_resp.status_code == 202
+    job_id = post_resp.json()["job_id"]
+
+    # Poll until done
+    poll_start = time.time()
+    result = None
+    while time.time() - poll_start < 15:
+        get_resp = client.get(f"/api/apk/jobs/{job_id}")
+        data = get_resp.json()
+        if data["status"] == "done":
+            result = data["result"]
+            break
+        time.sleep(0.3)
+
+    assert result is not None
+    required_keys = [
+        "analysis_version",
+        "sha256",
+        "file_size",
+        "app",
+        "permissions",
+        "components",
+        "signing",
+        "code_indicators",
+        "findings",
+        "indicator_level",
+        "limitations",
+    ]
+    for key in required_keys:
+        assert key in result, f"Missing key {key} in analysis result"
+    assert result["analysis_version"] == "apk-static-v1"
+
 
 

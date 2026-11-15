@@ -43,3 +43,9 @@ tempCodeRunnerFile.*
 signalcheck.db
 *.db
 
+# Evaluation data and output artifacts
+backend/eval/data/
+backend/eval/*.csv
+backend/eval/results.csv
+
+

@@ -12,7 +12,7 @@ from __future__ import annotations
 
 import json
 import os
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from typing import Any, List, Optional
 
 from sqlalchemy import (
@@ -56,8 +56,37 @@ def get_db_path() -> str:
     return os.getenv("SIGNALCHECK_DB_PATH", "signalcheck.db")
 
 
+def purge_expired_records(max_age_days: Optional[int] = None) -> int:
+    """Purge records older than SIGNALCHECK_APK_HISTORY_MAX_AGE_DAYS (default: 30 days).
+
+    Returns the number of deleted records.
+    """
+    if max_age_days is None:
+        try:
+            max_age_days = int(os.getenv("SIGNALCHECK_APK_HISTORY_MAX_AGE_DAYS", "30"))
+        except ValueError:
+            max_age_days = 30
+
+    if max_age_days <= 0:
+        return 0
+
+    cutoff = datetime.now(timezone.utc) - timedelta(days=max_age_days)
+    session = get_session()
+    try:
+        deleted = (
+            session.query(APKAnalysisRecord)
+            .filter(APKAnalysisRecord.created_at < cutoff)
+            .delete(synchronize_session=False)
+        )
+        if deleted > 0:
+            session.commit()
+        return deleted
+    finally:
+        session.close()
+
+
 def init_db(db_path: Optional[str] = None) -> None:
-    """Initialize the database schema and session factory."""
+    """Initialize the database schema and session factory, and purge expired records."""
     global _engine, _SessionFactory
     path = db_path or get_db_path()
     db_dir = os.path.dirname(path)
@@ -84,6 +113,12 @@ def init_db(db_path: Optional[str] = None) -> None:
         print(f"Warning checking/updating apk_analysis_history schema: {exc}")
 
     _SessionFactory = sessionmaker(bind=_engine)
+
+    # Purge records older than max age on startup
+    try:
+        purge_expired_records()
+    except Exception as purge_exc:
+        print(f"Notice: Failed to purge expired records on startup: {purge_exc}")
 
 
 def get_session():
@@ -120,7 +155,13 @@ def save_apk_result(
         session.commit()
         record_id = record.id
 
-        # Retention Enforcement: Delete oldest records beyond max cap for THIS session
+        # Retention Enforcement Part 1: Age-based purge (SIGNALCHECK_APK_HISTORY_MAX_AGE_DAYS)
+        try:
+            purge_expired_records()
+        except Exception as purge_exc:
+            print(f"Notice: Failed to purge expired records on insert: {purge_exc}")
+
+        # Retention Enforcement Part 2: Delete oldest records beyond max cap for THIS session
         max_history = int(os.getenv("SIGNALCHECK_APK_HISTORY_MAX", "200"))
         if max_history > 0 and session_hash:
             session_count = (

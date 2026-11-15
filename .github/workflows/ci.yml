@@ -224,7 +224,10 @@ jobs:
           req = urllib.request.Request(
               'http://127.0.0.1:8000/api/apk/analyze?async_mode=true',
               data=body,
-              headers={'Content-Type': f'multipart/form-data; boundary={boundary}'},
+              headers={
+                  'Content-Type': f'multipart/form-data; boundary={boundary}',
+                  'Cookie': 'signalcheck_apk_sid=ci_integration_test_session_token_1234567890',
+              },
               method='POST'
           )
           with urllib.request.urlopen(req) as resp:
@@ -244,7 +247,11 @@ jobs:
           for i in {1..30}; do
             POLL_RES=$(docker exec signalcheck-backend python -c "
             import urllib.request
-            with urllib.request.urlopen('http://127.0.0.1:8000/api/apk/jobs/$JOB_ID') as resp:
+            req = urllib.request.Request(
+                'http://127.0.0.1:8000/api/apk/jobs/$JOB_ID',
+                headers={'Cookie': 'signalcheck_apk_sid=ci_integration_test_session_token_1234567890'},
+            )
+            with urllib.request.urlopen(req) as resp:
                 print(resp.read().decode())
             ")
             STATUS=$(echo "$POLL_RES" | jq -r '.status')
@@ -279,6 +286,30 @@ jobs:
             echo "FAILED: findings list is missing!"
             exit 1
           fi
+
+          # Assert that after reaching 'done', the job key no longer exists in Redis and upload bytes are absent
+          echo "Checking Redis payload cleanup..."
+          JOB_KEY_EXISTS=$(docker exec signalcheck-redis redis-cli exists "rq:job:$JOB_ID")
+          echo "Redis job key exists: $JOB_KEY_EXISTS"
+          if [ "$JOB_KEY_EXISTS" != "0" ]; then
+            echo "FAILED: Job key 'rq:job:$JOB_ID' still exists in Redis after reaching terminal 'done' state!"
+            exit 1
+          fi
+
+          # Read first 64 bytes of fixture and assert absence across all Redis keys
+          docker exec signalcheck-backend python -c "
+          import redis
+          with open('/app/backend/reports/ml/android_v3_runs/run_017_dataset_acquisition/acquired_apks/ANDROGUARD_TESTS_TestActivity.apk', 'rb') as f:
+              first_64 = f.read(64)
+          r = redis.from_url('redis://redis:6379/0')
+          keys = r.keys('*')
+          print(f'Checking {len(keys)} Redis keys for upload byte leaks...')
+          for k in keys:
+              dump = r.dump(k) or b''
+              if first_64 in dump:
+                  raise SystemExit(f'FAILED: Upload bytes found in Redis key: {k}')
+          print('Redis payload cleanup verified: 0 upload bytes detected in Redis.')
+          "
 
           echo "Container-mode pipeline completed successfully!"
 

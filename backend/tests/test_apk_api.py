@@ -76,6 +76,7 @@ def client():
         yield test_client
 
 
+@pytest.mark.slow
 def test_apk_analyze_with_real_fixture(client):
     """Test analyzing a known clean APK fixture from the repo."""
     assert os.path.exists(REAL_FIXTURE_PATH), f"Fixture not found at {REAL_FIXTURE_PATH}"
@@ -725,6 +726,7 @@ def test_main_api_process_has_not_imported_androguard():
     assert len(androguard_modules) == 0, f"androguard detected in main process modules: {androguard_modules}"
 
 
+@pytest.mark.slow
 def test_apk_job_enqueue_and_poll_status(client):
     """POST /api/apk/analyze?async_mode=true enqueues job and GET /api/apk/jobs/{id} returns status."""
     with open(REAL_FIXTURE_PATH, "rb") as f:
@@ -779,6 +781,7 @@ def test_oversized_input_rejected_before_enqueue(client):
     assert resp.status_code == 413
 
 
+@pytest.mark.slow
 def test_worker_crash_returns_failed_without_crashing_api(client, monkeypatch):
     """If the worker subprocess crashes or exits with an error code, job status becomes 'failed'."""
     from app import apk_jobs
@@ -811,6 +814,7 @@ def test_worker_crash_returns_failed_without_crashing_api(client, monkeypatch):
         assert "Simulated crash" in data["error"]
 
 
+@pytest.mark.slow
 def test_timeout_kills_the_worker(client):
     """Worker process exceeding timeout limit is killed and returns timeout status."""
     from app import apk_jobs
@@ -858,6 +862,7 @@ def test_timeout_kills_the_worker(client):
                 pass
 
 
+@pytest.mark.slow
 def test_temp_file_removed_in_all_worker_outcomes():
     """Worker removes temp file across done, failed, and timeout outcomes."""
     from app import apk_jobs
@@ -897,6 +902,7 @@ def test_temp_file_removed_in_all_worker_outcomes():
         assert not os.path.exists(temp_path), f"Temp file was not deleted for outcome {outcome}!"
 
 
+@pytest.mark.slow
 def test_result_matches_pre_change_schema(client):
     """Async worker result adheres strictly to the apk-static-v1 schema."""
     with open(REAL_FIXTURE_PATH, "rb") as f:

@@ -33,3 +33,6 @@ include = ["app*"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["."]
+markers = [
+    "slow: marks tests as slow/resource-heavy (deselect with '-m \"not slow\"')",
+]

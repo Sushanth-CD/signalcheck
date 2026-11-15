@@ -23,7 +23,33 @@ When accepting untrusted binary artifacts (Android APK archives) from public web
 
 ---
 
-## 2. Part B: Container Hardening Verification in CI
+## 2. Local Subprocess Fallback Security Limitations
+
+When running in local development mode without Docker (e.g. on native Windows with `REDIS_URL` unset), SignalCheck falls back to spawning worker child processes via Python's standard `subprocess.Popen([sys.executable, "-m", "app.apk_worker", ...])`.
+
+It is critical to distinguish between the isolation provided in **container mode** versus the **local subprocess fallback**:
+
+1. **Process & Time Isolation Only:**
+   - The subprocess fallback provides clean process separation and a hard 30-second execution deadline (`proc.communicate(timeout=30)` followed by SIGKILL / `proc.kill()`).
+   - If Androguard crashes, encounters a segmentation fault, or enters an infinite loop, only the child process dies; the main FastAPI server process remains unaffected.
+   - The API process never imports Androguard or executes bytecode inspection code directly.
+
+2. **No Filesystem Isolation:**
+   - In local subprocess fallback, the worker runs with the host operating system permissions of the user running the server.
+   - There is **no read-only root filesystem** and no mount namespace barrier; a parser exploit capable of arbitrary native code execution could read or write host files accessible to the current user.
+
+3. **No Network Egress Isolation:**
+   - The child process inherits the host network stack. There is **no internal-only bridge network** blocking outbound sockets. An exploit could theoretically initiate outbound connections if not blocked by host firewalls.
+
+4. **No Memory / Cgroup Resource Isolation:**
+   - While execution time is strictly killed at 30 seconds, there are no Linux cgroup caps enforcing RAM limits (e.g., the 512 MB container ceiling).
+
+> [!WARNING]
+> **Production Mandate:** The local subprocess fallback is designed strictly for local offline developer testing. In production and internet-exposed staging environments, SignalCheck **must** run in containerized mode via Docker Compose / Kubernetes with the `apk-worker` sandbox configured as specified in Section 3. Full security isolation (read-only filesystem, tmpfs scratch, dropped capabilities, non-root user, and zero network egress) applies **only** in container mode.
+
+---
+
+## 3. Part B: Container Hardening Verification in CI
 
 The assertions below are embedded in `.github/workflows/ci.yml` under job `worker-container-hardening` running on an `ubuntu-latest` Linux runner.
 

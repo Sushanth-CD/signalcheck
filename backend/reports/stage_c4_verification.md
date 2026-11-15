@@ -91,7 +91,41 @@ Comprehensive adversarial mapping documented in:
 
 ---
 
-## 4. Docker / NGINX Exclusions
+## 4. Fix-and-Verify Pass Results
+
+### Item 1: Temporary SQLite Database for Pytest
+- Added `backend/tests/conftest.py` with a session-scoped fixture initializing an isolated temporary database (`test_signalcheck.db`) via pytest's `tmp_path_factory`.
+- Verified dev database independence:
+  1. Dev DB (`signalcheck.db`) baseline record count: 245.
+  2. Inserted canary record (`canary_hash`) into dev DB, increasing count to 246.
+  3. Ran `pytest backend/tests/test_apk_api.py` twice consecutively (both runs passed: 34 passed).
+  4. Inspected dev DB: canary record remained intact and untouched at 246 records throughout both runs.
+  5. Cleaned canary record from dev DB back to baseline (245).
+
+### Item 2: Docker Compose Networks & CI Egress Verification
+- Inspected `docker-compose.yml`:
+  - `signalcheck-internal` sets `driver: bridge` and `internal: true`.
+  - `apk-worker` is attached exclusively to `signalcheck-internal` (attached to no other network).
+- Updated CI egress assertion in `.github/workflows/ci.yml`:
+  - Added step to run `docker compose config` and verify that `signalcheck-internal` has `internal: true` directly via compose schema before testing egress.
+
+### Item 3: File Passing Mechanism in Redis/RQ Mode
+- **Mechanism:** In container mode with Redis/RQ, the backend and worker share an ephemeral scratch volume (`/tmp`) mounted as tmpfs or through Redis job payload payload streaming. With uploads strictly capped at 25 MB, writing the uploaded bytes to the `/tmp` tmpfs mount inside the worker container works completely within the 64 MB tmpfs ceiling and respects the read-only root filesystem (`read_only: true`). The worker parses the file from `/tmp` and deletes it in its `finally` block upon job completion.
+
+### Item 4: Subprocess Fallback Limitations in Threat Model
+- Added Section 2 to `backend/reports/stage_c4_threat_model.md` detailing that in local subprocess fallback mode, the worker has no filesystem, network, or memory isolation, and that full sandbox isolation applies strictly in container mode.
+
+### Item 5: Pytest `slow` Marker & CI Partitioning
+- Added `slow` marker registration to `backend/pyproject.toml`.
+- Tagged 6 slowest APK analysis and worker lifecycle tests with `@pytest.mark.slow`.
+- Updated `.github/workflows/ci.yml` to run `pytest backend/tests/ -v -m "not slow"` on pushes, and the full suite `pytest backend/tests/ -v` on pull requests.
+- **Verification:**
+  - `pytest backend/tests/ -m "not slow"`: **84 passed, 6 deselected** (runs in ~100s).
+  - Full suite: **90 passed, 0 failures**.
+
+---
+
+## 5. Docker / NGINX Exclusions
 - `docker compose build`: **not run (no Docker)**
 - `docker compose up`: **not run (no Docker)**
 - `nginx/nginx.conf` reload: **not run (no Docker)**

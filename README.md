@@ -17,8 +17,9 @@ The platform provides focused, transparent machine-learning-based classification
 8. [Environment Configuration](#environment-configuration)
 9. [Running SignalCheck Locally](#running-signalcheck-locally)
 10. [Run without Docker (Windows PowerShell)](#run-without-docker-windows-powershell)
-11. [API Endpoints Reference](#api-endpoints-reference)
-12. [Testing & Quality Verification](#testing--quality-verification)
+11. [How to Run the APK Heuristic Evaluation](#how-to-run-the-apk-heuristic-evaluation)
+12. [API Endpoints Reference](#api-endpoints-reference)
+13. [Testing & Quality Verification](#testing--quality-verification)
 13. [Machine Learning Models & Lineage](#machine-learning-models--lineage)
 14. [Research Lab & Android Limitations](#research-lab--android-limitations)
 15. [Known Limitations & Disclaimers](#known-limitations--disclaimers)
@@ -246,7 +247,46 @@ Open the application:
 
 ---
 
-## 11. API Endpoints Reference
+## 11. How to Run the APK Heuristic Evaluation
+
+Stage C5 introduces an automated, isolated static analysis evaluation harness (`backend/eval/run_eval.py`) that executes deterministic heuristic rules against benign and suspicious APK datasets without executing code, importing Androguard in the harness, or touching the database.
+
+### Prerequisites & Safety
+- **No Execution / Installation:** APKs are analyzed purely as static zip archives and bytecode. They are never executed, installed, or emulated.
+- **Privacy Enforcement:** Output files (`results.csv`) record only SHA-256 hashes, group, outcome, and 0/1 rule triggers. Zero file names or file paths are ever recorded or committed.
+
+### Directory Setup
+Place APK samples into the following directories (or supply custom paths via CLI flags):
+```powershell
+backend/eval/data/benign/
+backend/eval/data/suspicious/
+```
+
+### Execution (Windows PowerShell)
+
+Run evaluation using default dataset paths:
+```powershell
+cd "C:\Projects\cyber-security-awareness-platform"
+.\.venv-py311-test\Scripts\python.exe backend/eval/run_eval.py
+```
+
+Run evaluation using custom dataset or output directories:
+```powershell
+cd "C:\Projects\cyber-security-awareness-platform"
+.\.venv-py311-test\Scripts\python.exe backend/eval/run_eval.py `
+  --benign-dir "backend/eval/data/benign" `
+  --suspicious-dir "backend/eval/data/suspicious" `
+  --output-csv "backend/eval/results.csv" `
+  --output-summary "backend/eval/summary.md"
+```
+
+### Outputs
+- `backend/eval/results.csv`: Per-sample SHA-256, group, execution outcome (`SUCCESS`, `REJECTED_*`, `TIMEOUT`, `FAILED_*`), and 0/1 trigger column for each of the 11 heuristic rules.
+- `backend/eval/summary.md`: Aggregate counts, trigger rates with 95% Wilson confidence intervals, gap analysis, noisy/never-fire warning flags, statistical limitations statement, and proposed adjustments.
+
+---
+
+## 12. API Endpoints Reference
 
 All endpoints enforce strict Pydantic schemas (`extra="forbid"`). Content is processed strictly in-memory and is never logged or written to disk.
 

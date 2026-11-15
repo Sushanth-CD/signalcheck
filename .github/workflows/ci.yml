@@ -26,7 +26,15 @@ jobs:
           python -m pip install --upgrade pip setuptools wheel
           pip install -e "./backend[dev]"
 
-      - name: Run backend pytest suite
+      - name: Run backend pytest suite (Fast non-slow suite on push)
+        if: github.event_name == 'push'
+        env:
+          SIGNALCHECK_RATE_LIMIT_STORAGE_URL: memory://
+        run: |
+          pytest backend/tests/ -v -m "not slow"
+
+      - name: Run backend pytest suite (Full suite on pull request)
+        if: github.event_name == 'pull_request'
         env:
           SIGNALCHECK_RATE_LIMIT_STORAGE_URL: memory://
         run: |
@@ -72,8 +80,10 @@ jobs:
         run: |
           docker build -t signalcheck-apk-worker:ci -f backend/Dockerfile .
 
-      - name: Create internal-only bridge network
+      - name: Create compose internal network and verify compose configuration
         run: |
+          docker compose config
+          # Create internal network mirroring docker-compose signalcheck-internal
           docker network create --internal signalcheck-ci-internal
 
       - name: Assert 1 - Non-root user execution
@@ -109,10 +119,18 @@ jobs:
           fi
           echo "Verified: Writes outside /tmp are blocked with 'Read-only file system'."
 
-      - name: Assert 3 - Outbound network access is strictly blocked
+      - name: Assert 3 - Outbound network access is strictly blocked on compose internal network
         run: |
           set +e
-          # Attempt outbound ping/curl to external IP on internal network
+          # Verify compose project network definition sets internal: true
+          COMPOSE_INTERNAL=$(docker compose config --format json | jq -r '.networks["signalcheck-internal"].internal')
+          echo "docker-compose signalcheck-internal is internal: $COMPOSE_INTERNAL"
+          if [ "$COMPOSE_INTERNAL" != "true" ]; then
+            echo "FAILED: docker-compose.yml does not set internal: true on signalcheck-internal"
+            exit 1
+          fi
+
+          # Attempt outbound ping/curl to external IP on the internal-only network
           docker run --rm \
             --network signalcheck-ci-internal \
             --user 10001:10001 \
@@ -124,7 +142,7 @@ jobs:
           EXIT_CODE=$?
           set -e
           if [ $EXIT_CODE -ne 0 ]; then
-            echo "FAILED: Outbound network egress was not blocked!"
+            echo "FAILED: Outbound network egress was not blocked on internal network!"
             exit 1
           fi
           echo "Verified: Outbound network egress failed as expected on internal network."

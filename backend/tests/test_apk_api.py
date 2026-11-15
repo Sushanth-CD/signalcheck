@@ -969,4 +969,60 @@ def test_enqueue_failure_cleans_up_and_returns_error(client, monkeypatch):
     assert "Simulated Redis outage" in data["detail"]["message"]
 
 
+def test_rq_enqueue_ttl_and_result_isolation(monkeypatch):
+    """Confirm RQ enqueue call passes result_ttl <= 300, failure_ttl <= 300, and job args are cleared on completion."""
+    from app.apk_jobs import enqueue_apk_job
+
+    fake_conn = MagicMock()
+    mock_queue = MagicMock()
+    mock_rq_job = MagicMock()
+    mock_rq_job.meta = {}
+    mock_queue.enqueue.return_value = mock_rq_job
+
+    monkeypatch.setenv("REDIS_URL", "redis://localhost:6379/0")
+    monkeypatch.setattr("redis.from_url", lambda url: fake_conn)
+    monkeypatch.setattr("rq.Queue", lambda name, connection: mock_queue)
+
+    job_id = enqueue_apk_job(
+        file_path=None,
+        sha256_hash="f" * 64,
+        file_size=1234,
+        session_hash="test_session_hash",
+        upload_bytes=b"PK\x03\x04test_apk_bytes",
+    )
+
+    assert job_id is not None
+    assert mock_queue.enqueue.called
+    call_args, call_kwargs = mock_queue.enqueue.call_args
+
+    # Assert TTL settings are at most 300s
+    assert "result_ttl" in call_kwargs
+    assert call_kwargs["result_ttl"] <= 300
+    assert "failure_ttl" in call_kwargs
+    assert call_kwargs["failure_ttl"] <= 300
+
+    # Test that worker executes and clears job args so upload_bytes do not stay in job hash
+    from app.apk_worker import execute_rq_apk_job
+    fake_current_job = MagicMock()
+    fake_current_job.args = (b"PK\x03\x04test_apk_bytes", "f" * 64, 1234)
+    fake_current_job.kwargs = {}
+
+    monkeypatch.setattr("rq.get_current_job", lambda: fake_current_job)
+    fake_result = {
+        "analysis_version": "apk-static-v1",
+        "sha256": "f" * 64,
+        "file_size": 1234,
+        "findings": [],
+    }
+    monkeypatch.setattr("app.apk_worker.parse_and_analyze_apk", lambda path, sha, size: fake_result)
+
+    result = execute_rq_apk_job(b"dummy_bytes", "f" * 64, 1234)
+    # Stored result is clean JSON
+    assert result == fake_result
+    # Job args cleared from Redis
+    assert fake_current_job.args == ()
+    assert fake_current_job.kwargs == {}
+    assert fake_current_job.save.called
+
+
 

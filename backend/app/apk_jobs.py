@@ -221,7 +221,8 @@ def enqueue_apk_job(
             file_size,
             job_id=job_id,
             job_timeout=JOB_TIMEOUT_SECONDS,
-            result_ttl=3600,
+            result_ttl=300,
+            failure_ttl=300,
         )
         rq_job.meta["session_hash"] = session_hash
         rq_job.meta["created_at"] = time.time()

@@ -531,13 +531,29 @@ def execute_rq_apk_job(upload_bytes: bytes, sha256_hash: str, file_size: int) ->
     """
     import tempfile
     temp_path = None
+    # Use /tmp on POSIX/Linux (container mode), or platform temp dir as fallback
+    target_dir = "/tmp" if os.path.isdir("/tmp") else tempfile.gettempdir()
     try:
-        # Create temp file on worker's /tmp tmpfs
-        with tempfile.NamedTemporaryFile(prefix="worker_upload_", suffix=".apk", dir="/tmp", delete=False) as f:
+        # Create temp file on worker's tmpfs
+        with tempfile.NamedTemporaryFile(prefix="worker_upload_", suffix=".apk", dir=target_dir, delete=False) as f:
             f.write(upload_bytes)
             temp_path = f.name
 
-        return parse_and_analyze_apk(temp_path, sha256_hash, file_size)
+        res = parse_and_analyze_apk(temp_path, sha256_hash, file_size)
+
+        # Clear job args from Redis so upload bytes do not remain stored in the job hash
+        try:
+            from rq import get_current_job
+            job = get_current_job()
+            if job:
+                job.args = ()
+                job.kwargs = {}
+                # Persist updated (cleared) args to Redis hash
+                job.save()
+        except Exception as clr_err:
+            print(f"Notice: Failed to clear RQ job args in worker: {clr_err}")
+
+        return res
     finally:
         if temp_path and os.path.exists(temp_path):
             try:

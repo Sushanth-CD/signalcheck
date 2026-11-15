@@ -21,22 +21,19 @@ def session_client():
 
 @pytest.fixture(autouse=True)
 def reset_test_state(session_client):
-    """Reset cookies and rate-limiter storage between every test to ensure strict order independence."""
+    """Reset cookies and rate-limiter storage between every test to ensure strict order independence.
+    Fails loudly if the limiter or its storage structure changes unexpectedly.
+    """
     session_client.cookies.clear()
-    try:
-        from app.main import limiter
-        limiter.reset()
-        if hasattr(limiter, "_storage") and hasattr(limiter._storage, "storage"):
-            limiter._storage.storage.clear()
-    except Exception:
-        pass
+    from app.main import limiter
+    limiter.reset()
+    if not hasattr(limiter, "_storage") or not hasattr(limiter._storage, "storage"):
+        raise RuntimeError("SlowAPI limiter is missing expected '_storage.storage' attribute for test reset.")
+    limiter._storage.storage.clear()
     yield
     session_client.cookies.clear()
-    try:
-        from app.main import limiter
-        limiter.reset()
-        if hasattr(limiter, "_storage") and hasattr(limiter._storage, "storage"):
-            limiter._storage.storage.clear()
-    except Exception:
-        pass
+    limiter.reset()
+    if not hasattr(limiter, "_storage") or not hasattr(limiter._storage, "storage"):
+        raise RuntimeError("SlowAPI limiter is missing expected '_storage.storage' attribute for test reset.")
+    limiter._storage.storage.clear()
 

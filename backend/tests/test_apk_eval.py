@@ -58,6 +58,7 @@ def test_wilson_score_interval_known_values():
     assert low < 0.5 < high
 
 
+@pytest.mark.slow
 def test_eval_harness_runs_on_fixture(tmp_path: Path):
     """Verify that evaluate_directory runs cleanly on an APK fixture without error."""
     assert FIXTURE_APK.exists(), f"Fixture APK not found at {FIXTURE_APK}"
@@ -81,6 +82,7 @@ def test_eval_harness_runs_on_fixture(tmp_path: Path):
         assert rec[r_id] in (0, 1)
 
 
+@pytest.mark.slow
 def test_eval_corrupt_file_recorded_and_skipped(tmp_path: Path):
     """Verify that corrupt or non-zip files are recorded as REJECTED and do not crash the harness."""
     suspicious_dir = tmp_path / "suspicious"
@@ -129,6 +131,7 @@ def test_eval_empty_folder_gives_clear_message(tmp_path: Path):
     assert summary_file.exists()
 
 
+@pytest.mark.slow
 def test_eval_csv_contains_no_filenames_or_paths(tmp_path: Path):
     """Verify that results.csv output contains strictly privacy-preserving columns (SHA-256 only, no paths)."""
     data_dir = tmp_path / "data"

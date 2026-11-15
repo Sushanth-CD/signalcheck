@@ -66,6 +66,13 @@ In container mode (`REDIS_URL` set), SignalCheck uses an explicit **byte-payload
    - Androguard processes the APK file on `/tmp`.
    - In a `finally` block, the worker deletes `/tmp/worker_upload_<id>.apk` unconditionally on every outcome (`done`, `failed`, `timeout`, or error), leaving zero bytes persisted.
 
+3. **Redis Payload Lifecycle & Strict Temporal Bounds:**
+   - **During Analysis:** Raw upload bytes exist in Redis solely as the compressed `data` argument payload of the active RQ job during worker execution (up to the 30-second job timeout).
+   - **On Completion (`done`):** The worker executes static analysis, and immediately clears `job._args = ()`, `job._kwargs = {}`, and overwrites the Redis hash `data` field with empty arguments. When the backend or frontend retrieves the terminal `done` status via `GET /api/apk/jobs/{id}`, the backend caches the JSON result in memory (`_TERMINAL_JOB_CACHE`) for up to 120 seconds for UI polling convenience and immediately executes `job.delete()`. **Upload bytes lifetime in Redis for `done`:** $\le \text{worker duration} \approx 1\text{s}-5\text{s}$ (purged immediately upon worker completion; hard bounded by 60s TTL).
+   - **On Failure (`failed`):** If the worker raises an exception or crashes, the job transitions to `failed` status with `failure_ttl=60`. As soon as `GET /api/apk/jobs/{id}` is queried by the frontend polling loop (typically within 1s), the backend reads the terminal status and calls `job.delete()`. Even if unpolled, the job expires from Redis within 60 seconds. **Upload bytes lifetime in Redis for `failed`:** $\le 1\text{s}-60\text{s}$.
+   - **On Timeout (`timeout`):** If the 30-second execution deadline expires, RQ marks the job as failed (`JobTimeoutException`) with `failure_ttl=60`. As soon as `GET /api/apk/jobs/{id}` reads the terminal timeout state, the backend calls `job.delete()`. If unpolled, Redis evicts the key at the 60-second failure TTL. **Upload bytes lifetime in Redis for `timeout`:** $\le 30\text{s} + 1\text{s} \text{ (polling)} \le 60\text{s}$.
+   - **On Redis Enqueue Outage:** If Redis fails during enqueueing, the backend deletes the upload temp file in `finally` and returns 503; zero bytes enter Redis.
+
 ---
 
 ## 4. Part B: Container Hardening Verification in CI

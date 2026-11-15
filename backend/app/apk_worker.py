@@ -14,11 +14,14 @@ from __future__ import annotations
 import base64
 import hashlib
 import json
+import logging
 import os
 import re
 import sys
 import zipfile
 from typing import Any, Dict, List, Set, Tuple
+
+logger = logging.getLogger(__name__)
 
 # Androguard imports are strictly quarantined inside this worker module
 from androguard.core.apk import APK
@@ -548,10 +551,19 @@ def execute_rq_apk_job(upload_bytes: bytes, sha256_hash: str, file_size: int) ->
             if job:
                 job.args = ()
                 job.kwargs = {}
-                # Persist updated (cleared) args to Redis hash
-                job.save()
+                job._args = ()
+                job._kwargs = {}
+                if hasattr(job, "serializer") and hasattr(job.serializer, "dumps"):
+                    func_name = getattr(job, "_func_name", None) or "execute_rq_apk_job"
+                    instance = getattr(job, "_instance", None)
+                    dumped = job.serializer.dumps((func_name, instance, (), {}))
+                    if isinstance(dumped, (bytes, bytearray)):
+                        job._data = dumped
+                        if getattr(job, "connection", None) and hasattr(job.connection, "hset"):
+                            import zlib
+                            job.connection.hset(job.key, "data", zlib.compress(job._data))
         except Exception as clr_err:
-            print(f"Notice: Failed to clear RQ job args in worker: {clr_err}")
+            logger.warning("Failed to clear RQ job args in worker: %s", clr_err)
 
         return res
     finally:

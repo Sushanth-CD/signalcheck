@@ -26,10 +26,15 @@ import uuid
 from typing import Any, Dict, Optional, Tuple
 
 JOB_TIMEOUT_SECONDS = 30
+RESULT_CACHE_TTL_SECONDS = 120  # In-memory cache for terminal job results after deletion from RQ
 
 # In-memory registry for jobs (accessible across threads in the API process)
 _LOCAL_JOBS: Dict[str, Dict[str, Any]] = {}
 _LOCAL_JOBS_LOCK = threading.Lock()
+
+# Short-lived in-memory cache for terminal job results returned by GET /api/apk/jobs/{id}
+_TERMINAL_JOB_CACHE: Dict[str, Tuple[float, Dict[str, Any]]] = {}
+_TERMINAL_CACHE_LOCK = threading.Lock()
 
 
 def get_redis_url() -> Optional[str]:
@@ -42,7 +47,22 @@ def get_job_status(job_id: str) -> Optional[Dict[str, Any]]:
     """Retrieve the current status and payload of a job.
 
     Returns None if job_id is unknown.
+    In Redis/RQ mode, once a terminal state ('done', 'failed', 'timeout') is retrieved,
+    the job is cached in memory for subsequent frontend polling and deleted from RQ/Redis
+    (job.delete()) so upload bytes and metadata are purged immediately.
     """
+    now = time.monotonic()
+
+    # 1. Check in-memory terminal result cache first
+    with _TERMINAL_CACHE_LOCK:
+        cached = _TERMINAL_JOB_CACHE.get(job_id)
+        if cached:
+            cached_time, cached_val = cached
+            if now - cached_time <= RESULT_CACHE_TTL_SECONDS:
+                return dict(cached_val)
+            else:
+                _TERMINAL_JOB_CACHE.pop(job_id, None)
+
     redis_url = get_redis_url()
     if redis_url:
         try:
@@ -70,7 +90,7 @@ def get_job_status(job_id: str) -> Optional[Dict[str, Any]]:
             if state in ("failed", "timeout"):
                 err = meta.get("error") or "Job execution failed or timed out in RQ worker."
 
-            return {
+            job_info = {
                 "job_id": job_id,
                 "status": state,
                 "result": res,
@@ -78,9 +98,23 @@ def get_job_status(job_id: str) -> Optional[Dict[str, Any]]:
                 "created_at": meta.get("created_at", time.time()),
                 "duration_sec": meta.get("duration_sec"),
             }
+
+            # If terminal state reached, cache briefly in memory and delete job from Redis/RQ
+            if state in ("done", "failed", "timeout"):
+                with _TERMINAL_CACHE_LOCK:
+                    _TERMINAL_JOB_CACHE[job_id] = (now, dict(job_info))
+                try:
+                    rq_job.delete()
+                except Exception:
+                    pass
+
+            return job_info
         except Exception:
-            # Fall back to local registry in case it was a local job
-            pass
+            # Check terminal cache again or fall back to local registry
+            with _TERMINAL_CACHE_LOCK:
+                cached = _TERMINAL_JOB_CACHE.get(job_id)
+                if cached:
+                    return dict(cached[1])
 
     with _LOCAL_JOBS_LOCK:
         job = _LOCAL_JOBS.get(job_id)
@@ -221,8 +255,8 @@ def enqueue_apk_job(
             file_size,
             job_id=job_id,
             job_timeout=JOB_TIMEOUT_SECONDS,
-            result_ttl=300,
-            failure_ttl=300,
+            result_ttl=60,
+            failure_ttl=60,
         )
         rq_job.meta["session_hash"] = session_hash
         rq_job.meta["created_at"] = time.time()

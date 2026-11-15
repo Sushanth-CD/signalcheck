@@ -1,5 +1,7 @@
 import os
 import pytest
+from fastapi.testclient import TestClient
+from app.main import app
 from app.apk_db import init_db
 
 @pytest.fixture(scope="session", autouse=True)
@@ -10,3 +12,10 @@ def test_db_isolation(tmp_path_factory):
     os.environ["SIGNALCHECK_DB_PATH"] = temp_db_path
     init_db(temp_db_path)
     yield temp_db_path
+
+@pytest.fixture(scope="session")
+def session_client():
+    """Session-scoped TestClient to avoid repeated app lifespans."""
+    with TestClient(app) as c:
+        yield c
+

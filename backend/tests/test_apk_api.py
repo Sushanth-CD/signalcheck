@@ -71,9 +71,9 @@ def reset_rate_limiter():
 
 
 @pytest.fixture
-def client():
-    with TestClient(app) as test_client:
-        yield test_client
+def client(session_client):
+    session_client.cookies.clear()
+    return session_client
 
 
 @pytest.mark.slow
@@ -943,6 +943,30 @@ def test_result_matches_pre_change_schema(client):
     for key in required_keys:
         assert key in result, f"Missing key {key} in analysis result"
     assert result["analysis_version"] == "apk-static-v1"
+
+
+def test_enqueue_failure_cleans_up_and_returns_error(client, monkeypatch):
+    """Confirm that when Redis enqueue fails or raises an outage error, temp file is deleted and 503 is returned."""
+    # Force enqueue_apk_job to simulate Redis failure
+    def mock_enqueue(*args, **kwargs):
+        raise ConnectionError("Simulated Redis outage during job enqueue")
+
+    monkeypatch.setattr("app.main.enqueue_apk_job", mock_enqueue)
+
+    valid_zip = create_minimal_zip({
+        "AndroidManifest.xml": b"<manifest package='test.pkg'/>",
+        "classes.dex": b"dex\n035\x00dummy",
+    })
+
+    resp = client.post(
+        "/api/apk/analyze",
+        files={"file": ("test.apk", valid_zip.getvalue(), "application/vnd.android.package-archive")},
+    )
+
+    assert resp.status_code == 503
+    data = resp.json()
+    assert data["detail"]["error"] == "queue_unavailable"
+    assert "Simulated Redis outage" in data["detail"]["message"]
 
 
 

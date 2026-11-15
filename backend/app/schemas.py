@@ -259,3 +259,26 @@ class APKHistoryResponse(BaseModel):
     offset: int
 
 
+class APKJobEnqueueResponse(BaseModel):
+    """Response returned when an APK analysis job is enqueued."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    job_id: str
+    status: Literal["queued", "running", "done", "failed", "timeout"]
+    created_at: float
+
+
+class APKJobStatusResponse(BaseModel):
+    """Status and result response for an asynchronous APK analysis job."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    job_id: str
+    status: Literal["queued", "running", "done", "failed", "timeout"]
+    result: APKAnalysisResponse | None = Field(default=None)
+    error: str | None = Field(default=None)
+    created_at: float | None = Field(default=None)
+    duration_sec: float | None = Field(default=None)
+
+

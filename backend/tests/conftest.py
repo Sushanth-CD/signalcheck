@@ -19,3 +19,24 @@ def session_client():
     with TestClient(app) as c:
         yield c
 
+@pytest.fixture(autouse=True)
+def reset_test_state(session_client):
+    """Reset cookies and rate-limiter storage between every test to ensure strict order independence."""
+    session_client.cookies.clear()
+    try:
+        from app.main import limiter
+        limiter.reset()
+        if hasattr(limiter, "_storage") and hasattr(limiter._storage, "storage"):
+            limiter._storage.storage.clear()
+    except Exception:
+        pass
+    yield
+    session_client.cookies.clear()
+    try:
+        from app.main import limiter
+        limiter.reset()
+        if hasattr(limiter, "_storage") and hasattr(limiter._storage, "storage"):
+            limiter._storage.storage.clear()
+    except Exception:
+        pass
+

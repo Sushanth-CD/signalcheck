@@ -384,10 +384,10 @@ npm run build
 ## 13. Research Lab & Android Limitations
 
 > [!IMPORTANT]
-> **APK Uploading and Scanning is NOT Supported:**  
-> The Android Research Lab is strictly a research and educational exploration tool for evaluating precomputed tabular feature vectors. SignalCheck does **not** decompile, unpack, or execute Android APK binaries on the live server.
+> **Ephemeral Static Analysis Scope:**  
+> The Android Research Lab provides safe, ephemeral static inspection of uploaded Android packages (`.apk`) for dangerous permissions, manifest configurations, cryptographic certificate signatures, and code indicators using an isolated worker sandbox without installing or executing code.
 >
-> An experimental 48-feature static extractor (Schema V3) has been researched and benchmarked offline using Androguard (`backend/reports/ml/android_v3_runs/`), but it is not connected to the live API endpoints.
+> In addition, a separate offline research interface is provided to evaluate precomputed 226-feature permission vectors against academic random forest baseline models.
 
 ---
 
@@ -414,5 +414,5 @@ npm run build
    - *Benign Test:* Paste `"Hey team, the draft meeting agenda is attached for tomorrow's standup."`. Show the clean `Likely Legitimate` status.
 3. **SMS Smishing Scanner:**
    - *Smishing Test:* Paste `"URGENT: Your debit card is blocked. Call 08712404000 immediately to unlock."`. Highlight that SignalCheck detects linkless lures that evade simple URL blocklists.
-4. **Research Lab:** Open the Research Tools tab, click **"Load Safe Sample Vector"**, and run the analysis to demonstrate academic model evaluation on precomputed features while emphasizing that APK uploads are kept offline for security.
+4. **Android APK Analysis (Research Lab):** Open the Research Lab on the APK tab, upload a sample APK (`backend/tests/fixtures/ANDROGUARD_TESTS_TestActivity.apk`), inspect findings with plain-language explanations, and export the PDF report. Highlight the separate tab for precomputed 226-feature vectors.
 5. **Safety Resources:** Review the About & Safety view and the direct link to official reporting channels (`https://cybercrime.gov.in/`).

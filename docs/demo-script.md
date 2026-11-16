@@ -7,7 +7,7 @@ This walkthrough script is designed for live demonstrations, hackathon presentat
 ## Preparation Checklist
 1. Start Backend: `python -m uvicorn app.main:app --app-dir backend --host 127.0.0.1 --port 8000`
 2. Start Frontend: `cd frontend && npm run dev`
-3. Have the sample fixture APK ready: `backend/reports/ml/android_v3_runs/run_017_dataset_acquisition/acquired_apks/ANDROGUARD_TESTS_TestActivity.apk`
+3. Have the sample fixture APK ready: `backend/tests/fixtures/ANDROGUARD_TESTS_TestActivity.apk`
 4. Open Chrome or Firefox to `http://127.0.0.1:5173`.
 
 ---

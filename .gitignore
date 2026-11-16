@@ -6,10 +6,12 @@
 
 # Research APK artifacts and large files
 *.apk
+!backend/tests/fixtures/*.apk
 backend/data/raw/andromd/
 backend/reports/ml/android_v2_runs/
 backend/reports/ml/android_v3_runs/
 backend/reports/ml/android_apk_detection/
+backend/notebooks/oracleJdk-27/
 
 # Temporary and test outputs
 scratch/

@@ -29,9 +29,7 @@ from eval.run_eval import (
     analyze_sample_subprocess,
 )
 
-FIXTURE_APK = Path(
-    "backend/reports/ml/android_v3_runs/run_017_dataset_acquisition/acquired_apks/ANDROGUARD_TESTS_TestActivity.apk"
-)
+FIXTURE_APK = Path("backend/tests/fixtures/ANDROGUARD_TESTS_TestActivity.apk")
 
 
 def test_wilson_score_interval_known_values():

@@ -202,7 +202,7 @@ jobs:
         id: test_pipeline
         run: |
           set -e
-          FIXTURE_PATH="backend/reports/ml/android_v3_runs/run_017_dataset_acquisition/acquired_apks/ANDROGUARD_TESTS_TestActivity.apk"
+          FIXTURE_PATH="backend/tests/fixtures/ANDROGUARD_TESTS_TestActivity.apk"
           if [ ! -f "$FIXTURE_PATH" ]; then
             echo "FAILED: Fixture APK not found at $FIXTURE_PATH"
             exit 1

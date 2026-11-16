@@ -36,12 +36,7 @@ from app.main import app, limiter
 
 REAL_FIXTURE_PATH = os.path.join(
     os.path.dirname(__file__),
-    "..",
-    "reports",
-    "ml",
-    "android_v3_runs",
-    "run_017_dataset_acquisition",
-    "acquired_apks",
+    "fixtures",
     "ANDROGUARD_TESTS_TestActivity.apk",
 )
 

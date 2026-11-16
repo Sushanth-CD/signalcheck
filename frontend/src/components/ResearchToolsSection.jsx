@@ -1,11 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AndroidFeatureAnalysis from "./AndroidFeatureAnalysis.jsx";
 import APKStaticAnalysis from "./APKStaticAnalysis.jsx";
 import StatusBanner from "./ui/StatusBanner.jsx";
 import { FileTextIcon, SlidersIcon } from "./ui/Icons.jsx";
 
-export default function ResearchToolsSection() {
-  const [activeTab, setActiveTab] = useState("apk"); // 'apk' | 'vectors'
+export default function ResearchToolsSection({ initialTab = "apk" }) {
+  const [activeTab, setActiveTab] = useState(initialTab); // 'apk' | 'vectors'
+
+  useEffect(() => {
+    if (initialTab) {
+      setActiveTab(initialTab);
+    }
+  }, [initialTab]);
 
   return (
     <div className="sc-research-tools-view">

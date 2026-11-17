@@ -117,7 +117,7 @@ export default function Dashboard({ onNavigate }) {
                 Performs static analysis of an uploaded APK (permissions, components, signing, code indicators) in an isolated worker, with plain-language explanations of each finding.
               </p>
               <p className="sc-tool-card__subtext" style={{ fontSize: "0.8125rem", color: "var(--color-text-secondary, #64748b)", marginTop: "0.5rem" }}>
-                A separate offline research tool for precomputed 226-feature vectors is available in the Research Lab.
+                A separate offline benchmark for precomputed 226-feature vectors is also available.
               </p>
             </div>
             <div className="sc-tool-card__footer">

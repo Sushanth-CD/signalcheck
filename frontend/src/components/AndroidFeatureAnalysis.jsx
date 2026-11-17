@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { analyzeAndroid } from "../api/analyze.js";
 import { SAMPLE_ANDROID_FEATURES } from "./androidSampleFeatures.js";
+import StatusBanner from "./ui/StatusBanner.jsx";
 
 const REQUIRED_FEATURE_COUNT = 226;
 
@@ -55,7 +56,7 @@ function AndroidResult({ result }) {
           <h3 id="android-result-title">Feature analysis result</h3>
         </div>
         <span className={`android-classification android-classification-${result.classification}`}>
-          {result.classification === "malicious" ? "Malicious classification" : "Non-malicious classification"}
+          {result.classification === "malicious" ? "Benchmark output: high score" : "Benchmark output: low score"}
         </span>
       </div>
 
@@ -127,13 +128,22 @@ export default function AndroidFeatureAnalysis() {
         </div>
       </div>
 
+      <div style={{ marginBottom: "1.25rem" }}>
+        <StatusBanner
+          variant="warning"
+          title="Offline Research Benchmark"
+        >
+          Offline research benchmark on precomputed vectors. Only 44 of 226 features can be reproduced from an APK, so this tool cannot score uploaded APKs.
+        </StatusBanner>
+      </div>
+
       <div className="android-requirements" id="android-feature-help">
         <p>The request must contain exactly 226 features from the model’s saved configuration.</p>
         <ul>
           <li>Feature names must match the saved model configuration exactly.</li>
           <li>Every value must be the integer 0 or 1.</li>
           <li>This accepts prepared feature data, not an APK file.</li>
-          <li>APK upload and automatic permission extraction are not implemented.</li>
+          <li>Only 44 of 226 features can be reproduced from an APK, so this tool cannot score uploaded APKs.</li>
         </ul>
         <details className="android-example">
           <summary>View JSON structure</summary>

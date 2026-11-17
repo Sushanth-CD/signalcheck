@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import AndroidFeatureAnalysis from "./AndroidFeatureAnalysis.jsx";
 import APKStaticAnalysis from "./APKStaticAnalysis.jsx";
-import StatusBanner from "./ui/StatusBanner.jsx";
 import { FileTextIcon, SlidersIcon } from "./ui/Icons.jsx";
 
 export default function ResearchToolsSection({ initialTab = "apk" }) {
@@ -52,18 +51,7 @@ export default function ResearchToolsSection({ initialTab = "apk" }) {
       {activeTab === "apk" ? (
         <APKStaticAnalysis />
       ) : (
-        <>
-          {/* Mandatory Scope & Limitation Banner for 226-feature prototype */}
-          <StatusBanner
-            variant="warning"
-            title="Precomputed Feature Vectors Only — Experimental Prototype"
-          >
-            This diagnostic tool analyzes precomputed 226-dimensional Android feature vectors.
-            Models evaluated in this workspace represent experimental research baselines and are not intended as standalone production malware verdicts.
-          </StatusBanner>
-
-          <AndroidFeatureAnalysis />
-        </>
+        <AndroidFeatureAnalysis />
       )}
     </div>
   );

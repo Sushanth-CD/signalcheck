@@ -91,7 +91,17 @@ def generate_apk_pdf_report(data: dict[str, Any]) -> bytes:
     version_str = f"{app_info.get('version_name', 'N/A')} (code {app_info.get('version_code', 'N/A')})"
     sha256 = data.get("sha256", "N/A")
     file_size_mb = f"{(data.get('file_size', 0) / (1024 * 1024)):.2f} MB"
-    indicator_level = data.get("indicator_level", "no_notable_indicators").replace("_", " ").title()
+    
+    indicator_summary = data.get("indicator_summary")
+    if not indicator_summary:
+        from app.apk_scoring import score_findings
+        indicator_summary = score_findings(data.get("findings", []))
+
+    summary_level = indicator_summary.get("level", "Low")
+    total_points = indicator_summary.get("total_points", 0)
+    scoring_ver = indicator_summary.get("scoring_version", "apk-rules-v1")
+    level_display = f"{summary_level} ({total_points} pts, {scoring_ver})"
+    
     findings = data.get("findings", [])
     perms = data.get("permissions", {})
     signing = data.get("signing", {})
@@ -110,7 +120,7 @@ def generate_apk_pdf_report(data: dict[str, Any]) -> bytes:
             Paragraph("<b>Package Name:</b>", bold_label),
             Paragraph(package_name, body_style),
             Paragraph("<b>Indicator Level:</b>", bold_label),
-            Paragraph(f"<b>{indicator_level}</b>", body_style),
+            Paragraph(f"<b>{level_display}</b>", body_style),
         ],
         [
             Paragraph("<b>Version:</b>", bold_label),
@@ -136,6 +146,9 @@ def generate_apk_pdf_report(data: dict[str, Any]) -> bytes:
         ])
     )
     elements.append(meta_table)
+    elements.append(Spacer(1, 4))
+    elements.append(Paragraph(f"<font size='7' color='#64748b'><b>Note:</b> {indicator_summary.get('disclaimer', '')}</font>", body_style))
+    elements.append(Spacer(1, 4))
 
     # Findings Section
     elements.append(Paragraph(f"Static Security Findings ({len(findings)})", section_heading))

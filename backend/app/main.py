@@ -70,6 +70,7 @@ from app.apk_db import (
 )
 from app.apk_pdf import generate_apk_pdf_report
 from app.finding_explanations import attach_explanations_to_payload
+from app.apk_scoring import attach_indicator_summary
 
 
 @asynccontextmanager
@@ -499,6 +500,7 @@ async def analyze_apk(
         def on_job_completed(job_id: str, outcome: str, result_dict: Optional[dict], error_str: Optional[str], duration: float):
             if outcome == "done" and result_dict:
                 try:
+                    result_dict = attach_indicator_summary(result_dict)
                     record_id = save_apk_result(
                         sha256=sha256_digest,
                         package_name=result_dict.get("app", {}).get("package_name", ""),
@@ -577,6 +579,7 @@ async def analyze_apk(
                 # Deep copy findings so attach_explanations_to_payload does not mutate job_info["result"]
                 res_dict["findings"] = [dict(f) for f in res_dict.get("findings", [])]
                 res_dict = attach_explanations_to_payload(res_dict)
+                res_dict = attach_indicator_summary(res_dict)
                 resp_payload = APKAnalysisResponse(**res_dict)
                 json_resp = JSONResponse(status_code=status.HTTP_200_OK, content=resp_payload.model_dump())
                 if is_new_session:
@@ -668,8 +671,9 @@ def get_apk_job(
         result_copy = dict(job_info["result"])
         # Deep copy findings to avoid mutating the in-memory job result cache
         result_copy["findings"] = [dict(f) for f in result_copy.get("findings", [])]
-        # Attach educational explanations dynamically at serialization time
+        # Attach educational explanations and indicator summary dynamically at serialization time
         result_copy = attach_explanations_to_payload(result_copy)
+        result_copy = attach_indicator_summary(result_copy)
         result_payload = APKAnalysisResponse(**result_copy)
 
     return APKJobStatusResponse(
@@ -725,8 +729,9 @@ def get_apk_analysis_report(
         )
 
     result_data = record["result"]
-    # Attach educational explanations dynamically to stored record
+    # Attach educational explanations and indicator summary dynamically to stored record
     result_data = attach_explanations_to_payload(result_data)
+    result_data = attach_indicator_summary(result_data)
 
     if format == "pdf":
         pdf_bytes = generate_apk_pdf_report(result_data)

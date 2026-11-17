@@ -28,6 +28,8 @@ from androguard.core.apk import APK
 from androguard.core.dex import DEX
 from androguard.core.analysis.analysis import Analysis
 
+from app.apk_scoring import score_findings
+
 # Canonical Static Limitations Statement
 CANONICAL_LIMITATIONS = [
     "This assessment is based exclusively on static analysis of package metadata, declared permissions, and bytecode references.",
@@ -493,16 +495,9 @@ def parse_and_analyze_apk(file_path: str, sha256_hash: str, file_size: int) -> d
             "why_it_matters": "Heavy identifier renaming (e.g., ProGuard/DexGuard) is standard in both commercial apps and malware to hinder reverse engineering.",
         })
 
-    # Heuristic Indicator Level Calculation
-    high_count = sum(1 for f in findings if f["severity"] == "high")
-    med_count = sum(1 for f in findings if f["severity"] == "medium")
-
-    if high_count >= 2 or (high_count >= 1 and med_count >= 2) or med_count >= 4:
-        indicator_level = "many_indicators"
-    elif high_count >= 1 or med_count >= 1:
-        indicator_level = "some_indicators"
-    else:
-        indicator_level = "no_notable_indicators"
+    # Deterministic Indicator Scoring (apk-rules-v1)
+    indicator_summary = score_findings(findings)
+    indicator_level = indicator_summary["indicator_level"]
 
     return {
         "analysis_version": "apk-static-v1",
@@ -521,6 +516,7 @@ def parse_and_analyze_apk(file_path: str, sha256_hash: str, file_size: int) -> d
         "code_indicators": code_indicators,
         "findings": findings,
         "indicator_level": indicator_level,
+        "indicator_summary": indicator_summary,
         "limitations": CANONICAL_LIMITATIONS,
     }
 

@@ -215,6 +215,42 @@ class APKFinding(BaseModel):
     explanation: FindingExplanation | None = Field(default=None)
 
 
+class APKIndicatorRuleContribution(BaseModel):
+    """Contributing rule item in APK indicator summary."""
+
+    model_config = ConfigDict(extra="ignore")
+
+    rule_id: str
+    title: str
+    points: int
+
+
+class APKIndicatorCombinationContribution(BaseModel):
+    """Contributing combination bonus in APK indicator summary."""
+
+    model_config = ConfigDict(extra="ignore")
+
+    id: str
+    name: str
+    rules: list[str]
+    points: int
+    description: str
+
+
+class APKIndicatorSummary(BaseModel):
+    """Deterministic heuristic indicator score and breakdown (apk-rules-v1)."""
+
+    model_config = ConfigDict(extra="ignore")
+
+    scoring_version: Literal["apk-rules-v1"] = "apk-rules-v1"
+    level: Literal["Low", "Medium", "High"]
+    indicator_level: Literal["no_notable_indicators", "some_indicators", "many_indicators"] = "no_notable_indicators"
+    total_points: int = Field(ge=0)
+    rule_contributions: list[APKIndicatorRuleContribution] = Field(default_factory=list)
+    combination_contributions: list[APKIndicatorCombinationContribution] = Field(default_factory=list)
+    disclaimer: str = Field(default="Heuristic indicator level, a signal to check and not a malware verdict.")
+
+
 class APKAnalysisResponse(BaseModel):
     """Versioned output response for static APK analysis (apk-static-v1)."""
 
@@ -231,6 +267,7 @@ class APKAnalysisResponse(BaseModel):
     code_indicators: APKCodeIndicators
     findings: list[APKFinding] = Field(default_factory=list)
     indicator_level: Literal["no_notable_indicators", "some_indicators", "many_indicators"]
+    indicator_summary: APKIndicatorSummary | None = Field(default=None)
     limitations: list[str] = Field(default_factory=list)
 
 

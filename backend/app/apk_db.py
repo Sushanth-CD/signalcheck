@@ -28,6 +28,8 @@ from sqlalchemy import (
 )
 from sqlalchemy.orm import declarative_base, sessionmaker
 
+from app.apk_scoring import score_findings
+
 Base = declarative_base()
 
 
@@ -213,12 +215,21 @@ def get_apk_history(
         )
         items = []
         for r in records:
+            ind_level = r.indicator_level
+            if r.result_json:
+                try:
+                    payload = json.loads(r.result_json)
+                    findings = payload.get("findings", [])
+                    scoring = score_findings(findings)
+                    ind_level = scoring["indicator_level"]
+                except Exception:
+                    pass
             items.append({
                 "id": r.id,
                 "sha256": r.sha256,
                 "package_name": r.package_name,
                 "file_size": r.file_size,
-                "indicator_level": r.indicator_level,
+                "indicator_level": ind_level,
                 "outcome": r.outcome,
                 "created_at": r.created_at.isoformat() if r.created_at else "",
             })
@@ -245,12 +256,16 @@ def get_apk_record_by_id(record_id: int, session_hash: str = "") -> Optional[dic
         if not record:
             return None
         parsed_result = json.loads(record.result_json)
+        # Compute indicator summary at serialization time from stored findings
+        scoring = score_findings(parsed_result.get("findings", []))
+        parsed_result["indicator_summary"] = scoring
+        parsed_result["indicator_level"] = scoring["indicator_level"]
         return {
             "id": record.id,
             "sha256": record.sha256,
             "package_name": record.package_name,
             "file_size": record.file_size,
-            "indicator_level": record.indicator_level,
+            "indicator_level": scoring["indicator_level"],
             "outcome": record.outcome,
             "created_at": record.created_at.isoformat() if record.created_at else "",
             "result": parsed_result,

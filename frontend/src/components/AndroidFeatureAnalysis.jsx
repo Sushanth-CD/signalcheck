@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { analyzeAndroid } from "../api/analyze.js";
+import { SAMPLE_ANDROID_FEATURES } from "./androidSampleFeatures.js";
 
 const REQUIRED_FEATURE_COUNT = 226;
 
@@ -166,6 +167,19 @@ export default function AndroidFeatureAnalysis() {
         <div className="android-form-actions">
           <button className="button button-android" type="submit" disabled={isLoading || !requestText.trim()}>
             {isLoading ? <><span className="spinner spinner-android" aria-hidden="true" /> Analyzing features…</> : "Analyze Android features"}
+          </button>
+          <button
+            className="button button-quiet"
+            type="button"
+            onClick={() => {
+              setRequestText(JSON.stringify(SAMPLE_ANDROID_FEATURES, null, 2));
+              setResult(null);
+              setError("");
+            }}
+            disabled={isLoading}
+            title="Load precomputed 226-feature sample vector"
+          >
+            Load sample vector
           </button>
           {isLoading && <span className="android-loading-message" role="status">Sending prepared features to the local backend…</span>}
         </div>

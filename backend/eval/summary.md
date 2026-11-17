@@ -1,6 +1,6 @@
 # APK Static Analysis Heuristic Evaluation Summary
 
-**Date:** 2026-11-15 14:44:21 UTC  
+**Date:** 2026-11-17 16:13:41 UTC  
 **Harness Engine:** Isolated Worker Subprocess (`app.apk_worker`)  
 
 ---
@@ -37,7 +37,24 @@
 
 ---
 
-## 3. Evaluation Limitations Statement
+## 3. Indicator Level Distribution (`apk-rules-v1`)
+
+Distribution of deterministic heuristic indicator levels mapped from total finding and combination points:
+- **Low:** 0 - 19 points
+- **Medium:** 20 - 49 points
+- **High:** 50+ points
+
+| Group | Low (0-19 pts) | Medium (20-49 pts) | High (50+ pts) | Total Analyzed |
+|---|:---:|:---:|:---:|:---:|
+| **Benign** | 0 (0.0%) | 0 (0.0%) | 0 (0.0%) | 0 |
+| **Suspicious** | 0 (0.0%) | 0 (0.0%) | 0 (0.0%) | 0 |
+
+> [!NOTE]
+> **Calibration Notice:** In strict compliance with evaluation harness constraints, no rule weights or cut points have been altered from these results. Proposed adjustments are documented below for review and tuning only.
+
+---
+
+## 4. Evaluation Limitations Statement
 
 - **Trigger Rate vs. Detection Performance:** This harness measures heuristic signal trigger rates across two sample sets. It does **not** measure accuracy, sensitivity, specificity, ROC-AUC, or formal malware detection performance.
 - **Dataset Era & Source Biases:** APK datasets collected from different eras or distribution channels (e.g. F-Droid open source vs. historical third-party malware dumps) exhibit systemic confounding factors (such as target SDK versions, library packaging styles, and permission declaration patterns) unrelated to maliciousness.
@@ -45,7 +62,7 @@
 
 ---
 
-## 4. Proposed Adjustments
+## 5. Proposed Adjustments
 
 The recommendations below are proposed based on observed trigger frequencies and false-alarm risks. **Note:** In compliance with Stage C5 constraints, no rule thresholds or severities have been modified.
 

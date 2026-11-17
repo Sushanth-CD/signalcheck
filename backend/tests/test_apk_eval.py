@@ -21,6 +21,7 @@ from unittest.mock import patch, MagicMock
 import pytest
 
 from eval.run_eval import (
+    CSV_HEADERS,
     RULE_IDS,
     evaluate_directory,
     generate_summary_markdown,
@@ -142,7 +143,7 @@ def test_eval_csv_contains_no_filenames_or_paths(tmp_path: Path):
 
     csv_path = tmp_path / "results.csv"
     with open(csv_path, "w", newline="", encoding="utf-8") as f:
-        fieldnames = ["sha256", "group", "outcome"] + RULE_IDS
+        fieldnames = CSV_HEADERS
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(records)

@@ -20,6 +20,8 @@ import time
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
+from app.apk_scoring import score_findings
+
 # All 11 deterministic heuristic rule IDs
 RULE_IDS = [
     "RULE_SMS_EXFILTRATION_CAPABILITY",
@@ -34,6 +36,9 @@ RULE_IDS = [
     "RULE_HARDCODED_IP_URL",
     "RULE_OBFUSCATION_HINT",
 ]
+
+# Standard CSV output columns including indicator scoring metrics
+CSV_HEADERS = ["sha256", "group", "outcome", "indicator_level", "indicator_points", "scoring_version"] + RULE_IDS
 
 SUBPROCESS_TIMEOUT_SECONDS = 30
 MAX_UPLOAD_BYTES = 25 * 1024 * 1024  # 25 MB cap
@@ -183,6 +188,9 @@ def evaluate_directory(dir_path: str, group_name: str) -> List[Dict[str, Any]]:
             "sha256": sha256_digest or "unknown",
             "group": group_name,
             "outcome": validation_status,
+            "indicator_level": "Low",
+            "indicator_points": 0,
+            "scoring_version": "apk-rules-v1",
         }
         # Initialize all rule triggers to 0
         for r_id in RULE_IDS:
@@ -200,6 +208,11 @@ def evaluate_directory(dir_path: str, group_name: str) -> List[Dict[str, Any]]:
 
         if outcome == "SUCCESS" and result_data:
             findings = result_data.get("findings", [])
+            scoring = score_findings(findings)
+            record["indicator_level"] = scoring["level"]
+            record["indicator_points"] = scoring["total_points"]
+            record["scoring_version"] = scoring["scoring_version"]
+
             fired_rules = set()
             for f in findings:
                 r_id = f.get("id")
@@ -314,11 +327,45 @@ def generate_summary_markdown(
             f"| `{r_id}` | {b_count}/{analyzed_benign} | {b_ci} | {s_count}/{analyzed_suspicious} | {s_ci} | {gap_str} | {flag_str} |"
         )
 
+    # Compute Indicator Level Distribution (apk-rules-v1)
+    b_low = sum(1 for r in benign_records if r.get("outcome") == "SUCCESS" and r.get("indicator_level") == "Low")
+    b_med = sum(1 for r in benign_records if r.get("outcome") == "SUCCESS" and r.get("indicator_level") == "Medium")
+    b_high = sum(1 for r in benign_records if r.get("outcome") == "SUCCESS" and r.get("indicator_level") == "High")
+
+    s_low = sum(1 for r in suspicious_records if r.get("outcome") == "SUCCESS" and r.get("indicator_level") == "Low")
+    s_med = sum(1 for r in suspicious_records if r.get("outcome") == "SUCCESS" and r.get("indicator_level") == "Medium")
+    s_high = sum(1 for r in suspicious_records if r.get("outcome") == "SUCCESS" and r.get("indicator_level") == "High")
+
+    b_low_pct = (b_low / analyzed_benign * 100) if analyzed_benign > 0 else 0.0
+    b_med_pct = (b_med / analyzed_benign * 100) if analyzed_benign > 0 else 0.0
+    b_high_pct = (b_high / analyzed_benign * 100) if analyzed_benign > 0 else 0.0
+
+    s_low_pct = (s_low / analyzed_suspicious * 100) if analyzed_suspicious > 0 else 0.0
+    s_med_pct = (s_med / analyzed_suspicious * 100) if analyzed_suspicious > 0 else 0.0
+    s_high_pct = (s_high / analyzed_suspicious * 100) if analyzed_suspicious > 0 else 0.0
+
     lines.extend([
         "",
         "---",
         "",
-        "## 3. Evaluation Limitations Statement",
+        "## 3. Indicator Level Distribution (`apk-rules-v1`)",
+        "",
+        "Distribution of deterministic heuristic indicator levels mapped from total finding and combination points:",
+        "- **Low:** 0 - 19 points",
+        "- **Medium:** 20 - 49 points",
+        "- **High:** 50+ points",
+        "",
+        "| Group | Low (0-19 pts) | Medium (20-49 pts) | High (50+ pts) | Total Analyzed |",
+        "|---|:---:|:---:|:---:|:---:|",
+        f"| **Benign** | {b_low} ({b_low_pct:.1f}%) | {b_med} ({b_med_pct:.1f}%) | {b_high} ({b_high_pct:.1f}%) | {analyzed_benign} |",
+        f"| **Suspicious** | {s_low} ({s_low_pct:.1f}%) | {s_med} ({s_med_pct:.1f}%) | {s_high} ({s_high_pct:.1f}%) | {analyzed_suspicious} |",
+        "",
+        "> [!NOTE]",
+        "> **Calibration Notice:** In strict compliance with evaluation harness constraints, no rule weights or cut points have been altered from these results. Proposed adjustments are documented below for review and tuning only.",
+        "",
+        "---",
+        "",
+        "## 4. Evaluation Limitations Statement",
         "",
         "- **Trigger Rate vs. Detection Performance:** This harness measures heuristic signal trigger rates across two sample sets. It does **not** measure accuracy, sensitivity, specificity, ROC-AUC, or formal malware detection performance.",
         "- **Dataset Era & Source Biases:** APK datasets collected from different eras or distribution channels (e.g. F-Droid open source vs. historical third-party malware dumps) exhibit systemic confounding factors (such as target SDK versions, library packaging styles, and permission declaration patterns) unrelated to maliciousness.",
@@ -326,7 +373,7 @@ def generate_summary_markdown(
         "",
         "---",
         "",
-        "## 4. Proposed Adjustments",
+        "## 5. Proposed Adjustments",
         "",
         "The recommendations below are proposed based on observed trigger frequencies and false-alarm risks. **Note:** In compliance with Stage C5 constraints, no rule thresholds or severities have been modified.",
         "",
@@ -397,7 +444,7 @@ def main():
 
     # Write results.csv (Strict privacy: SHA-256 only, NO filenames or paths)
     Path(args.output_csv).parent.mkdir(parents=True, exist_ok=True)
-    csv_headers = ["sha256", "group", "outcome"] + RULE_IDS
+    csv_headers = CSV_HEADERS
     with open(args.output_csv, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=csv_headers)
         writer.writeheader()

@@ -114,7 +114,7 @@ export default function Dashboard({ onNavigate }) {
                 Android APK Analysis
               </h3>
               <p className="sc-tool-card__description">
-                Performs static analysis of an uploaded APK (permissions, components, signing, code indicators) in an isolated worker, with plain-language explanations of each finding.
+                Performs rule-based static analysis of an uploaded APK (permissions, components, signing, code indicators) in an isolated worker, with plain-language explanations of each finding. Operates using deterministic heuristic rules with no ML model.
               </p>
               <p className="sc-tool-card__subtext" style={{ fontSize: "0.8125rem", color: "var(--color-text-secondary, #64748b)", marginTop: "0.5rem" }}>
                 A separate offline benchmark for precomputed 226-feature vectors is also available.

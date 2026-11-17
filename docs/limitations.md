@@ -12,6 +12,7 @@ This document details the intentional technical limitations, threat boundaries, 
 ---
 
 ## 2. Heuristic Rules (Signals, Not Proof)
+- **Rule-Based Engine with Zero ML Models:** The APK analyzer operates strictly via a deterministic, versioned rule-based scoring engine (`apk-rules-v1`). There is **no machine learning model, statistical probability, or classifier** scoring uploaded APK files. Findings and indicator levels are derived entirely from discrete structural checks and documented combination bonuses.
 - **Deterministic Structural Rules:** Detection rules fire based on discrete indicators (e.g., combining SMS permissions with internet socket declarations, or detecting calls to `Runtime.getRuntime().exec`).
 - **No Absolute Verdicts or Safety Guarantees:** 
   - Absence of findings does **not** prove an application is benign.

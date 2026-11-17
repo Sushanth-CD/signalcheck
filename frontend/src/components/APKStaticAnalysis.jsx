@@ -364,6 +364,188 @@ export default function APKStaticAnalysis() {
       {/* Result Display */}
       {result && (
         <div className="sc-apk-results" id="apk-analysis-result">
+          {/* Rule-Based Indicator Engine Summary Card */}
+          <section className="sc-indicator-scoring-card" aria-labelledby="indicator-scoring-title" style={{
+            background: "var(--color-surface, #ffffff)",
+            border: "1px solid var(--color-border, #e2e8f0)",
+            borderRadius: "12px",
+            padding: "20px 24px",
+            marginBottom: "1.5rem",
+            boxShadow: "0 2px 6px rgba(0, 0, 0, 0.04)"
+          }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: "12px" }}>
+              <div>
+                <span className="eyebrow" style={{ fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.05em", color: "var(--color-text-secondary, #64748b)" }}>
+                  DETERMINISTIC HEURISTIC SCORING ({result.indicator_summary?.scoring_version || "apk-rules-v1"})
+                </span>
+                <h3 id="indicator-scoring-title" style={{ margin: "4px 0 6px 0", fontSize: "1.25rem", fontWeight: 700, color: "var(--color-text, #0f172a)" }}>
+                  Indicator Level: {result.indicator_summary?.level || (result.indicator_level === "many_indicators" ? "High" : result.indicator_level === "some_indicators" ? "Medium" : "Low")} ({result.indicator_summary?.total_points ?? 0} points)
+                </h3>
+                <p style={{ margin: 0, fontSize: "0.875rem", color: "var(--color-text-secondary, #64748b)", fontStyle: "italic" }}>
+                  {result.indicator_summary?.disclaimer || "Heuristic indicator level, a signal to check and not a malware verdict."}
+                </p>
+              </div>
+              <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
+                <span className={`sc-severity-pill sc-severity-pill--${(result.indicator_summary?.level === "High" || result.indicator_level === "many_indicators") ? "high" : (result.indicator_summary?.level === "Medium" || result.indicator_level === "some_indicators") ? "medium" : "low"}`} style={{ fontSize: "0.85rem", padding: "6px 14px", fontWeight: 700 }}>
+                  {result.indicator_summary?.level || (result.indicator_level === "many_indicators" ? "High" : result.indicator_level === "some_indicators" ? "Medium" : "Low")} Level
+                </span>
+              </div>
+            </div>
+
+            {/* Contributing Rules and Combination Bonuses */}
+            <div style={{ marginTop: "16px", paddingTop: "14px", borderTop: "1px solid var(--color-border, #f1f5f9)" }}>
+              <div style={{ fontWeight: 600, fontSize: "0.875rem", color: "var(--color-text, #1e293b)", marginBottom: "8px" }}>
+                Contributing Rules & Bonuses:
+              </div>
+              {(!result.indicator_summary?.rule_contributions || result.indicator_summary.rule_contributions.length === 0) ? (
+                <p style={{ fontSize: "0.8125rem", color: "var(--color-text-secondary, #64748b)", margin: 0 }}>
+                  No heuristic rules triggered (0 base points).
+                </p>
+              ) : (
+                <ul style={{ margin: 0, paddingLeft: "20px", fontSize: "0.8125rem", color: "var(--color-text, #334155)" }}>
+                  {result.indicator_summary.rule_contributions.map((rule) => (
+                    <li key={rule.rule_id} style={{ marginBottom: "4px" }}>
+                      <strong>{rule.title}</strong> (<code>{rule.rule_id}</code>): <strong>+{rule.points} pts</strong>
+                    </li>
+                  ))}
+                  {result.indicator_summary.combination_contributions?.map((combo) => (
+                    <li key={combo.id} style={{ marginBottom: "4px", color: "var(--color-primary-dark, #0284c7)" }}>
+                      <strong>Bonus: {combo.name}</strong>: <strong>+{combo.points} pts</strong> — <em>{combo.description}</em>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+
+            {/* How this is calculated expander */}
+            <details className="sc-scoring-calc-expander" style={{
+              marginTop: "16px",
+              paddingTop: "12px",
+              borderTop: "1px solid var(--color-border, #f1f5f9)",
+              fontSize: "0.8125rem"
+            }}>
+              <summary style={{ cursor: "pointer", fontWeight: 600, color: "var(--color-primary, #0284c7)" }}>
+                How this is calculated
+              </summary>
+              <div style={{ marginTop: "10px", lineHeight: 1.6, color: "var(--color-text-secondary, #475569)" }}>
+                <p style={{ margin: "0 0 10px 0" }}>
+                  The indicator level is calculated deterministically using versioned rule weights (<code>apk-rules-v1</code>). It evaluates structural manifest declarations, bytecode references, and combination bonuses. <strong>No machine learning model, statistical probability, or classifier is used.</strong>
+                </p>
+                <div style={{ marginBottom: "10px" }}>
+                  <strong>Level Cut Points:</strong>
+                  <ul style={{ margin: "4px 0 0 0", paddingLeft: "20px" }}>
+                    <li><strong>Low:</strong> 0 – 19 points</li>
+                    <li><strong>Medium:</strong> 20 – 49 points</li>
+                    <li><strong>High:</strong> 50+ points</li>
+                  </ul>
+                </div>
+                <div style={{ overflowX: "auto" }}>
+                  <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.75rem", marginTop: "8px" }}>
+                    <thead>
+                      <tr style={{ background: "var(--color-surface-subtle, #f8fafc)", borderBottom: "1px solid var(--color-border, #e2e8f0)", textAlign: "left" }}>
+                        <th style={{ padding: "6px 8px" }}>Rule / Heuristic</th>
+                        <th style={{ padding: "6px 8px" }}>Weight</th>
+                        <th style={{ padding: "6px 8px" }}>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr style={{ borderBottom: "1px solid var(--color-border, #f1f5f9)" }}>
+                        <td style={{ padding: "6px 8px" }}><code>RULE_SMS_EXFILTRATION_CAPABILITY</code></td>
+                        <td style={{ padding: "6px 8px" }}><strong>30 pts</strong></td>
+                        <td style={{ padding: "6px 8px" }}>SMS permissions declared with internet communication capability.</td>
+                      </tr>
+                      <tr style={{ borderBottom: "1px solid var(--color-border, #f1f5f9)" }}>
+                        <td style={{ padding: "6px 8px" }}><code>RULE_ACCESSIBILITY_OVERLAY_COMBO</code></td>
+                        <td style={{ padding: "6px 8px" }}><strong>30 pts</strong></td>
+                        <td style={{ padding: "6px 8px" }}>Accessibility service implementation paired with system overlay window.</td>
+                      </tr>
+                      <tr style={{ borderBottom: "1px solid var(--color-border, #f1f5f9)" }}>
+                        <td style={{ padding: "6px 8px" }}><code>RULE_DEVICE_ADMIN_PRIVILEGE</code></td>
+                        <td style={{ padding: "6px 8px" }}><strong>25 pts</strong></td>
+                        <td style={{ padding: "6px 8px" }}>Device administration receiver declared granting system lockout controls.</td>
+                      </tr>
+                      <tr style={{ borderBottom: "1px solid var(--color-border, #f1f5f9)" }}>
+                        <td style={{ padding: "6px 8px" }}><code>RULE_COMMAND_EXECUTION</code></td>
+                        <td style={{ padding: "6px 8px" }}><strong>20 pts</strong></td>
+                        <td style={{ padding: "6px 8px" }}>Bytecode references Runtime.getRuntime().exec() or ProcessBuilder.</td>
+                      </tr>
+                      <tr style={{ borderBottom: "1px solid var(--color-border, #f1f5f9)" }}>
+                        <td style={{ padding: "6px 8px" }}><code>RULE_DYNAMIC_CODE_LOADING</code></td>
+                        <td style={{ padding: "6px 8px" }}><strong>20 pts</strong></td>
+                        <td style={{ padding: "6px 8px" }}>Dynamic class loading (DexClassLoader / PathClassLoader) in bytecode.</td>
+                      </tr>
+                      <tr style={{ borderBottom: "1px solid var(--color-border, #f1f5f9)" }}>
+                        <td style={{ padding: "6px 8px" }}><code>RULE_UNSIGNED_PACKAGE</code></td>
+                        <td style={{ padding: "6px 8px" }}><strong>20 pts</strong></td>
+                        <td style={{ padding: "6px 8px" }}>Container lacks valid cryptographic signature blocks.</td>
+                      </tr>
+                      <tr style={{ borderBottom: "1px solid var(--color-border, #f1f5f9)" }}>
+                        <td style={{ padding: "6px 8px" }}><code>RULE_PACKAGE_INSTALLER</code></td>
+                        <td style={{ padding: "6px 8px" }}><strong>15 pts</strong></td>
+                        <td style={{ padding: "6px 8px" }}>Application requests package installation permissions.</td>
+                      </tr>
+                      <tr style={{ borderBottom: "1px solid var(--color-border, #f1f5f9)" }}>
+                        <td style={{ padding: "6px 8px" }}><code>RULE_BOOT_PERSISTENCE</code></td>
+                        <td style={{ padding: "6px 8px" }}><strong>10 pts</strong></td>
+                        <td style={{ padding: "6px 8px" }}>Configured with RECEIVE_BOOT_COMPLETED receiver for startup persistence.</td>
+                      </tr>
+                      <tr style={{ borderBottom: "1px solid var(--color-border, #f1f5f9)" }}>
+                        <td style={{ padding: "6px 8px" }}><code>RULE_DEBUG_SIGNED_CERT</code></td>
+                        <td style={{ padding: "6px 8px" }}><strong>10 pts</strong></td>
+                        <td style={{ padding: "6px 8px" }}>Package signed with publicly known Android debug certificate.</td>
+                      </tr>
+                      <tr style={{ borderBottom: "1px solid var(--color-border, #f1f5f9)" }}>
+                        <td style={{ padding: "6px 8px" }}><code>RULE_HARDCODED_IP_URL</code></td>
+                        <td style={{ padding: "6px 8px" }}><strong>10 pts</strong></td>
+                        <td style={{ padding: "6px 8px" }}>Direct numeric IP URL endpoint strings circumventing DNS.</td>
+                      </tr>
+                      <tr style={{ borderBottom: "1px solid var(--color-border, #f1f5f9)" }}>
+                        <td style={{ padding: "6px 8px" }}><code>RULE_OBFUSCATION_HINT</code></td>
+                        <td style={{ padding: "6px 8px" }}><strong>5 pts</strong></td>
+                        <td style={{ padding: "6px 8px" }}>Elevated short identifier ratio indicating symbol renaming.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div style={{ marginTop: "12px", overflowX: "auto" }}>
+                  <strong>Combination Risk Bonuses:</strong>
+                  <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.75rem", marginTop: "4px" }}>
+                    <thead>
+                      <tr style={{ background: "var(--color-surface-subtle, #f8fafc)", borderBottom: "1px solid var(--color-border, #e2e8f0)", textAlign: "left" }}>
+                        <th style={{ padding: "4px 8px" }}>Combination</th>
+                        <th style={{ padding: "4px 8px" }}>Bonus</th>
+                        <th style={{ padding: "4px 8px" }}>Rationale</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr style={{ borderBottom: "1px solid var(--color-border, #f1f5f9)" }}>
+                        <td style={{ padding: "4px 8px" }}>SMS Exfiltration + Dynamic Code Loading</td>
+                        <td style={{ padding: "4px 8px" }}><strong>+15 pts</strong></td>
+                        <td style={{ padding: "4px 8px" }}>Combines sensitive SMS interception with dynamic code retrieval.</td>
+                      </tr>
+                      <tr style={{ borderBottom: "1px solid var(--color-border, #f1f5f9)" }}>
+                        <td style={{ padding: "4px 8px" }}>Accessibility Overlay + Command Execution</td>
+                        <td style={{ padding: "4px 8px" }}><strong>+15 pts</strong></td>
+                        <td style={{ padding: "4px 8px" }}>Combines UI overlay capabilities with raw system process execution.</td>
+                      </tr>
+                      <tr style={{ borderBottom: "1px solid var(--color-border, #f1f5f9)" }}>
+                        <td style={{ padding: "4px 8px" }}>Package Installer + Dynamic Code Loading</td>
+                        <td style={{ padding: "4px 8px" }}><strong>+15 pts</strong></td>
+                        <td style={{ padding: "4px 8px" }}>Combines secondary package installation with external code loading.</td>
+                      </tr>
+                      <tr style={{ borderBottom: "1px solid var(--color-border, #f1f5f9)" }}>
+                        <td style={{ padding: "4px 8px" }}>Device Admin + Boot Persistence</td>
+                        <td style={{ padding: "4px 8px" }}><strong>+10 pts</strong></td>
+                        <td style={{ padding: "4px 8px" }}>Combines elevated device administration with automatic boot survival.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </details>
+          </section>
+
           {/* Header Summary Card */}
           <section
             className={`sc-analysis-summary sc-analysis-summary--${levelInfo.variant}`}

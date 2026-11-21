@@ -178,13 +178,28 @@ class PhishingURLExtractionV2Tests(unittest.TestCase):
         self.assertIsNone(rows["URL without scheme"]["grouping_key"])
 
     def test_parser_import_graph_does_not_load_ml_or_heavy_data_libraries(self) -> None:
-        forbidden = {
-            "pandas", "joblib", "numpy", "scipy", "sklearn",
-            "backend.notebooks.train_phishing_domain_holdout",
-            "backend.notebooks.audit_phishing_domain_integrity",
-        }
-        loaded = sorted(name for name in sys.modules if name in forbidden or any(name.startswith(f"{item}.") for item in forbidden))
-        self.assertEqual(loaded, [])
+        import subprocess
+
+        cmd = [
+            sys.executable,
+            "-c",
+            (
+                "import sys\n"
+                "from backend.notebooks import phishing_url_extraction_v2\n"
+                "from backend.ml.psl_service import is_psl_suffix\n"
+                "forbidden = {\n"
+                "    'pandas', 'joblib', 'numpy', 'scipy', 'sklearn',\n"
+                "    'backend.notebooks.train_phishing_domain_holdout',\n"
+                "    'backend.notebooks.audit_phishing_domain_integrity',\n"
+                "}\n"
+                "loaded = sorted(name for name in sys.modules if name in forbidden or any(name.startswith(f'{item}.') for item in forbidden))\n"
+                "if loaded:\n"
+                "    print(','.join(loaded))\n"
+                "    sys.exit(1)\n"
+            ),
+        ]
+        res = subprocess.run(cmd, capture_output=True, text=True, cwd=str(ROOT))
+        self.assertEqual(res.returncode, 0, f"Parser import graph loaded heavy modules: {res.stdout.strip()}")
 
 
 if __name__ == "__main__":

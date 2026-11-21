@@ -139,6 +139,14 @@ def load_android_model(
             f"{sklearn.__version__}."
         )
 
+    # Perform cryptographic artifact verification if using the canonical model path
+    if model_path == ANDROID_MODEL_PATH:
+        from app.model_integrity import verify_model_artifact_integrity
+        try:
+            verify_model_artifact_integrity(model_path, model_key="android")
+        except RuntimeError as exc:
+            raise AndroidModelLoadError(str(exc)) from exc
+
     repository_root = Path(__file__).resolve().parents[2]
     if str(repository_root) not in sys.path:
         sys.path.insert(0, str(repository_root))

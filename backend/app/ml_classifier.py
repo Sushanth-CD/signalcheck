@@ -54,6 +54,14 @@ def load_phishing_model(path: Path = MODEL_PATH) -> Any:
             f"{sklearn.__version__}."
         )
 
+    # Perform cryptographic artifact verification if using the canonical model path
+    if path == MODEL_PATH:
+        from app.model_integrity import verify_model_artifact_integrity
+        try:
+            verify_model_artifact_integrity(path, model_key="phishing")
+        except RuntimeError as exc:
+            raise ModelLoadError(str(exc)) from exc
+
     try:
         # The serialized TF-IDF preprocessor references backend.ml.*. Ensure
         # that package is importable when Uvicorn is launched from backend/.

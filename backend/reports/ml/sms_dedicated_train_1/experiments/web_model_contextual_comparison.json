@@ -1,0 +1,29 @@
+{
+  "evaluation_partition": "Internal Test (N=806)",
+  "models": {
+    "SMS-03_Dedicated": {
+      "f1": 0.9667,
+      "recall": 0.9667,
+      "specificity": 0.9883,
+      "balanced_accuracy": 0.9775,
+      "ham_fpr": 0.0053,
+      "commercial_spam_fpr": 0.0227
+    },
+    "V2_Web_Baseline": {
+      "f1": 0.4168,
+      "recall": 0.9905,
+      "specificity": 0.0268,
+      "balanced_accuracy": 0.5087,
+      "ham_fpr": 0.9814,
+      "commercial_spam_fpr": 0.9591
+    },
+    "V3_Dual_Channel_Web": {
+      "f1": 0.4044,
+      "recall": 0.9619,
+      "specificity": 0.0151,
+      "balanced_accuracy": 0.4885,
+      "ham_fpr": 0.992,
+      "commercial_spam_fpr": 0.9727
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "dataset_name": "combined_reduced.json",
+  "total_source_records": 77677,
+  "source_file_path": "C:\\Projects\\cyber-security-awareness-platform\\backend\\data\\raw\\combined_reduced.json",
+  "source_file_sha256": "222fd5f841a0565841f8ede2e21b9b48cfea933a6b5c3a7da3e3a2cbc156d3d5",
+  "index_file_path": "C:\\Projects\\cyber-security-awareness-platform\\backend\\reports\\ml\\phishing_hybrid_independent_evaluation\\compphish_pilot_100\\near_duplicate_audit\\corpus_simhash_index.npz",
+  "index_file_size_bytes": 3828030,
+  "index_file_size_mb": 3.65,
+  "index_file_sha256": "187465f4b88fba5969ae1b9313fc94ec4776e18856f62d027403a46d3270dc31",
+  "methodology": {
+    "normalization": "Unicode NFKC, casefold, collapsed whitespace",
+    "shingle_size": 5,
+    "shingle_type": "character 5-grams",
+    "simhash_bits": 64,
+    "simhash_hash_function": "first 64 bits of hashlib.sha256",
+    "hamming_distance_threshold": 3,
+    "jaccard_similarity_threshold": 0.9
+  },
+  "build_statistics": {
+    "build_timestamp_utc": "2026-11-01T09:51:23.948959+00:00",
+    "load_time_seconds": 1.27,
+    "fingerprint_time_seconds": 197.01,
+    "total_execution_seconds": 198.88,
+    "records_per_second": 394.3
+  }
+}

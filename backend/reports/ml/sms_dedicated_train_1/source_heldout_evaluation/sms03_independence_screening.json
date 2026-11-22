@@ -1,0 +1,51 @@
+{
+  "screening_timestamp_utc": "2026-11-02T14:00:00Z",
+  "total_source_records": 5971,
+  "unique_normalized_hashes": 5831,
+  "leakage_screening_results": {
+    "total_leakage_rows_excluded": 1132,
+    "by_target": {
+      "train": {
+        "exact_matches": 733,
+        "near_duplicates": 8,
+        "total_excluded": 741
+      },
+      "validation": {
+        "exact_matches": 177,
+        "near_duplicates": 1,
+        "total_excluded": 178
+      },
+      "internal_test": {
+        "exact_matches": 163,
+        "near_duplicates": 2,
+        "total_excluded": 165
+      },
+      "diagnostic_pilot_250": {
+        "exact_matches": 46,
+        "near_duplicates": 2,
+        "total_excluded": 48
+      }
+    }
+  },
+  "internal_ambiguity_exclusions": {
+    "ambiguous_normalized_hashes": 31,
+    "conflicting_label_pairs": "spam vs smishing"
+  },
+  "internal_exact_duplicates_deduplicated": 103,
+  "eligible_cohort_summary": {
+    "total_eligible_unique_records": 4674,
+    "by_category": {
+      "ham": 3713,
+      "commercial_spam": 435,
+      "smishing": 526
+    },
+    "extractable_url_distribution": {
+      "ham_with_url": 176,
+      "ham_without_url": 3537,
+      "commercial_spam_with_url": 119,
+      "commercial_spam_without_url": 316,
+      "smishing_with_url": 116,
+      "smishing_without_url": 410
+    }
+  }
+}

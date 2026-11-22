@@ -1,0 +1,13 @@
+{
+  "screening_timestamp_utc": "2026-11-02T16:00:00Z",
+  "total_candidates": 8735,
+  "screening_results": {
+    "exact_collisions_with_quarantined_pilot_250": 0,
+    "near_duplicates_with_quarantined_pilot_250": 0,
+    "exact_collisions_with_quarantined_benchmark_500": 0,
+    "near_duplicates_with_quarantined_benchmark_500": 0,
+    "cross_partition_hash_leakage": 0,
+    "cross_partition_group_leakage": 0
+  },
+  "verdict": "PASSED (Zero benchmark contamination, zero cross-partition leakage)"
+}

@@ -1,0 +1,2473 @@
+<html lang="en"><head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://c.mql5.com">
+  <meta name="description" content="MQL5: language of trade strategies built-in the MetaTrader 5 Trading Platform, allows writing your own trading robots, technical indicators, scripts and libraries of functions">
+  <meta property="og:url" content="https://www.mql5.com">
+  <meta property="og:title" content="Discover new MetaTrader 5 opportunities with MQL5 community and services">
+  <meta property="og:description" content="MQL5: language of trade strategies built-in the MetaTrader 5 Trading Platform, allows writing your own trading robots, technical indicators, scripts and libraries of functions">
+  <meta property="og:image" content="https://c.mql5.com/i/og/mql5-community-3.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@mql5com">
+  <meta name="twitter:image" content="https://c.mql5.com/i/og/mql5-community-3.png">
+  <meta name="theme-color" content="#4a76b8">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="manifest" href="https://www.mql5.com/manifest.json">
+  <link rel="apple-touch-icon" sizes="57x57" href="https://www.mql5.com/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://www.mql5.com/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="https://www.mql5.com/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="https://www.mql5.com/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="167x167" href="https://www.mql5.com/apple-touch-icon-167x167.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.mql5.com/apple-touch-icon-180x180.png">
+  <link rel="apple-touch-icon" sizes="192x192" href="https://www.mql5.com/apple-touch-icon-192x192.png">
+  <link rel="icon" sizes="192x192" href="https://www.mql5.com/android-touch-icon-192x192.png">
+  <link rel="icon" sizes="128x128" href="https://www.mql5.com/android-touch-icon-128x128.png">
+  <link rel="shortcut icon" href="https://c.mql5.com/i/favicon4.ico">
+  <meta name="msapplication-config" content="none">
+  <meta name="referrer" content="no-referrer-when-downgrade">
+  <meta property="qc:admins" content="36367170677651456375">
+  <meta property="wb:webmaster" content="073d7690269bcd81">
+  <link href="https://c.mql5.com/styles/core.2c89c8f5277b83efcc8db7856d7665b9.css" type="text/css" rel="stylesheet" media="all">
+  <link href="https://c.mql5.com/styles/all.d1ec25c8fd5995195d6182fd56d515e4.css" type="text/css" rel="stylesheet" media="all">
+  <link href="https://c.mql5.com/styles/home.b973d3e3fc8f961bacee300767fe2c55.css" type="text/css" rel="stylesheet" media="all">
+  <link href="https://c.mql5.com/styles/svg-chart.b670461c55e11510e44f5f13225496da.css" type="text/css" rel="stylesheet" media="all">
+  <link href="/en/rss" rel="alternate" type="application/rss+xml" title="MQL5: automated forex trading, strategy tester and custom indicators in MetaTrader">
+  <link href="/en/forum/rss" rel="alternate" type="application/rss+xml" title="MetaTrader 5 trading, automated systems and strategy testing forum">
+  <link href="/en/articles/rss" rel="alternate" type="application/rss+xml" title="Articles on the development and application of MetaTrader 5 trading robots and technical indicators">
+  <link href="/en/code/rss" rel="alternate" type="application/rss+xml" title="Code Base - free database of MetaTrader 5 trading robots and technical indicators">
+  <link href="/en/job/rss" rel="alternate" type="application/rss+xml" title="Freelance service for traders">
+  <link rel="canonical" href="https://www.mql5.com">
+  <link rel="alternate" hreflang="x-default" href="https://www.mql5.com">
+  <link rel="alternate" hreflang="en" href="https://www.mql5.com/en">
+  <link rel="alternate" hreflang="ru" href="https://www.mql5.com/ru">
+  <link rel="alternate" hreflang="zh" href="https://www.mql5.com/zh">
+  <link rel="alternate" hreflang="es" href="https://www.mql5.com/es">
+  <link rel="alternate" hreflang="pt" href="https://www.mql5.com/pt">
+  <link rel="alternate" hreflang="ja" href="https://www.mql5.com/ja">
+  <link rel="alternate" hreflang="de" href="https://www.mql5.com/de">
+  <link rel="alternate" hreflang="ko" href="https://www.mql5.com/ko">
+  <link rel="alternate" hreflang="fr" href="https://www.mql5.com/fr">
+  <link rel="alternate" hreflang="it" href="https://www.mql5.com/it">
+  <link rel="alternate" hreflang="tr" href="https://www.mql5.com/tr">
+  <title>MQL5: automated forex trading, strategy tester and custom indicators in MetaTrader</title>
+
+
+<script async="" defer="" src="/ff/core.js"></script><script type="text/javascript">
+  !function(){window.mqGlobal={};var t=!1,n=!1,e=[],o=[],i=[];function d(t){var n;for(n=0;n<t.length;n+=1)t[n]()}function c(){t||(t=!0,d(e),d(o),o=[],e=[])}function a(){c(),n||(n=!0,d(i),i=[])}if(mqGlobal.AddOnReady=function(n,i){t?n(document):i?e.push(n):o.push(n)},mqGlobal.AddOnLoad=function(t){n?t(document):i.push(t)},mqGlobal.AddOnActiveWindowChange=function(t){this._onvisibility||(this._onvisibility=[]),this._onvisibility[this._onvisibility.length]=t},document.addEventListener)document.addEventListener("DOMContentLoaded",c,!1),window.addEventListener("load",a,!1);else if(document.attachEvent&&(document.attachEvent("onreadystatechange",(function(){switch(document.readyState){case"interactive":c();break;case"complete":a()}})),window.attachEvent("onload",a),document.documentElement.doScroll&&window==window.top)){!function n(){if(!t&&document.body)try{document.documentElement.doScroll("left"),c()}catch(t){setTimeout(n,0)}}()}}();
+  mqGlobal.CookieDomain = ".mql5.com";
+  mqGlobal.Language = 'en';
+  mqGlobal.IsMobile = false;
+  mqGlobal.ClearRteStorage = function (e) { if (window.GStorage || (window.GStorage = globalStorage()), window.GStorage.supported) try { var o = e; window.GStorage.getItem("rte_autosave_uid", function (e, t) { t == o && (window.GStorage.removeItem("rte_autosave_text"), window.GStorage.removeItem("rte_autosave_date"), window.GStorage.removeItem("rte_autosave_uid")) }) } catch (e) { } };
+</script>
+  
+
+  <style type="text/css">
+    .top-band {
+      border-bottom: none;
+    }
+  </style>
+
+
+
+<meta property="fb:admins" content="100003321148816">          
+
+    <script src="https://c.mql5.com/js/all.d7f34b32a45372abe5fd370a1df9ddcc.js" type="text/javascript" defer="defer"></script>
+  <script src="https://c.mql5.com/js/vendor.c835e89fc229687ff8d147480b60f6c8.js" type="text/javascript" defer="defer"></script>
+  <script src="https://c.mql5.com/js/quotes-ticker.41ab2c2eb77892f9ff2af6271e6c0429.js" type="text/javascript" defer="defer"></script>
+  <script src="https://c.mql5.com/js/signals.843b5be03f34a13142a0a2576b498252.js" type="text/javascript" defer="defer"></script>
+  <script src="https://c.mql5.com/js/svg-chart.83de8526c18f0e3408cccc5e56c2698c.js" type="text/javascript" defer="defer"></script>
+  <script src="https://c.mql5.com/js/vps.57a54c21757115775d27d58f30643051.js" type="text/javascript" defer="defer"></script>
+
+
+<style id="c-nvz9zt">.s-suggestions.c-nvz9zt{position:absolute;left:0;right:0;top:100%;z-index:100;background:#fff;box-shadow:0 2px 6px rgba(0, 0, 0, 0.1);border-top:1px solid #dadada}</style></head>
+
+<body>
+
+<div class="cover" id="cover">
+
+    <header class="head">
+      <a href="https://www.mql5.com" class="head__logo" title="MQL5 - Language of trade strategies built-in the MetaTrader 5 client terminal"></a>
+        <div class="head__content">
+          <nav class="main-menu" id="mainmenu">
+            
+                    <ul class="main-menu__top-level" id="menuTopLevel">
+                    <li><a href="/en/forum" data-fz-event="MQL5+Menu+Forum">Forum</a></li>
+                    <li><a href="/en/market" data-fz-event="MQL5+Menu+Market">Market</a></li>
+                    <li><a href="/en/signals" data-fz-event="MQL5+Menu+Signals">Signals</a></li>
+                    <li><a href="/en/job" data-fz-event="MQL5+Menu+Job">Freelance</a></li>
+                    <li><a href="/en/vps" data-fz-event="MQL5+Menu+VPS">VPS</a></li>
+                    <li><a href="/en/quotes/overview" data-fz-event="MQL5+Menu+Overview">Quotes</a></li>
+                  </ul><ul class="main-menu__second-level" id="menuSecondLevel">
+                    <li><a href="/en/articles" data-fz-event="MQL5+Menu+Articles"><img src="https://c.mql5.com/i/menu/icon-articles4.svg" alt="" width="16" height="16">Articles</a></li>
+                    <li><a href="/en/code" data-fz-event="MQL5+Menu+CodeBase"><img src="https://c.mql5.com/i/menu/icon-code4.svg" alt="" width="16" height="16">CodeBase</a></li>
+                    <li><a href="https://forge.mql5.io" target="_blank" rel="nofollow noopener" data-fz-event="MQL5+Menu+AlgoForge"><img src="https://c.mql5.com/i/menu/icon-algoforge4.svg" alt="" width="16" height="16">Algo Forge</a></li>
+                    <li><a href="/en/docs" data-fz-event="MQL5+Menu+Docs"><img src="https://c.mql5.com/i/menu/icon-docs4.svg" alt="" width="16" height="16">Documentation</a></li>
+                    <li><a href="/en/book" data-fz-event="MQL5+Menu+Book"><img src="https://c.mql5.com/i/menu/icon-book4.svg" alt="" width="16" height="16">AlgoBook</a></li>
+                    <li><a href="/en/neurobook" data-fz-event="MQL5+Menu+Neurobook"><img src="https://c.mql5.com/i/menu/icon-neurobook4.svg" alt="" width="16" height="16">NeuroBook</a></li>
+                    <li><a href="/en/economic-calendar" data-fz-event="MQL5+Menu+Economic+Calendar"><img src="https://c.mql5.com/i/menu/icon-economic-calendar4.svg" alt="" width="16" height="16">Calendar</a></li>
+                    <li><a href="https://web.metatrader.app/terminal?mode=demo&amp;lang=en" target="_blank" rel="nofollow noopener" data-fz-event="MQL5+Menu+Trading"><img src="https://c.mql5.com/i/menu/icon-trading4.svg" alt="" width="16" height="16">WebTerminal</a></li>
+                    <li class="main-menu__mobile"><a href="/en/about">About</a></li>
+                    <li class="main-menu__second-tools"><a rel="noopener" target="_blank" href="https://t.me/mql5dev" title="Follow us on socials for top articles and CodeBase updates" class="button-mt" data-vars-fz="Algo+Trading+Channel+Submenu"><img width="18" height="18" src="https://c.mql5.com/i/sidebar/tg.svg" alt="" loading="lazy">Algo Trading Channel</a></li>
+                    </ul>
+          </nav>
+            <div class="main-menu__active">
+              <a id="mainMenuSelected" href="#">
+                Home
+              </a>
+            </div>
+
+<form action="https://www.mql5.com/en/search" onsubmit="return false;" autocomplete="off" id="headerSearchForm" class="header-search" method="post">
+<button type="button" id="headerSearchButton" title="Search" class="header-search__button"></button><div class="header-search__input"><input name="keyword" type="text" enterkeyhint="search" title="Enter search text" placeholder="Search" id="headerSearchKeyword" autocomplete="off"><label for="headerSearchKeyword" class="header-search__placeholder">Type <span>/</span> to search:  @user, $symbol, ...</label><button id="headerSearchSubmit" class="header-search__submit"></button></div><button type="button" id="headerSearchClean" title="Close" class="header-search__clean"></button></form>          <input class="blurHandler" id="mainMenuBlurHandler" type="checkbox">
+        </div>
+        <div class="head__toolbar" id="headerToolbar">
+            <div class="container loginRegister">
+              <nav>
+                <ul id="loginRegisterButtons"><li><a class="login" title="Please sign in. OpenID supported" href="https://www.mql5.com/en/auth_login" rel="nofollow" data-fz-event="MQL5+Menu+Siginin">Log in</a></li><li><a class="registration en" title="Please register" href="https://www.mql5.com/en/auth_register" rel="nofollow" data-fz-event="MQL5+Menu+Register" onclick="window.fpush('MQL5+Button+Click');">Create an account</a></li></ul>
+              </nav>
+            </div>
+          <div class="container">
+            <div class="toggle-button" id="sidebarToggleButton">
+              <i></i>
+            </div>
+          </div>
+
+          <div class="group-menu" id="groupMenu">
+
+
+            <div class="container lang-menu-container">
+              <div id="langMenuContainer" class="lang-menu">
+                <input class="blurHandler" id="langmenuBlurHandler" type="checkbox">
+                <nav>
+                  <ul class="lang-menu__list" id="langmenu">
+                    <li class="lang-menu__list-item lang-menu__list-item_selected"><a href="/en" aria-label="English (English)"><i class="icons-languages icons-languages_en"></i><span>English</span></a></li>
+<li class="lang-menu__list-item"><a href="/ru" aria-label="Русский (Russian)"><i class="icons-languages icons-languages_ru"></i><span>Русский</span></a></li>
+<li class="lang-menu__list-item"><a href="/zh" aria-label="中文 (Chinese)"><i class="icons-languages icons-languages_zh"></i><span>中文</span></a></li>
+<li class="lang-menu__list-item"><a href="/es" aria-label="Español (Spanish)"><i class="icons-languages icons-languages_es"></i><span>Español</span></a></li>
+<li class="lang-menu__list-item"><a href="/pt" aria-label="Português (Portuguese)"><i class="icons-languages icons-languages_pt"></i><span>Português</span></a></li>
+<li class="lang-menu__list-item"><a href="/ja" aria-label="日本語 (Japanese)"><i class="icons-languages icons-languages_ja"></i><span>日本語</span></a></li>
+<li class="lang-menu__list-item"><a href="/de" aria-label="Deutsch (German)"><i class="icons-languages icons-languages_de"></i><span>Deutsch</span></a></li>
+<li class="lang-menu__list-item"><a href="/ko" aria-label="한국어 (Korean)"><i class="icons-languages icons-languages_ko"></i><span>한국어</span></a></li>
+<li class="lang-menu__list-item"><a href="/fr" aria-label="Français (French)"><i class="icons-languages icons-languages_fr"></i><span>Français</span></a></li>
+<li class="lang-menu__list-item"><a href="/it" aria-label="Italiano (Italian)"><i class="icons-languages icons-languages_it"></i><span>Italiano</span></a></li>
+<li class="lang-menu__list-item"><a href="/tr" aria-label="Türkçe (Turkish)"><i class="icons-languages icons-languages_tr"></i><span>Türkçe</span></a></li>
+
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+    </header>
+
+  <main>
+<div id="bfogggabsofabcpxuzmgaibarmaxasdrj" class="r8i5yrq6s3b8k00gg g46zevd11"></div>
+    <article class="body" id="bodyContent">
+      <header class="top-band">
+        
+      </header>
+
+      
+
+
+<div class="content-wrapper">
+  
+
+
+<div class="home-quotes">
+  <div class="home-quotes__list">
+
+        <a href="/en/quotes/currencies/eurusd" data-fz-event="MQL5+HomePage+Quotes+Click" class="home-quote" title="EURUSD Euro vs US Dollar">
+          <div class="home-quote__name">EURUSD</div>
+          <div class="home-quote__content">
+            <span class="symbol__value" id="symbolValue4252">
+              1.17402
+            </span>
+            <span id="symbolGrowth4252" class="symbol__growth symbol__growth_down" title="Daily Change">
+              0.09%
+            </span>
+          </div>
+        </a>
+        <a href="/en/quotes/currencies/gbpusd" data-fz-event="MQL5+HomePage+Quotes+Click" class="home-quote" title="GBPUSD Pound Sterling vs US Dollar">
+          <div class="home-quote__name">GBPUSD</div>
+          <div class="home-quote__content">
+            <span class="symbol__value" id="symbolValue2">
+              1.34358
+            </span>
+            <span id="symbolGrowth2" class="symbol__growth symbol__growth_down" title="Daily Change">
+              0.54%
+            </span>
+          </div>
+        </a>
+        <a href="/en/quotes/currencies/usdjpy" data-fz-event="MQL5+HomePage+Quotes+Click" class="home-quote" title="USDJPY US Dollar vs Yen">
+          <div class="home-quote__name">USDJPY</div>
+          <div class="home-quote__content">
+            <span class="symbol__value" id="symbolValue4">
+              147.646
+            </span>
+            <span id="symbolGrowth4" class="symbol__growth" title="Daily Change">
+              0.46%
+            </span>
+          </div>
+        </a>
+        <a href="/en/quotes/currencies/usdchf" data-fz-event="MQL5+HomePage+Quotes+Click" class="home-quote" title="USDCHF US Dollar vs Swiss Franc">
+          <div class="home-quote__name">USDCHF</div>
+          <div class="home-quote__content">
+            <span class="symbol__value" id="symbolValue3">
+              0.79451
+            </span>
+            <span id="symbolGrowth3" class="symbol__growth symbol__growth_down" title="Daily Change">
+              0.09%
+            </span>
+          </div>
+        </a>
+        <a href="/en/quotes/currencies/xauusd" data-fz-event="MQL5+HomePage+Quotes+Click" class="home-quote" title="XAUUSD Gold vs US Dollar">
+          <div class="home-quote__name">GOLD</div>
+          <div class="home-quote__content">
+            <span class="symbol__value" id="symbolValue375">
+              3336.65
+            </span>
+            <span id="symbolGrowth375" class="symbol__growth symbol__growth_down" title="Daily Change">
+              0.97%
+            </span>
+          </div>
+        </a>
+        <a href="/en/quotes/currencies/xagusd" data-fz-event="MQL5+HomePage+Quotes+Click" class="home-quote" title="XAGUSD Silver vs US Dollar">
+          <div class="home-quote__name">SILVER</div>
+          <div class="home-quote__content">
+            <span class="symbol__value" id="symbolValue376">
+              38.174
+            </span>
+            <span id="symbolGrowth376" class="symbol__growth symbol__growth_down" title="Daily Change">
+              2.30%
+            </span>
+          </div>
+        </a>
+        <a href="/en/quotes/currencies/btcusd" data-fz-event="MQL5+HomePage+Quotes+Click" class="home-quote" title="BTCUSD Bitcoin vs US Dollar">
+          <div class="home-quote__name">BITCOIN</div>
+          <div class="home-quote__content">
+            <span class="symbol__value" id="symbolValue4467">
+              117011.10
+            </span>
+            <span id="symbolGrowth4467" class="symbol__growth symbol__growth_down" title="Daily Change">
+              1.40%
+            </span>
+          </div>
+        </a>
+        <a href="/en/quotes/currencies/ethusd" data-fz-event="MQL5+HomePage+Quotes+Click" class="home-quote" title="ETHUSD Ethereum vs US Dollar">
+          <div class="home-quote__name">ETHEREUM</div>
+          <div class="home-quote__content">
+            <span class="symbol__value" id="symbolValue4477">
+              3678.55
+            </span>
+            <span id="symbolGrowth4477" class="symbol__growth symbol__growth_down" title="Daily Change">
+              1.31%
+            </span>
+          </div>
+        </a>
+        <a href="/en/quotes/currencies/us500" data-fz-event="MQL5+HomePage+Quotes+Click" class="home-quote" title="US500 US SPX 500 Index">
+          <div class="home-quote__name">S&amp;P 500</div>
+          <div class="home-quote__content">
+            <span class="symbol__value" id="symbolValue80032">
+              6229.90
+            </span>
+            <span id="symbolGrowth80032" class="symbol__growth symbol__growth_down" title="Daily Change">
+              0.08%
+            </span>
+          </div>
+        </a>
+        <a href="/en/quotes/currencies/jpn225" data-fz-event="MQL5+HomePage+Quotes+Click" class="home-quote" title="JPN225 Nikkei 225">
+          <div class="home-quote__name">NIKKEI</div>
+          <div class="home-quote__content">
+            <span class="symbol__value" id="symbolValue80025">
+              41372
+            </span>
+            <span id="symbolGrowth80025" class="symbol__growth symbol__growth_down" title="Daily Change">
+              0.73%
+            </span>
+          </div>
+        </a>
+        <a href="/en/quotes/currencies/ger30m" data-fz-event="MQL5+HomePage+Quotes+Click" class="home-quote" title="GER30M DAX">
+          <div class="home-quote__name">DAX</div>
+          <div class="home-quote__content">
+            <span class="symbol__value" id="symbolValue80038">
+              24312.6
+            </span>
+            <span id="symbolGrowth80038" class="symbol__growth" title="Daily Change">
+              0.23%
+            </span>
+          </div>
+        </a>
+        <a href="/en/quotes/currencies/xbrusd" data-fz-event="MQL5+HomePage+Quotes+Click" class="home-quote" title="XBRUSD Brent Oil vs US Dollar">
+          <div class="home-quote__name">BRENT</div>
+          <div class="home-quote__content">
+            <span class="symbol__value" id="symbolValue80100">
+              67.55
+            </span>
+            <span id="symbolGrowth80100" class="symbol__growth symbol__growth_down" title="Daily Change">
+              1.46%
+            </span>
+          </div>
+        </a>
+      <a href="/en/quotes/overview" class="home-quote__button" title="More Symbols">
+        <img src="https://c.mql5.com/i/home/right-arrow.svg" width="24" height="24" alt="">
+      </a>
+        
+  </div>
+</div>
+  
+
+
+<div class="main-page__area main-page__area-market">
+  <div class="main-page__intro">
+    <h1><a href="/en/market">MQL5 Programs Market</a></h1>
+<p>Dozens of new automated trading applications appear in the MQL5 Market every day. Choose the right app among 10,000 products and forget about unnecessary routine operations of manual trading. </p>
+<p><a href="https://www.mql5.com/en/articles/401" target="_blank">Sell</a> your algorithmic trading programs through the largest store of trading applications!</p>
+  </div>
+
+  <div class="product-list_mobile-first-6">
+    <div class="product-list product-list_home">
+
+
+
+<div class="product-card">
+  <img class="product-card__main-logo" src="https://c.mql5.com/31/1454/quantum-queen-mt5-logo-200x200-5102.png" alt="Quantum Queen MT5" loading="lazy">
+  <div class="product-card__wrapper">
+    <div class="product-card__header">
+      <img class="product-card__logo" src="https://c.mql5.com/31/1454/quantum-queen-mt5-logo-200x200-5102.png" alt="Quantum Queen MT5" loading="lazy">
+      <a href="/en/market/product/118805?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="1 299.99" class="product-card__title">
+        <span class="product-card__title-wrapper">Quantum Queen MT5</span>
+      </a>
+      <div class="product-card__info">
+        <div class="product-card__author">Bogdan Ion Puscasu</div>
+        <div class="product-card__rating">
+          <div class="g-rating g-rating_sm g-rating_v50"></div>
+          <span class="g-rating__info">5 (209)</span>
+        </div>
+        <div class="product-card__category">
+          <i class="icons-market icons-market_expert"></i>
+          <span class="product-card__category-name"><a href="/en/market/mt5/expert">Experts</a></span>
+        </div>
+      </div>
+    </div>
+        <div class="product-card__description">Hello, traders! I am Quantum Queen, the newest and a very powerful addition to the Quantum Family of Expert Advisors. My specialty? GOLD. Yes, I trade the XAUUSD pair with precision and confidence, bringing you unparalleled trading opportunities on the glittering gold market. I am here to prove that I am the most advanced Gold trading Expert Advisor ever created.
+
+IMPORTANT! After the purchase please send me a private message to receive the installation manual and the setup instructions. 
+
+Live</div>
+    <div>
+      <a href="/en/market/product/118805?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="1 299.99" class="product-card__price">
+        1 299.99
+        USD
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<div class="product-card">
+  <img class="product-card__main-logo" src="https://c.mql5.com/31/1461/quantum-baron-logo-200x200-5387.png" alt="Quantum Baron" loading="lazy">
+  <div class="product-card__wrapper">
+    <div class="product-card__header">
+      <img class="product-card__logo" src="https://c.mql5.com/31/1461/quantum-baron-logo-200x200-5387.png" alt="Quantum Baron" loading="lazy">
+      <a href="/en/market/product/143402?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="1 999.99" class="product-card__title">
+        <span class="product-card__title-wrapper">Quantum Baron</span>
+      </a>
+      <div class="product-card__info">
+        <div class="product-card__author">Bogdan Ion Puscasu</div>
+        <div class="product-card__rating">
+          <div class="g-rating g-rating_sm g-rating_v50"></div>
+          <span class="g-rating__info">5 (9)</span>
+        </div>
+        <div class="product-card__category">
+          <i class="icons-market icons-market_expert"></i>
+          <span class="product-card__category-name"><a href="/en/market/mt5/expert">Experts</a></span>
+        </div>
+      </div>
+    </div>
+        <div class="product-card__description">Quantum Baron EA 
+There’s a reason oil is called black gold — and now, with Quantum Baron EA, you can tap into it with unmatched precision and confidence. Engineered to dominate the high-octane world of XTIUSD (Crude Oil) on the M30 chart, Quantum Baron is your ultimate weapon for leveling up and trading with elite precision.
+
+IMPORTANT! After the purchase please send me a private message to receive the installation manual and the setup instructions. 
+
+Live signal 1:&nbsp; CLICK 
+
+Discounted &nbsp; price</div>
+    <div>
+      <a href="/en/market/product/143402?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="1 999.99" class="product-card__price">
+        1 999.99
+        USD
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<div class="product-card">
+  <img class="product-card__main-logo" src="https://c.mql5.com/31/1454/quantum-emperor-mt5-logo-200x200-1491.png" alt="Quantum Emperor MT5" loading="lazy">
+  <div class="product-card__wrapper">
+    <div class="product-card__header">
+      <img class="product-card__logo" src="https://c.mql5.com/31/1454/quantum-emperor-mt5-logo-200x200-1491.png" alt="Quantum Emperor MT5" loading="lazy">
+      <a href="/en/market/product/103452?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="1 199.99" class="product-card__title">
+        <span class="product-card__title-wrapper">Quantum Emperor MT5</span>
+      </a>
+      <div class="product-card__info">
+        <div class="product-card__author">Bogdan Ion Puscasu</div>
+        <div class="product-card__rating">
+          <div class="g-rating g-rating_sm g-rating_v50"></div>
+          <span class="g-rating__info">4.87 (459)</span>
+        </div>
+        <div class="product-card__category">
+          <i class="icons-market icons-market_expert"></i>
+          <span class="product-card__category-name"><a href="/en/market/mt5/expert">Experts</a></span>
+        </div>
+      </div>
+    </div>
+        <div class="product-card__description">Introducing &nbsp; Quantum Emperor EA , the groundbreaking MQL5 expert advisor that's transforming the way you trade the prestigious GBPUSD pair! Developed by a team of experienced traders with trading experience of over 13 years. IMPORTANT! After the purchase please send me a private message to receive the installation manual and the setup instructions. ***Buy Quantum Emperor EA and you could get Quantum StarMan for free !*** Ask in private for more details Live Signal V5: Click Here 
+
+MT4 Version :</div>
+    <div>
+      <a href="/en/market/product/103452?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="1 199.99" class="product-card__price">
+        1 199.99
+        USD
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<div class="product-card">
+  <img class="product-card__main-logo" src="https://c.mql5.com/31/1396/alphacore-x-logo-200x200-2807.png" alt="AlphaCore X" loading="lazy">
+  <div class="product-card__wrapper">
+    <div class="product-card__header">
+      <img class="product-card__logo" src="https://c.mql5.com/31/1396/alphacore-x-logo-200x200-2807.png" alt="AlphaCore X" loading="lazy">
+      <a href="/en/market/product/139373?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="790.00" class="product-card__title">
+        <span class="product-card__title-wrapper">AlphaCore X</span>
+      </a>
+      <div class="product-card__info">
+        <div class="product-card__author">Arseny Potyekhin</div>
+        <div class="product-card__rating">
+          <div class="g-rating g-rating_sm g-rating_v50"></div>
+          <span class="g-rating__info">5 (9)</span>
+        </div>
+        <div class="product-card__category">
+          <i class="icons-market icons-market_expert"></i>
+          <span class="product-card__category-name"><a href="/en/market/mt5/expert">Experts</a></span>
+        </div>
+      </div>
+    </div>
+        <div class="product-card__description">AlphaCore X The AlphaCore X EA is a cutting-edge trading system that masters the complexity of financial markets with a unique combination of AI-driven analyses and data-based algorithms. By integrating ChatGPT-o1 , the latest GPT-4.5 , advanced machine learning models, and a robust big data approach, AlphaCore X achieves a new level of precision, adaptability, and efficiency. This Expert Advisor impresses with its innovative strategy, seamless AI interaction, and comprehensive additional featu</div>
+    <div>
+      <a href="/en/market/product/139373?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="790.00" class="product-card__price">
+        790
+        USD
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<div class="product-card">
+  <img class="product-card__main-logo" src="https://c.mql5.com/31/1441/quantum-bitcoin-ea-logo-200x200-2544.png" alt="Quantum Bitcoin EA" loading="lazy">
+  <div class="product-card__wrapper">
+    <div class="product-card__header">
+      <img class="product-card__logo" src="https://c.mql5.com/31/1441/quantum-bitcoin-ea-logo-200x200-2544.png" alt="Quantum Bitcoin EA" loading="lazy">
+      <a href="/en/market/product/127013?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="999.99" class="product-card__title">
+        <span class="product-card__title-wrapper">Quantum Bitcoin EA</span>
+      </a>
+      <div class="product-card__info">
+        <div class="product-card__author">Bogdan Ion Puscasu</div>
+        <div class="product-card__rating">
+          <div class="g-rating g-rating_sm g-rating_v50"></div>
+          <span class="g-rating__info">5 (104)</span>
+        </div>
+        <div class="product-card__category">
+          <i class="icons-market icons-market_expert"></i>
+          <span class="product-card__category-name"><a href="/en/market/mt5/expert">Experts</a></span>
+        </div>
+      </div>
+    </div>
+        <div class="product-card__description">Quantum Bitcoin EA : There is no such thing as impossible, it's only a matter of figuring out how to do it! 
+Step into the future of Bitcoin trading with Quantum Bitcoin EA , the latest masterpiece from one of the top MQL5 sellers. Designed for traders who demand performance, precision, and stability, Quantum Bitcoin redefines what's possible in the volatile world of cryptocurrency. 
+IMPORTANT! After the purchase please send me a private message to receive the installation manual and the setup i</div>
+    <div>
+      <a href="/en/market/product/127013?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="999.99" class="product-card__price">
+        999.99
+        USD
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<div class="product-card">
+  <img class="product-card__main-logo" src="https://c.mql5.com/31/1433/the-gold-reaper-mt5-logo-200x200-9222.png" alt="The Gold Reaper MT5" loading="lazy">
+  <div class="product-card__wrapper">
+    <div class="product-card__header">
+      <img class="product-card__logo" src="https://c.mql5.com/31/1433/the-gold-reaper-mt5-logo-200x200-9222.png" alt="The Gold Reaper MT5" loading="lazy">
+      <a href="/en/market/product/111357?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="599.00" class="product-card__title">
+        <span class="product-card__title-wrapper">The Gold Reaper MT5</span>
+      </a>
+      <div class="product-card__info">
+        <div class="product-card__author">Profalgo Limited</div>
+        <div class="product-card__rating">
+          <div class="g-rating g-rating_sm g-rating_v45"></div>
+          <span class="g-rating__info">4.37 (82)</span>
+        </div>
+        <div class="product-card__category">
+          <i class="icons-market icons-market_expert"></i>
+          <span class="product-card__category-name"><a href="/en/market/mt5/expert">Experts</a></span>
+        </div>
+      </div>
+    </div>
+        <div class="product-card__description">PROP FIRM READY! ( download SETFILE ) LAUNCH PROMO: Only a few copies left at current price! Final price: 990$ Get 1 EA for free (for 2 trade accounts) -&gt; contact me after purchase Ultimate Combo Deal &nbsp; -&gt; &nbsp; click here JOIN PUBLIC GROUP: &nbsp; Click here 
+Live Signal
+
+Welcome to the Gold Reaper! Build on the very succesfull Goldtrade Pro, this EA has been designed to run on multiple timeframes at the same time, and has the option to set the trade frequency from very conservative to extreme volatile</div>
+    <div>
+      <a href="/en/market/product/111357?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="599.00" class="product-card__price">
+        599
+        USD
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<div class="product-card">
+  <img class="product-card__main-logo" src="https://c.mql5.com/31/1428/icy-glory-logo-200x200-9946.png" alt="ZenX" loading="lazy">
+  <div class="product-card__wrapper">
+    <div class="product-card__header">
+      <img class="product-card__logo" src="https://c.mql5.com/31/1428/icy-glory-logo-200x200-9946.png" alt="ZenX" loading="lazy">
+      <a href="/en/market/product/142031?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="599.00" class="product-card__title">
+        <span class="product-card__title-wrapper">ZenX</span>
+      </a>
+      <div class="product-card__info">
+        <div class="product-card__author">Paulina Eremenko</div>
+        <div class="product-card__rating">
+          <div class="g-rating g-rating_sm g-rating_v45"></div>
+          <span class="g-rating__info">4.4 (5)</span>
+        </div>
+        <div class="product-card__category">
+          <i class="icons-market icons-market_expert"></i>
+          <span class="product-card__category-name"><a href="/en/market/mt5/expert">Experts</a></span>
+        </div>
+      </div>
+    </div>
+        <div class="product-card__description">ZenX EA – Market Intelligence through News &amp; Neural Sentiment Analysis ZenX was developed to capture economic news streams in real time and integrate them directly into the trading process.
+A neural network is used to interpret sentiment from text data and combine it with clear price action patterns.
+The result: targeted entries based on emotion and context – not just movement.
+
+(Please contact me after purchase to receive the associated instructions and the set file) Next Price &nbsp; -&gt; &nbsp; $749 Live</div>
+    <div>
+      <a href="/en/market/product/142031?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="599.00" class="product-card__price">
+        599
+        USD
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<div class="product-card">
+  <img class="product-card__main-logo" src="https://c.mql5.com/31/1444/the-bitcoin-reaper-logo-200x200-1142.png" alt="The Bitcoin Reaper" loading="lazy">
+  <div class="product-card__wrapper">
+    <div class="product-card__header">
+      <img class="product-card__logo" src="https://c.mql5.com/31/1444/the-bitcoin-reaper-logo-200x200-1142.png" alt="The Bitcoin Reaper" loading="lazy">
+      <a href="/en/market/product/142178?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="499.00" class="product-card__title">
+        <span class="product-card__title-wrapper">The Bitcoin Reaper</span>
+      </a>
+      <div class="product-card__info">
+        <div class="product-card__author">Profalgo Limited</div>
+        <div class="product-card__rating">
+          <div class="g-rating g-rating_sm g-rating_v40"></div>
+          <span class="g-rating__info">4.28 (25)</span>
+        </div>
+        <div class="product-card__category">
+          <i class="icons-market icons-market_expert"></i>
+          <span class="product-card__category-name"><a href="/en/market/mt5/expert">Experts</a></span>
+        </div>
+      </div>
+    </div>
+        <div class="product-card__description">LAUNCH PROMO: Only a very limited number of copies will be available at current price! Final Price: 999$ NEW (from 349$) --&gt; GET 1 EA FOR FREE (for 2 trade account numbers). 
+Ultimate Combo Deal &nbsp; -&gt; &nbsp; click here JOIN PUBLIC GROUP: &nbsp; Click here LIVE SIGNAL Welcome to the BITCOIN REAPER! &nbsp; After the Tremendous success of the Gold Reaper, I decided it is time to apply the same winning principles to the Bitcoin Market, and boy, does it look promising! &nbsp; I have been developing trading systems for o</div>
+    <div>
+      <a href="/en/market/product/142178?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="499.00" class="product-card__price">
+        499
+        USD
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<div class="product-card">
+  <img class="product-card__main-logo" src="https://c.mql5.com/31/1461/quantum-starman-logo-200x200-7042.png" alt="Quantum StarMan" loading="lazy">
+  <div class="product-card__wrapper">
+    <div class="product-card__header">
+      <img class="product-card__logo" src="https://c.mql5.com/31/1461/quantum-starman-logo-200x200-7042.png" alt="Quantum StarMan" loading="lazy">
+      <a href="/en/market/product/107189?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="999.99" class="product-card__title">
+        <span class="product-card__title-wrapper">Quantum StarMan</span>
+      </a>
+      <div class="product-card__info">
+        <div class="product-card__author">Bogdan Ion Puscasu</div>
+        <div class="product-card__rating">
+          <div class="g-rating g-rating_sm g-rating_v50"></div>
+          <span class="g-rating__info">4.93 (101)</span>
+        </div>
+        <div class="product-card__category">
+          <i class="icons-market icons-market_expert"></i>
+          <span class="product-card__category-name"><a href="/en/market/mt5/expert">Experts</a></span>
+        </div>
+      </div>
+    </div>
+        <div class="product-card__description">Hello everyone, let me introduce myself:
+
+I am Quantum StarMan, the electrifying, freshest member of the Quantum EAs family. 
+
+I'm a fully automated, multicurrency EA with the power to handle up to 5 dynamic pairs: AUDUSD, EURAUD, EURUSD, GBPUSD, and USDCAD . With the utmost precision and unwavering responsibility, I'll take your trading game to the next level. Here's the kicker: I don't rely on Martingale strategies. Instead, I utilize a sophisticated grid system that's designed for peak perfor</div>
+    <div>
+      <a href="/en/market/product/107189?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="999.99" class="product-card__price">
+        999.99
+        USD
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<div class="product-card">
+  <img class="product-card__main-logo" src="https://c.mql5.com/31/1449/ai-deeplayer-dynamics-mt5-logo-200x200-5216.png" alt="AI DeepLayer Dynamics MT5" loading="lazy">
+  <div class="product-card__wrapper">
+    <div class="product-card__header">
+      <img class="product-card__logo" src="https://c.mql5.com/31/1449/ai-deeplayer-dynamics-mt5-logo-200x200-5216.png" alt="AI DeepLayer Dynamics MT5" loading="lazy">
+      <a href="/en/market/product/140426?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="550.00" class="product-card__title">
+        <span class="product-card__title-wrapper">AI DeepLayer Dynamics MT5</span>
+      </a>
+      <div class="product-card__info">
+        <div class="product-card__author">Peter Robert Grange</div>
+        <div class="product-card__rating">
+          <div class="g-rating g-rating_sm g-rating_v50"></div>
+          <span class="g-rating__info">5 (2)</span>
+        </div>
+        <div class="product-card__category">
+          <i class="icons-market icons-market_expert"></i>
+          <span class="product-card__category-name"><a href="/en/market/mt5/expert">Experts</a></span>
+        </div>
+      </div>
+    </div>
+        <div class="product-card__description">DeepLayer Dynamics Multisymbol Neural Scalper with Quad-Strategy Adaptive Architecture DeepLayer Dynamics represents a next-generation evolution in the Dynamics series — a cutting-edge Expert Advisor built on advanced algorithmic logic and a multi-symbol operational framework.
+It is designed to run simultaneously across the following 10 instruments :
+XAUUSD, GBPUSD, US500, USDJPY, EURUSD, AUDUSD, USDCAD, USDCHF, XAGUSD, AUDCHF The system combines high-precision scalping with real-time responsiv</div>
+    <div>
+      <a href="/en/market/product/140426?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="550.00" class="product-card__price">
+        550
+        USD
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<div class="product-card">
+  <img class="product-card__main-logo" src="https://c.mql5.com/31/1466/ai-gold-sniper-mt5-logo-200x200-1622.png" alt="AI Gold Sniper MT5" loading="lazy">
+  <div class="product-card__wrapper">
+    <div class="product-card__header">
+      <img class="product-card__logo" src="https://c.mql5.com/31/1466/ai-gold-sniper-mt5-logo-200x200-1622.png" alt="AI Gold Sniper MT5" loading="lazy">
+      <a href="/en/market/product/133197?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="399.00" class="product-card__title">
+        <span class="product-card__title-wrapper">AI Gold Sniper MT5</span>
+      </a>
+      <div class="product-card__info">
+        <div class="product-card__author">Ho Tuan Thang</div>
+        <div class="product-card__rating">
+          <div class="g-rating g-rating_sm g-rating_v50"></div>
+          <span class="g-rating__info">5 (3)</span>
+        </div>
+        <div class="product-card__category">
+          <i class="icons-market icons-market_expert"></i>
+          <span class="product-card__category-name"><a href="/en/market/mt5/expert">Experts</a></span>
+        </div>
+      </div>
+    </div>
+        <div class="product-card__description">Forex EA Trading Channel on MQL5:&nbsp; Join my MQL5 channel to update the latest news from me.&nbsp; My community of over 14,000 members on MQL5 . 
+ONLY 3 COPIES OUT OF 10 LEFT AT $399! After that, the price will be raised to $499.
+
+- REAL SIGNAL&nbsp; Low Risk:&nbsp; https://www.mql5.com/en/signals/2302784 
+IC Markets - High Risk: &nbsp; https://www.mql5.com/en/signals/2310008 
+Full installation instructions for EA AI Gold Sniper to work properly are updated at &nbsp; comment #3 
+
+AI Gold Sniper applies the latest GPT-4o </div>
+    <div>
+      <a href="/en/market/product/133197?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="399.00" class="product-card__price">
+        399
+        USD
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<div class="product-card">
+  <img class="product-card__main-logo" src="https://c.mql5.com/31/1243/trade-assistant-mt5-logo-200x200-4863.png" alt="Trade Assistant MT5" loading="lazy">
+  <div class="product-card__wrapper">
+    <div class="product-card__header">
+      <img class="product-card__logo" src="https://c.mql5.com/31/1243/trade-assistant-mt5-logo-200x200-4863.png" alt="Trade Assistant MT5" loading="lazy">
+      <a href="/en/market/product/23415?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="100.00" class="product-card__title">
+        <span class="product-card__title-wrapper">Trade Assistant MT5</span>
+      </a>
+      <div class="product-card__info">
+        <div class="product-card__author">Evgeniy Kravchenko</div>
+        <div class="product-card__rating">
+          <div class="g-rating g-rating_sm g-rating_v45"></div>
+          <span class="g-rating__info">4.43 (188)</span>
+        </div>
+        <div class="product-card__category">
+          <i class="icons-market icons-market_utility"></i>
+          <span class="product-card__category-name"><a href="/en/market/mt5/utility">Utilities</a></span>
+        </div>
+      </div>
+    </div>
+        <div class="product-card__description">It helps to calculate the risk per trade, the easy installation of a new order, order management with partial closing functions, trailing stop of 7 types and other useful functions. 
+Additional materials and instructions
+Installation instructions - Application instructions - Trial version of the application for a demo account 
+Line function - &nbsp; shows on the chart the Opening line, Stop Loss, Take Profit. With this function it is easy to set a new order and see its additional characteristics bef</div>
+    <div>
+      <a href="/en/market/product/23415?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="100.00" class="product-card__price">
+        100
+        USD
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<div class="product-card">
+  <img class="product-card__main-logo" src="https://c.mql5.com/31/1386/aura-black-edition-mt5-logo-200x200-8408.png" alt="Aura Black Edition MT5" loading="lazy">
+  <div class="product-card__wrapper">
+    <div class="product-card__header">
+      <img class="product-card__logo" src="https://c.mql5.com/31/1386/aura-black-edition-mt5-logo-200x200-8408.png" alt="Aura Black Edition MT5" loading="lazy">
+      <a href="/en/market/product/64961?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="1 500.00" class="product-card__title">
+        <span class="product-card__title-wrapper">Aura Black Edition MT5</span>
+      </a>
+      <div class="product-card__info">
+        <div class="product-card__author">Stanislav Tomilov</div>
+        <div class="product-card__rating">
+          <div class="g-rating g-rating_sm g-rating_v45"></div>
+          <span class="g-rating__info">4.38 (39)</span>
+        </div>
+        <div class="product-card__category">
+          <i class="icons-market icons-market_expert"></i>
+          <span class="product-card__category-name"><a href="/en/market/mt5/expert">Experts</a></span>
+        </div>
+      </div>
+    </div>
+        <div class="product-card__description">Aura Black Edition&nbsp;is a fully automated EA designed to trade&nbsp;GOLD&nbsp;only. Expert showed stable results on XAUUSD in 2011-2020 period. No dangerous methods of money management used, no martingale, no grid or scalp. Suitable for any broker conditions. EA trained with a&nbsp;multilayer perceptron&nbsp;Neural Network&nbsp;(MLP) is a class of&nbsp;feedforward&nbsp;artificial neural network&nbsp;(ANN). The term MLP is used ambiguously, sometimes loosely to&nbsp;any&nbsp;feedforward ANN, sometimes strictly to refer to networks composed of mult</div>
+    <div>
+      <a href="/en/market/product/64961?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="1 500.00" class="product-card__price">
+        1 500
+        USD
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<div class="product-card">
+  <img class="product-card__main-logo" src="https://c.mql5.com/31/1461/swing-master-ea-logo-200x200-6649.png" alt="Swing Master EA" loading="lazy">
+  <div class="product-card__wrapper">
+    <div class="product-card__header">
+      <img class="product-card__logo" src="https://c.mql5.com/31/1461/swing-master-ea-logo-200x200-6649.png" alt="Swing Master EA" loading="lazy">
+      <a href="/en/market/product/137361?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="599.00" class="product-card__title">
+        <span class="product-card__title-wrapper">Swing Master EA</span>
+      </a>
+      <div class="product-card__info">
+        <div class="product-card__author">Ihor Otkydach</div>
+        <div class="product-card__rating">
+          <div class="g-rating g-rating_sm g-rating_v50"></div>
+          <span class="g-rating__info">4.83 (54)</span>
+        </div>
+        <div class="product-card__category">
+          <i class="icons-market icons-market_expert"></i>
+          <span class="product-card__category-name"><a href="/en/market/mt5/expert">Experts</a></span>
+        </div>
+      </div>
+    </div>
+        <div class="product-card__description">Let me introduce you to an Expert Advisor, built on the foundation of my manual trading system — Algo Pumping .&nbsp;I seriously upgraded this strat, loaded it with key tweaks, filters, and tech hacks, and now I’m dropping a trading bot that: Crushes the markets with the advanced Algo Pumping Swing Trading algorithm, Slaps Stop Loss orders to protect your account, Perfectly fits both "Prop Firm Trading" and "Personal Trading", Trades clean without martingale or crazy grid systems, Runs on the M15 tim</div>
+    <div>
+      <a href="/en/market/product/137361?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="599.00" class="product-card__price">
+        599
+        USD
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<div class="product-card">
+  <img class="product-card__main-logo" src="https://c.mql5.com/31/1376/ai-neuro-dynamics-mt5-logo-200x200-8040.png" alt="AI Neuro Dynamics MT5" loading="lazy">
+  <div class="product-card__wrapper">
+    <div class="product-card__header">
+      <img class="product-card__logo" src="https://c.mql5.com/31/1376/ai-neuro-dynamics-mt5-logo-200x200-8040.png" alt="AI Neuro Dynamics MT5" loading="lazy">
+      <a href="/en/market/product/134465?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="599.00" class="product-card__title">
+        <span class="product-card__title-wrapper">AI Neuro Dynamics MT5</span>
+      </a>
+      <div class="product-card__info">
+        <div class="product-card__author">Peter Robert Grange</div>
+        <div class="product-card__rating">
+          <div class="g-rating g-rating_sm g-rating_v45"></div>
+          <span class="g-rating__info">4.64 (11)</span>
+        </div>
+        <div class="product-card__category">
+          <i class="icons-market icons-market_expert"></i>
+          <span class="product-card__category-name"><a href="/en/market/mt5/expert">Experts</a></span>
+        </div>
+      </div>
+    </div>
+        <div class="product-card__description">AI Neuro Dynamics EA Adaptive Signal Architecture for XAU/USD | H1 AI Neuro Dynamics is more than just an Expert Advisor — it is a modular cognitive trading system built for precision and adaptability on the XAU/USD (Gold) pair. Designed for high-volatility environments, it fully complies with the performance and risk requirements of prop firm standards. Powered by a proprietary neuro-quantum decision architecture , the EA evaluates market structure in real time, dynamically adjusting its inter</div>
+    <div>
+      <a href="/en/market/product/134465?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="599.00" class="product-card__price">
+        599
+        USD
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<div class="product-card">
+  <img class="product-card__main-logo" src="https://c.mql5.com/31/1420/ultimate-breakout-system-logo-200x200-3928.png" alt="Ultimate Breakout System" loading="lazy">
+  <div class="product-card__wrapper">
+    <div class="product-card__header">
+      <img class="product-card__logo" src="https://c.mql5.com/31/1420/ultimate-breakout-system-logo-200x200-3928.png" alt="Ultimate Breakout System" loading="lazy">
+      <a href="/en/market/product/133653?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="1 249.00" class="product-card__title">
+        <span class="product-card__title-wrapper">Ultimate Breakout System</span>
+      </a>
+      <div class="product-card__info">
+        <div class="product-card__author">Profalgo Limited</div>
+        <div class="product-card__rating">
+          <div class="g-rating g-rating_sm g-rating_v50"></div>
+          <span class="g-rating__info">5 (22)</span>
+        </div>
+        <div class="product-card__category">
+          <i class="icons-market icons-market_expert"></i>
+          <span class="product-card__category-name"><a href="/en/market/mt5/expert">Experts</a></span>
+        </div>
+      </div>
+    </div>
+        <div class="product-card__description">IMPORTANT : This package will only be sold at current price for a very limited number of copies. &nbsp;&nbsp; Price will go to 1499$ very fast &nbsp;&nbsp; +100 Strategies included and more coming! 
+BONUS : At 999$ or higher price --&gt; choose 5 &nbsp;of my other EA's for free!&nbsp; ALL SET FILES COMPLETE SETUP AND OPTIMIZATION GUIDE VIDEO GUIDE LIVE SIGNALS REVIEW (3rd party) 
+Welcome to the ULTIMATE BREAKOUT SYSTEM! I'm pleased to present the Ultimate Breakout System, a sophisticated and proprietary Expert Advisor (EA) met</div>
+    <div>
+      <a href="/en/market/product/133653?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="1 249.00" class="product-card__price">
+        1 249
+        USD
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<div class="product-card">
+  <img class="product-card__main-logo" src="https://c.mql5.com/31/1042/big-forex-players-mt5-logo-200x200-3102.png" alt="Big Forex Players MT5" loading="lazy">
+  <div class="product-card__wrapper">
+    <div class="product-card__header">
+      <img class="product-card__logo" src="https://c.mql5.com/31/1042/big-forex-players-mt5-logo-200x200-3102.png" alt="Big Forex Players MT5" loading="lazy">
+      <a href="/en/market/product/92199?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="2 499.00" class="product-card__title">
+        <span class="product-card__title-wrapper">Big Forex Players MT5</span>
+      </a>
+      <div class="product-card__info">
+        <div class="product-card__author">MQL TOOLS SL</div>
+        <div class="product-card__rating">
+          <div class="g-rating g-rating_sm g-rating_v45"></div>
+          <span class="g-rating__info">4.72 (106)</span>
+        </div>
+        <div class="product-card__category">
+          <i class="icons-market icons-market_expert"></i>
+          <span class="product-card__category-name"><a href="/en/market/mt5/expert">Experts</a></span>
+        </div>
+      </div>
+    </div>
+        <div class="product-card__description">We proudly present our cutting-edge robot, the&nbsp; Big Forex Players EA &nbsp;designed to maximize your trading potential, minimize emotional trading, and make smarter decisions powered by cutting-edge technology. The whole system in this EA took us many months to build, and then we spent a lot of time testing it.&nbsp;This unique EA includes three distinct strategies that can be used independently or in together.&nbsp;The robot receives the positions of the&nbsp; biggest&nbsp;Banks &nbsp;(positions are sent from our database t</div>
+    <div>
+      <a href="/en/market/product/92199?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="2 499.00" class="product-card__price">
+        2 499
+        USD
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<div class="product-card">
+  <img class="product-card__main-logo" src="https://c.mql5.com/31/1430/neonscalper-logo-200x200-4255.png" alt="NeonScalper" loading="lazy">
+  <div class="product-card__wrapper">
+    <div class="product-card__header">
+      <img class="product-card__logo" src="https://c.mql5.com/31/1430/neonscalper-logo-200x200-4255.png" alt="NeonScalper" loading="lazy">
+      <a href="/en/market/product/142170?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="300.00" class="product-card__title">
+        <span class="product-card__title-wrapper">NeonScalper</span>
+      </a>
+      <div class="product-card__info">
+        <div class="product-card__author">Jorge Luiz Guimaraes De Araujo Dias</div>
+        <div class="product-card__rating">
+          <div class="g-rating g-rating_sm g-rating_v45"></div>
+          <span class="g-rating__info">4.5 (8)</span>
+        </div>
+        <div class="product-card__category">
+          <i class="icons-market icons-market_expert"></i>
+          <span class="product-card__category-name"><a href="/en/market/mt5/expert">Experts</a></span>
+        </div>
+      </div>
+    </div>
+        <div class="product-card__description">NeonScalper EA - Safe &amp; Reliable Gold Trading Robot Professional Automated Trading for XAUUSD (Gold) on M5 Timeframe NeonScalper EA is an expert advisor designed for trading XAUUSD (Gold) on the 5-minute timeframe (M5). It employs a breakout-based scalping strategy with strict risk management, delivering consistent performance without relying on high-risk methods such as Martingale or Grid trading. Important : Use a low&nbsp; spread account &nbsp;for optimal performance. After &nbsp;purchasing, contact the sel</div>
+    <div>
+      <a href="/en/market/product/142170?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="300.00" class="product-card__price">
+        300
+        USD
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<div class="product-card">
+  <img class="product-card__main-logo" src="https://c.mql5.com/31/1451/enslaver-logo-200x200-4908.png" alt="Enslaver" loading="lazy">
+  <div class="product-card__wrapper">
+    <div class="product-card__header">
+      <img class="product-card__logo" src="https://c.mql5.com/31/1451/enslaver-logo-200x200-4908.png" alt="Enslaver" loading="lazy">
+      <a href="/en/market/product/143922?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="399.00" class="product-card__title">
+        <span class="product-card__title-wrapper">Enslaver</span>
+      </a>
+      <div class="product-card__info">
+        <div class="product-card__author">Ihor Otkydach</div>
+        <div class="product-card__rating">
+          <div class="g-rating g-rating_sm g-rating_v00"></div>
+          <span class="g-rating__info"> </span>
+        </div>
+        <div class="product-card__category">
+          <i class="icons-market icons-market_expert"></i>
+          <span class="product-card__category-name"><a href="/en/market/mt5/expert">Experts</a></span>
+        </div>
+      </div>
+    </div>
+        <div class="product-card__description">6 copies left at 399 USD Next price 499 USD The installation and setup guide is available here –&nbsp; https://www.mql5.com/en/blogs/post/763390 Why do I like Enslaver EA, and why might you like it too?
+Every trade is protected by a Stop Loss Can be used for prop firm trading The EA doesn’t wait for Stop Loss to be hit — it exits the market early when price returns to the average, with any result (profit or loss) It’s a multi-currency EA (8 currency pairs), so while one pair may be in drawdown, anoth</div>
+    <div>
+      <a href="/en/market/product/143922?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="399.00" class="product-card__price">
+        399
+        USD
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<div class="product-card">
+  <img class="product-card__main-logo" src="https://c.mql5.com/31/1434/aiq-logo-200x200-4696.png" alt="AiQ" loading="lazy">
+  <div class="product-card__wrapper">
+    <div class="product-card__header">
+      <img class="product-card__logo" src="https://c.mql5.com/31/1434/aiq-logo-200x200-4696.png" alt="AiQ" loading="lazy">
+      <a href="/en/market/product/134329?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="1 837.97" class="product-card__title">
+        <span class="product-card__title-wrapper">AiQ</span>
+      </a>
+      <div class="product-card__info">
+        <div class="product-card__author">William Brandon Autry</div>
+        <div class="product-card__rating">
+          <div class="g-rating g-rating_sm g-rating_v50"></div>
+          <span class="g-rating__info">4.85 (33)</span>
+        </div>
+        <div class="product-card__category">
+          <i class="icons-market icons-market_expert"></i>
+          <span class="product-card__category-name"><a href="/en/market/mt5/expert">Experts</a></span>
+        </div>
+      </div>
+    </div>
+        <div class="product-card__description">Introducing AIQ Version 3.0+—The Most Advanced Autonomous Trading Intelligence Ever Built I'm thrilled to unveil AIQ (Autonomous Intelligence) Version 3.0+, a monumental leap forward in AI-powered trading technology. This release features access to over 300+ AI models including 55+ FREE integrated AI models, plus premium models like the powerful new Grok 4, massively enhanced web search capabilities, new Analyst/Risk Manager roles, comprehensive initial market checks, and revolutionary improvem</div>
+    <div>
+      <a href="/en/market/product/134329?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="1 837.97" class="product-card__price">
+        1 837.97
+        USD
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<div class="product-card">
+  <img class="product-card__main-logo" src="https://c.mql5.com/31/1383/ai-zeropoint-dynamics-mt5-logo-200x200-4072.png" alt="AI ZeroPoint Dynamics MT5" loading="lazy">
+  <div class="product-card__wrapper">
+    <div class="product-card__header">
+      <img class="product-card__logo" src="https://c.mql5.com/31/1383/ai-zeropoint-dynamics-mt5-logo-200x200-4072.png" alt="AI ZeroPoint Dynamics MT5" loading="lazy">
+      <a href="/en/market/product/138199?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="499.00" class="product-card__title">
+        <span class="product-card__title-wrapper">AI ZeroPoint Dynamics MT5</span>
+      </a>
+      <div class="product-card__info">
+        <div class="product-card__author">Peter Robert Grange</div>
+        <div class="product-card__rating">
+          <div class="g-rating g-rating_sm g-rating_v50"></div>
+          <span class="g-rating__info">5 (11)</span>
+        </div>
+        <div class="product-card__category">
+          <i class="icons-market icons-market_expert"></i>
+          <span class="product-card__category-name"><a href="/en/market/mt5/expert">Experts</a></span>
+        </div>
+      </div>
+    </div>
+        <div class="product-card__description">AI ZeroPoint Dynamics EA Cognitive Signal Architecture | Multi-Asset Precision Engine “Not an EA. Not a strategy. A living system of inference, adaptation, and execution.” BORN FROM THE ZERO POINT AI ZeroPoint Dynamics EA is not built — it is calibrated.
+Not coded — but architected to function as a real-time cognitive organism , responding to markets with a depth of reasoning that mirrors human decision-making — yet surpasses it in scale, consistency, and velocity. At the heart of ZeroPoint lie</div>
+    <div>
+      <a href="/en/market/product/138199?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="499.00" class="product-card__price">
+        499
+        USD
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<div class="product-card">
+  <img class="product-card__main-logo" src="https://c.mql5.com/31/1363/thor-forex-hammer-usdjpy-mt5-ict-power-of-three-logo-200x200-5016.png" alt="THOR Forex Hammer usdjpy mt5 ict power of three" loading="lazy">
+  <div class="product-card__wrapper">
+    <div class="product-card__header">
+      <img class="product-card__logo" src="https://c.mql5.com/31/1363/thor-forex-hammer-usdjpy-mt5-ict-power-of-three-logo-200x200-5016.png" alt="THOR Forex Hammer usdjpy mt5 ict power of three" loading="lazy">
+      <a href="/en/market/product/136362?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="299.00" class="product-card__title">
+        <span class="product-card__title-wrapper">THOR Forex Hammer usdjpy mt5 ict power of three</span>
+      </a>
+      <div class="product-card__info">
+        <div class="product-card__author">Damiem Marchand De Campos</div>
+        <div class="product-card__rating">
+          <div class="g-rating g-rating_sm g-rating_v50"></div>
+          <span class="g-rating__info">5 (4)</span>
+        </div>
+        <div class="product-card__category">
+          <i class="icons-market icons-market_expert"></i>
+          <span class="product-card__category-name"><a href="/en/market/mt5/expert">Experts</a></span>
+        </div>
+      </div>
+    </div>
+        <div class="product-card__description">EXPERT for YOUR OWN ACCOUNT - This Expert Advisor has been designed, developed and optimized especially for your own use. 
+This is a powerful Expert Advisor (EA) for taking advantage of the best and biggest opportunities in the USDJPY symbol, in all phases of the trend, from start to finish, on the H1 timeframe and on the MT5 platform. Impressive accuracy, performance and consistency in backtests over the last 3 years. The EA works like a hunter, a sniper, analyzing the price movement, its stre</div>
+    <div>
+      <a href="/en/market/product/136362?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="299.00" class="product-card__price">
+        299
+        USD
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<div class="product-card">
+  <img class="product-card__main-logo" src="https://c.mql5.com/31/1359/aura-neuron-mt5-logo-200x200-4436.png" alt="Aura Neuron MT5" loading="lazy">
+  <div class="product-card__wrapper">
+    <div class="product-card__header">
+      <img class="product-card__logo" src="https://c.mql5.com/31/1359/aura-neuron-mt5-logo-200x200-4436.png" alt="Aura Neuron MT5" loading="lazy">
+      <a href="/en/market/product/123089?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="1 000.00" class="product-card__title">
+        <span class="product-card__title-wrapper">Aura Neuron MT5</span>
+      </a>
+      <div class="product-card__info">
+        <div class="product-card__author">Stanislav Tomilov</div>
+        <div class="product-card__rating">
+          <div class="g-rating g-rating_sm g-rating_v45"></div>
+          <span class="g-rating__info">4.76 (42)</span>
+        </div>
+        <div class="product-card__category">
+          <i class="icons-market icons-market_expert"></i>
+          <span class="product-card__category-name"><a href="/en/market/mt5/expert">Experts</a></span>
+        </div>
+      </div>
+    </div>
+        <div class="product-card__description">Aura Neuron is a distinctive Expert Advisor that continues the Aura series of trading systems. By leveraging advanced Neural Networks and cutting-edge classic trading strategies, Aura Neuron offers an innovative approach with excellent potential performance. Fully automated, this Expert Advisor is designed to trade currency pairs such as XAUUSD (GOLD). It has demonstrated consistent stability across these pairs from 1999 to 2023. The system avoids dangerous money management techniques, such as m</div>
+    <div>
+      <a href="/en/market/product/123089?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="1 000.00" class="product-card__price">
+        1 000
+        USD
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<div class="product-card">
+  <img class="product-card__main-logo" src="https://c.mql5.com/31/1079/bitcoin-robot-mt5-logo-200x200-2796.png" alt="Bitcoin Robot MT5" loading="lazy">
+  <div class="product-card__wrapper">
+    <div class="product-card__header">
+      <img class="product-card__logo" src="https://c.mql5.com/31/1079/bitcoin-robot-mt5-logo-200x200-2796.png" alt="Bitcoin Robot MT5" loading="lazy">
+      <a href="/en/market/product/114522?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="1 999.00" class="product-card__title">
+        <span class="product-card__title-wrapper">Bitcoin Robot MT5</span>
+      </a>
+      <div class="product-card__info">
+        <div class="product-card__author">MQL TOOLS SL</div>
+        <div class="product-card__rating">
+          <div class="g-rating g-rating_sm g-rating_v45"></div>
+          <span class="g-rating__info">4.61 (119)</span>
+        </div>
+        <div class="product-card__category">
+          <i class="icons-market icons-market_expert"></i>
+          <span class="product-card__category-name"><a href="/en/market/mt5/expert">Experts</a></span>
+        </div>
+      </div>
+    </div>
+        <div class="product-card__description">The Bitcoin Robot MT5 is engineered to execute Bitcoin trades with unparalleled efficiency and precision . Developed by a team of experienced traders and developers, our Bitcoin Robot employs a sophisticated algorithmic approach (price action, trend as well as two personalized indicators) to analyze market and execute trades swiftly with M5 timeframe , ensuring that you never miss out on lucrative opportunities. No grid, no martingale, no hedging, EA only open one position at the same time. Bit</div>
+    <div>
+      <a href="/en/market/product/114522?source=Site+Main+Rating006" target="_blank" data-fz-event="MQL5+HomePage+Product+Click" data-fz-unit="USD" data-fz-value="1 999.00" class="product-card__price">
+        1 999
+        USD
+      </a>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+
+
+  
+
+
+<div class="main-page__area main-page__area-signals">
+  <div class="main-page__intro">
+    <h2><a href="/en/signals">Trading Signals</a></h2>
+<p>Choose a suitable trading strategy and subscribe to it with a few clicks. All Signals are provided with detailed statistics and informative charts. </p>
+<p><a href="https://www.mql5.com/en/articles/591" target="_blank">Become</a> a trading signal provider and sell subscriptions to thousands of traders around the world. 
+With the Signals service, your successful strategy can generate income with a small start-up budget!</p>          
+  </div>
+
+    <div class="main-page__area-sections main-page__area-sections-signals">
+        <div class="signal-card-list main-page__area-section main-page__area-section-signals">
+
+
+<div class="signal-card">
+  <a class="signal-card__wrapper" data-fz-event="MQL5+HomePage+Signal+Click" href="/en/signals/2271402?source=Site+Main">
+    <span class="signal-card__header">
+      <span class="signal-card__avatar">
+        <span onclick="document.location.href='/en/users/victor_can69';return false;"> <img src="https://c.mql5.com/avatar/2024/11/67445dcd-c4e9.jpg" title="Victor Gomez Sanchez" alt="Victor Gomez Sanchez" loading="lazy" width="48" height="48"></span>
+<span class="ui-icon-flags ui-icon-flags_bg-es"></span>             <span title="Real Account" class="icons-ux icons-ux_shield"></span>
+      </span>
+      <span class="signal-card__author"><span class="signal-card__author__item">Victor Gomez Sanchez</span></span>
+      <div class="signal-card__rating">
+        <div class="g-rating g-rating_sm g-rating_v25"></div>
+        <span class="g-rating__info">2.59 (25)</span>
+      </div>
+    </span>
+    <span class="signal-card__chart-area">
+      <span class="signal-card__title"><span class="signal-card__title-wrapper">Deux ex machina</span></span>
+      <span class="signal-card__growth">
+        <span class="signal-card__growth-value green">4 676%</span>
+          <span class="signal-card__growth-label">growth since 2021</span>
+      </span>
+        <span class="signal-card__chart s-avatar-chart" data-period="W1">
+          <input value="[1620518400,0,1620604800,5.49,1621814400,11.62,1623024000,16.67,1625443200,17.73,1626652800,18.51,1627862400,34.29,1630281600,39.86,1631491200,43.51,1632700800,45.51,1633910400,49.71,1635120000,67.67,1636329600,72.72,1637539200,75.95,1638748800,81.27,1642377600,111.53,1643587200,115.6,1645401600,121.01,1646611200,127.93,1647820800,151.92,1649030400,167.06,1650844800,185.29,1652054400,218.12,1653264000,224.28,1654473600,240.83,1655683200,254.26,1656892800,279.58,1660521600,305.99,1661731200,323.67,1662940800,333.76,1664150400,349.51,1665360000,439.04,1666569600,447.49,1667779200,517.75,1668988800,545.98,1670198400,599.92,1671408000,673.35,1673827200,679.33,1675641600,870.01,1676851200,908.25,1680480000,978.89,1682294400,1007.24,1684108800,1117.47,1685318400,1239.88,1686528000,1274.42,1687737600,1312.77,1689552000,1333.01,1690761600,1513,1691971200,1620.41,1693180800,1666.52,1695600000,1705.1,1697414400,1762.25,1698624000,2075.41,1699833600,2355.37,1705276800,2490.9,1707696000,2600.5,1708905600,2738.78,1710115200,2756.01,1711324800,2819.47,1712534400,2914.7,1713744000,3061.62,1714953600,3142.9,1716163200,3242.25,1717372800,3267.43,1718582400,3282.64,1721606400,3315.73,1722816000,3367.92,1724025600,3678.79,1725235200,3782.97,1726444800,3810.3,1727654400,3889.74,1728864000,4080.4,1730678400,4136.28,1731888000,4246.27,1733097600,4517.51,1734307200,4663.85,1736726400,4952.42,1739145600,5070,1740355200,5206.72,1741564800,4825.88,1742774400,5381.48,1743984000,4843.33,1745193600,4867.55,1746403200,4503.98,1747612800,4380.36,1748822400,4405.25,1750032000,4459.46,1751241600,4521.62,1752451200,4653.6]" type="hidden">
+        <canvas class="nav-card__canvas" width="354" height="110" style="width: 354px; height: 110px;"></canvas><canvas class="nav-card__canvas-point" width="354" height="110" style="width: 354px; height: 110px;"></canvas></span>
+    </span>
+    <span class="signal-card__indicators">
+          <span class="signal-card__risk">
+            <span class="risk-bars-rel1" title="Reliability evaluates the risks of the signal relative to other ones in %. The higher the value, the more reliable the signal."></span>
+            <span class="signal-card__label">Reliability</span>
+          </span>
+
+      <span class="signal-card__algotrading">
+        <span class="risk-bars-algo val5" title="Trades made by Expert Advisors"></span>&nbsp;99%
+        <span class="signal-card__label">Algo trading</span>
+      </span>
+
+      <span class="signal-card__subscribers">
+        <span class="signal-card__subscribers-wrapper" title="Subscribers">
+          <span class="s-subscribers-icon"></span>
+          <span class="signal-card__subscribers-value">15</span>
+        </span>
+      </span>
+    </span>
+      <span class="signal-card__copy" data-name="Deux ex machina" data-mt="5" data-id="2271402" data-price="30" data-balance="3.3K" data-facilities="114K" data-weeks="219">
+Copy for&nbsp;30&nbsp;<span class="signal-card__copy-currency">USD</span>&nbsp;per&nbsp;month        </span>
+  </a>
+</div>
+
+
+
+<div class="signal-card">
+  <a class="signal-card__wrapper" data-fz-event="MQL5+HomePage+Signal+Click" href="/en/signals/2206840?source=Site+Main">
+    <span class="signal-card__header">
+      <span class="signal-card__avatar">
+        <span onclick="document.location.href='/en/users/kevinkg00';return false;"> <img src="https://c.mql5.com/avatar/2025/1/6777f000-a361.png" title="Do Tat Thanh" alt="Do Tat Thanh" loading="lazy" width="48" height="48"></span>
+<span class="ui-icon-flags ui-icon-flags_bg-vn"></span>             <span title="Real Account" class="icons-ux icons-ux_shield"></span>
+      </span>
+      <span class="signal-card__author"><span class="signal-card__author__item">Do Tat Thanh</span></span>
+      <div class="signal-card__rating">
+        <div class="g-rating g-rating_sm g-rating_v30"></div>
+        <span class="g-rating__info">3 (3)</span>
+      </div>
+    </span>
+    <span class="signal-card__chart-area">
+      <span class="signal-card__title"><span class="signal-card__title-wrapper">FXCE 508</span></span>
+      <span class="signal-card__growth">
+        <span class="signal-card__growth-value green">1 977%</span>
+          <span class="signal-card__growth-label">growth since 2024</span>
+      </span>
+        <span class="signal-card__chart s-avatar-chart" data-period="W1">
+          <input value="[1708819200,0,1708905600,0.37,1710115200,3.86,1711324800,7.97,1712534400,10.92,1713744000,17.15,1714953600,23.28,1716163200,29.48,1717372800,33.69,1718582400,41.01,1719792000,49.31,1721001600,54.05,1722211200,63.85,1723420800,78.18,1724630400,88.03,1725840000,95.32,1727049600,99.74,1728259200,124.41,1729468800,133.47,1730678400,152.98,1731888000,169.81,1733097600,181.9,1734307200,222.53,1735516800,237.82,1736726400,275.3,1737936000,303.41,1739145600,348.23,1740355200,365.99,1741564800,448.88,1742774400,533.93,1745193600,695.63,1746403200,887.53,1747612800,1214.63,1748822400,1417.56,1750032000,1587.07,1751241600,1811.07,1752451200,1893.64,1753228800,1977.07]" type="hidden">
+        <canvas class="nav-card__canvas" width="354" height="110" style="width: 354px; height: 110px;"></canvas><canvas class="nav-card__canvas-point" width="354" height="110" style="width: 354px; height: 110px;"></canvas></span>
+    </span>
+    <span class="signal-card__indicators">
+          <span class="signal-card__risk">
+            <span class="risk-bars-rel1" title="Reliability evaluates the risks of the signal relative to other ones in %. The higher the value, the more reliable the signal."></span>
+            <span class="signal-card__label">Reliability</span>
+          </span>
+
+      <span class="signal-card__algotrading">
+        <span class="risk-bars-algo val0" title="Trades made by Expert Advisors"></span>&nbsp;0%
+        <span class="signal-card__label">Algo trading</span>
+      </span>
+
+      <span class="signal-card__subscribers">
+        <span class="signal-card__subscribers-wrapper" title="Subscribers">
+          <span class="s-subscribers-icon"></span>
+          <span class="signal-card__subscribers-value">24</span>
+        </span>
+      </span>
+    </span>
+      <span class="signal-card__copy" data-name="FXCE 508" data-mt="5" data-id="2206840" data-price="33" data-balance="1.6K" data-facilities="80K" data-weeks="75">
+Copy for&nbsp;33&nbsp;<span class="signal-card__copy-currency">USD</span>&nbsp;per&nbsp;month        </span>
+  </a>
+</div>
+
+
+
+<div class="signal-card">
+  <a class="signal-card__wrapper" data-fz-event="MQL5+HomePage+Signal+Click" href="/en/signals/2262642?source=Site+Main">
+    <span class="signal-card__header">
+      <span class="signal-card__avatar">
+        <span onclick="document.location.href='/en/users/tec_daniel';return false;"> <img src="https://c.mql5.com/avatar/2020/5/5ECE7947-D0DE.jpg" title="Daniel Moraes Da Silva" alt="Daniel Moraes Da Silva" loading="lazy" width="48" height="48"></span>
+<span class="ui-icon-flags ui-icon-flags_bg-br"></span>             <span title="Real Account" class="icons-ux icons-ux_shield"></span>
+      </span>
+      <span class="signal-card__author"><span class="signal-card__author__item">Daniel Moraes Da Silva</span></span>
+      <div class="signal-card__rating">
+        <div class="g-rating g-rating_sm g-rating_v40"></div>
+        <span class="g-rating__info">3.89 (6)</span>
+      </div>
+    </span>
+    <span class="signal-card__chart-area">
+      <span class="signal-card__title"><span class="signal-card__title-wrapper">NoPain MT5</span></span>
+      <span class="signal-card__growth">
+        <span class="signal-card__growth-value green">1 480%</span>
+          <span class="signal-card__growth-label">growth since 2021</span>
+      </span>
+        <span class="signal-card__chart s-avatar-chart" data-period="W1">
+          <input value="[1635638400,0,1635724800,0.08,1636934400,4.34,1638144000,8.23,1639353600,11.46,1640563200,12.46,1641772800,14.5,1642982400,8.43,1644192000,10.85,1645401600,15.73,1646611200,20.61,1649030400,19.46,1650240000,24.02,1651449600,29.17,1652659200,40.62,1653868800,48.73,1655078400,58.7,1656288000,66.91,1657497600,75.22,1658707200,84.27,1659916800,93.84,1661126400,101.09,1662336000,112.58,1663545600,126.63,1664755200,135.89,1665964800,154.02,1667174400,169.72,1668384000,191.48,1669593600,193.55,1670803200,216.36,1672012800,234.48,1673222400,252.12,1674432000,271.72,1675641600,285.79,1676851200,300.5,1678060800,315.86,1679270400,336.05,1680480000,350.55,1681689600,369.8,1682899200,382.09,1684108800,398.97,1685318400,412.27,1686528000,434.86,1687737600,460.91,1688947200,462.59,1690156800,482.69,1691366400,497.97,1692576000,516.46,1693785600,534.81,1694995200,551.45,1696204800,565.45,1697414400,591.97,1698624000,618.09,1699833600,639.82,1701043200,664.88,1702252800,690.86,1703462400,721.12,1704672000,740.25,1705881600,760.84,1707091200,778.58,1708300800,795.12,1709510400,808.98,1710720000,823.78,1711929600,835.43,1713139200,843.03,1714348800,861.78,1715558400,884.12,1716768000,919.32,1717977600,931.98,1719187200,948.67,1720396800,962.27,1721606400,975.91,1722816000,991.88,1724025600,1025.58,1725235200,1050.54,1726444800,1077.39,1727654400,1072.81,1728864000,1113.12,1730073600,1151.44,1731283200,1170.6,1732492800,1179.93,1733702400,1198.31,1735516800,1213.19,1736726400,1231.56,1737936000,1257.25,1739145600,1272.08,1740355200,1284.01,1741564800,1306.4,1742774400,1324.91,1743984000,1348.61,1745193600,1349.73,1746403200,1379.69,1747612800,1408.12,1748822400,1422.89,1750032000,1440.48,1751241600,1458.51,1752451200,1470.86,1752796800,1480.33]" type="hidden">
+        </span>
+    </span>
+    <span class="signal-card__indicators">
+          <span class="signal-card__risk">
+            <span class="risk-bars-rel4" title="Reliability evaluates the risks of the signal relative to other ones in %. The higher the value, the more reliable the signal."></span>
+            <span class="signal-card__label">Reliability</span>
+          </span>
+
+      <span class="signal-card__algotrading">
+        <span class="risk-bars-algo val1" title="Trades made by Expert Advisors"></span>&nbsp;7%
+        <span class="signal-card__label">Algo trading</span>
+      </span>
+
+      <span class="signal-card__subscribers">
+        <span class="signal-card__subscribers-wrapper" title="Subscribers">
+          <span class="s-subscribers-icon"></span>
+          <span class="signal-card__subscribers-value">91</span>
+        </span>
+      </span>
+    </span>
+      <span class="signal-card__copy" data-name="NoPain MT5" data-mt="5" data-id="2262642" data-price="30" data-balance="1K" data-facilities="530K" data-weeks="194">
+Copy for&nbsp;30&nbsp;<span class="signal-card__copy-currency">USD</span>&nbsp;per&nbsp;month        </span>
+  </a>
+</div>
+
+
+
+<div class="signal-card">
+  <a class="signal-card__wrapper" data-fz-event="MQL5+HomePage+Signal+Click" href="/en/signals/2199057?source=Site+Main">
+    <span class="signal-card__header">
+      <span class="signal-card__avatar">
+        <span onclick="document.location.href='/en/users/hanes182';return false;"> <img src="https://c.mql5.com/avatar/2016/1/5696A936-C7CC.jpg" title="Jan Stancel" alt="Jan Stancel" loading="lazy" width="48" height="48"></span>
+<span class="ui-icon-flags ui-icon-flags_bg-cz"></span>             <span title="Real Account" class="icons-ux icons-ux_shield"></span>
+      </span>
+      <span class="signal-card__author"><span class="signal-card__author__item">Jan Stancel</span></span>
+      <div class="signal-card__rating">
+        <div class="g-rating g-rating_sm g-rating_v00"></div>
+        <span class="g-rating__info"></span>
+      </div>
+    </span>
+    <span class="signal-card__chart-area">
+      <span class="signal-card__title"><span class="signal-card__title-wrapper">JS SmartGrid Signal MG01</span></span>
+      <span class="signal-card__growth">
+        <span class="signal-card__growth-value green">1 065%</span>
+          <span class="signal-card__growth-label">growth since 2024</span>
+      </span>
+        <span class="signal-card__chart s-avatar-chart" data-period="W1">
+          <input value="[1708214400,0,1708300800,0.15,1709510400,5.58,1710720000,12.68,1711929600,19.24,1713744000,22.2,1714953600,28.72,1717372800,31.97,1719187200,45.72,1721001600,48.96,1722211200,61.87,1723420800,67.41,1724630400,76.85,1726444800,85.71,1727654400,111.02,1728864000,135.76,1730073600,184.03,1731888000,208.89,1733097600,239.99,1734307200,253.33,1735516800,254.82,1736726400,281.34,1737936000,321.82,1739145600,356,1740355200,382.26,1741564800,423.72,1742774400,463.55,1743984000,533.59,1745193600,584.15,1746403200,602.31,1747612800,705.89,1748822400,799.19,1750032000,846,1751241600,941.84,1752451200,1013.04,1753228800,1065.27]" type="hidden">
+        </span>
+    </span>
+    <span class="signal-card__indicators">
+          <span class="signal-card__risk">
+            <span class="risk-bars-rel1" title="Reliability evaluates the risks of the signal relative to other ones in %. The higher the value, the more reliable the signal."></span>
+            <span class="signal-card__label">Reliability</span>
+          </span>
+
+      <span class="signal-card__algotrading">
+        <span class="risk-bars-algo val5" title="Trades made by Expert Advisors"></span>&nbsp;97%
+        <span class="signal-card__label">Algo trading</span>
+      </span>
+
+      <span class="signal-card__subscribers">
+        <span class="signal-card__subscribers-wrapper" title="Subscribers">
+          <span class="s-subscribers-icon"></span>
+          <span class="signal-card__subscribers-value">18</span>
+        </span>
+      </span>
+    </span>
+      <span class="signal-card__copy" data-name="JS SmartGrid Signal MG01" data-mt="5" data-id="2199057" data-price="30" data-balance="1.2K" data-facilities="72K" data-weeks="75">
+Copy for&nbsp;30&nbsp;<span class="signal-card__copy-currency">USD</span>&nbsp;per&nbsp;month        </span>
+  </a>
+</div>
+
+
+
+<div class="signal-card">
+  <a class="signal-card__wrapper" data-fz-event="MQL5+HomePage+Signal+Click" href="/en/signals/2263294?source=Site+Main">
+    <span class="signal-card__header">
+      <span class="signal-card__avatar">
+        <span onclick="document.location.href='/en/users/wzh318';return false;"> <img src="https://c.mql5.com/avatar/2023/11/6544e24a-2010.jpg" title="Zhen Hao Wu" alt="Zhen Hao Wu" loading="lazy" width="48" height="48"></span>
+<span class="ui-icon-flags ui-icon-flags_bg-cn"></span>             <span title="Real Account" class="icons-ux icons-ux_shield"></span>
+      </span>
+      <span class="signal-card__author"><span class="signal-card__author__item">Zhen Hao Wu</span></span>
+      <div class="signal-card__rating">
+        <div class="g-rating g-rating_sm g-rating_v30"></div>
+        <span class="g-rating__info">3 (3)</span>
+      </div>
+    </span>
+    <span class="signal-card__chart-area">
+      <span class="signal-card__title"><span class="signal-card__title-wrapper">AUDCAD STARS</span></span>
+      <span class="signal-card__growth">
+        <span class="signal-card__growth-value green">899%</span>
+          <span class="signal-card__growth-label">growth since 2024</span>
+      </span>
+        <span class="signal-card__chart s-avatar-chart" data-period="W1">
+          <input value="[1728777600,0,1728864000,3.43,1730073600,27.07,1731283200,47.13,1732492800,76.06,1733702400,119.41,1734912000,130.53,1736121600,128.22,1737331200,200.79,1738540800,229.58,1740355200,253.25,1741564800,292.39,1742774400,350.15,1743984000,415.21,1745193600,481.79,1746403200,545.24,1747612800,610.65,1748822400,704.5,1750032000,802.47,1751241600,984.74,1752451200,837.44,1753401600,898.87]" type="hidden">
+        </span>
+    </span>
+    <span class="signal-card__indicators">
+          <span class="signal-card__risk">
+            <span class="risk-bars-rel1" title="Reliability evaluates the risks of the signal relative to other ones in %. The higher the value, the more reliable the signal."></span>
+            <span class="signal-card__label">Reliability</span>
+          </span>
+
+      <span class="signal-card__algotrading">
+        <span class="risk-bars-algo val5" title="Trades made by Expert Advisors"></span>&nbsp;88%
+        <span class="signal-card__label">Algo trading</span>
+      </span>
+
+      <span class="signal-card__subscribers">
+        <span class="signal-card__subscribers-wrapper" title="Subscribers">
+          <span class="s-subscribers-icon"></span>
+          <span class="signal-card__subscribers-value">10</span>
+        </span>
+      </span>
+    </span>
+      <span class="signal-card__copy" data-name="AUDCAD STARS" data-mt="5" data-id="2263294" data-price="30" data-balance="1.1K" data-facilities="31K" data-weeks="41">
+Copy for&nbsp;30&nbsp;<span class="signal-card__copy-currency">USD</span>&nbsp;per&nbsp;month        </span>
+  </a>
+</div>
+
+        </div>
+        <div class="signal-card-list main-page__area-section main-page__area-section-signals">
+
+
+<div class="signal-card">
+  <a class="signal-card__wrapper" data-fz-event="MQL5+HomePage+Signal+Click" href="/en/signals/2236414?source=Site+Main">
+    <span class="signal-card__header">
+      <span class="signal-card__avatar">
+        <span onclick="document.location.href='/en/users/kauserfx';return false;"> <img src="https://c.mql5.com/avatar/2025/6/685ff98b-bffd.jpg" title="KAUSER AHMED" alt="KAUSER AHMED" loading="lazy" width="48" height="48"></span>
+<span class="ui-icon-flags ui-icon-flags_bg-bd"></span>             <span title="Real Account" class="icons-ux icons-ux_shield"></span>
+      </span>
+      <span class="signal-card__author"><span class="signal-card__author__item">KAUSER AHMED</span></span>
+      <div class="signal-card__rating">
+        <div class="g-rating g-rating_sm g-rating_v30"></div>
+        <span class="g-rating__info">3 (2)</span>
+      </div>
+    </span>
+    <span class="signal-card__chart-area">
+      <span class="signal-card__title"><span class="signal-card__title-wrapper">Auto Trade</span></span>
+      <span class="signal-card__growth">
+        <span class="signal-card__growth-value green">7 426%</span>
+          <span class="signal-card__growth-label">growth since 2022</span>
+      </span>
+        <span class="signal-card__chart s-avatar-chart" data-period="W1">
+          <input value="[1643500800,0,1643587200,0.18,1645401600,3.89,1647216000,7.3,1648425600,10.45,1649635200,18.72,1650844800,18.42,1653868800,50.7,1655078400,73.56,1658102400,99.28,1659916800,109,1661126400,131.93,1662336000,159.89,1663545600,200.91,1664755200,225.19,1665964800,242.66,1667174400,257.34,1668384000,278.3,1669593600,282.98,1670803200,291.34,1672617600,294.02,1673827200,299.31,1675036800,297.55,1676246400,304.71,1677456000,308.28,1678665600,308.2,1679875200,314.63,1681084800,312.55,1682294400,322.12,1683504000,329.35,1684713600,330.73,1685923200,333.25,1687132800,336.94,1688342400,347.6,1689552000,354.17,1690761600,358.74,1692576000,361.59,1693785600,364.37,1694995200,377.77,1696204800,384.34,1697414400,392.74,1698624000,400.77,1699833600,408.2,1701043200,417.21,1702252800,420.28,1703462400,423.46,1704672000,427.9,1705881600,428.78,1707091200,442.7,1708300800,453.26,1709510400,461.35,1710720000,468.07,1711929600,471.8,1713139200,469.81,1714348800,488.47,1715558400,519.46,1716768000,524.38,1717977600,532.45,1719187200,543,1720396800,550.61,1721606400,569.06,1722816000,609.22,1724025600,648.84,1725235200,677.8,1726444800,747.27,1727654400,756.38,1728864000,582.82,1730073600,1318.18,1731283200,1508.11,1732492800,1571.54,1733702400,1610.07,1734912000,1749.45,1736121600,1775.25,1737331200,1904.3,1738540800,2196.45,1739750400,2629.17,1740960000,3294.85,1742169600,3466.94,1743379200,3720.62,1744588800,4517.42,1745798400,4918.74,1747008000,5627.65,1748217600,6145.36,1749427200,6408.67,1750636800,6686.44,1751846400,6960.93,1753056000,7354.92,1753315200,7426.48]" type="hidden">
+        <canvas class="nav-card__canvas" width="354" height="110" style="width: 354px; height: 110px;"></canvas><canvas class="nav-card__canvas-point" width="354" height="110" style="width: 354px; height: 110px;"></canvas></span>
+    </span>
+    <span class="signal-card__indicators">
+          <span class="signal-card__risk">
+            <span class="risk-bars-rel3" title="Reliability evaluates the risks of the signal relative to other ones in %. The higher the value, the more reliable the signal."></span>
+            <span class="signal-card__label">Reliability</span>
+          </span>
+
+      <span class="signal-card__algotrading">
+        <span class="risk-bars-algo val2" title="Trades made by Expert Advisors"></span>&nbsp;32%
+        <span class="signal-card__label">Algo trading</span>
+      </span>
+
+      <span class="signal-card__subscribers">
+        <span class="signal-card__subscribers-wrapper" title="Subscribers">
+          <span class="s-subscribers-icon"></span>
+          <span class="signal-card__subscribers-value">30</span>
+        </span>
+      </span>
+    </span>
+      <span class="signal-card__copy" data-name="Auto Trade" data-mt="4" data-id="2236414" data-price="30" data-balance="3.4K" data-facilities="181K" data-weeks="182">
+Copy for&nbsp;30&nbsp;<span class="signal-card__copy-currency">USD</span>&nbsp;per&nbsp;month        </span>
+  </a>
+</div>
+
+
+
+<div class="signal-card">
+  <a class="signal-card__wrapper" data-fz-event="MQL5+HomePage+Signal+Click" href="/en/signals/2271127?source=Site+Main">
+    <span class="signal-card__header">
+      <span class="signal-card__avatar">
+        <span onclick="document.location.href='/en/users/vphuoc83';return false;"> <img src="https://c.mql5.com/avatar/2024/12/675ef321-ed79.jpg" title="Phan Van Phuoc" alt="Phan Van Phuoc" loading="lazy" width="48" height="48"></span>
+<span class="ui-icon-flags ui-icon-flags_bg-vn"></span>             <span title="Real Account" class="icons-ux icons-ux_shield"></span>
+      </span>
+      <span class="signal-card__author"><span class="signal-card__author__item">Phan Van Phuoc</span></span>
+      <div class="signal-card__rating">
+        <div class="g-rating g-rating_sm g-rating_v40"></div>
+        <span class="g-rating__info">4.13 (5)</span>
+      </div>
+    </span>
+    <span class="signal-card__chart-area">
+      <span class="signal-card__title"><span class="signal-card__title-wrapper">KingFX AU</span></span>
+      <span class="signal-card__growth">
+        <span class="signal-card__growth-value green">20 716%</span>
+          <span class="signal-card__growth-label">growth since 2022</span>
+      </span>
+        <span class="signal-card__chart s-avatar-chart" data-period="W1">
+          <input value="[1648944000,0,1649030400,0.57,1650240000,10.6,1651449600,36.39,1652659200,49.79,1653868800,59.4,1655078400,63.42,1656288000,82.33,1657497600,93.59,1658707200,101.74,1659916800,112.8,1661126400,132.36,1662336000,156.4,1663545600,184.01,1664755200,228.35,1665964800,299.11,1667174400,365.79,1668384000,427.9,1669593600,192.16,1670803200,257.76,1672012800,334.4,1673222400,339.86,1674432000,405.51,1675641600,473.26,1676851200,548.24,1678060800,605.79,1679270400,703.34,1680480000,815.18,1681689600,953.63,1682899200,1005.64,1684108800,1179.74,1685318400,1238.9,1687132800,1341.76,1688342400,1442.91,1689552000,1669.93,1690761600,2150.53,1691971200,2573.54,1693180800,2888.83,1694390400,3261.98,1695600000,3511.29,1696809600,3803.05,1698019200,4104.97,1699228800,4270.69,1700438400,4722.52,1701648000,5264.25,1702857600,5721.73,1704672000,6098.06,1705881600,6536.04,1707091200,6982.97,1708300800,7562.73,1709510400,7941.62,1710720000,8028.51,1711929600,4155.73,1713139200,4236.9,1714348800,4484.71,1715558400,4705.89,1716768000,4970.27,1717977600,5107.84,1719187200,5320.29,1720396800,5832.17,1721606400,5959.68,1722816000,6160.73,1724025600,6880.56,1725235200,7380.5,1726444800,7996.88,1727654400,8453.4,1728864000,8987.01,1730073600,10134.66,1731283200,11147.94,1732492800,11530.34,1733702400,12692.3,1734912000,13199.53,1736121600,13354.82,1737936000,14558.55,1739145600,15147.14,1740355200,15812.65,1741564800,17357.16,1742774400,19054.78,1743984000,10244.51,1745193600,11672.07,1746403200,12701.53,1747612800,13758.7,1748822400,15366.58,1750032000,17110.69,1751241600,18442.19,1752451200,19247.5,1753401600,20716.12]" type="hidden">
+        <canvas class="nav-card__canvas" width="354" height="110" style="width: 354px; height: 110px;"></canvas><canvas class="nav-card__canvas-point" width="354" height="110" style="width: 354px; height: 110px;"></canvas></span>
+    </span>
+    <span class="signal-card__indicators">
+          <span class="signal-card__risk">
+            <span class="risk-bars-rel1" title="Reliability evaluates the risks of the signal relative to other ones in %. The higher the value, the more reliable the signal."></span>
+            <span class="signal-card__label">Reliability</span>
+          </span>
+
+      <span class="signal-card__algotrading">
+        <span class="risk-bars-algo val5" title="Trades made by Expert Advisors"></span>&nbsp;99%
+        <span class="signal-card__label">Algo trading</span>
+      </span>
+
+      <span class="signal-card__subscribers">
+        <span class="signal-card__subscribers-wrapper" title="Subscribers">
+          <span class="s-subscribers-icon"></span>
+          <span class="signal-card__subscribers-value">23</span>
+        </span>
+      </span>
+    </span>
+      <span class="signal-card__copy" data-name="KingFX AU" data-mt="4" data-id="2271127" data-price="40" data-balance="4.7K" data-facilities="120K" data-weeks="173">
+Copy for&nbsp;40&nbsp;<span class="signal-card__copy-currency">USD</span>&nbsp;per&nbsp;month        </span>
+  </a>
+</div>
+
+
+
+<div class="signal-card">
+  <a class="signal-card__wrapper" data-fz-event="MQL5+HomePage+Signal+Click" href="/en/signals/2204034?source=Site+Main">
+    <span class="signal-card__header">
+      <span class="signal-card__avatar">
+        <span onclick="document.location.href='/en/users/kauserfx';return false;"> <img src="https://c.mql5.com/avatar/2025/6/685ff98b-bffd.jpg" title="KAUSER AHMED" alt="KAUSER AHMED" loading="lazy" width="48" height="48"></span>
+<span class="ui-icon-flags ui-icon-flags_bg-bd"></span>             <span title="Real Account" class="icons-ux icons-ux_shield"></span>
+      </span>
+      <span class="signal-card__author"><span class="signal-card__author__item">KAUSER AHMED</span></span>
+      <div class="signal-card__rating">
+        <div class="g-rating g-rating_sm g-rating_v25"></div>
+        <span class="g-rating__info">2.33 (1)</span>
+      </div>
+    </span>
+    <span class="signal-card__chart-area">
+      <span class="signal-card__title"><span class="signal-card__title-wrapper">Trade Pro</span></span>
+      <span class="signal-card__growth">
+        <span class="signal-card__growth-value green">1 602%</span>
+          <span class="signal-card__growth-label">growth since 2021</span>
+      </span>
+        <span class="signal-card__chart s-avatar-chart" data-period="W1">
+          <input value="[1638057600,0,1638144000,2.64,1640563200,3.02,1642982400,6.35,1644192000,25.68,1646006400,25.89,1647820800,32.44,1649635200,37.19,1650844800,39.7,1652659200,46.57,1655683200,52.25,1657497600,53.86,1658707200,55.84,1659916800,58.34,1661731200,63,1662940800,68.25,1664755200,71.38,1665964800,74.16,1667174400,77.03,1668988800,86.62,1670198400,87.98,1671408000,87.71,1672617600,91.58,1673827200,96.1,1675036800,102.83,1676246400,98.62,1677456000,101.01,1678665600,99.72,1684713600,110.74,1685923200,113.14,1687737600,115.51,1688947200,120.41,1690156800,126.65,1691366400,136.83,1693180800,140.64,1696204800,136.08,1697414400,142.54,1699228800,142.85,1700438400,150.02,1701648000,168.41,1702857600,188.16,1704067200,351.03,1707696000,267.55,1708905600,306.8,1710720000,361.31,1713139200,365.23,1714953600,366.5,1717372800,371.62,1719187200,371.62,1721606400,375.77,1722816000,381.62,1724025600,406.4,1725235200,426.6,1726444800,523.66,1727654400,550.46,1728864000,555.91,1730073600,566.06,1731283200,595.55,1732492800,599.01,1733702400,609.01,1734912000,628.11,1736121600,629.04,1737331200,669.39,1738540800,714.08,1739750400,757.05,1740960000,796.81,1742169600,812.91,1743379200,850.6,1744588800,1081.93,1745798400,1114.48,1747008000,1218.5,1748217600,1267.86,1749427200,1329.87,1750636800,1419.76,1751846400,1514.81,1753056000,1581.55,1753401600,1602.47]" type="hidden">
+        </span>
+    </span>
+    <span class="signal-card__indicators">
+          <span class="signal-card__risk">
+            <span class="risk-bars-rel5" title="Reliability evaluates the risks of the signal relative to other ones in %. The higher the value, the more reliable the signal."></span>
+            <span class="signal-card__label">Reliability</span>
+          </span>
+
+      <span class="signal-card__algotrading">
+        <span class="risk-bars-algo val2" title="Trades made by Expert Advisors"></span>&nbsp;38%
+        <span class="signal-card__label">Algo trading</span>
+      </span>
+
+      <span class="signal-card__subscribers">
+        <span class="signal-card__subscribers-wrapper" title="Subscribers">
+          <span class="s-subscribers-icon"></span>
+          <span class="signal-card__subscribers-value">9</span>
+        </span>
+      </span>
+    </span>
+      <span class="signal-card__copy" data-name="Trade Pro" data-mt="4" data-id="2204034" data-price="30" data-balance="6.2K" data-facilities="26K" data-weeks="195">
+Copy for&nbsp;30&nbsp;<span class="signal-card__copy-currency">USD</span>&nbsp;per&nbsp;month        </span>
+  </a>
+</div>
+
+
+
+<div class="signal-card">
+  <a class="signal-card__wrapper" data-fz-event="MQL5+HomePage+Signal+Click" href="/en/signals/2153920?source=Site+Main">
+    <span class="signal-card__header">
+      <span class="signal-card__avatar">
+        <span onclick="document.location.href='/en/users/liehtw';return false;"> <img src="https://c.mql5.com/avatar/2016/1/5695B7DA-C713.jpg" title="LU KUEI LIEH" alt="LU KUEI LIEH" loading="lazy" width="48" height="48"></span>
+<span class="ui-icon-flags ui-icon-flags_bg-tw"></span>             <span title="Real Account" class="icons-ux icons-ux_shield"></span>
+      </span>
+      <span class="signal-card__author"><span class="signal-card__author__item">LU KUEI LIEH</span></span>
+      <div class="signal-card__rating">
+        <div class="g-rating g-rating_sm g-rating_v50"></div>
+        <span class="g-rating__info">5 (1)</span>
+      </div>
+    </span>
+    <span class="signal-card__chart-area">
+      <span class="signal-card__title"><span class="signal-card__title-wrapper">MCA100</span></span>
+      <span class="signal-card__growth">
+        <span class="signal-card__growth-value green">702%</span>
+          <span class="signal-card__growth-label">growth since 2023</span>
+      </span>
+        <span class="signal-card__chart s-avatar-chart" data-period="W1">
+          <input value="[1700352000,0,1700438400,-2.93,1702252800,12.75,1703462400,13.26,1704672000,36.28,1706486400,25.31,1707696000,4.8,1708905600,34.53,1710720000,7.92,1711929600,27.69,1713744000,58.58,1714953600,41.77,1716768000,64.67,1718582400,42.51,1719792000,57.68,1721001600,79.77,1722211200,110.78,1723420800,139.8,1724630400,190.02,1725840000,165.88,1727049600,147.33,1728864000,161.77,1730073600,149.4,1731283200,167.14,1735516800,306.12,1736726400,257.87,1737936000,291.71,1739145600,345.46,1740355200,442.68,1741564800,336.57,1742774400,454.48,1743984000,490.13,1745193600,435.2,1746403200,494.98,1747612800,555.64,1748822400,594.9,1750636800,715.06,1751846400,701.86,1753056000,645.53,1753142400,702.09]" type="hidden">
+        </span>
+    </span>
+    <span class="signal-card__indicators">
+          <span class="signal-card__risk">
+            <span class="risk-bars-rel5" title="Reliability evaluates the risks of the signal relative to other ones in %. The higher the value, the more reliable the signal."></span>
+            <span class="signal-card__label">Reliability</span>
+          </span>
+
+      <span class="signal-card__algotrading">
+        <span class="risk-bars-algo val5" title="Trades made by Expert Advisors"></span>&nbsp;100%
+        <span class="signal-card__label">Algo trading</span>
+      </span>
+
+      <span class="signal-card__subscribers">
+        <span class="signal-card__subscribers-wrapper" title="Subscribers">
+          <span class="s-subscribers-icon"></span>
+          <span class="signal-card__subscribers-value">11</span>
+        </span>
+      </span>
+    </span>
+      <span class="signal-card__copy" data-name="MCA100" data-mt="4" data-id="2153920" data-price="30" data-balance="311" data-facilities="12K" data-weeks="88">
+Copy for&nbsp;30&nbsp;<span class="signal-card__copy-currency">USD</span>&nbsp;per&nbsp;month        </span>
+  </a>
+</div>
+
+
+
+<div class="signal-card">
+  <a class="signal-card__wrapper" data-fz-event="MQL5+HomePage+Signal+Click" href="/en/signals/2306065?source=Site+Main">
+    <span class="signal-card__header">
+      <span class="signal-card__avatar">
+        <span onclick="document.location.href='/en/users/rakiing';return false;"> <img src="https://c.mql5.com/avatar/avatar_na2.png" title="Bi Qi Luo" alt="Bi Qi Luo" loading="lazy" width="48" height="48"></span>
+<span class="ui-icon-flags ui-icon-flags_bg-cn"></span>             <span title="Real Account" class="icons-ux icons-ux_shield"></span>
+      </span>
+      <span class="signal-card__author"><span class="signal-card__author__item">Bi Qi Luo</span></span>
+      <div class="signal-card__rating">
+        <div class="g-rating g-rating_sm g-rating_v30"></div>
+        <span class="g-rating__info">3 (1)</span>
+      </div>
+    </span>
+    <span class="signal-card__chart-area">
+      <span class="signal-card__title"><span class="signal-card__title-wrapper">S01rk</span></span>
+      <span class="signal-card__growth">
+        <span class="signal-card__growth-value green">633%</span>
+          <span class="signal-card__growth-label">growth since 2024</span>
+      </span>
+        <span class="signal-card__chart s-avatar-chart" data-period="W1">
+          <input value="[1724544000,0,1724630400,1.27,1725840000,9.54,1727049600,18.98,1728259200,27.56,1729468800,35.89,1730678400,51.16,1731888000,60.95,1733097600,86.86,1734307200,101.92,1735516800,106.89,1736726400,134.63,1737936000,194.32,1739145600,217.75,1740355200,247.97,1741564800,281.73,1742774400,337.44,1743984000,393.62,1745193600,437.06,1746403200,512.28,1747612800,551.15,1748822400,616.42,1750032000,686.29,1751241600,770.65,1752451200,589.28,1753401600,633.42]" type="hidden">
+        </span>
+    </span>
+    <span class="signal-card__indicators">
+          <span class="signal-card__risk">
+            <span class="risk-bars-rel3" title="Reliability evaluates the risks of the signal relative to other ones in %. The higher the value, the more reliable the signal."></span>
+            <span class="signal-card__label">Reliability</span>
+          </span>
+
+      <span class="signal-card__algotrading">
+        <span class="risk-bars-algo val5" title="Trades made by Expert Advisors"></span>&nbsp;99%
+        <span class="signal-card__label">Algo trading</span>
+      </span>
+
+      <span class="signal-card__subscribers">
+        <span class="signal-card__subscribers-wrapper" title="Subscribers">
+          <span class="s-subscribers-icon"></span>
+          <span class="signal-card__subscribers-value">10</span>
+        </span>
+      </span>
+    </span>
+      <span class="signal-card__copy" data-name="S01rk" data-mt="4" data-id="2306065" data-price="30" data-balance="435" data-facilities="11K" data-weeks="48">
+Copy for&nbsp;30&nbsp;<span class="signal-card__copy-currency">USD</span>&nbsp;per&nbsp;month        </span>
+  </a>
+</div>
+
+        </div>
+    </div>
+</div>
+
+
+  
+
+  
+<div class="main-page__area main-page__area-vps">
+
+    <div class="main-page__vps">
+        <div class="main-page__vps-left">
+            <h2><a data-fz-event="MQL5+HomePage+VPS+Click" href="/en/vps">Forex VPS for MetaTrader 4/5</a></h2>
+            <div class="main-page__vps-description">We will offer a server with the lowest ping and the best&nbsp;execution</div>
+
+            <script type="text/javascript">
+                var fSearchBrokerSent = false, fMapFocusSent = false;
+            </script>
+            
+            <div class="vps-search-form main-page__vps-form">
+                <!--[if lt IE 10]><div class="name">Specify your broker&#x27;s server:</div><![endif]-->
+                <form method="get" id="brokerSearchForm" action="/en/vps" autocomplete="off" autocorrect="off" spellcheck="false">
+                    <input type="text" name="server" id="brokerServerName" class="main-page__vps-form-textbox" aria-label="Specify your broker's server" placeholder="Broker server" title="Specify your broker's server" onfocus="if(!window.fSearchBrokerSent) {window.fpush('MQL5+VPS+Search+Broker'); window.fSearchBrokerSent=true;}" autocomplete="off">
+
+                    <input type="submit" class="main-page__vps-form-submit" onclick="window.fpush('MQL5+HomePage+VPS+Click');" id="vps-button-rent" value="15 USD per month" title="Search">
+                </form><div class="select-edit-list" style="width: 400px;"><table></table></div>
+
+                <div class="message" id="brokerSearchMessage"></div>
+            </div>
+        </div>
+
+
+        <div class="main-page__vps-right">
+          <div class="vps-simple-map">
+              <div class="vps-simple-map__item vps-simple-map__item_bottom vps-simple-map__item_left" style="top: 49px; left: 301px;">
+                <span>
+                  <b>Equinix LD4</b><br>
+                  London, UK<br>
+                  <i>51.5235, -0.636</i>
+                </span>
+              </div>
+              <div class="vps-simple-map__item vps-simple-map__item_bottom" style="top: 63px; left: 182px;">
+                <span>
+                  <b>Equinix NY4</b><br>
+                  New York, US<br>
+                  <i>40.7765, -74.072</i>
+                </span>
+              </div>
+              <div class="vps-simple-map__item" style="top: 176px; left: 230px;">
+                <span>
+                  <b>Equinix SP3</b><br>
+                  Sau Paulo, Brazil<br>
+                  <i>-23.4663, -46.8634</i>
+                </span>
+              </div>
+              <div class="vps-simple-map__item vps-simple-map__item_left" style="top: 98px; left: 512px;">
+                <span>
+                  <b>Equinix HK1</b><br>
+                  Hong Kong<br>
+                  <i>22.3656, 114.1171</i>
+                </span>
+              </div>
+              <div class="vps-simple-map__item vps-simple-map__item_bottom vps-simple-map__item_left" style="top: 47px; left: 313px;">
+                <span>
+                  <b>Servers.com AMS1</b><br>
+                  Amsterdam, Netherlands<br>
+                  <i>52.3918, 4.665</i>
+                </span>
+              </div>
+              <div class="vps-simple-map__item vps-simple-map__item_bottom vps-simple-map__item_left" style="top: 42px; left: 377px;">
+                <span>
+                  <b>Servers.com MOW1</b><br>
+                  Moscow, Russia<br>
+                  <i>55.736, 37.721</i>
+                </span>
+              </div>
+              <div class="vps-simple-map__item vps-simple-map__item_bottom vps-simple-map__item_left" style="top: 50px; left: 338px;">
+                <span>
+                  <b>Falkenstein FSN1</b><br>
+                  Falkenstein, Germany<br>
+                  <i>50.4788, 12.3327</i>
+                </span>
+              </div>
+              <div class="vps-simple-map__item vps-simple-map__item_bottom vps-simple-map__item_left" style="top: 51px; left: 325px;">
+                <span>
+                  <b>Interxion FRA3/FRA8</b><br>
+                  Frankfurt, Germany<br>
+                  <i>52.3918, 4.665</i>
+                </span>
+              </div>
+              <div class="vps-simple-map__item vps-simple-map__item_bottom" style="top: 60px; left: 160px;">
+                <span>
+                  <b>Aurora 1</b><br>
+                  Chicago, US<br>
+                  <i>42.0011, -87.9571</i>
+                </span>
+              </div>
+              <div class="vps-simple-map__item vps-simple-map__item_left" style="top: 105px; left: 441px;">
+                <span>
+                  <b>Mumbai</b><br>
+                  Mumbai, India<br>
+                  <i>19.1131, 72.8925</i>
+                </span>
+              </div>
+              <div class="vps-simple-map__item vps-simple-map__item_left" style="top: 182px; left: 360px;">
+                <span>
+                  <b>Johannesburg</b><br>
+                  Johannesburg, South Africa<br>
+                  <i>-25.9305, 28.1362</i>
+                </span>
+              </div>
+              <div class="vps-simple-map__item vps-simple-map__item_left" style="top: 134px; left: 492px;">
+                <span>
+                  <b>Singapore</b><br>
+                  Singapore<br>
+                  <i>1.3226704, 103.9186452</i>
+                </span>
+              </div>
+          </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+  
+<div class="main-page__area main-page__area-freelance">
+  <div class="main-page__intro">
+      <h2><a href="/en/job">Jobs for Freelancers</a></h2>
+<p>Order a custom technical indicator, a trading robot or any other app for the MetaTrader platforms from trusted developers.</p>
+<p>Professional programmers deal with <a href="https://www.mql5.com/en/job" target="_blank">hundreds of orders</a> in the MQL5 Freelance section with guaranteed payment and instant withdrawal of earnings through convenient payment systems.</p> 
+  </div>
+  <div class="main-page__area-sections main-page__area-sections-freelance">
+      <div class="main-page__area-section main-page__area-section-freelance">
+          <div class="main-page__freelance-item">
+
+
+
+<div class="job-item">
+  <div class="job-item__title">
+    <a href="/en/job/240295" data-fz-event="MQL5+Job+Order+Click">Can someone build me an EA please !</a>
+  </div>
+  <div class="job-item__desc">
+    <div class="job-item__line">
+      <div class="job-item__left-part">
+        <span class="budget">30 - 100 <span>USD</span></span>
+      </div>
+      <div class="job-item__right-part">
+        <div class="job-item__text">
+          Hi guys I’m after someone who can help me put a strategy into an EA with set rules and parameters! Funds for me are limited so if anyone can help me please come forward
+        </div>
+      </div>
+    </div>
+    <div class="job-item__line">
+
+      <div class="job-item__left-part">
+          <div class="job-item__count">
+            <strong>17</strong> Applications
+          </div>
+      </div>
+
+      <div class="job-item__right-part">
+<div class="g-rating  g-rating_v0"></div>        <span class="job-item__lang">MQL5</span>
+        <span class="job-item__list-category">
+              <a class="job-item__list-category-item" href="/en/job/expert" data-fz-event="MQL5+Job+Category" data-fz-unit="category" data-fz-value="expert">Experts</a>
+        </span>
+        <span class="job-item__list-skills">
+            <a class="job-item__list-skills-item" href="/en/job/all/forex" data-fz-event="MQL5+Job+Skills" data-fz-unit="skill" data-fz-value="forex">Forex</a>
+            <a class="job-item__list-skills-item" href="/en/job/all/debugging" data-fz-event="MQL5+Job+Skills" data-fz-unit="skill" data-fz-value="debugging">Trading robot/indicator debugging</a>
+        </span>
+<time class="job-item__date" datetime="2025-07-27T14:15Z" title="2025.07.27 19:45" datetime-type="humanreadabledate">31 minutes ago</time>      </div>
+    </div>
+  </div>
+</div>
+          </div>
+          <div class="main-page__freelance-item">
+
+
+
+<div class="job-item">
+  <div class="job-item__title">
+    <a href="/en/job/240292" data-fz-event="MQL5+Job+Order+Click">Need to make complex EA</a>
+  </div>
+  <div class="job-item__desc">
+    <div class="job-item__line">
+      <div class="job-item__left-part">
+        <span class="budget">500 - 1500 <span>USD</span></span>
+      </div>
+      <div class="job-item__right-part">
+        <div class="job-item__text">
+          I need professional coder who can make EA based on historical trades for mt4 and mt5. It is a forex strategy. I will provide instructions on how to make but coder will need experience with making EAs with scalping and pending orders
+        </div>
+      </div>
+    </div>
+    <div class="job-item__line">
+
+      <div class="job-item__left-part">
+          <div class="job-item__count">
+            <strong>20</strong> Applications
+          </div>
+      </div>
+
+      <div class="job-item__right-part">
+<div class="g-rating  g-rating_v0"></div>        <span class="job-item__lang">MQL5</span>
+        <span class="job-item__list-category">
+              <a class="job-item__list-category-item" href="/en/job/expert" data-fz-event="MQL5+Job+Category" data-fz-unit="category" data-fz-value="expert">Experts</a>
+        </span>
+        <span class="job-item__list-skills">
+            <a class="job-item__list-skills-item" href="/en/job/all/forex" data-fz-event="MQL5+Job+Skills" data-fz-unit="skill" data-fz-value="forex">Forex</a>
+            <a class="job-item__list-skills-item" href="/en/job/all/debugging" data-fz-event="MQL5+Job+Skills" data-fz-unit="skill" data-fz-value="debugging">Trading robot/indicator debugging</a>
+            <a class="job-item__list-skills-item" href="/en/job/all/cpp" data-fz-event="MQL5+Job+Skills" data-fz-unit="skill" data-fz-value="cpp">C++</a>
+            <a class="job-item__list-skills-item" href="/en/job/all/python" data-fz-event="MQL5+Job+Skills" data-fz-unit="skill" data-fz-value="python">Python</a>
+        </span>
+<time class="job-item__date" datetime="2025-07-27T13:17Z" title="2025.07.27 18:47" datetime-type="humanreadabledate">1 hour ago</time>      </div>
+    </div>
+  </div>
+</div>
+          </div>
+          <div class="main-page__freelance-item">
+
+
+
+<div class="job-item">
+  <div class="job-item__title">
+    <a href="/en/job/240291" data-fz-event="MQL5+Job+Order+Click">I Need Professional Tradingview pinescript developer</a>
+  </div>
+  <div class="job-item__desc">
+    <div class="job-item__line">
+      <div class="job-item__left-part">
+        <span class="budget">50+  <span>USD</span></span>
+      </div>
+      <div class="job-item__right-part">
+        <div class="job-item__text">
+          Hello, I'd like to know if it's possible to create an indicator that complies with this strategy. NOTE: the 15-MINUTE strategy mentioned above, including ALL the confluences for a successful trade. If you could watch the video to understand more about what I would need: - Oscillator in overbought or oversold conditions - Price in the upper or lower KC1 band - Price touching reversal bands - Buy or sell signal Well
+        </div>
+      </div>
+    </div>
+    <div class="job-item__line">
+
+      <div class="job-item__left-part">
+          <div class="job-item__count">
+            <strong>4</strong> Applications
+          </div>
+      </div>
+
+      <div class="job-item__right-part">
+<div class="g-rating  g-rating_v0"></div>        <span class="job-item__lang">MQL5</span>
+        <span class="job-item__list-category">
+              <a class="job-item__list-category-item" href="/en/job/expert" data-fz-event="MQL5+Job+Category" data-fz-unit="category" data-fz-value="expert">Experts</a>
+        </span>
+        <span class="job-item__list-skills">
+        </span>
+<time class="job-item__date" datetime="2025-07-27T12:41Z" title="2025.07.27 18:11" datetime-type="humanreadabledate">2 hours ago</time>      </div>
+    </div>
+  </div>
+</div>
+          </div>
+      </div>
+      <div class="main-page__area-section main-page__area-section-freelance">
+          <div class="main-page__freelance-item">
+
+
+
+<div class="job-item">
+  <div class="job-item__title">
+    <a href="/en/job/240290" data-fz-event="MQL5+Job+Order+Click">I'm never afraid to lose, but I'm willing to win</a>
+  </div>
+  <div class="job-item__desc">
+    <div class="job-item__line">
+      <div class="job-item__left-part">
+        <span class="budget">50 - 1000 <span>USD</span></span>
+      </div>
+      <div class="job-item__right-part">
+        <div class="job-item__text">
+          i want money to get out of proverty. there are million ways to die, but there are two ways to live it's either rich or poor. and this is the only way I can get money, don't get me wrong but the way I'm looking at my life right now this is the only way, it's been on my mind for a long time now and I've decided to go for it. please accept my application I'll never disappoint you, I'm hungry for this shit
+        </div>
+      </div>
+    </div>
+    <div class="job-item__line">
+
+      <div class="job-item__left-part">
+          <div class="job-item__count">
+            <strong>11</strong> Applications
+          </div>
+      </div>
+
+      <div class="job-item__right-part">
+<div class="g-rating  g-rating_v0"></div>        <span class="job-item__lang">MQL5</span>
+        <span class="job-item__list-category">
+              <a class="job-item__list-category-item" href="/en/job/indicator" data-fz-event="MQL5+Job+Category" data-fz-unit="category" data-fz-value="indicator">Indicators</a>
+              <a class="job-item__list-category-item" href="/en/job/expert" data-fz-event="MQL5+Job+Category" data-fz-unit="category" data-fz-value="expert">Experts</a>
+        </span>
+        <span class="job-item__list-skills">
+            <a class="job-item__list-skills-item" href="/en/job/all/forex" data-fz-event="MQL5+Job+Skills" data-fz-unit="skill" data-fz-value="forex">Forex</a>
+            <a class="job-item__list-skills-item" href="/en/job/all/debugging" data-fz-event="MQL5+Job+Skills" data-fz-unit="skill" data-fz-value="debugging">Trading robot/indicator debugging</a>
+        </span>
+<time class="job-item__date" datetime="2025-07-27T11:06Z" title="2025.07.27 16:36" datetime-type="humanreadabledate">3 hours ago</time>      </div>
+    </div>
+  </div>
+</div>
+          </div>
+          <div class="main-page__freelance-item">
+
+
+
+<div class="job-item">
+  <div class="job-item__title">
+    <a href="/en/job/240289" data-fz-event="MQL5+Job+Order+Click">Test, Retrieve, and Define a list of iCustom buffers for the FXSSI.com indicator pack.</a>
+  </div>
+  <div class="job-item__desc">
+    <div class="job-item__line">
+      <div class="job-item__left-part">
+        <span class="budget">30+  <span>USD</span></span>
+      </div>
+      <div class="job-item__right-part">
+        <div class="job-item__text">
+          I need a repeat of this job. I want to see evidence or proof of work before the job is closed out: Test, Retrieve, and Define a list of iCustom buffers for the FXSSI.com indicator pack. 1) Download FREE 14 day trial of Pro Indicator Pack (No CC Required) - https://fxssi.com/signup 2) Test all FXSSI.com indicators for iCustom buffers (some may have multiple) . 3) Deliver a list of all iCustom buffers found and clearly
+        </div>
+      </div>
+    </div>
+    <div class="job-item__line">
+
+      <div class="job-item__left-part">
+          <div class="job-item__count">
+            <strong>3</strong> Applications
+          </div>
+      </div>
+
+      <div class="job-item__right-part">
+<div class="g-rating  g-rating_v50" onmouseover="if(window.tooltip) window.tooltip(this, createRatingTooltip(['Ratings without categories','Specification quality','Result check quality','Availability and communication skills'], [5.0,5.0,5.0,5.0], 1));"></div><span class="g-rating__info">(11)</span>        <span class="job-item__lang">MQL4</span>
+        <span class="job-item__list-category">
+              <a class="job-item__list-category-item" href="/en/job/indicator" data-fz-event="MQL5+Job+Category" data-fz-unit="category" data-fz-value="indicator">Indicators</a>
+        </span>
+        <span class="job-item__list-skills">
+        </span>
+<time class="job-item__date" datetime="2025-07-27T09:52Z" title="2025.07.27 15:22" datetime-type="humanreadabledate">4 hours ago</time>      </div>
+    </div>
+  </div>
+</div>
+          </div>
+          <div class="main-page__freelance-item">
+
+
+
+<div class="job-item">
+  <div class="job-item__title">
+    <a href="/en/job/240287" data-fz-event="MQL5+Job+Order+Click">Creat a EA that collects statistical data, I have a working EA, I need a bot that gathering data based on my working EA</a>
+  </div>
+  <div class="job-item__desc">
+    <div class="job-item__line">
+      <div class="job-item__left-part">
+        <span class="budget">30+  <span>USD</span></span>
+      </div>
+      <div class="job-item__right-part">
+        <div class="job-item__text">
+          Description: I have a fully functioning Expert Advisor (.mq5) that trades a breakout strategy based on 2-hour session boxes. The EA works perfectly and has already been live-tested. Now, I want to create a data-gathering/analyzer version of this EA to help me validate and analyze strategy performance over historical data. This new EA should not place real trades, but instead simulate the exact same logic and track
+        </div>
+      </div>
+    </div>
+    <div class="job-item__line">
+
+      <div class="job-item__left-part">
+          <div class="job-item__count">
+            <strong>10</strong> Applications
+          </div>
+      </div>
+
+      <div class="job-item__right-part">
+<div class="g-rating  g-rating_v50" onmouseover="if(window.tooltip) window.tooltip(this, createRatingTooltip(['Specification quality','Result check quality','Availability and communication skills'], [5.0,5.0,5.0], 1));"></div><span class="g-rating__info">(1)</span>        <span class="job-item__lang">MQL5</span>
+        <span class="job-item__list-category">
+              <a class="job-item__list-category-item" href="/en/job/expert" data-fz-event="MQL5+Job+Category" data-fz-unit="category" data-fz-value="expert">Experts</a>
+        </span>
+        <span class="job-item__list-skills">
+            <a class="job-item__list-skills-item" href="/en/job/all/forex" data-fz-event="MQL5+Job+Skills" data-fz-unit="skill" data-fz-value="forex">Forex</a>
+            <a class="job-item__list-skills-item" href="/en/job/all/debugging" data-fz-event="MQL5+Job+Skills" data-fz-unit="skill" data-fz-value="debugging">Trading robot/indicator debugging</a>
+            <a class="job-item__list-skills-item" href="/en/job/all/strategy-optimization" data-fz-event="MQL5+Job+Skills" data-fz-unit="skill" data-fz-value="strategy-optimization">Strategy optimization</a>
+            <a class="job-item__list-skills-item" href="/en/job/all/statistics-mathematics" data-fz-event="MQL5+Job+Skills" data-fz-unit="skill" data-fz-value="statistics-mathematics">Statistics and mathematics</a>
+            <a class="job-item__list-skills-item" href="/en/job/all/cpp" data-fz-event="MQL5+Job+Skills" data-fz-unit="skill" data-fz-value="cpp">C++</a>
+            <a class="job-item__list-skills-item" href="/en/job/all/strategy-modules" data-fz-event="MQL5+Job+Skills" data-fz-unit="skill" data-fz-value="strategy-modules">Strategy modules</a>
+            <a class="job-item__list-skills-item" href="/en/job/all/python" data-fz-event="MQL5+Job+Skills" data-fz-unit="skill" data-fz-value="python">Python</a>
+            <a class="job-item__list-skills-item" href="/en/job/all/panels-dialog-boxes" data-fz-event="MQL5+Job+Skills" data-fz-unit="skill" data-fz-value="panels-dialog-boxes">Panels and dialog boxes</a>
+            <a class="job-item__list-skills-item" href="/en/job/all/csharp" data-fz-event="MQL5+Job+Skills" data-fz-unit="skill" data-fz-value="csharp">C#</a>
+            <a class="job-item__list-skills-item" href="/en/job/all/stocks" data-fz-event="MQL5+Job+Skills" data-fz-unit="skill" data-fz-value="stocks">Stocks</a>
+            <a class="job-item__list-skills-item" href="/en/job/all/custom-graphics" data-fz-event="MQL5+Job+Skills" data-fz-unit="skill" data-fz-value="custom-graphics">Custom graphics</a>
+            <a class="job-item__list-skills-item" href="/en/job/all/futures" data-fz-event="MQL5+Job+Skills" data-fz-unit="skill" data-fz-value="futures">Futures</a>
+            <a class="job-item__list-skills-item" href="/en/job/all/mysql" data-fz-event="MQL5+Job+Skills" data-fz-unit="skill" data-fz-value="mysql">MySQL</a>
+            <a class="job-item__list-skills-item" href="/en/job/all/product-design" data-fz-event="MQL5+Job+Skills" data-fz-unit="skill" data-fz-value="product-design">Product Design</a>
+            <a class="job-item__list-skills-item" href="/en/job/all/javascript" data-fz-event="MQL5+Job+Skills" data-fz-unit="skill" data-fz-value="javascript">JavaScript</a>
+            <a class="job-item__list-skills-item" href="/en/job/all/options" data-fz-event="MQL5+Job+Skills" data-fz-unit="skill" data-fz-value="options">Options</a>
+        </span>
+<time class="job-item__date" datetime="2025-07-27T08:16Z" title="2025.07.27 13:46" datetime-type="humanreadabledate">6 hours ago</time>      </div>
+    </div>
+  </div>
+</div>
+          </div>
+      </div>
+  </div>
+</div>
+  
+
+
+
+<div class="main-page__area main-page__area-chats">
+
+  <div class="main-page__intro">
+    <h2>
+      <a href="/en/messages">New in chats</a>
+    </h2>
+      <p>Chat with your colleagues, discuss new ideas in groups, subscribe to useful channels and create your own ones to share your experience</p>
+  </div>
+
+    <div class="main-page__area-sections-chats">
+    </div>
+
+</div>
+
+
+<div class="main-page__area main-page__area-forum">
+  <div class="main-page__intro">
+      <h2><a href="/en/forum">Traders Forum</a></h2>
+<p>Ask questions on technical analysis, discuss trading systems and improve your <a href="https://www.mql5.com/en/docs" target="_blank">MQL5</a> programming skills to develop your own trading strategies. </p>
+<p>Communicate and share your experience with traders from anywhere in the world, answer questions and help beginners — MQL5 Algotrading community is developing along with you.</p>  </div>
+
+
+    <div class="main-page__area-sections main-page__area-sections-forum">
+
+        <ul class="main-page__forum-items main-page__forum-items_column-1">
+            <li class="main-page__forum-item main-page__forum-item_unread"><a href="/en/forum/271227" data-fz-event="MQL5+HomePage+Forum+Click">Indicators: Pivot Oscillator Extended</a></li>
+            <li class="main-page__forum-item main-page__forum-item_unread"><a href="/en/forum/491872" data-fz-event="MQL5+HomePage+Forum+Click">Issue with Profile Visual</a></li>
+            <li class="main-page__forum-item main-page__forum-item_unread"><a href="/en/forum/92921" data-fz-event="MQL5+HomePage+Forum+Click">Discussion of article "The checks a trading robot must pass before publication in the Market"</a></li>
+            <li class="main-page__forum-item main-page__forum-item_unread"><a href="/en/forum/489668" data-fz-event="MQL5+HomePage+Forum+Click">Discussing the article: "Developing Advanced ICT Trading Systems: Implementing Order Blocks in an Indicator"</a></li>
+            <li class="main-page__forum-item main-page__forum-item_unread"><a href="/en/forum/485272" data-fz-event="MQL5+HomePage+Forum+Click">Is It Even Possible to Create Something Profitable for the 5 Min Timeframe?</a></li>
+            <li class="main-page__forum-item main-page__forum-item_unread"><a href="/en/forum/484993" data-fz-event="MQL5+HomePage+Forum+Click">Experts: ICT by Emil</a></li>
+            <li class="main-page__forum-item main-page__forum-item_unread"><a href="/en/forum/468899" data-fz-event="MQL5+HomePage+Forum+Click">MetaTester 5 Agents Manager Missing Tab</a></li>
+            <li class="main-page__forum-item main-page__forum-item_unread"><a href="/en/forum/181109" data-fz-event="MQL5+HomePage+Forum+Click">Sam's Sniper Strategy</a></li>
+            <li class="main-page__forum-item main-page__forum-item_unread"><a href="/en/forum/491578" data-fz-event="MQL5+HomePage+Forum+Click">Forex Market Gap Trading</a></li>
+            <li class="main-page__forum-item main-page__forum-item_unread"><a href="/en/forum/433944" data-fz-event="MQL5+HomePage+Forum+Click">Strategy tester: "mql5 cloud network" tab missing</a></li>
+        </ul>
+        <ul class="main-page__forum-items main-page__forum-items_column-2">
+            <li class="main-page__forum-item main-page__forum-item_unread"><a href="/en/forum/491847" data-fz-event="MQL5+HomePage+Forum+Click">Discovered a (probably race condition) bug with ChartIndicatorDelete.</a></li>
+            <li class="main-page__forum-item main-page__forum-item_unread"><a href="/en/forum/4460" data-fz-event="MQL5+HomePage+Forum+Click">Indicators: Karacatica</a></li>
+            <li class="main-page__forum-item main-page__forum-item_unread"><a href="/en/forum/450486" data-fz-event="MQL5+HomePage+Forum+Click">8 reasons to choose MetaTrader VPS over non-specialized hosting solutions</a></li>
+            <li class="main-page__forum-item main-page__forum-item_unread"><a href="/en/forum/462967" data-fz-event="MQL5+HomePage+Forum+Click">Pair trading and multicurrency arbitrage. The showdown.</a></li>
+            <li class="main-page__forum-item main-page__forum-item_unread"><a href="/en/forum/491409" data-fz-event="MQL5+HomePage+Forum+Click">Scripts: LotSize Calculation</a></li>
+            <li class="main-page__forum-item main-page__forum-item_unread"><a href="/en/forum/328463" data-fz-event="MQL5+HomePage+Forum+Click">Experts: CoupleHedgeEA</a></li>
+            <li class="main-page__forum-item main-page__forum-item_unread"><a href="/en/forum/4106" data-fz-event="MQL5+HomePage+Forum+Click">Discussion of article "Payments and payment methods"</a></li>
+            <li class="main-page__forum-item main-page__forum-item_unread"><a href="/en/forum/491887" data-fz-event="MQL5+HomePage+Forum+Click">Grid Trading Strategy Discussion - Seeking Community Input</a></li>
+            <li class="main-page__forum-item main-page__forum-item_unread"><a href="/en/forum/491832" data-fz-event="MQL5+HomePage+Forum+Click">Earlier developer CHEATED by putting expiry in EA?</a></li>
+            <li class="main-page__forum-item main-page__forum-item_unread"><a href="/en/forum/491885" data-fz-event="MQL5+HomePage+Forum+Click">Issue from copying a signal</a></li>
+        </ul>
+    </div>
+</div>
+
+  
+
+<div class="main-page__area main-page__area-articles">
+  <div class="main-page__intro">
+      <h2>
+        <a href="/en/articles">Financial Trading Articles</a>
+      </h2>
+<p>Learn how to create your own technical indicators and trading robots from the huge database of articles written by expert traders.</p>
+<p>Share your trading and programming experience with those who are new to algorithmic trading, <a href="https://www.mql5.com/en/articles/408" target="_blank">write</a> an article about it and earn $200. In addition, we will translate your article to ten languages.</p>  </div>
+
+
+    <div class="article-list article-list_home">
+<div class="articles-item articles-item_double">
+  <div class="articles-item__wrapper" style="background-color: rgb(218,228,230)">
+      <img class="articles-item__image-preview" loading="lazy" width="32" height="16" alt="preview" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAsICAoIBwsKCQoNDAsNERwSEQ8PESIZGhQcKSQrKigkJyctMkA3LTA9MCcnOEw5PUNFSElIKzZPVU5GVEBHSEX/2wBDAQwNDREPESESEiFFLicuRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUX/wAARCAAQACADASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAwIEB//EAB0QAQACAgIDAAAAAAAAAAAAAAEAAgMRIUESgaH/xAAWAQEBAQAAAAAAAAAAAAAAAAABAAL/xAAZEQADAAMAAAAAAAAAAAAAAAAAAQIREiH/2gAMAwEAAhEDEQA/ANLb2d7ssDJhLu7q+4ykK559xU4MV0lUDgt9iihwyrXEVd7dxR12x1RJn//Z">
+    <section class="articles-item__image">
+        <picture>
+          <source srcset="https://c.mql5.com/2/159/18913-implementing-practical-modules-from-other-languages-in-mql5_600x314.jpg, https://c.mql5.com/2/159/18913-implementing-practical-modules-from-other-languages-in-mql5_1200x628.jpg 2x" media="(min-width:700px)">
+          <img class="articles-item__image-main" loading="lazy" width="600" height="314" srcset="https://c.mql5.com/2/159/18913-implementing-practical-modules-from-other-languages-in-mql5_300x157.jpg, https://c.mql5.com/2/159/18913-implementing-practical-modules-from-other-languages-in-mql5_600x314.jpg 2x" src="https://c.mql5.com/2/159/18913-implementing-practical-modules-from-other-languages-in-mql5_600x314.jpg" alt="Implementing Practical Modules from Other Languages in MQL5 (Part 03): Schedule Module from Python, the OnTimer Event on Steroids" onerror="this.style.display='none';">
+        </picture>
+      <div class="articles-item__image-fill" style="background: linear-gradient(to top, rgba(218,228,230, 0.9) 0%, rgba(218,228,230, 0.9) 10%, rgba(218,228,230, 0.7) 50%, rgba(218,228,230, 0) 100%);"></div>
+    </section>
+    <section class="articles-item__content" style="background: rgba(218,228,230,0.9);">
+      <header>
+        <h3 class="articles-item__title">
+          <a href="/en/articles/18913" data-fz-event="&quot;MQL5+HomePage+Articles+Click&quot;">Implementing Practical Modules from Other Languages in MQL5 (Part 03): Schedule Module from Python, the OnTimer Event on Steroids</a>
+        </h3>
+      </header>
+      <div class="articles-item__description">The schedule module in Python offers a simple way to schedule repeated tasks. While MQL5 lacks a built-in equivalent, in this article we’ll implement a similar library to make it easier to set up timed events in MetaTrader 5.</div>
+      <div class="articles-item__fill" style="background: linear-gradient(to top, rgba(218,228,230, 0.9) 0%, rgba(218,228,230, 0.9) 10%, rgba(218,228,230, 0.7) 50%, rgba(218,228,230, 0) 100%);"></div>
+    </section>
+    <div class="articles-item__blackout"></div>
+  </div>
+</div><div class="articles-item articles-item_light">
+  <div class="articles-item__wrapper" style="background-color: rgb(25,13,42)">
+      <img class="articles-item__image-preview" loading="lazy" width="32" height="16" alt="preview" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAsICAoIBwsKCQoNDAsNERwSEQ8PESIZGhQcKSQrKigkJyctMkA3LTA9MCcnOEw5PUNFSElIKzZPVU5GVEBHSEX/2wBDAQwNDREPESESEiFFLicuRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUX/wAARCAAQACADASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAwECBAf/xAAdEAACAgIDAQAAAAAAAAAAAAABAgARAyEEEzEy/8QAFgEBAQEAAAAAAAAAAAAAAAAAAQIE/8QAGBEBAQADAAAAAAAAAAAAAAAAAQACEkH/2gAMAwEAAhEDEQA/AOVFS5mnBx1G2IgXER6mga0OzHFjU6omVOjsSe9APhbgnJZ8jrBkF//Z">
+    <section class="articles-item__image">
+        <picture>
+          <source srcset="https://c.mql5.com/2/159/18817-from-novice-to-expert-animated-news-headline-using-mql5-vii_600x314.jpg, https://c.mql5.com/2/159/18817-from-novice-to-expert-animated-news-headline-using-mql5-vii_1200x628.jpg 2x" media="(min-width:700px)">
+          <img class="articles-item__image-main" loading="lazy" width="600" height="314" srcset="https://c.mql5.com/2/159/18817-from-novice-to-expert-animated-news-headline-using-mql5-vii_300x157.jpg, https://c.mql5.com/2/159/18817-from-novice-to-expert-animated-news-headline-using-mql5-vii_600x314.jpg 2x" src="https://c.mql5.com/2/159/18817-from-novice-to-expert-animated-news-headline-using-mql5-vii_600x314.jpg" alt="From Novice to Expert: Animated News Headline Using MQL5 (VII) — Post Impact Strategy for News Trading" onerror="this.style.display='none';">
+        </picture>
+      <div class="articles-item__image-fill" style="background: linear-gradient(to top, rgba(25,13,42, 0.9) 0%, rgba(25,13,42, 0.9) 10%, rgba(25,13,42, 0.7) 50%, rgba(25,13,42, 0) 100%);"></div>
+    </section>
+    <section class="articles-item__content" style="background: rgba(25,13,42,0.9);">
+      <header>
+        <h3 class="articles-item__title">
+          <a href="/en/articles/18817" data-fz-event="&quot;MQL5+HomePage+Articles+Click&quot;">From Novice to Expert: Animated News Headline Using MQL5 (VII) — Post Impact Strategy for News Trading</a>
+        </h3>
+      </header>
+      <div class="articles-item__description">The risk of whipsaw is extremely high during the first minute following a high-impact economic news release. In that brief window, price movements can be erratic and volatile, often triggering both sides of pending orders. Shortly after the release—typically within a minute—the market tends to stabilize, resuming or correcting the prevailing trend with more typical volatility. In this section, we’ll explore an alternative approach to news trading, aiming to assess its effectiveness as a valuable addition to a trader’s toolkit. Continue reading for more insights and details in this discussion.</div>
+      <div class="articles-item__fill" style="background: linear-gradient(to top, rgba(25,13,42, 0.9) 0%, rgba(25,13,42, 0.9) 10%, rgba(25,13,42, 0.7) 50%, rgba(25,13,42, 0) 100%);"></div>
+    </section>
+    <div class="articles-item__blackout"></div>
+  </div>
+</div><div class="articles-item">
+  <div class="articles-item__wrapper" style="background-color: rgb(219,190,155)">
+      <img class="articles-item__image-preview" loading="lazy" width="32" height="16" alt="preview" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAsICAoIBwsKCQoNDAsNERwSEQ8PESIZGhQcKSQrKigkJyctMkA3LTA9MCcnOEw5PUNFSElIKzZPVU5GVEBHSEX/2wBDAQwNDREPESESEiFFLicuRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUX/wAARCAAQACADASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAQIEAwb/xAAdEAACAwACAwAAAAAAAAAAAAABAgADEQQhEjFB/8QAFgEBAQEAAAAAAAAAAAAAAAAABAAB/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAMAwEAAhEDEQA/AO4v5IrU4RskW9xrE7HepXbyPuEVqIAup3vssOKCBN0dwvccKo+Q9Sa//9k=">
+    <section class="articles-item__image">
+        <picture>
+          <source srcset="https://c.mql5.com/2/159/18911-price-action-analysis-toolkit-development-part-33-candle-range_600x314.jpg, https://c.mql5.com/2/159/18911-price-action-analysis-toolkit-development-part-33-candle-range_1200x628.jpg 2x" media="(min-width:700px)">
+          <img class="articles-item__image-main" loading="lazy" width="600" height="314" srcset="https://c.mql5.com/2/159/18911-price-action-analysis-toolkit-development-part-33-candle-range_300x157.jpg, https://c.mql5.com/2/159/18911-price-action-analysis-toolkit-development-part-33-candle-range_600x314.jpg 2x" src="https://c.mql5.com/2/159/18911-price-action-analysis-toolkit-development-part-33-candle-range_600x314.jpg" alt="Price Action Analysis Toolkit Development (Part 33): Candle Range Theory Tool" onerror="this.style.display='none';">
+        </picture>
+      <div class="articles-item__image-fill" style="background: linear-gradient(to top, rgba(219,190,155, 0.9) 0%, rgba(219,190,155, 0.9) 10%, rgba(219,190,155, 0.7) 50%, rgba(219,190,155, 0) 100%);"></div>
+    </section>
+    <section class="articles-item__content" style="background: rgba(219,190,155,0.9);">
+      <header>
+        <h3 class="articles-item__title">
+          <a href="/en/articles/18911" data-fz-event="&quot;MQL5+HomePage+Articles+Click&quot;">Price Action Analysis Toolkit Development (Part 33): Candle Range Theory Tool</a>
+        </h3>
+      </header>
+      <div class="articles-item__description">Upgrade your market reading with the Candle-Range Theory suite for MetaTrader 5, a fully MQL5-native solution that converts raw price bars into real-time volatility intelligence. The lightweight CRangePattern library benchmarks each candle’s true range against an adaptive ATR and classifies it the instant it closes; the CRT Indicator then projects those classifications on your chart as crisp, color-coded rectangles and arrows that reveal tightening consolidations, explosive breakouts, and full-range engulfment the moment they occur.</div>
+      <div class="articles-item__fill" style="background: linear-gradient(to top, rgba(219,190,155, 0.9) 0%, rgba(219,190,155, 0.9) 10%, rgba(219,190,155, 0.7) 50%, rgba(219,190,155, 0) 100%);"></div>
+    </section>
+    <div class="articles-item__blackout"></div>
+  </div>
+</div><div class="articles-item articles-item_light">
+  <div class="articles-item__wrapper" style="background-color: rgb(2,55,91)">
+      <img class="articles-item__image-preview" loading="lazy" width="32" height="16" alt="preview" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAsICAoIBwsKCQoNDAsNERwSEQ8PESIZGhQcKSQrKigkJyctMkA3LTA9MCcnOEw5PUNFSElIKzZPVU5GVEBHSEX/2wBDAQwNDREPESESEiFFLicuRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUX/wAARCAAQACADASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAABAUCAwf/xAAiEAACAgECBwEAAAAAAAAAAAABAgARAwQhEhMyM0FRcZH/xAAWAQEBAQAAAAAAAAAAAAAAAAAFAAL/xAAZEQADAQEBAAAAAAAAAAAAAAAAAQIDITH/2gAMAwEAAhEDEQA/AMyxYwp2r8hK8QG1y/T4lXqUQ9MmJR20P0RKI4Gaa98FyBzd+pApv4jPJqEojloPggDm2sASpJGZps//2Q==">
+    <section class="articles-item__image">
+        <picture>
+          <source srcset="https://c.mql5.com/2/158/18880-mql5-trading-tools-part-6-dynamic-holographic-dashboard-with_600x314.jpg, https://c.mql5.com/2/158/18880-mql5-trading-tools-part-6-dynamic-holographic-dashboard-with_1200x628.jpg 2x" media="(min-width:700px)">
+          <img class="articles-item__image-main" loading="lazy" width="600" height="314" srcset="https://c.mql5.com/2/158/18880-mql5-trading-tools-part-6-dynamic-holographic-dashboard-with_300x157.jpg, https://c.mql5.com/2/158/18880-mql5-trading-tools-part-6-dynamic-holographic-dashboard-with_600x314.jpg 2x" src="https://c.mql5.com/2/158/18880-mql5-trading-tools-part-6-dynamic-holographic-dashboard-with_600x314.jpg" alt="MQL5 Trading Tools (Part 6): Dynamic Holographic Dashboard with Pulse Animations and Controls" onerror="this.style.display='none';">
+        </picture>
+      <div class="articles-item__image-fill" style="background: linear-gradient(to top, rgba(2,55,91, 0.9) 0%, rgba(2,55,91, 0.9) 10%, rgba(2,55,91, 0.7) 50%, rgba(2,55,91, 0) 100%);"></div>
+    </section>
+    <section class="articles-item__content" style="background: rgba(2,55,91,0.9);">
+      <header>
+        <h3 class="articles-item__title">
+          <a href="/en/articles/18880" data-fz-event="&quot;MQL5+HomePage+Articles+Click&quot;">MQL5 Trading Tools (Part 6): Dynamic Holographic Dashboard with Pulse Animations and Controls</a>
+        </h3>
+      </header>
+      <div class="articles-item__description">In this article, we create a dynamic holographic dashboard in MQL5 for monitoring symbols and timeframes with RSI, volatility alerts, and sorting options. We add pulse animations, interactive buttons, and holographic effects to make the tool visually engaging and responsive.</div>
+      <div class="articles-item__fill" style="background: linear-gradient(to top, rgba(2,55,91, 0.9) 0%, rgba(2,55,91, 0.9) 10%, rgba(2,55,91, 0.7) 50%, rgba(2,55,91, 0) 100%);"></div>
+    </section>
+    <div class="articles-item__blackout"></div>
+  </div>
+</div><div class="articles-item articles-item_light">
+  <div class="articles-item__wrapper" style="background-color: rgb(4,26,51)">
+      <img class="articles-item__image-preview" loading="lazy" width="32" height="16" alt="preview" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAsICAoIBwsKCQoNDAsNERwSEQ8PESIZGhQcKSQrKigkJyctMkA3LTA9MCcnOEw5PUNFSElIKzZPVU5GVEBHSEX/2wBDAQwNDREPESESEiFFLicuRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUX/wAARCAAQACADASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAwACBAf/xAAdEAACAgIDAQAAAAAAAAAAAAAAAQIRIVEDEjFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAT/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAwDAQACEQMRAD8A5iq8wLC6xeNBRaXpHPVlaZpfM45imnsKXPKTttv6D3ZWwR//2Q==">
+    <section class="articles-item__image">
+        <picture>
+          <source srcset="https://c.mql5.com/2/158/18884-introduction-to-mql5-part-19-building-expert-advisors-using_600x314.jpg, https://c.mql5.com/2/158/18884-introduction-to-mql5-part-19-building-expert-advisors-using_1200x628.jpg 2x" media="(min-width:700px)">
+          <img class="articles-item__image-main" loading="lazy" width="600" height="314" srcset="https://c.mql5.com/2/158/18884-introduction-to-mql5-part-19-building-expert-advisors-using_300x157.jpg, https://c.mql5.com/2/158/18884-introduction-to-mql5-part-19-building-expert-advisors-using_600x314.jpg 2x" src="https://c.mql5.com/2/158/18884-introduction-to-mql5-part-19-building-expert-advisors-using_600x314.jpg" alt="Introduction to MQL5 (Part 19): Automating Wolfe Wave Detection" onerror="this.style.display='none';">
+        </picture>
+      <div class="articles-item__image-fill" style="background: linear-gradient(to top, rgba(4,26,51, 0.9) 0%, rgba(4,26,51, 0.9) 10%, rgba(4,26,51, 0.7) 50%, rgba(4,26,51, 0) 100%);"></div>
+    </section>
+    <section class="articles-item__content" style="background: rgba(4,26,51,0.9);">
+      <header>
+        <h3 class="articles-item__title">
+          <a href="/en/articles/18884" data-fz-event="&quot;MQL5+HomePage+Articles+Click&quot;">Introduction to MQL5 (Part 19): Automating Wolfe Wave Detection</a>
+        </h3>
+      </header>
+      <div class="articles-item__description">This article shows how to programmatically identify bullish and bearish Wolfe Wave patterns and trade them using MQL5. We’ll explore how to identify Wolfe Wave structures programmatically and execute trades based on them using MQL5. This includes detecting key swing points, validating pattern rules, and preparing the EA to act on the signals it finds.</div>
+      <div class="articles-item__fill" style="background: linear-gradient(to top, rgba(4,26,51, 0.9) 0%, rgba(4,26,51, 0.9) 10%, rgba(4,26,51, 0.7) 50%, rgba(4,26,51, 0) 100%);"></div>
+    </section>
+    <div class="articles-item__blackout"></div>
+  </div>
+</div><div class="articles-item articles-item_light">
+  <div class="articles-item__wrapper" style="background-color: rgb(72,73,89)">
+      <img class="articles-item__image-preview" loading="lazy" width="32" height="16" alt="preview" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAsICAoIBwsKCQoNDAsNERwSEQ8PESIZGhQcKSQrKigkJyctMkA3LTA9MCcnOEw5PUNFSElIKzZPVU5GVEBHSEX/2wBDAQwNDREPESESEiFFLicuRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUX/wAARCAAQACADASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAABAUAAgP/xAAgEAACAQQBBQAAAAAAAAAAAAABAgADBBEhEgUTMTJR/8QAFQEBAQAAAAAAAAAAAAAAAAAABAP/xAAaEQACAgMAAAAAAAAAAAAAAAAAAQIDEzFR/9oADAMBAAIRAxEAPwBT2BR9jIbtKXg4l76sGJ46ES3NTR+xU1wjXa3sPq9TCjCsRAXvebZLZi53OdzEvuGcEKyM/9k=">
+    <section class="articles-item__image">
+        <picture>
+          <source srcset="https://c.mql5.com/2/104/Adaptive_Moment_Estimation_600x314.jpg, https://c.mql5.com/2/104/Adaptive_Moment_Estimation_1200x628.jpg 2x" media="(min-width:700px)">
+          <img class="articles-item__image-main" loading="lazy" width="600" height="314" srcset="https://c.mql5.com/2/104/Adaptive_Moment_Estimation_300x157.jpg, https://c.mql5.com/2/104/Adaptive_Moment_Estimation_600x314.jpg 2x" src="https://c.mql5.com/2/104/Adaptive_Moment_Estimation_600x314.jpg" alt="Population ADAM (Adaptive Moment Estimation)" onerror="this.style.display='none';">
+        </picture>
+      <div class="articles-item__image-fill" style="background: linear-gradient(to top, rgba(72,73,89, 0.9) 0%, rgba(72,73,89, 0.9) 10%, rgba(72,73,89, 0.7) 50%, rgba(72,73,89, 0) 100%);"></div>
+    </section>
+    <section class="articles-item__content" style="background: rgba(72,73,89,0.9);">
+      <header>
+        <h3 class="articles-item__title">
+          <a href="/en/articles/16443" data-fz-event="&quot;MQL5+HomePage+Articles+Click&quot;">Population ADAM (Adaptive Moment Estimation)</a>
+        </h3>
+      </header>
+      <div class="articles-item__description">The article presents the transformation of the well-known and popular ADAM gradient optimization method into a population algorithm and its modification with the introduction of hybrid individuals. The new approach allows creating agents that combine elements of successful decisions using probability distribution. The key innovation is the formation of hybrid population individuals that adaptively accumulate information from the most promising solutions, increasing the efficiency of search in complex multidimensional spaces.</div>
+      <div class="articles-item__fill" style="background: linear-gradient(to top, rgba(72,73,89, 0.9) 0%, rgba(72,73,89, 0.9) 10%, rgba(72,73,89, 0.7) 50%, rgba(72,73,89, 0) 100%);"></div>
+    </section>
+    <div class="articles-item__blackout"></div>
+  </div>
+</div><div class="articles-item articles-item_light">
+  <div class="articles-item__wrapper" style="background-color: rgb(21,31,58)">
+      <img class="articles-item__image-preview" loading="lazy" width="32" height="16" alt="preview" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAsICAoIBwsKCQoNDAsNERwSEQ8PESIZGhQcKSQrKigkJyctMkA3LTA9MCcnOEw5PUNFSElIKzZPVU5GVEBHSEX/2wBDAQwNDREPESESEiFFLicuRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUX/wAARCAAQACADASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAwQBAgf/xAAhEAACAQMDBQAAAAAAAAAAAAAAAQIDETEEIUETFCIyof/EABYBAQEBAAAAAAAAAAAAAAAAAAIDBP/EABgRAQEBAQEAAAAAAAAAAAAAAAEAAhFB/9oADAMBAAIRAxEAPwDPnThP1diFpZt7C6qtcFu5kufpp5TdMz0XCPlZAJNXwDlqG87g3Uu8CNBENet//9k=">
+    <section class="articles-item__image">
+        <picture>
+          <source srcset="https://c.mql5.com/2/158/18878-mql5-wizard-techniques-you-should-know-part-76-using-patterns_600x314.jpg, https://c.mql5.com/2/158/18878-mql5-wizard-techniques-you-should-know-part-76-using-patterns_1200x628.jpg 2x" media="(min-width:700px)">
+          <img class="articles-item__image-main" loading="lazy" width="600" height="314" srcset="https://c.mql5.com/2/158/18878-mql5-wizard-techniques-you-should-know-part-76-using-patterns_300x157.jpg, https://c.mql5.com/2/158/18878-mql5-wizard-techniques-you-should-know-part-76-using-patterns_600x314.jpg 2x" src="https://c.mql5.com/2/158/18878-mql5-wizard-techniques-you-should-know-part-76-using-patterns_600x314.jpg" alt="MQL5 Wizard Techniques you should know (Part 76):  Using Patterns of Awesome Oscillator and the Envelope Channels with Supervised Learning" onerror="this.style.display='none';">
+        </picture>
+      <div class="articles-item__image-fill" style="background: linear-gradient(to top, rgba(21,31,58, 0.9) 0%, rgba(21,31,58, 0.9) 10%, rgba(21,31,58, 0.7) 50%, rgba(21,31,58, 0) 100%);"></div>
+    </section>
+    <section class="articles-item__content" style="background: rgba(21,31,58,0.9);">
+      <header>
+        <h3 class="articles-item__title">
+          <a href="/en/articles/18878" data-fz-event="&quot;MQL5+HomePage+Articles+Click&quot;">MQL5 Wizard Techniques you should know (Part 76):  Using Patterns of Awesome Oscillator and the Envelope Channels with Supervised Learning</a>
+        </h3>
+      </header>
+      <div class="articles-item__description">We follow up on our last article, where we introduced the indicator couple of the Awesome-Oscillator and the Envelope Channel, by looking at how this pairing could be enhanced with Supervised Learning. The Awesome-Oscillator and Envelope-Channel are a trend-spotting and support/resistance complimentary mix. Our supervised learning approach is a CNN that engages the Dot Product Kernel with Cross-Time-Attention to size its kernels and channels. As per usual, this is done in a custom signal class file that works with the MQL5 wizard to assemble an Expert Advisor.</div>
+      <div class="articles-item__fill" style="background: linear-gradient(to top, rgba(21,31,58, 0.9) 0%, rgba(21,31,58, 0.9) 10%, rgba(21,31,58, 0.7) 50%, rgba(21,31,58, 0) 100%);"></div>
+    </section>
+    <div class="articles-item__blackout"></div>
+  </div>
+</div><div class="articles-item articles-item_light">
+  <div class="articles-item__wrapper" style="background-color: rgb(37,34,26)">
+      <img class="articles-item__image-preview" loading="lazy" width="32" height="16" alt="preview" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAsICAoIBwsKCQoNDAsNERwSEQ8PESIZGhQcKSQrKigkJyctMkA3LTA9MCcnOEw5PUNFSElIKzZPVU5GVEBHSEX/2wBDAQwNDREPESESEiFFLicuRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUX/wAARCAAQACADASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAABAIDBQf/xAAbEAACAwEBAQAAAAAAAAAAAAABAgADESGBBP/EABUBAQEAAAAAAAAAAAAAAAAAAAEC/8QAGBEAAwEBAAAAAAAAAAAAAAAAAAECMUH/2gAMAwEAAhEDEQA/AOdi7CAhyXBbLR2zyZyE7HV2EDrtJqmsGZT0kfjJXdg7KSGjWs0ddj7DMdMmafRqUsP/2Q==">
+    <section class="articles-item__image">
+        <picture>
+          <source srcset="https://c.mql5.com/2/158/18867-automating-trading-strategies-in-mql5-part-24-london-session_600x314.jpg, https://c.mql5.com/2/158/18867-automating-trading-strategies-in-mql5-part-24-london-session_1200x628.jpg 2x" media="(min-width:700px)">
+          <img class="articles-item__image-main" loading="lazy" width="600" height="314" srcset="https://c.mql5.com/2/158/18867-automating-trading-strategies-in-mql5-part-24-london-session_300x157.jpg, https://c.mql5.com/2/158/18867-automating-trading-strategies-in-mql5-part-24-london-session_600x314.jpg 2x" src="https://c.mql5.com/2/158/18867-automating-trading-strategies-in-mql5-part-24-london-session_600x314.jpg" alt="Automating Trading Strategies in MQL5 (Part 24): London Session Breakout System with Risk Management and Trailing Stops" onerror="this.style.display='none';">
+        </picture>
+      <div class="articles-item__image-fill" style="background: linear-gradient(to top, rgba(37,34,26, 0.9) 0%, rgba(37,34,26, 0.9) 10%, rgba(37,34,26, 0.7) 50%, rgba(37,34,26, 0) 100%);"></div>
+    </section>
+    <section class="articles-item__content" style="background: rgba(37,34,26,0.9);">
+      <header>
+        <h3 class="articles-item__title">
+          <a href="/en/articles/18867" data-fz-event="&quot;MQL5+HomePage+Articles+Click&quot;">Automating Trading Strategies in MQL5 (Part 24): London Session Breakout System with Risk Management and Trailing Stops</a>
+        </h3>
+      </header>
+      <div class="articles-item__description">In this article, we develop a London Session Breakout System that identifies pre-London range breakouts and places pending orders with customizable trade types and risk settings. We incorporate features like trailing stops, risk-to-reward ratios, maximum drawdown limits, and a control panel for real-time monitoring and management.</div>
+      <div class="articles-item__fill" style="background: linear-gradient(to top, rgba(37,34,26, 0.9) 0%, rgba(37,34,26, 0.9) 10%, rgba(37,34,26, 0.7) 50%, rgba(37,34,26, 0) 100%);"></div>
+    </section>
+    <div class="articles-item__blackout"></div>
+  </div>
+</div><div class="articles-item">
+  <div class="articles-item__wrapper" style="background-color: rgb(197,199,182)">
+      <img class="articles-item__image-preview" loading="lazy" width="32" height="16" alt="preview" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAsICAoIBwsKCQoNDAsNERwSEQ8PESIZGhQcKSQrKigkJyctMkA3LTA9MCcnOEw5PUNFSElIKzZPVU5GVEBHSEX/2wBDAQwNDREPESESEiFFLicuRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUX/wAARCAAQACADASIAAhEBAxEB/8QAGQAAAQUAAAAAAAAAAAAAAAAABQECAwQG/8QAJBAAAQQBAgYDAAAAAAAAAAAAAQACAwQRBRITISIjMmFRcZH/xAAWAQEBAQAAAAAAAAAAAAAAAAACAQP/xAAZEQACAwEAAAAAAAAAAAAAAAAAAQIRElH/2gAMAwEAAhEDEQA/ANfqWoTmTEe7HpJVtWcYO79Q+XUJHuyAB9KevdcPJoJ+Vjl2LaoOx3HBvUQD7Tm2Sc9wFCon8U5kAKttEYHIBXLA5cP/2Q==">
+    <section class="articles-item__image">
+        <picture>
+          <source srcset="https://c.mql5.com/2/158/18847-reimagining-classic-strategies-part-14-multiple-strategy-analysis_600x314.jpg, https://c.mql5.com/2/158/18847-reimagining-classic-strategies-part-14-multiple-strategy-analysis_1200x628.jpg 2x" media="(min-width:700px)">
+          <img class="articles-item__image-main" loading="lazy" width="600" height="314" srcset="https://c.mql5.com/2/158/18847-reimagining-classic-strategies-part-14-multiple-strategy-analysis_300x157.jpg, https://c.mql5.com/2/158/18847-reimagining-classic-strategies-part-14-multiple-strategy-analysis_600x314.jpg 2x" src="https://c.mql5.com/2/158/18847-reimagining-classic-strategies-part-14-multiple-strategy-analysis_600x314.jpg" alt="Reimagining Classic Strategies (Part 14): Multiple Strategy Analysis" onerror="this.style.display='none';">
+        </picture>
+      <div class="articles-item__image-fill" style="background: linear-gradient(to top, rgba(197,199,182, 0.9) 0%, rgba(197,199,182, 0.9) 10%, rgba(197,199,182, 0.7) 50%, rgba(197,199,182, 0) 100%);"></div>
+    </section>
+    <section class="articles-item__content" style="background: rgba(197,199,182,0.9);">
+      <header>
+        <h3 class="articles-item__title">
+          <a href="/en/articles/18847" data-fz-event="&quot;MQL5+HomePage+Articles+Click&quot;">Reimagining Classic Strategies (Part 14): Multiple Strategy Analysis</a>
+        </h3>
+      </header>
+      <div class="articles-item__description">In this article, we continue our exploration of building an ensemble of trading strategies and using the MT5 genetic optimizer to tune the strategy parameters. Today, we analyzed the data in Python, showing our model could better predict which strategy would outperform, achieving higher accuracy than forecasting market returns directly. However, when we tested our application with its statistical models, our performance levels fell dismally. We subsequently discovered that the genetic optimizer unfortunately favored highly correlated strategies, prompting us to revise our method to keep vote weights fixed and focus optimization on indicator settings instead.</div>
+      <div class="articles-item__fill" style="background: linear-gradient(to top, rgba(197,199,182, 0.9) 0%, rgba(197,199,182, 0.9) 10%, rgba(197,199,182, 0.7) 50%, rgba(197,199,182, 0) 100%);"></div>
+    </section>
+    <div class="articles-item__blackout"></div>
+  </div>
+</div>    </div>
+</div>
+
+
+<div id="wdausxxqrpvhekbwjrjlhqjghyhesrqqau" class="r6k1nhm6hw3dl63jt r6k1nhm6hw3dl63jt_home g46zevd11"></div></div>
+
+
+<script src="https://c.mql5.com/js/currencies.bbf1bdd93269462bab913ea0c856f721.js" defer="defer" type="text/javascript"></script>
+    </article>
+  </main>
+
+    <footer aria-hidden="true">
+
+
+<div aria-hidden="true" class="footer  desktop" id="footer">
+  <ul class="links  links_desktop">
+      <li id="navFooterCommunity">
+        <b>MQL5.community</b>
+        <nav>
+          <ul>
+            <li><a href="https://web.metatrader.app/terminal?mode=demo&amp;lang=en" target="_blank" rel="nofollow noopener" data-fz-event="MQL5+Footer+Trading">Online trading / WebTerminal</a></li>
+            <li><a href="/en/code" data-fz-event="MQL5+Footer+CodeBase">Free technical indicators and robots</a></li>
+            <li><a href="/en/articles" data-fz-event="MQL5+Footer+Articles">Articles about programming and trading</a></li>
+            <li><a href="/en/job" data-fz-event="MQL5+Footer+Job">Order trading robots on the Freelance</a></li>
+            <li><a href="/en/market" data-fz-event="MQL5+Footer+Market">Market of Expert Advisors and applications	</a></li>
+            <li><a href="/en/signals" data-fz-event="MQL5+Footer+Signals">Follow forex signals</a></li>
+            <li><a href="/en/vps" data-fz-event="MQL5+Footer+VPS">Low latency forex VPS</a></li>
+            <li><a href="/en/forum" data-fz-event="MQL5+Footer+Forum">Traders forum</a></li>
+            <li><a href="/en/blogs" data-fz-event="MQL5+Footer+Blogs">Trading blogs</a></li>
+            <li><a rel="nofollow" href="/en/charts" data-fz-event="MQL5+Footer+Charts">Charts</a></li>
+          </ul>
+        </nav>
+      </li>
+      <li id="navFooterMt5">
+        <b>MetaTrader 5</b>
+        <nav>
+          <ul>
+            <li><a rel="nofollow noopener" href="https://www.metatrader5.com" data-fz-event="MQL5+Footer+MetaTrader+5"><span class="nobr">MetaTrader 5</span> Trading Platform</a></li>
+            <li><a rel="nofollow noopener" href="https://www.metatrader5.com/en/releasenotes" data-fz-event="MQL5+Footer+MetaTrader+5"><span class="nobr">MetaTrader 5</span> latest updates</a></li>
+            <li><a rel="nofollow noopener" href="https://www.metatrader5.com/en/news" data-fz-event="MQL5+Footer+MetaTrader+5">News, implementations and technology</a></li>
+            <li><a rel="nofollow noopener" href="https://www.metatrader5.com/en/terminal/help" data-fz-event="MQL5+Footer+MetaTrader+5"><span class="nobr">MetaTrader 5</span> User Manual</a></li>
+            <li><a href="/en/docs" data-fz-event="MQL5+Footer+Docs">MQL5 language of trading strategies</a></li>
+            <li><a rel="nofollow noopener" href="https://cloud.mql5.com" data-fz-event="MQL5+Footer+Cloud">MQL5 Cloud Network</a></li>
+            <li><a rel="noopener" href="https://forge.mql5.io" data-fz-event="MQL5+Footer+Forge" target="_blank">MQL5 Algo Forge</a></li>
+              <li><a rel="nofollow noopener" href="https://download.mql5.com/cdn/web/metaquotes.ltd/mt5/mt5setup.exe?utm_source=www.mql5.com&amp;utm_campaign=download" data-fz-event="MetaTrader+5+Desktop+Download+Footer">Download <span class="nobr">MetaTrader 5</span></a></li>
+              <li><a rel="nofollow noopener" href="https://www.metatrader5.com/en/terminal/help/start_advanced/installation" data-fz-event="MQL5+Footer+MetaTrader+5">Install Platform</a></li>
+              <li><a rel="nofollow noopener" href="https://www.metatrader5.com/en/terminal/help/start_advanced/deinstallation" data-fz-event="MQL5+Footer+MetaTrader+5">Uninstall Platform</a></li>
+          </ul>
+        </nav>
+
+      </li>
+    <li id="navFooterWebsite">
+        <b>Website</b>
+        <nav>
+          <ul>
+            <li><a rel="nofollow" href="/en/about" data-fz-event="MQL5+Footer+About">About</a></li>
+              <li><a href="/en/wall" data-fz-event="MQL5+Footer+Wall">Timeline</a></li>
+            <li><a rel="nofollow" href="/en/about/terms" data-fz-event="MQL5+Footer+About">Terms and Conditions</a></li>
+            <li><a rel="nofollow" href="/en/about/autopayments" data-fz-event="MQL5+Footer+About">Recurring Payment Agreement</a></li>
+            <li><a rel="nofollow" href="/en/about/agencyagreement" data-fz-event="MQL5+Footer+About">Agency Agreement – Offer</a></li>
+            <li><a rel="nofollow" href="/en/about/privacy" data-fz-event="MQL5+Footer+About">Privacy and Data Protection Policy</a></li>
+            <li><a rel="nofollow" href="/en/about/cookies" data-fz-event="MQL5+Footer+About">Cookies Policy</a></li>
+            <li>
+                <a rel="nofollow" href="/en/contact" data-fz-event="MQL5+Footer+Contacts">Contacts and requests</a>
+            </li>
+          </ul>
+        </nav>
+    </li>
+
+      <li>
+        <div class="footer__products">
+            <div class="footer__product">
+              <a target="_blank" rel="nofollow noopener" href="https://www.metatrader5.com" class="footer__product-name">MetaTrader 5</a>
+              <div class="footer__product-links">
+              <a rel="nofollow noopener" href="https://download.mql5.com/cdn/web/metaquotes.ltd/mt5/mt5setup.exe?utm_source=www.mql5.com&amp;utm_campaign=download" class="icon windows" data-fz-event="MetaTrader+5+Desktop+Download+Footer"><div class="footer__product-link-hint footer__product-link-hint-short">Download MetaTrader 5 for Windows</div></a>
+              <a rel="nofollow noopener" href="https://download.mql5.com/cdn/web/metaquotes.ltd/mt5/MetaTrader5.pkg.zip?utm_source=www.mql5.com&amp;utm_campaign=download" class="icon macos" data-fz-event="MetaTrader+5+Desktop+Download+Footer"><div class="footer__product-link-hint footer__product-link-hint-short">Download MetaTrader 5 for MacOS</div></a>
+              <a rel="nofollow noopener" href="https://www.mql5.com/en/articles/625?utm_source=www.mql5.com&amp;utm_campaign=download" class="icon linux" data-fz-event="MetaTrader+5+Desktop+Download+Footer"><div class="footer__product-link-hint footer__product-link-hint-short">Download MetaTrader 5 for Linux</div></a>
+              <a rel="nofollow noopener" href="https://web.metatrader.app/terminal?mode=demo&amp;lang=en" class="icon web"><div class="footer__product-link-hint footer__product-link-hint-short">Open MetaTrader 5 WebTerminal</div></a>
+              <a rel="nofollow noopener" href="https://download.mql5.com/cdn/mobile/mt5/ios?utm_source=www.mql5.com&amp;utm_campaign=install.metaquotes&amp;hl=en" class="icon ios" data-fz-event="MetaTrader+5+iOS+Download+Footer"><div class="footer__product-link-hint" style="background-image: url(https://c.mql5.com/qr/j1YndT0ELP9.png)">Scan to install from App Store</div></a>
+              <a rel="nofollow noopener" href="https://download.mql5.com/cdn/mobile/mt5/android?utm_source=www.mql5.com&amp;utm_campaign=install.metaquotes&amp;hl=en" class="icon android" data-fz-event="MetaTrader+5+Android+Download+Footer"><div class="footer__product-link-hint" style="background-image: url(https://c.mql5.com/qr/kLq7f3IjZ79.png)">Scan to install from Google Play</div></a>
+              <a rel="nofollow noopener" href="https://download.mql5.com/cdn/mobile/mt5/android/app-gallery?utm_source=www.mql5.com&amp;utm_campaign=install.metaquotes" class="icon huawei" data-fz-event="MetaTrader+5+Android+Download+Footer"><div class="footer__product-link-hint" style="background-image: url(https://c.mql5.com/qr/ZgFlSvLLbPn.png)">Scan to install from Huawei AppGallery</div></a>
+              <a rel="nofollow noopener" href="https://download.mql5.com/cdn/web/metaquotes.software.corp/mt5/metatrader5.apk?utm_source=www.mql5.com&amp;utm_campaign=install.metaquotes" class="icon ark" data-fz-event="MetaTrader+5+Android+Download+Footer"><div class="footer__product-link-hint" style="background-image: url(https://c.mql5.com/qr/Lwmc2V3KIPA.png)">Scan to get Android APK file</div></a>
+              </div>
+            </div>
+            <div>
+              <div class="footer__product">
+                <a target="_blank" rel="nofollow noopener" href="https://www.metatrader5.com/en/news/2270" class="footer__product-name">MQL5 Channels</a>
+                <div class="footer__product-links">
+                <a rel="nofollow noopener" href="https://download.mql5.com/cdn/mobile/mql5.channels/ios?utm_source=www.mql5.com&amp;utm_campaign=download&amp;hl=en" class="icon ios" data-fz-event="MQL5+Channels+iOS+Download+Footer"><div class="footer__product-link-hint" style="background-image: url(https://c.mql5.com/qr/bZWf3CH-YUJ.png)">Scan to install from App Store</div></a>
+                <a rel="nofollow noopener" href="https://download.mql5.com/cdn/mobile/mql5.channels/android?utm_source=www.mql5.com&amp;utm_campaign=download&amp;hl=en" class="icon android" data-fz-event="MQL5+Channels+Android+Download+Footer"><div class="footer__product-link-hint" style="background-image: url(https://c.mql5.com/qr/3DvQEZrJjjS.png)">Scan to install from Google Play</div></a>
+                <a rel="nofollow noopener" href="https://download.mql5.com/cdn/mobile/mql5.channels/android/app-gallery?utm_source=www.mql5.com&amp;utm_campaign=download" class="icon huawei" data-fz-event="MQL5+Channels+Android+Download+Footer"><div class="footer__product-link-hint" style="background-image: url(https://c.mql5.com/qr/S7GLL6gia6p.png)">Scan to install from Huawei AppGallery</div></a>
+                <a rel="nofollow noopener" href="https://download.mql5.com/cdn/web/metaquotes.software.corp/mql5channels/mql5channels.apk?utm_source=www.mql5.com&amp;utm_campaign=download" class="icon ark" data-fz-event="MQL5+Channels+Android+Download+Footer"><div class="footer__product-link-hint" style="background-image: url(https://c.mql5.com/qr/GavZeMoJbi7.png)">Scan to get Android APK file</div></a>
+                </div>
+              </div>
+              <div class="footer__product">
+                <a target="_blank" rel="nofollow noopener" href="https://www.tradays.com/en/download?utm_source=www.mql5.com&amp;utm_campaign=download" data-fz-event="MQL5+Footer+Download+Tradays" class="footer__product-name">Economic Calendar</a>
+                <div class="footer__product-links">
+                <a rel="nofollow noopener" href="https://download.mql5.com/cdn/mobile/tradays/ios?utm_source=www.mql5.com&amp;utm_campaign=download&amp;hl=en" class="icon ios" data-fz-event="Tradays+iOS+Download+Footer"><div class="footer__product-link-hint" style="background-image: url(https://c.mql5.com/qr/CA1pc8ZTZxp.png)">Scan to install from App Store</div></a>
+                <a rel="nofollow noopener" href="https://download.mql5.com/cdn/mobile/tradays/android?utm_source=www.mql5.com&amp;utm_campaign=download&amp;hl=en" class="icon android" data-fz-event="Tradays+Android+Download+Footer"><div class="footer__product-link-hint" style="background-image: url(https://c.mql5.com/qr/BR4u5sNJgnA.png)">Scan to install from Google Play</div></a>
+                <a rel="nofollow noopener" href="https://download.mql5.com/cdn/mobile/tradays/android/app-gallery?utm_source=www.mql5.com&amp;utm_campaign=download" class="icon huawei" data-fz-event="Tradays+Android+Download+Footer"><div class="footer__product-link-hint" style="background-image: url(https://c.mql5.com/qr/CDbwhhgyysd.png)">Scan to install from Huawei AppGallery</div></a>
+                <a rel="nofollow noopener" href="https://download.mql5.com/cdn/web/metaquotes.software.corp/tradays/tradays.apk?utm_source=www.mql5.com&amp;utm_campaign=download" class="icon ark" data-fz-event="Tradays+Android+Download+Footer"><div class="footer__product-link-hint" style="background-image: url(https://c.mql5.com/qr/VGWFy3By-09.png)">Scan to get Android APK file</div></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer__networks">
+            <div class="footer__networks-list">
+            <a href="https://www.facebook.com/mql5.community/" target="_blank" rel="nofollow" title="Facebook"><i class="icons-networks icons-networks_fb"></i></a><a href="https://t.me/mql5dev" target="_blank" rel="nofollow" title="Telegram"><i class="icons-networks icons-networks_tg"></i></a><a href="https://x.com/mql5com" target="_blank" rel="nofollow" title="X (Twitter)"><i class="icons-networks icons-networks_tw"></i></a>
+            </div>
+            <span>Follow us on socials for top articles and CodeBase updates</span>
+          </div>
+  
+        <div class="footer__other">
+          <div class="footer__not-a-broker">Not a broker, no real trading accounts</div>
+          <div class="copyright">35 Dodekanisou str, Germasogeia, 4043,&nbsp;Limassol,&nbsp;Cyprus</div>
+          <div class="copyright">Copyright 2000-2025, <span class="nobr">MetaQuotes Ltd</span></div>
+        </div>
+      </li>
+  </ul>
+</div>
+
+
+    </footer>
+
+  <div class="shadow-layer" id="layer"></div>
+      
+</div>
+
+
+<script type="text/javascript">
+  (function(a,e,f,g,b,c,d){a[b]||(a.FintezaCoreObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=!0,c.defer=!0,c.src=g,d&&d.parentNode&&d.parentNode.insertBefore(c,d))})
+      (window, document, "script", "/ff/core.js", "fz");
+  window.fz("register", "website", {
+      id: "sqjxkxkswybhifrohpyooonwgbvsfzmayq",
+    trackLinks: true
+  });
+  </script>
+
+<script type="text/javascript">
+           mqGlobal.AddOnReady(function () { Mql5Cookie.init('mql5.com','5075839960458833320'); });
+mqGlobal.AddOnReady(function(){window.quotesTicker.init([{id:4252,digits:5,last:1.17402,ask:1.17432,bid:1.17402,todaysOpen:1.17507},{id:2,digits:5,last:1.34358,ask:1.34388,bid:1.34358,todaysOpen:1.3508499999999999},{id:4,digits:3,last:147.646,ask:147.676,bid:147.646,todaysOpen:146.971},{id:3,digits:5,last:0.79451,ask:0.79481,bid:0.79451,todaysOpen:0.79522},{id:375,digits:2,last:3336.65,ask:3336.9500000000003,bid:3336.65,todaysOpen:3369.25},{id:376,digits:3,last:38.174,ask:38.204,bid:38.174,todaysOpen:39.071},{id:4467,digits:2,last:117011.1,ask:117011.40000000001,bid:117011.1,todaysOpen:118677.9},{id:4477,digits:2,last:3678.55,ask:3678.8500000000004,bid:3678.55,todaysOpen:3727.25},{id:80032,digits:2,last:6229.9,ask:6230.2,bid:6229.9,todaysOpen:6235},{id:80025,digits:0,last:41372,ask:41402,bid:41372,todaysOpen:41675},{id:80038,digits:1,last:24312.6,ask:24315.6,bid:24312.6,todaysOpen:24256.6},{id:80100,digits:2,last:67.55,ask:67.85,bid:67.55,todaysOpen:68.55},]);});mqGlobal.AddOnReady(function(){window.renderMiniChartsByClass("signal-card__chart");});var vpsBrokersListMoreAvailable='Refine your search. There are too many choices.';var vpsUserLanguage='en';var vpsNotFound='Not found';var vpsDialogCaption='Forex VPS for MetaTrader 4/5';var vpsIsMobile=false;mqGlobal.AddOnReady(function(){VirtualHosting.setDownloadLinks("https://download.mql5.com/cdn/web/metaquotes.ltd/mt5/mt5setup.exe?utm_source=www.mql5.com&amp;utm_campaign=download","https://download.mql5.com/cdn/web/metaquotes.ltd/mt5/mt5setup.exe?utm_source=www.mql5.com&amp;utm_campaign=download");VirtualHosting.InitAutocomplete(vpsUserLanguage,true);});window.fz("show","wdausxxqrpvhekbwjrjlhqjghyhesrqqau");mqGlobal.AddOnReady(function(){window.setTimeout(function(){window.fpush("MQL5+HomePage+Visit");},2000);});mqGlobal.AddOnReady(function(){window.initHeaderSearch('','https://www.mql5.com/en/search');});</script><script type="text/javascript">mqGlobal.AddOnReady(function(){window.initSuggestions("headerSearchKeyword","en","https://search.mql5.com/api/query","https://www.mql5.com/en/users_search/suggestion");});window.fz("show","bfogggabsofabcpxuzmgaibarmaxasdrj");mqGlobal.AddOnReady(function(){window.floatVerticalPanelNode=FloatVerticalPanel('This website uses cookies. Learn more about our <a href="/en/about/cookies">Cookies Policy</a>.','cookie_accept');});      if (typeof Attach !== "undefined")
+        Attach.setAcceptFilter(".zip, .txt, .log, .mqh, .ex5, .mq5, .mq4, .mqproj, .ex4, .mt5, .set, .tpl, .cl, .py, .sqlite, .csv, .ini, .ipynb, .onnx, .gif, .png, .jpg, .jpeg, .mp4, .webm");
+  </script>
+
+  <div class="b-fixed-mt" id="bFixedMt" style="display: none;">
+    
+  </div>
+
+
+<script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "OnlineStore",
+      "name": "MQL5 Community",
+      "parentOrganization": "MetaQuotes Ltd",
+      "legalName":"MQL5",
+      "alternateName": "MetaQuotes Language 5",
+      "brand": "MQL5",
+      "url": "https://www.mql5.com",
+      "logo": "https://c.mql5.com/i/community/logo_mql5-2.png",
+      "description": "MQL5: language of trade strategies built-in the MetaTrader 5 Trading Platform, allows writing your own trading robots, technical indicators, scripts and libraries of functions",
+          "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "contactOption": "Chat",
+          "areaServed": "Worldwide",
+          "availableLanguage":["en","zh","es","pt","ja","de","ko","fr","it","tr"]
+          },
+      "sameAs": [
+          "https://www.facebook.com/mql5.community",
+          "https://www.x.com/mql5com",
+          "https://www.youtube.com/user/MetaQuotesOfficial",
+          "https://t.me/mql5dev"
+          ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "MQL5 Community",
+      "url": "https://www.mql5.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.mql5.com/en/search?keyword={keyword}",
+        "query-input": "required name=keyword"
+      }
+    }
+, 
+{"@context":"https://schema.org","@type":"ItemList","itemListElement":[{"@type":"SiteNavigationElement","position":1,"name":"Forum","description":"Discussions of trading strategies and algorithmic trading. MQL5.community  the largest forex forum","url":"https://www.mql5.com/en/forum","children":[]},{"@type":"SiteNavigationElement","position":2,"name":"Market","description":"MetaTrader Market - a Market of trading robots, indicators, trading books and magazines","url":"https://www.mql5.com/en/market","children":[]},{"@type":"SiteNavigationElement","position":3,"name":"Signals","description":"Social trading, copy trading and account monitoring with MetaTrader - Trading Signals on MQL5.com","url":"https://www.mql5.com/en/signals","children":[]},{"@type":"SiteNavigationElement","position":4,"name":"Freelance","description":"Order trading robots, technical indicators and algorithmic trading applications. Forex jobs. Freelance on MQL5.com. Hire MetaTrader experts and specialists","url":"https://www.mql5.com/en/job","children":[]},{"@type":"SiteNavigationElement","position":5,"name":"Quotes","description":"","url":"https://www.mql5.com/en/quotes/overview","children":[]},{"@type":"SiteNavigationElement","position":6,"name":"WebTerminal","description":"WebTerminal for the MetaTrader trading platform. Online forex trading.","url":"https://web.metatrader.app/terminal?mode=demo","children":[]},{"@type":"SiteNavigationElement","position":7,"name":"Calendar","description":"","url":"https://www.mql5.com/en/economic-calendar","children":[]},{"@type":"SiteNavigationElement","position":8,"name":"VPS","description":"","url":"https://www.mql5.com/en/vps","children":[]},{"@type":"SiteNavigationElement","position":9,"name":"Articles","description":"","url":"https://www.mql5.com/en/articles","children":[]},{"@type":"SiteNavigationElement","position":10,"name":"CodeBase","description":"Download trading robots, technical indicators and scripts with source code - MQL5 Code Base for MetaTrader 5","url":"https://www.mql5.com/en/code","children":[]},{"@type":"SiteNavigationElement","position":11,"name":"Algo Forge","description":"","url":"https://forge.mql5.io","children":[]},{"@type":"SiteNavigationElement","position":12,"name":"Documentation","description":"MetaQuotes Language 5 (MQL5) Reference - Documentation on MQL5.com","url":"https://www.mql5.com/en/docs","children":[]}]}  
+  ]
+</script>
+
+
+<div class="float-vertical-panel">This website uses cookies. Learn more about our <a href="/en/about/cookies">Cookies Policy</a>.<span class="float-vertical-panel__cross"></span></div></body></html>

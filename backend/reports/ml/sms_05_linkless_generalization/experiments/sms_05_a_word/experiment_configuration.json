@@ -1,0 +1,14 @@
+{
+  "model_id": "sms_05_a_word",
+  "model_name": "SMS-05-A: Word TF-IDF + Logistic Regression",
+  "description": "Standard word-level n-gram (1-2) TF-IDF features with balanced logistic regression.",
+  "fit_time_seconds": 1.674,
+  "seed": 20261102,
+  "dataset": {
+    "manifest": "sms05_split_manifest.csv",
+    "train_samples": 6123,
+    "val_samples": 1305,
+    "test_samples": 1307
+  },
+  "operating_threshold": 0.5
+}

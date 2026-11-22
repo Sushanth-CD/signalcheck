@@ -1,0 +1,1263 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - With Spin Pong Game</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #333;
+            --secondary-color: #666;
+            --light-gray: #f8f9fa;
+            --border-color: #e0e0e0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .split-container {
+            display: flex;
+            height: 100vh;
+        }
+        
+        .left-panel {
+            flex: 2;
+            background: linear-gradient(135deg, #584a99 0%, #4451af 50%, #7767bf 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 20px;
+        }
+        
+        .game-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 95%;
+            max-width: 800px;
+            height: 85%;
+        }
+        
+        .game-header {
+            text-align: center;
+            color: white;
+            margin-bottom: 15px;
+        }
+        
+        .score {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+            text-shadow: 0 0 15px #ffc929;
+            color: #ffc929;
+        }
+        
+        .game-status {
+            font-size: 1rem;
+            opacity: 0.9;
+            color: #80deea;
+            font-weight: 500;
+        }
+        
+        .pong-container {
+            flex: 1;
+            width: 100%;
+            position: relative;
+            border: 2px solid #ffc929;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(239, 70, 46, 0.3);
+            min-height: 300px;
+        }
+        
+        #pongCanvas {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #584a99 0%, #4451af 100%);
+            border-radius: 10px;
+        }
+        
+        .game-footer {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 15px;
+        }
+        
+        .controls-info {
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        
+        .controls-info div {
+            margin: 4px 0;
+        }
+        
+        .right-panel {
+            flex: 1;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            position: relative;
+            min-height: 100vh;
+        }
+        
+        .login-form-container {
+            width: 100%;
+            max-width: 460px;
+            padding-bottom: 120px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-control {
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 12px 16px;
+            font-size: 14px;
+            width: 100%;
+            transition: border-color 0.2s ease;
+            background: white;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(51, 51, 51, 0.1);
+        }
+        
+        .form-control::placeholder {
+            color: #999;
+        }
+        
+        .input-group {
+            position: relative;
+            display: flex;
+        }
+        
+        .input-group .form-control {
+            flex: 1;
+        }
+        
+        .btn-outline-secondary {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-left: 0;
+            border-radius: 0 4px 4px 0;
+            color: var(--secondary-color);
+            padding: 12px 16px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .btn-outline-secondary:hover {
+            background: #f8f9fa;
+            color: var(--primary-color);
+        }
+        
+        .d-flex {
+            display: flex;
+        }
+        
+        .justify-content-between {
+            justify-content: space-between;
+        }
+        
+        .align-items-center {
+            align-items: center;
+        }
+        
+        .mb-3 {
+            margin-bottom: 1rem;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .mt-4 {
+            margin-top: 1.5rem;
+        }
+        
+        .mb-0 {
+            margin-bottom: 0;
+        }
+        
+        .mb-4 {
+            margin-bottom: 1.5rem;
+        }
+        
+        .text-muted {
+            color: #6c757d;
+        }
+        
+        .input-group-text {
+            background-color: #f8f9fa;
+            border: 1px solid var(--border-color);
+            color: var(--primary-color);
+            padding: 12px 16px;
+            border-radius: 4px 0 0 4px;
+            border-right: 0;
+        }
+        
+        .input-group .form-control {
+            border-radius: 0 4px 4px 0;
+            border-left: 0;
+        }
+        
+        .form-check {
+            display: flex;
+            align-items: center;
+        }
+        
+        .form-check-input {
+            margin-right: 8px;
+        }
+        
+        #forgotPasswordLink{
+            color: black !important;
+            text-decoration: none !important;
+        }
+        #forgotPasswordLink:hover
+        {
+            color: var(--primary-color);
+            text-decoration: underline !important;
+        }
+        
+        .btn-signin {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            width: 100%;
+            margin-top: 20px;
+        }
+        
+        .btn-signin:hover {
+            background: #222;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn-signin:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        .btn-google {
+            background: white;
+            color: #333;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            width: 100%;
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .btn-google:hover {
+            background: #f8f9fa;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-google:disabled {
+            background: #f8f9fa;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        .divider {
+            text-align: center;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--border-color);
+        }
+        
+        .divider span {
+            background: white;
+            padding: 0 10px;
+            position: relative;
+            color: #6c757d;
+            font-size: 14px;
+        }
+        
+        .footer-logos {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            z-index: 100;
+        }
+        
+        .company-logo {
+            height: 60px;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+        
+        .company-logo:hover {
+            opacity: 1;
+        }
+        
+        .logo-separator {
+            width: 1px;
+            height: 35px;
+            background: #ddd;
+        }
+        
+        /* Alert messages */
+        .alert {
+            border-radius: 4px;
+            padding: 12px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            display: none;
+        }
+        
+        .alert-danger {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            color: #dc2626;
+        }
+        
+        .alert-success {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            color: #16a34a;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .split-container {
+                flex-direction: column;
+            }
+            
+            .left-panel {
+                flex: 0 0 250px;
+                padding: 15px;
+            }
+            
+            .game-wrapper {
+                width: 98%;
+                height: 90%;
+            }
+            
+            .pong-container {
+                min-height: 180px;
+            }
+            
+            .score {
+                font-size: 2rem;
+            }
+            
+            .game-status {
+                font-size: 0.9rem;
+            }
+            
+            .controls-info {
+                font-size: 0.8rem;
+            }
+            
+            .right-panel {
+                flex: 1;
+                padding: 20px;
+            }
+            
+            .login-form-container {
+                padding-bottom: 80px;
+            }
+            
+            .company-logo {
+                height: 50px;
+            }
+            
+            .logo-separator {
+                height: 30px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .left-panel {
+                flex: 0 0 200px;
+                padding: 10px;
+            }
+            
+            .game-wrapper {
+                height: 95%;
+            }
+            
+            .pong-container {
+                min-height: 140px;
+            }
+            
+            .score {
+                font-size: 1.6rem;
+            }
+            
+            .game-status {
+                font-size: 0.8rem;
+            }
+            
+            .controls-info {
+                font-size: 0.7rem;
+            }
+            
+            .login-form-container {
+                padding-bottom: 60px;
+            }
+            
+            .footer-logos {
+                bottom: 10px;
+                gap: 8px;
+                flex-direction: column;
+            }
+            
+            .company-logo {
+                height: 40px;
+            }
+            
+            .logo-separator {
+                width: 30px;
+                height: 1px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="split-container">
+        <!-- Left Panel with Spin Pong Game -->
+        <div class="left-panel">
+            <div class="game-wrapper">
+                <!-- Game Header -->
+                <div class="game-header">
+                    <div class="score">
+                        <span id="playerScore" style="color: rgb(128, 222, 234);">0</span> - <span id="aiScore" style="color: rgb(242, 115, 158);">0</span>
+                    </div>
+                    <div class="game-status" id="gameStatus">Click to challenge the AI!</div>
+                </div>
+                
+                <!-- Game Canvas -->
+                <div class="pong-container">
+                    <canvas id="pongCanvas" width="419" height="300"></canvas>
+                </div>
+                
+                <!-- Game Footer -->
+                <div class="game-footer">
+                    <div class="controls-info">
+                        <div>🎮 Mouse: Move paddle + add spin!</div>
+                        <div>🌪️ Vertical: UP/DOWN | Side: LEFT/RIGHT while hitting</div>
+                        <div>⚡ Move while hitting for spin power!</div>
+                        <div>🤖 vs AI • Click to continue after each score</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Right Panel -->
+        <div class="right-panel">
+            <div class="login-form-container">
+                <!-- Alert Messages -->
+                <div class="alert alert-danger" id="errorAlert" role="alert">
+                    <i class="fas fa-exclamation-circle me-1"></i>
+                    <span id="errorMessage"></span>
+                </div>
+                
+                <div class="alert alert-success" id="successAlert" role="alert">
+                    <i class="fas fa-check-circle me-1"></i>
+                    <span id="successMessage"></span>
+                </div>
+                
+                <!-- Login Form -->
+                <form id="loginForm">
+                    <h4 class="mb-4 text-center">Media Intel</h4>
+                    <div class="mb-3">
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                            <input type="email" class="form-control" id="loginEmail" placeholder="Email address" required="">
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <i class="fas fa-lock"></i>
+                            </span>
+                            <input type="password" class="form-control" id="loginPassword" placeholder="Password" required="">
+                            <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="rememberMe">
+                            <label class="form-check-label" for="rememberMe">
+                                Remember me
+                            </label>
+                        </div>
+                        <a href="#" class="link-primary small" id="forgotPasswordLink">Forgot password?</a>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-signin" id="loginButton">
+                        Sign In
+                    </button>
+            </form></div>
+            
+            <!-- Company Logos Footer -->
+            <div class="footer-logos">
+                <!-- SVG Logo -->
+                <svg class="company-logo" width="180" height="24" viewBox="0 0 182 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M84.9874 9.5625H82.4844V24.6995H84.9874V9.5625Z" fill="currentColor"></path>
+          <path d="M159.13 30.6523L156.177 38.1529L153.227 30.6523H150.523L154.893 41.083L152.823 45.7441H155.527L161.834 30.6523H159.13Z" fill="currentColor"></path>
+          <path d="M69 36.17C69 32.9034 71.4776 30.4258 74.7018 30.4258C77.3604 30.4258 79.6343 32.2048 79.9737 34.5947H77.4057C77.1342 33.5793 76.0085 32.8383 74.7018 32.8383C72.8776 32.8383 71.4804 34.2807 71.4804 36.1729C71.4804 38.065 72.8776 39.4848 74.7018 39.4848C76.0085 39.4848 77.1568 38.7409 77.4283 37.6379H79.9964C79.7022 40.1381 77.383 41.8973 74.7018 41.8973C71.4804 41.8973 69 39.4424 69 36.1729" fill="currentColor"></path>
+          <path d="M83.3652 36.17C83.3652 38.0395 84.7623 39.4819 86.5866 39.4819C88.4108 39.4819 89.8306 38.0395 89.8306 36.17C89.8306 34.3005 88.4108 32.8355 86.5866 32.8355C84.7623 32.8355 83.3652 34.2779 83.3652 36.17ZM92.3082 36.17C92.3082 39.4367 89.808 41.8945 86.5866 41.8945C83.3652 41.8945 80.8848 39.4395 80.8848 36.17C80.8848 32.9005 83.3623 30.4258 86.5866 30.4258C89.8108 30.4258 92.3082 32.9034 92.3082 36.17Z" fill="currentColor"></path>
+          <path d="M111.124 34.9323V41.6693H108.578V35.4951C108.578 33.8491 107.676 32.8366 106.188 32.8366C104.95 32.8366 103.733 33.6256 103.733 35.4951V41.6693H101.211V35.4951C101.211 33.8265 100.286 32.8366 98.8009 32.8366C97.5847 32.8366 96.3459 33.603 96.3459 35.4951V41.6693H93.8457V30.6531H96.3459V32.2087C97.1576 30.8568 98.5548 30.4297 99.7031 30.4297C101.304 30.4297 102.43 31.0378 103.106 32.3671C103.736 31.1735 105.111 30.4297 106.621 30.4297C109.28 30.4297 111.127 32.1634 111.127 34.9351" fill="currentColor"></path>
+          <path d="M135.097 36.1463C135.097 34.2542 133.655 32.8118 131.74 32.8118C129.825 32.8118 128.405 34.2995 128.405 36.1463C128.405 37.9932 129.87 39.5035 131.74 39.5035C133.609 39.5035 135.097 38.0611 135.097 36.1463ZM137.62 30.6481V41.6643H135.097V39.7269C134.308 41.1015 132.956 41.8906 131.2 41.8906C128.272 41.8906 125.928 39.3225 125.928 36.1435C125.928 32.9645 128.272 30.4219 131.2 30.4219C132.956 30.4219 134.308 31.211 135.097 32.5855V30.6481H137.62Z" fill="currentColor"></path>
+          <path d="M150.174 35.3809V41.6682H147.651V35.6977C147.651 33.964 146.593 32.8355 144.992 32.8355C143.391 32.8355 142.266 33.9611 142.266 35.6977V41.6682H139.766V30.652H142.266V32.3858C142.964 31.147 144.135 30.4258 145.6 30.4258C148.417 30.4258 150.174 32.3179 150.174 35.3838" fill="currentColor"></path>
+          <path d="M122.478 36.1757C122.478 34.3034 121.013 32.8157 119.14 32.8157C117.268 32.8157 115.758 34.2581 115.758 36.1757C115.758 38.0933 117.2 39.5131 119.14 39.5131C121.081 39.5131 122.478 38.0254 122.478 36.1757ZM124.936 36.1757C124.936 39.3547 122.611 41.9058 119.681 41.9058C117.899 41.9058 116.544 41.0941 115.755 39.6941V45.7409H113.252V30.6492H115.755V32.6347C116.544 31.2375 117.899 30.4258 119.681 30.4258C122.611 30.4258 124.936 32.9967 124.936 36.1785" fill="currentColor"></path>
+          <path d="M78.4407 19.1952C78.4407 17.3229 76.9756 15.8352 75.1033 15.8352C73.231 15.8352 71.7207 17.2776 71.7207 19.1952C71.7207 21.1128 73.1631 22.5326 75.1033 22.5326C77.0435 22.5326 78.4407 21.0449 78.4407 19.1952ZM80.8985 19.1952C80.8985 22.3742 78.5736 24.9253 75.6435 24.9253C73.8617 24.9253 72.507 24.1136 71.7179 22.7136V28.7605H69.2148V13.6687H71.7179V15.6542C72.507 14.257 73.8617 13.4453 75.6435 13.4453C78.5765 13.4453 80.8985 16.0162 80.8985 19.198" fill="currentColor"></path>
+          <path d="M97.4975 13.668V24.6983H94.9719V22.9617C94.2733 24.2033 93.1222 24.9245 91.6571 24.9245C88.8147 24.9245 87.0781 23.0296 87.0781 19.9383V13.668H89.5812V19.6441C89.5812 21.3807 90.6418 22.5092 92.2652 22.5092C93.8886 22.5092 94.9719 21.3807 94.9719 19.6441V13.668H97.4975Z" fill="currentColor"></path>
+          <path d="M98.9853 21.157H101.398C101.488 22.1271 102.436 22.7578 103.675 22.7578C104.913 22.7578 105.615 22.2402 105.615 21.4709C105.615 19.1036 99.2313 21.0212 99.2313 16.824C99.2313 14.9065 100.832 13.4414 103.403 13.4414C105.68 13.4414 107.665 14.6604 107.914 16.8919H105.388C105.275 16.1481 104.509 15.5372 103.358 15.5372C102.365 15.5372 101.666 15.9642 101.666 16.6656C101.666 18.8972 108.073 16.8467 108.073 21.4483C108.073 23.4337 106.245 24.9214 103.81 24.9214C101.104 24.9214 99.2087 23.5214 98.9824 21.1541" fill="currentColor"></path>
+            <path d="M28 28V42L42 28H28Z" fill="#F42D20"></path>
+            <path d="M42 14V28L56 14L42 14Z" fill="#46A048"></path>
+            <path d="M42 14H28V28H42V14Z" fill="#594A99"></path>
+            <path d="M42 42V28L28 42H42Z" fill="#F05C8E"></path>
+            <path d="M28 0V14L42 0H28Z" fill="#F05C8E"></path>
+            <path d="M42 14V0L28 14H42Z" fill="#F42D20"></path>
+            <path d="M28 28V14L14 28H28Z" fill="#46A048"></path>
+            <path d="M14 14V28L28 14L14 14Z" fill="#51D4E1"></path>
+            <path d="M56 28V14L42 28H56Z" fill="#51D4E1"></path>
+            <path d="M28 14V0L14 14L28 14Z" fill="#F599B9"></path>
+            <path d="M0 28V42L14 28V14L0 28Z" fill="#95E6EF"></path>
+            <path d="M42 28V42L56 28H42Z" fill="#95E6EF"></path>
+            <path d="M14 28L0 42V56H14L28 42V28H14Z" fill="#FFC30F"></path>
+            <path d="M28 42L14 56H28L41.9972 42H28Z" fill="#F599B9"></path>
+                </svg>
+
+                <div class="logo-separator"></div>
+                
+                <img src="/dishlogo.png" alt="Partner Company" class="company-logo">
+            </div>
+        </div>
+    </div>
+    
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    
+    <!-- Your Custom Authentication JavaScript -->
+    <script src="/auth.js"></script>
+    
+    <!-- Pong Game Script -->
+    <script>
+        // Spin Pong Game Implementation with Ball Slice/Spin
+        class PongGame {
+            constructor() {
+                this.canvas = document.getElementById('pongCanvas');
+                this.ctx = this.canvas.getContext('2d');
+                this.playerScoreElement = document.getElementById('playerScore');
+                this.aiScoreElement = document.getElementById('aiScore');
+                this.gameStatusElement = document.getElementById('gameStatus');
+                
+                // Color scheme
+                this.colors = {
+                    purple: '#584a99',
+                    pink: '#f2739e', 
+                    cyan: '#80deea',
+                    yellow: '#ffc929',
+                    green: '#5bb961',
+                    darkBlue: '#4451af',
+                    lightPink: '#f6b0ca',
+                    orange: '#ef9243',
+                    purpleBlue: '#7767bf',
+                    magenta: '#a54ba6',
+                    red: '#ef462e'
+                };
+                
+                // Mouse tracking for slice
+                this.mouseY = 0;
+                this.lastMouseY = 0;
+                this.mouseVelocity = 0;
+                this.mouseHistory = [];
+                this.mouseX = 0;
+                this.lastMouseX = 0;
+                this.mouseVelocityX = 0;
+                
+                this.resizeCanvas();
+                this.initGame();
+                this.setupEventListeners();
+                this.gameLoop();
+                
+                window.addEventListener('resize', () => this.resizeCanvas());
+            }
+            
+            resizeCanvas() {
+                const container = this.canvas.parentElement;
+                const rect = container.getBoundingClientRect();
+                
+                this.canvas.width = rect.width;
+                this.canvas.height = rect.height;
+                
+                this.width = this.canvas.width;
+                this.height = this.canvas.height;
+                
+                if (this.player && this.ai) {
+                    this.player.x = 20;
+                    this.ai.x = this.width - 32;
+                    
+                    if (this.ball) {
+                        this.ball.x = this.width / 2;
+                        this.ball.y = this.height / 2;
+                    }
+                }
+            }
+            
+            initGame() {
+                this.width = this.canvas.width;
+                this.height = this.canvas.height;
+                
+                this.player = {
+                    x: 20,
+                    y: this.height / 2 - 40,
+                    width: 12,
+                    height: 80,
+                    score: 0,
+                    color: this.colors.cyan
+                };
+                
+                this.ai = {
+                    x: this.width - 32,
+                    y: this.height / 2 - 40,
+                    width: 12,
+                    height: 80,
+                    score: 0,
+                    speed: 4,
+                    color: this.colors.pink
+                };
+                
+                this.ball = {
+                    x: this.width / 2,
+                    y: this.height / 2,
+                    radius: 8,
+                    velocityX: 0,
+                    velocityY: 0,
+                    speed: 7,
+                    spin: 0,              // Vertical spin (-1.2 to 1.2 for moderate)
+                    sideSpin: 0,          // Horizontal spin (-1.2 to 1.2)
+                    spinDecay: 0.99,      // Spin lasts longer
+                    rotation: 0,          // Visual rotation angle
+                    lastHitTime: 0,       // Track when ball was last hit
+                    color: this.colors.yellow,
+                    trail: []
+                };
+                
+                this.gameRunning = false;
+                this.gameOver = false;
+                this.waitingForStart = false; // New state for post-score pause
+                this.winScore = 5;
+                this.particles = [];
+                
+                this.updateUI();
+            }
+            
+            setupEventListeners() {
+                // Enhanced mouse movement tracking - Listen on document instead of just canvas
+                document.addEventListener('mousemove', (e) => {
+                    const rect = this.canvas.getBoundingClientRect();
+                    
+                    // Calculate mouse position relative to canvas
+                    const mouseY = e.clientY - rect.top;
+                    const mouseX = e.clientX - rect.left;
+                    
+                    // Track mouse velocity for slice detection
+                    this.lastMouseY = this.mouseY;
+                    this.lastMouseX = this.mouseX;
+                    this.mouseY = mouseY;
+                    this.mouseX = mouseX;
+                    this.mouseVelocity = this.mouseY - this.lastMouseY;
+                    this.mouseVelocityX = this.mouseX - this.lastMouseX;
+                    
+                    // Keep history of mouse movements for better slice detection
+                    this.mouseHistory.push({
+                        x: mouseX, 
+                        y: mouseY, 
+                        time: Date.now(),
+                        velX: this.mouseVelocityX,
+                        velY: this.mouseVelocity
+                    });
+                    if (this.mouseHistory.length > 8) {
+                        this.mouseHistory.shift();
+                    }
+                    
+                    // Update paddle position - clamp to canvas boundaries
+                    let targetY = mouseY - this.player.height / 2;
+                    
+                    // Allow paddle to move even when mouse is outside canvas
+                    // but keep paddle within canvas bounds
+                    targetY = Math.max(0, Math.min(this.height - this.player.height, targetY));
+                    this.player.y = targetY;
+                });
+                
+                // Click to start/restart game - keep this on canvas only
+                this.canvas.addEventListener('click', () => {
+                    if (this.gameOver) {
+                        this.resetGame();
+                    } else if (this.waitingForStart) {
+                        // Resume after a score
+                        this.waitingForStart = false;
+                        this.startGame();
+                    } else if (!this.gameRunning) {
+                        this.startGame();
+                    }
+                });
+            }
+            
+            startGame() {
+                this.gameRunning = true;
+                this.ball.velocityX = (Math.random() > 0.5 ? 1 : -1) * this.ball.speed;
+                this.ball.velocityY = (Math.random() - 0.5) * this.ball.speed;
+                this.gameStatusElement.textContent = 'Use mouse movement to add spin!';
+            }
+            
+            pauseForRestart(message) {
+                this.gameRunning = false;
+                this.waitingForStart = true;
+                this.gameStatusElement.textContent = message;
+                this.resetBall();
+            }
+            
+            resetGame() {
+                this.initGame();
+                this.gameStatusElement.textContent = 'Click to challenge the AI!';
+            }
+            
+            calculateSliceFromMouseMovement() {
+                if (this.mouseHistory.length < 3) return {spin: 0, sideSpin: 0};
+                
+                // Calculate average mouse velocity over recent movements
+                let totalVelocityY = 0;
+                let totalVelocityX = 0;
+                let validMeasurements = 0;
+                
+                for (let i = 1; i < this.mouseHistory.length; i++) {
+                    const timeDiff = this.mouseHistory[i].time - this.mouseHistory[i-1].time;
+                    if (timeDiff > 0 && timeDiff < 50) { // Only use very recent movements
+                        const velocityY = (this.mouseHistory[i].y - this.mouseHistory[i-1].y) / timeDiff;
+                        const velocityX = (this.mouseHistory[i].x - this.mouseHistory[i-1].x) / timeDiff;
+                        totalVelocityY += velocityY;
+                        totalVelocityX += velocityX;
+                        validMeasurements++;
+                    }
+                }
+                
+                if (validMeasurements === 0) return {spin: 0, sideSpin: 0};
+                
+                const avgVelocityY = totalVelocityY / validMeasurements;
+                const avgVelocityX = totalVelocityX / validMeasurements;
+                
+                // Convert to slice strength (reduced intensity: -1.2 to 1.2)
+                const spin = Math.max(-1.2, Math.min(1.2, avgVelocityY * 0.5));
+                const sideSpin = Math.max(-1.2, Math.min(1.2, avgVelocityX * 0.4));
+                
+                return {spin, sideSpin};
+            }
+            
+            update() {
+                if (!this.gameRunning || this.gameOver) return;
+                
+                // Update ball position
+                this.ball.x += this.ball.velocityX;
+                this.ball.y += this.ball.velocityY;
+                
+                // Apply moderate spin curve effects
+                if (Math.abs(this.ball.spin) > 0.02) {
+                    this.ball.y += this.ball.spin * 1.5; // Reduced curve strength
+                    this.ball.spin *= this.ball.spinDecay;
+                }
+                
+                // Apply sidespin effects (ball curves left/right)
+                if (Math.abs(this.ball.sideSpin) > 0.02) {
+                    this.ball.x += this.ball.sideSpin * 1.0; // Reduced side curve
+                    this.ball.velocityX += this.ball.sideSpin * 0.2; // Reduced velocity change
+                    this.ball.sideSpin *= this.ball.spinDecay;
+                }
+                
+                // Update visual rotation (moderate drama)
+                this.ball.rotation += this.ball.spin * 15 + this.ball.sideSpin * 12 + this.ball.velocityX * 2;
+                
+                // Add ball trail with spin info
+                this.ball.trail.push({
+                    x: this.ball.x, 
+                    y: this.ball.y, 
+                    spin: this.ball.spin,
+                    sideSpin: this.ball.sideSpin
+                });
+                if (this.ball.trail.length > 15) {
+                    this.ball.trail.shift();
+                }
+                
+                // Ball collision with top/bottom walls
+                if (this.ball.y - this.ball.radius <= 0 || this.ball.y + this.ball.radius >= this.height) {
+                    // Ensure ball is positioned outside the wall
+                    if (this.ball.y - this.ball.radius <= 0) {
+                        this.ball.y = this.ball.radius;
+                    } else {
+                        this.ball.y = this.height - this.ball.radius;
+                    }
+                    
+                    // Reverse velocity
+                    this.ball.velocityY = -this.ball.velocityY;
+                    
+                    // Apply moderate spin effect but ensure ball bounces away from wall
+                    const spinEffect = this.ball.spin * 2; // Reduced from 3
+                    
+                    // Make sure spin doesn't push ball back into wall
+                    if (this.ball.y <= this.ball.radius && this.ball.velocityY + spinEffect < 0) {
+                        // At top wall, ensure velocity stays positive (downward)
+                        this.ball.velocityY = Math.abs(this.ball.velocityY) + Math.abs(spinEffect);
+                    } else if (this.ball.y >= this.height - this.ball.radius && this.ball.velocityY + spinEffect > 0) {
+                        // At bottom wall, ensure velocity stays negative (upward)
+                        this.ball.velocityY = -Math.abs(this.ball.velocityY) - Math.abs(spinEffect);
+                    } else {
+                        // Normal moderate spin application
+                        this.ball.velocityY += spinEffect;
+                    }
+                    
+                    // Sidespin affects horizontal velocity on wall bounce (reduced)
+                    this.ball.velocityX += this.ball.sideSpin * 1.2; // Reduced from 2
+                    
+                    this.ball.spin *= 0.7; // Spin reduces on wall hit
+                    this.ball.sideSpin *= 0.8;
+                    this.createParticles(this.ball.x, this.ball.y, this.colors.orange);
+                }
+                
+                // AI paddle movement (computer opponent)
+                const aiCenter = this.ai.y + this.ai.height / 2;
+                const ballCenter = this.ball.y;
+                
+                // AI tries to predict ball position but gets moderately confused by spin
+                let predictedBallY = ballCenter;
+                if (Math.abs(this.ball.spin) > 0.05) {
+                    // AI gets moderately confused by spin (reduced confusion)
+                    const spinConfusion = this.ball.spin * 40; // Reduced from 60
+                    const sideSpinConfusion = this.ball.sideSpin * 30; // Reduced from 40
+                    predictedBallY += spinConfusion + sideSpinConfusion + (Math.random() - 0.5) * 50; // Reduced from 80
+                }
+                
+                if (aiCenter < predictedBallY - 35) {
+                    this.ai.y += this.ai.speed;
+                } else if (aiCenter > predictedBallY + 35) {
+                    this.ai.y -= this.ai.speed;
+                }
+                
+                this.ai.y = Math.max(0, Math.min(this.height - this.ai.height, this.ai.y));
+                
+                // Ball collision with player paddle
+                if (this.ballPaddleCollision(this.player)) {
+                    this.ball.velocityX = -this.ball.velocityX;
+                    
+                    // Add moderate slice based on mouse movement
+                    const sliceData = this.calculateSliceFromMouseMovement();
+                    this.ball.spin = sliceData.spin;
+                    this.ball.sideSpin = sliceData.sideSpin;
+                    this.ball.lastHitTime = Date.now();
+                    
+                    // Modify ball trajectory based on moderate slice
+                    this.ball.velocityY += sliceData.spin * 2.5; // Reduced from 4
+                    this.ball.velocityX += sliceData.sideSpin * 1.5; // Reduced from 2
+                    this.ball.velocityY += (Math.random() - 0.5) * 1;
+                    
+                    this.ball.speed = Math.min(this.ball.speed + 0.3, 15);
+                    this.createParticles(this.ball.x, this.ball.y, this.colors.green);
+                    
+                    // Clear mouse history after hit
+                    this.mouseHistory = [];
+                    
+                } else if (this.ballPaddleCollision(this.ai)) {
+                    this.ball.velocityX = -this.ball.velocityX;
+                    this.ball.velocityY += (Math.random() - 0.5) * 2;
+                    this.ball.spin *= 0.5; // AI reduces player's spin (increased from 0.4)
+                    this.ball.sideSpin *= 0.4; // AI reduces sidespin (increased from 0.3)
+                    this.ball.speed = Math.min(this.ball.speed + 0.2, 15);
+                    this.createParticles(this.ball.x, this.ball.y, this.colors.pink);
+                }
+                
+                // Score
+                if (this.ball.x < 0) {
+                    this.ai.score++;
+                    this.createParticles(this.ball.x, this.ball.y, this.colors.red);
+                    this.createScoreParticles(this.width * 0.75, this.height / 2, this.colors.pink);
+                    this.pauseForRestart('AI scored! Click to continue');
+                } else if (this.ball.x > this.width) {
+                    this.player.score++;
+                    this.createParticles(this.ball.x, this.ball.y, this.colors.green);
+                    this.createScoreParticles(this.width * 0.25, this.height / 2, this.colors.cyan);
+                    this.pauseForRestart('You scored! Click to continue');
+                }
+                
+                // Check win condition
+                if (this.player.score >= this.winScore || this.ai.score >= this.winScore) {
+                    this.gameOver = true;
+                    this.gameRunning = false;
+                    
+                    if (this.player.score >= this.winScore) {
+                        this.gameStatusElement.textContent = '🎉 You Won with Spin! Click to play again';
+                        this.createWinParticles();
+                    } else {
+                        this.gameStatusElement.textContent = '🤖 AI Won! Try more spin next time';
+                    }
+                }
+                
+                this.updateUI();
+                this.updateParticles();
+            }
+            
+            ballPaddleCollision(paddle) {
+                return this.ball.x - this.ball.radius < paddle.x + paddle.width &&
+                       this.ball.x + this.ball.radius > paddle.x &&
+                       this.ball.y - this.ball.radius < paddle.y + paddle.height &&
+                       this.ball.y + this.ball.radius > paddle.y;
+            }
+            
+            resetBall() {
+                this.ball.x = this.width / 2;
+                this.ball.y = this.height / 2;
+                this.ball.velocityX = (Math.random() > 0.5 ? 1 : -1) * this.ball.speed;
+                this.ball.velocityY = (Math.random() - 0.5) * this.ball.speed;
+                this.ball.spin = 0;
+                this.ball.sideSpin = 0;
+                this.ball.rotation = 0;
+                this.ball.trail = [];
+                this.ball.speed = 7;
+                this.mouseHistory = [];
+            }
+            
+            createParticles(x, y, color) {
+                for (let i = 0; i < 12; i++) {
+                    this.particles.push({
+                        x: x,
+                        y: y,
+                        velocityX: (Math.random() - 0.5) * 10,
+                        velocityY: (Math.random() - 0.5) * 10,
+                        life: 40,
+                        maxLife: 40,
+                        color: color,
+                        size: Math.random() * 4 + 2
+                    });
+                }
+            }
+            
+            createScoreParticles(x, y, color) {
+                for (let i = 0; i < 25; i++) {
+                    this.particles.push({
+                        x: x,
+                        y: y,
+                        velocityX: (Math.random() - 0.5) * 15,
+                        velocityY: (Math.random() - 0.5) * 15,
+                        life: 60,
+                        maxLife: 60,
+                        color: color,
+                        size: Math.random() * 6 + 3
+                    });
+                }
+            }
+            
+            createWinParticles() {
+                const colors = Object.values(this.colors);
+                for (let i = 0; i < 100; i++) {
+                    this.particles.push({
+                        x: Math.random() * this.width,
+                        y: Math.random() * this.height,
+                        velocityX: (Math.random() - 0.5) * 8,
+                        velocityY: (Math.random() - 0.5) * 8,
+                        life: 100,
+                        maxLife: 100,
+                        color: colors[Math.floor(Math.random() * colors.length)],
+                        size: Math.random() * 8 + 4
+                    });
+                }
+            }
+            
+            updateParticles() {
+                for (let i = this.particles.length - 1; i >= 0; i--) {
+                    const particle = this.particles[i];
+                    particle.x += particle.velocityX;
+                    particle.y += particle.velocityY;
+                    particle.velocityX *= 0.98;
+                    particle.velocityY *= 0.98;
+                    particle.life--;
+                    
+                    if (particle.life <= 0) {
+                        this.particles.splice(i, 1);
+                    }
+                }
+            }
+            
+            draw() {
+                // Clear canvas with gradient
+                const gradient = this.ctx.createLinearGradient(0, 0, this.width, this.height);
+                gradient.addColorStop(0, this.colors.purple);
+                gradient.addColorStop(0.5, this.colors.darkBlue);
+                gradient.addColorStop(1, this.colors.purpleBlue);
+                
+                this.ctx.fillStyle = gradient;
+                this.ctx.fillRect(0, 0, this.width, this.height);
+                
+                // Draw center line
+                this.drawDashedLine(this.width / 2, 0, this.width / 2, this.height, this.colors.yellow);
+                
+                // Draw paddles with glow effect
+                this.drawGlowRect(this.player.x, this.player.y, this.player.width, this.player.height, this.player.color);
+                this.drawGlowRect(this.ai.x, this.ai.y, this.ai.width, this.ai.height, this.ai.color);
+                
+                // Draw ball trail with intense spin indicators
+                this.ball.trail.forEach((pos, index) => {
+                    const alpha = index / this.ball.trail.length * 0.7;
+                    const size = (index / this.ball.trail.length) * this.ball.radius;
+                    
+                    this.ctx.save();
+                    this.ctx.globalAlpha = alpha;
+                    
+                    // Trail color changes based on spin intensity
+                    let trailColor = this.ball.color;
+                    if (Math.abs(pos.spin) > 0.05 || Math.abs(pos.sideSpin) > 0.05) {
+                        if (Math.abs(pos.spin) > Math.abs(pos.sideSpin)) {
+                            // Vertical spin dominates
+                            trailColor = pos.spin > 0 ? this.colors.red : this.colors.cyan;
+                        } else {
+                            // Side spin dominates
+                            trailColor = pos.sideSpin > 0 ? this.colors.magenta : this.colors.green;
+                        }
+                    }
+                    
+                    this.ctx.fillStyle = trailColor;
+                    this.ctx.beginPath();
+                    this.ctx.arc(pos.x, pos.y, size + 1, 0, Math.PI * 2);
+                    this.ctx.fill();
+                    this.ctx.restore();
+                });
+                
+                // Draw ball with enhanced spin visualization
+                this.drawSpinBall(this.ball.x, this.ball.y, this.ball.radius, this.ball.color);
+                
+                // Draw particles
+                this.particles.forEach(particle => {
+                    const alpha = particle.life / particle.maxLife;
+                    this.ctx.save();
+                    this.ctx.globalAlpha = alpha;
+                    this.ctx.fillStyle = particle.color;
+                    this.ctx.beginPath();
+                    this.ctx.arc(particle.x, particle.y, particle.size * alpha, 0, Math.PI * 2);
+                    this.ctx.fill();
+                    this.ctx.restore();
+                });
+            }
+            
+            drawSpinBall(x, y, radius, color) {
+                this.ctx.save();
+                this.ctx.translate(x, y);
+                this.ctx.rotate(this.ball.rotation * Math.PI / 180);
+                
+                // Main ball with intense glow based on spin
+                const glowIntensity = 25 + (Math.abs(this.ball.spin) + Math.abs(this.ball.sideSpin)) * 15;
+                this.ctx.shadowColor = color;
+                this.ctx.shadowBlur = glowIntensity;
+                this.ctx.fillStyle = color;
+                this.ctx.beginPath();
+                this.ctx.arc(0, 0, radius, 0, Math.PI * 2);
+                this.ctx.fill();
+                
+                // Intense spin indicator lines
+                if (Math.abs(this.ball.spin) > 0.02 || Math.abs(this.ball.sideSpin) > 0.02) {
+                    this.ctx.shadowBlur = 0;
+                    const totalSpin = Math.abs(this.ball.spin) + Math.abs(this.ball.sideSpin);
+                    
+                    // Color based on dominant spin direction
+                    if (Math.abs(this.ball.spin) > Math.abs(this.ball.sideSpin)) {
+                        this.ctx.strokeStyle = this.ball.spin > 0 ? this.colors.red : this.colors.cyan;
+                    } else {
+                        this.ctx.strokeStyle = this.ball.sideSpin > 0 ? this.colors.magenta : this.colors.green;
+                    }
+                    
+                    this.ctx.lineWidth = 2 + totalSpin * 2;
+                    
+                    // Draw intense spin lines
+                    this.ctx.beginPath();
+                    this.ctx.moveTo(-radius * 0.9, 0);
+                    this.ctx.lineTo(radius * 0.9, 0);
+                    this.ctx.moveTo(0, -radius * 0.9);
+                    this.ctx.lineTo(0, radius * 0.9);
+                    this.ctx.stroke();
+                    
+                    // Draw diagonal lines for sidespin
+                    if (Math.abs(this.ball.sideSpin) > 0.05) {
+                        this.ctx.beginPath();
+                        this.ctx.moveTo(-radius * 0.7, -radius * 0.7);
+                        this.ctx.lineTo(radius * 0.7, radius * 0.7);
+                        this.ctx.moveTo(radius * 0.7, -radius * 0.7);
+                        this.ctx.lineTo(-radius * 0.7, radius * 0.7);
+                        this.ctx.stroke();
+                    }
+                    
+                    // Draw intense spin direction arrows
+                    const arrowSize = radius * 0.5;
+                    this.ctx.lineWidth = 4;
+                    
+                    // Vertical spin arrows
+                    if (Math.abs(this.ball.spin) > 0.05) {
+                        this.ctx.beginPath();
+                        if (this.ball.spin > 0) {
+                            // Topspin arrows (pointing down)
+                            this.ctx.moveTo(-arrowSize, -arrowSize * 0.3);
+                            this.ctx.lineTo(0, arrowSize * 0.7);
+                            this.ctx.lineTo(arrowSize, -arrowSize * 0.3);
+                        } else {
+                            // Backspin arrows (pointing up)
+                            this.ctx.moveTo(-arrowSize, arrowSize * 0.3);
+                            this.ctx.lineTo(0, -arrowSize * 0.7);
+                            this.ctx.lineTo(arrowSize, arrowSize * 0.3);
+                        }
+                        this.ctx.stroke();
+                    }
+                    
+                    // Side spin arrows
+                    if (Math.abs(this.ball.sideSpin) > 0.05) {
+                        this.ctx.beginPath();
+                        if (this.ball.sideSpin > 0) {
+                            // Right spin arrows
+                            this.ctx.moveTo(-arrowSize * 0.3, -arrowSize);
+                            this.ctx.lineTo(arrowSize * 0.7, 0);
+                            this.ctx.lineTo(-arrowSize * 0.3, arrowSize);
+                        } else {
+                            // Left spin arrows
+                            this.ctx.moveTo(arrowSize * 0.3, -arrowSize);
+                            this.ctx.lineTo(-arrowSize * 0.7, 0);
+                            this.ctx.lineTo(arrowSize * 0.3, arrowSize);
+                        }
+                        this.ctx.stroke();
+                    }
+                }
+                
+                this.ctx.restore();
+            }
+            
+            drawGlowRect(x, y, width, height, color) {
+                this.ctx.shadowColor = color;
+                this.ctx.shadowBlur = 20;
+                this.ctx.fillStyle = color;
+                this.ctx.fillRect(x, y, width, height);
+                this.ctx.shadowBlur = 0;
+            }
+            
+            drawDashedLine(x1, y1, x2, y2, color) {
+                this.ctx.strokeStyle = color;
+                this.ctx.lineWidth = 3;
+                this.ctx.setLineDash([15, 15]);
+                this.ctx.beginPath();
+                this.ctx.moveTo(x1, y1);
+                this.ctx.lineTo(x2, y2);
+                this.ctx.stroke();
+                this.ctx.setLineDash([]);
+            }
+            
+            updateUI() {
+                this.playerScoreElement.textContent = this.player.score;
+                this.aiScoreElement.textContent = this.ai.score;
+                
+                // Show moderate spin status
+                if (this.gameRunning) {
+                    const hasVerticalSpin = Math.abs(this.ball.spin) > 0.03; // Adjusted threshold
+                    const hasSideSpin = Math.abs(this.ball.sideSpin) > 0.03; // Adjusted threshold
+                    
+                    if (hasVerticalSpin || hasSideSpin) {
+                        let spinText = "";
+                        
+                        if (hasVerticalSpin) {
+                            const spinType = this.ball.spin > 0 ? "TOPSPIN ⬇️" : "BACKSPIN ⬆️";
+                            const spinStrength = Math.abs(this.ball.spin).toFixed(1);
+                            spinText += `${spinType} (${spinStrength})`;
+                        }
+                        
+                        if (hasSideSpin) {
+                            const sideSpinType = this.ball.sideSpin > 0 ? "RIGHT-SPIN ➡️" : "LEFT-SPIN ⬅️";
+                            const sideSpinStrength = Math.abs(this.ball.sideSpin).toFixed(1);
+                            if (spinText) spinText += " + ";
+                            spinText += `${sideSpinType} (${sideSpinStrength})`;
+                        }
+                        
+                        this.gameStatusElement.textContent = spinText;
+                    } else {
+                        this.gameStatusElement.textContent = 'Move mouse while hitting for spin!';
+                    }
+                }
+                
+                // Color the scores
+                this.playerScoreElement.style.color = this.colors.cyan;
+                this.aiScoreElement.style.color = this.colors.pink;
+            }
+            
+            gameLoop() {
+                this.update();
+                this.draw();
+                requestAnimationFrame(() => this.gameLoop());
+            }
+        }
+        
+        // Initialize game when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new PongGame();
+        });
+    </script>
+
+
+</body></html>

@@ -1,17 +1,8 @@
-﻿"""Typed API schemas for the analysis service."""
+"""Typed API schemas for the analysis service."""
 
-from enum import StrEnum
-from typing import Annotated, Any
+from typing import Annotated, Any, Literal
 
-from pydantic import BaseModel, ConfigDict, Field, field_validator
-
-
-class RiskLevel(StrEnum):
-    """Risk bands defined by the Version 1 analysis contract."""
-
-    LOW = "low"
-    MEDIUM = "medium"
-    HIGH = "high"
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, field_validator
 
 
 class AnalysisRequest(BaseModel):
@@ -33,28 +24,40 @@ class AnalysisRequest(BaseModel):
         return value
 
 
-class DetectedIndicator(BaseModel):
-    """One explainable rule match in a completed analysis."""
+class MLAnalysisResponse(BaseModel):
+    """Result from the separate text-classification model endpoint."""
 
     model_config = ConfigDict(extra="forbid")
 
-    rule_id: str = Field(min_length=1)
-    category: str = Field(min_length=1)
-    title: str = Field(min_length=1)
-    score_contribution: int = Field(ge=0, le=100)
-    explanation: str = Field(min_length=1)
+    classification: Literal["phishing", "benign"]
+    phishing_score: float = Field(ge=0.0, le=1.0)
+    score_kind: Literal["uncalibrated_model_score"] = "uncalibrated_model_score"
+    threshold: float = Field(ge=0.0, le=1.0)
+    model_id: str = Field(min_length=1)
+    disclaimer: str = Field(min_length=1)
 
 
-class AnalysisResponse(BaseModel):
-    """Structured analysis result reserved for the implemented engine."""
+class AndroidMLAnalysisRequest(BaseModel):
+    """Prepared named Android feature values; this is not an APK upload."""
 
     model_config = ConfigDict(extra="forbid")
 
-    risk_score: int = Field(ge=0, le=100)
-    risk_level: RiskLevel
-    summary: str = Field(min_length=1)
-    detected_indicators: list[DetectedIndicator]
-    recommendations: list[str]
+    features: dict[str, Annotated[StrictInt, Field(ge=0, le=1)]] = Field(
+        min_length=226,
+        max_length=226,
+    )
+
+
+class AndroidMLAnalysisResponse(BaseModel):
+    """Result from the separate Android permission-feature classifier."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    classification: Literal["malicious", "non_malicious"]
+    malware_score: float = Field(ge=0.0, le=1.0)
+    score_kind: Literal["uncalibrated_model_score"] = "uncalibrated_model_score"
+    threshold: float = Field(ge=0.0, le=1.0)
+    model_id: str = Field(min_length=1)
     disclaimer: str = Field(min_length=1)
 
 
@@ -62,3 +65,257 @@ class HealthResponse(BaseModel):
     """Health-check payload."""
 
     status: str = "ok"
+
+
+class SMSAnalysisRequest(BaseModel):
+    """SMS message submitted for phishing analysis."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    content: Annotated[str, Field(min_length=1, max_length=2_000)]
+
+    @field_validator("content", mode="before")
+    @classmethod
+    def validate_and_trim_content(cls, value: Any) -> Any:
+        if isinstance(value, str):
+            if len(value) > 2_000:
+                raise ValueError("sms_content_too_long")
+            value = value.strip()
+            if not value:
+                raise ValueError("sms_content_empty")
+        return value
+
+
+class SMSAnalysisResponse(BaseModel):
+    """Result from the dedicated SMS phishing classification endpoint."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    classification: Literal["smishing", "not_smishing"]
+    smishing_score: float = Field(ge=0.0, le=1.0)
+    score_kind: Literal["uncalibrated_model_score"] = "uncalibrated_model_score"
+    threshold: float = Field(ge=0.0, le=1.0)
+    model_id: str = Field(min_length=1)
+    disclaimer: str = Field(min_length=1)
+
+
+# ---------------------------------------------------------------------------
+# APK Static Analysis (apk-static-v1) Schemas
+# ---------------------------------------------------------------------------
+
+class APKAppInfo(BaseModel):
+    """Metadata regarding the Android application package."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    package_name: str = Field(default="")
+    version_name: str = Field(default="")
+    version_code: str = Field(default="")
+    min_sdk: str = Field(default="")
+    target_sdk: str = Field(default="")
+
+
+class APKPermissionGroup(BaseModel):
+    """Grouped declared Android permissions."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    sms: list[str] = Field(default_factory=list)
+    call_phone: list[str] = Field(default_factory=list)
+    contacts: list[str] = Field(default_factory=list)
+    accessibility: list[str] = Field(default_factory=list)
+    device_admin: list[str] = Field(default_factory=list)
+    overlay: list[str] = Field(default_factory=list)
+    install_packages: list[str] = Field(default_factory=list)
+    read_notifications: list[str] = Field(default_factory=list)
+    location: list[str] = Field(default_factory=list)
+    camera_mic: list[str] = Field(default_factory=list)
+    internet: list[str] = Field(default_factory=list)
+    boot_completed: list[str] = Field(default_factory=list)
+    other: list[str] = Field(default_factory=list)
+    all_declared: list[str] = Field(default_factory=list)
+
+
+class APKComponentsInfo(BaseModel):
+    """Declared component counts and sensitive flags."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    activities_count: int = 0
+    services_count: int = 0
+    receivers_count: int = 0
+    providers_count: int = 0
+    exported_count: int = 0
+    notable_intent_filters: list[str] = Field(default_factory=list)
+
+
+class APKCertificateInfo(BaseModel):
+    """Parsed certificate details."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    subject: str = Field(default="")
+    issuer: str = Field(default="")
+    valid_from: str = Field(default="")
+    valid_to: str = Field(default="")
+    sha256_fingerprint: str = Field(default="")
+
+
+class APKSigningInfo(BaseModel):
+    """Cryptographic signing verification and details."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    is_signed: bool = False
+    signature_schemes: list[str] = Field(default_factory=list)
+    is_debug_signed: bool = False
+    is_self_signed: bool = False
+    certificates: list[APKCertificateInfo] = Field(default_factory=list)
+
+
+class APKCodeIndicators(BaseModel):
+    """Static indicators discovered in Dalvik bytecode."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    dynamic_code_loading: bool = False
+    reflection_use: bool = False
+    runtime_exec: bool = False
+    sms_send_apis: bool = False
+    accessibility_event_handling: bool = False
+    native_library_presence: bool = False
+    base64_obfuscation_hints: bool = False
+    obfuscation_name_ratio_hint: float = Field(default=0.0, ge=0.0, le=1.0)
+    discovered_urls: list[str] = Field(default_factory=list)
+
+
+class FindingExplanation(BaseModel):
+    """Educational details attached to a heuristic finding."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    what_it_means: str = Field(min_length=1)
+    why_attackers_use_it: str = Field(min_length=1)
+    legit_uses: list[str] = Field(default_factory=list)
+    what_to_do: str = Field(min_length=1)
+    learn_more_tags: list[str] = Field(default_factory=list)
+
+
+class APKFinding(BaseModel):
+    """Single security heuristic finding."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    id: str = Field(min_length=1)
+    category: str = Field(min_length=1)
+    severity: Literal["info", "low", "medium", "high"]
+    title: str = Field(min_length=1)
+    evidence: str = Field(min_length=1)
+    why_it_matters: str = Field(min_length=1)
+    explanation: FindingExplanation | None = Field(default=None)
+
+
+class APKIndicatorRuleContribution(BaseModel):
+    """Contributing rule item in APK indicator summary."""
+
+    model_config = ConfigDict(extra="ignore")
+
+    rule_id: str
+    title: str
+    points: int
+
+
+class APKIndicatorCombinationContribution(BaseModel):
+    """Contributing combination bonus in APK indicator summary."""
+
+    model_config = ConfigDict(extra="ignore")
+
+    id: str
+    name: str
+    rules: list[str]
+    points: int
+    description: str
+
+
+class APKIndicatorSummary(BaseModel):
+    """Deterministic heuristic indicator score and breakdown (apk-rules-v1)."""
+
+    model_config = ConfigDict(extra="ignore")
+
+    scoring_version: Literal["apk-rules-v1"] = "apk-rules-v1"
+    level: Literal["Low", "Medium", "High"]
+    indicator_level: Literal["no_notable_indicators", "some_indicators", "many_indicators"] = "no_notable_indicators"
+    total_points: int = Field(ge=0)
+    rule_contributions: list[APKIndicatorRuleContribution] = Field(default_factory=list)
+    combination_contributions: list[APKIndicatorCombinationContribution] = Field(default_factory=list)
+    disclaimer: str = Field(default="Heuristic indicator level, a signal to check and not a malware verdict.")
+
+
+class APKAnalysisResponse(BaseModel):
+    """Versioned output response for static APK analysis (apk-static-v1)."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    id: int | None = Field(default=None)
+    analysis_version: Literal["apk-static-v1"] = "apk-static-v1"
+    sha256: str = Field(min_length=64, max_length=64)
+    file_size: int = Field(ge=0)
+    app: APKAppInfo
+    permissions: APKPermissionGroup
+    components: APKComponentsInfo
+    signing: APKSigningInfo
+    code_indicators: APKCodeIndicators
+    findings: list[APKFinding] = Field(default_factory=list)
+    indicator_level: Literal["no_notable_indicators", "some_indicators", "many_indicators"]
+    indicator_summary: APKIndicatorSummary | None = Field(default=None)
+    limitations: list[str] = Field(default_factory=list)
+
+
+class APKHistoryItem(BaseModel):
+    """Summary item in paginated APK history list."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    id: int
+    sha256: str
+    package_name: str
+    file_size: int
+    indicator_level: str
+    outcome: str
+    created_at: str
+
+
+class APKHistoryResponse(BaseModel):
+    """Paginated list of historical APK analyses."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    items: list[APKHistoryItem]
+    total: int
+    limit: int
+    offset: int
+
+
+class APKJobEnqueueResponse(BaseModel):
+    """Response returned when an APK analysis job is enqueued."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    job_id: str
+    status: Literal["queued", "running", "done", "failed", "timeout"]
+    created_at: float
+
+
+class APKJobStatusResponse(BaseModel):
+    """Status and result response for an asynchronous APK analysis job."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    job_id: str
+    status: Literal["queued", "running", "done", "failed", "timeout"]
+    result: APKAnalysisResponse | None = Field(default=None)
+    error: str | None = Field(default=None)
+    created_at: float | None = Field(default=None)
+    duration_sec: float | None = Field(default=None)
+
+

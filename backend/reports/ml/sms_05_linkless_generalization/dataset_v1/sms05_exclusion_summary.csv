@@ -1,0 +1,8 @@
+cohort,records_excluded,reason
+diagnostic_pilot_250,250,Permanent diagnostic baseline quarantine
+mishra_soni_heldout_benchmark_500,500,Permanent external evaluation benchmark quarantine
+wspr_pilot_campaigns,100,All 100 pilot campaigns quarantined from training pool
+imc_spam_taxonomy,1173,Excluded from positive class due to promotional/fraudulent conflation
+imc_benchmark_near_match,3,SimHash near-duplicate match against quarantined benchmark row 209 (pyatm wallet)
+imc_unusable_short_placeholder,85,Degenerate text (length < 15 or placeholder tags only)
+imc_truncated_ocr_stubs,221,Incomplete messages ending at truncated URL stubs

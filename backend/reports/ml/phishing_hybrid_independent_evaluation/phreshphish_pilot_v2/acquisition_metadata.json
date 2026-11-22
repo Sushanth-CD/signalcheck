@@ -1,0 +1,48 @@
+{
+  "dataset_name": "phreshphish",
+  "repository_url": "https://huggingface.co/datasets/phreshphish/phreshphish",
+  "commit_sha": "eca603e0ecd4f698f8d4d226c088659e72681239",
+  "dataset_version": "v1.0.1",
+  "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "intended_use": "Restricted strictly to anti-phishing security research",
+  "official_splits": {
+    "train": {
+      "total": 498255,
+      "benign": 276729,
+      "phish": 221526,
+      "shards": 56
+    },
+    "test": {
+      "total": 168060,
+      "benign": 91260,
+      "phish": 76800,
+      "shards": 21,
+      "total_compressed_size_bytes": 9175760158,
+      "total_compressed_size_gb": 8.55
+    }
+  },
+  "official_benchmark_index": {
+    "benign_benchmark_count": 90262,
+    "phish_benchmark_count": 28476,
+    "total_benchmark_count": 118738
+  },
+  "pilot_v2_execution": {
+    "records_scanned": 43,
+    "records_acquired": 10,
+    "records_accepted": 9,
+    "records_rejected": 1,
+    "html_payload_bytes": 2511355,
+    "html_payload_mb": 2.4,
+    "total_elapsed_seconds": 20.89,
+    "limits_enforced": {
+      "max_samples": 10,
+      "max_bytes_limit_mb": 100.0,
+      "timeout_seconds": 300
+    },
+    "transport_level_byte_accounting": "not_exposed_by_hf_transport",
+    "selective_single_row_access_feasible": false,
+    "full_simhash_index_persisted": false,
+    "full_simhash_rebuilt_in_pilot": false
+  },
+  "created_utc": "2026-11-01T09:21:41.397382+00:00"
+}

@@ -1,0 +1,165 @@
+{
+  "model_id": "sms_05_c_combined",
+  "model_name": "SMS-05-C: Combined Word + Character FeatureUnion + Logistic Regression",
+  "operating_threshold": 0.5,
+  "overall_metrics": {
+    "n_samples": 1307,
+    "n_pos": 510,
+    "n_neg": 797,
+    "tp": 479,
+    "fp": 14,
+    "tn": 783,
+    "fn": 31,
+    "precision": 0.9716,
+    "recall": 0.9392,
+    "specificity": 0.9824,
+    "f1": 0.9551,
+    "balanced_accuracy": 0.9608,
+    "accuracy": 0.9656,
+    "roc_auc": 0.9928,
+    "average_precision": 0.9909
+  },
+  "category_rates": {
+    "ham_total": 526,
+    "ham_false_positives": 4,
+    "ham_false_positive_rate": 0.0076,
+    "commercial_spam_total": 271,
+    "commercial_spam_false_positives": 10,
+    "commercial_spam_false_positive_rate": 0.0369,
+    "smishing_total": 510,
+    "smishing_true_positives": 479,
+    "smishing_recall": 0.9392,
+    "smishing_linkless_total": 255,
+    "smishing_linkless_true_positives": 236,
+    "smishing_linkless_recall": 0.9255,
+    "smishing_url_bearing_total": 255,
+    "smishing_url_bearing_true_positives": 243,
+    "smishing_url_bearing_recall": 0.9529
+  },
+  "source_metrics": {
+    "ExAIS_ham": {
+      "total": 188,
+      "flagged_as_smishing": 3,
+      "rate": 0.016,
+      "interpretation": "False Positive Rate"
+    },
+    "ExAIS_commercial_spam": {
+      "total": 215,
+      "flagged_as_smishing": 4,
+      "rate": 0.0186,
+      "interpretation": "False Positive Rate"
+    },
+    "IMC_2025_reportsmishing_smishing": {
+      "total": 251,
+      "flagged_as_smishing": 234,
+      "rate": 0.9323,
+      "interpretation": "Recall"
+    },
+    "Mishra_Soni_2022_ham": {
+      "total": 150,
+      "flagged_as_smishing": 0,
+      "rate": 0.0,
+      "interpretation": "False Positive Rate"
+    },
+    "Mishra_Soni_2022_commercial_spam": {
+      "total": 51,
+      "flagged_as_smishing": 4,
+      "rate": 0.0784,
+      "interpretation": "False Positive Rate"
+    },
+    "Mishra_Soni_2022_smishing": {
+      "total": 49,
+      "flagged_as_smishing": 44,
+      "rate": 0.898,
+      "interpretation": "Recall"
+    },
+    "UCI_ham": {
+      "total": 188,
+      "flagged_as_smishing": 1,
+      "rate": 0.0053,
+      "interpretation": "False Positive Rate"
+    },
+    "UCI_commercial_spam": {
+      "total": 5,
+      "flagged_as_smishing": 2,
+      "rate": 0.4,
+      "interpretation": "False Positive Rate"
+    },
+    "WSPR_NCSU_smishing": {
+      "total": 210,
+      "flagged_as_smishing": 201,
+      "rate": 0.9571,
+      "interpretation": "Recall"
+    }
+  },
+  "subgroup_metrics": {
+    "url_present_all": {
+      "n_samples": 335,
+      "n_pos": 228,
+      "n_neg": 107,
+      "tp": 215,
+      "fp": 8,
+      "tn": 99,
+      "fn": 13,
+      "precision": 0.9641,
+      "recall": 0.943,
+      "specificity": 0.9252,
+      "f1": 0.9534,
+      "balanced_accuracy": 0.9341,
+      "accuracy": 0.9373,
+      "roc_auc": 0.9857,
+      "average_precision": 0.9933
+    },
+    "url_absent_all": {
+      "n_samples": 972,
+      "n_pos": 282,
+      "n_neg": 690,
+      "tp": 264,
+      "fp": 6,
+      "tn": 684,
+      "fn": 18,
+      "precision": 0.9778,
+      "recall": 0.9362,
+      "specificity": 0.9913,
+      "f1": 0.9565,
+      "balanced_accuracy": 0.9637,
+      "accuracy": 0.9753,
+      "roc_auc": 0.9927,
+      "average_precision": 0.9883
+    },
+    "length_below_median": {
+      "n_samples": 653,
+      "n_pos": 175,
+      "n_neg": 478,
+      "tp": 158,
+      "fp": 7,
+      "tn": 471,
+      "fn": 17,
+      "precision": 0.9576,
+      "recall": 0.9029,
+      "specificity": 0.9854,
+      "f1": 0.9294,
+      "balanced_accuracy": 0.9441,
+      "accuracy": 0.9632,
+      "roc_auc": 0.989,
+      "average_precision": 0.9795
+    },
+    "length_above_median": {
+      "n_samples": 654,
+      "n_pos": 335,
+      "n_neg": 319,
+      "tp": 321,
+      "fp": 7,
+      "tn": 312,
+      "fn": 14,
+      "precision": 0.9787,
+      "recall": 0.9582,
+      "specificity": 0.9781,
+      "f1": 0.9683,
+      "balanced_accuracy": 0.9681,
+      "accuracy": 0.9679,
+      "roc_auc": 0.9944,
+      "average_precision": 0.9951
+    }
+  }
+}

@@ -1,10 +1,12 @@
 Metadata-Version: 2.4
 Name: cyber-security-awareness-backend
 Version: 0.1.0
-Summary: FastAPI foundation for the Cyber Security Awareness Platform
+Summary: ML inference API for the Cyber Security Awareness Platform
 Requires-Python: >=3.11
 Requires-Dist: fastapi<1.0,>=0.115
 Requires-Dist: uvicorn[standard]<1.0,>=0.30
+Requires-Dist: joblib==1.5.3
+Requires-Dist: scikit-learn==1.8.0
 Provides-Extra: dev
 Requires-Dist: httpx<1.0,>=0.27; extra == "dev"
 Requires-Dist: pytest<9.0,>=8.0; extra == "dev"

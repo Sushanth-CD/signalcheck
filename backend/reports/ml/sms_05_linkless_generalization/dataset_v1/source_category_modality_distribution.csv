@@ -1,0 +1,146 @@
+partition,source_dataset,ground_truth_category,modality,record_count
+test,ExAIS_USER 1,commercial_spam,linkless,4
+test,ExAIS_USER 1,ham,linkless,4
+test,ExAIS_USER 10,commercial_spam,linkless,11
+test,ExAIS_USER 10,ham,linkless,26
+test,ExAIS_USER 11,commercial_spam,linkless,2
+test,ExAIS_USER 11,ham,linkless,18
+test,ExAIS_USER 12,commercial_spam,linkless,27
+test,ExAIS_USER 12,ham,linkless,8
+test,ExAIS_USER 13,commercial_spam,linkless,10
+test,ExAIS_USER 13,ham,linkless,2
+test,ExAIS_USER 14,commercial_spam,linkless,16
+test,ExAIS_USER 14,ham,linkless,5
+test,ExAIS_USER 15,commercial_spam,linkless,29
+test,ExAIS_USER 15,ham,linkless,8
+test,ExAIS_USER 16,commercial_spam,linkless,38
+test,ExAIS_USER 16,ham,linkless,38
+test,ExAIS_USER 17,commercial_spam,linkless,8
+test,ExAIS_USER 17,ham,linkless,11
+test,ExAIS_USER 18,commercial_spam,linkless,3
+test,ExAIS_USER 18,ham,linkless,4
+test,ExAIS_USER 19,commercial_spam,linkless,26
+test,ExAIS_USER 19,ham,linkless,29
+test,ExAIS_USER 2,commercial_spam,linkless,6
+test,ExAIS_USER 2,ham,linkless,11
+test,ExAIS_USER 20,commercial_spam,linkless,3
+test,ExAIS_USER 3,commercial_spam,linkless,3
+test,ExAIS_USER 4,commercial_spam,linkless,6
+test,ExAIS_USER 4,ham,linkless,10
+test,ExAIS_USER 5,ham,linkless,2
+test,ExAIS_USER 6,commercial_spam,linkless,1
+test,ExAIS_USER 6,ham,linkless,1
+test,ExAIS_USER 7,commercial_spam,linkless,15
+test,ExAIS_USER 7,ham,linkless,8
+test,ExAIS_USER 8,commercial_spam,linkless,2
+test,ExAIS_USER 8,ham,linkless,2
+test,ExAIS_USER 9,commercial_spam,linkless,5
+test,ExAIS_USER 9,ham,linkless,1
+test,IMC_2025_reportsmishing,smishing,linkless,217
+test,IMC_2025_reportsmishing,smishing,url_bearing,34
+test,Mishra_Soni_2022,commercial_spam,linkless,36
+test,Mishra_Soni_2022,commercial_spam,url_bearing,15
+test,Mishra_Soni_2022,ham,linkless,143
+test,Mishra_Soni_2022,ham,url_bearing,7
+test,Mishra_Soni_2022,smishing,linkless,38
+test,Mishra_Soni_2022,smishing,url_bearing,11
+test,UCI,commercial_spam,linkless,5
+test,UCI,ham,linkless,188
+test,WSPR_NCSU,smishing,url_bearing,210
+train,ExAIS_USER 1,commercial_spam,linkless,4
+train,ExAIS_USER 1,ham,linkless,6
+train,ExAIS_USER 10,commercial_spam,linkless,94
+train,ExAIS_USER 10,ham,linkless,131
+train,ExAIS_USER 11,commercial_spam,linkless,13
+train,ExAIS_USER 11,ham,linkless,66
+train,ExAIS_USER 12,commercial_spam,linkless,91
+train,ExAIS_USER 12,ham,linkless,44
+train,ExAIS_USER 13,commercial_spam,linkless,15
+train,ExAIS_USER 13,ham,linkless,14
+train,ExAIS_USER 14,commercial_spam,linkless,67
+train,ExAIS_USER 14,ham,linkless,22
+train,ExAIS_USER 15,commercial_spam,linkless,309
+train,ExAIS_USER 15,ham,linkless,21
+train,ExAIS_USER 16,commercial_spam,linkless,131
+train,ExAIS_USER 16,ham,linkless,209
+train,ExAIS_USER 17,commercial_spam,linkless,50
+train,ExAIS_USER 17,ham,linkless,25
+train,ExAIS_USER 18,commercial_spam,linkless,32
+train,ExAIS_USER 18,ham,linkless,41
+train,ExAIS_USER 19,commercial_spam,linkless,107
+train,ExAIS_USER 19,ham,linkless,106
+train,ExAIS_USER 2,commercial_spam,linkless,8
+train,ExAIS_USER 2,ham,linkless,12
+train,ExAIS_USER 20,commercial_spam,linkless,7
+train,ExAIS_USER 3,commercial_spam,linkless,10
+train,ExAIS_USER 4,commercial_spam,linkless,17
+train,ExAIS_USER 4,ham,linkless,52
+train,ExAIS_USER 5,commercial_spam,linkless,24
+train,ExAIS_USER 5,ham,linkless,29
+train,ExAIS_USER 6,commercial_spam,linkless,6
+train,ExAIS_USER 6,ham,linkless,38
+train,ExAIS_USER 7,commercial_spam,linkless,28
+train,ExAIS_USER 7,ham,linkless,51
+train,ExAIS_USER 8,commercial_spam,linkless,7
+train,ExAIS_USER 8,ham,linkless,1
+train,ExAIS_USER 9,commercial_spam,linkless,17
+train,ExAIS_USER 9,ham,linkless,7
+train,IMC_2025_reportsmishing,smishing,linkless,1012
+train,IMC_2025_reportsmishing,smishing,url_bearing,160
+train,Mishra_Soni_2022,commercial_spam,linkless,169
+train,Mishra_Soni_2022,commercial_spam,url_bearing,65
+train,Mishra_Soni_2022,ham,linkless,666
+train,Mishra_Soni_2022,ham,url_bearing,34
+train,Mishra_Soni_2022,smishing,linkless,178
+train,Mishra_Soni_2022,smishing,url_bearing,50
+train,UCI,commercial_spam,linkless,22
+train,UCI,ham,linkless,875
+train,WSPR_NCSU,smishing,url_bearing,980
+validation,ExAIS_USER 1,commercial_spam,linkless,4
+validation,ExAIS_USER 1,ham,linkless,5
+validation,ExAIS_USER 10,commercial_spam,linkless,14
+validation,ExAIS_USER 10,ham,linkless,22
+validation,ExAIS_USER 11,commercial_spam,linkless,1
+validation,ExAIS_USER 11,ham,linkless,11
+validation,ExAIS_USER 12,commercial_spam,linkless,30
+validation,ExAIS_USER 12,ham,linkless,6
+validation,ExAIS_USER 13,commercial_spam,linkless,11
+validation,ExAIS_USER 13,ham,linkless,3
+validation,ExAIS_USER 14,commercial_spam,linkless,17
+validation,ExAIS_USER 14,ham,linkless,3
+validation,ExAIS_USER 15,commercial_spam,linkless,18
+validation,ExAIS_USER 15,ham,linkless,7
+validation,ExAIS_USER 16,commercial_spam,linkless,40
+validation,ExAIS_USER 16,ham,linkless,46
+validation,ExAIS_USER 17,commercial_spam,linkless,6
+validation,ExAIS_USER 17,ham,linkless,6
+validation,ExAIS_USER 18,commercial_spam,linkless,9
+validation,ExAIS_USER 18,ham,linkless,5
+validation,ExAIS_USER 19,commercial_spam,linkless,28
+validation,ExAIS_USER 19,ham,linkless,35
+validation,ExAIS_USER 2,commercial_spam,linkless,7
+validation,ExAIS_USER 2,ham,linkless,11
+validation,ExAIS_USER 20,commercial_spam,linkless,5
+validation,ExAIS_USER 4,commercial_spam,linkless,5
+validation,ExAIS_USER 4,ham,linkless,9
+validation,ExAIS_USER 5,commercial_spam,linkless,2
+validation,ExAIS_USER 5,ham,linkless,1
+validation,ExAIS_USER 6,commercial_spam,linkless,3
+validation,ExAIS_USER 6,ham,linkless,2
+validation,ExAIS_USER 7,commercial_spam,linkless,12
+validation,ExAIS_USER 7,ham,linkless,12
+validation,ExAIS_USER 8,commercial_spam,linkless,2
+validation,ExAIS_USER 8,ham,linkless,1
+validation,ExAIS_USER 9,commercial_spam,linkless,2
+validation,ExAIS_USER 9,ham,linkless,2
+validation,IMC_2025_reportsmishing,smishing,linkless,217
+validation,IMC_2025_reportsmishing,smishing,url_bearing,34
+validation,Mishra_Soni_2022,commercial_spam,linkless,38
+validation,Mishra_Soni_2022,commercial_spam,url_bearing,12
+validation,Mishra_Soni_2022,ham,linkless,140
+validation,Mishra_Soni_2022,ham,url_bearing,10
+validation,Mishra_Soni_2022,smishing,linkless,38
+validation,Mishra_Soni_2022,smishing,url_bearing,11
+validation,UCI,commercial_spam,linkless,5
+validation,UCI,ham,linkless,187
+validation,WSPR_NCSU,smishing,url_bearing,210

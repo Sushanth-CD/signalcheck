@@ -1,0 +1,5 @@
+record_type,total_count,percentage
+actual_sms_message_text,21765,98.6
+truncated_ocr_stub,221,1.0
+unusable_too_short,85,0.39
+commentary_warning_post,4,0.02

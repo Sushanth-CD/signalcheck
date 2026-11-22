@@ -1,0 +1,63 @@
+{
+  "benchmark_sample_size": 500,
+  "operating_threshold": 0.5,
+  "primary_metrics": {
+    "confusion_matrix": {
+      "TN": 297,
+      "FP": 3,
+      "FN": 178,
+      "TP": 22
+    },
+    "accuracy": 0.638,
+    "balanced_accuracy": 0.55,
+    "precision": 0.88,
+    "recall": 0.11,
+    "specificity": 0.99,
+    "f1_score": 0.1956,
+    "roc_auc": 0.8052,
+    "average_precision": 0.7328
+  },
+  "smishing_subgroups": {
+    "overall_recall": 0.11,
+    "overall_detected_count": 22,
+    "overall_total_count": 200,
+    "url_bearing_recall": 0.4773,
+    "url_bearing_detected_count": 21,
+    "url_bearing_total_count": 44,
+    "linkless_recall": 0.0064,
+    "linkless_detected_count": 1,
+    "linkless_total_count": 156
+  },
+  "ham_negative_control": {
+    "total_count": 200,
+    "false_positive_count": 0,
+    "false_positive_rate": 0.0,
+    "specificity": 1.0
+  },
+  "commercial_spam_control": {
+    "total_count": 100,
+    "false_positive_count": 3,
+    "false_positive_rate": 0.03,
+    "specificity": 0.97
+  },
+  "length_tier_metrics": {
+    "short": {
+      "total_samples": 144,
+      "smishing_count": 8,
+      "accuracy": 0.9375,
+      "smishing_recall": 0.0
+    },
+    "medium": {
+      "total_samples": 177,
+      "smishing_count": 77,
+      "accuracy": 0.6045,
+      "smishing_recall": 0.1039
+    },
+    "long": {
+      "total_samples": 179,
+      "smishing_count": 115,
+      "accuracy": 0.4302,
+      "smishing_recall": 0.1217
+    }
+  }
+}

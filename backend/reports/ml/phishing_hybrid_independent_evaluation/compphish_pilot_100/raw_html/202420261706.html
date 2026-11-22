@@ -1,0 +1,3919 @@
+<html lang="nn"><head>
+
+    <meta charset="utf-8">
+    
+        <script>
+            try{!function(){var e="Expected a function",t=NaN,n="[object Symbol]",r=/^\s+|\s+$/g,i=/^[-+]0x[0-9a-f]+$/i,o=/^0b[01]+$/i,a=/^0o[0-7]+$/i,c=parseInt,u="object"==typeof global&&global&&global.Object===Object&&global,s="object"==typeof self&&self&&self.Object===Object&&self,f=u||s||Function("return this")(),l=Object.prototype.toString,p=Math.max,v=Math.min,g=function(){return f.Date.now()};function m(t,n,r){var i,o,a,c,u,s,f=0,l=!1,m=!1,b=!0;if("function"!=typeof t)throw new TypeError(e);function O(e){var n=i,r=o;return i=o=void 0,f=e,c=t.apply(r,n)}function y(e){var t=e-s;return void 0===s||t>=n||t<0||m&&e-f>=a}function N(){var e,t,r=g();if(y(r))return w(r);u=setTimeout(N,(t=n-((e=r)-s),m?v(t,a-(e-f)):t))}function w(e){return u=void 0,b&&i?O(e):(i=o=void 0,c)}function x(){var e,t=g(),r=y(t);if(i=arguments,o=this,s=t,r){if(void 0===u)return f=e=s,u=setTimeout(N,n),l?O(e):c;if(m)return u=setTimeout(N,n),O(s)}return void 0===u&&(u=setTimeout(N,n)),c}return n=d(n)||0,h(r)&&(l=!!r.leading,a=(m="maxWait"in r)?p(d(r.maxWait)||0,n):a,b="trailing"in r?!!r.trailing:b),x.cancel=function(){void 0!==u&&clearTimeout(u),f=0,i=s=o=u=void 0},x.flush=function(){return void 0===u?c:w(g())},x}function h(e){var t=typeof e;return!!e&&("object"==t||"function"==t)}function d(e){if("number"==typeof e)return e;if("symbol"==typeof(u=e)||(s=u)&&"object"==typeof s&&l.call(u)==n)return t;var u,s;if(h(e)){var f="function"==typeof e.valueOf?e.valueOf():e;e=h(f)?f+"":f}if("string"!=typeof e)return 0===e?e:+e;e=e.replace(r,"");var p=o.test(e);return p||a.test(e)?c(e.slice(2),p?2:8):i.test(e)?t:+e}var b,O,y,N,w=(b=function(){function e(e){return!isNaN(parseFloat(e))&&isFinite(e)}function t(e){return e.charAt(0).toUpperCase()+e.substring(1)}function n(e){return function(){return this[e]}}var r=["isConstructor","isEval","isNative","isToplevel"],i=["columnNumber","lineNumber"],o=["fileName","functionName","source"],a=r.concat(i,o,["args"]);function c(e){if(e instanceof Object)for(var n=0;n<a.length;n++)e.hasOwnProperty(a[n])&&void 0!==e[a[n]]&&this["set"+t(a[n])](e[a[n]])}c.prototype={getArgs:function(){return this.args},setArgs:function(e){if("[object Array]"!==Object.prototype.toString.call(e))throw new TypeError("Args must be an Array");this.args=e},getEvalOrigin:function(){return this.evalOrigin},setEvalOrigin:function(e){if(e instanceof c)this.evalOrigin=e;else{if(!(e instanceof Object))throw new TypeError("Eval Origin must be an Object or StackFrame");this.evalOrigin=new c(e)}},toString:function(){return(this.getFunctionName()||"{anonymous}")+"("+(this.getArgs()||[]).join(",")+")"+(this.getFileName()?"@"+this.getFileName():"")+(e(this.getLineNumber())?":"+this.getLineNumber():"")+(e(this.getColumnNumber())?":"+this.getColumnNumber():"")}};for(var u=0;u<r.length;u++)c.prototype["get"+t(r[u])]=n(r[u]),c.prototype["set"+t(r[u])]=function(e){return function(t){this[e]=Boolean(t)}}(r[u]);for(var s=0;s<i.length;s++)c.prototype["get"+t(i[s])]=n(i[s]),c.prototype["set"+t(i[s])]=function(t){return function(n){if(!e(n))throw new TypeError(t+" must be a Number");this[t]=Number(n)}}(i[s]);for(var f=0;f<o.length;f++)c.prototype["get"+t(o[f])]=n(o[f]),c.prototype["set"+t(o[f])]=function(e){return function(t){this[e]=String(t)}}(o[f]);return c}(),O=/(^|@)\S+\:\d+/,y=/^\s*at .*(\S+\:\d+|\(native\))/m,N=/^(eval@)?(\[native code\])?$/,{parse:function(e){if(void 0!==e.stacktrace||void 0!==e["opera#sourceloc"])return this.parseOpera(e);if(e.stack&&e.stack.match(y))return this.parseV8OrIE(e);if(e.stack)return this.parseFFOrSafari(e);throw new Error("Cannot parse given Error object")},extractLocation:function(e){if(-1===e.indexOf(":"))return[e];var t=/(.+?)(?:\:(\d+))?(?:\:(\d+))?$/.exec(e.replace(/[\(\)]/g,""));return[t[1],t[2]||void 0,t[3]||void 0]},parseV8OrIE:function(e){return e.stack.split("\n").filter(function(e){return!!e.match(y)},this).map(function(e){e.indexOf("(eval ")>-1&&(e=e.replace(/eval code/g,"eval").replace(/(\(eval at [^\()]*)|(\)\,.*$)/g,""));var t=e.replace(/^\s+/,"").replace(/\(eval code/g,"(").split(/\s+/).slice(1),n=this.extractLocation(t.pop()),r=t.join(" ")||void 0,i=["eval","<anonymous>"].indexOf(n[0])>-1?void 0:n[0];return new b({functionName:r,fileName:i,lineNumber:n[1],columnNumber:n[2],source:e})},this)},parseFFOrSafari:function(e){return e.stack.split("\n").filter(function(e){return!e.match(N)},this).map(function(e){if(e.indexOf(" > eval")>-1&&(e=e.replace(/ line (\d+)(?: > eval line \d+)* > eval\:\d+\:\d+/g,":$1")),-1===e.indexOf("@")&&-1===e.indexOf(":"))return new b({functionName:e});var t=/((.*".+"[^@]*)?[^@]*)(?:@)/,n=e.match(t),r=n&&n[1]?n[1]:void 0,i=this.extractLocation(e.replace(t,""));return new b({functionName:r,fileName:i[0],lineNumber:i[1],columnNumber:i[2],source:e})},this)},parseOpera:function(e){return!e.stacktrace||e.message.indexOf("\n")>-1&&e.message.split("\n").length>e.stacktrace.split("\n").length?this.parseOpera9(e):e.stack?this.parseOpera11(e):this.parseOpera10(e)},parseOpera9:function(e){for(var t=/Line (\d+).*script (?:in )?(\S+)/i,n=e.message.split("\n"),r=[],i=2,o=n.length;i<o;i+=2){var a=t.exec(n[i]);a&&r.push(new b({fileName:a[2],lineNumber:a[1],source:n[i]}))}return r},parseOpera10:function(e){for(var t=/Line (\d+).*script (?:in )?(\S+)(?:: In function (\S+))?$/i,n=e.stacktrace.split("\n"),r=[],i=0,o=n.length;i<o;i+=2){var a=t.exec(n[i]);a&&r.push(new b({functionName:a[3]||void 0,fileName:a[2],lineNumber:a[1],source:n[i]}))}return r},parseOpera11:function(e){return e.stack.split("\n").filter(function(e){return!!e.match(O)&&!e.match(/^Error created at/)},this).map(function(e){var t,n=e.split("@"),r=this.extractLocation(n.pop()),i=n.shift()||"",o=i.replace(/<anonymous function(: (\w+))?>/,"$2").replace(/\([^\)]*\)/g,"")||void 0;i.match(/\(([^\)]*)\)/)&&(t=i.replace(/^[^\(]+\(([^\)]*)\)$/,"$1"));var a=void 0===t||"[arguments not available]"===t?void 0:t.split(",");return new b({functionName:o,args:a,fileName:r[0],lineNumber:r[1],columnNumber:r[2],source:e})},this)}});window.onerror=function(t,n,r){var i=!0,o=!0;if("function"!=typeof t)throw new TypeError(e);return h(r)&&(i="leading"in r?!!r.leading:i,o="trailing"in r?!!r.trailing:o),m(t,n,{leading:i,maxWait:n,trailing:o})}(function(e,t,n,r,i){var o,a;i&&(o=w.parse(i)),window.location&&window.location.href&&(a=window.location.href),function(e){try{var t=new XMLHttpRequest;t.open("POST","/LogServlet",!0),t.setRequestHeader("Content-Type","application/x-www-form-urlencoded; charset=UTF-8"),t.send("javascriptError="+encodeURI(e))}catch(e){}}(JSON.stringify({userAgent:navigator.userAgent,url:a,logger:"apne_nettsider",message:e,source:t,lineno:n,colno:r,stacktrace:o}))},200)}()}catch(e){}
+        </script>
+    
+    
+
+    
+
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=yes">
+    <meta name="keywords" content="Not indexed">
+    
+    
+
+    
+        <meta itemprop="category" content="search-facet-tags:not-indexed">
+    
+
+    <meta property="og:url" content="https://www.sparebank1.no/nn/sogn-fjordane/privat.html">
+    <meta property="og:title" content="Privat">
+    <meta property="og:description">
+    <meta property="og:image" content="https://www.sparebank1.no">
+    <meta property="og:type" content="article">
+
+    <meta property="article:published_time" content="11.8.2025">
+    <meta property="article:modified_time" content="11.8.2025">
+
+    <meta name="twitter:title" content="Privat">
+    <meta name="twitter:description">
+    
+    <meta name="twitter:card" content="summary_large_image">
+
+    
+    
+    
+
+    
+    <link rel="preload" as="font" href="/etc.clientlibs/settings/wcm/designs/sb1/nettsider/clientlib_base/resources/fonts/SpareBank1-Medium-Web.woff2" type="font/woff2" crossorigin="">
+    <link rel="preload" as="font" href="/etc.clientlibs/settings/wcm/designs/sb1/nettsider/clientlib_base/resources/fonts/SpareBank1-Regular-Web.woff2" type="font/woff2" crossorigin="">
+    <link rel="preload" as="font" href="/etc.clientlibs/settings/wcm/designs/sb1/nettsider/clientlib_base/resources/fonts/SpareBank1-Title-Medium-Web.woff2" type="font/woff2" crossorigin="">
+
+    <link rel="shortcut icon" type="image/png" href="/etc.clientlibs/settings/wcm/designs/sb1/nettsider/clientlib_base/resources/favicon.png">
+    <link rel="apple-touch-icon" href="/etc.clientlibs/settings/wcm/designs/sb1/nettsider/clientlib_base/resources/apple-touch-icon.png">
+    
+    <link rel="stylesheet" href="/etc.clientlibs/settings/wcm/designs/sb1/nettsider/clientlib_base.1156818140.css" type="text/css">
+    <title>Privat | SpareBank 1 Sogn og Fjordane</title>
+    
+    <!-- aem02-02 - 5.133.2 -->
+    
+
+    <script type="text/javascript">
+        var _satellite = {
+            track: function() {}
+        }
+    </script>
+
+    
+
+    
+<style>@keyframes open-chat-animation { 0% { margin-bottom: -50px; opacity: 0; } 100% { margin-bottom: 0; opacity: 1; }};</style></head>
+
+
+
+<body class="ffe-body-text">
+    
+    
+    
+    
+        
+        
+
+        
+        
+        
+
+<script>
+    window.SB1 = {
+        config: {
+            app: {
+                logServlet: '/bin/logservlet',
+                param1: "",
+                param2: "all",
+                param3: '',
+                sendToBank: "",
+                sendToBankList: "",
+                sendToBankClose: "",
+                sendToBankDelay: "",
+                loggedInRedirectEnabled: "true",
+                urlList: "LogServlet,/bin/logservlet,/bin,/content/dam,/dynres,/restportal,static,/innhold,services.cicero.no,/kjopsprosess,/api/common/banking/skjema,/nettmote,.boost.ai/,https://publish.ne.cision.com/Subscription/Subscribe,dpm.demdex.net,sparebank1.d3.sc.omtrdc.net,/solr,/sb1-dialoghub,/openapi,edge.adobedc.net,/api/tracking/webbehavior,/pm-boliglan/,/api/personal/",
+                loginRedirectTimeout: "300000",
+                isLoginIframeCheckEnabled: "true",
+                pmLoginEnabledBanksList: "bank,gudbrandsdal,hallingdal,helgeland,lom-skjaak,nord-norge,nordmore,ringerike-hadeland,smn,sr-bank,sorost,ostfold-akershus,ostlandet,sogn-fjordane,sor-norge",
+                chatDefaultOpen: "",
+                enableWebTracker: "true",
+                enableAlloyTarget: "true",
+                enableSendConsent: "true", // To be removed when we have streamed the consents for a period of time
+                enableActivityMap: "false", // To be removed when we have tested Activitymap for å while
+                adobeEdgeIdBank: "835519e0-3a93-4f0f-b49c-aaa4a7cad752",
+                version: "5.133.2",
+            },
+            user: {
+                language: "nn",
+            },
+            global: {
+                logAjax: false,
+            },
+            urls: {
+                marketPage: "/content/sites/sb1/nn/sogn-fjordane/privat.html",
+                gotoNettbank: '',
+            },
+            server: {},
+            sites: {},
+            page: {
+                tagVariables: "search\u002Dfacet\u002Dtags:not\u002Dindexed",
+                pageType: "Marked",
+                market: "Privat",
+                marketName: "privat",
+                brand: "sb1",
+                products: [
+                    {
+                        name: "",
+                        category: "",
+                    },
+                ],
+                is404Page: "false",
+            },
+            bank: {
+                bankSemanticUrl: "sogn-fjordane",
+                bankShortName: "sogn-fjordane",
+                bankName: "SpareBank 1 Sogn og Fjordane",
+                defaultLanguage: "nn",
+            },
+        },
+    };
+</script>
+
+        
+<script>
+        digitalData = {
+            content: {
+                BU: "SpareBank 1",
+                subBrand: "sogn\u002Dfjordane",
+                language: "nn",
+                page: "sb1|nn|sogn\u002Dfjordane|privat:forside",
+                section1: "privat",
+                section2: "privat",
+                section3: "privat",
+                section4: "privat",
+                errorpages: "Nei",
+                pagetype: "Marked",
+                tags: "search\u002Dfacet\u002Dtags:not\u002Dindexed",
+                application: "sb1-nettsider"
+            }
+        };
+</script>
+
+        <noscript>
+            <div>For at du skal kunne sjå innhald på SpareBank 1 sine nettsider optimalt, må du aktivere javascript i nettlesaren din.</div>
+        </noscript>
+
+        <div id="outer-main-wrap" class="main-wrap">
+            
+            
+            <nav class="page-nav">
+    <a href="#main-menu" class="visually-hidden focusable">Til hovudmeny</a>
+
+    <a href="#main-content" class="visually-hidden focusable">Til hovudinnhald</a>
+</nav>
+            
+    <aside aria-label="Melding" role="complementary">
+        <div class="global-message">
+            <div class="li-information-message-blue js-ie-message-item hide" role="alert" aria-live="assertive" data-id="ie-no-longer-supported" data-button="Lukk">
+                
+            </div>
+            
+        </div>
+    </aside>
+
+
+<header class="header front-page ">
+    
+    
+    
+    
+    
+    <div class="header__wrap">
+        <div class="header__content  aem-main-container">
+            <div class="header__top-wrap">
+                <a class="header__search-mobile search-toggle" href="?search=" aria-label="Søk" title="Søk">
+                    <svg class="header__search-icon header__search-icon--open">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/etc.clientlibs/settings/wcm/designs/sb1/nettsider/clientlib_base/resources/images/symbol/ffe-icons.svg#forstorrelsesglass-ikon"></use>
+                    </svg>
+                    <svg class="header__search-icon header__search-icon--close">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/etc.clientlibs/settings/wcm/designs/sb1/nettsider/clientlib_base/resources/images/symbol/ffe-icons.svg#kryss-ikon"></use>
+                    </svg>
+                </a>
+
+                <div class="header__logo">
+<a href="/nn/sogn-fjordane/privat.html">
+    
+    
+    
+
+    
+        
+    
+        
+    <picture>
+        <img aria-hidden="false" width="180" height="50" src="/content/dam/SB1/ikoner/GUI-ikoner/logo-sparebank1sogn-fjordane.svg" alt="Til framside privat for SpareBank 1 Sogn og Fjordane" class="inline-svg responsive ">
+    </picture>
+    <link rel="image_src" itemprop="image">
+
+        
+    
+    
+
+        
+    
+    
+    
+    
+
+</a></div>
+
+                <button href="#" class="hamburger-wrapper" aria-hidden="false" aria-expanded="false" aria-label="Meny">
+                    <div class="inner-wrapper">
+                        <div class="hamburger"></div>
+                    </div>
+                </button>
+
+                <div class="header__top-nav">
+                    <ul>
+                        <li data-title="Privat">
+                            <a class="js-nav-link active" href="/nn/sogn-fjordane/privat.html">Privat</a>
+                        </li>
+                    
+                        <li data-title="Bedrift">
+                            <a class="js-nav-link " href="/nn/sogn-fjordane/bedrift.html">Bedrift</a>
+                        </li>
+                    
+                        <li data-title="Om oss">
+                            <a class="js-nav-link " href="/nn/sogn-fjordane/om-oss.html">Om oss</a>
+                        </li>
+                    
+                        
+                    </ul>
+                    
+                </div>
+            </div>
+
+            <div class="header__user-content">
+                
+
+                <button aria-controls="search-area" class="header__search-desktop search-toggle " aria-label="Søk">
+                    <svg class="header__search-icon header__search-icon--open">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/etc.clientlibs/settings/wcm/designs/sb1/nettsider/clientlib_base/resources/images/symbol/ffe-icons.svg#forstorrelsesglass-ikon"></use>
+                    </svg>
+                    <span>Søk</span>
+                </button>
+
+                <div class=" menu-actions">
+                    
+                    
+                    
+
+                    <div id="header-bli-kunde" class="button">
+                        <div class="button-wrapper">
+                            
+                            
+                                <a onclick="" href="/nn/sogn-fjordane/privat/kundeservice/bestill/bli-kunde.html" class="ffe-button ffe-button--action btn-bli-kunde ">Bli kunde</a>
+                            
+                        </div>
+                        
+                    </div>
+
+                    
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+<div id="login" class="user-buttons todo-handle" data-gotourl="https://www.sparebank1.no/sogn-fjordane/nettbank-privat/avtale/velg-avtale">
+    
+        
+            <div id="login-button-app" data-editmode="false" data-app-text="Opne mobilbank-app" data-bankid-text="Logg inn med BankID" data-uten-bankid-text="Logg inn utan BankID" data-login-error-heading="Noko er feil" data-login-error-msg="Vi får ikkje vist knappane for innlogging akkurat no. Prøv igjen seinare, eller bruk mobilbanken." data-fin-inst="" data-lang="nn" data-app="nettbank-pm" data-bank="sogn-fjordane" data-login-text="Logg inn" data-close-text="Lukk" data-on-cancel="/content/sites/sb1/nn/sogn-fjordane/privat.html" data-login-url="https://login.sparebank1.no/" data-gotourl="https%3A%2F%2Fwww.sparebank1.no%2Fsogn-fjordane%2Fnettbank-privat%2Favtale%2Fvelg-avtale"><button id="login-button" class="login-button--expand login-btn login" aria-expanded="false" aria-controls="login-choices" aria-label="Logg inn"><span id="login-button__text">Logg inn</span></button><div id="login-choices" aria-labelledby="login-button" role="region"></div></div>
+        
+    
+
+    
+
+    <a id="nettbank-button" class="goto-btn to-bank-button login-buttons" href="#/">
+        <span>Til nettbank</span>
+    </a>
+
+    <a id="forsikring-button" class="goto-btn to-forsikring login-buttons" href="https://kundeforsikring.sparebank1.no">
+        <span>Til forsikring</span>
+    </a>
+
+    <button id="logout-button" class="logout-btn login-buttons" data-logout-url="/content/sites/sb1/nn/sogn-fjordane/privat/innlogging/logget-ut.html">
+        <span>Logg ut</span>
+    </button>
+</div>
+
+<script type="text/javascript">
+    (function () {
+        try {
+            var loginSection = document.getElementById('login');
+            var nettBankButton = document.getElementsByClassName('to-bank-button')[0];
+            var loginButton = document.getElementById('login-button');
+            var bank = window.SB1 ? window.SB1.config.bank.bankShortName : '';
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.open('GET', '/openapi/nettsider/ressurser/' + bank + '/user', true);
+
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4) {
+                    if (this.status == 200) {
+                        var result = JSON.parse(this.responseText);
+
+                        if (result.authenticated) {
+                            loginSection.dataset['authenticated'] = 'true';
+                            showButton(document.getElementById('logout-button'));
+                            addClass(loginSection, 'mobile-border');
+
+                            var realms = result.realms;
+                            if (realms.length > -1) {
+                                var i = 0;
+                                //Viser kun en knapp denne runden
+                                //tilrettelegger for flere knapper i neste runde
+
+                                if (realms[i] == 'nettbank-bm') {
+                                    var nettbankUrl = '/' + result.bank + '/nettbank-bedrift/forside';
+                                    var isMobilBank = nettBankButton.id === 'mobilbank-button';
+                                    if (isMobilBank) {
+                                        nettbankUrl = nettBankButton.href;
+                                    } else {
+                                        nettBankButton.href = nettbankUrl;
+                                    }
+
+                                    setGotoNettbankConf(nettbankUrl);
+                                    showButton(nettBankButton);
+                                } else if (realms[i] == 'nettbank-pm') {
+                                    var toBank = result.bank || bank;
+                                    nettBankButton.href = '/' + toBank + '/nettbank-privat/oversikt';
+                                    setGotoNettbankConf('/' + toBank + '/nettbank-privat/oversikt');
+
+                                    //DIG-116242 Skjule "Til bettbank" for SB1 forvaltning
+                                    if (window.location.href && window.location.href.indexOf('sb1-forvaltning') == -1) {
+                                        showButton(nettBankButton);
+                                    }
+                                } else if (realms[i] == 'forsikring-pm') {
+                                    showButton(document.getElementById('forsikring-button'));
+                                }
+
+                                //Skjuler login knapp
+                                loginButton.style.display = 'none';
+                                var loginButtonApp = document.getElementById('login-button-app');
+                                if (loginButtonApp) {
+                                    loginButtonApp.style.display = 'none';
+                                    loginButtonApp.setAttribute('aria-hidden', true);
+                                }
+
+                                //Bli kunde button
+                                var bliKundeBtn = document.getElementById('header-bli-kunde');
+                                if (bliKundeBtn) {
+                                    bliKundeBtn.style.display = 'none';
+                                }
+                            }
+                            window.SB1.config.user.authenticated = true;
+                        } else {
+                            setGotoNettbankConf(loginButton.href);
+                            window.SB1.config.user.authenticated = false;
+                        }
+                    } else {
+                        setGotoNettbankConf(loginButton.href);
+                        window.SB1.config.user.authenticated = false;
+                    }
+                }
+            };
+            xhttp.send();
+
+            function showButton(btn) {
+                addClass(btn, 'login-buttons__show');
+            }
+
+            function setGotoNettbankConf(sUrl) {
+                window.SB1.config.urls.gotoNettbank = sUrl;
+            }
+
+            function addClass(obj, name) {
+                var arr;
+                arr = obj.className.split(' ');
+                if (arr.indexOf(name) == -1) {
+                    obj.className += ' ' + name;
+                }
+            }
+        } catch (exception) {
+            document.getElementById('login-button').style.display = 'flex';
+        }
+    })();
+</script>
+
+                    
+                </div>
+            </div>
+
+            <nav id="main-menu" class="header__main-nav " aria-label="Hovudmeny" tabindex="-1" aria-expanded="false">
+                <ul>
+                    <li>
+                        <a class=" js-nav-link" href="/nn/sogn-fjordane/privat/daglig-bruk.html">Dagleg bruk</a>
+                    </li>
+                
+                    <li>
+                        <a class=" js-nav-link" href="/nn/sogn-fjordane/privat/lan.html">Låne</a>
+                    </li>
+                
+                    <li>
+                        <a class=" js-nav-link" href="/nn/sogn-fjordane/privat/sparing.html">Spare</a>
+                    </li>
+                
+                    <li>
+                        <a class=" js-nav-link" href="/nn/sogn-fjordane/privat/miljoprodukter.html">Miljøprodukt</a>
+                    </li>
+                
+                    <li>
+                        <a class=" js-nav-link" href="/nn/sogn-fjordane/privat/pensjon.html">Pensjon</a>
+                    </li>
+                
+                    <li>
+                        <a class=" js-nav-link" href="/nn/sogn-fjordane/privat/forsikring.html">Forsikring</a>
+                    </li>
+                
+                    <li>
+                        <a class=" js-nav-link" href="/nn/sogn-fjordane/privat/eiendom.html">Eigedom</a>
+                    </li>
+                
+                    <li>
+                        <a class=" js-nav-link" href="/nn/sogn-fjordane/privat/tips-og-rad.html">Tips og råd</a>
+                    </li>
+                
+                    <li>
+                        <a class=" js-nav-link" href="/nn/sogn-fjordane/privat/kundeservice.html">Kundeservice</a>
+                    </li>
+                
+                    
+                
+                    
+                
+                    <li>
+                        <a class=" js-nav-link" href="/nn/sogn-fjordane/privat/lofavor.html">LOfavør-fordelar</a>
+                    </li>
+                
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+</header>
+
+
+<script>
+    window.SB1.config.mineOppgaver = {
+        url: "/api/personal/banking/my-assignments/count"
+    };
+</script>
+<div class="user-process clearfix" role="complementary" data-url="/sogn-fjordane/nettbank-privat/profil"></div>
+
+
+    
+    <div id="search-area" class="search-overlay hide " aria-expanded="false" aria-live="polite" role="search">
+        <div class="full-width-wrap">
+            <div class="aem-main-container search-overlay__close">
+                <button tabindex="0" class="search-overlay__close-btn js-search-close">
+                    <span class="ffe-strong-text">Lukk</span>
+                    <svg focusable="false">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/etc.clientlibs/settings/wcm/designs/sb1/nettsider/clientlib_base/resources/images/symbol/ffe-icons.svg#kryss-ikon"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>  
+        
+        <div id="search-app" data-no-personal-info="Ikkje skriv personleg informasjon i søkefeltet." data-no-result-text="Ingen treff på" data-facet-label="Vis resultat frå" data-try-again-text="Fann du ikkje svar? Prøv igjen" data-searching-text="Søkjer" data-search-title="Kva lurar du på?" data-customer-service-text="Eller prøv kundeservice" data-market="Privat"><div class="search-block"><div class="search-block__container"><div class="search"><h1 class="search__title ffe-h1">Kva lurar du på?</h1><div class="search__field"><input class="ffe-input-field" id="search__field" autocomplete="off" maxlength="100" value=""><div class="search__field__icon"><button class="ffe-button ffe-button--primary search__field__icon__search"><span class="ffe-button__label">Søk <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#002776"><path d="M380-320q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l224 224q11 11 11 28t-11 28q-11 11-28 11t-28-11L532-372q-30 24-69 38t-83 14Zm0-80q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"></path></svg></span></button></div></div><div class="search__suggestions"><ul class="search__suggestions__container"></ul></div><div class="search__facet"><div class="ffe-form-label ffe-form-label--block">Vis resultat frå</div><div class="search__facet__facets"><button class="ffe-button ffe-button--primary" tabindex="0">Privat</button><button class="ffe-button ffe-button--secondary" tabindex="0">Bedrift</button><button class="ffe-button ffe-button--secondary" tabindex="0">Om oss</button></div></div><div class="search__results"></div></div><div class="search-block__container__cat"><svg viewBox="0 0 1377 272" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M1399 8.41016C1191 -3.58984 1108 -4.58984 1002 19.4102C896 43.4102 871 46.4102 755 68.4102C639 90.4102 576 58.4102 441.325 89.62C313.39 119.268 292.427 110.755 199 93.4102C138.706 82.2164 65 68.4102 0 78.4102L0 272L1399 272V8.41016Z" fill="#F2F2F9"></path><ellipse cx="852.5" cy="131.5" rx="82.5" ry="17.5" fill="#E0E0F0"></ellipse><path d="M807.278 81.6629C803.751 86.2547 802.504 97.644 800.654 102.956C803.536 114.66 811.793 124.429 815.105 124.609C818.202 124.789 820.653 121.953 820.825 118.667C820.997 115.021 818.073 111.284 815.32 108.358C816.653 104.442 818.847 93.9526 820.61 91.0265" fill="#002776"></path><path d="M879.789 56.3197C894.025 65.4131 888.434 94.044 900.52 99.7611C900.907 102.237 901.079 104.668 901.079 107.054C901.079 113.581 899.788 119.884 898.24 126.276C894.498 128.167 890.025 129.697 886.112 129.697C884.864 129.697 883.66 129.517 882.542 129.157C882.499 128.752 882.456 128.347 882.456 127.987C882.456 123.08 885.983 124.295 885.983 116.327C885.983 112.501 885.122 108.584 884.391 104.983C864.306 98.3206 858.629 81.9344 858.629 75.9471C858.629 75.9021 858.629 75.8571 858.629 75.7671" fill="#002776"></path><path d="M815.664 31.6475C820.05 38.1299 826.76 46.233 834.673 46.233C843.275 46.233 850.156 38.355 859.704 38.8952C873.768 39.7505 882.069 47.2234 892.219 62.3941C902.369 77.5648 915.873 84.6775 924.346 73.8734C930.066 66.6257 929.98 55.8216 927.056 46.0979C928.002 45.8278 928.991 45.7378 929.937 45.7378C935.227 45.7378 939.915 49.4292 939.915 53.4357C939.915 54.156 939.743 54.9213 939.399 55.6415C938.797 56.902 936.948 56.4518 936.905 55.0563C936.905 55.0563 936.905 55.0563 936.905 55.0113V54.9663C936.905 53.0756 939.141 52.1302 940.431 53.4807C942.883 56.0017 944.001 59.7831 944.001 63.6996C944.001 69.5518 941.506 75.6291 937.292 78.15C937.12 78.015 937.077 77.97 936.905 77.8349C937.292 76.2143 940.388 71.6226 942.238 71.6226C943.442 71.6226 943.657 73.6483 943.657 74.8188C943.657 82.2016 933.464 90.4397 926.023 90.4397C924.647 90.4397 923.4 90.1696 922.325 89.5843C922.454 89.4943 922.54 89.3593 922.669 89.2692C924.647 89.4043 928.733 90.4847 928.733 93.0506C928.733 95.3015 925.12 95.3915 922.884 95.3915C914.282 95.3915 903.745 92.3304 899.53 84.6325C899.616 84.5875 899.659 84.4974 899.745 84.4524C901.509 85.7579 903.229 88.9541 903.229 91.6551C903.229 93.0957 902.67 95.0764 901.121 95.0764C892.176 95.0764 881.424 78.2851 879.144 67.526C879.144 67.526 878.456 84.6325 872.091 93.1407C867.36 101.109 858.285 103.63 849.339 103.044C841.684 102.504 828.609 98.8578 828.308 91.43C830.975 92.3754 834.286 95.3915 834.114 98.2726C834.114 98.3627 834.114 98.4527 834.071 98.5427C834.071 98.5427 834.114 101.064 830.846 100.929C819.921 100.523 802.202 86.9283 802.632 76.9796C804.18 78.5102 807.148 84.9476 806.933 88.684C806.804 90.5747 805.901 91.205 804.782 91.1599C799.879 90.8448 791.235 78.4651 790.762 58.9278" fill="#002776"></path><path d="M883.144 78.8261C882.843 78.2408 882.585 77.6556 882.284 77.0704C882.026 76.4852 881.682 75.9 881.424 75.3147C881.122 74.6845 880.864 74.0993 880.649 73.5141L880.305 72.5687C880.219 72.2536 880.133 71.9835 880.004 71.6684C879.875 71.2182 879.703 70.813 879.617 70.3629L879.273 69.1024L879.015 67.8419C878.972 67.7069 879.058 67.5718 879.187 67.5268C879.316 67.4818 879.402 67.6168 879.445 67.7519L879.789 68.9673L880.176 70.1828C880.305 70.5879 880.477 70.9931 880.606 71.4433C880.735 71.7134 880.821 72.0285 880.95 72.2986C881.079 72.6137 881.208 72.9288 881.337 73.244C881.553 73.7842 881.811 74.3694 882.069 75.0446C882.284 75.6299 882.585 76.2601 882.843 76.8453C883.144 77.4305 883.445 78.0158 883.746 78.556L884.09 79.1412C884.649 80.2216 885.294 81.302 885.982 82.2924C886.369 82.8326 886.714 83.3728 887.101 83.913C887.488 84.4532 887.875 84.9934 888.262 85.5336C888.563 85.9387 888.821 86.3439 889.122 86.7491L889.853 87.6944C890.111 88.0095 890.369 88.2796 890.627 88.5948C890.799 88.8198 890.971 88.9999 891.186 89.225L891.789 89.8102C892.262 90.3054 892.821 90.8006 893.337 91.2958C893.423 91.3858 893.466 91.5659 893.38 91.6559C893.294 91.7459 893.165 91.7459 893.036 91.6559C892.477 91.2057 891.918 90.7105 891.444 90.2154L890.842 89.6301L890.24 88.9999C889.982 88.7298 889.681 88.4147 889.423 88.1446L888.649 87.2442C888.305 86.8841 888.004 86.479 887.703 86.1188C887.273 85.6236 886.886 85.0384 886.499 84.4982C886.111 83.958 885.767 83.3728 885.423 82.8326C884.778 81.7972 884.176 80.6718 883.531 79.5914L883.144 78.8261Z" fill="#005AA4"></path><path d="M804.481 84.2244C803.836 83.099 803.234 81.9286 802.847 80.6231C802.761 80.308 802.632 79.9928 802.589 79.6327C802.503 79.3176 802.417 78.9574 802.417 78.6423L802.374 78.3722C802.374 78.2372 802.331 78.1021 802.331 77.9671C802.331 77.697 802.331 77.4269 802.331 77.1568V76.3465V76.2564V76.2114C802.331 76.1664 802.331 76.2114 802.331 76.2114L802.46 76.3465L802.718 76.6166C802.933 76.8416 803.105 77.0667 803.277 77.2468C803.363 77.3368 803.449 77.4719 803.535 77.6069L803.75 77.9221C803.965 78.1922 804.094 78.5073 804.266 78.7774C804.567 79.3626 804.869 79.9028 805.127 80.488C805.428 81.1183 805.686 81.7485 805.901 82.3787C806.03 82.6939 806.116 82.964 806.202 83.2791C806.288 83.5942 806.374 83.8643 806.46 84.1794C806.718 85.0347 806.933 85.9351 807.019 86.8354C807.105 87.6907 807.191 88.5911 807.019 89.4464C806.933 89.8966 806.761 90.3467 806.46 90.7069C806.159 91.067 805.729 91.3371 805.299 91.3821C804.998 91.4272 804.74 91.2921 804.74 91.1571C804.74 91.022 804.955 90.977 805.213 90.932C805.557 90.887 805.901 90.6619 806.116 90.3918C806.331 90.1217 806.46 89.7165 806.546 89.3564C806.675 88.5461 806.632 87.7358 806.503 86.8804C806.374 86.0251 806.159 85.1698 805.901 84.3595C805.815 84.0894 805.729 83.7743 805.6 83.5042C805.514 83.2341 805.385 82.9189 805.256 82.6488C804.998 82.0186 804.739 81.4334 804.438 80.8482C804.18 80.308 803.922 79.7678 803.621 79.2276C803.449 78.9574 803.32 78.6873 803.148 78.4172C803.105 78.3722 803.062 78.2822 803.019 78.2372L802.976 78.1922V78.1471V78.2372C802.976 78.2822 802.976 78.2822 802.976 78.3272V78.4172L803.019 78.6423C803.019 78.9574 803.105 79.2726 803.191 79.5877C803.234 79.9028 803.363 80.2179 803.449 80.488C803.836 81.7035 804.438 82.8739 805.084 83.9093C805.342 84.2695 805.557 84.6296 805.815 84.9897C807.148 87.0155 808.868 88.8162 810.589 90.4368C812.481 92.1474 814.588 93.768 816.739 95.2086C817.556 95.7488 818.373 96.244 819.19 96.7392C820.524 97.5044 821.857 98.2247 823.276 98.8099C824.265 99.2151 825.298 99.6203 826.373 99.9354C827.663 100.296 829.039 100.611 830.416 100.746C830.674 100.791 830.889 100.881 830.889 101.016C830.889 101.151 830.674 101.241 830.373 101.196C828.953 101.106 827.534 100.836 826.201 100.431C825.126 100.115 824.093 99.7553 823.061 99.3501C821.642 98.7649 820.223 98.0897 818.889 97.3694C818.029 96.9192 817.212 96.424 816.395 95.8838C814.158 94.4883 812.051 92.8227 810.159 91.022C808.395 89.3564 806.718 87.4657 805.299 85.4399C804.955 84.9897 804.739 84.5846 804.481 84.2244Z" fill="#005AA4"></path><path d="M833.769 71.8498C837.468 80.1779 845.64 91.027 845.64 104.037C845.64 104.937 845.511 105.522 845.167 105.522C844.607 105.522 841.382 103.452 842.285 97.9146C843.403 99.8504 844.349 106.918 844.349 112.545C844.349 114.796 844.134 119.613 841.984 119.613C840.479 119.613 839.963 116.282 839.963 114.346C839.963 113.851 839.92 112.05 840.393 112.86C840.952 113.851 841.511 116.056 841.511 117.812C841.511 126.41 837.554 131.407 833.898 134.648C831.232 135.234 828.479 135.639 825.813 135.639C822.974 135.639 820.265 135.234 817.813 134.198C819.232 130.327 822.501 128.706 825.641 126.545C826.501 123.169 826.888 119.973 826.888 116.867C826.888 99.8954 815.534 86.6604 811.62 69.2388" fill="#002776"></path><path d="M825.47 135.952C823.405 135.907 821.298 135.637 819.276 135.007C819.018 134.917 818.76 134.827 818.502 134.737L818.115 134.602L817.513 134.377C817.513 134.377 817.47 134.377 817.47 134.332L817.513 134.242L817.599 134.062L817.728 133.747L817.9 133.296C818.029 133.026 818.158 132.801 818.287 132.531C818.846 131.541 819.577 130.685 820.352 129.965C821.169 129.2 822.029 128.57 822.932 127.984L824.265 127.084L824.911 126.634L825.255 126.409L825.427 126.319C825.427 126.319 825.47 126.319 825.47 126.274L825.642 125.599C825.685 125.328 825.771 125.058 825.814 124.788C825.943 124.248 826.029 123.708 826.115 123.168C826.287 122.087 826.416 121.007 826.502 119.926C826.846 115.245 826.33 110.968 825.384 107.097C824.867 104.936 824.222 102.775 823.491 100.704C823.147 99.7587 822.803 98.7684 822.416 97.823C822.029 96.8777 821.685 95.9323 821.255 94.9869C820.094 92.2409 818.889 89.5849 817.685 86.8389C815.449 81.7069 813.298 76.485 811.922 70.9929C811.664 70.0025 811.578 69.2372 811.707 69.1922C811.836 69.1472 812.094 69.9125 812.352 70.8578C813.728 76.3499 815.922 81.5269 818.244 86.7038C819.448 89.3598 820.653 92.0158 821.814 94.7168C822.244 95.6622 822.631 96.6076 823.018 97.5529C823.405 98.4983 823.792 99.4887 824.136 100.434C824.911 102.55 825.599 104.711 826.115 106.916C827.061 110.833 827.577 115.2 827.19 120.061C827.104 121.142 826.932 122.222 826.76 123.303C826.674 123.843 826.545 124.383 826.459 124.923L826.287 125.734L826.072 126.634C826.029 126.724 825.857 126.769 825.814 126.814L825.642 126.904L825.298 127.129L824.652 127.579L823.319 128.435C822.459 129.02 821.599 129.65 820.825 130.37C820.051 131.091 819.405 131.901 818.889 132.801C818.76 133.026 818.674 133.251 818.545 133.476L818.416 133.792C818.416 133.837 818.373 133.837 818.416 133.882L818.545 133.927L818.889 134.062C819.147 134.152 819.362 134.242 819.62 134.287C821.599 134.917 823.62 135.142 825.642 135.142C827.061 135.142 828.437 135.052 829.856 134.872C830.846 134.737 831.792 134.602 832.781 134.422L833.512 134.287L833.856 134.197C833.985 134.152 833.899 134.197 834.028 134.107C834.415 133.792 834.759 133.431 835.104 133.071C836.523 131.631 837.77 130.055 838.759 128.255C840.738 124.698 841.512 120.467 841.254 116.505C841.211 115.965 841.082 115.425 840.996 114.929C840.953 114.659 840.867 114.389 840.781 114.164C840.738 114.029 840.695 113.894 840.652 113.804L840.566 113.579C840.566 113.534 840.523 113.534 840.523 113.489C840.48 113.489 840.48 113.534 840.48 113.534V113.939C840.48 114.209 840.48 114.479 840.48 114.749C840.523 115.83 840.695 116.91 841.082 117.901C841.254 118.351 841.555 118.846 841.856 118.981C841.942 119.026 842.028 119.026 842.114 119.026C842.2 119.026 842.329 119.026 842.415 118.981C842.587 118.936 842.759 118.801 842.931 118.621C843.232 118.306 843.447 117.811 843.576 117.315C843.748 116.82 843.834 116.28 843.92 115.74C844.092 114.659 844.135 113.534 844.135 112.409C844.135 110.158 844.006 107.952 843.791 105.701C843.619 104.035 843.404 102.415 843.06 100.794C842.974 100.389 842.888 99.9838 842.802 99.5787L842.759 99.3986C842.759 99.3536 842.716 99.3086 842.716 99.2636C842.716 99.2185 842.673 99.1735 842.673 99.1285C842.673 99.1285 842.673 99.1735 842.673 99.2185C842.673 99.3086 842.673 99.3986 842.63 99.5337C842.63 99.5337 842.63 99.5337 842.63 99.5787V99.7137V99.9388C842.63 100.119 842.63 100.254 842.673 100.434C842.716 100.749 842.716 101.064 842.802 101.379C842.931 102.01 843.146 102.595 843.447 103.135C843.748 103.675 844.135 104.17 844.608 104.531C844.737 104.621 844.866 104.711 844.952 104.801L845.125 104.891L845.211 104.936H845.254C845.297 104.936 845.34 104.936 845.383 104.891C845.426 104.846 845.469 104.666 845.469 104.531C845.555 103.945 845.469 103.27 845.469 102.595L845.426 101.604C845.426 101.289 845.383 100.974 845.34 100.614L845.254 99.6237C845.211 99.3086 845.168 98.9484 845.125 98.6333L844.78 96.6976C843.963 93.0062 842.63 89.4499 841.082 86.0286C840.093 83.9128 838.974 81.797 837.856 79.6812C836.738 77.5654 835.577 75.4496 834.501 73.2888C834.071 72.3884 833.856 71.6682 833.942 71.6231C834.028 71.5781 834.458 72.2083 834.888 73.1087C835.964 75.2695 837.125 77.3853 838.286 79.5011C839.404 81.6169 840.523 83.7777 841.512 85.8935C843.103 89.3148 844.436 92.9162 845.297 96.6526L845.641 98.6333C845.77 99.3086 845.813 99.9388 845.899 100.614C845.985 101.289 846.028 101.965 846.028 102.595C846.028 103.27 846.114 103.9 846.028 104.621C846.028 104.711 845.985 104.801 845.985 104.891C845.942 104.981 845.942 105.071 845.856 105.206C845.727 105.476 845.469 105.611 845.168 105.521C844.909 105.476 844.78 105.386 844.608 105.296C844.479 105.206 844.307 105.116 844.178 104.981C843.662 104.531 843.232 103.99 842.888 103.405C842.544 102.82 842.286 102.145 842.157 101.469C842.071 101.154 842.028 100.794 841.985 100.434L841.942 99.9388C841.942 99.7588 841.899 99.6237 841.942 99.3536L842.028 98.3182C842.028 98.1381 842.071 98.0031 842.071 97.823L842.157 97.3729L842.243 96.9227L842.286 96.6976V96.6526C842.286 96.6076 842.286 96.6526 842.286 96.6526V96.6976L842.329 96.7876L842.716 97.5979L842.888 98.0031L843.06 98.4983L843.232 98.9935C843.275 99.1285 843.361 99.3986 843.361 99.4436C843.49 99.8488 843.576 100.254 843.662 100.659C844.006 102.28 844.221 103.945 844.436 105.611C844.694 107.862 844.823 110.113 844.823 112.409C844.823 113.534 844.78 114.704 844.608 115.83C844.522 116.415 844.436 116.955 844.264 117.54C844.092 118.126 843.877 118.666 843.404 119.161C843.189 119.386 842.888 119.611 842.544 119.701C842.372 119.746 842.2 119.791 842.028 119.791C841.856 119.791 841.641 119.746 841.512 119.656C841.34 119.611 841.211 119.476 841.082 119.386C840.953 119.251 840.824 119.161 840.781 119.026C840.695 118.891 840.609 118.756 840.523 118.621C840.437 118.486 840.394 118.351 840.351 118.216C839.92 117.09 839.791 115.965 839.705 114.794C839.705 114.524 839.705 114.209 839.705 113.939V113.714V113.444C839.705 113.219 839.748 112.904 839.791 112.679C839.834 112.454 839.92 112.273 840.006 112.183C840.05 112.138 840.093 112.093 840.179 112.048C840.265 112.003 840.351 112.003 840.394 112.003C840.48 112.003 840.523 112.048 840.566 112.093L840.738 112.228L840.91 112.499C840.953 112.589 840.996 112.724 841.082 112.814L841.168 112.994L841.211 113.129L841.297 113.399C841.34 113.534 841.383 113.669 841.426 113.804C841.512 114.074 841.598 114.344 841.641 114.614C841.77 115.155 841.856 115.74 841.942 116.28C841.985 116.82 842.028 117.36 841.985 117.856C841.942 118.396 841.985 118.891 841.899 119.431C841.813 120.467 841.684 121.502 841.469 122.537C841.039 124.608 840.308 126.589 839.275 128.435C838.243 130.28 836.953 131.901 835.534 133.386C835.19 133.747 834.802 134.107 834.415 134.467L834.243 134.602C834.2 134.692 834.028 134.692 833.942 134.737L833.555 134.827L832.824 134.962C831.835 135.142 830.846 135.322 829.856 135.457C828.351 135.907 826.889 135.997 825.47 135.952Z" fill="#005AA4"></path><path d="M879.016 58.5714C880.435 63.1181 882.93 66.3594 882.93 75.7229C882.93 83.5108 880.65 91.2537 875.833 96.9259C877.167 100.032 879.575 102.778 882.07 105.074C881.209 115.878 878.199 123.531 871.059 131.184C867.49 132.129 863.103 132.669 858.888 132.669C857.813 132.669 856.738 132.624 855.705 132.579C855.361 131.544 855.232 130.599 855.232 129.743C855.232 122.901 863.576 122.36 863.576 108.855C848.91 99.852 843.835 84.9064 845.598 69.7806" fill="#002776"></path><path d="M845.728 70.4987L845.599 72.2094C845.556 72.7946 845.556 73.3348 845.556 73.92C845.556 74.5052 845.513 75.0455 845.513 75.6307L845.556 77.3413L845.599 78.2417L845.685 79.142L845.857 80.8977L846.287 83.3286C846.459 84.2289 846.717 85.0842 846.889 85.9396C847.061 86.7048 847.362 87.5152 847.577 88.3255C847.663 88.5505 847.706 88.7306 847.749 88.9557C847.835 89.1808 847.921 89.3609 847.964 89.5859C848.136 89.9911 848.265 90.4413 848.437 90.8914C849.685 94.1327 851.491 97.1488 853.641 99.7598C855.706 102.326 858.2 104.667 860.867 106.647C861.598 107.188 862.372 107.683 863.103 108.178L863.404 108.358L863.619 108.493C863.705 108.538 863.834 108.583 863.791 108.718V109.573C863.791 110.069 863.748 110.519 863.705 111.014C863.619 111.959 863.533 112.905 863.318 113.85C863.146 114.795 862.888 115.696 862.587 116.596C862.071 118.127 861.297 119.567 860.394 120.873C859.49 122.178 858.415 123.394 857.469 124.609C856.738 125.555 856.093 126.59 855.749 127.76C855.405 128.886 855.405 130.146 855.663 131.317C855.706 131.587 855.792 131.812 855.835 132.082V132.127V132.172H856.05C856.566 132.172 857.082 132.217 857.641 132.217C858.673 132.262 859.749 132.262 860.824 132.217C862.931 132.127 865.082 131.947 867.146 131.587L868.092 131.407C868.823 131.272 869.554 131.092 870.243 130.912L870.716 130.776L870.802 130.686L870.974 130.461L871.748 129.606C872.737 128.436 873.726 127.22 874.586 125.96C875.791 124.294 876.823 122.493 877.726 120.648C878.285 119.432 878.844 118.172 879.274 116.911C879.79 115.471 880.178 113.94 880.522 112.41C880.651 111.644 880.823 110.879 880.952 110.114C880.995 109.709 881.081 109.348 881.124 108.943C881.167 108.538 881.21 108.178 881.253 107.773C881.296 107.323 881.382 106.827 881.382 106.377L881.425 105.657L881.468 105.297V105.252L881.038 104.847L880.522 104.352C880.178 104.036 879.876 103.676 879.532 103.316C878.242 101.921 877.038 100.39 876.135 98.7244C875.92 98.3643 875.748 97.9591 875.576 97.599L875.447 97.2838L875.318 97.0137C875.318 96.9687 875.275 96.9237 875.275 96.8787L875.361 96.7887L875.834 96.2034C876.092 95.8883 876.35 95.5732 876.565 95.2131C876.823 94.8979 877.038 94.5378 877.253 94.2227C878.156 92.8722 878.93 91.3866 879.575 89.9011C880.952 86.7049 881.769 83.1035 882.156 79.5471C882.328 78.2417 882.371 76.8912 882.371 75.5406C882.371 73.4248 882.285 71.309 881.941 69.1932C881.683 67.7077 881.339 66.2221 880.823 64.7816C880.221 62.9809 879.403 61.1802 878.801 59.3345C878.672 58.9744 878.672 58.6143 878.801 58.5692C878.93 58.5242 879.102 58.7943 879.231 59.1545C879.876 60.9551 880.694 62.7558 881.296 64.6015C881.769 66.0421 882.156 67.5726 882.457 69.1032C882.844 71.219 883.016 73.3798 883.016 75.5406C883.016 76.8912 883.016 78.2417 882.887 79.5922C882.586 83.2385 881.64 86.8849 880.221 90.1712C879.575 91.7017 878.758 93.1873 877.812 94.5828C877.597 94.943 877.339 95.2581 877.081 95.6182C876.823 95.9783 876.565 96.2935 876.307 96.6086L876.006 96.9687C875.963 96.9687 876.006 97.0137 876.006 97.0137L876.135 97.2388C876.307 97.599 876.479 97.9591 876.694 98.3192C877.64 99.9398 878.801 101.38 880.049 102.776C880.35 103.136 880.694 103.451 880.995 103.766L881.468 104.261L882.027 104.802L882.156 104.937C882.156 104.982 882.156 105.027 882.156 105.117L882.113 105.432L882.07 105.792L881.984 106.512C881.941 107.008 881.898 107.458 881.812 107.908C881.769 108.313 881.726 108.673 881.64 109.078C881.554 109.483 881.511 109.844 881.425 110.249C881.296 111.014 881.124 111.824 880.995 112.59C880.651 114.165 880.264 115.696 879.747 117.181C879.317 118.487 878.801 119.792 878.242 121.053C877.339 122.989 876.307 124.789 875.103 126.5L874.672 127.085L874.242 127.67C873.855 128.211 873.425 128.751 872.995 129.246L872.35 130.011L871.662 130.731L871.318 131.092L871.146 131.272L871.017 131.407L870.931 131.497C870.888 131.542 870.845 131.542 870.845 131.542L870.329 131.677L869.856 131.767C869.21 131.902 868.608 132.037 867.963 132.127L867.06 132.262C864.953 132.577 862.802 132.802 860.652 132.892C859.576 132.937 858.501 132.937 857.426 132.892C856.91 132.892 856.351 132.847 855.835 132.847H855.276H855.19C855.147 132.847 855.147 132.802 855.147 132.802L855.104 132.622L855.018 132.307C854.932 132.037 854.889 131.767 854.803 131.497C854.544 130.236 854.544 128.841 854.889 127.58C855.233 126.275 855.964 125.194 856.695 124.159C857.684 122.899 858.716 121.728 859.619 120.423C860.523 119.162 861.254 117.767 861.77 116.326C862.071 115.471 862.329 114.615 862.501 113.67C862.673 112.77 862.802 111.824 862.888 110.924C862.931 110.474 862.974 109.979 862.974 109.528V108.943C862.974 108.943 862.974 108.898 862.931 108.898L862.888 108.853L862.587 108.673C861.813 108.178 861.039 107.683 860.308 107.143C857.512 105.207 855.018 102.776 852.91 100.12C850.76 97.4189 848.953 94.3127 847.577 91.0715C847.405 90.6213 847.233 90.1712 847.061 89.766C846.975 89.5409 846.889 89.3609 846.803 89.1358C846.717 88.9107 846.674 88.7306 846.588 88.5055C846.33 87.6502 846.072 86.8399 845.857 86.0746C845.685 85.1743 845.47 84.2739 845.298 83.3736C845.169 82.5183 845.04 81.708 844.954 80.8977L844.825 79.097L844.739 78.1966V77.2963L844.696 75.5857C844.696 75.0004 844.739 74.4602 844.739 73.875C844.782 73.2898 844.782 72.7496 844.825 72.1644L844.997 70.4537C845.04 70.0486 845.169 69.7334 845.298 69.7334C845.427 69.7334 845.771 70.0936 845.728 70.4987Z" fill="#005AA4"></path><path d="M789.385 18.1418C796.482 16.026 807.492 7.83296 812.524 0C813.771 2.16082 816.051 5.67214 816.051 17.4666C816.051 23.4088 815.191 29.5311 812.911 34.438" fill="#002776"></path><path d="M789.386 16.2521C785.386 15.2167 778.634 8.37413 775.15 3.7824C774.591 6.25833 774.247 9.54457 774.247 12.8308C774.247 18.1878 775.107 23.6349 777.172 26.0208" fill="#002776"></path><path d="M793.729 63.248C787.665 62.5728 776.268 51.6786 776.268 44.701C776.268 44.2508 776.311 43.8007 776.44 43.3505C776.956 43.9357 777.257 45.1062 777.257 46.2766C777.257 48.0773 776.655 49.968 775.407 49.968C772.999 49.968 770.461 43.3955 770.461 38.1285C770.461 30.1155 776.01 20.5719 780.999 16.5204C785.342 12.784 805.04 10.4431 809.384 16.7455C815.448 25.0286 820.05 32.1863 820.05 42.4952C820.05 44.8811 819.448 50.013 817.427 50.013C815.534 50.013 814.33 43.4405 814.33 41.1897C814.33 40.7845 814.416 39.8392 814.76 39.8392H814.803C815.534 39.9742 815.749 40.9646 815.749 42.1801C815.749 48.0773 809.255 58.1611 803.234 59.9167" fill="#002776"></path><path d="M802.847 31.1497C802.847 31.1047 802.847 31.0597 802.847 30.9697C802.847 27.4133 800.395 25.6126 798.03 25.6126C795.707 25.6126 793.471 27.2783 793.428 30.6095V30.6545C793.428 33.7607 796.137 35.6964 798.675 35.6964C800.782 35.6964 802.761 34.3459 802.847 31.1497Z" fill="#EE8D9C"></path><path d="M782.977 32.5002C783.536 31.7349 783.794 30.7896 783.794 29.8442C783.794 27.5934 782.375 25.6126 780.052 25.6126C777.601 25.6126 775.966 27.6834 775.966 29.9343C775.966 32.3202 777.945 34.2109 779.966 34.2109C781.041 34.2109 782.117 33.7157 782.977 32.5002Z" fill="#EE8D9C"></path><path d="M783.279 36.7765C780.397 37.1367 777.902 39.6576 777.902 42.5387C777.902 47.1755 784.225 49.9665 788.612 49.9665C792.353 49.9665 797.299 47.4005 797.299 43.5291C797.299 39.6126 793.472 37.7669 789.515 36.9566C789.945 34.0305 790.59 28.5384 790.59 26.9628C790.59 25.6573 790.418 24.3518 789.601 24.3518C788.182 24.3518 785.601 31.1944 783.279 36.7765Z" fill="#F8E9DD"></path><path d="M783.192 37.8149C784.482 37.5898 785.729 37.4998 787.02 37.5448C787.837 37.5898 788.654 37.7249 789.471 37.905C788.138 38.8503 786.633 39.8857 785.342 39.8407C784.439 39.7957 783.708 39.2555 783.192 37.8149Z" fill="#EE8D9C"></path><path d="M791.148 43.9827C791.191 43.8927 791.277 43.8026 791.32 43.7126C791.407 43.5775 791.45 43.4425 791.536 43.3074C791.622 43.0373 791.751 42.7672 791.751 42.4521C791.751 42.4071 791.88 42.3621 791.966 42.3621C792.095 42.3621 792.181 42.4071 792.181 42.4971C792.181 42.8573 792.138 43.1724 792.052 43.5325C792.009 43.7126 791.923 43.8927 791.88 44.0277C791.837 44.1628 791.751 44.2528 791.708 44.3878C791.708 44.4329 791.665 44.4329 791.665 44.4779C791.321 44.883 790.933 45.2432 790.46 45.5133C790.374 45.5583 790.288 45.6033 790.202 45.6483C790.159 45.6483 790.073 45.6933 790.03 45.6933C789.729 45.7834 789.428 45.8284 789.084 45.8284C788.869 45.8284 788.654 45.8284 788.396 45.7834C788.138 45.7384 787.837 45.6483 787.579 45.5133C787.536 45.4683 787.536 45.3782 787.579 45.2432C787.622 45.1531 787.708 45.0631 787.751 45.0631C788.009 45.1531 788.224 45.1982 788.439 45.2432C788.611 45.2882 788.826 45.2882 788.998 45.2432C789.256 45.1982 789.514 45.1531 789.729 45.0181C789.772 45.0181 789.815 44.9731 789.858 44.9281C789.944 44.883 789.987 44.883 790.073 44.838C790.46 44.6579 790.804 44.3878 791.019 43.9827C791.105 44.0277 791.148 43.9827 791.148 43.9827Z" fill="#002776"></path><path d="M764.354 36.5998C763.709 36.6449 763.064 36.7349 762.462 36.915C762.118 37.005 761.817 37.05 761.516 37.095C761.344 37.095 761.172 37.14 761 37.14L760.527 37.1851L759.881 37.2751L758.634 37.4552C758.548 37.4552 758.505 37.3651 758.462 37.2751C758.462 37.14 758.462 37.05 758.548 37.05L759.795 36.7799L760.441 36.6449L760.871 36.5098C761.043 36.4648 761.215 36.4198 761.344 36.3748C761.645 36.3297 761.946 36.2847 762.333 36.2397C762.978 36.1947 763.623 36.1047 764.268 35.9696L764.612 35.9246C765.214 35.8796 765.86 35.7895 766.462 35.6995C767.107 35.6095 767.795 35.5194 768.483 35.5194C768.741 35.5194 768.999 35.5194 769.214 35.5194C769.601 35.5194 769.988 35.5645 770.418 35.5645C770.72 35.5645 770.978 35.5645 771.279 35.5645C771.623 35.5645 772.01 35.5645 772.354 35.6095C772.44 35.6095 772.483 35.6995 772.483 35.8346C772.483 35.9696 772.44 36.0596 772.354 36.0596C772.01 36.0596 771.623 36.0596 771.279 36.0596C770.978 36.0596 770.72 36.0596 770.418 36.0596C770.031 36.0596 769.644 36.1047 769.257 36.1497C768.999 36.1947 768.784 36.1947 768.526 36.2397C767.881 36.3297 767.193 36.3297 766.548 36.3748C765.946 36.4198 765.3 36.4648 764.741 36.5548L764.354 36.5998Z" fill="#7EB5D2"></path><path d="M763.708 41.5035C763.02 41.7286 762.289 41.9987 761.601 42.3589C761.214 42.5389 760.87 42.674 760.569 42.809L760.01 42.9891L759.494 43.1692L758.762 43.4393C758.289 43.6193 757.859 43.7994 757.386 44.0245C757.3 44.0695 757.214 43.9795 757.171 43.8894C757.128 43.7994 757.128 43.6643 757.214 43.6193L758.547 42.9441L759.236 42.5839L759.709 42.3138C759.881 42.2238 760.053 42.1338 760.225 42.0437C760.526 41.9087 760.913 41.7736 761.3 41.6386C762.031 41.4135 762.762 41.0984 763.45 40.8283L763.794 40.6932C764.483 40.4681 765.171 40.198 765.859 39.973C766.59 39.7029 767.321 39.4327 768.095 39.2977C768.396 39.2527 768.654 39.1626 768.955 39.1176L770.332 38.8475L771.321 38.6224C771.708 38.5324 772.138 38.4424 772.568 38.3974C772.654 38.3974 772.74 38.4874 772.74 38.5774C772.74 38.7125 772.697 38.8025 772.611 38.8475C772.224 38.9376 771.794 39.0276 771.407 39.1176C771.106 39.2077 770.762 39.2527 770.461 39.3427C770.031 39.4778 769.558 39.6128 769.128 39.7479C768.869 39.8379 768.568 39.9279 768.31 40.018C767.579 40.2881 766.805 40.4681 766.074 40.6932C765.386 40.8733 764.698 41.0984 764.009 41.3685L763.708 41.5035Z" fill="#7EB5D2"></path><path d="M817.813 32.9062C818.674 32.9062 819.534 32.9512 820.394 32.9062C820.867 32.9062 821.297 32.9062 821.684 32.9512C821.899 32.9512 822.114 32.9962 822.372 33.0413L822.975 33.1313L823.878 33.2213L825.555 33.4014C825.641 33.4014 825.727 33.5364 825.727 33.6265C825.727 33.7615 825.641 33.8516 825.512 33.8516C824.953 33.8065 824.394 33.8065 823.835 33.7615L822.975 33.7165H822.372C822.157 33.7165 821.942 33.7165 821.684 33.7165C821.297 33.7165 820.867 33.6715 820.394 33.6265C819.534 33.5364 818.674 33.5364 817.813 33.5815H817.383C816.566 33.5815 815.749 33.6265 814.932 33.7165C814.072 33.8065 813.169 33.8966 812.308 33.9866C811.964 34.0316 811.663 34.0316 811.319 34.0766C810.803 34.1217 810.287 34.2117 809.771 34.3017C809.384 34.3467 809.04 34.4818 808.696 34.5718C808.223 34.6619 807.793 34.8419 807.319 34.932C807.233 34.977 807.104 34.887 807.104 34.7519C807.061 34.6168 807.104 34.5268 807.19 34.4818C807.663 34.3017 808.137 34.1667 808.567 34.0316C808.954 33.9416 809.298 33.8516 809.685 33.7615C810.201 33.6265 810.717 33.4914 811.233 33.4014C811.577 33.3114 811.878 33.2663 812.222 33.2213C813.126 33.0413 814.029 32.9962 814.889 32.9512C815.706 32.9062 816.523 32.9062 817.383 32.8612L817.813 32.9062Z" fill="#7EB5D2"></path><path d="M819.276 37.815C820.179 37.995 821.125 38.1751 822.028 38.3102C822.545 38.4002 822.975 38.4902 823.405 38.6253C823.62 38.7153 823.878 38.7603 824.093 38.8504L824.738 39.0755C825.039 39.1655 825.34 39.3005 825.641 39.4356C826.2 39.6607 826.759 39.8858 827.319 40.1559C827.405 40.2009 827.448 40.3359 827.405 40.426C827.362 40.561 827.232 40.606 827.146 40.561C826.587 40.3359 826.028 40.1108 825.426 39.9308C825.125 39.8407 824.824 39.7507 824.523 39.6607C824.308 39.6157 824.093 39.5706 823.878 39.4806C823.663 39.4356 823.405 39.3906 823.19 39.3005C822.76 39.2105 822.33 39.0755 821.856 38.9404C820.996 38.6703 820.05 38.5352 819.147 38.4002L818.674 38.3552C817.814 38.1751 816.91 38.1301 816.05 38.0401C815.104 37.95 814.158 37.95 813.212 37.86L812.136 37.7249C811.577 37.6799 811.018 37.5899 810.459 37.5449C810.072 37.4999 809.642 37.4548 809.255 37.4548C808.739 37.4098 808.223 37.3648 807.707 37.3198C807.621 37.3198 807.535 37.1847 807.535 37.0947C807.535 36.9597 807.621 36.8696 807.75 36.8696C808.266 36.8696 808.782 36.9146 809.298 36.9597C809.685 37.0047 810.115 37.0047 810.502 37.0497C811.061 37.0947 811.62 37.0947 812.18 37.0947C812.524 37.0947 812.911 37.0947 813.255 37.1397C814.201 37.1847 815.19 37.2298 816.136 37.3648C816.996 37.4548 817.9 37.5899 818.803 37.6799L819.276 37.815Z" fill="#7EB5D2"></path><path d="M810.717 13.5488C810.932 12.8286 811.061 12.0633 811.061 11.343C811.061 10.9829 810.975 10.5777 810.803 10.3076C810.631 10.0375 810.459 9.90246 810.158 9.94747C809.513 10.0375 808.954 10.5777 808.524 11.0729C808.266 11.343 808.051 11.6581 807.836 12.0183C807.621 12.3334 807.449 12.6485 807.277 12.9636C807.019 13.4138 806.803 13.909 806.588 14.4042C806.201 15.3495 805.9 16.2949 805.685 17.2852C805.642 17.4653 805.513 17.6004 805.384 17.5553C805.255 17.5103 805.212 17.3753 805.255 17.1952C805.47 16.1598 805.728 15.1244 806.115 14.1791C806.287 13.6839 806.502 13.1437 806.76 12.6485C806.933 12.2884 807.105 11.9732 807.32 11.6131C807.535 11.253 807.75 10.8928 808.051 10.5777C808.309 10.2626 808.567 9.99249 808.911 9.72239C809.255 9.4973 809.685 9.2272 810.201 9.2272C810.416 9.18218 810.717 9.27222 810.932 9.40727C811.147 9.54232 811.319 9.7674 811.405 9.99249C811.62 10.4427 811.663 10.8478 811.706 11.298C811.749 12.1533 811.62 12.9636 811.405 13.7739C811.319 14.044 811.233 14.3141 811.104 14.5842C810.76 15.3045 810.33 16.0248 809.642 16.4749C809.298 16.745 808.911 16.8801 808.481 16.9701H808.309C808.223 16.9701 808.137 16.9701 808.094 16.9701L807.621 16.9251L807.406 16.8801H807.277H807.234C807.191 16.8801 807.234 16.8351 807.234 16.8351C807.277 16.7 807.32 16.52 807.363 16.3849C807.449 16.2048 807.449 16.0698 807.578 15.8897L807.664 15.7096C807.707 15.6646 807.707 15.6196 807.75 15.5746C807.879 15.3945 808.008 15.2145 808.137 15.0794C808.395 14.7643 808.696 14.4492 809.04 14.1791C809.685 13.6389 810.373 13.1437 811.233 12.9186C811.836 12.7385 812.61 12.6935 813.212 13.1437C813.685 13.5038 813.9 14.1341 813.9 14.6743C813.857 15.2595 813.685 15.7547 813.427 16.1598C813.083 16.7901 812.61 17.3303 812.051 17.8254C811.405 18.4107 810.588 18.8608 809.728 19.0859C809.556 19.1309 809.384 19.0409 809.384 18.9509C809.384 18.8158 809.47 18.6808 809.642 18.6808C810.416 18.4557 811.147 18.0055 811.792 17.4653C812.266 17.0602 812.696 16.52 812.997 15.9347C813.212 15.5296 813.341 15.0794 813.341 14.6743C813.341 14.2691 813.169 13.864 812.868 13.6839C812.481 13.4588 811.965 13.4588 811.448 13.6389C810.76 13.8639 810.115 14.3141 809.556 14.8093C809.255 15.0344 808.997 15.3045 808.739 15.6196C808.61 15.7547 808.481 15.8897 808.395 16.0698L808.266 16.2949V16.3399C808.266 16.3399 808.266 16.3399 808.309 16.3399H808.352H808.481C808.782 16.2949 809.083 16.2048 809.341 15.9797C809.857 15.6196 810.287 14.9894 810.545 14.3591C810.545 14.044 810.631 13.8189 810.717 13.5488Z" fill="#005AA4"></path><path d="M777.558 14.9898C777.558 15.485 777.73 16.0252 778.031 16.4304C778.203 16.6555 778.332 16.8805 778.461 17.0606C778.547 17.1507 778.633 17.2857 778.676 17.3757C778.762 17.4658 778.848 17.5558 778.934 17.6458C779.063 17.7809 779.192 17.8709 779.321 18.006C779.579 18.2311 779.88 18.4111 780.181 18.5462C780.224 18.5912 780.224 18.6812 780.181 18.8163C780.138 18.9513 780.052 18.9963 780.009 18.9963C779.665 18.8613 779.321 18.6812 779.02 18.5012C778.848 18.4111 778.676 18.2761 778.547 18.186C778.461 18.096 778.332 18.006 778.246 17.9159C778.117 17.8259 778.031 17.7359 777.902 17.6008C777.73 17.3757 777.558 17.1507 777.429 16.8355C777.214 16.2953 776.999 15.7101 776.913 15.0799C776.913 14.9898 776.913 14.8548 776.913 14.7647C776.913 14.6297 776.956 14.4496 776.999 14.2696C777.042 14.0895 777.128 13.9094 777.3 13.7744C777.472 13.5943 777.73 13.5943 777.945 13.6393C778.16 13.6843 778.289 13.7744 778.418 13.9094C778.934 14.3596 779.192 14.8998 779.45 15.44C779.536 15.6651 779.622 15.8452 779.665 16.0702L779.966 17.0606L780.181 17.7809C780.267 18.096 780.353 18.3661 780.396 18.7262C780.396 18.8163 780.31 18.8613 780.181 18.8613C780.052 18.8613 779.966 18.8613 779.966 18.7713C779.88 18.5012 779.794 18.186 779.708 17.9159C779.622 17.6909 779.579 17.4658 779.493 17.2407C779.364 16.9256 779.235 16.6104 779.063 16.3403C778.977 16.1603 778.891 15.9802 778.762 15.8001C778.504 15.35 778.246 14.8098 777.945 14.4946C777.859 14.4046 777.816 14.3596 777.773 14.3596C777.73 14.3596 777.73 14.3596 777.687 14.3596C777.644 14.4046 777.558 14.6297 777.558 14.8548C777.558 14.8098 777.558 14.8998 777.558 14.9898Z" fill="#005AA4"></path><ellipse cx="1.29892" cy="1.35996" rx="1.29892" ry="1.35996" transform="matrix(-1 0 0 1 797.699 26.2926)" fill="#002776"></ellipse><ellipse cx="1.29892" cy="1.35996" rx="1.29892" ry="1.35996" transform="matrix(-1 0 0 1 780.38 26.2926)" fill="#002776"></ellipse></svg></div></div></div></div>
+    </div>
+
+
+<div class="market-nav">
+    <div class="market-nav--active ffe-h2">Privat</div>
+    <div class="market-nav--goto"><a href="bedrift.html">Gå til bedrift</a></div>
+</div>
+
+
+
+
+            <main id="main-content" class="main marketpage" tabindex="-1">
+    
+
+        
+
+    <div class="send-to-bank-modal hide">
+        
+    </div>
+
+        
+    <div class="send-to-bank__loading js-send-to-bank-loading hide">
+        <span class="ffe-loading-spinner"></span>
+    </div>
+
+    
+            
+    <h1 class="visually-hidden" aria-hidden="false">Privat</h1>
+
+    
+    
+    
+    
+
+
+    
+    
+    
+    
+
+
+    
+    
+    
+    
+
+
+    
+    
+    
+    <div class="campaign-carousel parbase color-fillable">
+
+<div class="campaign-carousel__inner-wrap ">
+    
+    <div class="campaign-carousel__list">
+        <div class="campaign-carousel__element">
+            
+            
+
+<div class="campaign__full-width ">
+	
+	
+
+    
+    
+    
+
+    
+    
+
+    <div class="ffe-grid campaign__wrap ">
+        <div class="ffe-grid__row campaign__wrap-bg campaign__wrap--reverse ffe-grid__row--reverse " style="background-color:#D8E9F2">
+            <div class="ffe-grid__col--md-7 campaign-bg">
+                <a class="background mod-image campaign-bg__img campaign-img--track" href="https://www.sparebank1.no/nn/sogn-fjordane/om-oss/hjemme.html?icid=forside;;posisjon;;hovedbanner;;foler_quiz;;privat#quiz">
+                    
+    
+    
+
+    
+    
+        
+        
+                    
+
+    <div class="image-wrapper">
+        
+        
+            <picture>
+                <source srcset="/content/dam/SB1/kampanjer/DDFDH/DDFDH_hifi_mann_.jpg.thumb.1280.1280.jpg" media="(min-width: 769px)">
+                <source srcset="/content/dam/SB1/kampanjer/DDFDH/DDFDH_hifi_mann_.jpg.thumb.768.768.jpg" media="(max-width: 768px)">
+                <img aria-hidden="true" src="/content/dam/SB1/kampanjer/DDFDH/DDFDH_hifi_mann_.jpg.thumb.1280.1280.jpg" alt="" class="responsive  if81589 campaign-bg__img--center">
+            </picture>
+        
+    </div>
+
+    
+    
+    
+
+                </a>
+            </div>
+            <div class="ffe-grid__col--md-5 campaign__wrap-content">
+                <div class="campaign-content  campaign-bg__align-right">
+                    <div class="text ">
+
+
+
+
+<div class="aem-component-container text-container">
+    
+    
+        
+        
+        
+            <div class="text-wrapper ">
+                
+                    <h2>Uansett kor og korleis du lever, kan du føle deg heime hos oss.<br>
+</h2>
+
+                
+            </div>
+        
+
+        
+
+        
+    
+</div>
+</div>
+                    <div class="button">
+
+<div class="aem-component-container">
+    
+        
+    
+
+    
+    
+    
+
+    
+    
+
+    <div class="button-wrapper left">
+        <a onclick="" class="action-btn ffe-button ffe-button--action     id-693375263 " href="/nn/sogn-fjordane/om-oss/hjemme.html?icid=forside;;posisjon;;hovedbanner;;foler_quiz;;privat#quiz" rel="">
+            <span class="ffe-button__label">Ta quizen! Kor føler du deg heime?
+                </span>
+                
+            
+        </a>
+        
+    </div>
+
+    
+    
+    
+        
+
+        
+    
+    
+
+
+
+    
+
+    
+</div>
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+    
+    
+    
+    
+
+
+    
+    
+    
+    
+
+
+    
+    
+    
+    <div class="columns-grid parbase color-fillable">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="columns-grid__wrap " style=" ">
+    <div class="ffe-grid ffe-grid--gap-none columns-grid--width  ">
+        
+        <div class="ffe-grid__row columns-grid__row columns-grid__row--col-12 ">
+            <div class="columns-grid__column ffe-grid__col--sm-12 ffe-grid__col--md-6 ffe-grid__col--lg-4 ffe-grid__col--lg-offset-0 columns-grid__column--first">
+                <div class="columns-grid__content columns-grid__content--start">
+                    
+                    
+    
+    
+    
+    <div class="card card-list--wrap">
+
+
+
+    
+    <div class="ffe-image-card card-wrap card-content--large ">
+        <div class="ffe-image-card__image-container card__image-container card__image-container--center">
+            <div class="ffe-image-card__image-overlay"></div>
+            
+    
+    
+
+    
+    
+        
+        
+                    
+
+    <div class="image-wrapper">
+        
+        
+    <img aria-hidden="true" alt="" class="responsive  ffe-image-card__image" data-lazy-smallsrc="/content/dam/SB1/bank/sogn-fjordane/illustrasjoner/ssf-Student-leser-illustrasjon.jpg.thumb.768.768.jpg" data-lazy-largesrc="/content/dam/SB1/bank/sogn-fjordane/illustrasjoner/ssf-Student-leser-illustrasjon.jpg.thumb.1280.1280.jpg" data-lazy-breakpoint="768px" data-lazy-src="/content/dam/SB1/bank/sogn-fjordane/illustrasjoner/ssf-Student-leser-illustrasjon.jpg.thumb.1280.1280.jpg"></div>
+
+    
+    
+    
+
+        </div>
+        <div class="ffe-image-card__body">
+            <div class="ffe-card-body__text">
+                <div class="text">
+
+
+
+
+<div class="aem-component-container text-container">
+    
+    
+        
+        
+        
+            <div class="text-wrapper ">
+                
+                    <h3><span class="h3">Klar for studielivet?</span></h3>
+<p>Når du studerer er det lurt å planlegge økonomien for skuleåret.</p>
+
+                
+            </div>
+        
+
+        
+
+        
+    
+</div>
+</div>
+                
+            </div>
+            <div class="button">
+
+<div class="aem-component-container">
+    
+        
+    
+
+    
+    
+    
+
+    
+    
+
+    <div class="button-wrapper left">
+        <a onclick="" class="secondary-btn ffe-button ffe-button--secondary     id-792315316 " href="/nn/sogn-fjordane/privat/tips-og-rad/studentokonomi.html" rel="">
+            <span class="ffe-button__label">Les meir her
+                </span>
+                
+            
+        </a>
+        
+    </div>
+
+    
+    
+    
+        
+
+        
+    
+    
+
+
+
+    
+
+    
+</div>
+</div>
+        </div>
+    </div>
+
+</div>
+
+
+                </div>
+            </div>
+            <div class="columns-grid__column ffe-grid__col--sm-12 ffe-grid__col--md-6 ffe-grid__col--lg-4 ">
+                <div class="columns-grid__content columns-grid__content--start">
+                    
+                    
+    
+    
+    
+    <div class="card card-list--wrap">
+
+
+
+    
+    <div class="ffe-image-card card-wrap card-content--large ">
+        <div class="ffe-image-card__image-container card__image-container card__image-container--contain">
+            <div class="ffe-image-card__image-overlay"></div>
+            
+    
+    
+
+    
+    
+        
+        
+                    
+
+    <div class="image-wrapper">
+        
+        
+            <picture>
+                <source srcset="/content/dam/SB1/bank/sogn-fjordane/illustrasjoner/ssf-illustrasjonJubelkor.jpg.thumb.1280.1280.jpg" media="(min-width: 769px)">
+                <source srcset="/content/dam/SB1/bank/sogn-fjordane/illustrasjoner/ssf-illustrasjonJubelkor.jpg.thumb.768.768.jpg" media="(max-width: 768px)">
+                <img aria-hidden="true" src="/content/dam/SB1/bank/sogn-fjordane/illustrasjoner/ssf-illustrasjonJubelkor.jpg.thumb.1280.1280.jpg" alt="" class="responsive  ffe-image-card__image">
+            </picture>
+        
+    </div>
+
+    
+    
+    
+
+        </div>
+        <div class="ffe-image-card__body">
+            <div class="ffe-card-body__text">
+                <div class="text">
+
+
+
+
+<div class="aem-component-container text-container">
+    
+    
+        
+        
+        
+            <div class="text-wrapper ">
+                
+                    <h3>Arrangement vi støttar</h3>
+<p>Vi er med som sponsor for fleire ulike arrangement utover hausten.&nbsp;</p>
+
+                
+            </div>
+        
+
+        
+
+        
+    
+</div>
+</div>
+                
+            </div>
+            <div class="button">
+
+<div class="aem-component-container">
+    
+        
+    
+
+    
+    
+    
+
+    
+    
+
+    <div class="button-wrapper left">
+        <a onclick="" class="secondary-btn ffe-button ffe-button--secondary     id-1639120515 " href="/nn/sogn-fjordane/om-oss/samfunnsansvar/arrangement.html" rel="">
+            <span class="ffe-button__label">Les meir her
+                </span>
+                
+            
+        </a>
+        
+    </div>
+
+    
+    
+    
+        
+
+        
+    
+    
+
+
+
+    
+
+    
+</div>
+</div>
+        </div>
+    </div>
+
+</div>
+
+
+                </div>
+            </div>
+            <div class="columns-grid__column ffe-grid__col--sm-12 ffe-grid__col--md-6 ffe-grid__col--lg-4 ">
+                <div class="columns-grid__content columns-grid__content--start">
+                    
+                    
+    
+    
+    
+    <div class="card card-list--wrap">
+
+
+
+    
+    <div class="ffe-image-card card-wrap card-content--large ">
+        <div class="ffe-image-card__image-container card__image-container card__image-container--contain">
+            <div class="ffe-image-card__image-overlay"></div>
+            
+    
+    
+
+    
+    
+        
+        
+                    
+
+    <div class="image-wrapper">
+        
+        
+            <picture>
+                <source srcset="/content/dam/SB1/illustrasjoner/svindel-sms-kampanje.jpg.thumb.1280.1280.jpg" media="(min-width: 769px)">
+                <source srcset="/content/dam/SB1/illustrasjoner/svindel-sms-kampanje.jpg.thumb.768.768.jpg" media="(max-width: 768px)">
+                <img aria-hidden="true" src="/content/dam/SB1/illustrasjoner/svindel-sms-kampanje.jpg.thumb.1280.1280.jpg" alt="" class="responsive  ffe-image-card__image">
+            </picture>
+        
+    </div>
+
+    
+    
+    
+
+        </div>
+        <div class="ffe-image-card__body">
+            <div class="ffe-card-body__text">
+                <div class="text">
+
+
+
+
+<div class="aem-component-container text-container">
+    
+    
+        
+        
+        
+            <div class="text-wrapper ">
+                
+                    <h3>Sjå opp for svindel</h3>
+<p>Her får du verktøy for å unngå å gå i fella til svindlarane.</p>
+
+                
+            </div>
+        
+
+        
+
+        
+    
+</div>
+</div>
+                
+            </div>
+            <div class="button">
+
+<div class="aem-component-container">
+    
+        
+    
+
+    
+    
+    
+
+    
+    
+
+    <div class="button-wrapper left">
+        <a onclick="" class="secondary-btn ffe-button ffe-button--secondary     id-1011739915 " href="/nn/sogn-fjordane/privat/svindel.html" rel="">
+            <span class="ffe-button__label">Lær meir om svindel
+                </span>
+                
+            
+        </a>
+        
+    </div>
+
+    
+    
+    
+        
+
+        
+    
+    
+
+
+
+    
+
+    
+</div>
+</div>
+        </div>
+    </div>
+
+</div>
+
+
+                </div>
+            </div>
+            
+        </div>
+
+        
+    </div>
+</div></div>
+
+
+    
+    
+    
+    <div class="columns-grid parbase color-fillable">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="columns-grid__wrap " style="background-color: #FFFFFF">
+    <div class="ffe-grid ffe-grid--gap-none columns-grid--width  ">
+        
+        <div class="ffe-grid__row columns-grid__row columns-grid__row--col-10 ">
+            <div class="columns-grid__column ffe-grid__col--sm-12 ffe-grid__col--md-6 ffe-grid__col--lg-5 ffe-grid__col--lg-offset-0 columns-grid__column--first">
+                <div class="columns-grid__content columns-grid__content--start">
+                    
+                    
+    
+    
+    
+    <div class="text">
+
+
+
+
+<div class="aem-component-container text-container">
+    
+    
+        
+        
+        
+            <div class="text-wrapper ">
+                
+                    <p><span class="h2">Vi set ned renta</span></p>
+<p style="text-align: left;"><span class="sub-lead-left">Vi set ned rentene på bustadlån med inntil 0,25 prosentpoeng.&nbsp;</span></p>
+<p style="text-align: left;"><span class="sub-lead-left">Nye rentesatsar for eksisterande lån vil gjelde frå 27. august 2025.&nbsp;Du vil få SMS og melding i nett- og mobilbanken om endringa på rentene dine i løpet av dei nærmaste dagane. Har du reservert deg mot digital kommunikasjon, vil du motta brev i posten om kort tid.&nbsp;<br>
+ </span></p>
+
+                
+            </div>
+        
+
+        
+
+        
+    
+</div>
+</div>
+
+
+    
+    
+    
+    <div class="button parbase">
+
+<div class="aem-component-container">
+    
+        
+    
+
+    
+    
+    
+
+    
+    
+
+    <div class="button-wrapper left">
+        <a onclick="" class="tertiary-btn ffe-inline-button ffe-inline-button--tertiary     id-948626370 " href="https://newsweb.oslobors.no/message/649676" rel="">
+            <span class="ffe-button__label">Les meir om renteendringa i børsmeldinga
+                </span>
+                
+            
+        </a>
+        
+    </div>
+
+    
+    
+    
+        
+
+        
+    
+    
+
+
+
+    
+
+    
+</div>
+</div>
+
+
+                </div>
+            </div>
+            <div class="columns-grid__column ffe-grid__col--sm-12 ffe-grid__col--md-6 ffe-grid__col--lg-5 ">
+                <div class="columns-grid__content columns-grid__content--start">
+                    
+                    
+    
+    
+    
+    <div class="image parbase">
+
+<div class="aem-component-container image--all-rounded-small">
+      
+            
+    
+    
+
+    
+        
+        
+    
+    
+                    
+
+    
+    
+
+    
+        <div class=" image-ratio" style="; aspect-ratio: auto 7831.0/5873.0">
+            <div class="image-wrapper" style="padding-top:calc(0.7499680755969863*100%);">
+                
+                
+                    <picture>
+                        <source srcset="/content/dam/SB1/bank/sogn-fjordane/foto/privat/Lane/ssf-Laptoppen.jpg.thumb.1280.1280.jpg" media="(min-width: 769px)">
+                        <source srcset="/content/dam/SB1/bank/sogn-fjordane/foto/privat/Lane/ssf-Laptoppen.jpg.thumb.768.768.jpg" media="(max-width: 768px)">
+                        <img aria-hidden="false" width="7831.0" height="5873.0" alt="familie ved frukostbordet" class="responsive " src="/content/dam/SB1/bank/sogn-fjordane/foto/privat/Lane/ssf-Laptoppen.jpg.thumb.1280.1280.jpg">
+                    </picture>
+                
+            </div>
+        </div>
+    
+
+    
+    
+    
+    
+
+      
+</div></div>
+
+
+                </div>
+            </div>
+            
+            
+        </div>
+
+        
+    </div>
+</div></div>
+
+
+    
+    
+    
+    <div class="columns-grid parbase color-fillable">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="columns-grid__wrap " style="background-color: #D8E9F2">
+    <div class="ffe-grid ffe-grid--gap-none columns-grid--width  ">
+        
+        <div class="ffe-grid__row columns-grid__row columns-grid__row--col-10 ">
+            <div class="columns-grid__column ffe-grid__col--sm-12 ffe-grid__col--md-6 ffe-grid__col--lg-5 ffe-grid__col--lg-offset-0 columns-grid__column--first">
+                <div class="columns-grid__content columns-grid__content--start">
+                    
+                    
+    
+    
+    
+    <div class="image parbase">
+
+<div class="aem-component-container image--all-rounded-small">
+      
+            
+    
+    
+
+    
+        
+        
+    
+    
+                    
+
+    
+    
+
+    
+        <div class=" image-ratio" style="; aspect-ratio: auto 1200.0/900.0">
+            <div class="image-wrapper" style="padding-top:calc(0.75*100%);">
+                
+                
+            <img aria-hidden="false" width="1200.0" height="900.0" alt="familie ved frukostbordet" class="responsive " data-lazy-smallsrc="/content/dam/SB1/bank/sogn-fjordane/foto/arrangement/ssf-Lars%20monsen%20(1)%20NY.jpg.thumb.768.768.jpg" data-lazy-largesrc="/content/dam/SB1/bank/sogn-fjordane/foto/arrangement/ssf-Lars%20monsen%20(1)%20NY.jpg.thumb.1280.1280.jpg" data-lazy-breakpoint="768px" data-lazy-src="/content/dam/SB1/bank/sogn-fjordane/foto/arrangement/ssf-Lars%20monsen%20(1)%20NY.jpg.thumb.1280.1280.jpg"></div>
+        </div>
+    
+
+    
+    
+    
+    
+
+      
+</div></div>
+
+
+                </div>
+            </div>
+            <div class="columns-grid__column ffe-grid__col--sm-12 ffe-grid__col--md-6 ffe-grid__col--lg-5 ">
+                <div class="columns-grid__content columns-grid__content--start">
+                    
+                    
+    
+    
+    
+    <div class="text">
+
+
+
+
+<div class="aem-component-container text-container">
+    
+    
+        
+        
+        
+            <div class="text-wrapper ">
+                
+                    <p><span class="h2">Eit eventyr som varer livet ut</span></p>
+<p><span class="sub-lead-left">Vi inviterer til inspirasjonsforedrag med Lars Monsen som fortel om korleis setje høge mål, tøye grenser og overvinne motgang. I tillegg vil pensjonsekspert Åse Blomkvist dele tips til sparing, og kvifor det er viktig å investere i eiga helse og økonomisk tryggleik.&nbsp;</span></p>
+
+                
+            </div>
+        
+
+        
+
+        
+    
+</div>
+</div>
+
+
+    
+    
+    
+    <div class="button parbase">
+
+<div class="aem-component-container">
+    
+        
+    
+
+    
+    
+    
+
+    
+    
+
+    <div class="button-wrapper left">
+        <a onclick="" class="primary-btn ffe-button ffe-button--primary     id-1623960151 " href="/nn/sogn-fjordane/om-oss/samfunnsansvar/foredrag-med-lars-monsen.html" rel="">
+            <span class="ffe-button__label">Les meir og meld deg på
+                </span>
+                
+            
+        </a>
+        
+    </div>
+
+    
+    
+    
+        
+
+        
+    
+    
+
+
+
+    
+
+    
+</div>
+</div>
+
+
+                </div>
+            </div>
+            
+            
+        </div>
+
+        
+    </div>
+</div></div>
+
+
+    
+    
+    
+    <div class="columns-grid parbase color-fillable">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="columns-grid__wrap " style=" ">
+    <div class="ffe-grid ffe-grid--gap-none columns-grid--width  ">
+        
+        <div class="ffe-grid__row columns-grid__row columns-grid__row--col-10 ">
+            <div class="columns-grid__column ffe-grid__col--sm-12 ffe-grid__col--md-6 ffe-grid__col--lg-5 ffe-grid__col--lg-offset-0 ">
+                <div class="columns-grid__content columns-grid__content--start">
+                    
+                    
+    
+    
+    
+    <div class="text">
+
+
+
+
+<div class="aem-component-container text-container">
+    
+    
+        
+        
+        
+            <div class="text-wrapper ">
+                
+                    <p><span class="h2">Spar litt i dag til i morgon</span></p>
+<p><span class="sub-lead-left">Det har aldri vore viktigare å spare. Vi tilbyr spareprodukt som passar deg og behova dine, og hjelper deg gjerne i gang med sparinga.&nbsp;</span></p>
+
+                
+            </div>
+        
+
+        
+
+        
+    
+</div>
+</div>
+
+
+    
+    
+    
+    <div class="button parbase">
+
+<div class="aem-component-container">
+    
+        
+    
+
+    
+    
+    
+
+    
+    
+
+    <div class="button-wrapper left">
+        <a onclick="" class="primary-btn ffe-button ffe-button--primary     id-1139770042 " href="/nn/sogn-fjordane/privat/sparing.html" rel="">
+            <span class="ffe-button__label">Kom i gang med sparing
+                </span>
+                
+            
+        </a>
+        
+    </div>
+
+    
+    
+    
+        
+
+        
+    
+    
+
+
+
+    
+
+    
+</div>
+</div>
+
+
+                </div>
+            </div>
+            <div class="columns-grid__column ffe-grid__col--sm-12 ffe-grid__col--md-6 ffe-grid__col--lg-5 ">
+                <div class="columns-grid__content columns-grid__content--start">
+                    
+                    
+    
+    
+    
+    <div class="image parbase">
+
+<div class="aem-component-container image--all-rounded-small">
+      
+            
+    
+    
+
+    
+        
+        
+    
+    
+                    
+
+    
+    
+
+    
+        <div class=" image-ratio" style="; aspect-ratio: auto 1200.0/800.0">
+            <div class="image-wrapper" style="padding-top:calc(0.6666666666666666*100%);">
+                
+                
+            <img aria-hidden="false" width="1200.0" height="800.0" alt="familie ved frukostbordet" class="responsive " data-lazy-smallsrc="/content/dam/SB1/bank/sogn-fjordane/foto/privat/spare/ssf-sparefamilie_1200.jpg.thumb.768.768.jpg" data-lazy-largesrc="/content/dam/SB1/bank/sogn-fjordane/foto/privat/spare/ssf-sparefamilie_1200.jpg.thumb.1280.1280.jpg" data-lazy-breakpoint="768px" data-lazy-src="/content/dam/SB1/bank/sogn-fjordane/foto/privat/spare/ssf-sparefamilie_1200.jpg.thumb.1280.1280.jpg"></div>
+        </div>
+    
+
+    
+    
+    
+    
+
+      
+</div></div>
+
+
+                </div>
+            </div>
+            
+            
+        </div>
+
+        
+    </div>
+</div></div>
+
+
+    
+    
+    
+    
+
+
+    
+    
+    
+    <div class="text-and-image parbase color-fillable">
+
+
+<div class="text-and-image--full-width ">
+    
+    <div class="text-and-image__wrap layout-four   no-top-margin" style="background-color:#">
+
+        <div class="ffe-grid ffe-grid--gap-none text-and-image__grid">
+            <div class="ffe-grid__row text-and-image__grid--center">
+                <div class="columns-grid__column ffe-grid__col--lg-offset-1 ffe-grid__col--lg-5 ffe-grid__col--md-6 ffe-grid__col--sm-12 text-and-image__grid-text">
+                    <div class="columns-grid__content">
+                        
+    
+    
+    
+    <div class="text">
+
+
+
+
+<div class="aem-component-container text-container">
+    
+    
+        
+        
+        
+            <div class="text-wrapper ">
+                
+                    <h2>Medlem i eit LO-forbund?&nbsp;</h2>
+<p>Fordelsprogrammet LOfavør gir deg ekstra gode vilkår på mellom anna lån, forsikring og eigedomsmekling.</p>
+
+                
+            </div>
+        
+
+        
+
+        
+    
+</div>
+</div>
+
+
+    
+    
+    
+    <div class="button parbase">
+
+<div class="aem-component-container">
+    
+        
+    
+
+    
+    
+    
+
+    
+    
+
+    <div class="button-wrapper left">
+        <a onclick="" class="action-btn ffe-button ffe-button--action     id-1666287211 " href="/nn/sogn-fjordane/privat/lofavor.html?icid=forside;;lofavor;;banner;;grafikk;;privat" rel="">
+            <span class="ffe-button__label">Sjekk dine LOfavør-fordelar her
+                </span>
+                
+            
+        </a>
+        
+    </div>
+
+    
+    
+    
+        
+
+        
+    
+    
+
+
+
+    
+
+    
+</div>
+</div>
+
+
+                    </div>
+
+                </div>
+                <div class="columns-grid__column ffe-grid__col--lg-5 ffe-grid__col--md-6 ffe-grid__col--sm-12 text-and-image__grid-media">
+                    <div class="columns-grid__content">
+                        
+                        
+    
+    
+    
+    <div class="image parbase">
+
+<div class="aem-component-container ">
+      
+            
+    
+    
+
+    
+        
+    
+    
+        
+        
+            <div class="image-center">
+                
+    <div class="image-wrapper">
+        
+    <img aria-hidden="false" alt="LO logo" class="inline-svg responsive image-width" style="max-width:170px;width:100%;height:79px;" data-lazy-smallsrc="/content/dam/SB1/ikoner/GUI-ikoner/LOlogo.svg" data-lazy-largesrc="/content/dam/SB1/ikoner/GUI-ikoner/LOlogo.svg" data-lazy-breakpoint="768px" data-lazy-src="/content/dam/SB1/ikoner/GUI-ikoner/LOlogo.svg"></div>
+    <link rel="image_src" itemprop="image" href="/content/dam/SB1/ikoner/GUI-ikoner/LOlogo.svg.thumb.1280.1280.jpg">
+
+            </div>
+        
+    
+
+        
+    
+    
+    
+    
+
+      
+</div></div>
+
+
+    
+    
+    
+    <div class="image parbase">
+
+<div class="aem-component-container ">
+      
+            <div class="Left">
+    
+    
+
+    
+        
+    
+    
+        
+    <div class="image-wrapper">
+        
+    <img aria-hidden="true" class="inline-svg responsive " style="width:100%;" data-lazy-smallsrc="/content/dam/SB1/illustrasjoner/liggende/lo-illustrasjon.svg" data-lazy-largesrc="/content/dam/SB1/illustrasjoner/liggende/lo-illustrasjon.svg" data-lazy-breakpoint="768px" data-lazy-src="/content/dam/SB1/illustrasjoner/liggende/lo-illustrasjon.svg"></div>
+    <link rel="image_src" itemprop="image" href="/content/dam/SB1/illustrasjoner/liggende/lo-illustrasjon.svg.thumb.1280.1280.jpg">
+
+        
+    
+
+        
+    
+    
+    
+    
+</div>
+      
+</div></div>
+
+
+    
+    
+    
+    <div class="image parbase">
+
+<div class="aem-component-container ">
+      
+            
+    
+    
+
+    
+        
+    
+    
+        
+        
+            <div class="image-center">
+                
+    <div class="image-wrapper">
+        
+    <img aria-hidden="false" alt="LO logo" class="inline-svg responsive image-width" style="max-width:3px;width:100%;height:2px;" data-lazy-smallsrc="/content/dam/SB1/ikoner/GUI-ikoner/LOlogo.svg" data-lazy-largesrc="/content/dam/SB1/ikoner/GUI-ikoner/LOlogo.svg" data-lazy-breakpoint="768px" data-lazy-src="/content/dam/SB1/ikoner/GUI-ikoner/LOlogo.svg"></div>
+    <link rel="image_src" itemprop="image" href="/content/dam/SB1/ikoner/GUI-ikoner/LOlogo.svg.thumb.1280.1280.jpg">
+
+            </div>
+        
+    
+
+        
+    
+    
+    
+    
+
+      
+</div></div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+
+
+    
+    
+    
+    <div class="columns-grid parbase color-fillable">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="columns-grid__wrap " style=" ">
+    <div class="ffe-grid ffe-grid--gap-none columns-grid--width  ">
+        
+        <div class="ffe-grid__row columns-grid__row columns-grid__row--col-12 ">
+            <div class="columns-grid__column ffe-grid__col--sm-12 ffe-grid__col--md-6 ffe-grid__col--lg-4 ffe-grid__col--lg-offset-0 columns-grid__column--first">
+                <div class="columns-grid__content columns-grid__content--start">
+                    
+                    
+    
+    
+    
+    <div class="background-container parbase color-fillable">
+
+
+<div class="background-container__wrap " style="background-color:#FDF8F5">
+    <div class="background-container__content">
+    
+    
+    
+    <div class="text">
+
+
+
+
+<div class="aem-component-container text-container">
+    
+    
+        
+        
+        
+            <div class="text-wrapper ">
+                
+                    <p><span class="h4">Sjå opp for svindel</span></p>
+<p>Svindlarane finn stadig nye måtar for å prøve å lure deg. Sjå korleis du kan unngå å gå i fella.&nbsp;</p>
+
+                
+            </div>
+        
+
+        
+
+        
+    
+</div>
+</div>
+
+
+    
+    
+    
+    <div class="button parbase">
+
+<div class="aem-component-container">
+    
+        
+    
+
+    
+    
+    
+
+    
+    
+
+    <div class="button-wrapper center">
+        <a onclick="" class="primary-btn ffe-button ffe-button--primary     id-1429947601 " href="/nn/sogn-fjordane/privat/svindel/svindelmetoder.html" rel="">
+            <span class="ffe-button__label">Les meir om svindelmetodane
+                </span>
+                
+            
+        </a>
+        
+    </div>
+
+    
+    
+    
+        
+
+        
+    
+    
+
+
+
+    
+
+    
+</div>
+</div>
+
+</div>
+</div></div>
+
+
+                </div>
+            </div>
+            <div class="columns-grid__column ffe-grid__col--sm-12 ffe-grid__col--md-6 ffe-grid__col--lg-4 ">
+                <div class="columns-grid__content columns-grid__content--start">
+                    
+                    
+    
+    
+    
+    <div class="background-container parbase color-fillable">
+
+
+<div class="background-container__wrap " style="background-color:#FDF8F5">
+    <div class="background-container__content">
+    
+    
+    
+    <div class="text">
+
+
+
+
+<div class="aem-component-container text-container">
+    
+    
+        
+        
+        
+            <div class="text-wrapper ">
+                
+                    <p><span class="h4">Ta i bruk BankID-appen</span></p>
+<p>BankID-appen er trygg og enkel å bruke. Bruk den til innlogging&nbsp; og signering av viktige dokument.</p>
+
+                
+            </div>
+        
+
+        
+
+        
+    
+</div>
+</div>
+
+
+    
+    
+    
+    <div class="button parbase">
+
+<div class="aem-component-container">
+    
+        
+    
+
+    
+    
+    
+
+    
+    
+
+    <div class="button-wrapper center">
+        <a onclick="" class="primary-btn ffe-button ffe-button--primary     id-246600304 " href="/nn/sogn-fjordane/privat/daglig-bruk/bankid.html" rel="">
+            <span class="ffe-button__label">Kom i gang med BankID-appen
+                </span>
+                
+            
+        </a>
+        
+    </div>
+
+    
+    
+    
+        
+
+        
+    
+    
+
+
+
+    
+
+    
+</div>
+</div>
+
+</div>
+</div></div>
+
+
+                </div>
+            </div>
+            <div class="columns-grid__column ffe-grid__col--sm-12 ffe-grid__col--md-6 ffe-grid__col--lg-4 ">
+                <div class="columns-grid__content columns-grid__content--start">
+                    
+                    
+    
+    
+    
+    <div class="background-container parbase color-fillable">
+
+
+<div class="background-container__wrap " style="background-color:#FDF8F5">
+    <div class="background-container__content">
+    
+    
+    
+    <div class="text">
+
+
+
+
+<div class="aem-component-container text-container">
+    
+    
+        
+        
+        
+            <div class="text-wrapper ">
+                
+                    <p><span class="h3"><span class="h4">Kom i kontakt med oss</span></span></p>
+<p>Vi har samla mykje nyttig informasjon på kundeservice-sidene våre. Der finn du også kontaktinformasjonen vår.&nbsp;</p>
+
+                
+            </div>
+        
+
+        
+
+        
+    
+</div>
+</div>
+
+
+    
+    
+    
+    <div class="button parbase">
+
+<div class="aem-component-container">
+    
+        
+    
+
+    
+    
+    
+
+    
+    
+
+    <div class="button-wrapper center">
+        <a onclick="" class="primary-btn ffe-button ffe-button--primary     id-936746993 " href="/nn/sogn-fjordane/privat/kundeservice.html" rel="">
+            <span class="ffe-button__label">Gå til kundeservice
+                </span>
+                
+            
+        </a>
+        
+    </div>
+
+    
+    
+    
+        
+
+        
+    
+    
+
+
+
+    
+
+    
+</div>
+</div>
+
+</div>
+</div></div>
+
+
+                </div>
+            </div>
+            
+        </div>
+
+        
+    </div>
+</div></div>
+
+
+    
+    
+    
+    <div class="campaign-carousel parbase color-fillable">
+
+<div class="campaign-carousel__inner-wrap ">
+    
+    <div class="campaign-carousel__list">
+        <div class="campaign-carousel__element">
+            
+            
+
+<div class="campaign__full-width ">
+	
+	
+
+    
+    
+    
+
+    
+    
+
+    <div class="ffe-grid campaign__wrap ">
+        <div class="ffe-grid__row campaign__wrap-bg  " style="background-color:#D8E9F2">
+            <div class="ffe-grid__col--md-7 campaign-bg">
+                <div class="background mod-image campaign-bg__img ">
+                    
+    
+    
+
+    
+    
+        
+        
+                    
+
+    <div class="image-wrapper">
+        
+        
+            <picture>
+                <source srcset="/content/dam/SB1/bank/sogn-fjordane/om-oss/Kampanjebannerbilete/ssf-kmapnajebanner-byttebank.jpg.thumb.1280.1280.jpg" media="(min-width: 769px)">
+                <source srcset="/content/dam/SB1/bank/sogn-fjordane/om-oss/Kampanjebannerbilete/ssf-kmapnajebanner-byttebank.jpg.thumb.768.768.jpg" media="(max-width: 768px)">
+                <img aria-hidden="true" src="/content/dam/SB1/bank/sogn-fjordane/om-oss/Kampanjebannerbilete/ssf-kmapnajebanner-byttebank.jpg.thumb.1280.1280.jpg" alt="" class="responsive  i88fd9a campaign-bg__img--center">
+            </picture>
+        
+    </div>
+
+    
+    
+    
+
+                </div>
+            </div>
+            <div class="ffe-grid__col--md-5 campaign__wrap-content">
+                <div class="campaign-content  campaign-bg__align-left">
+                    <div class="text ">
+
+
+
+
+<div class="aem-component-container text-container">
+    
+    
+        
+        
+        
+            <div class="text-wrapper ">
+                
+                    <p><span class="h2">Byte bank til oss?</span></p>
+<p>Å byte bank er enklare enn du trur. Hos oss får du ein personleg rådgjevar som er der for deg når du skal ta store val i livet.&nbsp;</p>
+
+                
+            </div>
+        
+
+        
+
+        
+    
+</div>
+</div>
+                    <div class="button">
+
+<div class="aem-component-container">
+    
+        
+    
+
+    
+    
+    
+
+    
+    
+
+    <div class="button-wrapper left">
+        <a onclick="" class="action-btn ffe-button ffe-button--action     id-2017379579 " href="/nn/sogn-fjordane/privat/kundeservice/bytte-bank.html" rel="">
+            <span class="ffe-button__label">Sjå korleis du kan byte bank
+                </span>
+                
+            
+        </a>
+        
+    </div>
+
+    
+    
+    
+        
+
+        
+    
+    
+
+
+
+    
+
+    
+</div>
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+    
+    
+    
+    
+
+
+    
+    
+    
+    
+
+
+    
+    
+    
+    <div class="background-container parbase color-fillable">
+
+
+<div class="background-container__wrap ">
+    <div class="background-container__content">
+    
+    
+    
+    <div class="columns-grid parbase color-fillable">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="columns-grid__wrap " style=" ">
+    <div class="ffe-grid ffe-grid--gap-none columns-grid--width  ">
+        
+        <div class="ffe-grid__row columns-grid__row columns-grid__row--col-10 ">
+            <div class="columns-grid__column ffe-grid__col--sm-12 ffe-grid__col--md-6 ffe-grid__col--lg-3 ffe-grid__col--lg-offset-1 columns-grid__column--first">
+                <div class="columns-grid__content columns-grid__content--start">
+                    
+                    
+    
+    
+    
+    <div class="image parbase">
+
+<div class="aem-component-container ">
+      
+            <div class="Left">
+    
+    
+
+    
+        
+    
+        
+    <picture>
+        <img aria-hidden="false" src="/content/dam/SB1/illustrasjoner/elementer/2024/hus-rosa-tre.svg" alt="Blått hus med rosa tre." style="max-width:70px;width:100%;" class="inline-svg responsive ">
+    </picture>
+    <link rel="image_src" itemprop="image">
+
+        
+    
+    
+
+        
+    
+    
+    
+    
+</div>
+      
+</div></div>
+
+
+    
+    
+    
+    <div class="text">
+
+
+
+
+<div class="aem-component-container text-container">
+    
+    
+        
+        
+        
+            <div class="text-wrapper ">
+                
+                    <h2><a href="/nn/sogn-fjordane/privat/lan/boliglan.html"><span class="h4">Bustadlån</span></a></h2>
+<p><a href="/nn/sogn-fjordane/privat/lan/lanekalkulator/boliglanskalkulator.html">Bustadlånskalkulator</a></p>
+<p><a href="/nn/sogn-fjordane/privat/lan/boliglan/boliglan-for-unge.html">Bustadlån for unge</a></p>
+<p><a href="/nn/sogn-fjordane/privat/lan/boliglan/finansieringsbevis.html">Finansieringsbevis til bustad</a></p>
+
+                
+            </div>
+        
+
+        
+
+        
+    
+</div>
+</div>
+
+
+                </div>
+            </div>
+            <div class="columns-grid__column ffe-grid__col--sm-12 ffe-grid__col--md-6 ffe-grid__col--lg-3 ">
+                <div class="columns-grid__content columns-grid__content--start">
+                    
+                    
+    
+    
+    
+    <div class="image parbase">
+
+<div class="aem-component-container ">
+      
+            <div class="Left">
+    
+    
+
+    
+        
+    
+        
+    <picture>
+        <img aria-hidden="false" src="/content/dam/SB1/illustrasjoner/elementer/2024/kort-bla.svg" alt="Betalingskort." style="max-width:75px;width:100%;" class="inline-svg responsive ">
+    </picture>
+    <link rel="image_src" itemprop="image">
+
+        
+    
+    
+
+        
+    
+    
+    
+    
+</div>
+      
+</div></div>
+
+
+    
+    
+    
+    <div class="text">
+
+
+
+
+<div class="aem-component-container text-container">
+    
+    
+        
+        
+        
+            <div class="text-wrapper ">
+                
+                    <h2><a href="/nn/sogn-fjordane/privat/daglig-bruk.html"><span class="h4">Dagleg Bruk</span></a></h2>
+<p><a href="/nn/sogn-fjordane/privat/daglig-bruk/mobilbank.html">Norges beste mobilbank</a></p>
+<p><a href="/nn/sogn-fjordane/privat/daglig-bruk/mobilbank/mobilbank-for-barn.html">Spink – mobilbank for barn</a></p>
+<p><a href="/nn/sogn-fjordane/privat/daglig-bruk/bankkort.html">Kort</a></p>
+
+                
+            </div>
+        
+
+        
+
+        
+    
+</div>
+</div>
+
+
+                </div>
+            </div>
+            <div class="columns-grid__column ffe-grid__col--sm-12 ffe-grid__col--md-6 ffe-grid__col--lg-3 ">
+                <div class="columns-grid__content columns-grid__content--start">
+                    
+                    
+    
+    
+    
+    <div class="image parbase">
+
+<div class="aem-component-container ">
+      
+            <div class="Left">
+    
+    
+
+    
+        
+    
+        
+    <picture>
+        <img aria-hidden="false" src="/content/dam/SB1/illustrasjoner/elementer/2024/sparegris-bla-rosa.svg" alt="Sparegris med mynter." style="max-width:80px;width:100%;" class="inline-svg responsive ">
+    </picture>
+    <link rel="image_src" itemprop="image">
+
+        
+    
+    
+
+        
+    
+    
+    
+    
+</div>
+      
+</div></div>
+
+
+    
+    
+    
+    <div class="text">
+
+
+
+
+<div class="aem-component-container text-container">
+    
+    
+        
+        
+        
+            <div class="text-wrapper ">
+                
+                    <h2><a href="/nn/sogn-fjordane/privat/sparing.html"><span class="h4">Spare</span></a></h2>
+<p><a href="/nn/sogn-fjordane/privat/sparing/spare-i-fond/digital-spareveileder.html">Få sparetips tilpassa deg</a></p>
+<p><a href="/nn/sogn-fjordane/privat/sparing/spare-pa-konto/bsu.html">BSU - Bustadsparing for ungdom</a></p>
+<p><a href="/nn/sogn-fjordane/privat/pensjon.html">Pensjon</a></p>
+
+                
+            </div>
+        
+
+        
+
+        
+    
+</div>
+</div>
+
+
+                </div>
+            </div>
+            
+        </div>
+
+        
+    </div>
+</div></div>
+
+
+    
+    
+    
+    <div class="hr parbase"><div class="aem-component-container">
+    
+        
+        <hr class="aem-hr   " id="hr_7b83">
+    
+</div></div>
+
+
+    
+    
+    
+    <div class="columns-grid parbase color-fillable">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="columns-grid__wrap " style=" ">
+    <div class="ffe-grid ffe-grid--gap-none columns-grid--width  ">
+        
+        <div class="ffe-grid__row columns-grid__row columns-grid__row--col-10 ">
+            <div class="columns-grid__column ffe-grid__col--sm-12 ffe-grid__col--md-6 ffe-grid__col--lg-3 ffe-grid__col--lg-offset-1 columns-grid__column--first">
+                <div class="columns-grid__content columns-grid__content--start">
+                    
+                    
+    
+    
+    
+    <div class="image parbase">
+
+<div class="aem-component-container image--all-rounded-small">
+      
+            <div class="Left">
+    
+    
+
+    
+        
+    
+        
+    <picture>
+        <img aria-hidden="false" src="/content/dam/SB1/illustrasjoner/elementer/2024/snubledame-banan.svg" alt="Dame snubler i bananskall." style="max-width:125px;width:100%;" class="inline-svg responsive ">
+    </picture>
+    <link rel="image_src" itemprop="image">
+
+        
+    
+    
+
+        
+    
+    
+    
+    
+</div>
+      
+</div></div>
+
+
+    
+    
+    
+    <div class="text">
+
+
+
+
+<div class="aem-component-container text-container">
+    
+    
+        
+        
+        
+            <div class="text-wrapper ">
+                
+                    <h2><a href="/nn/sogn-fjordane/privat/forsikring.html"><span class="h4">Forsikring</span></a></h2>
+<p><a href="/nn/sogn-fjordane/privat/forsikring/bilforsikring.html">Bilforsikring</a></p>
+<p><a href="/nn/sogn-fjordane/privat/forsikring/forsikringskalkulator.html">Forsikringskalkulator</a></p>
+<p><a href="/nn/sogn-fjordane/privat/forsikring/meld-skade.html">Meld skade</a></p>
+
+                
+            </div>
+        
+
+        
+
+        
+    
+</div>
+</div>
+
+
+                </div>
+            </div>
+            <div class="columns-grid__column ffe-grid__col--sm-12 ffe-grid__col--md-6 ffe-grid__col--lg-3 ">
+                <div class="columns-grid__content columns-grid__content--start">
+                    
+                    
+    
+    
+    
+    <div class="image parbase">
+
+<div class="aem-component-container ">
+      
+            <div class="Left">
+    
+    
+
+    
+        
+    
+        
+    <picture>
+        <img aria-hidden="false" src="/content/dam/SB1/illustrasjoner/elementer/2024/bil-bla.svg" alt="Blå bil." style="max-width:120px;width:100%;" class="inline-svg responsive ">
+    </picture>
+    <link rel="image_src" itemprop="image">
+
+        
+    
+    
+
+        
+    
+    
+    
+    
+</div>
+      
+</div></div>
+
+
+    
+    
+    
+    <div class="text">
+
+
+
+
+<div class="aem-component-container text-container">
+    
+    
+        
+        
+        
+            <div class="text-wrapper ">
+                
+                    <h2><a href="/nn/sogn-fjordane/privat/lan/billan.html"><span class="h4">Billån</span></a></h2>
+<p><a href="/nn/sogn-fjordane/privat/lan/billan/billan-for-unge.html">Billån for unge</a></p>
+<p><a href="/nn/sogn-fjordane/privat/lan/mc-lan.html">Lån til motorsykkel</a></p>
+<p><a href="/nn/sogn-fjordane/privat/lan/batlan.html">Båtlån</a></p>
+
+                
+            </div>
+        
+
+        
+
+        
+    
+</div>
+</div>
+
+
+                </div>
+            </div>
+            <div class="columns-grid__column ffe-grid__col--sm-12 ffe-grid__col--md-6 ffe-grid__col--lg-3 ">
+                <div class="columns-grid__content columns-grid__content--start">
+                    
+                    
+    
+    
+    
+    <div class="image parbase">
+
+<div class="aem-component-container image--all-rounded-small">
+      
+            <div class="Left">
+    
+    
+
+    
+        
+    
+        
+    <picture>
+        <img aria-hidden="true" src="/content/dam/SB1/illustrasjoner/elementer/2024/snakkebobler-lys-bakgrunn.svg" style="max-width:85px;width:100%;" class="inline-svg responsive ">
+    </picture>
+    <link rel="image_src" itemprop="image">
+
+        
+    
+    
+
+        
+    
+    
+    
+    
+</div>
+      
+</div></div>
+
+
+    
+    
+    
+    <div class="text">
+
+
+
+
+<div class="aem-component-container text-container">
+    
+    
+        
+        
+        
+            <div class="text-wrapper ">
+                
+                    <h2><a href="/nn/sogn-fjordane/privat/kundeservice.html"><span class="h4">Kundeservice</span></a></h2>
+<p><a href="/nn/sogn-fjordane/privat/kundeservice/bestill/bli-kunde.html">Bli kunde</a></p>
+<p><a href="/nn/sogn-fjordane/privat/kundeservice/verktoy.html">Verktøy</a></p>
+<p><a href="/nn/sogn-fjordane/privat/kundeservice/verktoy/e-signering.html">Elektronisk signering</a></p>
+
+                
+            </div>
+        
+
+        
+
+        
+    
+</div>
+</div>
+
+
+                </div>
+            </div>
+            
+        </div>
+
+        
+    </div>
+</div></div>
+
+</div>
+</div></div>
+
+
+    
+    
+    
+    <div class="related-topics parbase color-fillable">
+
+
+
+
+
+<div class="related-topics__wrap" style="background-color:tranparent">
+    <div class="related-topics-container">
+          <div class="title">
+
+<div class="aem-component-container">
+    <h2 class="ffe-h2">
+        Frå nyheitssenteret
+    </h2>
+    
+</div>
+</div>
+          <div class="newsfeed newsfeed-track">
+                       
+                    <div class="newsfeed-list newsfeed-wrap newsfeed-wrap--full" aria-live="polite" data-pagepath="/nn/sogn-fjordane/om-oss/nyheter" data-tag="sb1:nyheter/lokalbanken/sogn-fjordane" data-edit-mode="false" data-number="4" data-card-level="h3"><div class="ffe-image-card newsfeed-article newsfeed-track--wrap scroll-reveal"><div class="ffe-image-card__image-container  newsfeed-article__image-container"><div class="ffe-image-card__image-overlay"></div><div class="image"><div class="lazyload-wrapper "><div class="lazyload-placeholder"></div></div></div></div><div class="ffe-image-card__body newsfeed-article__body newsfeed-article__info"><div class="newsfeed-article__infotext"><p class="ffe-card-body__card-name newsfeed-article__label">Nyheter</p><h3 class="ffe-h6 newsfeed-article__header"><a class="ffe-h6 ffe-link-text newsfeed-article__link" href="/content/sites/sb1/nn/sogn-fjordane/om-oss/nyheter/startar-opp-skulecup-i-sogn-og-fjordane.html">Bente tek med seg flyttelass og skulesuksess til Sogn og Fjordane</a></h3></div><p class="ffe-card-body__subtext newsfeed-article__date">9. juli 2025</p></div></div><div class="ffe-image-card newsfeed-article newsfeed-track--wrap scroll-reveal"><div class="ffe-image-card__image-container  newsfeed-article__image-container"><div class="ffe-image-card__image-overlay"></div><div class="image"><div class="lazyload-wrapper "><div class="lazyload-placeholder"></div></div></div></div><div class="ffe-image-card__body newsfeed-article__body newsfeed-article__info"><div class="newsfeed-article__infotext"><p class="ffe-card-body__card-name newsfeed-article__label">Nyheter</p><h3 class="ffe-h6 newsfeed-article__header"><a class="ffe-h6 ffe-link-text newsfeed-article__link" href="/content/sites/sb1/nn/sogn-fjordane/om-oss/nyheter/stor-gaave-til-astruptunet.html">Vil ha visningssenter til 100-årsdagen</a></h3></div><p class="ffe-card-body__subtext newsfeed-article__date">7. juli 2025</p></div></div><div class="ffe-image-card newsfeed-article newsfeed-track--wrap scroll-reveal"><div class="ffe-image-card__image-container  newsfeed-article__image-container"><div class="ffe-image-card__image-overlay"></div><div class="image"><div class="lazyload-wrapper "><div class="lazyload-placeholder"></div></div></div></div><div class="ffe-image-card__body newsfeed-article__body newsfeed-article__info"><div class="newsfeed-article__infotext"><p class="ffe-card-body__card-name newsfeed-article__label">Nyheter</p><h3 class="ffe-h6 newsfeed-article__header"><a class="ffe-h6 ffe-link-text newsfeed-article__link" href="/content/sites/sb1/nn/sogn-fjordane/om-oss/nyheter/prestegarden-rundt-i-askvoll.html">– Dette er eit eldorado for svært mange</a></h3></div><p class="ffe-card-body__subtext newsfeed-article__date">3. juli 2025</p></div></div><div class="ffe-image-card newsfeed-article newsfeed-track--wrap scroll-reveal"><div class="ffe-image-card__image-container  newsfeed-article__image-container"><div class="ffe-image-card__image-overlay"></div><div class="image"><div class="lazyload-wrapper "><div class="lazyload-placeholder"></div></div></div></div><div class="ffe-image-card__body newsfeed-article__body newsfeed-article__info"><div class="newsfeed-article__infotext"><p class="ffe-card-body__card-name newsfeed-article__label">Nyheter</p><h3 class="ffe-h6 newsfeed-article__header"><a class="ffe-h6 ffe-link-text newsfeed-article__link" href="/content/sites/sb1/nn/sogn-fjordane/om-oss/nyheter/450-000-til-soetekollen.html">Turperla Søtekollen: – Eit fantastisk folkehelseprosjekt!</a></h3></div><p class="ffe-card-body__subtext newsfeed-article__date">30. juni 2025</p></div></div></div>
+               
+               
+          </div>
+     </div>
+    
+    
+
+
+</div>
+</div>
+
+
+    
+    
+    
+    <div class="hr parbase"><div class="aem-component-container">
+    
+        
+        <hr class="aem-hr  extra-margin-top " id="hr_7e91">
+    
+</div></div>
+
+
+    
+    
+    
+    
+
+
+    
+    
+    
+    <div class="hr parbase"><div class="aem-component-container">
+    
+        
+        <hr class="aem-hr   " id="hr">
+    
+</div></div>
+
+
+    
+    
+    
+    <div class="text">
+
+
+
+
+<div class="aem-component-container text-container">
+    
+    
+        
+        
+        
+            <div class="text-wrapper ">
+                
+                    <h2 style="text-align: center;"><span class="h5">Samanlikn prisar</span></h2>
+<p style="text-align: center;"><span class="subtle-text">Du kan samanlikne prisane våre med prisar frå&nbsp;andre selskap på <a href="https://www.finansportalen.no/" target="_blank" rel="noopener">Finansportalen.no</a></span></p>
+
+                
+            </div>
+        
+
+        
+
+        
+    
+</div>
+</div>
+
+
+    
+    
+    
+    
+
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    <div class="carousel-template-a parbase">
+
+
+    <div class="slide">
+        
+
+<div class="aem-component-container ">
+      
+            
+    
+    
+
+    
+    
+    
+    
+
+      
+</div>
+        
+        
+    </div>
+</div>
+
+
+    
+    
+    
+    <div class="carousel-template-a parbase">
+
+
+    <div class="slide">
+        
+
+<div class="aem-component-container ">
+      
+            
+    
+    
+
+    
+    
+    
+    
+
+      
+</div>
+        
+        
+    </div>
+</div>
+
+
+
+</main>
+
+
+    
+    
+        <script type="text/javascript">
+            let hasOpenCookie = false;
+            const matchOpen = document.cookie.match(new RegExp(`sb1-optin-v3=(.*?)`));
+            hasOpenCookie = (matchOpen) ? true : false;
+                       
+            if (!hasOpenCookie) {                 
+                // js fil
+                const scriptEle = document.createElement("script");
+                const JS_URL = "/sb1-nettsider-optin/bank/static/opt-in.js";
+                scriptEle.setAttribute("src", JS_URL);
+                scriptEle.setAttribute("type", "text/javascript");
+                scriptEle.setAttribute("async", true);
+                scriptEle.setAttribute("onerror", "optinScriptError=true;");
+
+                //css fil
+                const CSS_URL = "/sb1-nettsider-optin/bank/static/opt-in.css";
+                const cssEle = document.createElement('link');                
+                cssEle.setAttribute('rel', 'stylesheet');
+                cssEle.setAttribute('onerror', 'optinScriptError=true;');
+                cssEle.setAttribute('property', 'stylesheet');
+                cssEle.setAttribute('media', 'screen,print');
+                cssEle.setAttribute('type', 'text/css');
+                cssEle.setAttribute('href', CSS_URL);
+
+                // div element
+                const divEle = document.createElement('div');
+                divEle.setAttribute('id', 'opt-in');
+                divEle.setAttribute('data-trigger-modal', 'true');
+
+                document.body.appendChild(divEle);
+                document.body.appendChild(cssEle);
+                document.body.appendChild(scriptEle);
+            }
+        </script>
+        
+    
+
+
+
+
+<script>
+     if (window.console && window.console.log) {
+    console.log(`
+    d8b          888      888               888      d888                         
+    Y8P          888      888               888     d8888                         
+                 888      888               888       888                         
+   8888  .d88b.  88888b.  88888b.  .d8888b  88888b.   888       88888b.   .d88b.  
+   "888 d88""88b 888 "88b 888 "88b 88K      888 "88b  888       888 "88b d88""88b 
+    888 888  888 888  888 888  888 "Y8888b. 888  888  888       888  888 888  888 
+    888 Y88..88P 888 d88P 888 d88P      X88 888 d88P  888   d8b 888  888 Y88..88P 
+    888  "Y88P"  88888P"  88888P"   88888P' 88888P" 8888888 Y8P 888  888  "Y88P"  
+    888                                                                           
+   d88P                                                                           
+ 888P"`);
+    console.log( '%chttps://www.jobbsb1.no', 'color: blue; text-decoration: underline; cursor: pointer;',);
+    }
+</script>
+            <footer class="footer-wrapper">
+    <div class="footer-top container-fluid">
+        
+<div class="contact-section ">
+
+    <h2>Kontakt oss</h2>
+    
+
+
+
+
+<div class="aem-component-container text-container">
+    
+    
+        
+        
+        
+            <div class="text-wrapper ">
+                
+                    <p style="text-align: center;"><a href="/nn/sogn-fjordane/privat/kundeservice.html">Gå til kundeservice</a></p>
+
+                
+            </div>
+        
+
+        
+
+        
+    
+</div>
+
+    <div class="customer-action-wrap clearfix ">
+        <ul class="customer-action__list" role="tablist">
+
+            
+                
+<li class="customer-action__list-item" id="contact-tab1" data-menu-section="contact-call-template" aria-controls="panel1" role="tab">
+    <a href="#/" class="cs-action tab-section">
+        <div class="icon-circle">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M800-480q-16 0-28.5-11.5T757-520q-13-93-78.5-158.5T520-757q-17-2-28.5-14T480-800q0-17 12-28.5t28-9.5q126 14 215 103t103 215q2 16-9.5 28T800-480Zm-167 0q-13 0-23-9t-15-24q-8-29-30.5-51.5T513-595q-15-5-24-15t-9-24q0-20 14-32.5t31-8.5q56 13 96.5 53.5T675-525q4 17-9 31t-33 14Zm165 360q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z"></path></svg>
+        </div>
+        <span class="btn-name">Ring oss</span>
+        <span class="sub-info">7-22 (10-18)</span>
+    </a>
+    <div class="icon">
+        <svg class="arrow-down">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/etc.clientlibs/settings/wcm/designs/sb1/nettsider/clientlib_base/resources/images/symbol/ffe-icons.svg#chevron-ikon"></use>
+        </svg>
+    </div>
+</li>
+
+
+            
+
+            
+                
+<li class="customer-action__list-item" id="contact-tab2" data-menu-section="contact-appointment-template" aria-controls="panel2" role="tab">
+    <a id="meeting" href="#/" class="cs-action tab-section">
+        <div class="icon-circle">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Z"></path></svg>
+        </div>
+
+        <span class="btn-name">Avtal møte</span>
+        <span class="sub-info">med ein rådgjevar</span>
+    </a>
+    <div class="icon">
+        <svg class="arrow-down">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/etc.clientlibs/settings/wcm/designs/sb1/nettsider/clientlib_base/resources/images/symbol/ffe-icons.svg#chevron-ikon"></use>
+        </svg>
+    </div>
+</li>
+
+
+            
+
+            
+                
+
+
+
+
+
+            
+
+            
+                
+<li class="customer-action__list-item" id="contact-tab4" data-menu-section="find-us-template" aria-controls="panel4" role="tab">
+    <a href="#/" class="cs-action tab-section">
+        <div class="icon-circle">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M480-480q33 0 56.5-23.5T560-560q0-33-23.5-56.5T480-640q-33 0-56.5 23.5T400-560q0 33 23.5 56.5T480-480Zm0 294q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z"></path></svg>
+        </div>
+        <span class="btn-name">Finn kontor</span>
+        <span class="sub-info">eller ein rådgjevar</span>
+    </a>
+    <div class="icon">
+        <svg class="arrow-down">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/etc.clientlibs/settings/wcm/designs/sb1/nettsider/clientlib_base/resources/images/symbol/ffe-icons.svg#chevron-ikon"></use>
+        </svg>
+    </div>
+</li>
+
+
+            
+
+            
+                
+<li class="customer-action__list-item" id="contact-tab5" data-menu-section="contact-chat-template" aria-controls="panel5" role="tab">
+    <a id="contact-chat" href="#/" class="cs-action tab-section">
+        <div class="icon-circle">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Zm-46 0v-480 480Z"></path></svg>
+        </div>
+        <span class="btn-name">Chat</span>
+        <span class="sub-info">08-15.00 mån - fre</span>
+    </a>
+    <div class="icon">
+        <svg class="arrow-down">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/etc.clientlibs/settings/wcm/designs/sb1/nettsider/clientlib_base/resources/images/symbol/ffe-icons.svg#chevron-ikon"></use>
+        </svg>
+    </div>
+</li>
+
+
+            
+
+        </ul>
+
+        
+
+        
+        
+    
+    <div aria-hidden="true" id="contact-call-template" class="hide">
+        <div id="panel1" class="contact-info-section" aria-labelledby="contact-tab1" role="tabpanel">
+            <div class="call-section">
+                <div class="call-banks">
+
+
+
+</div>
+                <div class="contact-box call-section">
+                    
+                    <ul class="call-section__list">                        
+                        
+    
+    
+    
+    <li class="call-option__list-item">
+
+
+
+<h3 class="ffe-h4">Privat</h3>
+<div class="call-option__main-number ffe-h1">
+    <a class="call-option__number-link" href="tel:57829700"><span class="call-option__icon icon-phone"></span>57 82 97 00</a>
+</div>
+<div class="call-option__sub-info">
+    <div class="call-option__sub-text ffe-h">
+        <span>Ring frå utland</span>
+        <a href="tel:+4757829700" class="call-option__sub-number">+47 57 82 97 00</a>
+    </div>
+    
+        <span class="call-option__sub-text">7 - 22 (10 - 18) </span>
+    
+</div>
+</li>
+
+
+    
+    
+    
+    <li class="call-option__list-item">
+
+
+
+<h3 class="ffe-h4">Bedrift</h3>
+<div class="call-option__main-number ffe-h1">
+    <a class="call-option__number-link" href="tel:57829700"><span class="call-option__icon icon-phone"></span>57 82 97 00</a>
+</div>
+<div class="call-option__sub-info">
+    <div class="call-option__sub-text ffe-h">
+        <span>Ring frå utland</span>
+        <a href="tel:+4757829700" class="call-option__sub-number">+47 57 82 97 00</a>
+    </div>
+    
+        <span class="call-option__sub-text">7 - 18</span>
+    
+</div>
+</li>
+
+
+    
+    
+    
+    <li class="call-option__list-item">
+
+
+
+<h3 class="ffe-h4">Melde skade</h3>
+<div class="call-option__main-number ffe-h1">
+    <a class="call-option__number-link" href="tel:91502300"><span class="call-option__icon icon-phone"></span>915 02300</a>
+</div>
+<div class="call-option__sub-info">
+    <div class="call-option__sub-text ffe-h">
+        <span>Ring frå utland</span>
+        <a href="tel:+4791502300" class="call-option__sub-number">+47 915 02300</a>
+    </div>
+    
+</div>
+</li>
+
+
+                    </ul>
+                    
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+        
+        
+
+<div aria-hidden="true" id="contact-appointment-template" class="hide">
+
+    <div id="panel2" class="contact-info-section" aria-labelledby="contact-tab2" role="tabpanel">
+        <section class="contact-box appointment-section">
+            
+            <div>
+    <div class="appointment-section__group appointment-section__group--new-view">
+        <div class="appointment-section__buttons-wrapper clearfix">
+            <p class="lead">For å avtale møte må vi vite om du allereie er kunde hos oss, eller ikkje.</p>
+
+            <div class="ffe-button-group ffe-button-group--thin">        
+                <div id="appointment-link" class="button">
+
+<div class="aem-component-container">
+    
+        
+    
+
+    
+    
+    
+
+    
+    
+
+    <div class="button-wrapper left">
+        <a onclick="" class="primary-btn ffe-button ffe-button--primary     id-1681690837 " href="https://www.sparebank1.no/nn/sogn-fjordane/privat/innlogging/identifisering.html?minStrength=2&amp;goto=https%3A%2F%2Fwww.sparebank1.no%2Fsogn-fjordane%2Fnettbank-privat%2Fmotebooking" rel="">
+            <span class="ffe-button__label">Ja, eg er kunde
+                </span>
+                
+            
+        </a>
+        
+    </div>
+
+    
+    
+    
+        
+
+        
+    
+    
+
+
+
+    
+
+    
+</div>
+</div>
+                
+                
+                    <div class="button appointment-section__second-button">
+
+<div class="aem-component-container">
+    
+        
+    
+
+    
+    
+    
+
+    
+    
+
+    <div class="button-wrapper right">
+        <a onclick="" class="primary-btn ffe-button ffe-button--primary     id-759391149 " href="/nn/sogn-fjordane/privat/kundeservice/bestill/bestill-mote-med-radgiver.html" rel="">
+            <span class="ffe-button__label">Nei, eg er ikkje kunde
+                </span>
+                
+            
+        </a>
+        
+    </div>
+
+    
+    
+    
+        
+
+        
+    
+    
+
+
+
+    
+
+    
+</div>
+</div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="appointment_section__old hide" id="appointment-form">
+        
+        <div>
+
+    
+
+    
+
+
+
+<div class="appointment-banks">
+
+    
+
+
+<div class="js-contact-bankpicker__listHeader-suggest hide">
+
+    
+
+    
+</div>
+
+<div class="js-contact-bankpicker__suggest contact-bankpicker__suggest hide" aria-live="polite"></div>
+
+<div class="contact-bankpicker">
+    
+
+    <div class="postal-input js-postal-input">       
+        <div class="postal-code ffe-input-group ffe-input-group--no-extra-margin ffe-input-group--message">
+            <label class="postal-input__label ffe-body-paragraph">Skriv inn ditt postnummer, så gir vi forslag til bank i nærheten av deg</label>
+            <input class="contact-bankpicker__input ffe-input-field ffe-input-field--inline" type="tel" name="postalcode" maxlength="4" placeholder="Postnummer">
+            <button class="contact-bankpicker__searchBtn ffe-button ffe-button--primary ffe-input-field--inline button">
+                <span class="ffe-button__label">Søk</span>
+                <span class="ffe-button__spinner" aria-hidden="true">Vennligst vent</span>
+            </button>
+            <div class="sb1_form_validation_error ffe-field-error-message hide" role="alert">
+                <span>Skriv inn eit gyldig postnummer (4 siffer).</span>
+            </div>
+        </div>       
+    </div>
+
+    <div class="contact-bankpicker__nobanks hide" aria-live="polite" role="alert">
+        <div class="ffe-field-error-message ffe-body-paragraph">
+            Vi fant dessverre ingen bankar på dette postnummeret.
+        </div>
+    </div>
+</div>
+
+
+
+
+    <div class="contact-bankpicker__banksinfo">
+
+        
+
+    </div>
+
+    
+    <div class="js-contact-bankpicker__banklist-wrap contact-bankpicker__banklist-wrapper">
+        <div class="ffe-body-paragraph">
+            <span>... eller
+                <button aria-expanded="false" aria-controls="banks__expand-region-appointment" class="js-contact-bankpicker__toggle ffe-inline-button ffe-inline-button--expand">
+                    <span class="ffe-inline-button__label">velg banken</span>
+                    <svg viewBox="0 0 200 200" class="ffe-inline-button__icon ffe-inline-button__icon--right" style="margin-left: 5px; transform: none;"><path d="m16.171492,41.999998c-4.143269,0-8.2852797,1.57464-11.4277496,4.706478-6.3249899,6.283609-6.3249899,16.499474,0,22.803034l84.0286676,83.76282c6.30496,6.30356,16.54928,6.30356,22.87426,0l83.60959-83.26412c6.32499-6.28361,6.32499-16.499477,0-22.803038-6.30496-6.30356-16.55553-6.30356-22.88051,0l-72.13806,71.893768-72.613438-72.373767c-3.14247-3.151781-7.29074-4.725174-11.433999-4.725174h-0.0188z"></path></svg>
+                </button>
+                 du ønsker å kontakte</span>
+        </div>
+
+        <div class="js-contact-bankpicker__banklist contact-bankpicker__bankList-wrap hide" id="banks__expand-region-appointment" tabindex="-1">
+            <div class="icon">
+                <svg class="listbanks">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/etc.clientlibs/settings/wcm/designs/sb1/nettsider/clientlib_base/resources/images/symbol/ffe-icons.svg#chevron-ikon"></use>
+                </svg>
+            </div>
+            
+            <div class="contact-bankpicker__bankList">
+                
+                
+                    
+                
+                
+                <button class="contact-bankpicker__bankList--close ffe-button ffe-button--expand ffe-button--expanded" aria-label="Lukk bankliste">
+                    <svg focusable="false" class="ffe-button__icon" viewBox="0 0 200 200" width="150" height="150" x="1200" y="1200" xmlns="http://www.w3.org/2000/svg"><path d="M18.77 0c-3.562 0-7.125 1.347-9.834 4.044L4.507 8.483c-5.381 5.394-5.381 14.25 0 19.68l71.19 71.83-71.66 71.83c-5.381 5.394-5.381 14.25 0 19.68l4.429 4.439c5.381 5.394 14.22 5.394 19.64 0l71.66-71.83 71.65 71.83c5.381 5.394 14.23 5.394 19.65 0l4.429-4.439c5.381-5.394 5.381-14.25 0-19.68l-71.19-71.83 71.66-71.83c5.381-4.914 5.381-13.78 0-19.21l-4.429-4.423c-5.381-5.394-14.22-5.394-19.64 0l-72.13 71.34-71.17-71.83c-2.691-2.697-6.257-4.044-9.819-4.044z"></path></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+    
+</div>
+    </div>
+</div>
+        </section>
+    </div>
+</div>
+
+        
+        
+
+
+
+        
+        
+
+
+<div aria-hidden="true" id="find-us-template" class="hide ">
+    <div id="panel4" class="contact-info-section find-us" aria-labelledby="contact-tab4" role="tabpanel">
+        <section class="contact-box find-us-section">
+            <h3 class="find-us__header ffe-h4">Søk etter eit kontor</h3>
+
+            <div class="search-field-wrap">
+                <label class="visually-hidden" aria-hidden="true">Søk</label>
+                <input class="aem-input search-field" aria-label="Søk
+" name="search" type="search">
+
+                <button class="search-button" aria-label="Søk">
+                    <svg class="icon-search">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/etc.clientlibs/settings/wcm/designs/sb1/nettsider/clientlib_base/resources/images/symbol/ffe-icons.svg#forstorrelsesglass-ikon"></use>
+                    </svg>
+                </button>
+                <button class="search-clear-button hide" aria-label="Fjern søketekst">
+                    <svg class="icon-search-clear">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/etc.clientlibs/settings/wcm/designs/sb1/nettsider/clientlib_base/resources/images/symbol/ffe-icons.svg#kryss-ikon"></use>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="find-us__filter-buttons">
+                <button aria-expanded="false" class="see-all-offices ffe-button ffe-button--expand">
+                    <span class="ffe-button__label">Alle kontor</span>
+                    <svg focusable="false" class="ffe-button__icon hide" viewBox="0 0 200 200" width="150" height="150" x="1200" y="1200" xmlns="http://www.w3.org/2000/svg"><path d="M18.77 0c-3.562 0-7.125 1.347-9.834 4.044L4.507 8.483c-5.381 5.394-5.381 14.25 0 19.68l71.19 71.83-71.66 71.83c-5.381 5.394-5.381 14.25 0 19.68l4.429 4.439c5.381 5.394 14.22 5.394 19.64 0l71.66-71.83 71.65 71.83c5.381 5.394 14.23 5.394 19.65 0l4.429-4.439c5.381-5.394 5.381-14.25 0-19.68l-71.19-71.83 71.66-71.83c5.381-4.914 5.381-13.78 0-19.21l-4.429-4.423c-5.381-5.394-14.22-5.394-19.64 0l-72.13 71.34-71.17-71.83c-2.691-2.697-6.257-4.044-9.819-4.044z"></path></svg>
+                </button>
+            </div>
+
+            <div class="search-results-wrap find-us__wrap hide">
+                
+                <div class="category-facets-wrap"></div>
+                
+                <ul class="search-results"></ul>
+            </div>
+
+            <div class="search-messages-wrap hide" role="alert">
+                <div class="error-state hide">
+                    
+                    
+    
+    
+    
+    <div class="text">
+
+
+
+
+<div class="aem-component-container text-container">
+    
+    
+        
+        
+        
+            <div class="text-wrapper ">
+                
+                    <p style="text-align: center;"><span class="h5">Det oppstod ein uventa feil. Ver vennleg og prøv på nytt.</span></p>
+
+                
+            </div>
+        
+
+        
+
+        
+    
+</div>
+</div>
+
+
+
+                </div>
+                <div class="no-results-state hide">
+                    
+                    
+    
+    
+    
+    <div class="text">
+
+
+
+
+<div class="aem-component-container text-container">
+    
+    
+        
+        
+        
+            <div class="text-wrapper ">
+                
+                    <p style="text-align: center;"><span class="h5">Søket ditt gav ingen treff. Ver vennleg og prøv på nytt.</span></p>
+
+                
+            </div>
+        
+
+        
+
+        
+    
+</div>
+</div>
+
+
+                    
+
+                </div>
+            </div>
+
+        </section>
+    </div>
+</div>
+
+
+        
+        
+
+<div aria-hidden="true" id="contact-chat-template" class="hide">
+    <div id="panel5" class="contact-info-section" aria-labelledby="contact-tab5" role="tabpanel">
+        <section class="contact-box chat-section ">
+
+            <h3 class="ffe-h4">Chat med oss</h3>
+
+            <div class="chat-section__text">
+                
+            </div>
+            
+            
+            
+            
+    <div class="chat-section__button">
+        <div class="dialoghubButton chat-section__button-item">            
+            
+
+
+    
+    
+    
+
+    
+
+    <div class="dialoghub-button__wrap">
+        <div class="dialoghub-button">
+            <div class="button-wrapper ">
+
+                <button id="1628133157" class="js-start-dialoghub primary-btn ffe-button ffe-button--primary r">
+                    <span class="ffe-button__label">Start chat
+                        </span>
+                        
+                    
+                </button>
+
+            </div>
+        </div>
+
+        <div class="dialoghub-button__msgbox hide" aria-live="assertive">
+            Noe gikk galt. Vennligst prøv igjen senere!
+        </div>
+    </div>
+
+        </div>
+    </div>
+
+
+            
+        </section>
+    </div>
+</div>
+
+
+    </div>
+
+</div>
+
+
+
+
+        <a href="#/" class="to-top" tabindex="-1" aria-hidden="true">
+    <span class="visually-hidden">Til toppen</span>
+    <span class="icon-holder">
+        <svg class="arrow-up">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/etc.clientlibs/settings/wcm/designs/sb1/nettsider/clientlib_base/resources/images/symbol/ffe-icons.svg#chevron-ikon"></use>
+        </svg>
+    </span>
+</a>
+
+    </div>
+    <div class="footer-bottom ">
+        <div class="bottom-content container-fluid">
+            
+
+
+
+
+
+
+
+
+
+
+    <div class="footer-bottom__columns ">
+
+        <div class="footer-bottom__column">
+            <div class="footer-bottom__column-links">
+                <h2 class="ffe-h4">Privat</h2>
+                
+                <ul>
+                    <li><a class="js-nav-link" href="/nn/sogn-fjordane/privat/kundeservice/bestill/bli-kunde.html">Bli kunde</a></li>
+                
+                    <li><a class="js-nav-link" href="/nn/sogn-fjordane/privat/kundeservice/verktoy/sperre-kort.html">Sperre kort</a></li>
+                
+                    <li><a class="js-nav-link" href="/nn/sogn-fjordane/privat/forsikring/meld-skade.html">Meld skade</a></li>
+                
+                    <li><a class="js-nav-link" href="/nn/sogn-fjordane/privat/kundeservice/bestill/prisliste.html">Prisliste</a></li>
+                
+                    <li><a class="js-nav-link" href="/nn/sogn-fjordane/privat/kundeservice.html">Kundeservice</a></li>
+                
+                    <li><a class="js-nav-link" href="/nn/sogn-fjordane/privat/svindel.html">Svindel</a></li>
+                
+                    <li><a class="js-nav-link" href="/nn/sogn-fjordane/privat/kundeservice/verktoy/klager.html">Klage</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-bottom__column-links">
+                <h2 class="ffe-h4">Logg inn</h2>
+                <ul>
+                    <li><a class="js-nav-link" href="/nn/sogn-fjordane/privat/innlogging.html">Nettbank privat</a></li>
+                
+                    <li><a class="js-nav-link" href="/nn/sogn-fjordane/bedrift/innlogging.html">Nettbank bedrift</a></li>
+                
+                    <li><a class="js-nav-link" href="https://kundeforsikring.sparebank1.no">Forsikring</a></li>
+                
+                    <li><a class="js-nav-link" href="https://kundeforsikring.sparebank1.no/privat/sparing">Pensjon</a></li>
+                </ul>
+            </div>
+
+            
+        </div>
+
+        <div class="footer-bottom__column footer-bottom__column-right">
+            <div class="footer-bottom__column-links footer-bottom__social-links">
+                <h2 class="ffe-h4">Sosiale medium</h2>
+                <ul>
+                    <li>
+                        <a class="social-logo" href="https://www.facebook.com/Sparebank1SognogFjordane/" target="_blank" rel="noopener" title="Facebook">
+                            
+
+<div class="aem-component-container ">
+      
+            
+    
+    
+
+    
+        
+    
+    
+        
+    <div class="image-wrapper">
+        
+    <img aria-hidden="true" class="inline-svg responsive " style="width:100%;" data-lazy-smallsrc="/content/dam/SB1/ikoner/SoMe/facebook-hvit.svg" data-lazy-largesrc="/content/dam/SB1/ikoner/SoMe/facebook-hvit.svg" data-lazy-breakpoint="768px" data-lazy-src="/content/dam/SB1/ikoner/SoMe/facebook-hvit.svg"></div>
+    <link rel="image_src" itemprop="image" href="/content/dam/SB1/ikoner/SoMe/facebook-hvit.svg.thumb.1280.1280.jpg">
+
+        
+    
+
+        
+    
+    
+    
+    
+
+      
+</div>
+                            <span class="visually-hidden">Facebook</span>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="social-logo" href="https://www.linkedin.com/company/sparebanken-sogn-og-fjordane" target="_blank" rel="noopener" title="LinkedIn">
+                            
+
+<div class="aem-component-container ">
+      
+            
+    
+    
+
+    
+        
+    
+    
+        
+    <div class="image-wrapper">
+        
+    <img aria-hidden="true" class="inline-svg responsive " style="width:100%;" data-lazy-smallsrc="/content/dam/SB1/ikoner/SoMe/linkedin-hvit.svg" data-lazy-largesrc="/content/dam/SB1/ikoner/SoMe/linkedin-hvit.svg" data-lazy-breakpoint="768px" data-lazy-src="/content/dam/SB1/ikoner/SoMe/linkedin-hvit.svg"></div>
+    <link rel="image_src" itemprop="image" href="/content/dam/SB1/ikoner/SoMe/linkedin-hvit.svg.thumb.1280.1280.jpg">
+
+        
+    
+
+        
+    
+    
+    
+    
+
+      
+</div>
+                            <span class="visually-hidden">LinkedIn</span>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="social-logo" href="https://instagram.com/sparebank1sognogfjordane" target="_blank" rel="noopener" title="Instagram">
+                            
+
+<div class="aem-component-container ">
+      
+            
+    
+    
+
+    
+        
+    
+    
+        
+    <div class="image-wrapper">
+        
+    <img aria-hidden="true" class="inline-svg responsive " style="width:100%;" data-lazy-smallsrc="/content/dam/SB1/ikoner/SoMe/instagram-hvit.svg" data-lazy-largesrc="/content/dam/SB1/ikoner/SoMe/instagram-hvit.svg" data-lazy-breakpoint="768px" data-lazy-src="/content/dam/SB1/ikoner/SoMe/instagram-hvit.svg"></div>
+    <link rel="image_src" itemprop="image" href="/content/dam/SB1/ikoner/SoMe/instagram-hvit.svg.thumb.1280.1280.jpg">
+
+        
+    
+
+        
+    
+    
+    
+    
+
+      
+</div>
+                            <span class="visually-hidden">Instagram</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            
+        </div>
+
+    </div>
+
+    <div class="footer-bottom__column-links footer-bottom__small-links ">
+        <ul>
+            <li><a class="ffe-link-text" href="/nn/sogn-fjordane/om-oss/om-banken/selskapsinformasjon.html">Selskapsinformasjon</a></li>
+        
+            <li><a class="ffe-link-text" href="/nn/sogn-fjordane/om-oss/personvern/generelle-vilkar.html">Vilkår for bruk av nettsida</a></li>
+        
+            <li><a class="ffe-link-text" href="/nn/sogn-fjordane/om-oss/personvern.html">Personvern</a></li>
+        
+            <li><a class="ffe-link-text" href="/nn/sogn-fjordane/om-oss/personvern.html#cookies">Informasjonskapslar</a></li>
+        
+            <li><a class="ffe-link-text" href="/nn/sogn-fjordane/bedrift/open-api.html">For utviklarar</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-bottom__address">
+        <p>Naustdalsvegen 4, 6800 Førde (Alti Nord 3. etg)</p>
+        
+    </div>
+
+        </div>
+    </div>
+</footer>
+
+        </div><div id="opt-in" data-trigger-modal="true"><div class="optin__wrapper"><div role="dialog" class="optin" aria-live="polite" tabindex="0" aria-describedby="modalDescription"><div class="optin__backdrop"></div><div class="optin__pages optin__pages--settings-page"><div class="optin__logo "> <svg class="optin-logo__svg" version="1.1" id="SpareBank_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="281.633px" height="78.197px" viewBox="0 0 281.633 78.197" enable-background="new 0 0 281.633 78.197"><g><rect x="0.009" y="0.011" fill="none" width="281.633" height="78.208"></rect><g><g><path fill="#002776" d="M27.867,54.834c-5.129,0-9.193-1.184-9.943-1.42c-0.395-0.158-0.592-0.474-0.592-0.828v-0.197 l0.513-2.605c0.079-0.394,0.355-0.513,0.67-0.513c0.079,0,0.158,0,0.276,0.039c0.829,0.158,4.853,1.303,8.641,1.303 c3.235,0,6.116-0.947,6.116-4.301c0-3.393-2.959-3.748-6.786-4.301c-4.261-0.632-9.746-1.775-9.746-8.483 c0-6.904,5.129-8.72,11.205-8.72c4.617,0,8.444,1.105,9.311,1.342c0.474,0.118,0.711,0.434,0.711,0.829v0.197l-0.552,2.564 c-0.04,0.276-0.316,0.552-0.631,0.552c-0.04,0-0.079-0.039-0.119-0.039c-1.894-0.395-4.814-1.184-8.286-1.184 c-2.919,0-5.997,0.553-5.997,3.867c0,3.275,3.314,3.749,6.826,4.261c4.616,0.71,9.864,1.381,9.864,8.72 C39.348,52.822,33.746,54.834,27.867,54.834z"></path><path fill="#002776" d="M77.998,54.361c-1.381,0.315-3.275,0.552-5.484,0.552c-4.261,0-9.509-0.434-9.509-6.707 c0-5.09,3.196-5.642,6.352-6.155l7.023-1.144v-1.262c0-1.105-0.119-1.894-1.105-2.328c-0.631-0.276-1.578-0.395-2.998-0.395 c-2.683,0-5.603,0.789-6.786,1.104c-0.119,0-0.197,0.04-0.276,0.04c-0.197,0-0.395-0.079-0.434-0.355l-0.552-2.446v-0.158 c0-0.355,0.276-0.513,0.474-0.592c0.947-0.355,4.577-1.341,8.601-1.341c2.801,0,4.695,0.395,5.958,1.105 c2.012,1.104,2.407,2.959,2.407,5.089v10.89C81.668,53.217,80.681,53.73,77.998,54.361z M76.381,44.34l-4.893,0.789 c-1.618,0.236-3.117,0.473-3.117,3.037c0,3.078,2.486,3.314,4.38,3.314c1.539,0,2.801-0.275,3.63-0.553V44.34z"></path><path fill="#002776" d="M95.744,37.237c-2.407,0-4.459,0.237-5.563,0.513v16.059c0,0.355-0.237,0.592-0.592,0.592h-4.024 c-0.237,0-0.671-0.236-0.671-0.592V36.764c0-1.539,0.907-2.012,2.801-2.564c1.736-0.552,4.538-0.947,6.786-0.986h0.671 c0.552,0,0.552,0,0.829,0.118c0.158,0.079,0.355,0.237,0.355,0.631v2.564C96.336,36.922,96.297,37.237,95.744,37.237z"></path><path fill="#002776" d="M116.395,45.563c0,0.434-0.237,0.907-0.829,0.907h-13.217c0,1.815,0.513,2.802,1.578,3.63 c1.026,0.828,2.525,1.184,4.656,1.184c2.446,0,4.3-0.592,5.523-0.947c0.079-0.039,0.119-0.039,0.197-0.039 c0.237,0,0.434,0.158,0.553,0.553l0.513,2.012c0,0.039,0.04,0.119,0.04,0.197c0,0.316-0.197,0.474-0.474,0.592 c-1.341,0.553-4.025,1.263-7.141,1.263c-7.733,0-10.771-3.038-10.771-10.771c0-7.418,2.052-10.969,9.746-10.969 c3.985,0,6.431,1.026,7.851,2.92c1.341,1.775,1.775,4.3,1.775,7.575V45.563z M110.832,39.684c-0.513-2.17-1.697-2.88-4.024-2.88 c-2.644,0-3.749,0.789-4.183,2.762c-0.276,1.105-0.276,2.249-0.315,3.551l8.838-0.04 C111.148,41.815,111.108,40.749,110.832,39.684z"></path><path fill="#002776" d="M161.279,54.361c-1.381,0.315-3.275,0.552-5.484,0.552c-4.262,0-9.509-0.434-9.509-6.707 c0-5.09,3.196-5.642,6.353-6.155l7.023-1.144v-1.262c0-1.105-0.119-1.894-1.105-2.328c-0.631-0.276-1.578-0.395-2.998-0.395 c-2.684,0-5.604,0.789-6.787,1.104c-0.118,0-0.197,0.04-0.275,0.04c-0.197,0-0.395-0.079-0.435-0.355l-0.552-2.446v-0.158 c0-0.355,0.275-0.513,0.473-0.592c0.947-0.355,4.577-1.341,8.602-1.341c2.801,0,4.695,0.395,5.958,1.105 c2.013,1.104,2.407,2.959,2.407,5.089v10.89C164.949,53.217,163.962,53.73,161.279,54.361z M159.662,44.34l-4.893,0.789 c-1.618,0.236-3.117,0.473-3.117,3.037c0,3.078,2.485,3.314,4.379,3.314c1.539,0,2.802-0.275,3.631-0.553V44.34z"></path><path fill="#002776" d="M186.049,54.401h-4.064c-0.355,0-0.631-0.236-0.631-0.592V39.881c0-2.289-0.868-3.078-2.959-3.078 c-2.367,0-4.932,0.671-4.932,0.671v16.334c0,0.355-0.237,0.592-0.592,0.592h-4.025c-0.395,0-0.67-0.236-0.67-0.592V36.803 c0-1.499,0.749-2.012,2.959-2.604c2.012-0.552,5.326-1.026,7.852-1.026c4.932,0,7.654,1.263,7.654,5.997v14.638 C186.641,54.164,186.404,54.401,186.049,54.401z"></path><path fill="#002776" d="M208.928,54.045c0,0.158-0.157,0.355-0.395,0.355h-5.287c-0.197,0-0.395,0-0.592-0.236l-6.115-8.326 h-1.342v7.971c0,0.355-0.197,0.592-0.592,0.592h-4.064c-0.354,0-0.632-0.236-0.632-0.592v-27.58c0-0.473,0.197-0.71,0.672-0.828 l3.865-0.671h0.158c0.355,0,0.592,0.237,0.592,0.671v16.886h1.342l6.234-8.325c0.157-0.237,0.316-0.276,0.513-0.276l4.814,0.118 c0.276,0,0.395,0.197,0.395,0.355c0,0.079-0.039,0.119-0.079,0.197l-7.457,9.391l7.892,10.1 C208.889,53.888,208.928,53.967,208.928,54.045z"></path><path fill="#002776" d="M47.492,50.811"></path><path fill="#002776" d="M52.739,33.174c-2.644,0-5.682,0.434-8.049,1.263c-1.776,0.552-2.486,1.144-2.486,3.196v24.423 c0,0.395,0.309,0.717,0.878,0.615c0.569-0.103,3.738-0.688,3.738-0.688c0.474-0.079,0.671-0.315,0.671-0.789v-6.879 c1.401,0.341,3.166,0.6,5.129,0.6c7.339,0,8.72-4.616,8.72-10.851C61.34,37.79,60.354,33.174,52.739,33.174z M51.24,51.283 c-2.13,0-3.748-0.473-3.748-0.473V37.514c0,0,2.328-0.631,4.143-0.631c2.999,0,4.301,0.67,4.301,7.063 C55.935,49.942,54.83,51.283,51.24,51.283z"></path><path fill="#002776" d="M133.736,54.401h-13.139c-0.355,0-0.671-0.276-0.671-0.631V25.874c0-0.355,0.315-0.631,0.671-0.631 h13.178c6.671,0,9.39,2.616,9.39,7.354c0,4.182-2.323,5.679-5.918,6.708c3.991,0.658,6.905,2.825,6.905,7.48 C144.152,52.072,140.443,54.401,133.736,54.401z M133.222,29.307h-7.615v8.443l7.339-0.315c2.999-0.118,4.537-1.184,4.537-4.182 C137.484,30.49,136.142,29.307,133.222,29.307z M133.025,41.577l-7.417-0.236v8.995h7.417c3.985,0,5.287-1.735,5.287-4.143 C138.312,42.959,137.247,41.695,133.025,41.577z"></path></g><g><path fill="#E60000" d="M242.543,11.35c-2.933,0-5.757,0.458-8.411,1.301c11.169-2.423,22.239,2.178,26.227,11.601 c4.609,10.892-1.989,24.096-14.737,29.491c-11.436,4.839-23.931,1.747-29.711-6.802c3.381,11.517,14.021,19.929,26.632,19.929 c15.331,0,27.76-12.428,27.76-27.76S257.874,11.35,242.543,11.35z"></path><path fill="#AF0000" d="M245.622,53.743c12.749-5.395,19.347-18.598,14.737-29.491c-3.988-9.424-15.059-14.024-26.227-11.601 c-11.219,3.563-19.349,14.06-19.349,26.459c0,2.72,0.398,5.347,1.128,7.831C221.691,55.49,234.186,58.582,245.622,53.743z"></path><g><path fill="#FFFFFF" d="M249.659,51.655V23.152c0-0.566-0.462-1.027-1.029-1.027h-6.454c-0.461,0-0.72,0.102-1.132,0.257 l-8.328,4.287c-0.513,0.207-0.719,0.514-0.719,1.029v4.671c0,0.549,0.445,0.992,0.993,0.992h5.33v22.409 c2.433-0.338,4.891-1.006,7.302-2.027C247.047,53.14,248.395,52.439,249.659,51.655z"></path><path fill="none" d="M239.347,60.319h9.283c0.567,0,1.029-0.465,1.029-1.029v-7.635c-1.264,0.784-2.612,1.485-4.037,2.087 c-2.411,1.02-4.87,1.688-7.302,2.027v3.521C238.32,59.855,238.784,60.319,239.347,60.319z"></path></g></g></g></g></svg> </div><section class="optin-settings__section-wrapper"><div class="screenreader-text" id="modalDescription">Dette er ein dialogboks der du kan velje kva for informasjonskapslar du ønsker å akseptere frå oss.</div><section class="optin-settings__section"><div class="optin-grid-col"><div class="optin-grid-col__col1"></div><div class="optin-grid-col__col2"><span class="optin-header-wrapper"><svg class="optin-icon__svg" width="40" height="41" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.3707 32.032C5.80168 31.1751 2.26521 27.4737 1.62842 22.8744C0.891561 17.5663 4.15512 12.4997 9.29494 10.975C9.48597 10.918 9.68384 10.8838 9.91354 10.8291C9.96812 11.4923 10.0204 12.1123 10.0705 12.7231C5.16034 14.2524 2.87926 18.8152 3.6002 22.9291C4.30067 26.9199 7.8053 30.0765 11.8376 30.293C15.7265 30.5027 19.9885 28.08 21.1643 23.0089C21.7761 23.0089 22.3992 23.0089 23.0792 23.0089C22.8222 24.7957 22.1672 26.4025 21.0938 27.8179C19.1902 30.3295 16.6885 31.8269 13.5296 32.1551C12.3888 32.2782 11.4908 32.2376 10.3707 32.032Z" fill="#002776"></path><path d="M21.8717 20.7871C17.0276 20.7483 12.9635 17.1154 12.2789 12.3246C11.6922 8.22441 13.9346 3.87124 18.0146 2.10034C19.1267 1.61716 19.4838 1.75391 20.0705 2.82055C20.6687 3.90998 21.5852 4.44786 22.8383 4.40228C24.0277 4.35898 24.2097 4.49345 24.5576 5.64442C24.992 7.07344 25.9358 7.99422 27.3413 8.45005C28.3943 8.79192 28.549 8.96513 28.4853 10.1024C28.408 11.479 28.9902 12.4454 30.191 13.0699C30.9801 13.4824 31.1962 13.977 30.8414 14.7838C29.4245 17.9906 26.9888 19.9392 23.5479 20.5979C22.9975 20.705 22.4312 20.7255 21.8717 20.7871ZM20.4731 16.1285C19.6134 16.1353 18.8834 16.8738 18.8947 17.7239C18.9061 18.5809 19.6498 19.3148 20.4958 19.3056C21.3532 19.2965 22.0787 18.5558 22.0673 17.7011C22.0537 16.8259 21.3396 16.1194 20.4731 16.1285ZM18.1488 11.5018C18.1488 10.6996 17.4756 10.0135 16.7001 10.0249C15.9246 10.0363 15.2218 10.752 15.2423 11.5132C15.2628 12.2699 15.9246 12.9286 16.6796 12.94C17.4915 12.9536 18.1488 12.3109 18.1488 11.5018ZM15.6357 6.86832C15.6198 7.60676 16.1611 8.18111 16.8775 8.18339C17.5757 8.18567 18.1306 7.65007 18.1488 6.96176C18.1693 6.21876 17.6394 5.66949 16.9025 5.66493C16.1793 5.65809 15.6494 6.16178 15.6357 6.86832ZM24.3052 15.1257C24.9738 15.1234 25.4582 14.6516 25.4696 13.9952C25.481 13.3457 24.9192 12.7668 24.2893 12.7759C23.6911 12.785 23.1158 13.3479 23.0998 13.9405C23.0839 14.5832 23.6388 15.128 24.3052 15.1257ZM24.6509 8.01245C24.1096 7.99422 23.6275 8.46828 23.6138 9.03351C23.5979 9.65572 23.9754 10.0774 24.569 10.1002C25.174 10.1252 25.6788 9.66255 25.6788 9.08137C25.6811 8.55489 25.1762 8.03068 24.6509 8.01245ZM20.9984 7.0233C20.9825 6.53556 20.5504 6.1162 20.0774 6.13215C19.6066 6.14811 19.1699 6.6085 19.1836 7.07116C19.1972 7.55434 19.6271 7.94864 20.1251 7.93952C20.6277 7.9304 21.0143 7.52471 20.9984 7.0233ZM21.0348 11.5223C20.6982 11.2671 20.4844 10.9822 20.3184 11.0073C20.1046 11.0414 19.9295 11.3241 19.7362 11.5018C19.9159 11.6682 20.0819 11.9463 20.2752 11.9668C20.464 11.9896 20.68 11.7434 21.0348 11.5223ZM17.8099 15.7821C17.5006 15.5724 17.3028 15.3331 17.1413 15.3559C16.9662 15.3809 16.8252 15.6476 16.6705 15.8094C16.8434 15.9735 16.9957 16.2311 17.1959 16.2721C17.3255 16.3017 17.5234 16.0237 17.8099 15.7821Z" fill="#0071CD"></path><path d="M12.3811 20.9259C13.3591 20.9145 14.1187 21.6256 14.1459 22.5783C14.1732 23.5082 13.3363 24.3834 12.413 24.3857C11.5124 24.3879 10.7027 23.5697 10.6914 22.6444C10.6777 21.6803 11.4077 20.9373 12.3811 20.9259Z" fill="#002776"></path><path d="M17.1343 24.0557C17.9121 24.0602 18.4943 24.646 18.4875 25.4255C18.483 26.1776 17.8462 26.818 17.1162 26.8112C16.4043 26.8043 15.7311 26.1206 15.7334 25.4049C15.7357 24.6733 16.3793 24.0511 17.1343 24.0557Z" fill="#002776"></path><path d="M9.43826 25.541C10.1637 25.5433 10.7391 26.1017 10.7369 26.8037C10.7346 27.4897 10.1296 28.0754 9.42462 28.0732C8.7105 28.0709 8.12829 27.4897 8.13284 26.79C8.13966 26.0766 8.7014 25.541 9.43826 25.541Z" fill="#002776"></path><path d="M10.5117 17.166C10.5026 17.8611 9.92493 18.4286 9.2563 18.3967C8.56948 18.3648 8.06687 17.7973 8.08961 17.0771C8.11235 16.3842 8.61041 15.9079 9.31088 15.9102C10.0295 15.9147 10.5208 16.4275 10.5117 17.166Z" fill="#002776"></path><path d="M6.53394 23.3171C6.00404 23.3057 5.63561 22.8863 5.66062 22.3279C5.68564 21.7969 6.04497 21.4664 6.58397 21.4778C7.07976 21.4892 7.48685 21.8926 7.4914 22.3781C7.5005 22.8727 7.03428 23.3285 6.53394 23.3171Z" fill="#002776"></path></svg><h2 class="ffe-h3 optin-settings-header">Bruk av informasjonskapslar</h2></span></div></div></section><section class="optin-settings__section"><div class="optin-grid-col"><div class="optin-grid-col__col1"><p class="optin-icon__check"><span role="img" aria-label="hake" aria-hidden="false" class="ffe-icons ffe-icons--md optin-icon__check" style="mask-image: url(&quot;/sb1-nettsider-optin/bank/static/_/node_modules/@sb1/ffe-icons/icons/open/300/md/check.a1f9ef1d8fba431b3e401905185f1107.svg&quot;);"></span></p></div><div class="optin-grid-col__col2"><h3 class="ffe-h5 optin-settings__header"><span>Teknisk </span></h3><p class="ffe-body-paragraph optin-settings__paragraph">For at nettsidene skal fungere, må vi bruke tekniske informasjonskapslar. Denne kan derfor ikkje slåast av</p></div></div></section><div class="optin-settings__button-wrapper"><div class="ffe-button-group" role="group"><button class="ffe-button ffe-button--secondary optin-settings__button optin-settings__button--godta-alle optin-button--fullwidth" id="optin--acceptAll"><span class="ffe-button__label">Godta alle</span></button><button class="ffe-button ffe-button--secondary optin-settings__button optin-settings__button--avvis-alle optin-button--fullwidth" id="optin--rejectAll"><span class="ffe-button__label">Kun nødvendige</span></button></div></div><section class="optin-settings__section"><div class="optin-grid"><div class="optin-grid__row1 optin-settings__checkbox"><input class="ffe-hidden-checkbox" id=":r0:" type="checkbox" aria-label="Skru funksjonelle informasjonskapslar på"><label class="ffe-checkbox ffe-checkbox--inline" for=":r0:"><span class="ffe-checkbox__content">Tillat funksjonelle</span></label></div><div class="optin-grid__row2"><p class="ffe-body-paragraph optin-settings__paragraph">Kryss av om du vil sleppe å gjere dei same vala kvar gong du er på nettsidene våre. Funksjonelle informasjonskapslar lagrar opplysningar om bruken din av nettsidene og kva for innstillingar du har gjort, slik at du kan få funksjonalitet tilpassa deg</p></div></div></section><section class="optin-settings__section"><div class="optin-grid"><div class="optin-grid__row1 optin-settings__checkbox"><input class="ffe-hidden-checkbox" id=":r1:" type="checkbox"><label class="ffe-checkbox ffe-checkbox--inline" for=":r1:"><span class="ffe-checkbox__content">Tillat statistikk</span></label></div><div class="optin-grid__row2"><p class="ffe-body-paragraph optin-settings__paragraph">Kryss av viss du vil at nettsidene våre skal bli betre og enklare å bruke. Informasjonskapslane lagrar statistikk, og brukast for å analysere kva du gjer på nettsidene. Denne informasjonen hjelper oss til å forstå korleis nettsidene blir brukt, noko som gjer at vi kan forbetre oss</p></div></div></section><section class="optin-settings__section"><div class="optin-grid"><div class="optin-grid__row1 optin-settings__checkbox"><input class="ffe-hidden-checkbox" id=":r2:" type="checkbox"><label class="ffe-checkbox ffe-checkbox--inline" for=":r2:"><span class="ffe-checkbox__content">Tillat tilpassa marknadsføring</span></label></div><div class="optin-grid__row2"><p class="ffe-body-paragraph optin-settings__paragraph">Kryss av viss du vil ha innhald som er tilpassa deg. Informasjonskapslane samlar informasjon om bruksmønsteret ditt og interessene dine. Dette gjer at vi kan gi deg meir relevant og tilpassa marknadsføring, også gjennom våre samarbeidspartnarar, på til dømes nettsider, annonsar og i sosiale medium</p></div></div></section><div class="optin-settings__button-wrapper"><button class="ffe-button ffe-button--secondary optin-settings__button optin-settings__button--lagre optin-button--fullwidth"><span class="ffe-button__label">Lagre innstillingar</span></button></div></section></div></div></div></div><link rel="stylesheet" onerror="optinScriptError=true;" property="stylesheet" media="screen,print" type="text/css" href="/sb1-nettsider-optin/bank/static/opt-in.css"><script src="/sb1-nettsider-optin/bank/static/opt-in.js" type="text/javascript" async="true" onerror="optinScriptError=true;"></script>
+
+        
+
+        
+
+<script type="text/javascript" src="/etc.clientlibs/settings/wcm/designs/sb1/nettsider/vendors_bundle.1156818140.js"></script>
+<script type="text/javascript" src="/etc.clientlibs/settings/wcm/designs/sb1/nettsider/clientlib_base.1156818140.js"></script>
+
+
+        <script>
+            try {
+                [].slice.call(document.getElementsByClassName('ghost')).forEach(function (element) {
+                    element.parentNode.removeChild(element);
+                });
+            } catch (e) {}
+        </script>
+        
+
+        
+            
+                <script defer="true" type="text/javascript" src="/bank/dialoghub/static/integration.js?fid=fid-sogn-fjordane"></script>
+            
+        
+    
+
+
+<iframe id="dialoghub-iframe" src="https://www.sparebank1.no/bank/dialoghub/iframe?bank=fid-sogn-fjordane&amp;screenSize=desktop&amp;targetOrigin=https://www.sparebank1.no&amp;targetPathnameAndSearch=/nn/sogn-fjordane/privat.html" role="region" aria-label="Chat" style="position: fixed; z-index: 9999; border: 0px; box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 16px 0px; width: 96px; height: 50px; right: 24px; bottom: 24px; border-radius: 25px;"></iframe><div id="dialoghubUnreadMessagesBadge"></div></body></html>

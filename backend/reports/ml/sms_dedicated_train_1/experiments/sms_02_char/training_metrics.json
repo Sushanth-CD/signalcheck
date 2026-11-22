@@ -1,0 +1,14 @@
+{
+  "model_id": "sms_02_char",
+  "train_samples": 3789,
+  "fit_time_seconds": 2.731,
+  "train_class_counts": {
+    "0": 2809,
+    "1": 980
+  },
+  "train_categories": {
+    "ham": 1750,
+    "commercial_spam": 1059,
+    "smishing": 980
+  }
+}

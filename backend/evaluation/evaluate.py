@@ -22,8 +22,12 @@ REQUIRED_FIELDS = {
     "expected_category",
     "rationale",
     "source_type",
+    "evaluation_scope",
 }
 VALID_LABELS = {"suspicious", "benign"}
+VALID_SCOPES = {"in_scope", "out_of_scope"}
+EXPECTED_SCOPE_COUNTS = {"in_scope": 79, "out_of_scope": 1}
+EXPECTED_OUT_OF_SCOPE_IDS = {"S027"}
 
 
 def load_cases(path: Path = DATASET_PATH) -> list[dict[str, Any]]:
@@ -45,6 +49,8 @@ def validate_cases(cases: list[dict[str, Any]]) -> list[str]:
     errors: list[str] = []
     seen_ids: set[str] = set()
     counts: Counter[str] = Counter()
+    scope_counts: Counter[str] = Counter()
+    out_of_scope_ids: set[str] = set()
     for index, case in enumerate(cases, 1):
         missing = REQUIRED_FIELDS - case.keys()
         if missing:
@@ -67,6 +73,13 @@ def validate_cases(cases: list[dict[str, Any]]) -> list[str]:
             errors.append(f"Record {index}: rationale must be a non-empty string")
         if case.get("source_type") != "synthetic":
             errors.append(f"Record {index}: source_type must be 'synthetic'")
+        scope = case.get("evaluation_scope")
+        if scope not in VALID_SCOPES:
+            errors.append(f"Record {index}: invalid evaluation_scope {scope!r}")
+        else:
+            scope_counts[scope] += 1
+            if scope == "out_of_scope" and isinstance(case_id, str):
+                out_of_scope_ids.add(case_id)
         category = case.get("expected_category")
         if category is not None and category not in {
             "phishing",
@@ -79,6 +92,16 @@ def validate_cases(cases: list[dict[str, Any]]) -> list[str]:
     for label in sorted(VALID_LABELS):
         if counts[label] != 40:
             errors.append(f"Expected 40 {label} records, found {counts[label]}")
+    for scope, expected_count in EXPECTED_SCOPE_COUNTS.items():
+        if scope_counts[scope] != expected_count:
+            errors.append(f"Expected {expected_count} {scope} records, found {scope_counts[scope]}")
+    if sum(scope_counts.values()) != len(cases):
+        errors.append("Evaluation scope counts do not reconcile with total records")
+    if out_of_scope_ids != EXPECTED_OUT_OF_SCOPE_IDS:
+        errors.append(
+            "Expected out-of-scope case IDs "
+            f"{sorted(EXPECTED_OUT_OF_SCOPE_IDS)}, found {sorted(out_of_scope_ids)}"
+        )
     return errors
 
 
@@ -117,6 +140,17 @@ def _print_metrics(title: str, metrics: dict[str, int | float]) -> None:
     )
 
 
+def _print_evaluation(title: str, rows: list[dict[str, Any]]) -> dict[str, int | float]:
+    metrics = calculate_metrics(rows)
+    print(f"\n{title} (n={len(rows)})")
+    print("  Confusion matrix (rows = expected, columns = predicted)")
+    print("                   Pred suspicious  Pred benign")
+    print(f"  Expected suspicious       {metrics['tp']:>3}           {metrics['fn']:>3}")
+    print(f"  Expected benign           {metrics['fp']:>3}           {metrics['tn']:>3}")
+    _print_metrics("  Metrics", metrics)
+    return metrics
+
+
 def evaluate(cases: list[dict[str, Any]]) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
     for case in cases:
@@ -125,6 +159,7 @@ def evaluate(cases: list[dict[str, Any]]) -> list[dict[str, Any]]:
         rows.append(
             {
                 "case_id": case["case_id"],
+                "evaluation_scope": case["evaluation_scope"],
                 "expected": case["expected_label"],
                 "predicted": "suspicious" if result.detected_indicators else "benign",
                 "expected_category": case["expected_category"],
@@ -149,15 +184,25 @@ def main() -> int:
             print(f"- {error}")
         return 2
 
-    print("Dataset validation: PASS (80 records; 40 suspicious, 40 benign; unique IDs; required fields present)")
+    print("Dataset validation: PASS (80 records; 40 suspicious, 40 benign; 79 in_scope, 1 out_of_scope; unique IDs; required fields present)")
     print("Source: synthetic examples only; not representative of real-world incidents or populations.")
     rows = evaluate(cases)
-    metrics = calculate_metrics(rows)
-    print("\nConfusion matrix (rows = expected, columns = predicted)")
-    print("                 Pred suspicious  Pred benign")
-    print(f"Expected suspicious       {metrics['tp']:>3}           {metrics['fn']:>3}")
-    print(f"Expected benign           {metrics['fp']:>3}           {metrics['tn']:>3}")
-    _print_metrics("\nOverall metrics", metrics)
+    in_scope_rows = [row for row in rows if row["evaluation_scope"] == "in_scope"]
+    out_of_scope_rows = [row for row in rows if row["evaluation_scope"] == "out_of_scope"]
+    if len(in_scope_rows) + len(out_of_scope_rows) != len(rows):
+        print("Evaluation scope counts do not reconcile", file=sys.stderr)
+        return 2
+    _print_evaluation("Overall evaluation (all cases; includes out-of-scope challenge cases)", rows)
+    _print_evaluation("In-scope evaluation (in_scope cases only)", in_scope_rows)
+
+    print(f"\nOut-of-scope challenge cases ({len(out_of_scope_rows)}; included in overall metrics, excluded from in-scope metrics)")
+    if not out_of_scope_rows:
+        print("  None")
+    for row in out_of_scope_rows:
+        print(
+            f"  {row['case_id']}: expected={row['expected']}, predicted={row['predicted']}, "
+            f"rules={', '.join(row['rule_ids']) or 'none'}; {row['rationale']}"
+        )
 
     grouped: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for row in rows:
@@ -175,8 +220,10 @@ def main() -> int:
         print("  No category reached n=5.")
 
     errors_by_type = {
-        "False positives": [row for row in rows if row["expected"] == "benign" and row["predicted"] == "suspicious"],
-        "False negatives": [row for row in rows if row["expected"] == "suspicious" and row["predicted"] == "benign"],
+        "Overall false positives": [row for row in rows if row["expected"] == "benign" and row["predicted"] == "suspicious"],
+        "Overall false negatives": [row for row in rows if row["expected"] == "suspicious" and row["predicted"] == "benign"],
+        "In-scope false positives": [row for row in in_scope_rows if row["expected"] == "benign" and row["predicted"] == "suspicious"],
+        "In-scope false negatives": [row for row in in_scope_rows if row["expected"] == "suspicious" and row["predicted"] == "benign"],
     }
     for title, items in errors_by_type.items():
         print(f"\n{title} ({len(items)})")

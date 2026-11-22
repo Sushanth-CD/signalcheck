@@ -5,17 +5,27 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "cyber-security-awareness-backend"
 version = "0.1.0"
-description = "FastAPI foundation for the Cyber Security Awareness Platform"
+description = "ML inference API for the Cyber Security Awareness Platform"
 requires-python = ">=3.11"
 dependencies = [
     "fastapi>=0.115,<1.0",
     "uvicorn[standard]>=0.30,<1.0",
+    "joblib==1.5.3",
+    "scikit-learn==1.8.0",
+    "slowapi==0.1.10",
+    "redis>=5.0.0,<9.0.0",
+    "androguard>=4.1.4,<5.0",
+    "python-multipart>=0.0.9,<1.0",
+    "sqlalchemy>=2.0.0,<3.0.0",
+    "reportlab>=4.0.0,<6.0.0",
+    "rq>=1.16.0,<4.0.0",
 ]
 
 [project.optional-dependencies]
 dev = [
     "httpx>=0.27,<1.0",
     "pytest>=8.0,<9.0",
+    "fakeredis==2.40.0",
 ]
 
 [tool.setuptools.packages.find]
@@ -24,3 +34,6 @@ include = ["app*"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["."]
+markers = [
+    "slow: marks tests as slow/resource-heavy (deselect with '-m \"not slow\"')",
+]

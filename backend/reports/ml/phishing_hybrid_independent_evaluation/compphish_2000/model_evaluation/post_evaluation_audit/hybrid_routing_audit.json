@@ -1,0 +1,29 @@
+{
+  "audit_timestamp_utc": "2026-11-01T21:30:00+00:00",
+  "total_evaluated_samples": 2000,
+  "html_detected_samples": 2000,
+  "policy_3_routing": {
+    "branches": {
+      "V3_Dual": 2000
+    },
+    "routed_to_v3_dual": 2000,
+    "routed_to_v2_baseline": 0,
+    "routed_to_other": 0
+  },
+  "policy_4_routing": {
+    "branches": {
+      "V3_Dual": 2000
+    },
+    "routed_to_v3_dual": 2000,
+    "routed_to_v2_baseline": 0,
+    "routed_to_other": 0
+  },
+  "policy_comparison": {
+    "route_agreement_count": 2000,
+    "route_agreement_percentage": 100.0,
+    "identical_predictions_at_0_50": true,
+    "identical_probabilities": true,
+    "identical_all_2000_records": true
+  },
+  "scope_limitation_statement": "Because 100% (2,000 / 2,000) of the independent CompPhish V4 samples contain valid HTML documents, both Policy 3 and Policy 4 routed exclusively to V3 Dual. This evaluation provides NO independent empirical validation of routing behavior on non-HTML inputs (such as plain text emails, SMS messages, or binary files) where Policy 3 and Policy 4 diverge."
+}

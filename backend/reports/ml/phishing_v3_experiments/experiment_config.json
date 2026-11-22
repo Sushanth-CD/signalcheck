@@ -1,0 +1,23 @@
+{
+  "experiment": "Phishing Classifier V3 Dual-Channel",
+  "created_utc": "2026-10-31T14:09:19.656430+00:00",
+  "training_partition_manifest_records": 9481,
+  "validation_partition_manifest_records": 2005,
+  "random_seed": 20261026,
+  "classifier": {
+    "C": 1.0,
+    "solver": "liblinear",
+    "class_weight": null,
+    "max_iter": 2000,
+    "random_state": 20261026
+  },
+  "feature_channels": {
+    "channel_1_content": "HTML body visible text, anchor text, title; HTML markup/scripts excluded; URLs stripped in plain text",
+    "channel_2_url": "Offline V2 candidate parser; hostname, subdomains, path tokens, param names; values and ambiguous bare domains excluded"
+  },
+  "models": [
+    "content_only",
+    "url_only",
+    "dual_channel_v3"
+  ]
+}

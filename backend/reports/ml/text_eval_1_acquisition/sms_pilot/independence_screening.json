@@ -1,0 +1,38 @@
+{
+  "audit_timestamp_utc": "2026-11-01T18:03:56.355749+00:00",
+  "baseline_corpus_records": 77677,
+  "screening_policy": {
+    "normalization": "Unicode NFKC, casefold, collapsed whitespace",
+    "exact_hashing": "SHA-256",
+    "simhash": "64-bit character 5-grams",
+    "hamming_threshold": 3,
+    "jaccard_threshold": 0.9
+  },
+  "candidate_summary": {
+    "WSPR_total_messages": 68029,
+    "WSPR_mapped_to_campaign": 9762,
+    "WSPR_unique_campaigns_available": 1593,
+    "UCI_ham_raw": 4827,
+    "UCI_spam_raw": 747,
+    "ExAIS_ham_raw": 2883,
+    "ExAIS_spam_raw": 2341
+  },
+  "exclusions_by_reason": {
+    "no_deterministic_campaign_url_match": 58267,
+    "exact_corpus_collision": 302,
+    "simhash_hamming_candidate_le3": 13
+  },
+  "pilot_accepted_counts": {
+    "Cohort_A_Smishing": 100,
+    "Cohort_B_Legitimate_SMS": 100,
+    "Cohort_C_Commercial_Spam": 50,
+    "total_accepted": 250
+  },
+  "verification_invariants": {
+    "all_wspr_campaigns_unique": true,
+    "zero_exact_corpus_collisions": true,
+    "zero_near_duplicate_collisions": true,
+    "zero_intra_pilot_collisions": true,
+    "target_250_achieved": true
+  }
+}

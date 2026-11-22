@@ -1,0 +1,251 @@
+pilot_serial_number,cohort,ground_truth_label,evaluation_label,source_dataset,source_record_id,campaign_id,message_length,length_subgroup,url_count,has_url,extracted_urls,prob_v2,pred_v2,prob_v3_dual,pred_v3_dual,prob_v3_content,pred_v3_content,prob_v3_url,pred_v3_url
+1,Cohort_A_Smishing,1,phishing,WSPR-NCSU,8163,1301,88,short,1,True,https://url-info.me/iwca6,0.843431,1,0.895569,1,0.811511,1,0.845822,1
+2,Cohort_A_Smishing,1,phishing,WSPR-NCSU,36942,13630,127,short,1,True,https://v.ht/Dhl-Gr,0.815357,1,0.828919,1,0.779783,1,0.816612,1
+3,Cohort_A_Smishing,1,phishing,WSPR-NCSU,11301,1785,153,long,1,True,https://evri-tracking-online.com,0.7884,1,0.81948,1,0.596626,1,0.862529,1
+4,Cohort_A_Smishing,1,phishing,WSPR-NCSU,45174,20058,154,long,1,True,pxlme.me/XehXYYsm,0.504998,1,0.679682,1,0.534177,1,0.785004,1
+5,Cohort_A_Smishing,1,phishing,WSPR-NCSU,64490,33028,158,long,1,True,https://celib7.com/78jocH,0.821475,1,0.896819,1,0.793691,1,0.869264,1
+6,Cohort_A_Smishing,1,phishing,WSPR-NCSU,13222,2114,39,short,1,True,https://ytpop-dfeed.firebaseapp.com/,0.811205,1,0.824264,1,0.797882,1,0.812998,1
+7,Cohort_A_Smishing,1,phishing,WSPR-NCSU,61503,31197,155,long,1,True,https://encurtador.com.br/hsPR5,0.78127,1,0.974451,1,0.725359,1,0.976742,1
+8,Cohort_A_Smishing,1,phishing,WSPR-NCSU,2139,309,198,long,1,True,https://ko.gl/vVNTp,0.741928,1,0.727076,1,0.610366,1,0.768175,1
+9,Cohort_A_Smishing,1,phishing,WSPR-NCSU,24055,7258,44,short,1,True,cuti.cc/eBzPc,0.631259,1,0.70579,1,0.591941,1,0.785004,1
+10,Cohort_A_Smishing,1,phishing,WSPR-NCSU,2904,581,140,long,1,True,https://domaky.gq/Citizens/,0.746784,1,0.879114,1,0.609766,1,0.913449,1
+11,Cohort_A_Smishing,1,phishing,WSPR-NCSU,12314,1886,153,long,1,True,https://rxhealth.azurewebsites.net/-_-/post-CA9514901185421/info.html,0.768049,1,0.681222,1,0.718551,1,0.67654,1
+12,Cohort_A_Smishing,1,phishing,WSPR-NCSU,17674,3350,59,short,1,True,https://eu-provide.com/kLCKh,0.787307,1,0.804436,1,0.801931,1,0.724662,1
+13,Cohort_A_Smishing,1,phishing,WSPR-NCSU,43735,18947,133,long,1,True,https://royalmail.com.xu.ns01.us/uk/3126,0.738798,1,0.78316,1,0.783277,1,0.707421,1
+14,Cohort_A_Smishing,1,phishing,WSPR-NCSU,7498,1049,145,long,1,True,https://tx.vc/r/1JBLw,0.727338,1,0.748836,1,0.601785,1,0.790844,1
+15,Cohort_A_Smishing,1,phishing,WSPR-NCSU,5479,876,144,long,1,True,https://www.us-psfhne.us,0.562778,1,0.476603,0,0.528772,1,0.535668,1
+16,Cohort_A_Smishing,1,phishing,WSPR-NCSU,11860,1792,145,long,2,True,https://tx.vc/r/3mYP3/;https://tx.vc/r/3mYKI/,0.770655,1,0.734928,1,0.666624,1,0.784892,1
+17,Cohort_A_Smishing,1,phishing,WSPR-NCSU,14419,2199,177,long,1,True,https://packing.ga/?cr=CA-2-106,0.671795,1,0.869108,1,0.56544,1,0.919563,1
+18,Cohort_A_Smishing,1,phishing,WSPR-NCSU,67723,35051,157,long,1,True,www.contact-chronopost.info,0.740313,1,0.703028,1,0.823429,1,0.40575,0
+19,Cohort_A_Smishing,1,phishing,WSPR-NCSU,463,81,112,short,2,True,https://tx.vc/r/2Q9AL/1A0wxK/7Svq9kC;https://tx.vc/o/804d5,0.777136,1,0.763685,1,0.652698,1,0.784892,1
+20,Cohort_A_Smishing,1,phishing,WSPR-NCSU,12646,1900,109,short,1,True,ligne-ameli.com,0.742516,1,0.809038,1,0.74385,1,0.785004,1
+21,Cohort_A_Smishing,1,phishing,WSPR-NCSU,15933,2642,36,short,1,True,https://sms.fund/9h9m,0.854973,1,0.816492,1,0.80908,1,0.781574,1
+22,Cohort_A_Smishing,1,phishing,WSPR-NCSU,50845,24627,147,long,1,True,Reglements-amendes.info,0.749502,1,0.83857,1,0.787265,1,0.785004,1
+23,Cohort_A_Smishing,1,phishing,WSPR-NCSU,6697,906,117,short,2,True,expiration.Veuillez;redirection-client.com,0.774597,1,0.808208,1,0.778082,1,0.785004,1
+24,Cohort_A_Smishing,1,phishing,WSPR-NCSU,12495,1896,156,long,1,True,applefinder.in/zAFapR7KApple,0.738061,1,0.756253,1,0.692829,1,0.785004,1
+25,Cohort_A_Smishing,1,phishing,WSPR-NCSU,14804,2286,140,long,2,True,U.P.S;https://rli.io/0s,0.724742,1,0.671073,1,0.566069,1,0.603959,1
+26,Cohort_A_Smishing,1,phishing,WSPR-NCSU,24237,7352,146,long,1,True,https://to-correosses.monster,0.752231,1,0.83571,1,0.77507,1,0.776993,1
+27,Cohort_A_Smishing,1,phishing,WSPR-NCSU,17661,3340,156,long,1,True,https://rdv74.com/ez9N6S,0.756308,1,0.888463,1,0.749974,1,0.869264,1
+28,Cohort_A_Smishing,1,phishing,WSPR-NCSU,27890,8607,90,short,1,True,https://shrtlink.net/84d2a2b2,0.61408,1,0.859234,1,0.769389,1,0.814605,1
+29,Cohort_A_Smishing,1,phishing,WSPR-NCSU,7533,1069,192,long,1,True,https://apple-mymap.info/1623Soporte,0.77779,1,0.927934,1,0.766855,1,0.91493,1
+30,Cohort_A_Smishing,1,phishing,WSPR-NCSU,2212,358,136,long,1,True,https://my-commsecured-au.com,0.710501,1,0.684482,1,0.585783,1,0.636886,1
+31,Cohort_A_Smishing,1,phishing,WSPR-NCSU,14864,2299,154,long,1,True,https://rdv15.com/vMhbWh,0.73692,1,0.892448,1,0.777468,1,0.869264,1
+32,Cohort_A_Smishing,1,phishing,WSPR-NCSU,66688,26440,18,short,1,True,ucezef.com/GJuWoYQ,0.401178,0,0.803756,1,0.650026,1,0.785004,1
+33,Cohort_A_Smishing,1,phishing,WSPR-NCSU,37436,13871,143,long,1,True,ozovus.com/Zm4EvRq,0.672678,1,0.820576,1,0.756609,1,0.785004,1
+34,Cohort_A_Smishing,1,phishing,WSPR-NCSU,14750,2270,154,long,1,True,https://rdv74.com/7Od06K,0.757492,1,0.890226,1,0.753436,1,0.869264,1
+35,Cohort_A_Smishing,1,phishing,WSPR-NCSU,17848,3482,59,short,1,True,my-order.cc/wmSavy,0.796731,1,0.7644,1,0.74588,1,0.785004,1
+36,Cohort_A_Smishing,1,phishing,WSPR-NCSU,17681,3357,135,long,2,True,https://tx.vc/r/3CcrO/1OmGN0/7Sw9W3W;https://tx.vc/o/e34f2,0.798348,1,0.762077,1,0.655576,1,0.784892,1
+37,Cohort_A_Smishing,1,phishing,WSPR-NCSU,14436,2202,165,long,1,True,https://yogaandrini.com/DK,0.740266,1,0.799635,1,0.71565,1,0.818618,1
+38,Cohort_A_Smishing,1,phishing,WSPR-NCSU,17699,3371,76,short,1,True,easywearmasks.com,0.765593,1,0.813816,1,0.736692,1,0.785004,1
+39,Cohort_A_Smishing,1,phishing,WSPR-NCSU,67225,34918,135,long,1,True,ocetik.com/tSx7Q8G,0.710265,1,0.719216,1,0.576738,1,0.785004,1
+40,Cohort_A_Smishing,1,phishing,WSPR-NCSU,48334,22239,82,short,1,True,topsm341.com/171825172,0.622459,1,0.787255,1,0.702078,1,0.785004,1
+41,Cohort_A_Smishing,1,phishing,WSPR-NCSU,17892,3516,140,long,2,True,lottogo.co/emaqRegister;https://tx.vc/o/b1a7b,0.787741,1,0.733599,1,0.607462,1,0.790844,1
+42,Cohort_A_Smishing,1,phishing,WSPR-NCSU,10360,1750,110,short,1,True,https://serviv54.cloudns.ph/o,0.839332,1,0.774907,1,0.709088,1,0.799776,1
+43,Cohort_A_Smishing,1,phishing,WSPR-NCSU,5789,894,115,short,1,True,https://hmurl.cn,0.923435,1,0.998894,1,0.638159,1,0.999351,1
+44,Cohort_A_Smishing,1,phishing,WSPR-NCSU,3911,62,183,long,1,True,urlzs.com/g1ux5,0.639484,1,0.64736,1,0.455633,0,0.785004,1
+45,Cohort_A_Smishing,1,phishing,WSPR-NCSU,14143,2134,155,long,1,True,login-secure-accounts.com,0.865747,1,0.626372,1,0.43592,0,0.785004,1
+46,Cohort_A_Smishing,1,phishing,WSPR-NCSU,67502,35006,98,short,1,True,osomej.com/W4kx7J1,0.626377,1,0.796639,1,0.668731,1,0.785004,1
+47,Cohort_A_Smishing,1,phishing,WSPR-NCSU,1878,231,117,short,1,True,almutarjim.ma,0.772109,1,0.76527,1,0.655615,1,0.785004,1
+48,Cohort_A_Smishing,1,phishing,WSPR-NCSU,67806,25224,153,long,1,True,https://antaigouv-usager.com,0.816437,1,0.906184,1,0.82699,1,0.869264,1
+49,Cohort_A_Smishing,1,phishing,WSPR-NCSU,15957,2648,109,short,1,True,nabalert-com-au.cc,0.719515,1,0.75025,1,0.625315,1,0.785004,1
+50,Cohort_A_Smishing,1,phishing,WSPR-NCSU,17623,3313,150,long,1,True,deriveboutique.com/au.ato/mygov,0.696451,1,0.784037,1,0.697512,1,0.785004,1
+51,Cohort_A_Smishing,1,phishing,WSPR-NCSU,385,69,152,long,1,True,https://tx.vc/r/23xsj/1zUxkJ/1PkHSrs,0.787913,1,0.828981,1,0.78202,1,0.790844,1
+52,Cohort_A_Smishing,1,phishing,WSPR-NCSU,3198,653,123,short,1,True,https://ato-au.online/aus/online/62g5a9y7ced734g,0.772252,1,0.751291,1,0.555738,1,0.768619,1
+53,Cohort_A_Smishing,1,phishing,WSPR-NCSU,67440,34993,221,long,1,True,https://dev.allclearid.app/RgYB9AaJieJRwpJF8,0.790662,1,0.8152,1,0.563615,1,0.813394,1
+54,Cohort_A_Smishing,1,phishing,WSPR-NCSU,9033,946,111,short,1,True,https://apple-wallet-id46.com,0.817033,1,0.889739,1,0.728128,1,0.88013,1
+55,Cohort_A_Smishing,1,phishing,WSPR-NCSU,57482,29065,136,long,1,True,aroperty.com/x1y7DTm,0.59415,1,0.810094,1,0.734353,1,0.785004,1
+56,Cohort_A_Smishing,1,phishing,WSPR-NCSU,16287,2729,96,short,1,True,sansd.appolb.com,0.627322,1,0.719086,1,0.551858,1,0.785004,1
+57,Cohort_A_Smishing,1,phishing,WSPR-NCSU,12147,1874,161,long,1,True,http://tt.vg/correos,0.713888,1,0.824665,1,0.740053,1,0.81552,1
+58,Cohort_A_Smishing,1,phishing,WSPR-NCSU,15097,2360,106,short,1,True,llypa.uxrzw.com,0.772541,1,0.836874,1,0.778472,1,0.785004,1
+59,Cohort_A_Smishing,1,phishing,WSPR-NCSU,19215,4371,125,short,1,True,cutt.ly/j4Whyir,0.721771,1,0.799009,1,0.781423,1,0.785004,1
+60,Cohort_A_Smishing,1,phishing,WSPR-NCSU,66802,33774,153,long,1,True,https://renoucvitalsecu.fr,0.820727,1,0.891042,1,0.81099,1,0.840413,1
+61,Cohort_A_Smishing,1,phishing,WSPR-NCSU,3196,651,138,long,1,True,http://pocket-win.mobi/c/a/nY8h6C,0.816816,1,0.788607,1,0.663501,1,0.802718,1
+62,Cohort_A_Smishing,1,phishing,WSPR-NCSU,12354,1891,147,long,1,True,clients-acces.com,0.714246,1,0.835871,1,0.785162,1,0.785004,1
+63,Cohort_A_Smishing,1,phishing,WSPR-NCSU,67191,34886,161,long,1,True,https://klv3.io/0/9E3krx,0.784563,1,0.674869,1,0.618597,1,0.603959,1
+64,Cohort_A_Smishing,1,phishing,WSPR-NCSU,2245,378,83,short,1,True,https://usp-kudu.com,0.754502,1,0.882336,1,0.759606,1,0.869264,1
+65,Cohort_A_Smishing,1,phishing,WSPR-NCSU,4870,807,148,long,1,True,customerau-app.com/aus/online/62f43a93a923d,0.803158,1,0.726153,1,0.619692,1,0.785004,1
+66,Cohort_A_Smishing,1,phishing,WSPR-NCSU,15523,2546,147,long,1,True,https://ayresthebakers.com/c,0.905437,1,0.807831,1,0.597262,1,0.869264,1
+67,Cohort_A_Smishing,1,phishing,WSPR-NCSU,2434,506,183,long,1,True,https://kvo6.io/0/4TNrAu,0.790416,1,0.697238,1,0.656402,1,0.603959,1
+68,Cohort_A_Smishing,1,phishing,WSPR-NCSU,14604,2181,132,long,1,True,https://cancel830917kucoin.com,0.770637,1,0.868654,1,0.693,1,0.869264,1
+69,Cohort_A_Smishing,1,phishing,WSPR-NCSU,17698,3370,104,short,1,True,easywearmasks.com/augovlogin/index.html,0.734426,1,0.781024,1,0.675334,1,0.785004,1
+70,Cohort_A_Smishing,1,phishing,WSPR-NCSU,67877,35103,121,short,1,True,ogajop.com/s8wexIC,0.724832,1,0.800093,1,0.675134,1,0.785004,1
+71,Cohort_A_Smishing,1,phishing,WSPR-NCSU,67785,35067,74,short,2,True,tsleep.com;https://qi.lv/xFj,0.73425,1,0.760086,1,0.552882,1,0.798662,1
+72,Cohort_A_Smishing,1,phishing,WSPR-NCSU,24309,7393,58,short,1,True,shrtlink.net/eed0d475,0.69998,1,0.794871,1,0.773416,1,0.785004,1
+73,Cohort_A_Smishing,1,phishing,WSPR-NCSU,66592,33690,119,short,1,True,https://rebrand.ly/zn479gs,0.834539,1,0.84367,1,0.731366,1,0.824925,1
+74,Cohort_A_Smishing,1,phishing,WSPR-NCSU,2501,516,119,short,1,True,https://mipy.us/AFqVK,0.779187,1,0.75509,1,0.701595,1,0.674019,1
+75,Cohort_A_Smishing,1,phishing,WSPR-NCSU,3274,671,182,long,1,True,https://paw.wf/secretshopper,0.75336,1,0.794712,1,0.735609,1,0.785004,1
+76,Cohort_A_Smishing,1,phishing,WSPR-NCSU,17467,3188,146,long,1,True,https://myo2-tariff.com/o2,0.778012,1,0.763473,1,0.595664,1,0.832365,1
+77,Cohort_A_Smishing,1,phishing,WSPR-NCSU,15823,2610,145,long,1,True,https://hideuri.com/o7j0JV,0.763097,1,0.892176,1,0.711381,1,0.869264,1
+78,Cohort_A_Smishing,1,phishing,WSPR-NCSU,14268,2175,142,long,1,True,https://netflix-paiement.com,0.834144,1,0.895075,1,0.840636,1,0.850803,1
+79,Cohort_A_Smishing,1,phishing,WSPR-NCSU,4033,770,104,short,1,True,sebveikla.com,0.650268,1,0.803756,1,0.650026,1,0.785004,1
+80,Cohort_A_Smishing,1,phishing,WSPR-NCSU,2402,478,119,short,1,True,https://pointlife.co.nz/post/,0.835778,1,0.830172,1,0.675693,1,0.832062,1
+81,Cohort_A_Smishing,1,phishing,WSPR-NCSU,2217,361,459,long,3,True,https://tx.vc/r/2MGqa/1BSPr2/7SnoQOG;https://tx.vc/r/2MGqa/1BSPr2/7SnoQOG;22.Play,0.717117,1,0.772364,1,0.609899,1,0.790844,1
+82,Cohort_A_Smishing,1,phishing,WSPR-NCSU,8598,1451,105,short,1,True,https://wesleyvirgin.com/Verification/Package/usps/,0.837991,1,0.901258,1,0.835669,1,0.868065,1
+83,Cohort_A_Smishing,1,phishing,WSPR-NCSU,50833,24618,121,short,1,True,https://postnord.leverans.info/,0.842361,1,0.920128,1,0.755059,1,0.907154,1
+84,Cohort_A_Smishing,1,phishing,WSPR-NCSU,13919,2137,151,long,1,True,https://easterncargopackerandmover.in/o.php,0.745662,1,0.879735,1,0.603097,1,0.878816,1
+85,Cohort_A_Smishing,1,phishing,WSPR-NCSU,4963,825,157,long,1,True,https://citismsgroup.com/r/CAB6xth,0.764095,1,0.85098,1,0.646024,1,0.869264,1
+86,Cohort_A_Smishing,1,phishing,WSPR-NCSU,9191,1585,113,short,2,True,checks.update;https://odogwusender.com,0.87724,1,0.85122,1,0.678373,1,0.869264,1
+87,Cohort_A_Smishing,1,phishing,WSPR-NCSU,9234,1593,147,long,1,True,http://bit.do/verifikation-click-her,0.724303,1,0.699447,1,0.779705,1,0.663237,1
+88,Cohort_A_Smishing,1,phishing,WSPR-NCSU,66811,34562,71,short,1,True,ihigow.com/nWPzitO,0.624754,1,0.75165,1,0.586259,1,0.785004,1
+89,Cohort_A_Smishing,1,phishing,WSPR-NCSU,7500,1062,328,long,2,True,http://lybr.at/726df3748;http://lybr.at/a/gkordersms,0.753932,1,0.534563,1,0.520477,1,0.69,1
+90,Cohort_A_Smishing,1,phishing,WSPR-NCSU,67544,35016,140,long,1,True,ipunas.com/LCbjxeD,0.70786,1,0.816272,1,0.748602,1,0.785004,1
+91,Cohort_A_Smishing,1,phishing,WSPR-NCSU,3328,675,151,long,1,True,bom.so/8U,0.519503,1,0.693088,1,0.542791,1,0.785004,1
+92,Cohort_A_Smishing,1,phishing,WSPR-NCSU,2621,571,125,short,1,True,https://bulkrey1.com,0.746725,1,0.82227,1,0.590105,1,0.869264,1
+93,Cohort_A_Smishing,1,phishing,WSPR-NCSU,4900,813,147,long,1,True,co-aus.com/aus/online/62f49106422b2,0.742983,1,0.724232,1,0.557416,1,0.785004,1
+94,Cohort_A_Smishing,1,phishing,WSPR-NCSU,67439,34978,216,long,1,True,https://dev.allclearid.app/xU97wgLMBpHVqmux7,0.790741,1,0.816738,1,0.570664,1,0.813394,1
+95,Cohort_A_Smishing,1,phishing,WSPR-NCSU,795,140,130,long,1,True,rwdzuk.com/46192368,0.628919,1,0.763849,1,0.619284,1,0.785004,1
+96,Cohort_A_Smishing,1,phishing,WSPR-NCSU,26712,8715,145,long,1,True,https://dlcddi.com/nfhmtxp,0.722014,1,0.861466,1,0.677925,1,0.869264,1
+97,Cohort_A_Smishing,1,phishing,WSPR-NCSU,2419,493,126,short,1,True,https://reauthenticate-wallet.com/appIepay,0.808033,1,0.905758,1,0.762212,1,0.869264,1
+98,Cohort_A_Smishing,1,phishing,WSPR-NCSU,17486,3204,72,short,1,True,https://canadapost-refund.com,0.80404,1,0.843567,1,0.755013,1,0.836284,1
+99,Cohort_A_Smishing,1,phishing,WSPR-NCSU,67899,35116,65,short,1,True,lk.1-CASH.ru/bpabq,0.709389,1,0.820568,1,0.774598,1,0.785004,1
+100,Cohort_A_Smishing,1,phishing,WSPR-NCSU,15558,2555,66,short,2,True,p-sms.ru/7KYJ3;p-sms.ru/RWEA3,0.655391,1,0.790912,1,0.73805,1,0.785004,1
+101,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_2658,none,27,short,0,False,,0.698287,1,0.801214,1,0.781757,1,,
+102,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_3791,none,157,long,0,False,,0.781066,1,0.724775,1,0.616846,1,,
+103,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_946,none,59,short,0,False,,0.619939,1,0.728867,1,0.599463,1,,
+104,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_3259,none,115,short,0,False,,0.678309,1,0.763302,1,0.668306,1,,
+105,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_3001,none,47,short,0,False,,0.673587,1,0.76127,1,0.694776,1,,
+106,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_3387,none,71,short,0,False,,0.754516,1,0.739376,1,0.611319,1,,
+107,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_4853,none,22,short,0,False,,0.768841,1,0.776073,1,0.734178,1,,
+108,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_4844,none,37,short,0,False,,0.629182,1,0.667749,1,0.568061,1,,
+109,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_4529,none,120,short,0,False,,0.620422,1,0.659706,1,0.522585,1,,
+110,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_106,none,95,short,0,False,,0.733367,1,0.718492,1,0.64181,1,,
+111,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_1319,none,5,short,0,False,,0.770642,1,0.811346,1,0.804304,1,,
+112,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_3488,none,29,short,0,False,,0.626703,1,0.779285,1,0.743305,1,,
+113,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_957,none,126,short,0,False,,0.700195,1,0.735962,1,0.669973,1,,
+114,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_4507,none,26,short,0,False,,0.735069,1,0.803187,1,0.729536,1,,
+115,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_2714,none,54,short,0,False,,0.703337,1,0.733531,1,0.683685,1,,
+116,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_4142,none,153,long,0,False,,0.512497,1,0.652669,1,0.483181,0,,
+117,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_4830,none,69,short,0,False,,0.706698,1,0.802036,1,0.74644,1,,
+118,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_1532,none,47,short,0,False,,0.741857,1,0.785229,1,0.680889,1,,
+119,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_4240,none,88,short,0,False,,0.697408,1,0.766439,1,0.695452,1,,
+120,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_2177,none,31,short,0,False,,0.605499,1,0.750668,1,0.625537,1,,
+121,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_3821,none,67,short,0,False,,0.633788,1,0.733192,1,0.632182,1,,
+122,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_5443,none,90,short,0,False,,0.578203,1,0.630706,1,0.457372,0,,
+123,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_1220,none,119,short,0,False,,0.581591,1,0.675843,1,0.517752,1,,
+124,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_1772,none,33,short,0,False,,0.683679,1,0.791308,1,0.754683,1,,
+125,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_5351,none,11,short,0,False,,0.661272,1,0.362719,0,0.219782,0,,
+126,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_3680,none,23,short,1,True,Stupid.its,0.670795,1,0.73702,1,0.679091,1,0.785004,1
+127,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_1338,none,44,short,0,False,,0.688283,1,0.734451,1,0.654427,1,,
+128,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_1991,none,108,short,0,False,,0.575728,1,0.689687,1,0.565396,1,,
+129,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_872,none,102,short,0,False,,0.651721,1,0.745129,1,0.662389,1,,
+130,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_2419,none,115,short,3,True,disturbance.might;Premarica.kindly;informed.Rgds,0.742834,1,0.799941,1,0.763855,1,0.785004,1
+131,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_3339,none,39,short,0,False,,0.712751,1,0.67746,1,0.53623,1,,
+132,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_5229,none,71,short,0,False,,0.679842,1,0.750948,1,0.685757,1,,
+133,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_212,none,26,short,0,False,,0.715632,1,0.707886,1,0.663658,1,,
+134,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_2423,none,41,short,0,False,,0.592199,1,0.709958,1,0.634415,1,,
+135,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_5019,none,152,long,0,False,,0.644919,1,0.757368,1,0.629144,1,,
+136,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_3435,none,65,short,0,False,,0.637539,1,0.75293,1,0.616758,1,,
+137,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_461,none,62,short,0,False,,0.727829,1,0.711607,1,0.575422,1,,
+138,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_2239,none,110,short,0,False,,0.563352,1,0.600727,1,0.377557,0,,
+139,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_857,none,29,short,0,False,,0.750425,1,0.799344,1,0.731955,1,,
+140,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_1567,none,29,short,0,False,,0.706605,1,0.774402,1,0.714362,1,,
+141,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_798,none,96,short,0,False,,0.632561,1,0.733006,1,0.544394,1,,
+142,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_4024,none,31,short,0,False,,0.69214,1,0.763253,1,0.686831,1,,
+143,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_1201,none,40,short,0,False,,0.700398,1,0.801602,1,0.765911,1,,
+144,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_3338,none,34,short,0,False,,0.640027,1,0.704876,1,0.625708,1,,
+145,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_1429,none,166,long,0,False,,0.564305,1,0.665497,1,0.452515,0,,
+146,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_1706,none,68,short,1,True,ah.now,0.738452,1,0.704311,1,0.599087,1,0.785004,1
+147,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_723,none,25,short,0,False,,0.596892,1,0.734275,1,0.641775,1,,
+148,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_3756,none,45,short,0,False,,0.549274,1,0.68254,1,0.516734,1,,
+149,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_158,none,157,long,0,False,,0.681535,1,0.741256,1,0.608138,1,,
+150,Cohort_B_Legitimate_SMS,0,dataset_ham,UCI_Ham,uci_ham_795,none,94,short,0,False,,0.562879,1,0.595702,1,0.444716,0,,
+151,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 10_row_295,none,50,short,0,False,,0.689751,1,0.755462,1,0.717516,1,,
+152,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 18_row_61,none,44,short,0,False,,0.819195,1,0.804407,1,0.750657,1,,
+153,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 18_row_134,none,97,short,1,True,https://whatsapp.com/dl/,0.774054,1,0.772404,1,0.737809,1,0.731111,1
+154,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 10_row_498,none,162,long,0,False,,0.739769,1,0.755678,1,0.698783,1,,
+155,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 1_row_34,none,166,long,0,False,,0.49535,0,0.638856,1,0.426339,0,,
+156,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 10_row_220,none,152,long,0,False,,0.508464,1,0.614177,1,0.449522,0,,
+157,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 11_row_68,none,141,long,0,False,,0.590639,1,0.643609,1,0.49575,0,,
+158,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 16_row_323,none,131,long,0,False,,0.801764,1,0.834712,1,0.802872,1,,
+159,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 19_row_338,none,58,short,0,False,,0.716466,1,0.736181,1,0.635014,1,,
+160,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 9_row_11,none,88,short,0,False,,0.776161,1,0.808068,1,0.760408,1,,
+161,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 6_row_32,none,157,long,0,False,,0.659616,1,0.715216,1,0.61826,1,,
+162,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 4_row_154,none,106,short,1,True,wullnp.many,0.700679,1,0.705849,1,0.616914,1,0.785004,1
+163,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 10_row_248,none,149,long,2,True,7.ds;meal.drama,0.624626,1,0.680283,1,0.527967,1,0.785004,1
+164,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 11_row_222,none,76,short,0,False,,0.748447,1,0.807107,1,0.790521,1,,
+165,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 16_row_677,none,266,long,0,False,,0.456503,0,0.551522,1,0.313494,0,,
+166,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 16_row_994,none,192,long,0,False,,0.695164,1,0.67648,1,0.598935,1,,
+167,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 13_row_85,none,160,long,0,False,,0.548665,1,0.623375,1,0.471757,0,,
+168,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 16_row_920,none,159,long,0,False,,0.626528,1,0.65422,1,0.523825,1,,
+169,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 19_row_141,none,67,short,1,True,Www.dmcnigeria.com,0.484721,0,0.214224,0,0.638018,1,0.25074,0
+170,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 16_row_388,none,129,long,0,False,,0.785958,1,0.832885,1,0.795876,1,,
+171,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 11_row_121,none,86,short,0,False,,0.566508,1,0.689633,1,0.563795,1,,
+172,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 10_row_452,none,245,long,2,True,behalf.Pls;less.Luv,0.657105,1,0.693159,1,0.554341,1,0.785004,1
+173,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 16_row_767,none,159,long,0,False,,0.61734,1,0.745438,1,0.573905,1,,
+174,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 19_row_153,none,21,short,0,False,,0.769326,1,0.811918,1,0.756066,1,,
+175,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 16_row_366,none,131,long,0,False,,0.796691,1,0.867187,1,0.82502,1,,
+176,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 16_row_801,none,157,long,0,False,,0.474228,0,0.579676,1,0.401206,0,,
+177,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 10_row_59,none,115,short,0,False,,0.606047,1,0.710427,1,0.597208,1,,
+178,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 10_row_190,none,142,long,0,False,,0.678691,1,0.763042,1,0.681969,1,,
+179,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 12_row_92,none,114,short,0,False,,0.556713,1,0.677247,1,0.469181,0,,
+180,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 16_row_796,none,159,long,0,False,,0.530714,1,0.649378,1,0.455193,0,,
+181,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 6_row_5,none,100,short,0,False,,0.726931,1,0.769441,1,0.691589,1,,
+182,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 10_row_442,none,331,long,5,True,worthy.Positivity;forth.You;ways.These;return.Today;special.Happy,0.575763,1,0.632643,1,0.403239,0,0.785004,1
+183,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 11_row_89,none,32,short,0,False,,0.65959,1,0.74722,1,0.628021,1,,
+184,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 16_row_629,none,75,short,0,False,,0.76639,1,0.840049,1,0.777785,1,,
+185,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 16_row_575,none,129,long,0,False,,0.693476,1,0.794775,1,0.586137,1,,
+186,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 7_row_110,none,156,long,1,True,Line.Recharge,0.579096,1,0.696828,1,0.573565,1,0.785004,1
+187,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 11_row_129,none,46,short,0,False,,0.622211,1,0.755823,1,0.676605,1,,
+188,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 10_row_357,none,159,long,0,False,,0.696883,1,0.694152,1,0.571489,1,,
+189,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 12_row_367,none,132,long,2,True,HavePut-In.Success;End.You,0.671002,1,0.694603,1,0.508309,1,0.785004,1
+190,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 10_row_183,none,144,long,0,False,,0.624257,1,0.732949,1,0.637083,1,,
+191,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 10_row_493,none,154,long,0,False,,0.685505,1,0.688196,1,0.565857,1,,
+192,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 10_row_353,none,60,short,0,False,,0.698746,1,0.727731,1,0.651201,1,,
+193,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 15_row_558,none,157,long,0,False,,0.702907,1,0.769914,1,0.682092,1,,
+194,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 15_row_518,none,53,short,0,False,,0.769533,1,0.774611,1,0.753546,1,,
+195,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 4_row_103,none,49,short,0,False,,0.75273,1,0.797,1,0.756885,1,,
+196,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 16_row_775,none,151,long,0,False,,0.656552,1,0.731996,1,0.618903,1,,
+197,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 16_row_970,none,5,short,0,False,,0.745477,1,0.812307,1,0.803628,1,,
+198,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 19_row_584,none,136,long,0,False,,0.571879,1,0.643859,1,0.442014,0,,
+199,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 16_row_986,none,278,long,0,False,,0.669502,1,0.706772,1,0.568149,1,,
+200,Cohort_B_Legitimate_SMS,0,dataset_ham,ExAIS_Ham,USER 16_row_478,none,244,long,0,False,,0.609524,1,0.702785,1,0.577788,1,,
+201,Cohort_C_Commercial_Spam,0,dataset_spam,UCI_Spam,uci_spam_2071,none,149,long,2,True,E.G;e.g,0.622479,1,0.732806,1,0.627046,1,0.785004,1
+202,Cohort_C_Commercial_Spam,0,dataset_spam,UCI_Spam,uci_spam_5366,none,112,short,0,False,,0.667917,1,0.818665,1,0.714161,1,,
+203,Cohort_C_Commercial_Spam,0,dataset_spam,UCI_Spam,uci_spam_492,none,160,long,0,False,,0.735553,1,0.783267,1,0.701602,1,,
+204,Cohort_C_Commercial_Spam,0,dataset_spam,UCI_Spam,uci_spam_3463,none,101,short,2,True,http://careers;bloomberg.com,0.736254,1,0.750514,1,0.656792,1,0.785004,1
+205,Cohort_C_Commercial_Spam,0,dataset_spam,UCI_Spam,uci_spam_5028,none,133,long,1,True,S.I.M,0.67013,1,0.757401,1,0.673995,1,0.785004,1
+206,Cohort_C_Commercial_Spam,0,dataset_spam,UCI_Spam,uci_spam_3742,none,13,short,0,False,,0.745477,1,0.812307,1,0.803628,1,,
+207,Cohort_C_Commercial_Spam,0,dataset_spam,UCI_Spam,uci_spam_3862,none,109,short,2,True,http://tms;widelive.com/index,0.743154,1,0.795834,1,0.710977,1,0.785004,1
+208,Cohort_C_Commercial_Spam,0,dataset_spam,UCI_Spam,uci_spam_2686,none,157,long,0,False,,0.697932,1,0.805213,1,0.669449,1,,
+209,Cohort_C_Commercial_Spam,0,dataset_spam,UCI_Spam,uci_spam_5468,none,83,short,2,True,//tms;widelive.com/index,0.768793,1,0.786553,1,0.707053,1,0.785004,1
+210,Cohort_C_Commercial_Spam,0,dataset_spam,UCI_Spam,uci_spam_3155,none,160,long,0,False,,0.631894,1,0.75553,1,0.615825,1,,
+211,Cohort_C_Commercial_Spam,0,dataset_spam,UCI_Spam,uci_spam_4198,none,158,long,1,True,www.getzed.co.uk,0.667643,1,0.497273,0,0.785689,1,0.366248,0
+212,Cohort_C_Commercial_Spam,0,dataset_spam,UCI_Spam,uci_spam_2160,none,147,long,0,False,,0.730778,1,0.857517,1,0.785689,1,,
+213,Cohort_C_Commercial_Spam,0,dataset_spam,UCI_Spam,uci_spam_766,none,149,long,0,False,,0.734853,1,0.83536,1,0.748425,1,,
+214,Cohort_C_Commercial_Spam,0,dataset_spam,UCI_Spam,uci_spam_3189,none,153,long,0,False,,0.603999,1,0.732543,1,0.576583,1,,
+215,Cohort_C_Commercial_Spam,0,dataset_spam,UCI_Spam,uci_spam_1915,none,158,long,1,True,gaytextbuddy.com,0.631182,1,0.754681,1,0.597263,1,0.785004,1
+216,Cohort_C_Commercial_Spam,0,dataset_spam,UCI_Spam,uci_spam_2023,none,157,long,1,True,www.ldew.com,0.654423,1,0.38076,0,0.729429,1,0.25074,0
+217,Cohort_C_Commercial_Spam,0,dataset_spam,UCI_Spam,uci_spam_881,none,127,short,1,True,http://doit,0.696206,1,0.749319,1,0.524942,1,0.785004,1
+218,Cohort_C_Commercial_Spam,0,dataset_spam,UCI_Spam,uci_spam_3860,none,138,long,0,False,,0.542504,1,0.673431,1,0.485039,0,,
+219,Cohort_C_Commercial_Spam,0,dataset_spam,UCI_Spam,uci_spam_385,none,149,long,0,False,,0.56358,1,0.690843,1,0.596964,1,,
+220,Cohort_C_Commercial_Spam,0,dataset_spam,UCI_Spam,uci_spam_4200,none,147,long,0,False,,0.660134,1,0.765583,1,0.67703,1,,
+221,Cohort_C_Commercial_Spam,0,dataset_spam,UCI_Spam,uci_spam_3801,none,158,long,0,False,,0.648032,1,0.754523,1,0.583279,1,,
+222,Cohort_C_Commercial_Spam,0,dataset_spam,UCI_Spam,uci_spam_3595,none,157,long,0,False,,0.65934,1,0.776611,1,0.660643,1,,
+223,Cohort_C_Commercial_Spam,0,dataset_spam,UCI_Spam,uci_spam_4584,none,126,short,1,True,www.txt-2-shop.com,0.837327,1,0.90988,1,0.790739,1,0.859026,1
+224,Cohort_C_Commercial_Spam,0,dataset_spam,UCI_Spam,uci_spam_333,none,128,short,0,False,,0.736023,1,0.846867,1,0.750297,1,,
+225,Cohort_C_Commercial_Spam,0,dataset_spam,UCI_Spam,uci_spam_3587,none,155,long,0,False,,0.698521,1,0.820048,1,0.672893,1,,
+226,Cohort_C_Commercial_Spam,0,dataset_spam,ExAIS_Spam,USER 17_row_45,none,138,long,1,True,days.To,0.539436,1,0.737987,1,0.578989,1,0.785004,1
+227,Cohort_C_Commercial_Spam,0,dataset_spam,ExAIS_Spam,USER 16_row_175,none,3,short,0,False,,0.796368,1,0.811187,1,0.79607,1,,
+228,Cohort_C_Commercial_Spam,0,dataset_spam,ExAIS_Spam,USER 10_row_639,none,159,long,1,True,SPACE.Call,0.529531,1,0.668479,1,0.457251,0,0.785004,1
+229,Cohort_C_Commercial_Spam,0,dataset_spam,ExAIS_Spam,USER 1_row_7,none,49,short,0,False,,0.618663,1,0.73409,1,0.597936,1,,
+230,Cohort_C_Commercial_Spam,0,dataset_spam,ExAIS_Spam,USER 15_row_464,none,149,long,0,False,,0.565521,1,0.680149,1,0.501411,1,,
+231,Cohort_C_Commercial_Spam,0,dataset_spam,ExAIS_Spam,USER 12_row_241,none,138,long,1,True,today.Your,0.656448,1,0.73061,1,0.534417,1,0.785004,1
+232,Cohort_C_Commercial_Spam,0,dataset_spam,ExAIS_Spam,USER 12_row_0,none,35,short,0,False,,0.651985,1,0.736664,1,0.668396,1,,
+233,Cohort_C_Commercial_Spam,0,dataset_spam,ExAIS_Spam,USER 7_row_66,none,151,long,0,False,,0.676736,1,0.716208,1,0.580458,1,,
+234,Cohort_C_Commercial_Spam,0,dataset_spam,ExAIS_Spam,USER 10_row_272,none,113,short,0,False,,0.645945,1,0.756998,1,0.659164,1,,
+235,Cohort_C_Commercial_Spam,0,dataset_spam,ExAIS_Spam,USER 19_row_10,none,159,long,0,False,,0.609249,1,0.767206,1,0.629236,1,,
+236,Cohort_C_Commercial_Spam,0,dataset_spam,ExAIS_Spam,USER 19_row_333,none,158,long,0,False,,0.714325,1,0.673318,1,0.555455,1,,
+237,Cohort_C_Commercial_Spam,0,dataset_spam,ExAIS_Spam,USER 13_row_5,none,103,short,0,False,,0.564482,1,0.718024,1,0.537569,1,,
+238,Cohort_C_Commercial_Spam,0,dataset_spam,ExAIS_Spam,USER 15_row_214,none,117,short,0,False,,0.602184,1,0.690102,1,0.605392,1,,
+239,Cohort_C_Commercial_Spam,0,dataset_spam,ExAIS_Spam,USER 12_row_195,none,113,short,2,True,MB.To;info.Thank,0.708582,1,0.758777,1,0.590168,1,0.785004,1
+240,Cohort_C_Commercial_Spam,0,dataset_spam,ExAIS_Spam,USER 16_row_256,none,1,short,0,False,,0.745477,1,0.812307,1,0.803628,1,,
+241,Cohort_C_Commercial_Spam,0,dataset_spam,ExAIS_Spam,USER 15_row_194,none,130,long,0,False,,0.552068,1,0.671741,1,0.45896,0,,
+242,Cohort_C_Commercial_Spam,0,dataset_spam,ExAIS_Spam,USER 17_row_60,none,72,short,0,False,,0.626904,1,0.756961,1,0.676521,1,,
+243,Cohort_C_Commercial_Spam,0,dataset_spam,ExAIS_Spam,USER 2_row_91,none,155,long,1,True,Trivia.Answer,0.668924,1,0.70951,1,0.587354,1,0.785004,1
+244,Cohort_C_Commercial_Spam,0,dataset_spam,ExAIS_Spam,USER 11_row_6,none,180,long,0,False,,0.669321,1,0.71603,1,0.558688,1,,
+245,Cohort_C_Commercial_Spam,0,dataset_spam,ExAIS_Spam,USER 13_row_96,none,151,long,0,False,,0.487068,0,0.546377,1,0.336949,0,,
+246,Cohort_C_Commercial_Spam,0,dataset_spam,ExAIS_Spam,USER 17_row_85,none,159,long,1,True,http://bit.ly/1sv5azj,0.589841,1,0.658654,1,0.540921,1,0.79378,1
+247,Cohort_C_Commercial_Spam,0,dataset_spam,ExAIS_Spam,USER 16_row_432,none,153,long,0,False,,0.695768,1,0.785154,1,0.702978,1,,
+248,Cohort_C_Commercial_Spam,0,dataset_spam,ExAIS_Spam,USER 9_row_37,none,96,short,1,True,72.Dial,0.607463,1,0.64032,1,0.494874,0,0.785004,1
+249,Cohort_C_Commercial_Spam,0,dataset_spam,ExAIS_Spam,USER 16_row_940,none,158,long,2,True,rewarding.Get;week.Reply,0.643345,1,0.720224,1,0.551541,1,0.785004,1
+250,Cohort_C_Commercial_Spam,0,dataset_spam,ExAIS_Spam,USER 15_row_114,none,137,long,0,False,,0.616493,1,0.73724,1,0.646776,1,,

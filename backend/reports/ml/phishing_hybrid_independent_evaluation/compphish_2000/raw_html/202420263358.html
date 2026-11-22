@@ -1,0 +1,855 @@
+<html lang="en" class="scroll-smooth"><head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+      <meta name="description" content="Watch thousands of movies and TV shows online with our Netflix clone. Stream trending content, create watchlists, and enjoy personalized recommendations.">
+      <meta name="theme-color" content="#ffffff">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="robots" content="">
+
+      <!-- Alpine.js - Load first -->
+      <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js"></script>
+      
+      <!-- Font Links -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+
+      <title>Netflix Clone - Stream Movies &amp; TV Shows Online</title>
+      <!-- SEO Description -->
+      <meta name="description" content="Watch thousands of movies and TV shows online with our Netflix clone. Stream trending content, create watchlists, and enjoy personalized recommendations.">
+
+      <!-- Performance optimization: Preload critical resources -->
+      <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+      
+      <!-- Core CSS and Scripts -->
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.45.1/apexcharts.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+      
+      <!-- Project-specific styles -->
+      <style>
+        /* Base styles */
+        :root {
+          --primary-color: #E50914;
+          --secondary-color: #141414;
+          --accent-color: ;
+        }
+
+        /* Strict no-scrollbar rules */
+        * {
+          -ms-overflow-style: none !important;  /* IE and Edge */
+          scrollbar-width: none !important;     /* Firefox */
+        }
+        *::-webkit-scrollbar {
+          display: none !important;             /* Chrome, Safari and Opera */
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+          font-family: Roboto, Inter, system-ui, sans-serif;
+        }
+        body {
+          font-family: Inter, Inter, system-ui, sans-serif;
+        }
+
+        /* Interactive elements */
+        .interactive-element {
+          transition: all 0.3s ease;
+        }
+        .interactive-element:hover {
+          transform: translateY(-2px);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+          width: 8px;
+          height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+          background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+          background: #888;
+          border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+          background: #555;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        .fade-in {
+          animation: fadeIn 0.5s ease-in-out;
+        }
+      </style>
+
+      <!-- Dynamic Meta Tags -->
+      <meta name="description" content="">
+      <meta name="keywords" content="">
+      <meta name="robots" content="">
+      <meta property="og:title" content="">
+      <meta property="og:description" content="">
+      <meta property="og:image" content="">
+      <meta property="og:type" content="website">
+      <meta property="og:locale" content="en_US">
+      <meta property="og:site_name" content="Netflix Clone">
+      
+      <!-- Favicon -->
+      <link rel="icon" type="image/x-icon" href="https://assets.nflxext.com/us/ffe/siteui/common/icons/nficon2016.ico">
+
+      <!-- Header Scripts -->
+      <script id="header-scripts">
+        // This script tag will be replaced with actual scripts.head content
+        if (window.scripts && window.scripts.head) {
+          document.getElementById('header-scripts').outerHTML = window.scripts.head;
+        }
+      </script>
+
+      <!-- Project Configuration -->
+      <script>
+        window.projectConfig = {
+          name: 'Netflix Clone',
+          type: '',
+          settings: {
+            colors: {
+              primary: '#E50914',
+              secondary: '#141414',
+              accent: ''
+            },
+            fonts: {
+              primary: 'Roboto',
+              secondary: 'Inter'
+            }
+          }
+        };
+      </script>
+   <style>
+        [data-section-id] {
+          display: none;
+        }
+        [data-section-id]:first-child {
+          display: block;
+        }
+      </style>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border-width:0}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.bottom-0{bottom:0px}.bottom-2{bottom:0.5rem}.bottom-4{bottom:1rem}.left-0{left:0px}.left-2{left:0.5rem}.left-4{left:1rem}.right-0{right:0px}.right-2{right:0.5rem}.right-4{right:1rem}.top-0{top:0px}.top-2{top:0.5rem}.top-4{top:1rem}.z-10{z-index:10}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.ml-2{margin-left:0.5rem}.mt-2{margin-top:0.5rem}.mt-8{margin-top:2rem}.flex{display:flex}.grid{display:grid}.hidden{display:none}.aspect-video{aspect-ratio:16 / 9}.h-32{height:8rem}.h-36{height:9rem}.h-4{height:1rem}.h-40{height:10rem}.h-48{height:12rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-64{height:16rem}.h-8{height:2rem}.h-\[70vh\]{height:70vh}.h-full{height:100%}.w-4{width:1rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-64{width:16rem}.w-8{width:2rem}.w-auto{width:auto}.w-full{width:100%}.max-w-4xl{max-width:56rem}.max-w-7xl{max-width:80rem}.max-w-md{max-width:28rem}.max-w-screen-2xl{max-width:1536px}.flex-1{flex:1 1 0%}.flex-none{flex:none}.cursor-pointer{cursor:pointer}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.space-x-2 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.5rem * var(--tw-space-x-reverse));margin-left:calc(0.5rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-4 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(1rem * var(--tw-space-x-reverse));margin-left:calc(1rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-6 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(1.5rem * var(--tw-space-x-reverse));margin-left:calc(1.5rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-1 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.25rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.scroll-smooth{scroll-behavior:smooth}.rounded{border-radius:0.25rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.border{border-width:1px}.border-white\/20{border-color:rgb(255 255 255 / 0.2)}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-black{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity, 1))}.bg-black\/60{background-color:rgb(0 0 0 / 0.6)}.bg-gray-800{--tw-bg-opacity:1;background-color:rgb(31 41 55 / var(--tw-bg-opacity, 1))}.bg-gray-800\/80{background-color:rgb(31 41 55 / 0.8)}.bg-gray-900{--tw-bg-opacity:1;background-color:rgb(17 24 39 / var(--tw-bg-opacity, 1))}.bg-neutral-800{--tw-bg-opacity:1;background-color:rgb(38 38 38 / var(--tw-bg-opacity, 1))}.bg-neutral-900{--tw-bg-opacity:1;background-color:rgb(23 23 23 / var(--tw-bg-opacity, 1))}.bg-red-600{--tw-bg-opacity:1;background-color:rgb(220 38 38 / var(--tw-bg-opacity, 1))}.bg-transparent{background-color:transparent}.bg-white\/10{background-color:rgb(255 255 255 / 0.1)}.bg-white\/20{background-color:rgb(255 255 255 / 0.2)}.bg-gradient-to-t{background-image:linear-gradient(to top, var(--tw-gradient-stops))}.from-black{--tw-gradient-from:#000 var(--tw-gradient-from-position);--tw-gradient-to:rgb(0 0 0 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-black\/60{--tw-gradient-from:rgb(0 0 0 / 0.6) var(--tw-gradient-from-position);--tw-gradient-to:rgb(0 0 0 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-black\/80{--tw-gradient-from:rgb(0 0 0 / 0.8) var(--tw-gradient-from-position);--tw-gradient-to:rgb(0 0 0 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-black\/40{--tw-gradient-to:rgb(0 0 0 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), rgb(0 0 0 / 0.4) var(--tw-gradient-via-position), var(--tw-gradient-to)}.via-black\/70{--tw-gradient-to:rgb(0 0 0 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), rgb(0 0 0 / 0.7) var(--tw-gradient-via-position), var(--tw-gradient-to)}.via-transparent{--tw-gradient-to:rgb(0 0 0 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), transparent var(--tw-gradient-via-position), var(--tw-gradient-to)}.to-black\/40{--tw-gradient-to:rgb(0 0 0 / 0.4) var(--tw-gradient-to-position)}.to-transparent{--tw-gradient-to:transparent var(--tw-gradient-to-position)}.object-cover{object-fit:cover}.p-1{padding:0.25rem}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-8{padding:2rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-8{padding-left:2rem;padding-right:2rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-16{padding-top:4rem;padding-bottom:4rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-8{padding-top:2rem;padding-bottom:2rem}.pb-4{padding-bottom:1rem}.text-center{text-align:center}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.text-gray-900{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity, 1))}.text-gray-300{--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-neutral-400{--tw-text-opacity:1;color:rgb(163 163 163 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.placeholder-gray-400::placeholder{--tw-placeholder-opacity:1;color:rgb(156 163 175 / var(--tw-placeholder-opacity, 1))}.placeholder-white\/70::placeholder{color:rgb(255 255 255 / 0.7)}.opacity-0{opacity:0}.backdrop-blur{--tw-backdrop-blur:blur(8px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.hover\:bg-red-700:hover{--tw-bg-opacity:1;background-color:rgb(185 28 28 / var(--tw-bg-opacity, 1))}.hover\:bg-white\/30:hover{background-color:rgb(255 255 255 / 0.3)}.hover\:text-gray-300:hover{--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}.focus\:not-sr-only:focus{position:static;width:auto;height:auto;padding:0;margin:0;overflow:visible;clip:auto;white-space:normal}.focus\:absolute:focus{position:absolute}.focus\:left-0:focus{left:0px}.focus\:top-0:focus{top:0px}.focus\:z-50:focus{z-index:50}.focus\:border-white\/40:focus{border-color:rgb(255 255 255 / 0.4)}.focus\:bg-white:focus{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.focus\:p-4:focus{padding:1rem}.focus\:text-black:focus{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity, 1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.group:hover .group-hover\:opacity-100{opacity:1}@media (min-width: 640px){.sm\:h-10{height:2.5rem}.sm\:h-48{height:12rem}.sm\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.sm\:flex-row{flex-direction:row}.sm\:px-8{padding-left:2rem;padding-right:2rem}.sm\:text-5xl{font-size:3rem;line-height:1}.sm\:text-xl{font-size:1.25rem;line-height:1.75rem}}@media (min-width: 768px){.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}}@media (min-width: 1024px){.lg\:flex{display:flex}.lg\:hidden{display:none}.lg\:h-12{height:3rem}.lg\:h-\[85vh\]{height:85vh}.lg\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.lg\:grid-cols-5{grid-template-columns:repeat(5, minmax(0, 1fr))}.lg\:grid-cols-6{grid-template-columns:repeat(6, minmax(0, 1fr))}.lg\:text-6xl{font-size:3.75rem;line-height:1}}</style></head>
+   <body class="antialiased text-gray-900 bg-white">
+      <!-- Skip to main content link for accessibility -->
+      <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:p-4 focus:bg-white focus:text-black">
+         Skip to main content
+      </a>
+
+      <!-- Content will be injected here by the build process -->
+      <mountpoint><div id="RolloutPageContent"><section id="hero-banner" class="relative h-[70vh] lg:h-[85vh] overflow-hidden">
+  <div class="absolute inset-0">
+    <img src="https://assets.nflxext.com/ffe/siteui/vlv3/258d0f77-2241-4282-b613-8354a7675d1a/web/US-en-20250721-TRIFECTA-perspective_6d968797-b773-4ec4-aa69-2a9c2e41ae94_large.jpg" alt="Netflix Content Banner" class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40"></div>
+  </div>
+  
+  <nav class="absolute top-0 left-0 right-0 px-4 sm:px-8 py-4 z-10">
+    <div class="flex items-center justify-between max-w-screen-2xl mx-auto">
+      <img src="https://help.nflxext.com/helpcenter/OneTrust/oneTrust_production_2025-07-24/consent/87b6a5c0-0104-4e96-a291-092c11350111/019808e2-d1e7-7c0f-ad43-c485b7d9a221/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png" alt="Netflix Logo" class="h-8 sm:h-10 lg:h-12 w-auto">
+      <div class="hidden lg:flex items-center space-x-6">
+        <a href="#home" class="text-white hover:text-gray-300 transition-colors">Home</a>
+        <a href="#tv-shows" class="text-white hover:text-gray-300 transition-colors">TV Shows</a>
+        <a href="#movies" class="text-white hover:text-gray-300 transition-colors">Movies</a>
+        <a href="#new-popular" class="text-white hover:text-gray-300 transition-colors">New &amp; Popular</a>
+        <a href="#my-list" class="text-white hover:text-gray-300 transition-colors">My List</a>
+      </div>
+      <button class="lg:hidden text-white">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </nav>
+  
+  <div class="absolute inset-0 flex items-center justify-center">
+    <div class="text-center max-w-4xl mx-auto px-4">
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4">
+        Unlimited movies, TV shows, and more
+      </h1>
+      <p class="text-lg sm:text-xl text-white mb-8">
+        Watch anywhere. Cancel anytime.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+        <input type="email" placeholder="Email address" class="flex-1 px-4 py-3 rounded bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/70 focus:outline-none focus:border-white/40">
+        <button class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded font-semibold transition-colors">
+          Get Started
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="trending-now" class="py-8 bg-neutral-900">
+  <div class="max-w-screen-2xl mx-auto px-4">
+    <h2 class="text-2xl font-bold text-white mb-6">Trending Now</h2>
+    
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+      <div class="relative group cursor-pointer">
+        <img src="https://assets.nflxext.com/ffe/siteui/vlv3/258d0f77-2241-4282-b613-8354a7675d1a/web/US-en-20250721-TRIFECTA-perspective_6d968797-b773-4ec4-aa69-2a9c2e41ae94_large.jpg" alt="Trending Content 1" class="w-full h-40 object-cover rounded">
+        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity rounded"></div>
+      </div>
+      
+      <div class="relative group cursor-pointer">
+        <img src="https://help.nflxext.com/helpcenter/OneTrust/oneTrust_production_2025-07-24/consent/87b6a5c0-0104-4e96-a291-092c11350111/019808e2-d1e7-7c0f-ad43-c485b7d9a221/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png" alt="Netflix Original" class="w-full h-40 object-cover rounded">
+        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity rounded"></div>
+      </div>
+      
+      <div class="relative group cursor-pointer">
+        <img src="https://help.nflxext.com/helpcenter/OneTrust/oneTrust_production_2025-07-24/consent/87b6a5c0-0104-4e96-a291-092c11350111/019808e2-d1e7-7c0f-ad43-c485b7d9a221/logos/static/powered_by_logo.svg" alt="Powered by Netflix" class="w-full h-40 object-cover rounded bg-white p-8">
+        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity rounded"></div>
+      </div>
+      
+      <div class="relative group cursor-pointer">
+        <div class="w-full h-40 bg-neutral-800 rounded flex items-center justify-center">
+          <span class="text-neutral-400 text-sm">Trending Item 4</span>
+        </div>
+      </div>
+      
+      <div class="relative group cursor-pointer">
+        <div class="w-full h-40 bg-neutral-800 rounded flex items-center justify-center">
+          <span class="text-neutral-400 text-sm">Trending Item 5</span>
+        </div>
+      </div>
+      
+      <div class="relative group cursor-pointer">
+        <div class="w-full h-40 bg-neutral-800 rounded flex items-center justify-center">
+          <span class="text-neutral-400 text-sm">Trending Item 6</span>
+        </div>
+      </div>
+      
+      <div class="relative group cursor-pointer">
+        <div class="w-full h-40 bg-neutral-800 rounded flex items-center justify-center">
+          <span class="text-neutral-400 text-sm">Trending Item 7</span>
+        </div>
+      </div>
+      
+      <div class="relative group cursor-pointer">
+        <div class="w-full h-40 bg-neutral-800 rounded flex items-center justify-center">
+          <span class="text-neutral-400 text-sm">Trending Item 8</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="top-rated" class="py-8 bg-neutral-900">
+  <div class="max-w-screen-2xl mx-auto px-4">
+    <h2 class="text-2xl font-bold text-white mb-6">Top Rated</h2>
+    
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+      <div class="relative group cursor-pointer">
+        <img src="https://assets.nflxext.com/ffe/siteui/vlv3/258d0f77-2241-4282-b613-8354a7675d1a/web/US-en-20250721-TRIFECTA-perspective_6d968797-b773-4ec4-aa69-2a9c2e41ae94_large.jpg" alt="Top Rated Movie 1" class="w-full h-32 sm:h-48 object-cover rounded">
+        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity rounded flex items-center justify-center">
+          <span class="text-white font-semibold text-sm">9.2/10</span>
+        </div>
+      </div>
+      
+      <div class="relative group cursor-pointer">
+        <img src="https://help.nflxext.com/helpcenter/OneTrust/oneTrust_production_2025-07-24/consent/87b6a5c0-0104-4e96-a291-092c11350111/019808e2-d1e7-7c0f-ad43-c485b7d9a221/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png" alt="Netflix Top Rated" class="w-full h-32 sm:h-48 object-cover rounded">
+        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity rounded flex items-center justify-center">
+          <span class="text-white font-semibold text-sm">9.0/10</span>
+        </div>
+      </div>
+      
+      <div class="relative group cursor-pointer">
+        <img src="https://help.nflxext.com/helpcenter/OneTrust/oneTrust_production_2025-07-24/consent/87b6a5c0-0104-4e96-a291-092c11350111/019808e2-d1e7-7c0f-ad43-c485b7d9a221/logos/static/powered_by_logo.svg" alt="Powered by Netflix" class="w-full h-32 sm:h-48 object-cover rounded bg-white p-4">
+        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity rounded flex items-center justify-center">
+          <span class="text-white font-semibold text-sm">8.8/10</span>
+        </div>
+      </div>
+      
+      <div class="relative group cursor-pointer">
+        <div class="w-full h-32 sm:h-48 bg-neutral-800 rounded flex items-center justify-center">
+          <span class="text-neutral-400 text-sm">Top Rated 4</span>
+        </div>
+        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity rounded flex items-center justify-center">
+          <span class="text-white font-semibold text-sm">8.7/10</span>
+        </div>
+      </div>
+      
+      <div class="relative group cursor-pointer">
+        <div class="w-full h-32 sm:h-48 bg-neutral-800 rounded flex items-center justify-center">
+          <span class="text-neutral-400 text-sm">Top Rated 5</span>
+        </div>
+        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity rounded flex items-center justify-center">
+          <span class="text-white font-semibold text-sm">8.5/10</span>
+        </div>
+      </div>
+      
+      <div class="relative group cursor-pointer">
+        <div class="w-full h-32 sm:h-48 bg-neutral-800 rounded flex items-center justify-center">
+          <span class="text-neutral-400 text-sm">Top Rated 6</span>
+        </div>
+        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity rounded flex items-center justify-center">
+          <span class="text-white font-semibold text-sm">8.3/10</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="new-releases" class="py-16 bg-gray-900">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-white mb-8">New Releases</h2>
+    <div class="flex space-x-6 overflow-x-auto pb-4">
+      <div class="flex-none w-64">
+        <div class="relative group">
+          <img src="https://assets.nflxext.com/ffe/siteui/vlv3/258d0f77-2241-4282-b613-8354a7675d1a/web/US-en-20250721-TRIFECTA-perspective_6d968797-b773-4ec4-aa69-2a9c2e41ae94_large.jpg" alt="New release 1" class="w-full h-36 object-cover rounded">
+          <div class="absolute bottom-2 left-2 bg-red-600 text-white text-xs px-2 py-1 rounded">NEW</div>
+        </div>
+        <h3 class="text-white mt-2 text-sm font-medium">Wednesday</h3>
+        <p class="text-gray-400 text-xs">2024 • 1 Season</p>
+      </div>
+      
+      <div class="flex-none w-64">
+        <div class="relative group">
+          <img src="https://help.nflxext.com/helpcenter/OneTrust/oneTrust_production_2025-07-24/consent/87b6a5c0-0104-4e96-a291-092c11350111/019808e2-d1e7-7c0f-ad43-c485b7d9a221/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png" alt="Netflix original" class="w-full h-36 object-cover rounded">
+          <div class="absolute bottom-2 left-2 bg-red-600 text-white text-xs px-2 py-1 rounded">NEW</div>
+        </div>
+        <h3 class="text-white mt-2 text-sm font-medium">The Night Agent</h3>
+        <p class="text-gray-400 text-xs">2024 • 1 Season</p>
+      </div>
+      
+      <div class="flex-none w-64">
+        <div class="relative group">
+          <img src="https://help.nflxext.com/helpcenter/OneTrust/oneTrust_production_2025-07-24/consent/87b6a5c0-0104-4e96-a291-092c11350111/019808e2-d1e7-7c0f-ad43-c485b7d9a221/logos/static/powered_by_logo.svg" alt="Powered content" class="w-full h-36 object-cover rounded">
+          <div class="absolute bottom-2 left-2 bg-red-600 text-white text-xs px-2 py-1 rounded">NEW</div>
+        </div>
+        <h3 class="text-white mt-2 text-sm font-medium">Beef</h3>
+        <p class="text-gray-400 text-xs">2024 • 1 Season</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="action-movies" class="py-16 bg-gray-900">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-white mb-8">Action Movies</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+      <div class="relative group cursor-pointer">
+        <img src="https://assets.nflxext.com/ffe/siteui/vlv3/258d0f77-2241-4282-b613-8354a7675d1a/web/US-en-20250721-TRIFECTA-perspective_6d968797-b773-4ec4-aa69-2a9c2e41ae94_large.jpg" alt="Extraction 2" class="w-full h-48 object-cover rounded-lg">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-lg">
+          <div class="absolute bottom-4 left-4 space-y-1">
+            <h3 class="text-white font-semibold text-sm">Extraction 2</h3>
+            <p class="text-gray-300 text-xs">Action • 2023</p>
+            <button class="bg-white/20 backdrop-blur text-white px-3 py-1 rounded text-xs hover:bg-white/30 transition">Play</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="relative group cursor-pointer">
+        <img src="https://help.nflxext.com/helpcenter/OneTrust/oneTrust_production_2025-07-24/consent/87b6a5c0-0104-4e96-a291-092c11350111/019808e2-d1e7-7c0f-ad43-c485b7d9a221/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png" alt="The Gray Man" class="w-full h-48 object-cover rounded-lg">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-lg">
+          <div class="absolute bottom-4 left-4 space-y-1">
+            <h3 class="text-white font-semibold text-sm">The Gray Man</h3>
+            <p class="text-gray-300 text-xs">Action • 2022</p>
+            <button class="bg-white/20 backdrop-blur text-white px-3 py-1 rounded text-xs hover:bg-white/30 transition">Play</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="relative group cursor-pointer">
+        <img src="https://help.nflxext.com/helpcenter/OneTrust/oneTrust_production_2025-07-24/consent/87b6a5c0-0104-4e96-a291-092c11350111/019808e2-d1e7-7c0f-ad43-c485b7d9a221/logos/static/powered_by_logo.svg" alt="Army of the Dead" class="w-full h-48 object-cover rounded-lg">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-lg">
+          <div class="absolute bottom-4 left-4 space-y-1">
+            <h3 class="text-white font-semibold text-sm">Army of the Dead</h3>
+            <p class="text-gray-300 text-xs">Action • 2021</p>
+            <button class="bg-white/20 backdrop-blur text-white px-3 py-1 rounded text-xs hover:bg-white/30 transition">Play</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="relative group cursor-pointer">
+        <img src="https://assets.nflxext.com/ffe/siteui/vlv3/258d0f77-2241-4282-b613-8354a7675d1a/web/US-en-20250721-TRIFECTA-perspective_6d968797-b773-4ec4-aa69-2a9c2e41ae94_large.jpg" alt="Red Notice" class="w-full h-48 object-cover rounded-lg">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-lg">
+          <div class="absolute bottom-4 left-4 space-y-1">
+            <h3 class="text-white font-semibold text-sm">Red Notice</h3>
+            <p class="text-gray-300 text-xs">Action • 2021</p>
+            <button class="bg-white/20 backdrop-blur text-white px-3 py-1 rounded text-xs hover:bg-white/30 transition">Play</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="relative group cursor-pointer">
+        <img src="https://help.nflxext.com/helpcenter/OneTrust/oneTrust_production_2025-07-24/consent/87b6a5c0-0104-4e96-a291-092c11350111/019808e2-d1e7-7c0f-ad43-c485b7d9a221/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png" alt="6 Underground" class="w-full h-48 object-cover rounded-lg">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-lg">
+          <div class="absolute bottom-4 left-4 space-y-1">
+            <h3 class="text-white font-semibold text-sm">6 Underground</h3>
+            <p class="text-gray-300 text-xs">Action • 2019</p>
+            <button class="bg-white/20 backdrop-blur text-white px-3 py-1 rounded text-xs hover:bg-white/30 transition">Play</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="relative group cursor-pointer">
+        <img src="https://help.nflxext.com/helpcenter/OneTrust/oneTrust_production_2025-07-24/consent/87b6a5c0-0104-4e96-a291-092c11350111/019808e2-d1e7-7c0f-ad43-c485b7d9a221/logos/static/powered_by_logo.svg" alt="Triple Frontier" class="w-full h-48 object-cover rounded-lg">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-lg">
+          <div class="absolute bottom-4 left-4 space-y-1">
+            <h3 class="text-white font-semibold text-sm">Triple Frontier</h3>
+            <p class="text-gray-300 text-xs">Action • 2019</p>
+            <button class="bg-white/20 backdrop-blur text-white px-3 py-1 rounded text-xs hover:bg-white/30 transition">Play</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="text-center mt-8">
+      <button class="bg-red-600 text-white px-8 py-3 rounded font-semibold hover:bg-red-700 transition">
+        Browse All Action →
+      </button>
+    </div>
+  </div>
+</section>
+<section id="comedy-shows" class="py-16 bg-gray-900">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-white mb-8">Comedy Shows</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="relative group cursor-pointer">
+        <img src="https://assets.nflxext.com/ffe/siteui/vlv3/258d0f77-2241-4282-b613-8354a7675d1a/web/US-en-20250721-TRIFECTA-perspective_6d968797-b773-4ec4-aa69-2a9c2e41ae94_large.jpg" alt="Comedy show 1" class="w-full h-64 object-cover rounded-lg">
+        <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black via-black/70 to-transparent rounded-lg">
+          <h3 class="text-white font-semibold mb-1">The Office</h3>
+          <p class="text-gray-300 text-sm">9 Seasons • 201 episodes</p>
+        </div>
+      </div>
+      
+      <div class="relative group cursor-pointer">
+        <img src="https://help.nflxext.com/helpcenter/OneTrust/oneTrust_production_2025-07-24/consent/87b6a5c0-0104-4e96-a291-092c11350111/019808e2-d1e7-7c0f-ad43-c485b7d9a221/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png" alt="Netflix comedy" class="w-full h-64 object-cover rounded-lg">
+        <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black via-black/70 to-transparent rounded-lg">
+          <h3 class="text-white font-semibold mb-1">Brooklyn Nine-Nine</h3>
+          <p class="text-gray-300 text-sm">8 Seasons • 153 episodes</p>
+        </div>
+      </div>
+      
+      <div class="relative group cursor-pointer">
+        <img src="https://help.nflxext.com/helpcenter/OneTrust/oneTrust_production_2025-07-24/consent/87b6a5c0-0104-4e96-a291-092c11350111/019808e2-d1e7-7c0f-ad43-c485b7d9a221/logos/static/powered_by_logo.svg" alt="Comedy series" class="w-full h-64 object-cover rounded-lg">
+        <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black via-black/70 to-transparent rounded-lg">
+          <h3 class="text-white font-semibold mb-1">Schitt's Creek</h3>
+          <p class="text-gray-300 text-sm">6 Seasons • 80 episodes</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="text-center mt-8">
+      <button class="bg-red-600 text-white px-8 py-3 rounded font-semibold hover:bg-red-700 transition">
+        Explore More Comedy →
+      </button>
+    </div>
+  </div>
+</section>
+<section id="documentaries" class="py-16 bg-gray-900">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-white mb-8">Documentaries</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="relative group cursor-pointer">
+        <img src="https://assets.nflxext.com/ffe/siteui/vlv3/258d0f77-2241-4282-b613-8354a7675d1a/web/US-en-20250721-TRIFECTA-perspective_6d968797-b773-4ec4-aa69-2a9c2e41ae94_large.jpg" alt="Documentary film 1" class="w-full h-64 object-cover rounded-lg">
+        <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black via-black/70 to-transparent rounded-lg">
+          <h3 class="text-white font-semibold mb-1">Our Planet</h3>
+          <p class="text-gray-300 text-sm">Nature • 2019</p>
+        </div>
+      </div>
+      
+      <div class="relative group cursor-pointer">
+        <img src="https://help.nflxext.com/helpcenter/OneTrust/oneTrust_production_2025-07-24/consent/87b6a5c0-0104-4e96-a291-092c11350111/019808e2-d1e7-7c0f-ad43-c485b7d9a221/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png" alt="Netflix documentary" class="w-full h-64 object-cover rounded-lg">
+        <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black via-black/70 to-transparent rounded-lg">
+          <h3 class="text-white font-semibold mb-1">Tiger King</h3>
+          <p class="text-gray-300 text-sm">True Crime • 2020</p>
+        </div>
+      </div>
+      
+      <div class="relative group cursor-pointer">
+        <img src="https://help.nflxext.com/helpcenter/OneTrust/oneTrust_production_2025-07-24/consent/87b6a5c0-0104-4e96-a291-092c11350111/019808e2-d1e7-7c0f-ad43-c485b7d9a221/logos/static/powered_by_logo.svg" alt="Documentary series" class="w-full h-64 object-cover rounded-lg">
+        <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black via-black/70 to-transparent rounded-lg">
+          <h3 class="text-white font-semibold mb-1">The Social Dilemma</h3>
+          <p class="text-gray-300 text-sm">Technology • 2020</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="text-center mt-8">
+      <button class="bg-red-600 text-white px-8 py-3 rounded font-semibold hover:bg-red-700 transition">
+        Explore More Documentaries →
+      </button>
+    </div>
+  </div>
+</section>
+<section id="my-watchlist" class="py-16 bg-gray-900">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-white mb-8">My Watchlist</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="relative group">
+        <img src="https://assets.nflxext.com/ffe/siteui/vlv3/258d0f77-2241-4282-b613-8354a7675d1a/web/US-en-20250721-TRIFECTA-perspective_6d968797-b773-4ec4-aa69-2a9c2e41ae94_large.jpg" alt="Stranger Things" class="w-full h-48 object-cover rounded">
+        <button class="absolute top-2 right-2 bg-gray-800/80 text-white p-1 rounded-full opacity-0 group-hover:opacity-100 transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+        <div class="mt-2">
+          <h3 class="text-white text-sm font-medium">Stranger Things</h3>
+          <p class="text-gray-400 text-xs">3 Seasons • 2016</p>
+        </div>
+      </div>
+      
+      <div class="relative group">
+        <img src="https://help.nflxext.com/helpcenter/OneTrust/oneTrust_production_2025-07-24/consent/87b6a5c0-0104-4e96-a291-092c11350111/019808e2-d1e7-7c0f-ad43-c485b7d9a221/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png" alt="The Crown" class="w-full h-48 object-cover rounded">
+        <button class="absolute top-2 right-2 bg-gray-800/80 text-white p-1 rounded-full opacity-0 group-hover:opacity-100 transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+        <div class="mt-2">
+          <h3 class="text-white text-sm font-medium">The Crown</h3>
+          <p class="text-gray-400 text-xs">5 Seasons • 2016</p>
+        </div>
+      </div>
+      
+      <div class="relative group">
+        <img src="https://help.nflxext.com/helpcenter/OneTrust/oneTrust_production_2025-07-24/consent/87b6a5c0-0104-4e96-a291-092c11350111/019808e2-d1e7-7c0f-ad43-c485b7d9a221/logos/static/powered_by_logo.svg" alt="Ozark" class="w-full h-48 object-cover rounded">
+        <button class="absolute top-2 right-2 bg-gray-800/80 text-white p-1 rounded-full opacity-0 group-hover:opacity-100 transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+        <div class="mt-2">
+          <h3 class="text-white text-sm font-medium">Ozark</h3>
+          <p class="text-gray-400 text-xs">4 Seasons • 2017</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="text-center mt-8">
+      <button class="bg-red-600 text-white px-6 py-2 rounded font-semibold hover:bg-red-700 transition">
+        Continue Watching
+      </button>
+    </div>
+  </div>
+</section>
+<section id="search-results" class="py-16 bg-gray-900">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-white mb-8">Search Results</h2>
+    <div class="bg-gray-800 rounded-lg p-4 mb-6">
+      <div class="flex items-center">
+        <input type="text" placeholder="Search movies and shows..." class="flex-1 bg-transparent text-white placeholder-gray-400 focus:outline-none">
+        <button class="bg-red-600 text-white px-4 py-2 rounded ml-2 hover:bg-red-700 transition">Search</button>
+      </div>
+    </div>
+    
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+      <div class="relative group">
+        <img src="https://assets.nflxext.com/ffe/siteui/vlv3/258d0f77-2241-4282-b613-8354a7675d1a/web/US-en-20250721-TRIFECTA-perspective_6d968797-b773-4ec4-aa69-2a9c2e41ae94_large.jpg" alt="Search result 1" class="w-full h-40 object-cover rounded">
+        <div class="mt-2">
+          <h3 class="text-white text-sm font-medium">The Witcher</h3>
+          <p class="text-gray-400 text-xs">Fantasy • 2020</p>
+        </div>
+      </div>
+      
+      <div class="relative group">
+        <img src="https://help.nflxext.com/helpcenter/OneTrust/oneTrust_production_2025-07-24/consent/87b6a5c0-0104-4e96-a291-092c11350111/019808e2-d1e7-7c0f-ad43-c485b7d9a221/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png" alt="Search result 2" class="w-full h-40 object-cover rounded">
+        <div class="mt-2">
+          <h3 class="text-white text-sm font-medium">Bridgerton</h3>
+          <p class="text-gray-400 text-xs">Romance • 2020</p>
+        </div>
+      </div>
+      
+      <div class="relative group">
+        <img src="https://help.nflxext.com/helpcenter/OneTrust/oneTrust_production_2025-07-24/consent/87b6a5c0-0104-4e96-a291-092c11350111/019808e2-d1e7-7c0f-ad43-c485b7d9a221/logos/static/powered_by_logo.svg" alt="Search result 3" class="w-full h-40 object-cover rounded">
+        <div class="mt-2">
+          <h3 class="text-white text-sm font-medium">Dark</h3>
+          <p class="text-gray-400 text-xs">Sci-Fi • 2017</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="video-player" class="bg-black">
+  <div class="relative aspect-video max-w-4xl mx-auto">
+    <img src="https://assets.nflxext.com/ffe/siteui/vlv3/258d0f77-2241-4282-b613-8354a7675d1a/web/US-en-20250721-TRIFECTA-perspective_6d968797-b773-4ec4-aa69-2a9c2e41ae94_large.jpg" alt="Video thumbnail" class="w-full h-full object-cover">
+    
+    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+    
+    <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+      <div class="flex items-center space-x-4">
+        <button class="bg-white/20 backdrop-blur text-white rounded-full p-3 hover:bg-white/30 transition">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M8 5v14l11-7z"></path>
+          </svg>
+        </button>
+        <button class="text-white">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path>
+          </svg>
+        </button>
+      </div>
+      
+      <div class="flex items-center space-x-4">
+        <span class="text-white text-sm">1:23:45 / 2:15:30</span>
+        <button class="text-white">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"></path>
+          </svg>
+        </button>
+        <button class="text-white">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    
+    <div class="absolute top-4 left-4">
+      <img src="https://help.nflxext.com/helpcenter/OneTrust/oneTrust_production_2025-07-24/consent/87b6a5c0-0104-4e96-a291-092c11350111/019808e2-d1e7-7c0f-ad43-c485b7d9a221/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png" alt="Netflix" class="h-8">
+    </div>
+    
+    <div class="absolute top-4 right-4 flex space-x-2">
+      <button class="text-white">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+        </svg>
+      </button>
+      <button class="text-white">
+        <img src="https://help.nflxext.com/helpcenter/OneTrust/oneTrust_production_2025-07-24/consent/87b6a5c0-0104-4e96-a291-092c11350111/019808e2-d1e7-7c0f-ad43-c485b7d9a221/logos/static/powered_by_logo.svg" alt="Settings" class="h-5">
+      </button>
+    </div>
+  </div>
+</section></div></mountpoint>
+
+      <!-- Core functionality scripts -->
+      <script>
+        // Initialize interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+          // Add interactive behaviors
+          const interactiveElements = document.querySelectorAll('.interactive-element');
+          interactiveElements.forEach(element => {
+            element.addEventListener('mouseenter', () => {
+              element.classList.add('hover');
+            });
+            element.addEventListener('mouseleave', () => {
+              element.classList.remove('hover');
+            });
+          });
+
+          // Initialize any dynamic content
+          const dynamicContent = document.querySelectorAll('[data-dynamic]');
+          dynamicContent.forEach(content => {
+            // Add fade-in animation
+            content.classList.add('fade-in');
+          });
+        });
+
+        // Handle navigation
+        function handleNavigation(event) {
+          const link = event.currentTarget;
+          if (link.hasAttribute('data-nav')) {
+            event.preventDefault();
+            const target = link.getAttribute('data-nav');
+            document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+
+        // Initialize navigation
+        document.querySelectorAll('[data-nav]').forEach(link => {
+          link.addEventListener('click', handleNavigation);
+        });
+      </script>
+
+      <!-- Body Scripts -->
+      <script id="body-scripts">
+        // This script tag will be replaced with actual scripts.body content
+        if (window.scripts && window.scripts.body) {
+          document.getElementById('body-scripts').outerHTML = window.scripts.body;
+        }
+      </script>
+   
+      <script>
+        // Debug logging helper
+        const debugLog = (context, data) => {
+          console.log("[SPA Navigation] " + context + ":", data);
+        };
+
+        debugLog('Initializing', { projectType: 'webapp' });
+
+        // Function to show the selected section and hide others
+        function showSection(sectionId) {
+          debugLog('Showing section', { sectionId });
+          
+          // Find all sections that could be page content
+          const allSections = document.querySelectorAll('main section');
+          debugLog('Found sections', { 
+            count: allSections.length, 
+            ids: Array.from(allSections).map(s => s.id)
+          });
+          
+          // Hide all sections
+          allSections.forEach(section => {
+            section.style.display = 'none';
+          });
+          
+          // Show the requested section
+          const targetSection = document.getElementById(sectionId);
+          if (targetSection) {
+            debugLog('Target section found', { id: sectionId });
+            targetSection.style.display = 'block';
+          } else {
+            debugLog('Target section not found', { id: sectionId });
+            // If section not found and there are sections, show the first one
+            if (allSections.length > 0) {
+              const firstSection = allSections[0];
+              debugLog('Showing first section instead', { id: firstSection.id });
+              firstSection.style.display = 'block';
+            }
+          }
+          
+          // Update active states in any navigation
+          updateNavActiveStates(sectionId);
+        }
+        
+        // Function to update active states in navigation elements
+        function updateNavActiveStates(activeSectionId) {
+          debugLog('Updating nav states', { activeSectionId });
+          
+          // Find all navigation links
+          const navLinks = document.querySelectorAll('a[href^="#"]');
+          debugLog('Found nav links', { 
+            count: navLinks.length,
+            hrefs: Array.from(navLinks).map(link => link.getAttribute('href'))
+          });
+          
+          // Remove active classes from all links
+          navLinks.forEach(link => {
+            const linkSectionId = link.getAttribute('href').substring(1);
+            if (!linkSectionId) return;
+            
+            debugLog('Processing link', { 
+              href: link.getAttribute('href'),
+              currentClasses: link.className
+            });
+            
+            // Handle desktop and mobile navigation links
+            link.classList.remove('bg-gray-700', 'text-white', 'bg-blue-50', 'text-blue-600');
+            
+            if (link.closest('nav')) {
+              if (link.closest('.bg-gray-800') || link.closest('.text-gray-300')) {
+                link.classList.add('text-gray-300');
+              }
+            }
+          });
+          
+          // Add active classes to matching links
+          navLinks.forEach(link => {
+            const linkTarget = link.getAttribute('href').substring(1);
+            if (linkTarget === activeSectionId) {
+              debugLog('Activating link', { 
+                href: link.getAttribute('href'),
+                context: link.closest('.bg-gray-800') ? 'sidebar' : 
+                        link.closest('#mobile-menu') ? 'mobile' : 'default'
+              });
+              
+              if (link.closest('.bg-gray-800') || link.closest('nav')) {
+                link.classList.add('bg-gray-700', 'text-white');
+              } else if (link.closest('#mobile-menu')) {
+                link.classList.add('bg-gray-700', 'text-white');
+              } else {
+                link.classList.add('text-blue-600');
+              }
+            }
+          });
+        }
+        
+        // Handle hash changes
+        window.addEventListener('hashchange', function() {
+          const hash = window.location.hash.substring(1);
+          debugLog('Hash changed', { hash });
+          if (hash) {
+            showSection(hash);
+          }
+        });
+        
+        // Handle initial page load
+        function handleInitialLoad() {
+          debugLog('Handling initial load');
+          
+          const hash = window.location.hash.substring(1);
+          debugLog('Initial hash', { hash });
+          
+          if (hash) {
+            showSection(hash);
+          } else {
+            const sections = document.querySelectorAll('main section');
+            debugLog('No hash found, searching for default section', { 
+              totalSections: sections.length 
+            });
+            
+            if (sections.length > 0) {
+              const dashboardSection = document.getElementById('dashboard');
+              if (dashboardSection) {
+                debugLog('Found dashboard section', { id: 'dashboard' });
+                showSection('dashboard');
+                if (history.replaceState) {
+                  history.replaceState(null, null, '#dashboard');
+                } else {
+                  window.location.hash = 'dashboard';
+                }
+              } else {
+                const firstSectionId = sections[0].id;
+                if (firstSectionId) {
+                  debugLog('Using first section', { id: firstSectionId });
+                  showSection(firstSectionId);
+                  if (history.replaceState) {
+                    history.replaceState(null, null, '#' + firstSectionId);
+                  } else {
+                    window.location.hash = firstSectionId;
+                  }
+                }
+              }
+            }
+          }
+        }
+        
+        // Set up delegation for navigation clicks
+        document.addEventListener('click', function(event) {
+          let targetElement = event.target.closest('a');
+          
+          if (targetElement && targetElement.getAttribute('href') && targetElement.getAttribute('href').startsWith('#')) {
+            const sectionId = targetElement.getAttribute('href').substring(1);
+            debugLog('Navigation click', { 
+              href: targetElement.getAttribute('href'),
+              sectionId 
+            });
+            
+            if (sectionId) {
+              const targetSection = document.getElementById(sectionId);
+              if (targetSection) {
+                event.preventDefault();
+                window.location.hash = sectionId;
+                showSection(sectionId);
+              } else {
+                debugLog('Target section not found for click', { sectionId });
+              }
+            }
+          }
+        });
+        
+        // Initial setup
+        debugLog('Starting initial setup');
+        const allSections = document.querySelectorAll('main section');
+        debugLog('Initial sections state', {
+          totalSections: allSections.length,
+          sectionIds: Array.from(allSections).map(s => s.id)
+        });
+        
+        allSections.forEach((section, index) => {
+          section.style.display = index === 0 ? 'block' : 'none';
+          debugLog('Setting initial section visibility', {
+            id: section.id,
+            index,
+            display: index === 0 ? 'block' : 'none'
+          });
+        });
+        
+        handleInitialLoad();
+      </script>
+
+<svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path id="SvgjsPath1004" d="M0 0 "></path></svg></body></html>

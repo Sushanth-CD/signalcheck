@@ -1,0 +1,5 @@
+subgroup,n_samples,f1,recall,specificity,balanced_accuracy,roc_auc
+url_present_all,378,0.9595,0.9574,0.9371,0.9473,0.9871
+url_absent_all,927,0.9383,0.9127,0.9862,0.9495,0.989
+length_below_median,651,0.9213,0.8876,0.9852,0.9364,0.9859
+length_above_median,654,0.9622,0.9578,0.9658,0.9618,0.992

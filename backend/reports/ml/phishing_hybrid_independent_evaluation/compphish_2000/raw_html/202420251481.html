@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	
+	<link rel="preconnect" href="https://cdn.vectorstock.com">
+	<link rel="preconnect" href="https://www.googletagmanager.com">
+	<link rel="preconnect" href="https://www.google-analytics.com">
+	<link rel="alternate" hreflang="en" href="https://www.vectorstock.com/" />
+	<link rel="alternate" hreflang="de" href="https://www.vectorstock.com/de/" />
+	<link rel="alternate" hreflang="x-default" href="https://www.vectorstock.com/" />
+	<meta name="theme-color" content="#101122">
+	<script type="text/javascript" nonce="7i5EoyB0bjVDav+e6qz7NyeSuzDc1h1iVWZGsM6GBUE=">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"02e09611df",applicationID:"156179534"};;/*! For license information please see nr-loader-rum-1.280.0.min.js.LICENSE.txt */
+(()=>{var e,t,r={122:(e,t,r)=>{"use strict";r.d(t,{a:()=>i});var n=r(944);function i(e,t){try{if(!e||"object"!=typeof e)return(0,n.R)(3);if(!t||"object"!=typeof t)return(0,n.R)(4);const r=Object.create(Object.getPrototypeOf(t),Object.getOwnPropertyDescriptors(t)),o=0===Object.keys(r).length?e:r;for(let a in o)if(void 0!==e[a])try{if(null===e[a]){r[a]=null;continue}Array.isArray(e[a])&&Array.isArray(t[a])?r[a]=Array.from(new Set([...e[a],...t[a]])):"object"==typeof e[a]&&"object"==typeof t[a]?r[a]=i(e[a],t[a]):r[a]=e[a]}catch(e){(0,n.R)(1,e)}return r}catch(e){(0,n.R)(2,e)}}},555:(e,t,r)=>{"use strict";r.d(t,{Vp:()=>c,fn:()=>s,x1:()=>u});var n=r(384),i=r(122);const o={beacon:n.NT.beacon,errorBeacon:n.NT.errorBeacon,licenseKey:void 0,applicationID:void 0,sa:void 0,queueTime:void 0,applicationTime:void 0,ttGuid:void 0,user:void 0,account:void 0,product:void 0,extra:void 0,jsAttributes:{},userAttributes:void 0,atts:void 0,transactionName:void 0,tNamePlain:void 0},a={};function s(e){try{const t=c(e);return!!t.licenseKey&&!!t.errorBeacon&&!!t.applicationID}catch(e){return!1}}function c(e){if(!e)throw new Error("All info objects require an agent identifier!");if(!a[e])throw new Error("Info for ".concat(e," was never set"));return a[e]}function u(e,t){if(!e)throw new Error("All info objects require an agent identifier!");a[e]=(0,i.a)(t,o);const r=(0,n.nY)(e);r&&(r.info=a[e])}},217:(e,t,r)=>{"use strict";r.d(t,{D0:()=>h,gD:()=>b,xN:()=>v});r(860).K7.genericEvents;const n="experimental.marks",i="experimental.measures",o="experimental.resources";var a=r(993);const s=e=>{if(!e||"string"!=typeof e)return!1;try{document.createDocumentFragment().querySelector(e)}catch{return!1}return!0};var c=r(614),u=r(944),l=r(384),d=r(122);const f="[data-nr-mask]",g=()=>{const e={feature_flags:[],experimental:{marks:!1,measures:!1,resources:!1},mask_selector:"*",block_selector:"[data-nr-block]",mask_input_options:{color:!1,date:!1,"datetime-local":!1,email:!1,month:!1,number:!1,range:!1,search:!1,tel:!1,text:!1,time:!1,url:!1,week:!1,textarea:!1,select:!1,password:!0}};return{ajax:{deny_list:void 0,block_internal:!0,enabled:!0,autoStart:!0},distributed_tracing:{enabled:void 0,exclude_newrelic_header:void 0,cors_use_newrelic_header:void 0,cors_use_tracecontext_headers:void 0,allowed_origins:void 0},get feature_flags(){return e.feature_flags},set feature_flags(t){e.feature_flags=t},generic_events:{enabled:!0,autoStart:!0},harvest:{interval:30},jserrors:{enabled:!0,autoStart:!0},logging:{enabled:!0,autoStart:!0,level:a.p_.INFO},metrics:{enabled:!0,autoStart:!0},obfuscate:void 0,page_action:{enabled:!0},page_view_event:{enabled:!0,autoStart:!0},page_view_timing:{enabled:!0,autoStart:!0},performance:{get capture_marks(){return e.feature_flags.includes(n)||e.experimental.marks},set capture_marks(t){e.experimental.marks=t},get capture_measures(){return e.feature_flags.includes(i)||e.experimental.measures},set capture_measures(t){e.experimental.measures=t},capture_detail:!0,resources:{get enabled(){return e.feature_flags.includes(o)||e.experimental.resources},set enabled(t){e.experimental.resources=t},asset_types:[],first_party_domains:[],ignore_newrelic:!0}},privacy:{cookies_enabled:!0},proxy:{assets:void 0,beacon:void 0},session:{expiresMs:c.wk,inactiveMs:c.BB},session_replay:{autoStart:!0,enabled:!1,preload:!1,sampling_rate:10,error_sampling_rate:100,collect_fonts:!1,inline_images:!1,fix_stylesheets:!0,mask_all_inputs:!0,get mask_text_selector(){return e.mask_selector},set mask_text_selector(t){s(t)?e.mask_selector="".concat(t,",").concat(f):""===t||null===t?e.mask_selector=f:(0,u.R)(5,t)},get block_class(){return"nr-block"},get ignore_class(){return"nr-ignore"},get mask_text_class(){return"nr-mask"},get block_selector(){return e.block_selector},set block_selector(t){s(t)?e.block_selector+=",".concat(t):""!==t&&(0,u.R)(6,t)},get mask_input_options(){return e.mask_input_options},set mask_input_options(t){t&&"object"==typeof t?e.mask_input_options={...t,password:!0}:(0,u.R)(7,t)}},session_trace:{enabled:!0,autoStart:!0},soft_navigations:{enabled:!0,autoStart:!0},spa:{enabled:!0,autoStart:!0},ssl:void 0,user_actions:{enabled:!0}}},p={},m="All configuration objects require an agent identifier!";function h(e){if(!e)throw new Error(m);if(!p[e])throw new Error("Configuration for ".concat(e," was never set"));return p[e]}function v(e,t){if(!e)throw new Error(m);p[e]=(0,d.a)(t,g());const r=(0,l.nY)(e);r&&(r.init=p[e])}function b(e,t){if(!e)throw new Error(m);var r=h(e);if(r){for(var n=t.split("."),i=0;i<n.length-1;i++)if("object"!=typeof(r=r[n[i]]))return;r=r[n[n.length-1]]}return r}},371:(e,t,r)=>{"use strict";r.d(t,{V:()=>f,f:()=>d});var n=r(122),i=r(384),o=r(154),a=r(324);let s=0;const c={buildEnv:a.F3,distMethod:a.Xs,version:a.xv,originTime:o.WN},u={customTransaction:void 0,disabled:!1,isolatedBacklog:!1,loaderType:void 0,maxBytes:3e4,onerror:void 0,ptid:void 0,releaseIds:{},appMetadata:{},session:void 0,denyList:void 0,timeKeeper:void 0,obfuscator:void 0,harvester:void 0},l={};function d(e){if(!e)throw new Error("All runtime objects require an agent identifier!");if(!l[e])throw new Error("Runtime for ".concat(e," was never set"));return l[e]}function f(e,t){if(!e)throw new Error("All runtime objects require an agent identifier!");l[e]={...(0,n.a)(t,u),...c},Object.hasOwnProperty.call(l[e],"harvestCount")||Object.defineProperty(l[e],"harvestCount",{get:()=>++s});const r=(0,i.nY)(e);r&&(r.runtime=l[e])}},324:(e,t,r)=>{"use strict";r.d(t,{F3:()=>i,Xs:()=>o,xv:()=>n});const n="1.280.0",i="PROD",o="CDN"},154:(e,t,r)=>{"use strict";r.d(t,{OF:()=>c,RI:()=>i,WN:()=>l,bv:()=>o,gm:()=>a,mw:()=>s,sb:()=>u});var n=r(863);const i="undefined"!=typeof window&&!!window.document,o="undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self.navigator instanceof WorkerNavigator||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis.navigator instanceof WorkerNavigator),a=i?window:"undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis),s=Boolean("hidden"===a?.document?.visibilityState),c=/iPad|iPhone|iPod/.test(a.navigator?.userAgent),u=c&&"undefined"==typeof SharedWorker,l=((()=>{const e=a.navigator?.userAgent?.match(/Firefox[/\s](\d+\.\d+)/);Array.isArray(e)&&e.length>=2&&e[1]})(),Date.now()-(0,n.t)())},687:(e,t,r)=>{"use strict";r.d(t,{Ak:()=>c,Ze:()=>d,x3:()=>u});var n=r(836),i=r(606),o=r(860),a=r(646);const s={};function c(e,t){const r={staged:!1,priority:o.P3[t]||0};l(e),s[e].get(t)||s[e].set(t,r)}function u(e,t){e&&s[e]&&(s[e].get(t)&&s[e].delete(t),g(e,t,!1),s[e].size&&f(e))}function l(e){if(!e)throw new Error("agentIdentifier required");s[e]||(s[e]=new Map)}function d(e="",t="feature",r=!1){if(l(e),!e||!s[e].get(t)||r)return g(e,t);s[e].get(t).staged=!0,f(e)}function f(e){const t=Array.from(s[e]);t.every((([e,t])=>t.staged))&&(t.sort(((e,t)=>e[1].priority-t[1].priority)),t.forEach((([t])=>{s[e].delete(t),g(e,t)})))}function g(e,t,r=!0){const o=e?n.ee.get(e):n.ee,s=i.i.handlers;if(!o.aborted&&o.backlog&&s){if(r){const e=o.backlog[t],r=s[t];if(r){for(let t=0;e&&t<e.length;++t)p(e[t],r);Object.entries(r).forEach((([e,t])=>{Object.values(t||{}).forEach((t=>{t[0]?.on&&t[0]?.context()instanceof a.y&&t[0].on(e,t[1])}))}))}}o.isolatedBacklog||delete s[t],o.backlog[t]=null,o.emit("drain-"+t,[])}}function p(e,t){var r=e[1];Object.values(t[r]||{}).forEach((t=>{var r=e[0];if(t[0]===r){var n=t[1],i=e[3],o=e[2];n.apply(i,o)}}))}},836:(e,t,r)=>{"use strict";r.d(t,{P:()=>c,ee:()=>u});var n=r(384),i=r(990),o=r(371),a=r(646),s=r(607);const c="nr@context:".concat(s.W),u=function e(t,r){var n={},s={},l={},d=!1;try{d=16===r.length&&(0,o.f)(r).isolatedBacklog}catch(e){}var f={on:p,addEventListener:p,removeEventListener:function(e,t){var r=n[e];if(!r)return;for(var i=0;i<r.length;i++)r[i]===t&&r.splice(i,1)},emit:function(e,r,n,i,o){!1!==o&&(o=!0);if(u.aborted&&!i)return;t&&o&&t.emit(e,r,n);for(var a=g(n),c=m(e),l=c.length,d=0;d<l;d++)c[d].apply(a,r);var p=v()[s[e]];p&&p.push([f,e,r,a]);return a},get:h,listeners:m,context:g,buffer:function(e,t){const r=v();if(t=t||"feature",f.aborted)return;Object.entries(e||{}).forEach((([e,n])=>{s[n]=t,t in r||(r[t]=[])}))},abort:function(){f._aborted=!0,Object.keys(f.backlog).forEach((e=>{delete f.backlog[e]}))},isBuffering:function(e){return!!v()[s[e]]},debugId:r,backlog:d?{}:t&&"object"==typeof t.backlog?t.backlog:{},isolatedBacklog:d};return Object.defineProperty(f,"aborted",{get:()=>{let e=f._aborted||!1;return e||(t&&(e=t.aborted),e)}}),f;function g(e){return e&&e instanceof a.y?e:e?(0,i.I)(e,c,(()=>new a.y(c))):new a.y(c)}function p(e,t){n[e]=m(e).concat(t)}function m(e){return n[e]||[]}function h(t){return l[t]=l[t]||e(f,t)}function v(){return f.backlog}}(void 0,"globalEE"),l=(0,n.Zm)();l.ee||(l.ee=u)},646:(e,t,r)=>{"use strict";r.d(t,{y:()=>n});class n{constructor(e){this.contextId=e}}},908:(e,t,r)=>{"use strict";r.d(t,{d:()=>n,p:()=>i});var n=r(836).ee.get("handle");function i(e,t,r,i,o){o?(o.buffer([e],i),o.emit(e,t,r)):(n.buffer([e],i),n.emit(e,t,r))}},606:(e,t,r)=>{"use strict";r.d(t,{i:()=>o});var n=r(908);o.on=a;var i=o.handlers={};function o(e,t,r,o){a(o||n.d,i,e,t,r)}function a(e,t,r,i,o){o||(o="feature"),e||(e=n.d);var a=t[o]=t[o]||{};(a[r]=a[r]||[]).push([e,i])}},878:(e,t,r)=>{"use strict";function n(e,t){return{capture:e,passive:!1,signal:t}}function i(e,t,r=!1,i){window.addEventListener(e,t,n(r,i))}function o(e,t,r=!1,i){document.addEventListener(e,t,n(r,i))}r.d(t,{DD:()=>o,jT:()=>n,sp:()=>i})},607:(e,t,r)=>{"use strict";r.d(t,{W:()=>n});const n=(0,r(566).bz)()},566:(e,t,r)=>{"use strict";r.d(t,{LA:()=>s,bz:()=>a});var n=r(154);const i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx";function o(e,t){return e?15&e[t]:16*Math.random()|0}function a(){const e=n.gm?.crypto||n.gm?.msCrypto;let t,r=0;return e&&e.getRandomValues&&(t=e.getRandomValues(new Uint8Array(30))),i.split("").map((e=>"x"===e?o(t,r++).toString(16):"y"===e?(3&o()|8).toString(16):e)).join("")}function s(e){const t=n.gm?.crypto||n.gm?.msCrypto;let r,i=0;t&&t.getRandomValues&&(r=t.getRandomValues(new Uint8Array(e)));const a=[];for(var s=0;s<e;s++)a.push(o(r,i++).toString(16));return a.join("")}},614:(e,t,r)=>{"use strict";r.d(t,{BB:()=>a,H3:()=>n,g:()=>u,iL:()=>c,tS:()=>s,uh:()=>i,wk:()=>o});const n="NRBA",i="SESSION",o=144e5,a=18e5,s={STARTED:"session-started",PAUSE:"session-pause",RESET:"session-reset",RESUME:"session-resume",UPDATE:"session-update"},c={SAME_TAB:"same-tab",CROSS_TAB:"cross-tab"},u={OFF:0,FULL:1,ERROR:2}},863:(e,t,r)=>{"use strict";function n(){return Math.floor(performance.now())}r.d(t,{t:()=>n})},944:(e,t,r)=>{"use strict";function n(e,t){"function"==typeof console.debug&&console.debug("New Relic Warning: https://github.com/newrelic/newrelic-browser-agent/blob/main/docs/warning-codes.md#".concat(e),t)}r.d(t,{R:()=>n})},284:(e,t,r)=>{"use strict";r.d(t,{t:()=>c,B:()=>s});var n=r(836),i=r(154);const o="newrelic";const a=new Set,s={};function c(e,t){const r=n.ee.get(t);s[t]??={},e&&"object"==typeof e&&(a.has(t)||(r.emit("rumresp",[e]),s[t]=e,a.add(t),function(e={}){try{i.gm.dispatchEvent(new CustomEvent(o,{detail:e}))}catch(e){}}({loaded:!0})))}},990:(e,t,r)=>{"use strict";r.d(t,{I:()=>i});var n=Object.prototype.hasOwnProperty;function i(e,t,r){if(n.call(e,t))return e[t];var i=r();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:i,writable:!0,enumerable:!1}),i}catch(e){}return e[t]=i,i}},389:(e,t,r)=>{"use strict";function n(e,t=500,r={}){const n=r?.leading||!1;let i;return(...r)=>{n&&void 0===i&&(e.apply(this,r),i=setTimeout((()=>{i=clearTimeout(i)}),t)),n||(clearTimeout(i),i=setTimeout((()=>{e.apply(this,r)}),t))}}function i(e){let t=!1;return(...r)=>{t||(t=!0,e.apply(this,r))}}r.d(t,{J:()=>i,s:()=>n})},289:(e,t,r)=>{"use strict";r.d(t,{GG:()=>o,sB:()=>a});var n=r(878);function i(){return"undefined"==typeof document||"complete"===document.readyState}function o(e,t){if(i())return e();(0,n.sp)("load",e,t)}function a(e){if(i())return e();(0,n.DD)("DOMContentLoaded",e)}},384:(e,t,r)=>{"use strict";r.d(t,{NT:()=>o,US:()=>l,Zm:()=>a,bQ:()=>c,dV:()=>s,nY:()=>u,pV:()=>d});var n=r(154),i=r(863);const o={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net"};function a(){return n.gm.NREUM||(n.gm.NREUM={}),void 0===n.gm.newrelic&&(n.gm.newrelic=n.gm.NREUM),n.gm.NREUM}function s(){let e=a();return e.o||(e.o={ST:n.gm.setTimeout,SI:n.gm.setImmediate,CT:n.gm.clearTimeout,XHR:n.gm.XMLHttpRequest,REQ:n.gm.Request,EV:n.gm.Event,PR:n.gm.Promise,MO:n.gm.MutationObserver,FETCH:n.gm.fetch,WS:n.gm.WebSocket}),e}function c(e,t){let r=a();r.initializedAgents??={},t.initializedAt={ms:(0,i.t)(),date:new Date},r.initializedAgents[e]=t}function u(e){let t=a();return t.initializedAgents?.[e]}function l(e,t){a()[e]=t}function d(){return function(){let e=a();const t=e.info||{};e.info={beacon:o.beacon,errorBeacon:o.errorBeacon,...t}}(),function(){let e=a();const t=e.init||{};e.init={...t}}(),s(),function(){let e=a();const t=e.loader_config||{};e.loader_config={...t}}(),a()}},843:(e,t,r)=>{"use strict";r.d(t,{u:()=>i});var n=r(878);function i(e,t=!1,r,i){(0,n.DD)("visibilitychange",(function(){if(t)return void("hidden"===document.visibilityState&&e());e(document.visibilityState)}),r,i)}},434:(e,t,r)=>{"use strict";r.d(t,{Jt:()=>o,YM:()=>c});var n=r(836),i=r(607);const o="nr@original:".concat(i.W);var a=Object.prototype.hasOwnProperty,s=!1;function c(e,t){return e||(e=n.ee),r.inPlace=function(e,t,n,i,o){n||(n="");const a="-"===n.charAt(0);for(let s=0;s<t.length;s++){const c=t[s],u=e[c];l(u)||(e[c]=r(u,a?c+n:n,i,c,o))}},r.flag=o,r;function r(t,r,n,s,c){return l(t)?t:(r||(r=""),nrWrapper[o]=t,function(e,t,r){if(Object.defineProperty&&Object.keys)try{return Object.keys(e).forEach((function(r){Object.defineProperty(t,r,{get:function(){return e[r]},set:function(t){return e[r]=t,t}})})),t}catch(e){u([e],r)}for(var n in e)a.call(e,n)&&(t[n]=e[n])}(t,nrWrapper,e),nrWrapper);function nrWrapper(){var o,a,l,d;try{a=this,o=[...arguments],l="function"==typeof n?n(o,a):n||{}}catch(t){u([t,"",[o,a,s],l],e)}i(r+"start",[o,a,s],l,c);try{return d=t.apply(a,o)}catch(e){throw i(r+"err",[o,a,e],l,c),e}finally{i(r+"end",[o,a,d],l,c)}}}function i(r,n,i,o){if(!s||t){var a=s;s=!0;try{e.emit(r,n,i,t,o)}catch(t){u([t,r,n,i],e)}s=a}}}function u(e,t){t||(t=n.ee);try{t.emit("internal-error",e)}catch(e){}}function l(e){return!(e&&"function"==typeof e&&e.apply&&!e[o])}},993:(e,t,r)=>{"use strict";r.d(t,{ET:()=>o,p_:()=>i});var n=r(860);const i={ERROR:"ERROR",WARN:"WARN",INFO:"INFO",DEBUG:"DEBUG",TRACE:"TRACE"},o="log";n.K7.logging},969:(e,t,r)=>{"use strict";r.d(t,{TZ:()=>n,XG:()=>s,rs:()=>i,xV:()=>a,z_:()=>o});const n=r(860).K7.metrics,i="sm",o="cm",a="storeSupportabilityMetrics",s="storeEventMetrics"},630:(e,t,r)=>{"use strict";r.d(t,{T:()=>n});const n=r(860).K7.pageViewEvent},782:(e,t,r)=>{"use strict";r.d(t,{T:()=>n});const n=r(860).K7.pageViewTiming},344:(e,t,r)=>{"use strict";r.d(t,{G4:()=>i});var n=r(614);r(860).K7.sessionReplay;const i={RECORD:"recordReplay",PAUSE:"pauseReplay",REPLAY_RUNNING:"replayRunning",ERROR_DURING_REPLAY:"errorDuringReplay"};n.g.ERROR,n.g.FULL,n.g.OFF},234:(e,t,r)=>{"use strict";r.d(t,{W:()=>o});var n=r(836),i=r(687);class o{constructor(e,t){this.agentIdentifier=e,this.ee=n.ee.get(e),this.featureName=t,this.blocked=!1}deregisterDrain(){(0,i.x3)(this.agentIdentifier,this.featureName)}}},603:(e,t,r)=>{"use strict";r.d(t,{j:()=>K});var n=r(860),i=r(555),o=r(371),a=r(908),s=r(836),c=r(687),u=r(289),l=r(154),d=r(944),f=r(969),g=r(384),p=r(344);const m=["setErrorHandler","finished","addToTrace","addRelease","recordCustomEvent","addPageAction","setCurrentRouteName","setPageViewName","setCustomAttribute","interaction","noticeError","setUserId","setApplicationVersion","start",p.G4.RECORD,p.G4.PAUSE,"log","wrapLogger"],h=["setErrorHandler","finished","addToTrace","addRelease"];var v=r(863),b=r(614),y=r(993);var w=r(646),A=r(434);const R=new Map;function _(e,t,r,n){if("object"!=typeof t||!t||"string"!=typeof r||!r||"function"!=typeof t[r])return(0,d.R)(29);const i=function(e){return(e||s.ee).get("logger")}(e),o=(0,A.YM)(i),a=new w.y(s.P);a.level=n.level,a.customAttributes=n.customAttributes;const c=t[r]?.[A.Jt]||t[r];return R.set(c,a),o.inPlace(t,[r],"wrap-logger-",(()=>R.get(c))),i}function E(){const e=(0,g.pV)();m.forEach((t=>{e[t]=(...r)=>function(t,...r){let n=[];return Object.values(e.initializedAgents).forEach((e=>{e&&e.api?e.exposed&&e.api[t]&&n.push(e.api[t](...r)):(0,d.R)(38,t)})),n.length>1?n:n[0]}(t,...r)}))}const x={};function N(e,t,g=!1){t||(0,c.Ak)(e,"api");const m={};var w=s.ee.get(e),A=w.get("tracer");x[e]=b.g.OFF,w.on(p.G4.REPLAY_RUNNING,(t=>{x[e]=t}));var R="api-",E=R+"ixn-";function N(t,r,n,o){const a=(0,i.Vp)(e);return null===r?delete a.jsAttributes[t]:(0,i.x1)(e,{...a,jsAttributes:{...a.jsAttributes,[t]:r}}),j(R,n,!0,o||null===r?"session":void 0)(t,r)}function k(){}m.log=function(e,{customAttributes:t={},level:r=y.p_.INFO}={}){(0,a.p)(f.xV,["API/log/called"],void 0,n.K7.metrics,w),function(e,t,r={},i=y.p_.INFO){(0,a.p)(f.xV,["API/logging/".concat(i.toLowerCase(),"/called")],void 0,n.K7.metrics,e),(0,a.p)(y.ET,[(0,v.t)(),t,r,i],void 0,n.K7.logging,e)}(w,e,t,r)},m.wrapLogger=(e,t,{customAttributes:r={},level:i=y.p_.INFO}={})=>{(0,a.p)(f.xV,["API/wrapLogger/called"],void 0,n.K7.metrics,w),_(w,e,t,{customAttributes:r,level:i})},h.forEach((e=>{m[e]=j(R,e,!0,"api")})),m.addPageAction=j(R,"addPageAction",!0,n.K7.genericEvents),m.recordCustomEvent=j(R,"recordCustomEvent",!0,n.K7.genericEvents),m.setPageViewName=function(t,r){if("string"==typeof t)return"/"!==t.charAt(0)&&(t="/"+t),(0,o.f)(e).customTransaction=(r||"http://custom.transaction")+t,j(R,"setPageViewName",!0)()},m.setCustomAttribute=function(e,t,r=!1){if("string"==typeof e){if(["string","number","boolean"].includes(typeof t)||null===t)return N(e,t,"setCustomAttribute",r);(0,d.R)(40,typeof t)}else(0,d.R)(39,typeof e)},m.setUserId=function(e){if("string"==typeof e||null===e)return N("enduser.id",e,"setUserId",!0);(0,d.R)(41,typeof e)},m.setApplicationVersion=function(e){if("string"==typeof e||null===e)return N("application.version",e,"setApplicationVersion",!1);(0,d.R)(42,typeof e)},m.start=()=>{try{(0,a.p)(f.xV,["API/start/called"],void 0,n.K7.metrics,w),w.emit("manual-start-all")}catch(e){(0,d.R)(23,e)}},m[p.G4.RECORD]=function(){(0,a.p)(f.xV,["API/recordReplay/called"],void 0,n.K7.metrics,w),(0,a.p)(p.G4.RECORD,[],void 0,n.K7.sessionReplay,w)},m[p.G4.PAUSE]=function(){(0,a.p)(f.xV,["API/pauseReplay/called"],void 0,n.K7.metrics,w),(0,a.p)(p.G4.PAUSE,[],void 0,n.K7.sessionReplay,w)},m.interaction=function(e){return(new k).get("object"==typeof e?e:{})};const T=k.prototype={createTracer:function(e,t){var r={},i=this,o="function"==typeof t;return(0,a.p)(f.xV,["API/createTracer/called"],void 0,n.K7.metrics,w),g||(0,a.p)(E+"tracer",[(0,v.t)(),e,r],i,n.K7.spa,w),function(){if(A.emit((o?"":"no-")+"fn-start",[(0,v.t)(),i,o],r),o)try{return t.apply(this,arguments)}catch(e){const t="string"==typeof e?new Error(e):e;throw A.emit("fn-err",[arguments,this,t],r),t}finally{A.emit("fn-end",[(0,v.t)()],r)}}}};function j(e,t,r,i){return function(){return(0,a.p)(f.xV,["API/"+t+"/called"],void 0,n.K7.metrics,w),i&&(0,a.p)(e+t,[r?(0,v.t)():performance.now(),...arguments],r?null:this,i,w),r?void 0:this}}function I(){r.e(296).then(r.bind(r,778)).then((({setAPI:t})=>{t(e),(0,c.Ze)(e,"api")})).catch((e=>{(0,d.R)(27,e),w.abort()}))}return["actionText","setName","setAttribute","save","ignore","onEnd","getContext","end","get"].forEach((e=>{T[e]=j(E,e,void 0,g?n.K7.softNav:n.K7.spa)})),m.setCurrentRouteName=g?j(E,"routeName",void 0,n.K7.softNav):j(R,"routeName",!0,n.K7.spa),m.noticeError=function(t,r){"string"==typeof t&&(t=new Error(t)),(0,a.p)(f.xV,["API/noticeError/called"],void 0,n.K7.metrics,w),(0,a.p)("err",[t,(0,v.t)(),!1,r,!!x[e]],void 0,n.K7.jserrors,w)},l.RI?(0,u.GG)((()=>I()),!0):I(),m}var k=r(217),T=r(122);const j={accountID:void 0,trustKey:void 0,agentID:void 0,licenseKey:void 0,applicationID:void 0,xpid:void 0},I={};var S=r(284);const O=e=>{const t=e.startsWith("http");e+="/",r.p=t?e:"https://"+e};let P=!1;function K(e,t={},r,n){let{init:a,info:c,loader_config:u,runtime:d={},exposed:f=!0}=t;d.loaderType=r;const p=(0,g.pV)();c||(a=p.init,c=p.info,u=p.loader_config),(0,k.xN)(e.agentIdentifier,a||{}),function(e,t){if(!e)throw new Error("All loader-config objects require an agent identifier!");I[e]=(0,T.a)(t,j);const r=(0,g.nY)(e);r&&(r.loader_config=I[e])}(e.agentIdentifier,u||{}),c.jsAttributes??={},l.bv&&(c.jsAttributes.isWorker=!0),(0,i.x1)(e.agentIdentifier,c);const m=(0,k.D0)(e.agentIdentifier),h=[c.beacon,c.errorBeacon];P||(m.proxy.assets&&(O(m.proxy.assets),h.push(m.proxy.assets)),m.proxy.beacon&&h.push(m.proxy.beacon),E(),(0,g.US)("activatedFeatures",S.B),e.runSoftNavOverSpa&&=!0===m.soft_navigations.enabled&&m.feature_flags.includes("soft_nav")),d.denyList=[...m.ajax.deny_list||[],...m.ajax.block_internal?h:[]],d.ptid=e.agentIdentifier,(0,o.V)(e.agentIdentifier,d),e.ee=s.ee.get(e.agentIdentifier),void 0===e.api&&(e.api=N(e.agentIdentifier,n,e.runSoftNavOverSpa)),void 0===e.exposed&&(e.exposed=f),P=!0}},374:(e,t,r)=>{r.nc=(()=>{try{return document?.currentScript?.nonce}catch(e){}return""})()},860:(e,t,r)=>{"use strict";r.d(t,{$J:()=>u,K7:()=>s,P3:()=>c,XX:()=>i,qY:()=>n,v4:()=>a});const n="events",i="jserrors",o="browser/blobs",a="rum",s={ajax:"ajax",genericEvents:"generic_events",jserrors:i,logging:"logging",metrics:"metrics",pageAction:"page_action",pageViewEvent:"page_view_event",pageViewTiming:"page_view_timing",sessionReplay:"session_replay",sessionTrace:"session_trace",softNav:"soft_navigations",spa:"spa"},c={[s.pageViewEvent]:1,[s.pageViewTiming]:2,[s.metrics]:3,[s.jserrors]:4,[s.spa]:5,[s.ajax]:6,[s.sessionTrace]:7,[s.softNav]:8,[s.sessionReplay]:9,[s.logging]:10,[s.genericEvents]:11},u={[s.pageViewEvent]:a,[s.pageViewTiming]:n,[s.ajax]:n,[s.spa]:n,[s.softNav]:n,[s.metrics]:i,[s.jserrors]:i,[s.sessionTrace]:o,[s.sessionReplay]:o,[s.logging]:"browser/logs",[s.genericEvents]:"ins"}}},n={};function i(e){var t=n[e];if(void 0!==t)return t.exports;var o=n[e]={exports:{}};return r[e](o,o.exports,i),o.exports}i.m=r,i.d=(e,t)=>{for(var r in t)i.o(t,r)&&!i.o(e,r)&&Object.defineProperty(e,r,{enumerable:!0,get:t[r]})},i.f={},i.e=e=>Promise.all(Object.keys(i.f).reduce(((t,r)=>(i.f[r](e,t),t)),[])),i.u=e=>"nr-rum-1.280.0.min.js",i.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),e={},t="NRBA-1.280.0.PROD:",i.l=(r,n,o,a)=>{if(e[r])e[r].push(n);else{var s,c;if(void 0!==o)for(var u=document.getElementsByTagName("script"),l=0;l<u.length;l++){var d=u[l];if(d.getAttribute("src")==r||d.getAttribute("data-webpack")==t+o){s=d;break}}if(!s){c=!0;var f={296:"sha512-3nQ94hwQzKt76xRofpTaF3FtpCn6DI0+wlybOtBdIqjHzpYXdE7qyB2j3RchCcIMbESebsCMwWoGCpLcTY2GBg=="};(s=document.createElement("script")).charset="utf-8",s.timeout=120,i.nc&&s.setAttribute("nonce",i.nc),s.setAttribute("data-webpack",t+o),s.src=r,0!==s.src.indexOf(window.location.origin+"/")&&(s.crossOrigin="anonymous"),f[a]&&(s.integrity=f[a])}e[r]=[n];var g=(t,n)=>{s.onerror=s.onload=null,clearTimeout(p);var i=e[r];if(delete e[r],s.parentNode&&s.parentNode.removeChild(s),i&&i.forEach((e=>e(n))),t)return t(n)},p=setTimeout(g.bind(null,void 0,{type:"timeout",target:s}),12e4);s.onerror=g.bind(null,s.onerror),s.onload=g.bind(null,s.onload),c&&document.head.appendChild(s)}},i.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.p="https://js-agent.newrelic.com/",(()=>{var e={374:0,840:0};i.f.j=(t,r)=>{var n=i.o(e,t)?e[t]:void 0;if(0!==n)if(n)r.push(n[2]);else{var o=new Promise(((r,i)=>n=e[t]=[r,i]));r.push(n[2]=o);var a=i.p+i.u(t),s=new Error;i.l(a,(r=>{if(i.o(e,t)&&(0!==(n=e[t])&&(e[t]=void 0),n)){var o=r&&("load"===r.type?"missing":r.type),a=r&&r.target&&r.target.src;s.message="Loading chunk "+t+" failed.\n("+o+": "+a+")",s.name="ChunkLoadError",s.type=o,s.request=a,n[1](s)}}),"chunk-"+t,t)}};var t=(t,r)=>{var n,o,[a,s,c]=r,u=0;if(a.some((t=>0!==e[t]))){for(n in s)i.o(s,n)&&(i.m[n]=s[n]);if(c)c(i)}for(t&&t(r);u<a.length;u++)o=a[u],i.o(e,o)&&e[o]&&e[o][0](),e[o]=0},r=self["webpackChunk:NRBA-1.280.0.PROD"]=self["webpackChunk:NRBA-1.280.0.PROD"]||[];r.forEach(t.bind(null,0)),r.push=t.bind(null,r.push.bind(r))})(),(()=>{"use strict";i(374);var e=i(944),t=i(344),r=i(566);class n{agentIdentifier;constructor(){this.agentIdentifier=(0,r.LA)(16)}#e(t,...r){if("function"==typeof this.api?.[t])return this.api[t](...r);(0,e.R)(35,t)}addPageAction(e,t){return this.#e("addPageAction",e,t)}recordCustomEvent(e,t){return this.#e("recordCustomEvent",e,t)}setPageViewName(e,t){return this.#e("setPageViewName",e,t)}setCustomAttribute(e,t,r){return this.#e("setCustomAttribute",e,t,r)}noticeError(e,t){return this.#e("noticeError",e,t)}setUserId(e){return this.#e("setUserId",e)}setApplicationVersion(e){return this.#e("setApplicationVersion",e)}setErrorHandler(e){return this.#e("setErrorHandler",e)}addRelease(e,t){return this.#e("addRelease",e,t)}log(e,t){return this.#e("log",e,t)}}class o extends n{#e(t,...r){if("function"==typeof this.api?.[t])return this.api[t](...r);(0,e.R)(35,t)}start(){return this.#e("start")}finished(e){return this.#e("finished",e)}recordReplay(){return this.#e(t.G4.RECORD)}pauseReplay(){return this.#e(t.G4.PAUSE)}addToTrace(e){return this.#e("addToTrace",e)}setCurrentRouteName(e){return this.#e("setCurrentRouteName",e)}interaction(){return this.#e("interaction")}wrapLogger(e,t,r){return this.#e("wrapLogger",e,t,r)}}var a=i(860),s=i(217);const c=Object.values(a.K7);function u(e){const t={};return c.forEach((r=>{t[r]=function(e,t){return!0===(0,s.gD)(t,"".concat(e,".enabled"))}(r,e)})),t}var l=i(603);var d=i(687),f=i(234),g=i(289),p=i(154),m=i(384);const h=e=>p.RI&&!0===(0,s.gD)(e,"privacy.cookies_enabled");function v(e){return!!(0,m.dV)().o.MO&&h(e)&&!0===(0,s.gD)(e,"session_trace.enabled")}var b=i(389);class y extends f.W{constructor(e,t,r=!0){super(e.agentIdentifier,t),this.auto=r,this.abortHandler=void 0,this.featAggregate=void 0,this.onAggregateImported=void 0,!1===e.init[this.featureName].autoStart&&(this.auto=!1),this.auto?(0,d.Ak)(e.agentIdentifier,t):this.ee.on("manual-start-all",(0,b.J)((()=>{(0,d.Ak)(e.agentIdentifier,this.featureName),this.auto=!0,this.importAggregator(e)})))}importAggregator(t,r={}){if(this.featAggregate||!this.auto)return;let n;this.onAggregateImported=new Promise((e=>{n=e}));const o=async()=>{let o;try{if(h(this.agentIdentifier)){const{setupAgentSession:e}=await i.e(296).then(i.bind(i,861));o=e(t)}}catch(t){(0,e.R)(20,t),this.ee.emit("internal-error",[t]),this.featureName===a.K7.sessionReplay&&this.abortHandler?.()}try{if(!this.#t(this.featureName,o))return(0,d.Ze)(this.agentIdentifier,this.featureName),void n(!1);const{lazyFeatureLoader:e}=await i.e(296).then(i.bind(i,103)),{Aggregate:a}=await e(this.featureName,"aggregate");this.featAggregate=new a(t,r),t.runtime.harvester.initializedAggregates.push(this.featAggregate),n(!0)}catch(t){(0,e.R)(34,t),this.abortHandler?.(),(0,d.Ze)(this.agentIdentifier,this.featureName,!0),n(!1),this.ee&&this.ee.abort()}};p.RI?(0,g.GG)((()=>o()),!0):o()}#t(e,t){switch(e){case a.K7.sessionReplay:return v(this.agentIdentifier)&&!!t;case a.K7.sessionTrace:return!!t;default:return!0}}}var w=i(630);class A extends y{static featureName=w.T;constructor(e,t=!0){super(e,w.T,t),this.importAggregator(e)}}var R=i(908),_=i(843),E=i(878),x=i(782),N=i(863);class k extends y{static featureName=x.T;constructor(e,t=!0){super(e,x.T,t),p.RI&&((0,_.u)((()=>(0,R.p)("docHidden",[(0,N.t)()],void 0,x.T,this.ee)),!0),(0,E.sp)("pagehide",(()=>(0,R.p)("winPagehide",[(0,N.t)()],void 0,x.T,this.ee))),this.importAggregator(e))}}var T=i(969);class j extends y{static featureName=T.TZ;constructor(e,t=!0){super(e,T.TZ,t),this.importAggregator(e)}}new class extends o{constructor(t){super(),p.gm?(this.features={},(0,m.bQ)(this.agentIdentifier,this),this.desiredFeatures=new Set(t.features||[]),this.desiredFeatures.add(A),this.runSoftNavOverSpa=[...this.desiredFeatures].some((e=>e.featureName===a.K7.softNav)),(0,l.j)(this,t,t.loaderType||"agent"),this.run()):(0,e.R)(21)}get config(){return{info:this.info,init:this.init,loader_config:this.loader_config,runtime:this.runtime}}run(){try{const t=u(this.agentIdentifier),r=[...this.desiredFeatures];r.sort(((e,t)=>a.P3[e.featureName]-a.P3[t.featureName])),r.forEach((r=>{if(!t[r.featureName]&&r.featureName!==a.K7.pageViewEvent)return;if(this.runSoftNavOverSpa&&r.featureName===a.K7.spa)return;if(!this.runSoftNavOverSpa&&r.featureName===a.K7.softNav)return;const n=function(e){switch(e){case a.K7.ajax:return[a.K7.jserrors];case a.K7.sessionTrace:return[a.K7.ajax,a.K7.pageViewEvent];case a.K7.sessionReplay:return[a.K7.sessionTrace];case a.K7.pageViewTiming:return[a.K7.pageViewEvent];default:return[]}}(r.featureName).filter((e=>!(e in this.features)));n.length>0&&(0,e.R)(36,{targetFeature:r.featureName,missingDependencies:n}),this.features[r.featureName]=new r(this)}))}catch(t){(0,e.R)(22,t);for(const e in this.features)this.features[e].abortHandler?.();const r=(0,m.Zm)();delete r.initializedAgents[this.agentIdentifier]?.api,delete r.initializedAgents[this.agentIdentifier]?.features,delete this.sharedAggregator;return r.ee.get(this.agentIdentifier).abort(),!1}}}({features:[A,k,j],loaderType:"lite"})})()})();</script>
+	<meta name="events-disabled" content="1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="csp-nonce" content="7i5EoyB0bjVDav+e6qz7NyeSuzDc1h1iVWZGsM6GBUE=">
+	<meta name="cart-hash" content="d751713988987e9331980363e24189ce">
+	<meta name="live-settings" content="[]">
+	<meta name="twitter:site" content="@VectorStock">
+	<meta property="og:site_name" content="VectorStock">
+	<meta property="fb:app_id" content="241100862642313">
+
+	<link rel="icon" type="image/svg+xml" href="https://www.vectorstock.com/cache/img/icons/favicon.svg">
+	<link rel="icon" type="image/png" href="https://www.vectorstock.com/cache/img/icons/favicon.png">
+	<link rel="search" type="application/opensearchdescription+xml" title="VectorStock Search" href="https://www.vectorstock.com/xml/searchbox.xml">
+	<title>VectorStock - Vector Art, Images, Graphics &amp; Clipart</title>
+	<meta name="description" content="Royalty free vector images, vector art, graphics, clipart, illustrations and high resolution stock images. Find the vectors you want!">
+	<link rel="canonical" href="https://www.vectorstock.com/">	
+	<meta property="og:description" content="Royalty free vector images, vector art, graphics, clipart, illustrations and high resolution stock images. Find the vectors you want!">
+	<meta property="og:image" content="https://cdn.vectorstock.com/img/icons/vectorstock-fb-logo.png">
+	<meta property="og:type" content="website">
+	<script type="application/ld+json">{ "@context": "http://schema.org", "@type": "WebSite", "url": "https://www.vectorstock.com/", "potentialAction": { "@type": "SearchAction", "target": "https://www.vectorstock.com/royalty-free-vectors/{search_term}-vectors?source=schemasearch", "query-input": "required name=search_term" }}</script>
+	<meta name="google-site-verification" content="SwYUT-4-UmiSDC-Y0e6K2Vcymg57FnGE0Z3BigtsJak">
+	<meta name="google-site-verification" content="g23i969N76vndYAMtYXiLhmwM3ucRIcHRfivDKFSwuc">
+	<meta name="p:domain_verify" content="93d0bcb0121f487fa278ecd3a54a8be7">
+	<meta name="yandex-verification" content="371f043a5b74970b">
+	<link rel="preload" href="/cache/common1736298710.min.css" as="style">
+	<link rel="preload" href="/cache/home1736298710.min.css" as="style">
+	<link rel="preload" href="/cache/common1736306464.min.js" as="script">
+	<link rel="preload" href="/cache/home1736306464.min.js" as="script">
+	<link rel="stylesheet" type="text/css" href="/cache/common1736298710.min.css">
+	<link rel="stylesheet" type="text/css" href="/cache/home1736298710.min.css">
+	<script nonce='7i5EoyB0bjVDav+e6qz7NyeSuzDc1h1iVWZGsM6GBUE='>window.dataLayer=window.dataLayer||[];(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.defer=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;var n=d.querySelector('[nonce]');n&&j.setAttribute('nonce',n.nonce||n.getAttribute('nonce'));f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NL6HLLR');</script>
+	<script src="/cache/common1736306464.min.js"></script>
+	<script src="/cache/home1736306464.min.js"></script>
+	<link rel="preload" href="https://www.vectorstock.com/cache/img/pages/home/header/background-1.jpg" as="image" type="image/jpeg">
+</head>
+<body>
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NL6HLLR"height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- Header -->
+	<header>
+		<div class="frame">
+			<!-- User menu -->
+			<nav>
+				<div class="logo">
+					<figure><a href="/royalty-free-vectors" title="VectorStock®">VectorStock&reg;</a></figure>
+				</div>
+				<ul class="browse">
+					<li><a href="/royalty-free-vectors">All Vectors</a></li>
+					<li><a href="/free-vectors">Free Vectors</a></li>
+				</ul>
+				<ul class="account">
+					<li class="pricing"><a href="/pricing">Pricing</a></li>
+					<li class="signup"><button type="button" data-action="signup">Sign Up</button></li>
+					<li class="login"><button type="button" data-action="login">Login</button></li>
+				</ul>
+			</nav>
+			<section>
+				<h1><a href="/royalty-free-vectors">42,129,096 Royalty Free Vector Images</a></h1>
+				<h2><strong>VectorStock</strong> is the world&rsquo;s <strong>Premier Vector-only Image Marketplace</strong></h2>
+
+				<form id="simplesearch">
+					<fieldset>
+						<input type="text" name="input" placeholder="Search for vector images&hellip;" value="" spellcheck="true" autocomplete="off" maxlength="50" autofocus>
+						<div class="suggestions">
+							<ul></ul>
+						</div>
+					</fieldset>
+					<button type="submit"><span class="icon">Search</span></button>
+										<button type="button">
+						<span class="icon">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" role="img"><polyline points="30.5,42.9 10.5,42.9 10.5,7.1 31.8,7.1 39.5,14.8 39.5,29.5"></polyline><polygon class="fill" points="30.5,7.1 30.5,16.2 39.5,16.2 39.5,14.8 31.8,7.1"></polygon><circle class="fill" cx="19.7" cy="17.1" r="2.9"></circle><polygon class="fill" points="22.3,22.9 27.4,29.9 30.4,25.7 35.6,32.9 15.1,32.9"></polygon><polyline points="44.1,40.3 39.5,35.7 34.8,40.3"></polyline><line x1="39.5" y1="35.7" x2="39.5" y2="48.9"></line></svg>
+						</span>
+						<span class="label">Search by Image</span>
+					</button>
+									</form>
+								<h3><span class="badge">New!</span> <span class="link">Try using our reverse image search</span></h3>
+							</section>
+		</div>
+		<div class="tiles"><div></div></div>
+	</header>
+
+	<!-- Category Gallery -->
+	<div id="categories">
+		<nav>
+			<ul>
+				<li data-group="valentines" class="selected"><a href="/royalty-free-vectors/valentines-vectors" title="Valentines vectors">Valentines</a><span></span></li>
+				<li data-group="watercolor" class=""><a href="/royalty-free-vectors/watercolor-vectors" title="Watercolor vectors">Watercolor</a><span></span></li>
+				<li data-group="t-shirt-graphics" class=""><a href="/royalty-free-vectors/t-shirt-graphics-vectors" title="T-shirt Graphics vectors">T-shirt Graphics</a><span></span></li>
+				<li data-group="birthday" class=""><a href="/royalty-free-vectors/birthday-vectors" title="Birthday vectors">Birthday</a><span></span></li>
+				<li data-group="retro" class=""><a href="/royalty-free-vectors/retro-vectors" title="Retro vectors">Retro</a><span></span></li>
+				<li data-group="emblems" class=""><a href="/royalty-free-vectors/emblems-vectors" title="Emblems vectors">Emblems</a><span></span></li>
+				<li data-group="popular"><a href="/royalty-free-vectors" title="Popular vectors">Popular</a><span></span></li>
+			</ul>
+		</nav>
+		<div class="layout">
+			<div class="type_1 selected loaded" data-group="valentines">
+				<div class="wrap">
+					<ul>
+						<li class="img_1" data-src="https://cdn.vectorstock.com/i/750p/90/80/seamless-love-texture-with-abstract-flowers-vector-1909080.avif"><a href="/royalty-free-vector/seamless-love-texture-with-abstract-flowers-vector-1909080" title="seamless love texture with abstract flowers vector"><picture><source type="image/avif" srcset="https://cdn.vectorstock.com/i/750p/90/80/seamless-love-texture-with-abstract-flowers-vector-1909080.avif"><source type="image/webp" srcset="https://cdn.vectorstock.com/i/750p/90/80/seamless-love-texture-with-abstract-flowers-vector-1909080.webp"><img src="https://cdn.vectorstock.com/i/500p/90/80/seamless-love-texture-with-abstract-flowers-vector-1909080.jpg" alt="seamless love texture with abstract flowers" crossorigin="anonymous" /></picture></a></li>
+						<li class="img_2" data-src="https://cdn.vectorstock.com/i/750p/57/02/valentines-day-set-of-symbols-vector-1865702.avif"><a href="/royalty-free-vector/valentines-day-set-of-symbols-vector-1865702" title="valentines day set of symbols vector"><picture><source type="image/avif" srcset="https://cdn.vectorstock.com/i/750p/57/02/valentines-day-set-of-symbols-vector-1865702.avif"><source type="image/webp" srcset="https://cdn.vectorstock.com/i/750p/57/02/valentines-day-set-of-symbols-vector-1865702.webp"><img src="https://cdn.vectorstock.com/i/500p/57/02/valentines-day-set-of-symbols-vector-1865702.jpg" alt="valentines day set of symbols" crossorigin="anonymous" /></picture></a></li>
+						<li class="img_3" data-src="https://cdn.vectorstock.com/i/750p/70/83/pink-grunge-background-with-valentine-heart-vector-3737083.avif"><a href="/royalty-free-vector/pink-grunge-background-with-valentine-heart-vector-3737083" title="pink grunge background with valentine heart vector"><picture><source type="image/avif" srcset="https://cdn.vectorstock.com/i/750p/70/83/pink-grunge-background-with-valentine-heart-vector-3737083.avif"><source type="image/webp" srcset="https://cdn.vectorstock.com/i/750p/70/83/pink-grunge-background-with-valentine-heart-vector-3737083.webp"><img src="https://cdn.vectorstock.com/i/500p/70/83/pink-grunge-background-with-valentine-heart-vector-3737083.jpg" alt="pink grunge background with valentine heart" crossorigin="anonymous" /></picture></a></li>
+						<li class="img_4" data-src="https://cdn.vectorstock.com/i/750p/76/06/holiday-card-with-hearts-vector-1837606.avif"><a href="/royalty-free-vector/holiday-card-with-hearts-vector-1837606" title="holiday card with hearts vector"><picture><source type="image/avif" srcset="https://cdn.vectorstock.com/i/750p/76/06/holiday-card-with-hearts-vector-1837606.avif"><source type="image/webp" srcset="https://cdn.vectorstock.com/i/750p/76/06/holiday-card-with-hearts-vector-1837606.webp"><img src="https://cdn.vectorstock.com/i/500p/76/06/holiday-card-with-hearts-vector-1837606.jpg" alt="holiday card with hearts" crossorigin="anonymous" /></picture></a></li>
+						<li class="img_5" data-src="https://cdn.vectorstock.com/i/750p/50/61/valentines-day-romantic-seamless-pattern-with-cute-vector-3605061.avif"><a href="/royalty-free-vector/valentines-day-romantic-seamless-pattern-with-cute-vector-3605061" title="valentines day romantic seamless pattern with cute vector"><picture><source type="image/avif" srcset="https://cdn.vectorstock.com/i/750p/50/61/valentines-day-romantic-seamless-pattern-with-cute-vector-3605061.avif"><source type="image/webp" srcset="https://cdn.vectorstock.com/i/750p/50/61/valentines-day-romantic-seamless-pattern-with-cute-vector-3605061.webp"><img src="https://cdn.vectorstock.com/i/500p/50/61/valentines-day-romantic-seamless-pattern-with-cute-vector-3605061.jpg" alt="valentines day romantic seamless pattern with cute" crossorigin="anonymous" /></picture></a></li>
+						<li class="img_6" data-src="https://cdn.vectorstock.com/i/750p/68/02/valentines-day-lettering-vector-3736802.avif"><a href="/royalty-free-vector/valentines-day-lettering-vector-3736802" title="valentines day lettering vector"><picture><source type="image/avif" srcset="https://cdn.vectorstock.com/i/750p/68/02/valentines-day-lettering-vector-3736802.avif"><source type="image/webp" srcset="https://cdn.vectorstock.com/i/750p/68/02/valentines-day-lettering-vector-3736802.webp"><img src="https://cdn.vectorstock.com/i/500p/68/02/valentines-day-lettering-vector-3736802.jpg" alt="valentines day lettering" crossorigin="anonymous" /></picture></a></li>
+						<li class="img_7" data-src="https://cdn.vectorstock.com/i/750p/81/95/water-heart-background-vector-3728195.avif"><a href="/royalty-free-vector/water-heart-background-vector-3728195" title="water heart background vector"><picture><source type="image/avif" srcset="https://cdn.vectorstock.com/i/750p/81/95/water-heart-background-vector-3728195.avif"><source type="image/webp" srcset="https://cdn.vectorstock.com/i/750p/81/95/water-heart-background-vector-3728195.webp"><img src="https://cdn.vectorstock.com/i/500p/81/95/water-heart-background-vector-3728195.jpg" alt="water heart background" crossorigin="anonymous" /></picture></a></li>
+						<li class="img_8" data-src="https://cdn.vectorstock.com/i/750p/60/61/happy-valentines-card-cute-cat-with-heart-vector-1876061.avif"><a href="/royalty-free-vector/happy-valentines-card-cute-cat-with-heart-vector-1876061" title="happy valentines card cute cat with heart vector"><picture><source type="image/avif" srcset="https://cdn.vectorstock.com/i/750p/60/61/happy-valentines-card-cute-cat-with-heart-vector-1876061.avif"><source type="image/webp" srcset="https://cdn.vectorstock.com/i/750p/60/61/happy-valentines-card-cute-cat-with-heart-vector-1876061.webp"><img src="https://cdn.vectorstock.com/i/500p/60/61/happy-valentines-card-cute-cat-with-heart-vector-1876061.jpg" alt="happy valentines card cute cat with heart" crossorigin="anonymous" /></picture></a></li>
+					</ul>
+				</div>
+				<div class="list"><ul>
+					<li data-src="https://cdn.vectorstock.com/i/500p/68/49/cute-valentine-seamless-pattern-vector-1146849.avif"><a href="/royalty-free-vector/cute-valentine-seamless-pattern-vector-1146849" title="cute valentine seamless pattern vector"><picture><source type="image/avif" srcset="https://cdn.vectorstock.com/i/500p/68/49/cute-valentine-seamless-pattern-vector-1146849.avif"><source type="image/webp" srcset="https://cdn.vectorstock.com/i/500p/68/49/cute-valentine-seamless-pattern-vector-1146849.webp"><img loading="lazy" src="https://cdn.vectorstock.com/i/500p/68/49/cute-valentine-seamless-pattern-vector-1146849.jpg" alt="cute valentine seamless pattern"/></picture></a></li>
+					<li data-src="https://cdn.vectorstock.com/i/500p/27/60/valentines-background-vector-3622760.avif"><a href="/royalty-free-vector/valentines-background-vector-3622760" title="valentines background vector"><picture><source type="image/avif" srcset="https://cdn.vectorstock.com/i/500p/27/60/valentines-background-vector-3622760.avif"><source type="image/webp" srcset="https://cdn.vectorstock.com/i/500p/27/60/valentines-background-vector-3622760.webp"><img loading="lazy" src="https://cdn.vectorstock.com/i/500p/27/60/valentines-background-vector-3622760.jpg" alt="valentines background"/></picture></a></li>
+					<li data-src="https://cdn.vectorstock.com/i/500p/10/65/valentine-emblems-chalk-vector-1871065.avif"><a href="/royalty-free-vector/valentine-emblems-chalk-vector-1871065" title="valentine emblems chalk vector"><picture><source type="image/avif" srcset="https://cdn.vectorstock.com/i/500p/10/65/valentine-emblems-chalk-vector-1871065.avif"><source type="image/webp" srcset="https://cdn.vectorstock.com/i/500p/10/65/valentine-emblems-chalk-vector-1871065.webp"><img loading="lazy" src="https://cdn.vectorstock.com/i/500p/10/65/valentine-emblems-chalk-vector-1871065.jpg" alt="valentine emblems chalk"/></picture></a></li>
+					<li data-src="https://cdn.vectorstock.com/i/500p/93/42/valentine-day-love-message-floral-poster-vector-1139342.avif"><a href="/royalty-free-vector/valentine-day-love-message-floral-poster-vector-1139342" title="valentine day love message floral poster vector"><picture><source type="image/avif" srcset="https://cdn.vectorstock.com/i/500p/93/42/valentine-day-love-message-floral-poster-vector-1139342.avif"><source type="image/webp" srcset="https://cdn.vectorstock.com/i/500p/93/42/valentine-day-love-message-floral-poster-vector-1139342.webp"><img loading="lazy" src="https://cdn.vectorstock.com/i/500p/93/42/valentine-day-love-message-floral-poster-vector-1139342.jpg" alt="valentine day love message floral poster"/></picture></a></li>
+					<li data-src="https://cdn.vectorstock.com/i/500p/65/70/valentine-hearts-red-for-your-design-vector-946570.avif"><a href="/royalty-free-vector/valentine-hearts-red-for-your-design-vector-946570" title="valentine hearts red for your design vector"><picture><source type="image/avif" srcset="https://cdn.vectorstock.com/i/500p/65/70/valentine-hearts-red-for-your-design-vector-946570.avif"><source type="image/webp" srcset="https://cdn.vectorstock.com/i/500p/65/70/valentine-hearts-red-for-your-design-vector-946570.webp"><img loading="lazy" src="https://cdn.vectorstock.com/i/500p/65/70/valentine-hearts-red-for-your-design-vector-946570.jpg" alt="valentine hearts red for your design"/></picture></a></li>
+					<li data-src="https://cdn.vectorstock.com/i/500p/73/46/seamless-pattern-with-valentine-hearts-sketch-vector-1237346.avif"><a href="/royalty-free-vector/seamless-pattern-with-valentine-hearts-sketch-vector-1237346" title="seamless pattern with valentine hearts sketch vector"><picture><source type="image/avif" srcset="https://cdn.vectorstock.com/i/500p/73/46/seamless-pattern-with-valentine-hearts-sketch-vector-1237346.avif"><source type="image/webp" srcset="https://cdn.vectorstock.com/i/500p/73/46/seamless-pattern-with-valentine-hearts-sketch-vector-1237346.webp"><img loading="lazy" src="https://cdn.vectorstock.com/i/500p/73/46/seamless-pattern-with-valentine-hearts-sketch-vector-1237346.jpg" alt="seamless pattern with valentine hearts sketch"/></picture></a></li>
+					<li data-src="https://cdn.vectorstock.com/i/500p/19/66/happy-valentine-s-day-hand-drawn-calligraphy-vector-19581966.avif"><a href="/royalty-free-vector/happy-valentine-s-day-hand-drawn-calligraphy-vector-19581966" title="happy valentine s day hand drawn calligraphy vector"><picture><source type="image/avif" srcset="https://cdn.vectorstock.com/i/500p/19/66/happy-valentine-s-day-hand-drawn-calligraphy-vector-19581966.avif"><source type="image/webp" srcset="https://cdn.vectorstock.com/i/500p/19/66/happy-valentine-s-day-hand-drawn-calligraphy-vector-19581966.webp"><img loading="lazy" src="https://cdn.vectorstock.com/i/500p/19/66/happy-valentine-s-day-hand-drawn-calligraphy-vector-19581966.jpg" alt="happy valentine s day hand drawn calligraphy"/></picture></a></li>
+					<li data-src="https://cdn.vectorstock.com/i/500p/97/65/collection-of-grunge-valentine-hearts-vector-12699765.avif"><a href="/royalty-free-vector/collection-of-grunge-valentine-hearts-vector-12699765" title="collection of grunge valentine hearts vector"><picture><source type="image/avif" srcset="https://cdn.vectorstock.com/i/500p/97/65/collection-of-grunge-valentine-hearts-vector-12699765.avif"><source type="image/webp" srcset="https://cdn.vectorstock.com/i/500p/97/65/collection-of-grunge-valentine-hearts-vector-12699765.webp"><img loading="lazy" src="https://cdn.vectorstock.com/i/500p/97/65/collection-of-grunge-valentine-hearts-vector-12699765.jpg" alt="collection of grunge valentine hearts"/></picture></a></li>
+					<li class="more"><a href="/royalty-free-vectors/valentines-vectors" title="Valentines vectors"><span><span class="label">Search Valentines</span><span class="button">View more!</span></span></a></li>
+				</ul></div>
+			</div>
+			<div class="type_2" data-group="watercolor">
+				<div class="wrap">
+					<ul>
+						<li class="img_1" data-src="https://cdn.vectorstock.com/i/750p/42/53/watercolor-seamless-pattern-vector-2524253.avif"><a href="/royalty-free-vector/watercolor-seamless-pattern-vector-2524253" title="watercolor seamless pattern vector">watercolor seamless pattern</a></li>
+						<li class="img_2" data-src="https://cdn.vectorstock.com/i/750p/78/54/abstract-watercolor-colorful-background-vector-2807854.avif"><a href="/royalty-free-vector/abstract-watercolor-colorful-background-vector-2807854" title="abstract watercolor colorful background vector">abstract watercolor colorful background</a></li>
+						<li class="img_3" data-src="https://cdn.vectorstock.com/i/750p/36/12/peonies-watercolor-vector-4353612.avif"><a href="/royalty-free-vector/peonies-watercolor-vector-4353612" title="peonies watercolor vector">peonies watercolor</a></li>
+						<li class="img_4" data-src="https://cdn.vectorstock.com/i/750p/39/82/watercolors-ribbons-and-banners-for-text-vector-4763982.avif"><a href="/royalty-free-vector/watercolors-ribbons-and-banners-for-text-vector-4763982" title="watercolors ribbons and banners for text vector">watercolors ribbons and banners for text</a></li>
+						<li class="img_5" data-src="https://cdn.vectorstock.com/i/750p/85/96/watercolor-buttonholes-vector-4788596.avif"><a href="/royalty-free-vector/watercolor-buttonholes-vector-4788596" title="watercolor buttonholes vector">watercolor buttonholes</a></li>
+						<li class="img_6" data-src="https://cdn.vectorstock.com/i/750p/27/43/watercolor-colorful-blot-and-heart-seamless-vector-3822743.avif"><a href="/royalty-free-vector/watercolor-colorful-blot-and-heart-seamless-vector-3822743" title="watercolor colorful blot and heart seamless vector">watercolor colorful blot and heart seamless</a></li>
+						<li class="img_7" data-src="https://cdn.vectorstock.com/i/750p/25/41/watercolor-deer-head-on-the-white-background-vector-3202541.avif"><a href="/royalty-free-vector/watercolor-deer-head-on-the-white-background-vector-3202541" title="watercolor deer head on the white background vector">watercolor deer head on the white background</a></li>
+						<li class="img_8" data-src="https://cdn.vectorstock.com/i/750p/93/33/watercolor-flower-wreath-vector-4509333.avif"><a href="/royalty-free-vector/watercolor-flower-wreath-vector-4509333" title="watercolor flower wreath vector">watercolor flower wreath</a></li>
+					</ul>
+				</div>
+				<div class="list"><ul>
+					<li data-src="https://cdn.vectorstock.com/i/500p/46/83/watercolor-abstract-floral-pattern-vector-18654683.avif"><a href="/royalty-free-vector/watercolor-abstract-floral-pattern-vector-18654683" title="watercolor abstract floral pattern vector">watercolor abstract floral pattern</a></li>
+					<li data-src="https://cdn.vectorstock.com/i/500p/75/19/tropical-paradise-frame-with-watercolor-parrots-vector-21267519.avif"><a href="/royalty-free-vector/tropical-paradise-frame-with-watercolor-parrots-vector-21267519" title="tropical paradise frame with watercolor parrots vector">tropical paradise frame with watercolor parrots</a></li>
+					<li data-src="https://cdn.vectorstock.com/i/500p/39/91/vintage-flamingo-watercolor-card-hand-made-vector-21253991.avif"><a href="/royalty-free-vector/vintage-flamingo-watercolor-card-hand-made-vector-21253991" title="vintage flamingo watercolor card hand made vector">vintage flamingo watercolor card hand made</a></li>
+					<li data-src="https://cdn.vectorstock.com/i/500p/86/22/watercolor-pattern-vector-15318622.avif"><a href="/royalty-free-vector/watercolor-pattern-vector-15318622" title="watercolor pattern vector">watercolor pattern</a></li>
+					<li data-src="https://cdn.vectorstock.com/i/500p/81/13/watercolor-blots-collection-vector-21628113.avif"><a href="/royalty-free-vector/watercolor-blots-collection-vector-21628113" title="watercolor blots collection vector">watercolor blots collection</a></li>
+					<li data-src="https://cdn.vectorstock.com/i/500p/59/85/abstract-watercolor-landscape-vector-5055985.avif"><a href="/royalty-free-vector/abstract-watercolor-landscape-vector-5055985" title="abstract watercolor landscape vector">abstract watercolor landscape</a></li>
+					<li data-src="https://cdn.vectorstock.com/i/500p/98/03/watercolor-floral-frame-beautiful-wreath-vector-21749803.avif"><a href="/royalty-free-vector/watercolor-floral-frame-beautiful-wreath-vector-21749803" title="watercolor floral frame beautiful wreath vector">watercolor floral frame beautiful wreath</a></li>
+					<li data-src="https://cdn.vectorstock.com/i/500p/19/77/abstract-watercolor-background-vector-3701977.avif"><a href="/royalty-free-vector/abstract-watercolor-background-vector-3701977" title="abstract watercolor background vector">abstract watercolor background</a></li>
+					<li class="more"><a href="/royalty-free-vectors/watercolor-vectors" title="Watercolor vectors"><span><span class="label">Search Watercolor</span><span class="button">View more!</span></span></a></li>
+				</ul></div>
+			</div>
+			<div class="type_1" data-group="t-shirt-graphics">
+				<div class="wrap">
+					<ul>
+						<li class="img_1" data-src="https://cdn.vectorstock.com/i/750p/42/04/columbus-condensed-retro-sports-typeface-vector-20794204.avif"><a href="/royalty-free-vector/columbus-condensed-retro-sports-typeface-vector-20794204" title="columbus condensed retro sports typeface vector">columbus condensed retro sports typeface</a></li>
+						<li class="img_2" data-src="https://cdn.vectorstock.com/i/750p/05/32/vintage-textured-shirt-design-of-tiger-athletic-vector-46970532.avif"><a href="/royalty-free-vector/vintage-textured-shirt-design-of-tiger-athletic-vector-46970532" title="vintage textured shirt design of tiger athletic vector">vintage textured shirt design of tiger athletic</a></li>
+						<li class="img_3" data-src="https://cdn.vectorstock.com/i/750p/77/45/one-color-vintage-motorcycle-graphic-set-vector-3597745.avif"><a href="/royalty-free-vector/one-color-vintage-motorcycle-graphic-set-vector-3597745" title="one color vintage motorcycle graphic set vector">one color vintage motorcycle graphic set</a></li>
+						<li class="img_4" data-src="https://cdn.vectorstock.com/i/750p/77/53/surfing-print-007-vector-20037753.avif"><a href="/royalty-free-vector/surfing-print-007-vector-20037753" title="surfing print 007 vector">surfing print 007</a></li>
+						<li class="img_5" data-src="https://cdn.vectorstock.com/i/750p/32/47/tiger-004-vector-19493247.avif"><a href="/royalty-free-vector/tiger-004-vector-19493247" title="tiger 004 vector">tiger 004</a></li>
+						<li class="img_6" data-src="https://cdn.vectorstock.com/i/750p/72/93/set-of-vintage-motorcycle-labels-vector-5627293.avif"><a href="/royalty-free-vector/set-of-vintage-motorcycle-labels-vector-5627293" title="set of vintage motorcycle labels vector">set of vintage motorcycle labels</a></li>
+						<li class="img_7" data-src="https://cdn.vectorstock.com/i/750p/39/29/vintage-type-lock-up-apparel-design-vector-1543929.avif"><a href="/royalty-free-vector/vintage-type-lock-up-apparel-design-vector-1543929" title="vintage type lock-up apparel design vector">vintage type lock-up apparel design</a></li>
+						<li class="img_8" data-src="https://cdn.vectorstock.com/i/750p/52/72/vintage-nautical-design-for-apparel-vector-1705272.avif"><a href="/royalty-free-vector/vintage-nautical-design-for-apparel-vector-1705272" title="vintage nautical design for apparel vector">vintage nautical design for apparel</a></li>
+					</ul>
+				</div>
+				<div class="list"><ul>
+					<li data-src="https://cdn.vectorstock.com/i/500p/05/78/mountains-are-calling-and-i-must-go-t-shirt-vector-21810578.avif"><a href="/royalty-free-vector/mountains-are-calling-and-i-must-go-t-shirt-vector-21810578" title="mountains are calling and i must go t-shirt vector">mountains are calling and i must go t-shirt</a></li>
+					<li data-src="https://cdn.vectorstock.com/i/500p/26/59/california-t-shirt-with-grizzly-vector-10832659.avif"><a href="/royalty-free-vector/california-t-shirt-with-grizzly-vector-10832659" title="california t shirt with grizzly vector">california t shirt with grizzly</a></li>
+					<li data-src="https://cdn.vectorstock.com/i/500p/62/55/set-of-vintage-brooklyn-denim-original-vector-13796255.avif"><a href="/royalty-free-vector/set-of-vintage-brooklyn-denim-original-vector-13796255" title="set of vintage brooklyn denim original vector">set of vintage brooklyn denim original</a></li>
+					<li data-src="https://cdn.vectorstock.com/i/500p/71/28/face-of-indian-chief-vector-11887128.avif"><a href="/royalty-free-vector/face-of-indian-chief-vector-11887128" title="face of indian chief vector">face of indian chief</a></li>
+					<li data-src="https://cdn.vectorstock.com/i/500p/39/33/athletic-style-warriors-apparel-design-vector-1543933.avif"><a href="/royalty-free-vector/athletic-style-warriors-apparel-design-vector-1543933" title="athletic style warriors apparel design vector">athletic style warriors apparel design</a></li>
+					<li data-src="https://cdn.vectorstock.com/i/500p/40/72/t-shirt-print-018-vector-7364072.avif"><a href="/royalty-free-vector/t-shirt-print-018-vector-7364072" title="t shirt print 018 vector">t shirt print 018</a></li>
+					<li data-src="https://cdn.vectorstock.com/i/500p/17/70/motorcycle-skull-with-helmet-vector-19571770.avif"><a href="/royalty-free-vector/motorcycle-skull-with-helmet-vector-19571770" title="motorcycle skull with helmet vector">motorcycle skull with helmet</a></li>
+					<li data-src="https://cdn.vectorstock.com/i/500p/85/63/t-shirt-design-001-vector-20778563.avif"><a href="/royalty-free-vector/t-shirt-design-001-vector-20778563" title="t shirt design 001 vector">t shirt design 001</a></li>
+					<li class="more"><a href="/royalty-free-vectors/t-shirt-graphics-vectors" title="T-shirt Graphics vectors"><span><span class="label">Search T-shirt Graphics</span><span class="button">View more!</span></span></a></li>
+				</ul></div>
+			</div>
+			<div class="type_1" data-group="birthday">
+				<div class="wrap">
+					<ul>
+						<li class="img_1" data-src="https://cdn.vectorstock.com/i/750p/41/71/happy-birthday-monsters-vector-3444171.avif"><a href="/royalty-free-vector/happy-birthday-monsters-vector-3444171" title="happy birthday monsters vector">happy birthday monsters</a></li>
+						<li class="img_2" data-src="https://cdn.vectorstock.com/i/750p/33/63/birthday-card-vector-2493363.avif"><a href="/royalty-free-vector/birthday-card-vector-2493363" title="birthday card vector">birthday card</a></li>
+						<li class="img_3" data-src="https://cdn.vectorstock.com/i/750p/16/59/hand-drawn-birthday-party-seamless-pattern-vector-4541659.avif"><a href="/royalty-free-vector/hand-drawn-birthday-party-seamless-pattern-vector-4541659" title="hand drawn birthday party seamless pattern vector">hand drawn birthday party seamless pattern</a></li>
+						<li class="img_4" data-src="https://cdn.vectorstock.com/i/750p/61/52/birthday-celebration-seamless-pattern-vector-2006152.avif"><a href="/royalty-free-vector/birthday-celebration-seamless-pattern-vector-2006152" title="birthday celebration seamless pattern vector">birthday celebration seamless pattern</a></li>
+						<li class="img_5" data-src="https://cdn.vectorstock.com/i/750p/12/39/cartoon-floral-card-vector-4261239.avif"><a href="/royalty-free-vector/cartoon-floral-card-vector-4261239" title="cartoon floral card vector">cartoon floral card</a></li>
+						<li class="img_6" data-src="https://cdn.vectorstock.com/i/750p/86/80/elephant-pattern-vector-1988680.avif"><a href="/royalty-free-vector/elephant-pattern-vector-1988680" title="elephant pattern vector">elephant pattern</a></li>
+						<li class="img_7" data-src="https://cdn.vectorstock.com/i/750p/13/51/presents-vector-3171351.avif"><a href="/royalty-free-vector/presents-vector-3171351" title="presents vector">presents</a></li>
+						<li class="img_8" data-src="https://cdn.vectorstock.com/i/750p/20/46/greeting-card-with-funny-birds-vector-1262046.avif"><a href="/royalty-free-vector/greeting-card-with-funny-birds-vector-1262046" title="greeting card with funny birds vector">greeting card with funny birds</a></li>
+					</ul>
+				</div>
+				<div class="list"><ul>
+					<li data-src="https://cdn.vectorstock.com/i/500p/69/71/birthday-set-vector-1036971.avif"><a href="/royalty-free-vector/birthday-set-vector-1036971" title="birthday set vector">birthday set</a></li>
+					<li data-src="https://cdn.vectorstock.com/i/500p/06/98/birthday-party-poster-vector-14010698.avif"><a href="/royalty-free-vector/birthday-party-poster-vector-14010698" title="birthday party poster vector">birthday party poster</a></li>
+					<li data-src="https://cdn.vectorstock.com/i/500p/43/61/birthday-card-vector-1734361.avif"><a href="/royalty-free-vector/birthday-card-vector-1734361" title="birthday card vector">birthday card</a></li>
+					<li data-src="https://cdn.vectorstock.com/i/500p/98/18/happy-birthday-vector-7649818.avif"><a href="/royalty-free-vector/happy-birthday-vector-7649818" title="happy birthday vector">happy birthday</a></li>
+					<li data-src="https://cdn.vectorstock.com/i/500p/00/24/happy-birthday-phrases-vector-14150024.avif"><a href="/royalty-free-vector/happy-birthday-phrases-vector-14150024" title="happy birthday phrases vector">happy birthday phrases</a></li>
+					<li data-src="https://cdn.vectorstock.com/i/500p/77/79/birthday-cake-vector-1157779.avif"><a href="/royalty-free-vector/birthday-cake-vector-1157779" title="birthday cake vector">birthday cake</a></li>
+					<li data-src="https://cdn.vectorstock.com/i/500p/43/82/happy-birthday-vector-7844382.avif"><a href="/royalty-free-vector/happy-birthday-vector-7844382" title="happy birthday vector">happy birthday</a></li>
+					<li data-src="https://cdn.vectorstock.com/i/500p/19/83/happy-birthday-cake-numbers-and-firework-vector-821983.avif"><a href="/royalty-free-vector/happy-birthday-cake-numbers-and-firework-vector-821983" title="happy birthday cake numbers and firework vector">happy birthday cake numbers and firework</a></li>
+					<li class="more"><a href="/royalty-free-vectors/birthday-vectors" title="Birthday vectors"><span><span class="label">Search Birthday</span><span class="button">View more!</span></span></a></li>
+				</ul></div>
+			</div>
+			<div class="type_3" data-group="retro">
+				<div class="wrap">
+					<ul>
+						<li class="img_1" data-src="https://cdn.vectorstock.com/i/750p/48/84/retro-man-with-a-poster-pop-art-vector-9284884.avif"><a href="/royalty-free-vector/retro-man-with-a-poster-pop-art-vector-9284884" title="retro man with a poster pop art vector">retro man with a poster pop art</a></li>
+						<li class="img_2" data-src="https://cdn.vectorstock.com/i/750p/51/86/retro-car-vector-21635186.avif"><a href="/royalty-free-vector/retro-car-vector-21635186" title="retro car vector">retro car</a></li>
+						<li class="img_3" data-src="https://cdn.vectorstock.com/i/750p/67/02/old-design-badge-for-packing-vector-22356702.avif"><a href="/royalty-free-vector/old-design-badge-for-packing-vector-22356702" title="old design badge for packing vector">old design badge for packing</a></li>
+						<li class="img_4" data-src="https://cdn.vectorstock.com/i/750p/51/66/oops-girl-vector-845166.avif"><a href="/royalty-free-vector/oops-girl-vector-845166" title="oops girl vector">oops girl</a></li>
+						<li class="img_5" data-src="https://cdn.vectorstock.com/i/750p/47/88/candy-store-retro-graphic-vector-49914788.avif"><a href="/royalty-free-vector/candy-store-retro-graphic-vector-49914788" title="candy store retro graphic vector">candy store retro graphic</a></li>
+						<li class="img_6" data-src="https://cdn.vectorstock.com/i/750p/20/47/retro-frame-vector-1012047.avif"><a href="/royalty-free-vector/retro-frame-vector-1012047" title="retro frame vector">retro frame</a></li>
+						<li class="img_7" data-src="https://cdn.vectorstock.com/i/750p/04/42/retro-atomic-1950s-mid-century-vintage-background-vector-13720442.avif"><a href="/royalty-free-vector/retro-atomic-1950s-mid-century-vintage-background-vector-13720442" title="retro atomic 1950s mid century vintage background vector">retro atomic 1950s mid century vintage background</a></li>
+						<li class="img_8" data-src="https://cdn.vectorstock.com/i/750p/28/85/comic-beautiful-surprised-woman-vector-22022885.avif"><a href="/royalty-free-vector/comic-beautiful-surprised-woman-vector-22022885" title="comic beautiful surprised woman vector">comic beautiful surprised woman</a></li>
+						<li class="img_9" data-src="https://cdn.vectorstock.com/i/750p/02/24/fifites-greaser-in-a-leather-jacket-vector-6090224.avif"><a href="/royalty-free-vector/fifites-greaser-in-a-leather-jacket-vector-6090224" title="fifites greaser in a leather jacket vector">fifites greaser in a leather jacket</a></li>
+					</ul>
+				</div>
+				<div class="list"><ul>
+					<li data-src="https://cdn.vectorstock.com/i/500p/71/86/grungy-retro-background-vector-1087186.avif"><a href="/royalty-free-vector/grungy-retro-background-vector-1087186" title="grungy retro-background vector">grungy retro-background</a></li>
+					<li data-src="https://cdn.vectorstock.com/i/500p/08/58/70-handmade-sunburst-design-elements-vector-8320858.avif"><a href="/royalty-free-vector/70-handmade-sunburst-design-elements-vector-8320858" title="70 handmade sunburst design elements vector">70 handmade sunburst design elements</a></li>
+					<li data-src="https://cdn.vectorstock.com/i/500p/41/72/retro-music-player-icon-set-2-vector-1824172.avif"><a href="/royalty-free-vector/retro-music-player-icon-set-2-vector-1824172" title="retro music player icon set 2 vector">retro music player icon set 2</a></li>
+					<li data-src="https://cdn.vectorstock.com/i/500p/50/76/retro-background-vector-845076.avif"><a href="/royalty-free-vector/retro-background-vector-845076" title="retro background vector">retro background</a></li>
+					<li data-src="https://cdn.vectorstock.com/i/500p/76/81/retro-women-at-home-vector-107681.avif"><a href="/royalty-free-vector/retro-women-at-home-vector-107681" title="retro women at home vector">retro women at home</a></li>
+					<li data-src="https://cdn.vectorstock.com/i/500p/68/58/set-of-retro-ribbons-and-labels-vector-966858.avif"><a href="/royalty-free-vector/set-of-retro-ribbons-and-labels-vector-966858" title="set of retro ribbons and labels vector">set of retro ribbons and labels</a></li>
+					<li data-src="https://cdn.vectorstock.com/i/500p/98/67/80s-retro-sci-fi-background-vector-3789867.avif"><a href="/royalty-free-vector/80s-retro-sci-fi-background-vector-3789867" title="80s retro sci-fi background vector">80s retro sci-fi background</a></li>
+					<li data-src="https://cdn.vectorstock.com/i/500p/06/84/starbursts-frames-and-ribbons-vector-8320684.avif"><a href="/royalty-free-vector/starbursts-frames-and-ribbons-vector-8320684" title="starbursts frames and ribbons vector">starbursts frames and ribbons</a></li>
+					<li class="more"><a href="/royalty-free-vectors/retro-vectors" title="Retro vectors"><span><span class="label">Search Retro</span><span class="button">View more!</span></span></a></li>
+				</ul></div>
+			</div>
+			<div class="type_1" data-group="emblems">
+				<div class="wrap">
+					<ul>
+						<li class="img_1" data-src="https://cdn.vectorstock.com/i/750p/92/00/emblem-with-eagle-vector-4119200.avif"><a href="/royalty-free-vector/emblem-with-eagle-vector-4119200" title="emblem with eagle vector">emblem with eagle</a></li>
+						<li class="img_2" data-src="https://cdn.vectorstock.com/i/750p/31/41/set-of-vintage-emblem-templates-with-wings-design-vector-15723141.avif"><a href="/royalty-free-vector/set-of-vintage-emblem-templates-with-wings-design-vector-15723141" title="set of vintage emblem templates with wings design vector">set of vintage emblem templates with wings design</a></li>
+						<li class="img_3" data-src="https://cdn.vectorstock.com/i/750p/33/85/vintage-gold-logo-set-flourishes-crest-vector-13903385.avif"><a href="/royalty-free-vector/vintage-gold-logo-set-flourishes-crest-vector-13903385" title="vintage gold logo set flourishes crest vector">vintage gold logo set flourishes crest</a></li>
+						<li class="img_4" data-src="https://cdn.vectorstock.com/i/750p/53/49/design-elements-vector-1945349.avif"><a href="/royalty-free-vector/design-elements-vector-1945349" title="design elements vector">design elements</a></li>
+						<li class="img_5" data-src="https://cdn.vectorstock.com/i/750p/30/84/line-art-deco-retro-vintage-frame-design-elements-vector-4643084.avif"><a href="/royalty-free-vector/line-art-deco-retro-vintage-frame-design-elements-vector-4643084" title="line art deco retro vintage frame design elements vector">line art deco retro vintage frame design elements</a></li>
+						<li class="img_6" data-src="https://cdn.vectorstock.com/i/750p/44/08/chalk-drawn-sale-emblems-vector-1354408.avif"><a href="/royalty-free-vector/chalk-drawn-sale-emblems-vector-1354408" title="chalk drawn sale emblems vector">chalk drawn sale emblems</a></li>
+						<li class="img_7" data-src="https://cdn.vectorstock.com/i/750p/78/27/photographer-and-photo-studio-element-signatute-vector-7427827.avif"><a href="/royalty-free-vector/photographer-and-photo-studio-element-signatute-vector-7427827" title="photographer and photo studio element signatute vector">photographer and photo studio element signatute</a></li>
+						<li class="img_8" data-src="https://cdn.vectorstock.com/i/750p/16/97/hiking-summer-camp-emblems-and-design-elements-vector-15721697.avif"><a href="/royalty-free-vector/hiking-summer-camp-emblems-and-design-elements-vector-15721697" title="hiking summer camp emblems and design elements vector">hiking summer camp emblems and design elements</a></li>
+					</ul>
+				</div>
+				<div class="list"><ul>
+					<li data-src="https://cdn.vectorstock.com/i/500p/30/75/set-of-custom-motorcycle-emblems-vector-16723075.avif"><a href="/royalty-free-vector/set-of-custom-motorcycle-emblems-vector-16723075" title="set of custom motorcycle emblems vector">set of custom motorcycle emblems</a></li>
+					<li data-src="https://cdn.vectorstock.com/i/500p/02/51/coat-of-arms-collection-emblems-and-blazons-vector-21020251.avif"><a href="/royalty-free-vector/coat-of-arms-collection-emblems-and-blazons-vector-21020251" title="coat of arms collection - emblems and blazons vector">coat of arms collection - emblems and blazons</a></li>
+					<li data-src="https://cdn.vectorstock.com/i/500p/59/14/mega-pack-of-heraldic-elements-with-baroque-frame-vector-10705914.avif"><a href="/royalty-free-vector/mega-pack-of-heraldic-elements-with-baroque-frame-vector-10705914" title="mega pack of heraldic elements with baroque frame vector">mega pack of heraldic elements with baroque frame</a></li>
+					<li data-src="https://cdn.vectorstock.com/i/500p/08/98/hand-drawn-vintage-eagle-set-vector-3720898.avif"><a href="/royalty-free-vector/hand-drawn-vintage-eagle-set-vector-3720898" title="hand drawn vintage eagle set vector">hand drawn vintage eagle set</a></li>
+					<li data-src="https://cdn.vectorstock.com/i/500p/06/06/logo-frame-vintage-business-tag-label-banner-vector-21600606.avif"><a href="/royalty-free-vector/logo-frame-vintage-business-tag-label-banner-vector-21600606" title="logo frame vintage business tag label banner vector">logo frame vintage business tag label banner</a></li>
+					<li data-src="https://cdn.vectorstock.com/i/500p/65/30/linear-thin-line-art-deco-retro-vintage-design-vector-4416530.avif"><a href="/royalty-free-vector/linear-thin-line-art-deco-retro-vintage-design-vector-4416530" title="linear thin line art deco retro vintage design vector">linear thin line art deco retro vintage design</a></li>
+					<li data-src="https://cdn.vectorstock.com/i/500p/68/60/set-of-hipster-trendy-emblems-labels-and-sign-vector-3956860.avif"><a href="/royalty-free-vector/set-of-hipster-trendy-emblems-labels-and-sign-vector-3956860" title="set of hipster trendy emblems labels and sign vector">set of hipster trendy emblems labels and sign</a></li>
+					<li data-src="https://cdn.vectorstock.com/i/500p/09/82/set-of-baseball-emblems-tournament-vector-18580982.avif"><a href="/royalty-free-vector/set-of-baseball-emblems-tournament-vector-18580982" title="set of baseball emblems tournament vector">set of baseball emblems tournament</a></li>
+					<li class="more"><a href="/royalty-free-vectors/emblems-vectors" title="Emblems vectors"><span><span class="label">Search Emblems</span><span class="button">View more!</span></span></a></li>
+				</ul></div>
+			</div>
+			<div class="type_2" data-group="popular">
+				<div class="wrap">
+					<ul>
+						<li class="img_1" data-src="https://cdn.vectorstock.com/i/750p/23/49/vintage-logo-insignia-and-badges-vector-20782349.avif"><a href="/logos-vectors">Logos</a></li>
+						<li class="img_2" data-src="https://cdn.vectorstock.com/i/750p/32/90/mask-required-warning-sign-vector-31103290.avif"><a href="/healthcare-medical-vectors">Healthcare &amp; Medical</a></li>
+						<li class="img_3" data-src="https://cdn.vectorstock.com/i/750p/19/33/collection-geometric-floral-frames-vector-27051933.avif"><a href="/borders-frames-vectors">Borders &amp; Frames</a></li>
+						<li class="img_4" data-src="https://cdn.vectorstock.com/i/750p/27/94/set-of-9-circle-infographic-templates-with-11-vector-10832794.avif"><a href="/infographics-vectors">Infographics</a></li>
+						<li class="img_5" data-src="https://cdn.vectorstock.com/i/750p/37/73/glowing-glitter-flares-sun-light-flashes-vector-10303773.avif"><a href="/design-elements-vectors">Design Elements</a></li>
+						<li class="img_6" data-src="https://cdn.vectorstock.com/i/750p/79/81/glowing-neon-script-alphabet-font-vector-24007981.avif"><a href="/fonts-type-vectors">Fonts &amp; Type</a></li>
+						<li class="img_7" data-src="https://cdn.vectorstock.com/i/750p/39/84/wood-texture-vector-21933984.avif"><a href="/backgrounds-textures-vectors">Backgrounds &amp; Textures</a></li>
+						<li class="img_8" data-src="https://cdn.vectorstock.com/i/750p/32/23/american-soldier-battlefield-vector-27643223.avif"><a href="/military-vectors">Military</a></li>
+					</ul>
+				</div>
+				<div class="list">
+					<ul>
+						<li data-src="https://cdn.vectorstock.com/i/500p/45/97/candies-packaging-realistic-composition-vector-23394597.avif"><a href="/royalty-free-vectors/candy-samples-vectors">Candies packaging realistic composition</a></li>
+						<li data-src="https://cdn.vectorstock.com/i/500p/52/34/bandana-seamless-pattern-vector-7735234.avif"><a href="/royalty-free-vectors/bandana-vectors">Bandana Seamless Pattern</a></li>
+						<li data-src="https://cdn.vectorstock.com/i/500p/74/41/clean-dark-business-card-vector-10417441.avif"><a href="/royalty-free-vectors/business-card-vectors">Clean dark business card</a></li>
+						<li data-src="https://cdn.vectorstock.com/i/500p/57/74/italian-cuisine-food-traditional-dishes-vector-22835774.avif"><a href="/royalty-free-vector/italian-cuisine-food-traditional-dishes-vector-22835774">Italian cuisine food traditional dishes</a></li>
+						<li data-src="https://cdn.vectorstock.com/i/500p/40/15/walking-animation-business-characters-2d-vector-30234015.avif"><a href="/royalty-free-vectors/animation-vectors">Walking animation business characters 2d</a></li>
+						<li data-src="https://cdn.vectorstock.com/i/500p/33/79/roll-up-banner-stand-design-template-vector-7383379.avif"><a href="/royalty-free-vector/roll-up-banner-stand-design-template-vector-7383379">Roll Up Banner Stand Design Template</a></li>
+						<li data-src="https://cdn.vectorstock.com/i/500p/90/18/bandana-scarf-transparent-set-vector-31059018.avif"><a href="/royalty-free-vectors/bandana-mask-vectors">Bandana scarf transparent set</a></li>
+						<li data-src="https://cdn.vectorstock.com/i/500p/82/88/funny-cartoon-alphabet-vector-578288.avif"><a href="/royalty-free-vectors/alphabet-vectors">Funny cartoon alphabet</a></li>
+						<li class="more"><a href="/royalty-free-vectors"><span>
+							<span class="label">Popular Images</span>
+							<span class="button">View more!</span>
+						</span></a>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="link"><a href="/popular-categories">View Image Categories</a></div>
+	</div>
+	
+	<!-- Category Gallery -->
+	<div id="topic-logos">
+		<div class="inner">
+			<h1>Find your perfect&nbsp;Logo</h1>
+			<h3>We have more than 3 million royalty-free logos to choose from and designers on-hand to customise them for you.</h3>
+
+			
+			<div id="logo-carousel">
+				<div class="window">
+					<div class="pane">
+						<ul id="logo_row_1"><li class="el_49"></li><li class="el_50"></li><li class="el_09"></li><li class="el_21"></li><li class="el_26"></li><li class="el_25"></li><li class="el_39"></li><li class="el_48"></li><li class="el_13"></li><li class="el_31"></li><li class="el_27"></li><li class="el_45"></li><li class="el_37"></li><li class="el_19"></li><li class="el_32"></li><li class="el_23"></li><li class="el_18"></li><li class="el_29"></li><li class="el_30"></li><li class="el_12"></li><li class="el_28"></li><li class="el_38"></li><li class="el_10"></li><li class="el_42"></li><li class="el_14"></li><li class="el_07"></li><li class="el_22"></li><li class="el_20"></li><li class="el_01"></li><li class="el_35"></li><li class="el_08"></li><li class="el_05"></li><li class="el_24"></li><li class="el_47"></li><li class="el_06"></li><li class="el_36"></li><li class="el_46"></li><li class="el_34"></li><li class="el_02"></li><li class="el_03"></li><li class="el_16"></li><li class="el_41"></li><li class="el_44"></li><li class="el_33"></li><li class="el_43"></li><li class="el_04"></li><li class="el_11"></li><li class="el_17"></li><li class="el_40"></li><li class="el_15"></li><li class="el_49"></li><li class="el_50"></li><li class="el_09"></li><li class="el_21"></li><li class="el_26"></li><li class="el_25"></li><li class="el_39"></li><li class="el_48"></li><li class="el_13"></li><li class="el_31"></li><li class="el_27"></li><li class="el_45"></li><li class="el_37"></li><li class="el_19"></li><li class="el_32"></li><li class="el_23"></li><li class="el_18"></li><li class="el_29"></li><li class="el_30"></li><li class="el_12"></li><li class="el_28"></li><li class="el_38"></li><li class="el_10"></li><li class="el_42"></li><li class="el_14"></li><li class="el_07"></li><li class="el_22"></li><li class="el_20"></li><li class="el_01"></li><li class="el_35"></li><li class="el_08"></li><li class="el_05"></li><li class="el_24"></li><li class="el_47"></li><li class="el_06"></li><li class="el_36"></li><li class="el_46"></li><li class="el_34"></li><li class="el_02"></li><li class="el_03"></li><li class="el_16"></li><li class="el_41"></li><li class="el_44"></li><li class="el_33"></li><li class="el_43"></li><li class="el_04"></li><li class="el_11"></li><li class="el_17"></li><li class="el_40"></li><li class="el_15"></li></ul>
+						<ul id="logo_row_2"><li class="el_07"></li><li class="el_22"></li><li class="el_20"></li><li class="el_01"></li><li class="el_35"></li><li class="el_08"></li><li class="el_05"></li><li class="el_24"></li><li class="el_47"></li><li class="el_06"></li><li class="el_36"></li><li class="el_46"></li><li class="el_34"></li><li class="el_02"></li><li class="el_03"></li><li class="el_16"></li><li class="el_41"></li><li class="el_44"></li><li class="el_33"></li><li class="el_43"></li><li class="el_04"></li><li class="el_11"></li><li class="el_17"></li><li class="el_40"></li><li class="el_15"></li><li class="el_49"></li><li class="el_50"></li><li class="el_09"></li><li class="el_21"></li><li class="el_26"></li><li class="el_25"></li><li class="el_39"></li><li class="el_48"></li><li class="el_13"></li><li class="el_31"></li><li class="el_27"></li><li class="el_45"></li><li class="el_37"></li><li class="el_19"></li><li class="el_32"></li><li class="el_23"></li><li class="el_18"></li><li class="el_29"></li><li class="el_30"></li><li class="el_12"></li><li class="el_28"></li><li class="el_38"></li><li class="el_10"></li><li class="el_42"></li><li class="el_14"></li><li class="el_07"></li><li class="el_22"></li><li class="el_20"></li><li class="el_01"></li><li class="el_35"></li><li class="el_08"></li><li class="el_05"></li><li class="el_24"></li><li class="el_47"></li><li class="el_06"></li><li class="el_36"></li><li class="el_46"></li><li class="el_34"></li><li class="el_02"></li><li class="el_03"></li><li class="el_16"></li><li class="el_41"></li><li class="el_44"></li><li class="el_33"></li><li class="el_43"></li><li class="el_04"></li><li class="el_11"></li><li class="el_17"></li><li class="el_40"></li><li class="el_15"></li><li class="el_49"></li><li class="el_50"></li><li class="el_09"></li><li class="el_21"></li><li class="el_26"></li><li class="el_25"></li><li class="el_39"></li><li class="el_48"></li><li class="el_13"></li><li class="el_31"></li><li class="el_27"></li><li class="el_45"></li><li class="el_37"></li><li class="el_19"></li><li class="el_32"></li><li class="el_23"></li><li class="el_18"></li><li class="el_29"></li><li class="el_30"></li><li class="el_12"></li><li class="el_28"></li><li class="el_38"></li><li class="el_10"></li><li class="el_42"></li><li class="el_14"></li></ul>
+					</div>
+				</div>
+			</div>
+			<a href="/logos" class="link">
+				<span class="label">View Logos</span>
+				<span class="icon"></span>
+			</a>
+		</div>
+	</div>
+	
+	<!-- Pricing options -->
+	<div id="pricing">
+		<div>
+			<h2>Premium Images, not Premium Prices</h2>
+			<h3>Millions of vector images with 10,000+ new added daily</h3>
+
+			<div class="options">
+				<ul>
+					<li data-type="free"><a href="/free-vectors">
+						<span class="value">
+							<span class="cost"><sup>$</sup>0</span>
+							<span class="item">Images</span>
+						</span>
+						<span class="title">Free Vectors</span>
+						<span class="descr">1,092,917 Free Vector Images</span>
+					</a></li><li data-type="subscription"><a href="/pricing" rel="nofollow">
+						<span class="value">
+							<span class="cost"><strong>&infin;</strong></span>
+							<span class="item">Images</span>
+						</span>
+						<span class="title">Subscription</span>
+						<span class="descr">Monthly Image Plans</span>
+					</a></li><li data-type="credits"><a href="/pricing" rel="nofollow">
+						<span class="value">
+							<span class="cost"><sup>$</sup>1</span>
+							<span class="item">Images</span>
+						</span>
+						<span class="title">Credits</span>
+						<span class="descr">Pre-paid Image Credits</span>
+					</a></li><li data-type="fee"><a href="/royalty-free-vectors" rel="nofollow">
+						<span class="value">
+							<span class="cost"><sup>$</sup>14<sup>.99</sup></span>
+							<span class="item">Images</span>
+						</span>
+						<span class="title">Pay-per-Image</span>
+						<span class="descr">One-off Image Purchase</span>
+					</a></li>
+				</ul>
+			</div>
+
+						<button data-action="signup">
+				<span class="label">Signup for Free</span>
+				<span class="icon"></span>
+			</button>
+					</div>
+	</div>
+	
+	<!-- What is a Vector -->
+	<div id="vectortype">
+		<div>
+			<h2>What is a Vector?</h2>
+			<h3><span class="p1">Vector graphics are images that can be </span>resized without any loss of quality. <br>Best for printing and high-res display.</h3>
+
+			<div id="viewer" class="loading">
+				<div class="panel">
+					<div class="type bitmap">
+						<label>
+							<span class="label">Bitmap Image</span>
+							<span class="icon"></span>
+						</label>
+						<div class="preview"></div>
+					</div>
+					<div class="type vector">
+						<label>
+							<span class="label">Vector Image</span>
+							<span class="icon"></span>
+						</label>
+						<div class="preview"></div>
+					</div>
+					<div class="zoom">
+						<dl><dt>Scale</dt><dd><span class="value">100</span><sub>%</sub></dd></dl>
+					</div>
+				</div>
+
+				<div class="slider" data-value="1000" data-range="100-2000">
+					<div class="timeline">
+						<div class="markers">
+							<div class="m0 sel">
+								<span class="mark"></span>
+								<span class="label">100%</span>
+							</div>
+							<div class="m25">
+								<span class="mark"></span>
+								<span class="label">550%</span>
+							</div>
+							<div class="m50">
+								<span class="mark"></span>
+								<span class="label">1000%</span>
+							</div>
+							<div class="m75">
+								<span class="mark"></span>
+								<span class="label">1500%</span>
+							</div>
+							<div class="m100">
+								<span class="mark"></span>
+								<span class="label">2000%</span>
+							</div>
+						</div>
+						<div class="bar"></div>
+					</div>
+					<div class="playhead"><span></span></div>
+				</div>
+			</div>
+
+			<div class="link"><a href="/what-is-a-vector">Find out more...</a></div>
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<footer>
+		<div>
+		<div class="column c1">
+			<nav class="company">
+				<h4>VectorStock</h4>
+				<ul>
+					<li><a href="/" title="Home">Home</a></li>
+					<li class="sel"><a href="/free-vectors" title="Free Vectors">Free Vectors</a></li>
+					<li class="sel"><a href="/royalty-free-vectors" title="All Vectors">All Vectors</a></li>
+				</ul>
+				<ul>
+					<li><a href="/what-is-a-vector" title="What is a Vector?">What is a Vector?</a></li>
+				</ul>
+				<ul>
+					<li class="sel"><a href="/faq" title="Frequently Asked Questions"><span class="long">Frequently Asked Questions</span><span class="short">FAQs</span></a></li>
+					<li><a href="/faq/members/terms-of-use" title="Terms &amp; Conditions">Terms &amp; Conditions</a></li>
+					<li class="sel"><a href="/contact" title="Contact Us">Contact Us</a></li>
+				</ul>
+			</nav>
+		</div>
+		<div class="column c2">
+			<nav class="account">
+				<h4><span class="title">Account</span><span class="icon"></span></h4>
+					<ul>
+						<li><a href="/signup" title="Join Now">Join Now</a></li>
+						<li><a href="/pricing" title="Pricing">Pricing</a></li>
+						<li><a href="/?signup=1&contributor=1" title="Contributor Sign Up">Contributor Sign Up</a></li>
+						<li><a href="/faq/artists/why-sell-at-vectorstock" title="Contributor FAQ">Contributor FAQ</a></li>
+					</ul>
+			</nav>
+			<nav class="languages">
+				<h4>Languages</h4>
+				<ul>
+					<li><a href="https://www.vectorstock.com/" target="_blank" rel="nofollow"><span class="title">English</span></a></li>
+					<li><a href="https://www.vectorstock.com/de/" target="_blank" rel="nofollow"><span class="title">German</span></a></li>
+				</ul>
+			</nav>
+		</div>
+		<div class="column c3">
+			<nav class="social">
+				<h4>Social</h4>
+				<ul>
+					<li class="facebook sel"><a href="https://www.facebook.com/VectorStock" target="_blank" rel="noreferrer"><span class="title">Facebook</span><span class="icon"></span></a></li>
+					<li class="pinterest sel"><a href="https://pinterest.com/vectorstock/" target="_blank" rel="noreferrer"><span class="title">Pinterest</span><span class="icon"></span></a></li>
+					<li class="twitter sel"><a href="https://x.com/VectorStock" target="_blank" rel="noreferrer"><span class="title">X</span><span class="icon"></span></a></li>
+				</ul>
+			</nav>
+			<div class="signoff">
+				<h5><a href="https://www.vectorstock.com/" title="VectorStock&reg;">VectorStock&reg;</a></h5>
+				<p>VectorStock and the VectorStock logo are registered trademarks of VectorStock Media.<br>
+				&copy; 2025. <span>All Rights Reserved.</span></p>
+			</div>
+		</div>
+		</div>
+	</footer>
+
+
+	<script type="text/javascript" nonce="7i5EoyB0bjVDav+e6qz7NyeSuzDc1h1iVWZGsM6GBUE=">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"02e09611df","applicationID":"156179534","transactionName":"ZV0ENRYCC0RYAkVbDVwXJwIQCgpZFgleXwccTAMMFA8EQ1w=","queueTime":0,"applicationTime":4,"atts":"SRoHQ14YGEo=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+	<script id="_a_admitag" src="https://cdn.teleportapi.com/admitag.min.js?campaign_code=69ba13f9ec" defer></script><script nonce='7i5EoyB0bjVDav+e6qz7NyeSuzDc1h1iVWZGsM6GBUE=' type="text/javascript">try{var cookie_name="deduplication_cookie",days_to_store=90,deduplication_cookie_value="admitad",channel_name="utm_source";getSourceParamFromUri=function(){return(new RegExp(channel_name+"=([^&]+)").exec(document.location.search)||[])[1]||""},getSourceCookie=function(){var e=document.cookie.match(new RegExp("(?:^|; )"+cookie_name.replace(/([\.$?*|{}\(\)\[\]\\/\+^])/g,"\$1")+"=([^;]*)"));return e?decodeURIComponent(e[1]):void 0},setSourceCookie=function(){var e=getSourceParamFromUri(),o=new URL(document.location).searchParams;if(!o.get(channel_name)&&o.get("gclid"))e="advAutoMarkup";else if(!e)return;var n=new Date(60*days_to_store*60*24*1e3+ +new Date),a=cookie_name+"="+e+"; path=/; expires="+n.toGMTString();document.cookie=a,document.cookie=a+"; domain=."+location.host},setSourceCookie();}catch(e){}</script>
+	<script id="profitwell-js" data-pw-auth="1051055e2c0cbe1da2ab7ca0abe9bc55" nonce="7i5EoyB0bjVDav+e6qz7NyeSuzDc1h1iVWZGsM6GBUE=">
+	$(document).ready(function() {(function(i,s,o,g,r,a,m){i[o]=i[o]||function(){(i[o].q=i[o].q||[]).push(arguments)}; a=s.createElement(g);m=s.getElementsByTagName(g)[0];a.async=1;a.src=r+'?auth='+s.getElementById(o+'-js').getAttribute('data-pw-auth');m.parentNode.insertBefore(a,m);})(window,document,'profitwell','script','https://public.profitwell.com/js/profitwell.js');
+	profitwell('start', {});});</script>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+{
+  "protocol": "Proposed V2 Stratified Split (Text/Campaign Invariants Preserved)",
+  "total_records": 5400,
+  "total_components": 4801,
+  "partitions": {
+    "train": {
+      "total_records": 3780,
+      "component_count": 3181,
+      "categories": {
+        "ham": 1750,
+        "commercial_spam": 1050,
+        "smishing": 980
+      },
+      "binary_labels": {
+        "0": 2800,
+        "1": 980
+      }
+    },
+    "validation": {
+      "total_records": 810,
+      "component_count": 810,
+      "categories": {
+        "commercial_spam": 225,
+        "ham": 375,
+        "smishing": 210
+      },
+      "binary_labels": {
+        "0": 600,
+        "1": 210
+      }
+    },
+    "test": {
+      "total_records": 810,
+      "component_count": 810,
+      "categories": {
+        "commercial_spam": 225,
+        "ham": 375,
+        "smishing": 210
+      },
+      "binary_labels": {
+        "0": 600,
+        "1": 210
+      }
+    }
+  },
+  "invariants_verified": {
+    "zero_component_overlap": true,
+    "zero_campaign_overlap": true,
+    "zero_exact_text_overlap": true,
+    "zero_near_duplicate_overlap": true
+  }
+}

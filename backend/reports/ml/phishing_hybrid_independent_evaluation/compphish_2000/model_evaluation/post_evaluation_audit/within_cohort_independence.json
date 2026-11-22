@@ -1,0 +1,2777 @@
+{
+  "audit_timestamp_utc": "2026-11-01T21:30:00+00:00",
+  "evaluation_scope": "CompPhish V4 2,000-sample independent evaluation corpus",
+  "total_evaluated_samples": 2000,
+  "domain_disjointness_summary": {
+    "total_domain_keys": 2000,
+    "unique_domain_keys": 2000,
+    "domain_overlap_percentage": 0.0,
+    "status": "100% strictly disjoint registrable domains / host keys"
+  },
+  "within_cohort_exact_duplicates": {
+    "unique_normalized_text_hashes": 1835,
+    "duplicate_groups_count": 46,
+    "records_in_duplicate_groups": 211,
+    "exact_duplicate_instances_count": 165,
+    "cross_class_duplicate_groups_count": 1,
+    "cross_class_duplicate_groups": [
+      {
+        "normalized_text_sha256": "a7fe83ec64bb23eb28090598db3d166ed98e52e39d1afbbfd74c579553f93e4e",
+        "sample_count": 26,
+        "labels": [
+          "phishing",
+          "legitimate"
+        ],
+        "is_cross_class": true,
+        "records": [
+          {
+            "serial_number": 9157096,
+            "original_label": "phishing",
+            "registrable_domain": "multifixedchain.web.app",
+            "url": "https://multifixedchain.web.app/"
+          },
+          {
+            "serial_number": 202420256114,
+            "original_label": "legitimate",
+            "registrable_domain": "exhentai.org",
+            "url": "https://exhentai.org/"
+          },
+          {
+            "serial_number": 202420255956,
+            "original_label": "legitimate",
+            "registrable_domain": "mbtrx.com",
+            "url": "https://mbtrx.com/"
+          },
+          {
+            "serial_number": 202420261595,
+            "original_label": "legitimate",
+            "registrable_domain": "gestaoescolar.org.br",
+            "url": "https://gestaoescolar.org.br/"
+          },
+          {
+            "serial_number": 202420256733,
+            "original_label": "phishing",
+            "registrable_domain": "pl-6532595.icu",
+            "url": "https://allegrolokalnie.pl-6532595.icu"
+          },
+          {
+            "serial_number": 202420259935,
+            "original_label": "phishing",
+            "registrable_domain": "pl-oferta89634248347.shop",
+            "url": "http://allegro.pl-oferta89634248347.shop"
+          },
+          {
+            "serial_number": 202420259083,
+            "original_label": "phishing",
+            "registrable_domain": "pl-kategoria187124629371253.shop",
+            "url": "https://allegro.pl-kategoria187124629371253.shop"
+          },
+          {
+            "serial_number": 202420250137,
+            "original_label": "phishing",
+            "registrable_domain": "freewebhostmost.com",
+            "url": "https://postaitsezioneregistro.freewebhostmost.com/post-ch/post+/"
+          },
+          {
+            "serial_number": 202420259074,
+            "original_label": "phishing",
+            "registrable_domain": "oferta010293.shop",
+            "url": "http://allegrolokalnie.oferta010293.shop"
+          },
+          {
+            "serial_number": 202420256919,
+            "original_label": "phishing",
+            "registrable_domain": "pl-293474.icu",
+            "url": "http://allegro.pl-293474.icu"
+          },
+          {
+            "serial_number": 202420259372,
+            "original_label": "phishing",
+            "registrable_domain": "pl-kategoria178246174292.shop",
+            "url": "http://allegrolokalnie.pl-kategoria178246174292.shop"
+          },
+          {
+            "serial_number": 202420256721,
+            "original_label": "phishing",
+            "registrable_domain": "pl-kategorie781278950912571.shop",
+            "url": "http://allegrolokalnie.pl-kategorie781278950912571.shop"
+          },
+          {
+            "serial_number": 202420259567,
+            "original_label": "phishing",
+            "registrable_domain": "pl-kategorie812837152893.com",
+            "url": "https://allegro.pl-kategorie812837152893.com"
+          },
+          {
+            "serial_number": 202420256741,
+            "original_label": "phishing",
+            "registrable_domain": "pl-294720.icu",
+            "url": "https://allegro.pl-294720.icu"
+          },
+          {
+            "serial_number": 9157773,
+            "original_label": "phishing",
+            "registrable_domain": "pl-kategorie8128338353.com",
+            "url": "http://allegrolokalnie.pl-kategorie8128338353.com"
+          },
+          {
+            "serial_number": 9158195,
+            "original_label": "phishing",
+            "registrable_domain": "pi1838247.rest",
+            "url": "http://allegrolokalnie.pi1838247.rest"
+          },
+          {
+            "serial_number": 9162809,
+            "original_label": "phishing",
+            "registrable_domain": "pl-oferta926481634.cfd",
+            "url": "http://allegro.pl-oferta926481634.cfd"
+          },
+          {
+            "serial_number": 9160671,
+            "original_label": "phishing",
+            "registrable_domain": "xn--doctolib-sant-nhb.com",
+            "url": "https://xn--doctolib-sant-nhb.com/steps/captcha"
+          },
+          {
+            "serial_number": 9159608,
+            "original_label": "phishing",
+            "registrable_domain": "service-relaycolis.info",
+            "url": "https://service-relaycolis.info/help"
+          },
+          {
+            "serial_number": 9159912,
+            "original_label": "phishing",
+            "registrable_domain": "bdscimei.cl",
+            "url": "https://bdscimei.cl/most-art30823board44/most-art29973262board.html"
+          },
+          {
+            "serial_number": 9162782,
+            "original_label": "phishing",
+            "registrable_domain": "oferta-591274.icu",
+            "url": "http://allegrolokalnie.oferta-591274.icu"
+          },
+          {
+            "serial_number": 9162783,
+            "original_label": "phishing",
+            "registrable_domain": "pl-oferta4720145.icu",
+            "url": "http://allegrolokalnie.pl-oferta4720145.icu"
+          },
+          {
+            "serial_number": 9162521,
+            "original_label": "phishing",
+            "registrable_domain": "pl-oferta7928190.icu",
+            "url": "http://allegro.pl-oferta7928190.icu"
+          },
+          {
+            "serial_number": 9162507,
+            "original_label": "phishing",
+            "registrable_domain": "pl-oferta124565.sbs",
+            "url": "http://allegro.pl-oferta124565.sbs"
+          },
+          {
+            "serial_number": 9154638,
+            "original_label": "phishing",
+            "registrable_domain": "oferta842845293.shop",
+            "url": "http://allegrolokalnie.oferta842845293.shop"
+          },
+          {
+            "serial_number": 202420260111,
+            "original_label": "phishing",
+            "registrable_domain": "pl-kategoria179851948267378.shop",
+            "url": "http://allegro.pl-kategoria179851948267378.shop"
+          }
+        ]
+      }
+    ],
+    "top_exact_duplicate_groups": [
+      {
+        "normalized_text_sha256": "a7fe83ec64bb23eb28090598db3d166ed98e52e39d1afbbfd74c579553f93e4e",
+        "sample_count": 26,
+        "labels": [
+          "phishing",
+          "legitimate"
+        ],
+        "is_cross_class": true,
+        "records": [
+          {
+            "serial_number": 9157096,
+            "original_label": "phishing",
+            "registrable_domain": "multifixedchain.web.app",
+            "url": "https://multifixedchain.web.app/"
+          },
+          {
+            "serial_number": 202420256114,
+            "original_label": "legitimate",
+            "registrable_domain": "exhentai.org",
+            "url": "https://exhentai.org/"
+          },
+          {
+            "serial_number": 202420255956,
+            "original_label": "legitimate",
+            "registrable_domain": "mbtrx.com",
+            "url": "https://mbtrx.com/"
+          },
+          {
+            "serial_number": 202420261595,
+            "original_label": "legitimate",
+            "registrable_domain": "gestaoescolar.org.br",
+            "url": "https://gestaoescolar.org.br/"
+          },
+          {
+            "serial_number": 202420256733,
+            "original_label": "phishing",
+            "registrable_domain": "pl-6532595.icu",
+            "url": "https://allegrolokalnie.pl-6532595.icu"
+          },
+          {
+            "serial_number": 202420259935,
+            "original_label": "phishing",
+            "registrable_domain": "pl-oferta89634248347.shop",
+            "url": "http://allegro.pl-oferta89634248347.shop"
+          },
+          {
+            "serial_number": 202420259083,
+            "original_label": "phishing",
+            "registrable_domain": "pl-kategoria187124629371253.shop",
+            "url": "https://allegro.pl-kategoria187124629371253.shop"
+          },
+          {
+            "serial_number": 202420250137,
+            "original_label": "phishing",
+            "registrable_domain": "freewebhostmost.com",
+            "url": "https://postaitsezioneregistro.freewebhostmost.com/post-ch/post+/"
+          },
+          {
+            "serial_number": 202420259074,
+            "original_label": "phishing",
+            "registrable_domain": "oferta010293.shop",
+            "url": "http://allegrolokalnie.oferta010293.shop"
+          },
+          {
+            "serial_number": 202420256919,
+            "original_label": "phishing",
+            "registrable_domain": "pl-293474.icu",
+            "url": "http://allegro.pl-293474.icu"
+          },
+          {
+            "serial_number": 202420259372,
+            "original_label": "phishing",
+            "registrable_domain": "pl-kategoria178246174292.shop",
+            "url": "http://allegrolokalnie.pl-kategoria178246174292.shop"
+          },
+          {
+            "serial_number": 202420256721,
+            "original_label": "phishing",
+            "registrable_domain": "pl-kategorie781278950912571.shop",
+            "url": "http://allegrolokalnie.pl-kategorie781278950912571.shop"
+          },
+          {
+            "serial_number": 202420259567,
+            "original_label": "phishing",
+            "registrable_domain": "pl-kategorie812837152893.com",
+            "url": "https://allegro.pl-kategorie812837152893.com"
+          },
+          {
+            "serial_number": 202420256741,
+            "original_label": "phishing",
+            "registrable_domain": "pl-294720.icu",
+            "url": "https://allegro.pl-294720.icu"
+          },
+          {
+            "serial_number": 9157773,
+            "original_label": "phishing",
+            "registrable_domain": "pl-kategorie8128338353.com",
+            "url": "http://allegrolokalnie.pl-kategorie8128338353.com"
+          },
+          {
+            "serial_number": 9158195,
+            "original_label": "phishing",
+            "registrable_domain": "pi1838247.rest",
+            "url": "http://allegrolokalnie.pi1838247.rest"
+          },
+          {
+            "serial_number": 9162809,
+            "original_label": "phishing",
+            "registrable_domain": "pl-oferta926481634.cfd",
+            "url": "http://allegro.pl-oferta926481634.cfd"
+          },
+          {
+            "serial_number": 9160671,
+            "original_label": "phishing",
+            "registrable_domain": "xn--doctolib-sant-nhb.com",
+            "url": "https://xn--doctolib-sant-nhb.com/steps/captcha"
+          },
+          {
+            "serial_number": 9159608,
+            "original_label": "phishing",
+            "registrable_domain": "service-relaycolis.info",
+            "url": "https://service-relaycolis.info/help"
+          },
+          {
+            "serial_number": 9159912,
+            "original_label": "phishing",
+            "registrable_domain": "bdscimei.cl",
+            "url": "https://bdscimei.cl/most-art30823board44/most-art29973262board.html"
+          },
+          {
+            "serial_number": 9162782,
+            "original_label": "phishing",
+            "registrable_domain": "oferta-591274.icu",
+            "url": "http://allegrolokalnie.oferta-591274.icu"
+          },
+          {
+            "serial_number": 9162783,
+            "original_label": "phishing",
+            "registrable_domain": "pl-oferta4720145.icu",
+            "url": "http://allegrolokalnie.pl-oferta4720145.icu"
+          },
+          {
+            "serial_number": 9162521,
+            "original_label": "phishing",
+            "registrable_domain": "pl-oferta7928190.icu",
+            "url": "http://allegro.pl-oferta7928190.icu"
+          },
+          {
+            "serial_number": 9162507,
+            "original_label": "phishing",
+            "registrable_domain": "pl-oferta124565.sbs",
+            "url": "http://allegro.pl-oferta124565.sbs"
+          },
+          {
+            "serial_number": 9154638,
+            "original_label": "phishing",
+            "registrable_domain": "oferta842845293.shop",
+            "url": "http://allegrolokalnie.oferta842845293.shop"
+          },
+          {
+            "serial_number": 202420260111,
+            "original_label": "phishing",
+            "registrable_domain": "pl-kategoria179851948267378.shop",
+            "url": "http://allegro.pl-kategoria179851948267378.shop"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "d762ff29efab23c4eece3b88b4bf59584747674abb696678e0995ca661ce2912",
+        "sample_count": 26,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 9160700,
+            "original_label": "phishing",
+            "registrable_domain": "portal-sso-ndax-io--c--auth.webflow.io",
+            "url": "https://portal-sso-ndax-io--c--auth.webflow.io/"
+          },
+          {
+            "serial_number": 9162472,
+            "original_label": "phishing",
+            "registrable_domain": "sso--o-trustcapital--c-oauth.webflow.io",
+            "url": "https://sso--o-trustcapital--c-oauth.webflow.io/"
+          },
+          {
+            "serial_number": 9162479,
+            "original_label": "phishing",
+            "registrable_domain": "my-sso-itrustcapital-cdn-x-auth.webflow.io",
+            "url": "https://my-sso-itrustcapital-cdn-x-auth.webflow.io/"
+          },
+          {
+            "serial_number": 9162532,
+            "original_label": "phishing",
+            "registrable_domain": "start-leduger-auth.webflow.io",
+            "url": "https://start-leduger-auth.webflow.io/"
+          },
+          {
+            "serial_number": 9159781,
+            "original_label": "phishing",
+            "registrable_domain": "start-traezor-app.webflow.io",
+            "url": "http://start-traezor-app.webflow.io"
+          },
+          {
+            "serial_number": 9160087,
+            "original_label": "phishing",
+            "registrable_domain": "apps--itrustcapital--auth.webflow.io",
+            "url": "https://apps--itrustcapital--auth.webflow.io/"
+          },
+          {
+            "serial_number": 9160056,
+            "original_label": "phishing",
+            "registrable_domain": "netzero-email-8a55e2.webflow.io",
+            "url": "https://netzero-email-8a55e2.webflow.io/"
+          },
+          {
+            "serial_number": 9160673,
+            "original_label": "phishing",
+            "registrable_domain": "sso--trezorcom-auth.webflow.io",
+            "url": "http://sso--trezorcom-auth.webflow.io"
+          },
+          {
+            "serial_number": 9159306,
+            "original_label": "phishing",
+            "registrable_domain": "kuucqoinlogin.webflow.io",
+            "url": "https://kuucqoinlogin.webflow.io/"
+          },
+          {
+            "serial_number": 9162467,
+            "original_label": "phishing",
+            "registrable_domain": "uvcl.webflow.io",
+            "url": "https://uvcl.webflow.io/"
+          },
+          {
+            "serial_number": 9162656,
+            "original_label": "phishing",
+            "registrable_domain": "trecverwallket.webflow.io",
+            "url": "http://trecverwallket.webflow.io"
+          },
+          {
+            "serial_number": 9162474,
+            "original_label": "phishing",
+            "registrable_domain": "sso--learn-itrustcapital-service.webflow.io",
+            "url": "https://sso--learn-itrustcapital-service.webflow.io/"
+          },
+          {
+            "serial_number": 9162661,
+            "original_label": "phishing",
+            "registrable_domain": "us-trezoriostart.webflow.io",
+            "url": "http://us-trezoriostart.webflow.io"
+          },
+          {
+            "serial_number": 9162481,
+            "original_label": "phishing",
+            "registrable_domain": "my--sso-itrustcapital-com--s-cdn.webflow.io",
+            "url": "https://my--sso-itrustcapital-com--s-cdn.webflow.io/"
+          },
+          {
+            "serial_number": 9160177,
+            "original_label": "phishing",
+            "registrable_domain": "auth-process-itrustcapital.webflow.io",
+            "url": "https://auth-process-itrustcapital.webflow.io/"
+          },
+          {
+            "serial_number": 9162483,
+            "original_label": "phishing",
+            "registrable_domain": "kucoiineilogin.webflow.io",
+            "url": "https://kucoiineilogin.webflow.io/"
+          },
+          {
+            "serial_number": 9160706,
+            "original_label": "phishing",
+            "registrable_domain": "koofsfscoinlogin.webflow.io",
+            "url": "https://koofsfscoinlogin.webflow.io/"
+          },
+          {
+            "serial_number": 9160686,
+            "original_label": "phishing",
+            "registrable_domain": "serverupdateb.webflow.io",
+            "url": "http://serverupdateb.webflow.io/"
+          },
+          {
+            "serial_number": 9162475,
+            "original_label": "phishing",
+            "registrable_domain": "usa--itrustcapital--auth.webflow.io",
+            "url": "https://usa--itrustcapital--auth.webflow.io/"
+          },
+          {
+            "serial_number": 9159788,
+            "original_label": "phishing",
+            "registrable_domain": "trezozzo-start.webflow.io",
+            "url": "https://trezozzo-start.webflow.io/"
+          },
+          {
+            "serial_number": 9159789,
+            "original_label": "phishing",
+            "registrable_domain": "startedtiorezosio.webflow.io",
+            "url": "http://startedtiorezosio.webflow.io"
+          },
+          {
+            "serial_number": 9159784,
+            "original_label": "phishing",
+            "registrable_domain": "triezooiostart.webflow.io",
+            "url": "http://triezooiostart.webflow.io"
+          },
+          {
+            "serial_number": 9159308,
+            "original_label": "phishing",
+            "registrable_domain": "wwwledgercom.webflow.io",
+            "url": "https://wwwledgercom.webflow.io/"
+          },
+          {
+            "serial_number": 62300,
+            "original_label": "phishing",
+            "registrable_domain": "lite-bybit-auth-bybitt.webflow.io",
+            "url": "https://lite-bybit-auth-bybitt.webflow.io/"
+          },
+          {
+            "serial_number": 96800,
+            "original_label": "phishing",
+            "registrable_domain": "itruestacapitllogin.webflow.io",
+            "url": "http://itruestacapitllogin.webflow.io/"
+          },
+          {
+            "serial_number": 64700,
+            "original_label": "phishing",
+            "registrable_domain": "my-secure-itrust-capital.webflow.io",
+            "url": "https://my-secure-itrust-capital.webflow.io/"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "653d6bbe21f85d6810dfe5074717eac8c393eaa306fce8a08ab51dbb7bdf5837",
+        "sample_count": 17,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 202420255630,
+            "original_label": "phishing",
+            "registrable_domain": "reportinfringementactionconversionpros.vercel.app",
+            "url": "https://reportinfringementactionconversionpros.vercel.app/ttu&g_ep=EgoyMDI1MDMyMy4wIKXMDSoA"
+          },
+          {
+            "serial_number": 202420255703,
+            "original_label": "phishing",
+            "registrable_domain": "socialdominionremovalrequest.vercel.app",
+            "url": "https://socialdominionremovalrequest.vercel.app/ttu&g_ep=EgoyMDI1&MDNaNa4wIKXMDSoA"
+          },
+          {
+            "serial_number": 202420255211,
+            "original_label": "phishing",
+            "registrable_domain": "contentdrivenpagesecurity.vercel.app",
+            "url": "https://contentdrivenpagesecurity.vercel.app/ttu&g_ep=EgoyMDI1&MDNaNa4wIKXMDSoA"
+          },
+          {
+            "serial_number": 202420254915,
+            "original_label": "phishing",
+            "registrable_domain": "communityadstreamline.vercel.app",
+            "url": "http://communityadstreamline.vercel.app/3a36efff&cf6=5a&1eG=K9dHF3da4b=D400e.html"
+          },
+          {
+            "serial_number": 202420255267,
+            "original_label": "phishing",
+            "registrable_domain": "appealnoticeseoamplify.vercel.app",
+            "url": "http://appealnoticeseoamplify.vercel.app/ttu&g_ep=EgoyMDI1MDMyMy4wIKXMDSoA.html"
+          },
+          {
+            "serial_number": 202420255502,
+            "original_label": "phishing",
+            "registrable_domain": "filecomplaintinfluencerinsights.vercel.app",
+            "url": "https://filecomplaintinfluencerinsights.vercel.app/ttu&g_ep=EgoyMDI1MDMyMy4wIKXMDSoA"
+          },
+          {
+            "serial_number": 202420255155,
+            "original_label": "phishing",
+            "registrable_domain": "safebrandlaunch-two.vercel.app",
+            "url": "https://safebrandlaunch-two.vercel.app/ttu&g_ep=EgoyMDI1MDMyMy4wIKXMDSoA"
+          },
+          {
+            "serial_number": 202420254947,
+            "original_label": "phishing",
+            "registrable_domain": "copyrightclaimactiondigitalfluent.vercel.app",
+            "url": "http://copyrightclaimactiondigitalfluent.vercel.app/3a36efff&cf6=5a&1eG=K9dHF3da4b=D400e.html"
+          },
+          {
+            "serial_number": 202420255495,
+            "original_label": "phishing",
+            "registrable_domain": "fairuseadsynergy.vercel.app",
+            "url": "http://fairuseadsynergy.vercel.app/get_help"
+          },
+          {
+            "serial_number": 202420255389,
+            "original_label": "phishing",
+            "registrable_domain": "mediafuseuserreport.vercel.app",
+            "url": "https://mediafuseuserreport.vercel.app/ttu&g_ep=EgoyMDI1&MDNaNa4wIKXMDSoA"
+          },
+          {
+            "serial_number": 202420255496,
+            "original_label": "phishing",
+            "registrable_domain": "safeguardbuzzxpert.vercel.app",
+            "url": "http://safeguardbuzzxpert.vercel.app/get_help"
+          },
+          {
+            "serial_number": 202420255229,
+            "original_label": "phishing",
+            "registrable_domain": "moderationsocialpros.vercel.app",
+            "url": "http://moderationsocialpros.vercel.app/ttu&g_ep=EgoyMDI1MDMyMy4wIKXMDSoA.html"
+          },
+          {
+            "serial_number": 202420255680,
+            "original_label": "phishing",
+            "registrable_domain": "accountlockseohive.vercel.app",
+            "url": "https://accountlockseohive.vercel.app/ttu&g_ep=EgoyMDI1MDMyMy4wIKXMDSoA"
+          },
+          {
+            "serial_number": 202420255700,
+            "original_label": "phishing",
+            "registrable_domain": "adstrategizesafeguard.vercel.app",
+            "url": "https://adstrategizesafeguard.vercel.app/ttu&g_ep=EgoyMDI1&MDNaNa4wIKXMDSoA.html"
+          },
+          {
+            "serial_number": 202420255448,
+            "original_label": "phishing",
+            "registrable_domain": "policycontentrise.vercel.app",
+            "url": "http://policycontentrise.vercel.app/ttu&g_ep=EgoyMDI1MDMyMy4wIKXMDSoA.html"
+          },
+          {
+            "serial_number": 202420255131,
+            "original_label": "phishing",
+            "registrable_domain": "rightsadshifters.vercel.app",
+            "url": "https://rightsadshifters.vercel.app/ttu&g_ep=EgoyMDI1MDMyMy4wIKXMDSoA"
+          },
+          {
+            "serial_number": 202420255355,
+            "original_label": "phishing",
+            "registrable_domain": "safetyalertleadmaster.vercel.app",
+            "url": "http://safetyalertleadmaster.vercel.app/ttu&g_ep=EgoyMDI1MDMyMy4wIKXMDSoA"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "b3b0da6ab101f3a5ee82505797d63275b59f9f0db8fc6bead94df3a785b55e81",
+        "sample_count": 12,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 202420250813,
+            "original_label": "phishing",
+            "registrable_domain": "consolep.top",
+            "url": "https://consolep.top/"
+          },
+          {
+            "serial_number": 202420251067,
+            "original_label": "phishing",
+            "registrable_domain": "qrco.de",
+            "url": "https://qrco.de/bfNGQ6"
+          },
+          {
+            "serial_number": 202420251078,
+            "original_label": "phishing",
+            "registrable_domain": "q-r.to",
+            "url": "https://q-r.to/bfN9SS"
+          },
+          {
+            "serial_number": 202420250805,
+            "original_label": "phishing",
+            "registrable_domain": "claro-per.one",
+            "url": "https://claro-per.one/"
+          },
+          {
+            "serial_number": 202420250835,
+            "original_label": "phishing",
+            "registrable_domain": "in-indiaejpost.top",
+            "url": "https://in-indiaejpost.top/"
+          },
+          {
+            "serial_number": 202420250854,
+            "original_label": "phishing",
+            "registrable_domain": "postaut-at.xyz",
+            "url": "https://postaut-at.xyz/"
+          },
+          {
+            "serial_number": 202420250821,
+            "original_label": "phishing",
+            "registrable_domain": "ekkipost.buzz",
+            "url": "https://ekkipost.buzz/"
+          },
+          {
+            "serial_number": 202420250834,
+            "original_label": "phishing",
+            "registrable_domain": "in-indiaehpost.top",
+            "url": "https://in-indiaehpost.top/"
+          },
+          {
+            "serial_number": 202420250845,
+            "original_label": "phishing",
+            "registrable_domain": "in-indiaeypost.top",
+            "url": "https://in-indiaeypost.top/"
+          },
+          {
+            "serial_number": 202420250836,
+            "original_label": "phishing",
+            "registrable_domain": "in-indiaekpost.top",
+            "url": "https://in-indiaekpost.top/"
+          },
+          {
+            "serial_number": 9160521,
+            "original_label": "phishing",
+            "registrable_domain": "acceptsale.com",
+            "url": "https://swisspost.acceptsale.com/get/207880941"
+          },
+          {
+            "serial_number": 9153983,
+            "original_label": "phishing",
+            "registrable_domain": "dvdcanal.com",
+            "url": "https://dvdcanal.com/fr"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "db427589955885cadf7783d172dc471352212b5c1cdd2b24a967bcdc5221f534",
+        "sample_count": 11,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 83500,
+            "original_label": "phishing",
+            "registrable_domain": "eips.com.au",
+            "url": "https://report.demo.eips.com.au/mobile/front"
+          },
+          {
+            "serial_number": 83000,
+            "original_label": "phishing",
+            "registrable_domain": "nyisztor.com.au",
+            "url": "https://monitoring.dev.nyisztor.com.au/mobile/front"
+          },
+          {
+            "serial_number": 91100,
+            "original_label": "phishing",
+            "registrable_domain": "hpsafety.com.au",
+            "url": "https://www.sandbox.data.hpsafety.com.au/mobile/front"
+          },
+          {
+            "serial_number": 80900,
+            "original_label": "phishing",
+            "registrable_domain": "cddental.com.au",
+            "url": "https://www.production-workflow.cddental.com.au/mobile/front/"
+          },
+          {
+            "serial_number": 89900,
+            "original_label": "phishing",
+            "registrable_domain": "ingenova.com.au",
+            "url": "https://news.cpcontacts.ingenova.com.au/mobile/front/"
+          },
+          {
+            "serial_number": 90100,
+            "original_label": "phishing",
+            "registrable_domain": "mdcomp.com.au",
+            "url": "https://mta-sts.mail.mdcomp.com.au/mobile/front/"
+          },
+          {
+            "serial_number": 67600,
+            "original_label": "phishing",
+            "registrable_domain": "attollo.com.au",
+            "url": "https://www.dmarc.ipv6.attollo.com.au/mobile/front"
+          },
+          {
+            "serial_number": 75000,
+            "original_label": "phishing",
+            "registrable_domain": "bruin.com.au",
+            "url": "https://mbox.bruin.com.au/mobile/front"
+          },
+          {
+            "serial_number": 84500,
+            "original_label": "phishing",
+            "registrable_domain": "jungara.com.au",
+            "url": "https://support.jungara.com.au/mobile/front"
+          },
+          {
+            "serial_number": 91900,
+            "original_label": "phishing",
+            "registrable_domain": "woori.com.au",
+            "url": "https://www.imap.woori.com.au/mobile/front/"
+          },
+          {
+            "serial_number": 40600,
+            "original_label": "phishing",
+            "registrable_domain": "subscape.com.au",
+            "url": "https://www.superset.subscape.com.au/mobile/front/"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "8561717b4f47e804701803b4cbe55c61dcb3ff67841f8cb5b4a422a669b1ab9b",
+        "sample_count": 9,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 9156427,
+            "original_label": "phishing",
+            "registrable_domain": "fulfilled-clarity-788568.framer.app",
+            "url": "https://fulfilled-clarity-788568.framer.app/"
+          },
+          {
+            "serial_number": 9162556,
+            "original_label": "phishing",
+            "registrable_domain": "ready-stories-290828.framer.app",
+            "url": "https://ready-stories-290828.framer.app"
+          },
+          {
+            "serial_number": 9159341,
+            "original_label": "phishing",
+            "registrable_domain": "grounded-colleagues-615389.framer.app",
+            "url": "https://grounded-colleagues-615389.framer.app/"
+          },
+          {
+            "serial_number": 9159103,
+            "original_label": "phishing",
+            "registrable_domain": "possible-statuses-782974.framer.app",
+            "url": "https://possible-statuses-782974.framer.app/"
+          },
+          {
+            "serial_number": 9159079,
+            "original_label": "phishing",
+            "registrable_domain": "fuchsia-instance-630042.framer.app",
+            "url": "https://fuchsia-instance-630042.framer.app/"
+          },
+          {
+            "serial_number": 9158982,
+            "original_label": "phishing",
+            "registrable_domain": "tedious-feedback-307823.framer.app",
+            "url": "https://tedious-feedback-307823.framer.app/"
+          },
+          {
+            "serial_number": 9159105,
+            "original_label": "phishing",
+            "registrable_domain": "effective-yards-524561.framer.app",
+            "url": "https://effective-yards-524561.framer.app/"
+          },
+          {
+            "serial_number": 9160900,
+            "original_label": "phishing",
+            "registrable_domain": "chatty-success-002589.framer.app",
+            "url": "https://chatty-success-002589.framer.app/"
+          },
+          {
+            "serial_number": 9158143,
+            "original_label": "phishing",
+            "registrable_domain": "dazzled-contributors-138861.framer.app",
+            "url": "https://dazzled-contributors-138861.framer.app/"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "1c26d54a5ef0efde769ca36e498e5685ff32a92eeb9c9c49d5ed0277c454c5ab",
+        "sample_count": 8,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 202420255386,
+            "original_label": "phishing",
+            "registrable_domain": "legalbuzzzone.vercel.app",
+            "url": "http://legalbuzzzone.vercel.app/get_help"
+          },
+          {
+            "serial_number": 202420255161,
+            "original_label": "phishing",
+            "registrable_domain": "policyviolatoradinfusion.vercel.app",
+            "url": "http://policyviolatoradinfusion.vercel.app/get_help"
+          },
+          {
+            "serial_number": 202420255885,
+            "original_label": "phishing",
+            "registrable_domain": "guidelineviolationinfluencerinsights.vercel.app",
+            "url": "http://guidelineviolationinfluencerinsights.vercel.app/get_help"
+          },
+          {
+            "serial_number": 202420255477,
+            "original_label": "phishing",
+            "registrable_domain": "moderationtoolbrandhype.vercel.app",
+            "url": "http://moderationtoolbrandhype.vercel.app/get_help"
+          },
+          {
+            "serial_number": 202420255104,
+            "original_label": "phishing",
+            "registrable_domain": "warningadgen.vercel.app",
+            "url": "http://warningadgen.vercel.app/get_help"
+          },
+          {
+            "serial_number": 202420254950,
+            "original_label": "phishing",
+            "registrable_domain": "impropercontentinfluencerlabs.vercel.app",
+            "url": "http://impropercontentinfluencerlabs.vercel.app/get_help"
+          },
+          {
+            "serial_number": 202420255242,
+            "original_label": "phishing",
+            "registrable_domain": "privacyadmasters.vercel.app",
+            "url": "http://privacyadmasters.vercel.app/get_help"
+          },
+          {
+            "serial_number": 202420255365,
+            "original_label": "phishing",
+            "registrable_domain": "rightsbrandmetric.vercel.app",
+            "url": "http://rightsbrandmetric.vercel.app/get_help"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "ada289ae3992b18c294b7661d207dac511e1656abf1da5e3125a567098ec8148",
+        "sample_count": 6,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 37600,
+            "original_label": "phishing",
+            "registrable_domain": "aartirana2103.github.io",
+            "url": "https://aartirana2103.github.io/Facebook"
+          },
+          {
+            "serial_number": 9160529,
+            "original_label": "phishing",
+            "registrable_domain": "misty123009.github.io",
+            "url": "http://misty123009.github.io/insta"
+          },
+          {
+            "serial_number": 9160527,
+            "original_label": "phishing",
+            "registrable_domain": "mr-hamod.github.io",
+            "url": "http://mr-hamod.github.io/instagram"
+          },
+          {
+            "serial_number": 9162071,
+            "original_label": "phishing",
+            "registrable_domain": "home-suiteco-us.github.io",
+            "url": "https://home-suiteco-us.github.io/en-us/"
+          },
+          {
+            "serial_number": 74600,
+            "original_label": "phishing",
+            "registrable_domain": "ayyushraaj-011.github.io",
+            "url": "https://ayyushraaj-011.github.io/Amazon-Clone/"
+          },
+          {
+            "serial_number": 29400,
+            "original_label": "phishing",
+            "registrable_domain": "sahar12572.github.io",
+            "url": "https://sahar12572.github.io/Instagram---Copy-Cat/"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "8bff37788d513a4f090df4c6108abf360aedab668fde1ad864b0f0d4eb49f361",
+        "sample_count": 5,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 202420255624,
+            "original_label": "phishing",
+            "registrable_domain": "rightstrackerviraladvocates.vercel.app",
+            "url": "https://rightstrackerviraladvocates.vercel.app/zL20vMDFjcjI4entry=ttu&g_ep=EgoyMDI1MDM"
+          },
+          {
+            "serial_number": 202420255655,
+            "original_label": "phishing",
+            "registrable_domain": "sitepolicycontentminds.vercel.app",
+            "url": "https://sitepolicycontentminds.vercel.app/zL20vMDFjcjI4entry=ttu&g_ep=EgoyMDI1MDM"
+          },
+          {
+            "serial_number": 202420255158,
+            "original_label": "phishing",
+            "registrable_domain": "standardsinfluencerlaunch.vercel.app",
+            "url": "https://standardsinfluencerlaunch.vercel.app/zL20vMDFjcjI4entry=ttu&g_ep=EgoyMDI1MDM"
+          },
+          {
+            "serial_number": 202420255684,
+            "original_label": "phishing",
+            "registrable_domain": "contentblockseoguru.vercel.app",
+            "url": "https://contentblockseoguru.vercel.app/zL20vMDFjcjI4entry=ttu&g_ep=EgoyMDI1MDM"
+          },
+          {
+            "serial_number": 202420255136,
+            "original_label": "phishing",
+            "registrable_domain": "enforceremovaladcurators.vercel.app",
+            "url": "https://enforceremovaladcurators.vercel.app/zL20vMDFjcjI4entry=ttu&g_ep=EgoyMDI1MDM"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "cb46232557f92d06227e64a702126f23e7fbbceb550c2f66926bfcecaff557d0",
+        "sample_count": 5,
+        "labels": [
+          "legitimate"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 202420256040,
+            "original_label": "legitimate",
+            "registrable_domain": "tonicmovies.com",
+            "url": "https://tonicmovies.com/en/"
+          },
+          {
+            "serial_number": 202420256121,
+            "original_label": "legitimate",
+            "registrable_domain": "rulertube.com",
+            "url": "https://rulertube.com/en/"
+          },
+          {
+            "serial_number": 202420256106,
+            "original_label": "legitimate",
+            "registrable_domain": "hqhole.com",
+            "url": "https://hqhole.com/en/"
+          },
+          {
+            "serial_number": 202420256160,
+            "original_label": "legitimate",
+            "registrable_domain": "goldpornfilms.com",
+            "url": "https://goldpornfilms.com/en/"
+          },
+          {
+            "serial_number": 202420261200,
+            "original_label": "legitimate",
+            "registrable_domain": "spectraltube.com",
+            "url": "https://spectraltube.com/en/"
+          }
+        ]
+      }
+    ],
+    "all_exact_duplicate_groups": [
+      {
+        "normalized_text_sha256": "a7fe83ec64bb23eb28090598db3d166ed98e52e39d1afbbfd74c579553f93e4e",
+        "sample_count": 26,
+        "labels": [
+          "phishing",
+          "legitimate"
+        ],
+        "is_cross_class": true,
+        "records": [
+          {
+            "serial_number": 9157096,
+            "original_label": "phishing",
+            "registrable_domain": "multifixedchain.web.app",
+            "url": "https://multifixedchain.web.app/"
+          },
+          {
+            "serial_number": 202420256114,
+            "original_label": "legitimate",
+            "registrable_domain": "exhentai.org",
+            "url": "https://exhentai.org/"
+          },
+          {
+            "serial_number": 202420255956,
+            "original_label": "legitimate",
+            "registrable_domain": "mbtrx.com",
+            "url": "https://mbtrx.com/"
+          },
+          {
+            "serial_number": 202420261595,
+            "original_label": "legitimate",
+            "registrable_domain": "gestaoescolar.org.br",
+            "url": "https://gestaoescolar.org.br/"
+          },
+          {
+            "serial_number": 202420256733,
+            "original_label": "phishing",
+            "registrable_domain": "pl-6532595.icu",
+            "url": "https://allegrolokalnie.pl-6532595.icu"
+          },
+          {
+            "serial_number": 202420259935,
+            "original_label": "phishing",
+            "registrable_domain": "pl-oferta89634248347.shop",
+            "url": "http://allegro.pl-oferta89634248347.shop"
+          },
+          {
+            "serial_number": 202420259083,
+            "original_label": "phishing",
+            "registrable_domain": "pl-kategoria187124629371253.shop",
+            "url": "https://allegro.pl-kategoria187124629371253.shop"
+          },
+          {
+            "serial_number": 202420250137,
+            "original_label": "phishing",
+            "registrable_domain": "freewebhostmost.com",
+            "url": "https://postaitsezioneregistro.freewebhostmost.com/post-ch/post+/"
+          },
+          {
+            "serial_number": 202420259074,
+            "original_label": "phishing",
+            "registrable_domain": "oferta010293.shop",
+            "url": "http://allegrolokalnie.oferta010293.shop"
+          },
+          {
+            "serial_number": 202420256919,
+            "original_label": "phishing",
+            "registrable_domain": "pl-293474.icu",
+            "url": "http://allegro.pl-293474.icu"
+          },
+          {
+            "serial_number": 202420259372,
+            "original_label": "phishing",
+            "registrable_domain": "pl-kategoria178246174292.shop",
+            "url": "http://allegrolokalnie.pl-kategoria178246174292.shop"
+          },
+          {
+            "serial_number": 202420256721,
+            "original_label": "phishing",
+            "registrable_domain": "pl-kategorie781278950912571.shop",
+            "url": "http://allegrolokalnie.pl-kategorie781278950912571.shop"
+          },
+          {
+            "serial_number": 202420259567,
+            "original_label": "phishing",
+            "registrable_domain": "pl-kategorie812837152893.com",
+            "url": "https://allegro.pl-kategorie812837152893.com"
+          },
+          {
+            "serial_number": 202420256741,
+            "original_label": "phishing",
+            "registrable_domain": "pl-294720.icu",
+            "url": "https://allegro.pl-294720.icu"
+          },
+          {
+            "serial_number": 9157773,
+            "original_label": "phishing",
+            "registrable_domain": "pl-kategorie8128338353.com",
+            "url": "http://allegrolokalnie.pl-kategorie8128338353.com"
+          },
+          {
+            "serial_number": 9158195,
+            "original_label": "phishing",
+            "registrable_domain": "pi1838247.rest",
+            "url": "http://allegrolokalnie.pi1838247.rest"
+          },
+          {
+            "serial_number": 9162809,
+            "original_label": "phishing",
+            "registrable_domain": "pl-oferta926481634.cfd",
+            "url": "http://allegro.pl-oferta926481634.cfd"
+          },
+          {
+            "serial_number": 9160671,
+            "original_label": "phishing",
+            "registrable_domain": "xn--doctolib-sant-nhb.com",
+            "url": "https://xn--doctolib-sant-nhb.com/steps/captcha"
+          },
+          {
+            "serial_number": 9159608,
+            "original_label": "phishing",
+            "registrable_domain": "service-relaycolis.info",
+            "url": "https://service-relaycolis.info/help"
+          },
+          {
+            "serial_number": 9159912,
+            "original_label": "phishing",
+            "registrable_domain": "bdscimei.cl",
+            "url": "https://bdscimei.cl/most-art30823board44/most-art29973262board.html"
+          },
+          {
+            "serial_number": 9162782,
+            "original_label": "phishing",
+            "registrable_domain": "oferta-591274.icu",
+            "url": "http://allegrolokalnie.oferta-591274.icu"
+          },
+          {
+            "serial_number": 9162783,
+            "original_label": "phishing",
+            "registrable_domain": "pl-oferta4720145.icu",
+            "url": "http://allegrolokalnie.pl-oferta4720145.icu"
+          },
+          {
+            "serial_number": 9162521,
+            "original_label": "phishing",
+            "registrable_domain": "pl-oferta7928190.icu",
+            "url": "http://allegro.pl-oferta7928190.icu"
+          },
+          {
+            "serial_number": 9162507,
+            "original_label": "phishing",
+            "registrable_domain": "pl-oferta124565.sbs",
+            "url": "http://allegro.pl-oferta124565.sbs"
+          },
+          {
+            "serial_number": 9154638,
+            "original_label": "phishing",
+            "registrable_domain": "oferta842845293.shop",
+            "url": "http://allegrolokalnie.oferta842845293.shop"
+          },
+          {
+            "serial_number": 202420260111,
+            "original_label": "phishing",
+            "registrable_domain": "pl-kategoria179851948267378.shop",
+            "url": "http://allegro.pl-kategoria179851948267378.shop"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "d762ff29efab23c4eece3b88b4bf59584747674abb696678e0995ca661ce2912",
+        "sample_count": 26,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 9160700,
+            "original_label": "phishing",
+            "registrable_domain": "portal-sso-ndax-io--c--auth.webflow.io",
+            "url": "https://portal-sso-ndax-io--c--auth.webflow.io/"
+          },
+          {
+            "serial_number": 9162472,
+            "original_label": "phishing",
+            "registrable_domain": "sso--o-trustcapital--c-oauth.webflow.io",
+            "url": "https://sso--o-trustcapital--c-oauth.webflow.io/"
+          },
+          {
+            "serial_number": 9162479,
+            "original_label": "phishing",
+            "registrable_domain": "my-sso-itrustcapital-cdn-x-auth.webflow.io",
+            "url": "https://my-sso-itrustcapital-cdn-x-auth.webflow.io/"
+          },
+          {
+            "serial_number": 9162532,
+            "original_label": "phishing",
+            "registrable_domain": "start-leduger-auth.webflow.io",
+            "url": "https://start-leduger-auth.webflow.io/"
+          },
+          {
+            "serial_number": 9159781,
+            "original_label": "phishing",
+            "registrable_domain": "start-traezor-app.webflow.io",
+            "url": "http://start-traezor-app.webflow.io"
+          },
+          {
+            "serial_number": 9160087,
+            "original_label": "phishing",
+            "registrable_domain": "apps--itrustcapital--auth.webflow.io",
+            "url": "https://apps--itrustcapital--auth.webflow.io/"
+          },
+          {
+            "serial_number": 9160056,
+            "original_label": "phishing",
+            "registrable_domain": "netzero-email-8a55e2.webflow.io",
+            "url": "https://netzero-email-8a55e2.webflow.io/"
+          },
+          {
+            "serial_number": 9160673,
+            "original_label": "phishing",
+            "registrable_domain": "sso--trezorcom-auth.webflow.io",
+            "url": "http://sso--trezorcom-auth.webflow.io"
+          },
+          {
+            "serial_number": 9159306,
+            "original_label": "phishing",
+            "registrable_domain": "kuucqoinlogin.webflow.io",
+            "url": "https://kuucqoinlogin.webflow.io/"
+          },
+          {
+            "serial_number": 9162467,
+            "original_label": "phishing",
+            "registrable_domain": "uvcl.webflow.io",
+            "url": "https://uvcl.webflow.io/"
+          },
+          {
+            "serial_number": 9162656,
+            "original_label": "phishing",
+            "registrable_domain": "trecverwallket.webflow.io",
+            "url": "http://trecverwallket.webflow.io"
+          },
+          {
+            "serial_number": 9162474,
+            "original_label": "phishing",
+            "registrable_domain": "sso--learn-itrustcapital-service.webflow.io",
+            "url": "https://sso--learn-itrustcapital-service.webflow.io/"
+          },
+          {
+            "serial_number": 9162661,
+            "original_label": "phishing",
+            "registrable_domain": "us-trezoriostart.webflow.io",
+            "url": "http://us-trezoriostart.webflow.io"
+          },
+          {
+            "serial_number": 9162481,
+            "original_label": "phishing",
+            "registrable_domain": "my--sso-itrustcapital-com--s-cdn.webflow.io",
+            "url": "https://my--sso-itrustcapital-com--s-cdn.webflow.io/"
+          },
+          {
+            "serial_number": 9160177,
+            "original_label": "phishing",
+            "registrable_domain": "auth-process-itrustcapital.webflow.io",
+            "url": "https://auth-process-itrustcapital.webflow.io/"
+          },
+          {
+            "serial_number": 9162483,
+            "original_label": "phishing",
+            "registrable_domain": "kucoiineilogin.webflow.io",
+            "url": "https://kucoiineilogin.webflow.io/"
+          },
+          {
+            "serial_number": 9160706,
+            "original_label": "phishing",
+            "registrable_domain": "koofsfscoinlogin.webflow.io",
+            "url": "https://koofsfscoinlogin.webflow.io/"
+          },
+          {
+            "serial_number": 9160686,
+            "original_label": "phishing",
+            "registrable_domain": "serverupdateb.webflow.io",
+            "url": "http://serverupdateb.webflow.io/"
+          },
+          {
+            "serial_number": 9162475,
+            "original_label": "phishing",
+            "registrable_domain": "usa--itrustcapital--auth.webflow.io",
+            "url": "https://usa--itrustcapital--auth.webflow.io/"
+          },
+          {
+            "serial_number": 9159788,
+            "original_label": "phishing",
+            "registrable_domain": "trezozzo-start.webflow.io",
+            "url": "https://trezozzo-start.webflow.io/"
+          },
+          {
+            "serial_number": 9159789,
+            "original_label": "phishing",
+            "registrable_domain": "startedtiorezosio.webflow.io",
+            "url": "http://startedtiorezosio.webflow.io"
+          },
+          {
+            "serial_number": 9159784,
+            "original_label": "phishing",
+            "registrable_domain": "triezooiostart.webflow.io",
+            "url": "http://triezooiostart.webflow.io"
+          },
+          {
+            "serial_number": 9159308,
+            "original_label": "phishing",
+            "registrable_domain": "wwwledgercom.webflow.io",
+            "url": "https://wwwledgercom.webflow.io/"
+          },
+          {
+            "serial_number": 62300,
+            "original_label": "phishing",
+            "registrable_domain": "lite-bybit-auth-bybitt.webflow.io",
+            "url": "https://lite-bybit-auth-bybitt.webflow.io/"
+          },
+          {
+            "serial_number": 96800,
+            "original_label": "phishing",
+            "registrable_domain": "itruestacapitllogin.webflow.io",
+            "url": "http://itruestacapitllogin.webflow.io/"
+          },
+          {
+            "serial_number": 64700,
+            "original_label": "phishing",
+            "registrable_domain": "my-secure-itrust-capital.webflow.io",
+            "url": "https://my-secure-itrust-capital.webflow.io/"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "653d6bbe21f85d6810dfe5074717eac8c393eaa306fce8a08ab51dbb7bdf5837",
+        "sample_count": 17,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 202420255630,
+            "original_label": "phishing",
+            "registrable_domain": "reportinfringementactionconversionpros.vercel.app",
+            "url": "https://reportinfringementactionconversionpros.vercel.app/ttu&g_ep=EgoyMDI1MDMyMy4wIKXMDSoA"
+          },
+          {
+            "serial_number": 202420255703,
+            "original_label": "phishing",
+            "registrable_domain": "socialdominionremovalrequest.vercel.app",
+            "url": "https://socialdominionremovalrequest.vercel.app/ttu&g_ep=EgoyMDI1&MDNaNa4wIKXMDSoA"
+          },
+          {
+            "serial_number": 202420255211,
+            "original_label": "phishing",
+            "registrable_domain": "contentdrivenpagesecurity.vercel.app",
+            "url": "https://contentdrivenpagesecurity.vercel.app/ttu&g_ep=EgoyMDI1&MDNaNa4wIKXMDSoA"
+          },
+          {
+            "serial_number": 202420254915,
+            "original_label": "phishing",
+            "registrable_domain": "communityadstreamline.vercel.app",
+            "url": "http://communityadstreamline.vercel.app/3a36efff&cf6=5a&1eG=K9dHF3da4b=D400e.html"
+          },
+          {
+            "serial_number": 202420255267,
+            "original_label": "phishing",
+            "registrable_domain": "appealnoticeseoamplify.vercel.app",
+            "url": "http://appealnoticeseoamplify.vercel.app/ttu&g_ep=EgoyMDI1MDMyMy4wIKXMDSoA.html"
+          },
+          {
+            "serial_number": 202420255502,
+            "original_label": "phishing",
+            "registrable_domain": "filecomplaintinfluencerinsights.vercel.app",
+            "url": "https://filecomplaintinfluencerinsights.vercel.app/ttu&g_ep=EgoyMDI1MDMyMy4wIKXMDSoA"
+          },
+          {
+            "serial_number": 202420255155,
+            "original_label": "phishing",
+            "registrable_domain": "safebrandlaunch-two.vercel.app",
+            "url": "https://safebrandlaunch-two.vercel.app/ttu&g_ep=EgoyMDI1MDMyMy4wIKXMDSoA"
+          },
+          {
+            "serial_number": 202420254947,
+            "original_label": "phishing",
+            "registrable_domain": "copyrightclaimactiondigitalfluent.vercel.app",
+            "url": "http://copyrightclaimactiondigitalfluent.vercel.app/3a36efff&cf6=5a&1eG=K9dHF3da4b=D400e.html"
+          },
+          {
+            "serial_number": 202420255495,
+            "original_label": "phishing",
+            "registrable_domain": "fairuseadsynergy.vercel.app",
+            "url": "http://fairuseadsynergy.vercel.app/get_help"
+          },
+          {
+            "serial_number": 202420255389,
+            "original_label": "phishing",
+            "registrable_domain": "mediafuseuserreport.vercel.app",
+            "url": "https://mediafuseuserreport.vercel.app/ttu&g_ep=EgoyMDI1&MDNaNa4wIKXMDSoA"
+          },
+          {
+            "serial_number": 202420255496,
+            "original_label": "phishing",
+            "registrable_domain": "safeguardbuzzxpert.vercel.app",
+            "url": "http://safeguardbuzzxpert.vercel.app/get_help"
+          },
+          {
+            "serial_number": 202420255229,
+            "original_label": "phishing",
+            "registrable_domain": "moderationsocialpros.vercel.app",
+            "url": "http://moderationsocialpros.vercel.app/ttu&g_ep=EgoyMDI1MDMyMy4wIKXMDSoA.html"
+          },
+          {
+            "serial_number": 202420255680,
+            "original_label": "phishing",
+            "registrable_domain": "accountlockseohive.vercel.app",
+            "url": "https://accountlockseohive.vercel.app/ttu&g_ep=EgoyMDI1MDMyMy4wIKXMDSoA"
+          },
+          {
+            "serial_number": 202420255700,
+            "original_label": "phishing",
+            "registrable_domain": "adstrategizesafeguard.vercel.app",
+            "url": "https://adstrategizesafeguard.vercel.app/ttu&g_ep=EgoyMDI1&MDNaNa4wIKXMDSoA.html"
+          },
+          {
+            "serial_number": 202420255448,
+            "original_label": "phishing",
+            "registrable_domain": "policycontentrise.vercel.app",
+            "url": "http://policycontentrise.vercel.app/ttu&g_ep=EgoyMDI1MDMyMy4wIKXMDSoA.html"
+          },
+          {
+            "serial_number": 202420255131,
+            "original_label": "phishing",
+            "registrable_domain": "rightsadshifters.vercel.app",
+            "url": "https://rightsadshifters.vercel.app/ttu&g_ep=EgoyMDI1MDMyMy4wIKXMDSoA"
+          },
+          {
+            "serial_number": 202420255355,
+            "original_label": "phishing",
+            "registrable_domain": "safetyalertleadmaster.vercel.app",
+            "url": "http://safetyalertleadmaster.vercel.app/ttu&g_ep=EgoyMDI1MDMyMy4wIKXMDSoA"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "b3b0da6ab101f3a5ee82505797d63275b59f9f0db8fc6bead94df3a785b55e81",
+        "sample_count": 12,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 202420250813,
+            "original_label": "phishing",
+            "registrable_domain": "consolep.top",
+            "url": "https://consolep.top/"
+          },
+          {
+            "serial_number": 202420251067,
+            "original_label": "phishing",
+            "registrable_domain": "qrco.de",
+            "url": "https://qrco.de/bfNGQ6"
+          },
+          {
+            "serial_number": 202420251078,
+            "original_label": "phishing",
+            "registrable_domain": "q-r.to",
+            "url": "https://q-r.to/bfN9SS"
+          },
+          {
+            "serial_number": 202420250805,
+            "original_label": "phishing",
+            "registrable_domain": "claro-per.one",
+            "url": "https://claro-per.one/"
+          },
+          {
+            "serial_number": 202420250835,
+            "original_label": "phishing",
+            "registrable_domain": "in-indiaejpost.top",
+            "url": "https://in-indiaejpost.top/"
+          },
+          {
+            "serial_number": 202420250854,
+            "original_label": "phishing",
+            "registrable_domain": "postaut-at.xyz",
+            "url": "https://postaut-at.xyz/"
+          },
+          {
+            "serial_number": 202420250821,
+            "original_label": "phishing",
+            "registrable_domain": "ekkipost.buzz",
+            "url": "https://ekkipost.buzz/"
+          },
+          {
+            "serial_number": 202420250834,
+            "original_label": "phishing",
+            "registrable_domain": "in-indiaehpost.top",
+            "url": "https://in-indiaehpost.top/"
+          },
+          {
+            "serial_number": 202420250845,
+            "original_label": "phishing",
+            "registrable_domain": "in-indiaeypost.top",
+            "url": "https://in-indiaeypost.top/"
+          },
+          {
+            "serial_number": 202420250836,
+            "original_label": "phishing",
+            "registrable_domain": "in-indiaekpost.top",
+            "url": "https://in-indiaekpost.top/"
+          },
+          {
+            "serial_number": 9160521,
+            "original_label": "phishing",
+            "registrable_domain": "acceptsale.com",
+            "url": "https://swisspost.acceptsale.com/get/207880941"
+          },
+          {
+            "serial_number": 9153983,
+            "original_label": "phishing",
+            "registrable_domain": "dvdcanal.com",
+            "url": "https://dvdcanal.com/fr"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "db427589955885cadf7783d172dc471352212b5c1cdd2b24a967bcdc5221f534",
+        "sample_count": 11,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 83500,
+            "original_label": "phishing",
+            "registrable_domain": "eips.com.au",
+            "url": "https://report.demo.eips.com.au/mobile/front"
+          },
+          {
+            "serial_number": 83000,
+            "original_label": "phishing",
+            "registrable_domain": "nyisztor.com.au",
+            "url": "https://monitoring.dev.nyisztor.com.au/mobile/front"
+          },
+          {
+            "serial_number": 91100,
+            "original_label": "phishing",
+            "registrable_domain": "hpsafety.com.au",
+            "url": "https://www.sandbox.data.hpsafety.com.au/mobile/front"
+          },
+          {
+            "serial_number": 80900,
+            "original_label": "phishing",
+            "registrable_domain": "cddental.com.au",
+            "url": "https://www.production-workflow.cddental.com.au/mobile/front/"
+          },
+          {
+            "serial_number": 89900,
+            "original_label": "phishing",
+            "registrable_domain": "ingenova.com.au",
+            "url": "https://news.cpcontacts.ingenova.com.au/mobile/front/"
+          },
+          {
+            "serial_number": 90100,
+            "original_label": "phishing",
+            "registrable_domain": "mdcomp.com.au",
+            "url": "https://mta-sts.mail.mdcomp.com.au/mobile/front/"
+          },
+          {
+            "serial_number": 67600,
+            "original_label": "phishing",
+            "registrable_domain": "attollo.com.au",
+            "url": "https://www.dmarc.ipv6.attollo.com.au/mobile/front"
+          },
+          {
+            "serial_number": 75000,
+            "original_label": "phishing",
+            "registrable_domain": "bruin.com.au",
+            "url": "https://mbox.bruin.com.au/mobile/front"
+          },
+          {
+            "serial_number": 84500,
+            "original_label": "phishing",
+            "registrable_domain": "jungara.com.au",
+            "url": "https://support.jungara.com.au/mobile/front"
+          },
+          {
+            "serial_number": 91900,
+            "original_label": "phishing",
+            "registrable_domain": "woori.com.au",
+            "url": "https://www.imap.woori.com.au/mobile/front/"
+          },
+          {
+            "serial_number": 40600,
+            "original_label": "phishing",
+            "registrable_domain": "subscape.com.au",
+            "url": "https://www.superset.subscape.com.au/mobile/front/"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "8561717b4f47e804701803b4cbe55c61dcb3ff67841f8cb5b4a422a669b1ab9b",
+        "sample_count": 9,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 9156427,
+            "original_label": "phishing",
+            "registrable_domain": "fulfilled-clarity-788568.framer.app",
+            "url": "https://fulfilled-clarity-788568.framer.app/"
+          },
+          {
+            "serial_number": 9162556,
+            "original_label": "phishing",
+            "registrable_domain": "ready-stories-290828.framer.app",
+            "url": "https://ready-stories-290828.framer.app"
+          },
+          {
+            "serial_number": 9159341,
+            "original_label": "phishing",
+            "registrable_domain": "grounded-colleagues-615389.framer.app",
+            "url": "https://grounded-colleagues-615389.framer.app/"
+          },
+          {
+            "serial_number": 9159103,
+            "original_label": "phishing",
+            "registrable_domain": "possible-statuses-782974.framer.app",
+            "url": "https://possible-statuses-782974.framer.app/"
+          },
+          {
+            "serial_number": 9159079,
+            "original_label": "phishing",
+            "registrable_domain": "fuchsia-instance-630042.framer.app",
+            "url": "https://fuchsia-instance-630042.framer.app/"
+          },
+          {
+            "serial_number": 9158982,
+            "original_label": "phishing",
+            "registrable_domain": "tedious-feedback-307823.framer.app",
+            "url": "https://tedious-feedback-307823.framer.app/"
+          },
+          {
+            "serial_number": 9159105,
+            "original_label": "phishing",
+            "registrable_domain": "effective-yards-524561.framer.app",
+            "url": "https://effective-yards-524561.framer.app/"
+          },
+          {
+            "serial_number": 9160900,
+            "original_label": "phishing",
+            "registrable_domain": "chatty-success-002589.framer.app",
+            "url": "https://chatty-success-002589.framer.app/"
+          },
+          {
+            "serial_number": 9158143,
+            "original_label": "phishing",
+            "registrable_domain": "dazzled-contributors-138861.framer.app",
+            "url": "https://dazzled-contributors-138861.framer.app/"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "1c26d54a5ef0efde769ca36e498e5685ff32a92eeb9c9c49d5ed0277c454c5ab",
+        "sample_count": 8,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 202420255386,
+            "original_label": "phishing",
+            "registrable_domain": "legalbuzzzone.vercel.app",
+            "url": "http://legalbuzzzone.vercel.app/get_help"
+          },
+          {
+            "serial_number": 202420255161,
+            "original_label": "phishing",
+            "registrable_domain": "policyviolatoradinfusion.vercel.app",
+            "url": "http://policyviolatoradinfusion.vercel.app/get_help"
+          },
+          {
+            "serial_number": 202420255885,
+            "original_label": "phishing",
+            "registrable_domain": "guidelineviolationinfluencerinsights.vercel.app",
+            "url": "http://guidelineviolationinfluencerinsights.vercel.app/get_help"
+          },
+          {
+            "serial_number": 202420255477,
+            "original_label": "phishing",
+            "registrable_domain": "moderationtoolbrandhype.vercel.app",
+            "url": "http://moderationtoolbrandhype.vercel.app/get_help"
+          },
+          {
+            "serial_number": 202420255104,
+            "original_label": "phishing",
+            "registrable_domain": "warningadgen.vercel.app",
+            "url": "http://warningadgen.vercel.app/get_help"
+          },
+          {
+            "serial_number": 202420254950,
+            "original_label": "phishing",
+            "registrable_domain": "impropercontentinfluencerlabs.vercel.app",
+            "url": "http://impropercontentinfluencerlabs.vercel.app/get_help"
+          },
+          {
+            "serial_number": 202420255242,
+            "original_label": "phishing",
+            "registrable_domain": "privacyadmasters.vercel.app",
+            "url": "http://privacyadmasters.vercel.app/get_help"
+          },
+          {
+            "serial_number": 202420255365,
+            "original_label": "phishing",
+            "registrable_domain": "rightsbrandmetric.vercel.app",
+            "url": "http://rightsbrandmetric.vercel.app/get_help"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "ada289ae3992b18c294b7661d207dac511e1656abf1da5e3125a567098ec8148",
+        "sample_count": 6,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 37600,
+            "original_label": "phishing",
+            "registrable_domain": "aartirana2103.github.io",
+            "url": "https://aartirana2103.github.io/Facebook"
+          },
+          {
+            "serial_number": 9160529,
+            "original_label": "phishing",
+            "registrable_domain": "misty123009.github.io",
+            "url": "http://misty123009.github.io/insta"
+          },
+          {
+            "serial_number": 9160527,
+            "original_label": "phishing",
+            "registrable_domain": "mr-hamod.github.io",
+            "url": "http://mr-hamod.github.io/instagram"
+          },
+          {
+            "serial_number": 9162071,
+            "original_label": "phishing",
+            "registrable_domain": "home-suiteco-us.github.io",
+            "url": "https://home-suiteco-us.github.io/en-us/"
+          },
+          {
+            "serial_number": 74600,
+            "original_label": "phishing",
+            "registrable_domain": "ayyushraaj-011.github.io",
+            "url": "https://ayyushraaj-011.github.io/Amazon-Clone/"
+          },
+          {
+            "serial_number": 29400,
+            "original_label": "phishing",
+            "registrable_domain": "sahar12572.github.io",
+            "url": "https://sahar12572.github.io/Instagram---Copy-Cat/"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "8bff37788d513a4f090df4c6108abf360aedab668fde1ad864b0f0d4eb49f361",
+        "sample_count": 5,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 202420255624,
+            "original_label": "phishing",
+            "registrable_domain": "rightstrackerviraladvocates.vercel.app",
+            "url": "https://rightstrackerviraladvocates.vercel.app/zL20vMDFjcjI4entry=ttu&g_ep=EgoyMDI1MDM"
+          },
+          {
+            "serial_number": 202420255655,
+            "original_label": "phishing",
+            "registrable_domain": "sitepolicycontentminds.vercel.app",
+            "url": "https://sitepolicycontentminds.vercel.app/zL20vMDFjcjI4entry=ttu&g_ep=EgoyMDI1MDM"
+          },
+          {
+            "serial_number": 202420255158,
+            "original_label": "phishing",
+            "registrable_domain": "standardsinfluencerlaunch.vercel.app",
+            "url": "https://standardsinfluencerlaunch.vercel.app/zL20vMDFjcjI4entry=ttu&g_ep=EgoyMDI1MDM"
+          },
+          {
+            "serial_number": 202420255684,
+            "original_label": "phishing",
+            "registrable_domain": "contentblockseoguru.vercel.app",
+            "url": "https://contentblockseoguru.vercel.app/zL20vMDFjcjI4entry=ttu&g_ep=EgoyMDI1MDM"
+          },
+          {
+            "serial_number": 202420255136,
+            "original_label": "phishing",
+            "registrable_domain": "enforceremovaladcurators.vercel.app",
+            "url": "https://enforceremovaladcurators.vercel.app/zL20vMDFjcjI4entry=ttu&g_ep=EgoyMDI1MDM"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "cb46232557f92d06227e64a702126f23e7fbbceb550c2f66926bfcecaff557d0",
+        "sample_count": 5,
+        "labels": [
+          "legitimate"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 202420256040,
+            "original_label": "legitimate",
+            "registrable_domain": "tonicmovies.com",
+            "url": "https://tonicmovies.com/en/"
+          },
+          {
+            "serial_number": 202420256121,
+            "original_label": "legitimate",
+            "registrable_domain": "rulertube.com",
+            "url": "https://rulertube.com/en/"
+          },
+          {
+            "serial_number": 202420256106,
+            "original_label": "legitimate",
+            "registrable_domain": "hqhole.com",
+            "url": "https://hqhole.com/en/"
+          },
+          {
+            "serial_number": 202420256160,
+            "original_label": "legitimate",
+            "registrable_domain": "goldpornfilms.com",
+            "url": "https://goldpornfilms.com/en/"
+          },
+          {
+            "serial_number": 202420261200,
+            "original_label": "legitimate",
+            "registrable_domain": "spectraltube.com",
+            "url": "https://spectraltube.com/en/"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "04fd407e849f217e82e8b057e42a584fe45b952db1fa3c71b20dafbbdfa384cf",
+        "sample_count": 4,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 202420252904,
+            "original_label": "phishing",
+            "registrable_domain": "rrew.vercel.app",
+            "url": "https://rrew.vercel.app/intest.html"
+          },
+          {
+            "serial_number": 202420252968,
+            "original_label": "phishing",
+            "registrable_domain": "1211-bley.vercel.app",
+            "url": "https://1211-bley.vercel.app/intest.html"
+          },
+          {
+            "serial_number": 202420252967,
+            "original_label": "phishing",
+            "registrable_domain": "1211-eg36.vercel.app",
+            "url": "https://1211-eg36.vercel.app/intest.html"
+          },
+          {
+            "serial_number": 202420252961,
+            "original_label": "phishing",
+            "registrable_domain": "1211re.vercel.app",
+            "url": "https://1211re.vercel.app/intest.html"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "2e0cb0eeca641174a01270042422474600a2f8bd332e5873a0a296864b0dd7c7",
+        "sample_count": 4,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 202420253200,
+            "original_label": "phishing",
+            "registrable_domain": "lotoivlt.vercel.app",
+            "url": "https://lotoivlt.vercel.app/metasp.html"
+          },
+          {
+            "serial_number": 202420253158,
+            "original_label": "phishing",
+            "registrable_domain": "tlilxr97.vercel.app",
+            "url": "https://tlilxr97.vercel.app/metasp.html"
+          },
+          {
+            "serial_number": 202420253271,
+            "original_label": "phishing",
+            "registrable_domain": "chali-3ezi.vercel.app",
+            "url": "https://chali-3ezi.vercel.app/user_id.html"
+          },
+          {
+            "serial_number": 202420253153,
+            "original_label": "phishing",
+            "registrable_domain": "ploi.vercel.app",
+            "url": "https://ploi.vercel.app/metasp.html"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "ab9668de6ebc8d5e5dc846d18855e5f0496bfd9ed02e5f53ecbe0ff1dced8603",
+        "sample_count": 4,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 9157092,
+            "original_label": "phishing",
+            "registrable_domain": "newfgdhhghhdf.web.app",
+            "url": "https://newfgdhhghhdf.web.app/"
+          },
+          {
+            "serial_number": 9157043,
+            "original_label": "phishing",
+            "registrable_domain": "wetrastoriepam.firebaseapp.com",
+            "url": "https://wetrastoriepam.firebaseapp.com/DEMANDE_DE_DEVIS.html"
+          },
+          {
+            "serial_number": 9159974,
+            "original_label": "phishing",
+            "registrable_domain": "nexxoterrxocoves.firebaseapp.com",
+            "url": "https://nexxoterrxocoves.firebaseapp.com/jurid.html"
+          },
+          {
+            "serial_number": 9157113,
+            "original_label": "phishing",
+            "registrable_domain": "kagoya-supports90.web.app",
+            "url": "https://kagoya-supports90.web.app/"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "0c7e5e9d342908a8174161c4156f9b5fb6b5f298d9186ca2e2754ab7386c6818",
+        "sample_count": 3,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 202420256389,
+            "original_label": "phishing",
+            "registrable_domain": "jimpike.com.au",
+            "url": "https://www.bi-preview.jimpike.com.au/mobile/login/"
+          },
+          {
+            "serial_number": 69600,
+            "original_label": "phishing",
+            "registrable_domain": "sspl.com.au",
+            "url": "https://api.sspl.com.au/mobile/login/"
+          },
+          {
+            "serial_number": 69200,
+            "original_label": "phishing",
+            "registrable_domain": "3lo.com.au",
+            "url": "https://q1kv86h9rdvlnkg9.3lo.com.au/mobile/login/"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "279dd772f13fb52a958a51c84c6ce9f77edbbca783eb8d9984ae272895fd13f4",
+        "sample_count": 3,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 202420255892,
+            "original_label": "phishing",
+            "registrable_domain": "cex-eosin.vercel.app",
+            "url": "http://cex-eosin.vercel.app/atd.gkt"
+          },
+          {
+            "serial_number": 202420255236,
+            "original_label": "phishing",
+            "registrable_domain": "t0lathorrab1t88-bi7z.vercel.app",
+            "url": "http://t0lathorrab1t88-bi7z.vercel.app/meta.sp"
+          },
+          {
+            "serial_number": 202420255404,
+            "original_label": "phishing",
+            "registrable_domain": "panheymij6.vercel.app",
+            "url": "https://panheymij6.vercel.app/xyz"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "2fcc1d959c4b674bb4f011067c7f175cd47d0fbe73e71f6471c50c4d7e525ccf",
+        "sample_count": 3,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 9160630,
+            "original_label": "phishing",
+            "registrable_domain": "picnet.eu",
+            "url": "http://www.picnet.eu/netbn.csecbn/mynetbnksnnp/"
+          },
+          {
+            "serial_number": 9159021,
+            "original_label": "phishing",
+            "registrable_domain": "adriatica.sk",
+            "url": "http://adriatica.sk/netbn.csecbn/mynetbnksnnp/403.php"
+          },
+          {
+            "serial_number": 9159242,
+            "original_label": "phishing",
+            "registrable_domain": "calimexdist.com",
+            "url": "https://calimexdist.com/corpnetb.secure/portal.nedline/403.php"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "4ed3718aea48e5cc38b2bad490816818a71e5f8b09c37fed74f1d1b92e34cb90",
+        "sample_count": 3,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 202420255233,
+            "original_label": "phishing",
+            "registrable_domain": "bossgurususerlocktool.vercel.app",
+            "url": "https://bossgurususerlocktool.vercel.app/decision&copyright"
+          },
+          {
+            "serial_number": 202420255327,
+            "original_label": "phishing",
+            "registrable_domain": "mediaedgesafecontent.vercel.app",
+            "url": "https://mediaedgesafecontent.vercel.app/decision&copyright"
+          },
+          {
+            "serial_number": 202420255792,
+            "original_label": "phishing",
+            "registrable_domain": "viraladvocateslegalnotice.vercel.app",
+            "url": "https://viraladvocateslegalnotice.vercel.app/decision&copyright"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "604d2c5b6533e0ecd87c3c2186544527b2ae33dfb9b288f416ac3978c3f30aeb",
+        "sample_count": 3,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 97400,
+            "original_label": "phishing",
+            "registrable_domain": "event-redeem.com",
+            "url": "https://codashopay.event-redeem.com/"
+          },
+          {
+            "serial_number": 9158847,
+            "original_label": "phishing",
+            "registrable_domain": "sharefile8.pages.dev",
+            "url": "https://sharefile8.pages.dev/"
+          },
+          {
+            "serial_number": 9153732,
+            "original_label": "phishing",
+            "registrable_domain": "campanhaprime.chat",
+            "url": "https://wwi.campanhaprime.chat/"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "92b905f35875f097191f2a1e3fe3d4efa696dae232f9ac2a7f922f354949bba1",
+        "sample_count": 3,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 202420251037,
+            "original_label": "phishing",
+            "registrable_domain": "gmokcng.xyz",
+            "url": "https://usr.gmokcng.xyz/"
+          },
+          {
+            "serial_number": 202420251039,
+            "original_label": "phishing",
+            "registrable_domain": "rzuszpmw.top",
+            "url": "https://ushu.rzuszpmw.top/"
+          },
+          {
+            "serial_number": 202420251035,
+            "original_label": "phishing",
+            "registrable_domain": "pavagun.top",
+            "url": "https://usq.pavagun.top/"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "d4fd84ce5a5ac86c8d7573403d7e7610c8556fa7d864246c1cbc7ae7133b328f",
+        "sample_count": 3,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 202420256524,
+            "original_label": "phishing",
+            "registrable_domain": "wsdfvrew.blogspot.com",
+            "url": "https://wsdfvrew.blogspot.com/"
+          },
+          {
+            "serial_number": 95300,
+            "original_label": "phishing",
+            "registrable_domain": "blogspot.ie",
+            "url": "https://www.34gewdsf33.blogspot.ie/"
+          },
+          {
+            "serial_number": 95200,
+            "original_label": "phishing",
+            "registrable_domain": "34gewdsf33.blogspot.com",
+            "url": "https://34gewdsf33.blogspot.com/"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "f56e6494d52df7b20b0973a96b38467312fc9c8135e663f1a2a488a49f92e145",
+        "sample_count": 3,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 202420252674,
+            "original_label": "phishing",
+            "registrable_domain": "privacyprotectionmediaedge.vercel.app",
+            "url": "https://privacyprotectionmediaedge.vercel.app/get_help/"
+          },
+          {
+            "serial_number": 202420252566,
+            "original_label": "phishing",
+            "registrable_domain": "secureuserbrandboostmedia.vercel.app",
+            "url": "https://secureuserbrandboostmedia.vercel.app/get_help/"
+          },
+          {
+            "serial_number": 202420252686,
+            "original_label": "phishing",
+            "registrable_domain": "illegalusealertbrandmasters.vercel.app",
+            "url": "https://illegalusealertbrandmasters.vercel.app/get_help"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "058be07c4664838c710ef9c450249231dc9e4364b572ebf2bdf30d040cb2a411",
+        "sample_count": 2,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 202420252726,
+            "original_label": "phishing",
+            "registrable_domain": "pub-dd223b9733bf41aa8018f1acb645c811.r2.dev",
+            "url": "https://pub-dd223b9733bf41aa8018f1acb645c811.r2.dev/zusdindex.html"
+          },
+          {
+            "serial_number": 202420252646,
+            "original_label": "phishing",
+            "registrable_domain": "pub-ce8fc030252b4632959515dffef1b750.r2.dev",
+            "url": "https://pub-ce8fc030252b4632959515dffef1b750.r2.dev/zxcbv.html"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "11bb33634a5a83e6d0da1c4dcac3908305e2c71f2e2942d640f59e6a5bd3a2f0",
+        "sample_count": 2,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 202420252735,
+            "original_label": "phishing",
+            "registrable_domain": "pub-64f4fb77a46d4ac9bffc647982d19712.r2.dev",
+            "url": "https://pub-64f4fb77a46d4ac9bffc647982d19712.r2.dev/index.html"
+          },
+          {
+            "serial_number": 202420252761,
+            "original_label": "phishing",
+            "registrable_domain": "pub-0d97061b3a3f4f73a39c246f5b9b9700.r2.dev",
+            "url": "https://pub-0d97061b3a3f4f73a39c246f5b9b9700.r2.dev/index.html"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "1d70ee3a6c6c85f9dda58a6a3fe44c28dd1fdff8d88394feac3c50d079b7863f",
+        "sample_count": 2,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 9162373,
+            "original_label": "phishing",
+            "registrable_domain": "pl2894.cfd",
+            "url": "http://allegrolokalnle.pl2894.cfd"
+          },
+          {
+            "serial_number": 9162816,
+            "original_label": "phishing",
+            "registrable_domain": "pl-201.cfd",
+            "url": "https://allegrolokalnie.pl-201.cfd"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "2ddf908992f49d34df16a2ec70c9ca83a5b5900c09498a453c92eae344280225",
+        "sample_count": 2,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 202420252795,
+            "original_label": "phishing",
+            "registrable_domain": "pub-33fc44ce91fa4584a26302790cccfa9d.r2.dev",
+            "url": "https://pub-33fc44ce91fa4584a26302790cccfa9d.r2.dev/index.html"
+          },
+          {
+            "serial_number": 202420252659,
+            "original_label": "phishing",
+            "registrable_domain": "pub-ab4d230c757644f882096516863cf8f2.r2.dev",
+            "url": "https://pub-ab4d230c757644f882096516863cf8f2.r2.dev/index.html"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "2e2ac96e935cdce016273d7f26ec25a72487aa16f7d1af48e81ba13cbae94876",
+        "sample_count": 2,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 202420256398,
+            "original_label": "phishing",
+            "registrable_domain": "blogspot.tw",
+            "url": "http://mojvkak.blogspot.tw/"
+          },
+          {
+            "serial_number": 202420256397,
+            "original_label": "phishing",
+            "registrable_domain": "mojvkak.blogspot.com",
+            "url": "http://mojvkak.blogspot.com/"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "3a6b98cec153885dcbdebdda34b822662277fe0cd047cee37b5d349c1375d723",
+        "sample_count": 2,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 202420252553,
+            "original_label": "phishing",
+            "registrable_domain": "stopinfringementmarketbeat.vercel.app",
+            "url": "https://stopinfringementmarketbeat.vercel.app/3ae&25&93cf6=5a&1eGK9d0xe13da4b=D400e.html"
+          },
+          {
+            "serial_number": 202420252554,
+            "original_label": "phishing",
+            "registrable_domain": "digitalprotectionadstrategize.vercel.app",
+            "url": "https://digitalprotectionadstrategize.vercel.app/3ae&25&93cf6=5a&1eGK9d0xe13da4b=D400e"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "40e63820ee15b7fe34a913aaef867dcdfc8fa4bd8920bbfe770bb9f03602938a",
+        "sample_count": 2,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 202420255597,
+            "original_label": "phishing",
+            "registrable_domain": "conversionplusrestrictiontracker.vercel.app",
+            "url": "https://conversionplusrestrictiontracker.vercel.app/zL20=vMDFjs&sdentry=ttu&g_ep=EgoyMDI1MDM"
+          },
+          {
+            "serial_number": 202420255577,
+            "original_label": "phishing",
+            "registrable_domain": "engagerules.vercel.app",
+            "url": "https://engagerules.vercel.app/zL20=vMDFjs&sdentry=ttu&g_ep=EgoyMDI1MDM.html"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "56314c78a06b17b2f1d1f7af1b1471a04aff717d51347dcc6252aff79c122bd0",
+        "sample_count": 2,
+        "labels": [
+          "legitimate"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 202420254719,
+            "original_label": "legitimate",
+            "registrable_domain": "coles.com.au",
+            "url": "https://www.coles.com.au/"
+          },
+          {
+            "serial_number": 202420254212,
+            "original_label": "legitimate",
+            "registrable_domain": "nus.edu.sg",
+            "url": "https://www.nus.edu.sg/"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "67b0dc92894c99cefd2200030135f3523ba37caae2d573c50acb1e4ca19f7fac",
+        "sample_count": 2,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 202420255626,
+            "original_label": "phishing",
+            "registrable_domain": "bossgurustermstool.vercel.app",
+            "url": "https://bossgurustermstool.vercel.app/decision&copyright"
+          },
+          {
+            "serial_number": 202420255612,
+            "original_label": "phishing",
+            "registrable_domain": "adsavvyresponse.vercel.app",
+            "url": "https://adsavvyresponse.vercel.app/decision&copyright"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "689aa889dfefed1360758d077efdf869638b94773e66a0973a90aa08c5aa404b",
+        "sample_count": 2,
+        "labels": [
+          "legitimate"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 2043,
+            "original_label": "legitimate",
+            "registrable_domain": "la-roza.com",
+            "url": "https://la-roza.com/"
+          },
+          {
+            "serial_number": 202420260355,
+            "original_label": "legitimate",
+            "registrable_domain": "torrentgl.net",
+            "url": "http://torrentgl.net/"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "7f54ebb7bd7e2092f5e5d9bfd2827fb339cfae847f91d0aa016a8b169030cad2",
+        "sample_count": 2,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 202420255688,
+            "original_label": "phishing",
+            "registrable_domain": "thorbmatch4latte-g9s6.vercel.app",
+            "url": "https://thorbmatch4latte-g9s6.vercel.app/metasp.html"
+          },
+          {
+            "serial_number": 202420255022,
+            "original_label": "phishing",
+            "registrable_domain": "thorbmatch4latte88-mwoc.vercel.app",
+            "url": "http://thorbmatch4latte88-mwoc.vercel.app/metasp.html"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "85bf3d37c49d742ff68af5bd75658169eeba06c7d200af68d03dc8b383e6bab1",
+        "sample_count": 2,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 202420255790,
+            "original_label": "phishing",
+            "registrable_domain": "rightsenforcementhubtrendmarketers.vercel.app",
+            "url": "http://rightsenforcementhubtrendmarketers.vercel.app/get_help"
+          },
+          {
+            "serial_number": 202420255311,
+            "original_label": "phishing",
+            "registrable_domain": "moderationtooltrendinsight.vercel.app",
+            "url": "http://moderationtooltrendinsight.vercel.app/get_help"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "92e09d8eca55434cdad699ce3a43a25714d35f24061f61709c458b3d9c6d04ab",
+        "sample_count": 2,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 9159561,
+            "original_label": "phishing",
+            "registrable_domain": "8a79abbf-0a48-4cea-89f6-ca707d1d4349-00-430ujuglcmjo.worf.replit.dev",
+            "url": "https://8a79abbf-0a48-4cea-89f6-ca707d1d4349-00-430ujuglcmjo.worf.replit.dev/?utm_medium=paid&amp;utm_source=fb&amp;utm_id=120230007873660369&amp;utm_content=120230007873830369&amp;utm_term=120230007873790369&amp;utm_campaign=120230007873660369&amp;fbclid=IwY2xjawLnZ1BleHRuA2FlbQEwAGFkaWQBqyS73DQCQQEeyCX9qYSYnHAGcpkNXGs34AmzWIOc0w3Dy-u6LsWmkFPuo-iV9kHCCChcDFA_aem_xGideoHDvRPhErIDv6L5CQ"
+          },
+          {
+            "serial_number": 9157415,
+            "original_label": "phishing",
+            "registrable_domain": "f491e5fd-8bd0-4fc7-8828-27bb05715924-00-1ocjkzoqbo0ki.worf.replit.dev",
+            "url": "https://f491e5fd-8bd0-4fc7-8828-27bb05715924-00-1ocjkzoqbo0ki.worf.replit.dev/?fbclid=IwZXh0bgNhZW0BMABhZGlkAasnweoW5YoBHqTCIpwUjMNNJR60mmwVRlnGmri23O43snjXGv-a4-M9HBJyBYJ_B_Bm06gl_aem_ReIx72a5HCHVObyDl5uH-A&amp;utm_medium=paid&amp;utm_source=fb&amp;utm_id=120233528845600602&amp;utm_content=120233528848840602&amp;utm_term=120233528848760602&amp;utm_campaign=120233528845600602&amp;sfnsn=wa"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "9d4393bff38641fd6a8df7c5c9525e62fe39df322f665b6d516f06a9cdddb67e",
+        "sample_count": 2,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 9154652,
+            "original_label": "phishing",
+            "registrable_domain": "yemoco6902.workers.dev",
+            "url": "https://kiqbpmvlqjonupca.yemoco6902.workers.dev/"
+          },
+          {
+            "serial_number": 9154649,
+            "original_label": "phishing",
+            "registrable_domain": "cipof90976.workers.dev",
+            "url": "https://bhdhafrshulrkzxw.cipof90976.workers.dev/"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "aaa16bf431f4e89eff9459530ee80f009b84d7a5ad71049d79b8dbea4b2f63d1",
+        "sample_count": 2,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 202420255881,
+            "original_label": "phishing",
+            "registrable_domain": "pub-ec6927bca8f6423e8977cba73b934c0e.r2.dev",
+            "url": "http://pub-ec6927bca8f6423e8977cba73b934c0e.r2.dev/index.html"
+          },
+          {
+            "serial_number": 202420256432,
+            "original_label": "phishing",
+            "registrable_domain": "pub-1c88714629be49ffacaf819313428383.r2.dev",
+            "url": "http://pub-1c88714629be49ffacaf819313428383.r2.dev/index.html"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "abec1bd502700ba8eab7a0166e25d4318d805af9c0f8e9e6aaac4c19d46cde71",
+        "sample_count": 2,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 202420252703,
+            "original_label": "phishing",
+            "registrable_domain": "reissaffunappau-4941-git-main-wesleylewis3177s-projects.vercel.app",
+            "url": "https://reissaffunappau-4941-git-main-wesleylewis3177s-projects.vercel.app/zdp.xyjbm"
+          },
+          {
+            "serial_number": 202420252673,
+            "original_label": "phishing",
+            "registrable_domain": "mofreluheilu-3290.vercel.app",
+            "url": "https://mofreluheilu-3290.vercel.app/yqc.imlwu"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "af505e27e282d305c609ae1e2a5040fe7639d2461c666e7fade7ffc64e5404c6",
+        "sample_count": 2,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 202420252541,
+            "original_label": "phishing",
+            "registrable_domain": "pub-d78d258221a7412bbc48a9c97df34773.r2.dev",
+            "url": "https://pub-d78d258221a7412bbc48a9c97df34773.r2.dev/index.html"
+          },
+          {
+            "serial_number": 202420252471,
+            "original_label": "phishing",
+            "registrable_domain": "pub-166c31a8757b4296b35b12825d8c17ca.r2.dev",
+            "url": "https://pub-166c31a8757b4296b35b12825d8c17ca.r2.dev/index.html"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "b10ce8c7b4b8a71fa5e271fa8f5d924f33f0bf463e7071c8987433321ac7d3ae",
+        "sample_count": 2,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 202420250908,
+            "original_label": "phishing",
+            "registrable_domain": "ke-iydfugkj-f94896.ingress-bonde.ewp.live",
+            "url": "https://ke-iydfugkj-f94896.ingress-bonde.ewp.live/wp-content/plugins/deviswetransfers/log.php"
+          },
+          {
+            "serial_number": 9157995,
+            "original_label": "phishing",
+            "registrable_domain": "pfcgsdfgh-116511c.ingress-florina.ewp.live",
+            "url": "https://pfcgsdfgh-116511c.ingress-florina.ewp.live/wp-content/plugins/dvstrnfr/log.php"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "b3e16699eda8f66f18db4471f0f5352cd064f147adb0181058534d300aa49f04",
+        "sample_count": 2,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 202420263224,
+            "original_label": "phishing",
+            "registrable_domain": "amazonqmc.co",
+            "url": "https://amazonqmc.co/"
+          },
+          {
+            "serial_number": 202420263227,
+            "original_label": "phishing",
+            "registrable_domain": "amazontyc.co",
+            "url": "https://amazontyc.co/"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "d29f443e36006b0c5a404bd01c211f5937200ac1b7b0a4b02e9c765cc6f8dd2c",
+        "sample_count": 2,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 202420252755,
+            "original_label": "phishing",
+            "registrable_domain": "pub-132755649dce44fe95257f08abf4c1b6.r2.dev",
+            "url": "https://pub-132755649dce44fe95257f08abf4c1b6.r2.dev/index.html"
+          },
+          {
+            "serial_number": 202420252759,
+            "original_label": "phishing",
+            "registrable_domain": "pub-d22ca59fb64d43fbaeb6953708dce034.r2.dev",
+            "url": "https://pub-d22ca59fb64d43fbaeb6953708dce034.r2.dev/index.html"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "e35c6c2252d901cc1bcbd0420680ef392609bacfb22286992144b176387dcb88",
+        "sample_count": 2,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 202420253285,
+            "original_label": "phishing",
+            "registrable_domain": "a2-rust.vercel.app",
+            "url": "https://a2-rust.vercel.app/intest.html/"
+          },
+          {
+            "serial_number": 202420253236,
+            "original_label": "phishing",
+            "registrable_domain": "e1-gray-nu.vercel.app",
+            "url": "https://e1-gray-nu.vercel.app/intest.html"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "ed3a602752b179a8a5f9b9bc773b05f7d747fab6d1620a9491beead40a64a07c",
+        "sample_count": 2,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 202420263206,
+            "original_label": "phishing",
+            "registrable_domain": "pub-40788e030eee4e159dbef0b51f237482.r2.dev",
+            "url": "http://pub-40788e030eee4e159dbef0b51f237482.r2.dev/index.html"
+          },
+          {
+            "serial_number": 202420256358,
+            "original_label": "phishing",
+            "registrable_domain": "pub-0f913529526241fc8964926c7777865b.r2.dev",
+            "url": "https://pub-0f913529526241fc8964926c7777865b.r2.dev/index.html"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "ef6e06b9e5e9b6648475a1e6d6a5473ea628951a55215b2a73353783069d9644",
+        "sample_count": 2,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 202420255018,
+            "original_label": "phishing",
+            "registrable_domain": "policyviolatorsocialspotlights.vercel.app",
+            "url": "http://policyviolatorsocialspotlights.vercel.app/get_help"
+          },
+          {
+            "serial_number": 202420255746,
+            "original_label": "phishing",
+            "registrable_domain": "accountviolationadzone.vercel.app",
+            "url": "http://accountviolationadzone.vercel.app/get_help"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "ef9add705f4d581b49ccadcfeb0706a8f0fb3085abab084da0fb2ee9e4bf8ec7",
+        "sample_count": 2,
+        "labels": [
+          "phishing"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 202420250118,
+            "original_label": "phishing",
+            "registrable_domain": "uiowsecvgha.azurewebsites.net",
+            "url": "http://uiowsecvgha.azurewebsites.net/"
+          },
+          {
+            "serial_number": 202420250120,
+            "original_label": "phishing",
+            "registrable_domain": "dgirhoodwxs.azurewebsites.net",
+            "url": "http://dgirhoodwxs.azurewebsites.net/"
+          }
+        ]
+      },
+      {
+        "normalized_text_sha256": "fb56ad0fcaa794f41683b41c32885aef954a189f77752f90f42242bc89621334",
+        "sample_count": 2,
+        "labels": [
+          "legitimate"
+        ],
+        "is_cross_class": false,
+        "records": [
+          {
+            "serial_number": 202420260503,
+            "original_label": "legitimate",
+            "registrable_domain": "bokepzone.net",
+            "url": "https://bokepzone.net/"
+          },
+          {
+            "serial_number": 202420260292,
+            "original_label": "legitimate",
+            "registrable_domain": "mobiaxm.com",
+            "url": "https://mobiaxm.com/"
+          }
+        ]
+      }
+    ]
+  },
+  "within_cohort_near_duplicates": {
+    "simhash_hamming_candidate_pairs_le3": 16580,
+    "simhash_jaccard_confirmed_pairs_ge90": 16549,
+    "hamming_radius_threshold": 3,
+    "jaccard_similarity_threshold": 0.9,
+    "character_shingle_n": 5
+  },
+  "technical_interpretation": "The 2,000 accepted samples represent 2,000 distinct domains. Within-cohort exact and near-duplicates stem exclusively from universal web boilerplate (e.g. 26 domains hosting empty 39-byte HTML templates, standard 404/500 web server error pages, or generic domain parking notices). Exactly one group (hash a7fe83ec64bb, N=26) is cross-class, comprising an empty HTML shell found across 23 phishing attack domains and 3 legitimate crawl targets. In accordance with the audit protocol, zero samples are removed, preserving the empirical integrity of the independent evaluation."
+}

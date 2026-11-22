@@ -1,0 +1,14 @@
+{
+  "model_id": "sms_05_c_combined",
+  "model_name": "SMS-05-C: Combined Word + Character FeatureUnion + Logistic Regression",
+  "description": "Hybrid word (1-2) and character boundary (3-5) TF-IDF feature union with balanced logistic regression.",
+  "fit_time_seconds": 8.153,
+  "seed": 20261102,
+  "dataset": {
+    "manifest": "sms05_split_manifest.csv",
+    "train_samples": 6123,
+    "val_samples": 1305,
+    "test_samples": 1307
+  },
+  "operating_threshold": 0.5
+}

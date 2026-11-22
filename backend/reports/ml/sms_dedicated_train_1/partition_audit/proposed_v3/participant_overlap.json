@@ -1,0 +1,16 @@
+{
+  "total_exais_records": 2718,
+  "unique_participants": 20,
+  "participants_per_partition": {
+    "train": 20,
+    "validation": 19,
+    "test": 20
+  },
+  "pairwise_overlaps": {
+    "train_val_overlap_count": 19,
+    "train_test_overlap_count": 20,
+    "val_test_overlap_count": 19
+  },
+  "participant_overlap_percentage": 100.0,
+  "explanation": "Monolithic participant locking is relaxed to prevent the 2,621-record broadcast megacomponent. Text template and campaign isolation are 100% strictly preserved."
+}

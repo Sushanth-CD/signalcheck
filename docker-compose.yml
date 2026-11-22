@@ -1,0 +1,135 @@
+# SignalCheck Production Docker Compose Specification
+name: signalcheck
+
+networks:
+  signalcheck-internal:
+    driver: bridge
+    internal: true  # Completely private backend network (no external ingress)
+  signalcheck-public:
+    driver: bridge
+
+volumes:
+  redis-data:
+    driver: local
+  nginx-certs:
+    driver: local
+  backend-data:
+    driver: local
+
+services:
+  # 1. Edge Reverse Proxy (NGINX) - Only service with published ports
+  nginx:
+    image: nginx:alpine
+    container_name: signalcheck-nginx
+    restart: unless-stopped
+    ports:
+      - "${SIGNALCHECK_HTTP_PORT:-80}:80"
+      - "${SIGNALCHECK_HTTPS_PORT:-443}:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/certs:/etc/nginx/certs:ro
+    networks:
+      - signalcheck-public
+      - signalcheck-internal
+    depends_on:
+      backend:
+        condition: service_healthy
+      frontend:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "wget --no-check-certificate -q --spider https://127.0.0.1/health || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  # 2. Frontend Compiled Static Assets
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    container_name: signalcheck-frontend
+    restart: unless-stopped
+    networks:
+      - signalcheck-internal
+    # No exposed host ports; accessed strictly through NGINX internal network
+
+  # 3. FastAPI Inference Backend
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: signalcheck-backend
+    restart: unless-stopped
+    environment:
+      - SIGNALCHECK_CORS_ORIGINS=${SIGNALCHECK_CORS_ORIGINS:-https://localhost,http://localhost}
+      - SIGNALCHECK_RATE_LIMIT_STORAGE_URL=redis://redis:6379/0
+      - SIGNALCHECK_TRUSTED_PROXIES=${SIGNALCHECK_TRUSTED_PROXIES:-nginx,127.0.0.1}
+      - SIGNALCHECK_ALLOWED_HOSTS=${SIGNALCHECK_ALLOWED_HOSTS:-localhost,nginx,backend,127.0.0.1}
+      - SIGNALCHECK_RATE_LIMIT_ANALYZE=${SIGNALCHECK_RATE_LIMIT_ANALYZE:-30/minute}
+      - SIGNALCHECK_RATE_LIMIT_SMS=${SIGNALCHECK_RATE_LIMIT_SMS:-30/minute}
+      - SIGNALCHECK_RATE_LIMIT_ANDROID=${SIGNALCHECK_RATE_LIMIT_ANDROID:-20/minute}
+      - SIGNALCHECK_RATE_LIMIT_APK=${SIGNALCHECK_RATE_LIMIT_APK:-5/minute}
+      - REDIS_URL=redis://redis:6379/0
+      - SIGNALCHECK_DB_PATH=/app/data/signalcheck.db
+      - SIGNALCHECK_APK_HISTORY_MAX=200
+    volumes:
+      - backend-data:/app/data
+    networks:
+      - signalcheck-internal
+    depends_on:
+      redis:
+        condition: service_healthy
+    # No exposed host ports; strictly reachable via internal network
+
+  # 4. Redis Key-Value Store for Shared Rate Limiting & Asynchronous Worker Queues
+  redis:
+    image: redis:7-alpine
+    container_name: signalcheck-redis
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "yes", "--maxmemory", "128mb", "--maxmemory-policy", "volatile-lru"]
+    volumes:
+      - redis-data:/data
+    networks:
+      - signalcheck-internal
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+    # No exposed host ports; strictly private
+
+  # 5. Isolated APK Analysis Worker (Hardened Container Sandbox)
+  apk-worker:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: signalcheck-apk-worker
+    restart: unless-stopped
+    user: "10001:10001"  # Non-root unprivileged signalcheck user
+    read_only: true       # Read-only root filesystem
+    tmpfs:
+      - /tmp:size=64m,noexec,nosuid,nodev  # Ephemeral scratch memory capped at 64 MB
+    cap_drop:
+      - ALL               # Drop all Linux capabilities
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 512M
+        reservations:
+          cpus: "0.2"
+          memory: 128M
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+      - PYTHONUNBUFFERED=1
+      - PYTHONDONTWRITEBYTECODE=1
+      - HOME=/tmp
+    command: ["rq", "worker", "apk-analysis", "--url", "redis://redis:6379/0"]
+    networks:
+      - signalcheck-internal  # Internal-only network with no egress/external ingress
+    depends_on:
+      redis:
+        condition: service_healthy
+

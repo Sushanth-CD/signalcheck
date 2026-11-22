@@ -1,0 +1,760 @@
+<html><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="renderer" content="webkit">
+  <title>Tower - ONES 旗下团队协作工具</title>
+  <meta name="keywords" content="项目管理,任务管理,团队协作,项目协作,在线办公,网上办公室">
+  <meta name="description" content="Tower 帮助你更高效的安排工作任务，管理项目进度，沉淀团队知识，让每个人走得更快，让团队走得更远。">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="baidu-site-verification" content="qLDoHdGnb64RHlkm">
+  <meta name="alexaVerifyID" content="SIgQikd9LazsFz9M1vPBaQyC4Gw">
+  <meta name="tower-version" content="25.05.1">
+
+  <link rel="shortcut icon" href="/favicon.ico?v=2" type="image/x-icon" id="favicon">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#44acb6">
+<meta name="msapplication-TileColor" content="#44acb6">
+<meta name="theme-color" content="#ffffff">
+
+
+  
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@TowerEverywhere">
+<meta name="twitter:title" content="Tower - ONES 旗下团队协作工具">
+<meta name="twitter:description" content="Tower 帮助你更高效的安排工作任务，管理项目进度，沉淀团队知识，让每个人走得更快，让团队走得更远。">
+<meta name="twitter:image" content="https://tower3-files.tower.im/tower-logo.png">
+<meta name="twitter:url" content="https://tower.im/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tower - ONES 旗下团队协作工具">
+<meta property="og:description" content="Tower 帮助你更高效的安排工作任务，管理项目进度，沉淀团队知识，让每个人走得更快，让团队走得更远。">
+<meta property="og:image" content="https://tower3-files.tower.im/tower-logo.png">
+<meta property="og:url" content="https://tower.im/">
+
+
+  <link rel="stylesheet" media="all" href="/packs/css/home/desktop-572c3acc.css" data-turbolinks-track="reload">
+  <script type="text/javascript" async="" src="https://widget.intercom.io/widget/xbtsuf77"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-CK6DBQ49B2&amp;cx=c&amp;_slc=1"></script><script type="text/javascript" async="" src="//unpkg.zhimg.com/@efe/zhad-tracker@1.4.1"></script><script type="text/javascript" async="" src="//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js"></script><script async="" src="https://www.google-analytics.com/analytics.js"></script><script src="/packs/js/vendors~admin/admin~doc-editor~docs~download~help-admins~home/desktop~home/mobile~main/desktop~main/~6b248222-331b0baffb86a68a49a5.chunk.js" data-turbolinks-track="reload"></script>
+<script src="/packs/js/vendors~admin/admin~docs~help-admins~home/desktop~home/mobile~main/desktop~main/mobile~popwindow~pub~459aa901-216f0e705e855b8baf29.chunk.js" data-turbolinks-track="reload"></script>
+<script src="/packs/js/vendors~admin/admin~doc-editor~docs~home/desktop~home/mobile~main/desktop~main/mobile~popwindow~publ~654694e8-66c631ac75dcae382f73.chunk.js" data-turbolinks-track="reload"></script>
+<script src="/packs/js/vendors~doc-editor~docs~help-admins~home/desktop~home/mobile~main/desktop~main/mobile~tr_crm~tr_orga~db7aceaf-ef7146bcde5770432acc.chunk.js" data-turbolinks-track="reload"></script>
+<script src="/packs/js/home/desktop-60599e5e34943ece3953.js" data-turbolinks-track="reload"></script>
+  
+
+  <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="sg0apdxkDlazrhiAFIB5Sw6+QOwvvUaZGPNvK6IB5k5HQvjIM8veArxUy/NWxeKebmgG+jovU3rl9FhkBXC17Q==">
+  <script type="text/javascript">
+  window._hmt = window._hmt || [];
+</script>
+<script src="https://hm.baidu.com/hm.js?e1fa918d304786452f7d6936febd93c6" async=""></script>
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-100449807-1', 'auto');
+  ga('create', 'UA-100449807-2', 'auto', 'teamTracker');
+  if (navigator.sendBeacon) {
+    ga('set', 'transport', 'beacon');
+  }
+  ga('set', 'allowAdFeatures', false);
+  ga('set', 'dimension4', '桌面网页');
+
+  ga('set', {
+  });
+  ga('teamTracker.set', {
+  });
+
+  ga('send', 'pageview');
+  ga('teamTracker.send', 'pageview');
+
+  $(document).ready(function() {
+    if (window.tower && tower.stack) {
+      tower.stack.on('pageload', function() {
+        window.ga('set', 'location', window.location.href);
+        window.ga('send', 'pageview');
+
+        window.ga('teamTracker.set', 'location', window.location.href);
+        window.ga('teamTracker.send', 'pageview');
+      });
+    } else if (window.Turbolinks) {
+      document.addEventListener('turbolinks:load', function() {
+        window.ga('set', 'location', window.location.href);
+        window.ga('send', 'pageview');
+
+        window.ga('teamTracker.set', 'location', window.location.href);
+        window.ga('teamTracker.send', 'pageview');
+      })
+    }
+  })
+</script>
+
+  <!-- start Mixpanel --><script type="text/javascript">
+    (function(c,a){if(!a.__SV){var b=window;try{var d,m,j,k=b.location,f=k.hash;d=function(a,b){return(m=a.match(RegExp(b+"=([^&]*)")))?m[1]:null};f&&d(f,"state")&&(j=JSON.parse(decodeURIComponent(d(f,"state"))),"mpeditor"===j.action&&(b.sessionStorage.setItem("_mpcehash",f),history.replaceState(j.desiredHash||"",c.title,k.pathname+k.search)))}catch(n){}var l,h;window.mixpanel=a;a._i=[];a.init=function(b,d,g){function c(b,i){var a=i.split(".");2==a.length&&(b=b[a[0]],i=a[1]);b[i]=function(){b.push([i].concat(Array.prototype.slice.call(arguments,
+0)))}}var e=a;"undefined"!==typeof g?e=a[g]=[]:g="mixpanel";e.people=e.people||[];e.toString=function(b){var a="mixpanel";"mixpanel"!==g&&(a+="."+g);b||(a+=" (stub)");return a};e.people.toString=function(){return e.toString(1)+".people (stub)"};l="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
+for(h=0;h<l.length;h++)c(e,l[h]);var f="set set_once union unset remove delete".split(" ");e.get_group=function(){function a(c){b[c]=function(){call2_args=arguments;call2=[c].concat(Array.prototype.slice.call(call2_args,0));e.push([d,call2])}}for(var b={},d=["get_group"].concat(Array.prototype.slice.call(arguments,0)),c=0;c<f.length;c++)a(f[c]);return b};a._i.push([b,d,g])};a.__SV=1.2;b=c.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?
+MIXPANEL_CUSTOM_LIB_URL:"file:"===c.location.protocol&&"//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js";d=c.getElementsByTagName("script")[0];d.parentNode.insertBefore(b,d)}})(document,window.mixpanel||[]);
+  mixpanel.init('72ddb7dd79e1c48afb3e27e0efd70a74', {
+    loaded: function(mixpanel) {
+      document.dispatchEvent(new Event('MixpanelLoaded'));
+    }, track_pageview: false
+  });
+
+  mixpanel.register({
+  });
+
+  mixpanel.track("Page View");
+
+  $(document).ready(function() {
+    if (window.tower && tower.stack) {
+      tower.stack.on('pageload', function() {
+        mixpanel.track("Page View");
+      });
+    } else if (window.Turbolinks) {
+      document.addEventListener('turbolinks:load', function() {
+        mixpanel.track("Page View");
+      })
+    }
+  })
+</script><!-- end Mixpanel -->
+
+  <script type="text/javascript">
+  (function(root) {
+    window.zhad = [];
+    var tag = document.createElement('script'); tag.type ='text/javascript'; tag.async = true;
+    tag.src = '//unpkg.zhimg.com/@efe/zhad-tracker@1.4.1';
+    tag.onerror = function () {
+      var img = new Image();
+      img.src = '//sugar.zhihu.com/log_fe?js_url=' + window.encodeURIComponent(tag.src) + '&t=' + (+ new Date());
+    }
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(tag, s);
+    })(window);
+</script>
+</head>
+
+<body id="home-index">
+
+  <header class="header" id="top-header">
+  <div class="container">
+    <div class="logo">
+      <a href="/" class="tower"></a>
+      <a href="https://ones.cn/solutions/organization/start-ups-team?utm_term=%E5%AE%98%E7%BD%91logo&amp;_channel_track_key=36Ac97dC&amp;utm_source=tower%E8%BD%AC%20ONES" class="ones"></a>
+    </div>
+
+    <nav class="nav">
+        <a class="nav-link" href="/product">功能</a>
+        <a class="nav-link" href="/guides">快速入门</a>
+        <a class="nav-link" href="/template_repositories">模板库</a>
+        <a class="nav-link" href="/solutions">解决方案</a>
+        <a class="nav-link promotion" href="/plans">
+          价格
+</a>        <a class="nav-link" href="/wxwork">企业微信版</a>
+    </nav>
+
+    <div class="actions">
+      <a class="nav-link" data-turbolinks="false" href="/users/sign_in">登录</a>
+      <a source="顶栏入口" class="nav-link" data-turbolinks="false" href="/users/sign_up/new?platform=desktop&amp;position=header">免费试用</a>
+    </div>
+  </div>
+</header>
+
+  
+
+
+
+<tr-scroll-magic tao-id="1">
+  <div class="top product-top normal-width product-tower">
+    <div class="top-content">
+      <div class="product-top-title tower">为协作而设计</div>
+      <div class="product-top-subtitle tower">打通业务全流程，助力团队高效推进项目</div>
+        <div class="top-content-try">
+          <div class="top-content-try-button top product-tower track-web-click">
+            <a source="顶部 banner" class="button" data-turbolinks="false" href="/users/sign_up/new?platform=desktop&amp;position=masthead">免费试用</a>
+          </div>
+        </div>
+    </div>
+    <div class="product-project-image">
+      <img src="https://tower3-files.tower.im/product-image.png">
+    </div>
+  </div>
+  <div class="product-tower product-page-main">
+    <div class="tower-client-solution">
+  <div class="tower-client-solution_content-wrapper">
+    <div class="client-solutions">
+      <div class="title">各类项目都可以在 Tower 实现高效协作</div>
+      <tr-tab-slider use-in-mobile="false" tao-id="2">
+        <div class="gallery-swiper-container swiper-container-initialized swiper-container-horizontal">
+          <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-2220px, 0px, 0px);"><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="5" style="width: 740px;">
+              <div class="client-tab-card">
+                <div class="client-img law"></div>
+                <div class="client-content">
+                  <div class="client-title">
+                    <div class="client-icon">
+                      <span class="law"></span>
+                    </div>
+                    <div class="client-name">法律法务</div>
+                  </div>
+                  <div class="divider-line"></div>
+                  <div class="client-intro">规范化管理诉讼案件流程，从与委托人接触听取案情陈述，到诉前准备、立案、诉讼，再到诉后处理一应俱全，提高案件处理效率，保障办案质量</div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide" data-swiper-slide-index="0" style="width: 740px;">
+              <div class="client-tab-card">
+                <div class="client-img develop"></div>
+                <div class="client-content">
+                  <div class="client-title">
+                    <div class="client-icon">
+                      <span class="develop"></span>
+                    </div>
+                    <div class="client-name">软件研发</div>
+                  </div>
+                  <div class="divider-line"></div>
+                  <div class="client-intro">支持迭代计划、需求管理、Bug 管理等，有序拆分和规划任务，分派负责人，实时跟踪项目进度，提高测试效率，助力团队实践敏捷研发</div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="1" style="width: 740px;">
+              <div class="client-tab-card">
+                <div class="client-img design"></div>
+                <div class="client-content">
+                  <div class="client-title">
+                    <div class="client-icon">
+                      <span class="design"></span>
+                    </div>
+                    <div class="client-name">产品设计</div>
+                  </div>
+                  <div class="divider-line"></div>
+                  <div class="client-intro">从产品路线规划到需求管理，再到产品设计、评审，均可在同一平台进行管理，为产品经理、设计师、工程师等不同角色打造高效协作环境</div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="2" style="width: 740px;">
+              <div class="client-tab-card">
+                <div class="client-img hr"></div>
+                <div class="client-content">
+                  <div class="client-title">
+                    <div class="client-icon">
+                      <span class="hr"></span>
+                    </div>
+                    <div class="client-name">人事管理</div>
+                  </div>
+                  <div class="divider-line"></div>
+                  <div class="client-intro">支持团队招聘、入职、培训、OKR 等人事管理，流程透明化、规范化，提高跨部门协作效率，帮助企业有效管理团队和员工，统一目标</div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="3" style="width: 740px;">
+              <div class="client-tab-card">
+                <div class="client-img marketing"></div>
+                <div class="client-content">
+                  <div class="client-title">
+                    <div class="client-icon">
+                      <span class="marketing"></span>
+                    </div>
+                    <div class="client-name">市场营销</div>
+                  </div>
+                  <div class="divider-line"></div>
+                  <div class="client-intro">轻松规划内容编辑、新媒体运营、市场活动、公关营销，帮助团队梳理复杂琐碎的活动细节，合理分配资源和预算，保障营销活动高效执行落地</div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide" data-swiper-slide-index="4" style="width: 740px;">
+              <div class="client-tab-card">
+                <div class="client-img operating"></div>
+                <div class="client-content">
+                  <div class="client-title">
+                    <div class="client-icon">
+                      <span class="operating"></span>
+                    </div>
+                    <div class="client-name">销售管理</div>
+                  </div>
+                  <div class="divider-line"></div>
+                  <div class="client-intro">从售前、实施到售后、客户成功，搭建客户全生命周期管理，规范销售流程，让每一销售环节清晰可追溯，帮助团队更好地服务客户，促成销售成功</div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide" data-swiper-slide-index="5" style="width: 740px;">
+              <div class="client-tab-card">
+                <div class="client-img law"></div>
+                <div class="client-content">
+                  <div class="client-title">
+                    <div class="client-icon">
+                      <span class="law"></span>
+                    </div>
+                    <div class="client-name">法律法务</div>
+                  </div>
+                  <div class="divider-line"></div>
+                  <div class="client-intro">规范化管理诉讼案件流程，从与委托人接触听取案情陈述，到诉前准备、立案、诉讼，再到诉后处理一应俱全，提高案件处理效率，保障办案质量</div>
+                </div>
+              </div>
+            </div>
+          <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0" style="width: 740px;">
+              <div class="client-tab-card">
+                <div class="client-img develop"></div>
+                <div class="client-content">
+                  <div class="client-title">
+                    <div class="client-icon">
+                      <span class="develop"></span>
+                    </div>
+                    <div class="client-name">软件研发</div>
+                  </div>
+                  <div class="divider-line"></div>
+                  <div class="client-intro">支持迭代计划、需求管理、Bug 管理等，有序拆分和规划任务，分派负责人，实时跟踪项目进度，提高测试效率，助力团队实践敏捷研发</div>
+                </div>
+              </div>
+            </div></div>
+        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+        <div class="thumbs-swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-thumbs">
+          <div class="swiper-wrapper" style="transition-duration: 0ms;">
+            <div class="swiper-slide swiper-slide-visible swiper-slide-active" style="width: 123.333px;">
+              <div class="thumbs-tab-content">
+                软件研发
+              </div>
+            </div>
+            <div class="swiper-slide swiper-slide-visible swiper-slide-next" style="width: 123.333px;">
+              <div class="thumbs-tab-content">
+                产品设计
+              </div>
+            </div>
+            <div class="swiper-slide swiper-slide-visible swiper-slide-thumb-active" style="width: 123.333px;">
+              <div class="thumbs-tab-content">
+                人事管理
+              </div>
+            </div>
+            <div class="swiper-slide swiper-slide-visible" style="width: 123.333px;">
+              <div class="thumbs-tab-content">
+                市场营销
+              </div>
+            </div>
+            <div class="swiper-slide swiper-slide-visible" style="width: 123.333px;">
+              <div class="thumbs-tab-content">
+                销售管理
+              </div>
+            </div>
+            <div class="swiper-slide swiper-slide-visible" style="width: 123.333px;">
+              <div class="thumbs-tab-content">
+                法律法务
+              </div>
+            </div>
+          </div>
+        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+      </tr-tab-slider>
+    </div>
+  </div>
+</div>
+    <div class="product-page-main-content">
+  <div class="product-content">
+    <div class="product-title scene">提升协作效率，打造高效团队</div>
+    <div class="product-content-tower">
+      <div class="product-content-tower-card left">
+        <div class="product-content-tower-info first">
+          <div class="product-content-title">灵活易用</div>
+          <div class="product-content-intro">5 分钟入门，1 小时精通，操作简单</div>
+          <div class="product-content-intro">覆盖项目全周期，促进团队快速协作</div>
+          <div class="product-content-intro">自定义功能满足团队个性化管理需求</div>
+          <a class="product-content-link" data-turbolinks="false" source="首页1" href="/users/sign_up/new?platform=desktop">免费试用</a>
+        </div>
+      </div>
+      <div class="product-content-tower-img">
+        <div class="wrapper-top img"></div>
+      </div>
+    </div>
+    <div class="product-content-tower">
+      <div class="product-content-tower-card right">
+        <div class="product-content-tower-info second">
+          <div class="product-content-title">多视图进度管理</div>
+          <div class="product-content-intro">提供列表、日历、看板等多种视图</div>
+          <div class="product-content-intro">用甘特图进行进度管控，保障项目按时交付</div>
+          <div class="product-content-intro">PC、微信提醒任务进展，确保任务不遗漏</div>
+          <a class="product-content-link" data-turbolinks="false" source="首页2" href="/users/sign_up/new?platform=desktop">免费试用</a>
+        </div>
+      </div>
+      <div class="product-content-tower-img">
+        <div class="wrapper-center img"></div>
+      </div>
+    </div>
+    <div class="product-content-tower last">
+      <div class="product-content-tower-card left">
+        <div class="product-content-tower-info third">
+          <div class="product-content-title">海量模版库，快速开启项目管理</div>
+          <div class="product-content-intro">数十套模版满足多种团队协作场景</div>
+          <div class="product-content-intro">自定义模版，满足团队个性化场景管理需求</div>
+          <a class="product-content-link" data-turbolinks="false" source="首页3" href="/users/sign_up/new?platform=desktop">免费试用</a>
+        </div>
+      </div>
+      <div class="product-content-tower-img">
+        <div class="wrapper-bottom img"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+
+    <div class="divider"></div>
+    <div class="customers">
+      <div class="who-use-title normal-width">100万团队选择 Tower</div>
+      <div class="logo-wall normal-width"></div>
+      <a target="_blank" href="/customers">查看更多团队</a>
+    </div>
+
+    
+  <script id="IntercomSettingsScriptTag">window.intercomSettings = {"hide_default_launcher":null,"custom_launcher_selector":"#link-trigger-intercom","app_id":"xbtsuf77"};(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/xbtsuf77';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}};})()</script>
+
+  <tr-intercom-fallback tao-id="3">
+    <a href="javascript:;" id="link-to-help">?</a>
+    <div class="customer-service-card">
+      <div class="title">你好 👋</div>
+      <div class="description">这里是 Tower 团队，有任何问题，欢迎扫码在微信上联系我们。</div>
+      <div class="qrcode">
+        <img alt="扫码在微信上联系我们" src="/packs/images/customer-service-qrcode-a8adc89f6b081661e13b52dba8d5b5a8.jpg">
+      </div>
+      <div class="help-tel">或直接拨打 400-803-2202</div>
+    </div>
+  </tr-intercom-fallback>
+
+</tr-scroll-magic>
+
+  
+    <tr-visitor-presales-support-widget tao-id="4">
+    <div class="float-button">
+      <img class="background" src="/packs/images/presales-icon-9d9cad82d36f2b641328212d1522bdf4.png">
+    </div>
+    <div class="popover" data-state="close">
+      <div class="popover-arrow"></div>
+      <div class="popover-content">
+          <img class="manager-qrcode" src="https://tower3-files.tower.im/presales_web/tower_visitor_qrcode.png">
+          <div class="popover-content">扫码添加微信咨询</div>
+      </div>
+    </div>
+  </tr-visitor-presales-support-widget>
+
+    <div id="sign-up">
+    <div class="title">开启您的 Tower 团队协作</div>
+    <div class="sub-title">立即免费试用，或者点击右下角联系我们的客户顾问，了解 Tower 如何帮助团队更进一步</div>
+    <div class="buttons">
+      <a source="底部 banner" class="link-sign-up" data-turbolinks="false" href="/users/sign_up/new?platform=desktop&amp;position=bottom">免费试用</a>
+    </div>
+  </div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="brand">
+      <div class="logo"></div>
+    </div>
+
+    <div class="nav">
+      <div class="column">
+        <div class="title">产品</div>
+        <ul>
+          <li>
+            <a target="_blank" href="/plans">价格</a>
+          </li>
+          <li>
+            <a target="_blank" href="/wxwork">企业微信</a>
+          </li>
+          <li>
+            <a target="_blank" href="/customers">合作客户</a>
+          </li>
+        </ul>
+      </div>
+      <div class="column">
+        <div class="title">服务</div>
+        <ul>
+          <li>
+            <a target="_blank" href="/guides">快速入门</a>
+          </li>
+          <li>
+            <a target="_blank" href="/help">帮助中心</a>
+          </li>
+          <li>
+            <a target="_blank" href="/roadmap">功能日志</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://tower.im/blog">Tower Blog</a>
+          </li>
+        </ul>
+      </div>
+      <div class="column">
+        <div class="title">公司</div>
+        <ul>
+          <li><a href="https://tower.im/help/articles/346" target="_blank">关于我们</a></li>
+          <li><a href="https://tower.im/help#feedback" target="_blank">联系我们</a></li>
+          <li><a href="https://ones.cn/?_channel_track_key=qhKRKiAE&amp;utm_source=tower-footer" target="_blank">ONES 官网</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="wechat-icon">
+      <div class="title">微信公众号</div>
+      <div class="icon"></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="copyright">
+    <div class="filings">
+      <span class="addr">公司地址：四川省成都市高新区财智中心高新万科大厦 9 楼 903-904 单元</span>
+      <br>
+      <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备12019256号-5</a>
+    </div>
+  </div>
+</footer>
+
+
+  <script>
+//<![CDATA[
+window.gon={};gon.d18n_enabled=null;gon.d18n_muted=null;gon.upload_file_size_limit=200;gon.max_upload_file_size_limit=2048;gon.has_trial_choice=false;gon.isBrowserCompatible=true;gon.sortableFallback=false;gon.editor_lenient_mode=null;gon.permissions={};gon.triggered_guides=[];
+//]]>
+</script>
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="pswp__bg"></div>
+  <div class="pswp__scroll-wrap">
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <div class="pswp__counter"></div>
+        <button class="pswp__button pswp__button--close" title="关闭图片"></button>
+        <button class="pswp__button pswp__button--fs" title="切换全屏"></button>
+        <button class="pswp__button pswp__button--zoom" title="缩放图片"></button>
+        <button class="pswp__button pswp__button--rotate" title="旋转图片">
+          <span class="twr twr-rotate-left"></span>
+        </button>
+        <a href="" class="pswp__button pswp__button--newtab" title="新窗口预览" target="_blank">
+          <span class="twr twr-move"></span>
+        </a>
+        <a href="" class="pswp__button pswp__button--download" title="下载图片" download="">
+          <span class="twr twr-download"></span>
+        </a>
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip"></div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="上一张 (←)">
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="下一张 (→)">
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<iframe id="intercom-frame" style="position: absolute !important; opacity: 0 !important; width: 1px !important; height: 1px !important; top: 0 !important; left: 0 !important; border: none !important; display: block !important; z-index: -1 !important; pointer-events: none;" aria-hidden="true" tabindex="-1" title="Intercom"></iframe><div class="intercom-lightweight-app"><style id="intercom-lightweight-app-style" type="text/css">
+  @keyframes intercom-lightweight-app-launcher {
+    from {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes intercom-lightweight-app-gradient {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes intercom-lightweight-app-messenger {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    40% {
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .intercom-lightweight-app {
+    position: fixed;
+    z-index: 2147483001;
+    width: 0;
+    height: 0;
+    font-family: intercom-font, "Helvetica Neue", "Apple Color Emoji", Helvetica, Arial, sans-serif;
+  }
+
+  .intercom-lightweight-app-gradient {
+    position: fixed;
+    z-index: 2147483002;
+    width: 500px;
+    height: 500px;
+    bottom: 0;
+    right: 0;
+    pointer-events: none;
+    background: radial-gradient(
+      ellipse at bottom right,
+      rgba(29, 39, 54, 0.16) 0%,
+      rgba(29, 39, 54, 0) 72%);
+    animation: intercom-lightweight-app-gradient 200ms ease-out;
+  }
+
+  .intercom-lightweight-app-launcher {
+    position: fixed;
+    z-index: 2147483003;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none;
+    bottom: 20px;
+    right: 20px;
+    max-width: 48px;
+    width: 48px;
+    max-height: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #44acb6;
+    cursor: pointer;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.06), 0 2px 32px 0 rgba(0, 0, 0, 0.16);
+    transition: transform 167ms cubic-bezier(0.33, 0.00, 0.00, 1.00);
+    box-sizing: content-box;
+  }
+
+
+  .intercom-lightweight-app-launcher:hover {
+    transition: transform 250ms cubic-bezier(0.33, 0.00, 0.00, 1.00);
+    transform: scale(1.1)
+  }
+
+  .intercom-lightweight-app-launcher:active {
+    transform: scale(0.85);
+    transition: transform 134ms cubic-bezier(0.45, 0, 0.2, 1);
+  }
+
+
+  .intercom-lightweight-app-launcher:focus {
+    outline: none;
+
+    
+  }
+
+  .intercom-lightweight-app-launcher-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 48px;
+    height: 48px;
+    transition: transform 100ms linear, opacity 80ms linear;
+  }
+
+  .intercom-lightweight-app-launcher-icon-open {
+    
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+      
+  }
+
+  .intercom-lightweight-app-launcher-icon-open svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .intercom-lightweight-app-launcher-icon-open svg path {
+    fill: rgb(255, 255, 255);
+  }
+
+  .intercom-lightweight-app-launcher-icon-self-serve {
+    
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+      
+  }
+
+  .intercom-lightweight-app-launcher-icon-self-serve svg {
+    height: 44px;
+  }
+
+  .intercom-lightweight-app-launcher-icon-self-serve svg path {
+    fill: rgb(255, 255, 255);
+  }
+
+  .intercom-lightweight-app-launcher-custom-icon-open {
+    max-height: 24px;
+    max-width: 24px;
+
+    
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+      
+  }
+
+  .intercom-lightweight-app-launcher-icon-minimize {
+    
+        opacity: 0;
+        transform: rotate(-60deg) scale(0);
+      
+  }
+
+  .intercom-lightweight-app-launcher-icon-minimize svg path {
+    fill: rgb(255, 255, 255);
+  }
+
+  .intercom-lightweight-app-messenger {
+    position: fixed;
+    z-index: 2147483003;
+    overflow: hidden;
+    background-color: #ffffff;
+    animation: intercom-lightweight-app-messenger 250ms cubic-bezier(0, 1, 1, 1);
+    transform-origin: bottom right;
+
+    
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      
+
+    border-radius: 16px;
+  }
+
+  .intercom-lightweight-app-messenger-header {
+    height: 64px;
+    border-bottom: none;
+    background: #ffffff;
+  }
+
+  .intercom-lightweight-app-messenger-footer{
+    position:absolute;
+    bottom:0;
+    width: 100%;
+    height: 80px;
+    background: #ffffff;
+    font-size: 14px;
+    line-height: 21px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.05);
+  }
+
+  @media print {
+    .intercom-lightweight-app {
+      display: none;
+    }
+  }
+</style></div></body></html>

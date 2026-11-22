@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta https-equiv="Content-Security-Policy" content="default-src *;" />
+    <title>Yappe.in - Indian places and local business directory</title>
+        
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <link as="style" rel="stylesheet preload prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css" />
+    <link as="style" rel="stylesheet preload prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link as="style" rel="stylesheet preload prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" />
+    <link as="script" rel="prefetch preload" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" />
+    <link as="script" rel="prefetch preload" href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"/>
+
+    
+    <style>
+        /* a {
+            color: #f14668 !important;
+        } */
+
+		.hero.has-background {
+			position: relative;
+			overflow: hidden
+		}
+		.hero .hero-background {
+			position: absolute;
+			object-fit: cover;
+			object-position: center center;
+			width: 100%;
+			height: 100%;
+		}
+		.hero .is-transparent {
+			opacity: 0.9;
+			filter: brightness(90%) 
+		}
+
+        ul.inline {
+            margin: 0
+        }
+        ul.inline li {
+            display: inline;
+            margin-right: 10px
+        }
+
+        a.dotted {
+            border-bottom: 1px dotted;
+            text-decoration: none;
+        }
+
+        dd::before {
+            content: '— ';
+            color: #485fc7;
+        }
+        .checked {
+            color: orange;
+        }
+        
+	</style>
+
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4525049720045895"
+     crossorigin="anonymous"></script>
+        
+    <script async data-cfasync="false">
+  (function() {
+      const url = new URL(window.location.href);
+      const clickID = url.searchParams.get("click_id");
+      const sourceID = url.searchParams.get("source_id");
+
+      const s = document.createElement("script");
+      s.dataset.cfasync = "false";
+      s.src = "https://push-sdk.net/f/sdk.js?z=829720";
+      s.onload = (opts) => {
+          opts.zoneID = 829720;
+          opts.extClickID = clickID;
+          opts.subID1 = sourceID;
+          opts.actions.onPermissionGranted = () => {};
+          opts.actions.onPermissionDenied = () => {};
+          opts.actions.onAlreadySubscribed = () => {};
+          opts.actions.onError = () => {};
+      };
+      document.head.appendChild(s);
+  })()
+</script>
+
+</head>
+<body class="has-background-light has-navbar-fixed-top">
+    
+    <nav class="navbar is-fixed-top is-dark" role="navigation" aria-label="main navigation">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item has-text-white has-text-weight-bold" href="/" title="Indian Local Business Directory">
+                    <img width="100%" src="/logo/yappe.in.svg" alt="yappe.in">
+                </a>
+
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-start">
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">
+                            Places by State
+                        </a>
+                        <div class="navbar-dropdown is-boxed">
+                                                            <a class="navbar-item" href="/maharashtra">
+                                    Maharashtra                                </a>
+                                                            <a class="navbar-item" href="/uttar-pradesh">
+                                    Uttar Pradesh                                </a>
+                                                            <a class="navbar-item" href="/gujarat">
+                                    Gujarat                                </a>
+                                                            <a class="navbar-item" href="/tamil-nadu">
+                                    Tamil Nadu                                </a>
+                                                            <a class="navbar-item" href="/rajasthan">
+                                    Rajasthan                                </a>
+                                                            <a class="navbar-item" href="/madhya-pradesh">
+                                    Madhya Pradesh                                </a>
+                                                            <a class="navbar-item" href="/kerala">
+                                    Kerala                                </a>
+                                                            <a class="navbar-item" href="/telangana">
+                                    Telangana                                </a>
+                                                            <a class="navbar-item" href="/karnataka">
+                                    Karnataka                                </a>
+                                                            <a class="navbar-item" href="/haryana">
+                                    Haryana                                </a>
+                                                            <a class="navbar-item" href="/west-bengal">
+                                    West Bengal                                </a>
+                                                            <a class="navbar-item" href="/punjab">
+                                    Punjab                                </a>
+                                                            <a class="navbar-item" href="/bihar">
+                                    Bihar                                </a>
+                                                            <a class="navbar-item" href="/andhra-pradesh">
+                                    Andhra Pradesh                                </a>
+                                                            <a class="navbar-item" href="/jharkhand">
+                                    Jharkhand                                </a>
+                                                            <a class="navbar-item" href="/odisha">
+                                    Odisha                                </a>
+                                                            <a class="navbar-item" href="/uttarakhand">
+                                    Uttarakhand                                </a>
+                                                            <a class="navbar-item" href="/delhi">
+                                    Delhi                                </a>
+                                                            <a class="navbar-item" href="/assam">
+                                    Assam                                </a>
+                                                            <a class="navbar-item" href="/himachal-pradesh">
+                                    Himachal Pradesh                                </a>
+                                                            <a class="navbar-item" href="/chhattisgarh">
+                                    Chhattisgarh                                </a>
+                                                            <a class="navbar-item" href="/nagaland">
+                                    Nagaland                                </a>
+                                                            <a class="navbar-item" href="/mizoram">
+                                    Mizoram                                </a>
+                                                            <a class="navbar-item" href="/sikkim">
+                                    Sikkim                                </a>
+                                                            <a class="navbar-item" href="/goa">
+                                    Goa                                </a>
+                                                            <a class="navbar-item" href="/manipur">
+                                    Manipur                                </a>
+                                                            <a class="navbar-item" href="/meghalaya">
+                                    Meghalaya                                </a>
+                                                            <a class="navbar-item" href="/jammu-kashmir">
+                                    Jammu & Kashmir                                </a>
+                                                            <a class="navbar-item" href="/chandigarh">
+                                    Chandigarh                                </a>
+                                                            <a class="navbar-item" href="/pondicherry">
+                                    Pondicherry                                </a>
+                                                    </div>
+                    </div>
+
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">
+                            Railway
+                        </a>
+                        <div class="navbar-dropdown is-boxed">
+                            <a class="navbar-item" href="/railway/station/">
+                                Stations
+                            </a>
+                            <a class="navbar-item" href="/railway/train/">
+                                Trains
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">
+                            Books
+                        </a>
+                        <div class="navbar-dropdown is-boxed">
+                                                            <a class="navbar-item" href="/book/genre/contemporary-fiction">
+                                    Contemporary Fiction                                </a>
+                                                            <a class="navbar-item" href="/book/genre/fiction-books">
+                                    Fiction Books                                </a>
+                                                            <a class="navbar-item" href="/book/genre/fantasy-books">
+                                    Fantasy Books                                </a>
+                                                            <a class="navbar-item" href="/book/genre/romance-books">
+                                    Romance Books                                </a>
+                                                            <a class="navbar-item" href="/book/genre/thrillers-books">
+                                    Thrillers Books                                </a>
+                                                            <a class="navbar-item" href="/book/genre/nonfiction-books">
+                                    Nonfiction Books                                </a>
+                                                            <a class="navbar-item" href="/book/genre/mystery-books">
+                                    Mystery Books                                </a>
+                                                            <a class="navbar-item" href="/book/genre/memoirs-books">
+                                    Memoirs Books                                </a>
+                                                            <a class="navbar-item" href="/book/genre/historical-fiction">
+                                    Historical Fiction                                </a>
+                                                            <a class="navbar-item" href="/book/genre/science-fiction">
+                                    Science Fiction                                </a>
+                                                    </div>
+                    </div>
+
+                    <a href="/manual/" class="navbar-item">User Manuals</a>
+                </div>
+
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+<div class="hero is-dark">
+    <div class="hero-body container">
+        <img src="/logo/yappe.in.svg" width="100%" alt="yappe.in" title="A compleate indian portal">
+    </div>
+</div>
+
+<main class="container mt-3">
+    <div class="my-6 mx-2">
+        <div class="title is-3">States of India</div>
+        <div class="buttons">
+                            <a title="Maharashtra" class="button is-small is-outlined is-rounded is-info m-1" href="/maharashtra">Maharashtra</a>
+                            <a title="Uttar Pradesh" class="button is-small is-outlined is-rounded is-info m-1" href="/uttar-pradesh">Uttar Pradesh</a>
+                            <a title="Gujarat" class="button is-small is-outlined is-rounded is-info m-1" href="/gujarat">Gujarat</a>
+                            <a title="Tamil Nadu" class="button is-small is-outlined is-rounded is-info m-1" href="/tamil-nadu">Tamil Nadu</a>
+                            <a title="Rajasthan" class="button is-small is-outlined is-rounded is-info m-1" href="/rajasthan">Rajasthan</a>
+                            <a title="Madhya Pradesh" class="button is-small is-outlined is-rounded is-info m-1" href="/madhya-pradesh">Madhya Pradesh</a>
+                            <a title="Kerala" class="button is-small is-outlined is-rounded is-info m-1" href="/kerala">Kerala</a>
+                            <a title="Telangana" class="button is-small is-outlined is-rounded is-info m-1" href="/telangana">Telangana</a>
+                            <a title="Karnataka" class="button is-small is-outlined is-rounded is-info m-1" href="/karnataka">Karnataka</a>
+                            <a title="Haryana" class="button is-small is-outlined is-rounded is-info m-1" href="/haryana">Haryana</a>
+                            <a title="West Bengal" class="button is-small is-outlined is-rounded is-info m-1" href="/west-bengal">West Bengal</a>
+                            <a title="Punjab" class="button is-small is-outlined is-rounded is-info m-1" href="/punjab">Punjab</a>
+                            <a title="Bihar" class="button is-small is-outlined is-rounded is-info m-1" href="/bihar">Bihar</a>
+                            <a title="Andhra Pradesh" class="button is-small is-outlined is-rounded is-info m-1" href="/andhra-pradesh">Andhra Pradesh</a>
+                            <a title="Jharkhand" class="button is-small is-outlined is-rounded is-info m-1" href="/jharkhand">Jharkhand</a>
+                            <a title="Odisha" class="button is-small is-outlined is-rounded is-info m-1" href="/odisha">Odisha</a>
+                            <a title="Uttarakhand" class="button is-small is-outlined is-rounded is-info m-1" href="/uttarakhand">Uttarakhand</a>
+                            <a title="Delhi" class="button is-small is-outlined is-rounded is-info m-1" href="/delhi">Delhi</a>
+                            <a title="Assam" class="button is-small is-outlined is-rounded is-info m-1" href="/assam">Assam</a>
+                            <a title="Himachal Pradesh" class="button is-small is-outlined is-rounded is-info m-1" href="/himachal-pradesh">Himachal Pradesh</a>
+                            <a title="Chhattisgarh" class="button is-small is-outlined is-rounded is-info m-1" href="/chhattisgarh">Chhattisgarh</a>
+                            <a title="Nagaland" class="button is-small is-outlined is-rounded is-info m-1" href="/nagaland">Nagaland</a>
+                            <a title="Mizoram" class="button is-small is-outlined is-rounded is-info m-1" href="/mizoram">Mizoram</a>
+                            <a title="Sikkim" class="button is-small is-outlined is-rounded is-info m-1" href="/sikkim">Sikkim</a>
+                            <a title="Goa" class="button is-small is-outlined is-rounded is-info m-1" href="/goa">Goa</a>
+                            <a title="Manipur" class="button is-small is-outlined is-rounded is-info m-1" href="/manipur">Manipur</a>
+                            <a title="Meghalaya" class="button is-small is-outlined is-rounded is-info m-1" href="/meghalaya">Meghalaya</a>
+                            <a title="Jammu & Kashmir" class="button is-small is-outlined is-rounded is-info m-1" href="/jammu-kashmir">Jammu & Kashmir</a>
+                            <a title="Chandigarh" class="button is-small is-outlined is-rounded is-info m-1" href="/chandigarh">Chandigarh</a>
+                            <a title="Pondicherry" class="button is-small is-outlined is-rounded is-info m-1" href="/pondicherry">Pondicherry</a>
+                    </div>
+    </div>
+
+    <div class="my-6 mx-2">
+        <div class="title is-3">Top Cities in India</div>
+        <div class="buttons">
+                            <a title="Mumbai, Maharashtra" class="button is-small is-outlined is-rounded is-info m-1" href="/maharashtra/mumbai">Mumbai</a>
+                            <a title="Ahmedabad, Gujarat" class="button is-small is-outlined is-rounded is-info m-1" href="/gujarat/ahmedabad">Ahmedabad</a>
+                            <a title="Hyderabad, Telangana" class="button is-small is-outlined is-rounded is-info m-1" href="/telangana/hyderabad">Hyderabad</a>
+                            <a title="Pune, Maharashtra" class="button is-small is-outlined is-rounded is-info m-1" href="/maharashtra/pune">Pune</a>
+                            <a title="Kolkata, West Bengal" class="button is-small is-outlined is-rounded is-info m-1" href="/west-bengal/kolkata">Kolkata</a>
+                            <a title="Nagpur, Maharashtra" class="button is-small is-outlined is-rounded is-info m-1" href="/maharashtra/nagpur">Nagpur</a>
+                            <a title="Lucknow, Uttar Pradesh" class="button is-small is-outlined is-rounded is-info m-1" href="/uttar-pradesh/lucknow">Lucknow</a>
+                            <a title="New Delhi, Delhi" class="button is-small is-outlined is-rounded is-info m-1" href="/delhi/new-delhi">New Delhi</a>
+                            <a title="Ranchi, Jharkhand" class="button is-small is-outlined is-rounded is-info m-1" href="/jharkhand/ranchi">Ranchi</a>
+                            <a title="Chennai, Tamil Nadu" class="button is-small is-outlined is-rounded is-info m-1" href="/tamil-nadu/chennai">Chennai</a>
+                            <a title="Nashik, Maharashtra" class="button is-small is-outlined is-rounded is-info m-1" href="/maharashtra/nashik">Nashik</a>
+                            <a title="Prayagraj, Uttar Pradesh" class="button is-small is-outlined is-rounded is-info m-1" href="/uttar-pradesh/prayagraj">Prayagraj</a>
+                            <a title="Visakhapatnam, Andhra Pradesh" class="button is-small is-outlined is-rounded is-info m-1" href="/andhra-pradesh/visakhapatnam">Visakhapatnam</a>
+                            <a title="Bhopal, Madhya Pradesh" class="button is-small is-outlined is-rounded is-info m-1" href="/madhya-pradesh/bhopal">Bhopal</a>
+                            <a title="Ludhiana, Punjab" class="button is-small is-outlined is-rounded is-info m-1" href="/punjab/ludhiana">Ludhiana</a>
+                            <a title="Jaipur, Rajasthan" class="button is-small is-outlined is-rounded is-info m-1" href="/rajasthan/jaipur">Jaipur</a>
+                            <a title="Bengaluru, Karnataka" class="button is-small is-outlined is-rounded is-info m-1" href="/karnataka/bengaluru">Bengaluru</a>
+                            <a title="Surat, Gujarat" class="button is-small is-outlined is-rounded is-info m-1" href="/gujarat/surat">Surat</a>
+                            <a title="Thiruvananthapuram, Kerala" class="button is-small is-outlined is-rounded is-info m-1" href="/kerala/thiruvananthapuram">Thiruvananthapuram</a>
+                            <a title="Indore, Madhya Pradesh" class="button is-small is-outlined is-rounded is-info m-1" href="/madhya-pradesh/indore">Indore</a>
+                            <a title="Patna, Bihar" class="button is-small is-outlined is-rounded is-info m-1" href="/bihar/patna">Patna</a>
+                            <a title="Kota, Rajasthan" class="button is-small is-outlined is-rounded is-info m-1" href="/rajasthan/kota">Kota</a>
+                            <a title="Jodhpur, Rajasthan" class="button is-small is-outlined is-rounded is-info m-1" href="/rajasthan/jodhpur">Jodhpur</a>
+                            <a title="Navi Mumbai, Maharashtra" class="button is-small is-outlined is-rounded is-info m-1" href="/maharashtra/navi-mumbai">Navi Mumbai</a>
+                            <a title="Kalaburagi, Karnataka" class="button is-small is-outlined is-rounded is-info m-1" href="/karnataka/kalaburagi">Kalaburagi</a>
+                            <a title="Gurugram, Haryana" class="button is-small is-outlined is-rounded is-info m-1" href="/haryana/gurugram">Gurugram</a>
+                            <a title="Thane, Maharashtra" class="button is-small is-outlined is-rounded is-info m-1" href="/maharashtra/thane">Thane</a>
+                            <a title="Coimbatore, Tamil Nadu" class="button is-small is-outlined is-rounded is-info m-1" href="/tamil-nadu/coimbatore">Coimbatore</a>
+                            <a title="Bhubaneswar, Odisha" class="button is-small is-outlined is-rounded is-info m-1" href="/odisha/bhubaneswar">Bhubaneswar</a>
+                            <a title="Raipur, Chhattisgarh" class="button is-small is-outlined is-rounded is-info m-1" href="/chhattisgarh/raipur">Raipur</a>
+                    </div>
+    </div>
+    
+    <div class="my-6 mx-2">
+        <div class="title is-3">Top rated places in India</div>
+        <div class="columns is-multiline">
+                            <div class="column is-half">
+                    <div class="box p-0">
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-128x128 box p-0">
+                                    <img loading="lazy" src="https://files.yappe.in/place/small/gateway-of-india-mumbai-117448.webp" alt="Gateway Of India Mumbai">
+                                </figure>
+                            </div>
+
+                            <div class="media-content py-2">
+                                <h3 class="is-size-5">
+                                    <a href="/maharashtra/mumbai/gateway-of-india-mumbai/117446">Gateway Of India Mumbai</a>
+                                                                    </h3>
+                                <div class="is-size-7">
+                                    <span title="4.60">
+                                    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span></span>
+                                    <span><a rel="nofollow" href="/maharashtra/mumbai/gateway-of-india-mumbai/117446#reviews">361782 reviews</a></span>
+                                </div>
+                                <address class="is-size-7">Mumbai, Maharashtra</address>
+
+                                                                    <div class="tags my-2">
+                                                                                    <span class="tag is-rounded">Historical place</span>
+                                                                                    <span class="tag is-rounded">Historical landmark</span>
+                                                                                    <span class="tag is-rounded">Monument</span>
+                                                                                    <span class="tag is-rounded">Tourist attraction</span>
+                                                                            </div>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="column is-half">
+                    <div class="box p-0">
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-128x128 box p-0">
+                                    <img loading="lazy" src="https://files.yappe.in/place/small/india-gate-2182822.webp" alt="India Gate">
+                                </figure>
+                            </div>
+
+                            <div class="media-content py-2">
+                                <h3 class="is-size-5">
+                                    <a href="/delhi/new-delhi/india-gate/134940">India Gate</a>
+                                                                    </h3>
+                                <div class="is-size-7">
+                                    <span title="4.60">
+                                    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span></span>
+                                    <span><a rel="nofollow" href="/delhi/new-delhi/india-gate/134940#reviews">263994 reviews</a></span>
+                                </div>
+                                <address class="is-size-7">New Delhi, Delhi</address>
+
+                                                                    <div class="tags my-2">
+                                                                                    <span class="tag is-rounded">Monument</span>
+                                                                                    <span class="tag is-rounded">Historical place</span>
+                                                                                    <span class="tag is-rounded">Historical landmark</span>
+                                                                                    <span class="tag is-rounded">Tourist attraction</span>
+                                                                                    <span class="tag is-rounded">War memorial</span>
+                                                                            </div>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="column is-half">
+                    <div class="box p-0">
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-128x128 box p-0">
+                                    <img loading="lazy" src="https://files.yappe.in/place/small/mysore-palace-15461.webp" alt="Mysore Palace">
+                                </figure>
+                            </div>
+
+                            <div class="media-content py-2">
+                                <h3 class="is-size-5">
+                                    <a href="/karnataka/mysuru/mysore-palace/15459">Mysore Palace</a>
+                                                                    </h3>
+                                <div class="is-size-7">
+                                    <span title="4.60">
+                                    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span></span>
+                                    <span><a rel="nofollow" href="/karnataka/mysuru/mysore-palace/15459#reviews">260990 reviews</a></span>
+                                </div>
+                                <address class="is-size-7">Mysuru, Karnataka</address>
+
+                                                                    <div class="tags my-2">
+                                                                                    <span class="tag is-rounded">Historical place</span>
+                                                                                    <span class="tag is-rounded">Tourist attraction</span>
+                                                                            </div>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="column is-half">
+                    <div class="box p-0">
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-128x128 box p-0">
+                                    <img loading="lazy" src="https://files.yappe.in/place/small/taj-mahal-11240731.webp" alt="Taj Mahal">
+                                </figure>
+                            </div>
+
+                            <div class="media-content py-2">
+                                <h3 class="is-size-5">
+                                    <a href="/uttar-pradesh/agra/taj-mahal/2447155">Taj Mahal</a>
+                                                                    </h3>
+                                <div class="is-size-7">
+                                    <span title="4.60">
+                                    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span></span>
+                                    <span><a rel="nofollow" href="/uttar-pradesh/agra/taj-mahal/2447155#reviews">226495 reviews</a></span>
+                                </div>
+                                <address class="is-size-7">Agra, Uttar Pradesh</address>
+
+                                                                    <div class="tags my-2">
+                                                                                    <span class="tag is-rounded">Monument</span>
+                                                                                    <span class="tag is-rounded">Historical place</span>
+                                                                                    <span class="tag is-rounded">Tourist attraction</span>
+                                                                            </div>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="column is-half">
+                    <div class="box p-0">
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-128x128 box p-0">
+                                    <img loading="lazy" src="https://files.yappe.in/place/small/charminar-1771885.webp" alt="Charminar">
+                                </figure>
+                            </div>
+
+                            <div class="media-content py-2">
+                                <h3 class="is-size-5">
+                                    <a href="/telangana/hyderabad/charminar/78259">Charminar</a>
+                                                                    </h3>
+                                <div class="is-size-7">
+                                    <span title="4.50">
+                                    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span></span>
+                                    <span><a rel="nofollow" href="/telangana/hyderabad/charminar/78259#reviews">212974 reviews</a></span>
+                                </div>
+                                <address class="is-size-7">Hyderabad, Telangana</address>
+
+                                                                    <div class="tags my-2">
+                                                                                    <span class="tag is-rounded">Monument</span>
+                                                                                    <span class="tag is-rounded">Historical place</span>
+                                                                                    <span class="tag is-rounded">Mosque</span>
+                                                                                    <span class="tag is-rounded">Tourist attraction</span>
+                                                                            </div>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="column is-half">
+                    <div class="box p-0">
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-128x128 box p-0">
+                                    <img loading="lazy" src="https://files.yappe.in/place/small/maidan-1958433.webp" alt="Maidan">
+                                </figure>
+                            </div>
+
+                            <div class="media-content py-2">
+                                <h3 class="is-size-5">
+                                    <a href="/west-bengal/kolkata/maidan/127333">Maidan</a>
+                                                                    </h3>
+                                <div class="is-size-7">
+                                    <span title="4.50">
+                                    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span></span>
+                                    <span><a rel="nofollow" href="/west-bengal/kolkata/maidan/127333#reviews">207254 reviews</a></span>
+                                </div>
+                                <address class="is-size-7">Kolkata, West Bengal</address>
+
+                                                                    <div class="tags my-2">
+                                                                                    <span class="tag is-rounded">Park</span>
+                                                                                    <span class="tag is-rounded">Entertainment and recreation</span>
+                                                                                    <span class="tag is-rounded">Fairground</span>
+                                                                                    <span class="tag is-rounded">Outdoor activities</span>
+                                                                                    <span class="tag is-rounded">Playground</span>
+                                                                                    <span class="tag is-rounded">Sports activity location</span>
+                                                                                    <span class="tag is-rounded">Tourist attraction</span>
+                                                                            </div>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="column is-half">
+                    <div class="box p-0">
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-128x128 box p-0">
+                                    <img loading="lazy" src="https://files.yappe.in/place/small/sri-harmandir-sahib-117971.webp" alt="Sri Harmandir Sahib">
+                                </figure>
+                            </div>
+
+                            <div class="media-content py-2">
+                                <h3 class="is-size-5">
+                                    <a href="/punjab/amritsar/sri-harmandir-sahib/117969">Sri Harmandir Sahib</a>
+                                                                    </h3>
+                                <div class="is-size-7">
+                                    <span title="4.90">
+                                    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span></span>
+                                    <span><a rel="nofollow" href="/punjab/amritsar/sri-harmandir-sahib/117969#reviews">193432 reviews</a></span>
+                                </div>
+                                <address class="is-size-7">Amritsar, Punjab</address>
+
+                                                                    <div class="tags my-2">
+                                                                                    <span class="tag is-rounded">Gurudwara</span>
+                                                                                    <span class="tag is-rounded">Historical landmark</span>
+                                                                                    <span class="tag is-rounded">Tourist attraction</span>
+                                                                            </div>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="column is-half">
+                    <div class="box p-0">
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-128x128 box p-0">
+                                    <img loading="lazy" src="https://files.yappe.in/place/small/lulu-international-shopping-mall-111583.webp" alt="LuLu International Shopping Mall">
+                                </figure>
+                            </div>
+
+                            <div class="media-content py-2">
+                                <h3 class="is-size-5">
+                                    <a href="/kerala/kochi/lulu-international-shopping-mall/111581">LuLu International Shopping Mall</a>
+                                                                    </h3>
+                                <div class="is-size-7">
+                                    <span title="4.60">
+                                    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span></span>
+                                    <span><a rel="nofollow" href="/kerala/kochi/lulu-international-shopping-mall/111581#reviews">186696 reviews</a></span>
+                                </div>
+                                <address class="is-size-7">Kochi, Kerala</address>
+
+                                                                    <div class="tags my-2">
+                                                                                    <span class="tag is-rounded">Shopping mall</span>
+                                                                            </div>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="column is-half">
+                    <div class="box p-0">
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-128x128 box p-0">
+                                    <img loading="lazy" src="https://files.yappe.in/place/small/orion-mall-6228430.webp" alt="Orion Mall">
+                                </figure>
+                            </div>
+
+                            <div class="media-content py-2">
+                                <h3 class="is-size-5">
+                                    <a href="/karnataka/bengaluru/orion-mall/684020">Orion Mall</a>
+                                                                    </h3>
+                                <div class="is-size-7">
+                                    <span title="4.50">
+                                    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span></span>
+                                    <span><a rel="nofollow" href="/karnataka/bengaluru/orion-mall/684020#reviews">183314 reviews</a></span>
+                                </div>
+                                <address class="is-size-7">Bengaluru, Karnataka</address>
+
+                                                                    <div class="tags my-2">
+                                                                                    <span class="tag is-rounded">Shopping mall</span>
+                                                                                    <span class="tag is-rounded">Cafe</span>
+                                                                            </div>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="column is-half">
+                    <div class="box p-0">
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-128x128 box p-0">
+                                    <img loading="lazy" src="https://files.yappe.in/place/small/phoenix-marketcity-79810.webp" alt="Phoenix Marketcity">
+                                </figure>
+                            </div>
+
+                            <div class="media-content py-2">
+                                <h3 class="is-size-5">
+                                    <a href="/karnataka/bengaluru/phoenix-marketcity/79808">Phoenix Marketcity</a>
+                                                                    </h3>
+                                <div class="is-size-7">
+                                    <span title="4.50">
+                                    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span></span>
+                                    <span><a rel="nofollow" href="/karnataka/bengaluru/phoenix-marketcity/79808#reviews">177901 reviews</a></span>
+                                </div>
+                                <address class="is-size-7">Bengaluru, Karnataka</address>
+
+                                                                    <div class="tags my-2">
+                                                                                    <span class="tag is-rounded">Shopping mall</span>
+                                                                                    <span class="tag is-rounded">Donut shop</span>
+                                                                            </div>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="column is-half">
+                    <div class="box p-0">
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-128x128 box p-0">
+                                    <img loading="lazy" src="https://files.yappe.in/place/small/eco-park-113514.webp" alt="Eco Park">
+                                </figure>
+                            </div>
+
+                            <div class="media-content py-2">
+                                <h3 class="is-size-5">
+                                    <a href="/west-bengal/kolkata/eco-park/113512">Eco Park</a>
+                                                                    </h3>
+                                <div class="is-size-7">
+                                    <span title="4.50">
+                                    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span></span>
+                                    <span><a rel="nofollow" href="/west-bengal/kolkata/eco-park/113512#reviews">168391 reviews</a></span>
+                                </div>
+                                <address class="is-size-7">Kolkata, West Bengal</address>
+
+                                                                    <div class="tags my-2">
+                                                                                    <span class="tag is-rounded">Amusement park</span>
+                                                                                    <span class="tag is-rounded">Cafe</span>
+                                                                                    <span class="tag is-rounded">Ecological park</span>
+                                                                                    <span class="tag is-rounded">Park</span>
+                                                                                    <span class="tag is-rounded">Restaurant</span>
+                                                                                    <span class="tag is-rounded">Tourist attraction</span>
+                                                                            </div>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="column is-half">
+                    <div class="box p-0">
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-128x128 box p-0">
+                                    <img loading="lazy" src="https://files.yappe.in/place/small/shreemant-dagdusheth-halwai-ganpati-mandir-92835.webp" alt="Shreemant Dagdusheth Halwai Ganpati Mandir">
+                                </figure>
+                            </div>
+
+                            <div class="media-content py-2">
+                                <h3 class="is-size-5">
+                                    <a href="/maharashtra/pune/shreemant-dagdusheth-halwai-ganpati-mandir/92833">Shreemant Dagdusheth Halwai Ganpati Mandir</a>
+                                                                    </h3>
+                                <div class="is-size-7">
+                                    <span title="4.80">
+                                    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span></span>
+                                    <span><a rel="nofollow" href="/maharashtra/pune/shreemant-dagdusheth-halwai-ganpati-mandir/92833#reviews">156394 reviews</a></span>
+                                </div>
+                                <address class="is-size-7">Pune, Maharashtra</address>
+
+                                                                    <div class="tags my-2">
+                                                                                    <span class="tag is-rounded">Hindu temple</span>
+                                                                                    <span class="tag is-rounded">Religious organization</span>
+                                                                                    <span class="tag is-rounded">Tourist attraction</span>
+                                                                            </div>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="column is-half">
+                    <div class="box p-0">
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-128x128 box p-0">
+                                    <img loading="lazy" src="https://files.yappe.in/place/small/amber-palace-1958596.webp" alt="Amber Palace">
+                                </figure>
+                            </div>
+
+                            <div class="media-content py-2">
+                                <h3 class="is-size-5">
+                                    <a href="/rajasthan/jaipur/amber-palace/121978">Amber Palace</a>
+                                                                    </h3>
+                                <div class="is-size-7">
+                                    <span title="4.60">
+                                    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span></span>
+                                    <span><a rel="nofollow" href="/rajasthan/jaipur/amber-palace/121978#reviews">154384 reviews</a></span>
+                                </div>
+                                <address class="is-size-7">Jaipur, Rajasthan</address>
+
+                                                                    <div class="tags my-2">
+                                                                                    <span class="tag is-rounded">Castle</span>
+                                                                                    <span class="tag is-rounded">Fortress</span>
+                                                                                    <span class="tag is-rounded">Tourist attraction</span>
+                                                                            </div>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="column is-half">
+                    <div class="box p-0">
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-128x128 box p-0">
+                                    <img loading="lazy" src="https://files.yappe.in/place/small/lalbagh-botanical-garden-6485627.webp" alt="Lalbagh Botanical Garden">
+                                </figure>
+                            </div>
+
+                            <div class="media-content py-2">
+                                <h3 class="is-size-5">
+                                    <a href="/karnataka/bengaluru/lalbagh-botanical-garden/717102">Lalbagh Botanical Garden</a>
+                                                                    </h3>
+                                <div class="is-size-7">
+                                    <span title="4.40">
+                                    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span></span>
+                                    <span><a rel="nofollow" href="/karnataka/bengaluru/lalbagh-botanical-garden/717102#reviews">152861 reviews</a></span>
+                                </div>
+                                <address class="is-size-7">Bengaluru, Karnataka</address>
+
+                                                                    <div class="tags my-2">
+                                                                                    <span class="tag is-rounded">Botanical garden</span>
+                                                                                    <span class="tag is-rounded">Garden</span>
+                                                                                    <span class="tag is-rounded">Tourist attraction</span>
+                                                                            </div>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="column is-half">
+                    <div class="box p-0">
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-128x128 box p-0">
+                                    <img loading="lazy" src="https://files.yappe.in/place/small/red-fort-1533293.webp" alt="Red Fort">
+                                </figure>
+                            </div>
+
+                            <div class="media-content py-2">
+                                <h3 class="is-size-5">
+                                    <a href="/delhi/new-delhi/red-fort/50503">Red Fort</a>
+                                                                    </h3>
+                                <div class="is-size-7">
+                                    <span title="4.50">
+                                    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span></span>
+                                    <span><a rel="nofollow" href="/delhi/new-delhi/red-fort/50503#reviews">152678 reviews</a></span>
+                                </div>
+                                <address class="is-size-7">New Delhi, Delhi</address>
+
+                                                                    <div class="tags my-2">
+                                                                                    <span class="tag is-rounded">Fortress</span>
+                                                                                    <span class="tag is-rounded">Tourist attraction</span>
+                                                                            </div>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="column is-half">
+                    <div class="box p-0">
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-128x128 box p-0">
+                                    <img loading="lazy" src="https://files.yappe.in/place/small/indira-gandhi-international-airport-10991421.webp" alt="Indira Gandhi International Airport">
+                                </figure>
+                            </div>
+
+                            <div class="media-content py-2">
+                                <h3 class="is-size-5">
+                                    <a href="/delhi/new-delhi/indira-gandhi-international-airport/2282441">Indira Gandhi International Airport</a>
+                                                                    </h3>
+                                <div class="is-size-7">
+                                    <span title="4.50">
+                                    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span></span>
+                                    <span><a rel="nofollow" href="/delhi/new-delhi/indira-gandhi-international-airport/2282441#reviews">152214 reviews</a></span>
+                                </div>
+                                <address class="is-size-7">New Delhi, Delhi</address>
+
+                                                                    <div class="tags my-2">
+                                                                                    <span class="tag is-rounded">International airport</span>
+                                                                                    <span class="tag is-rounded">Airport</span>
+                                                                            </div>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="column is-half">
+                    <div class="box p-0">
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-128x128 box p-0">
+                                    <img loading="lazy" src="https://files.yappe.in/place/small/dlf-mall-of-india-noida-2158348.webp" alt="DLF Mall of India, Noida">
+                                </figure>
+                            </div>
+
+                            <div class="media-content py-2">
+                                <h3 class="is-size-5">
+                                    <a href="/uttar-pradesh/noida/dlf-mall-of-india-noida/129733">DLF Mall of India, Noida</a>
+                                                                    </h3>
+                                <div class="is-size-7">
+                                    <span title="4.60">
+                                    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span></span>
+                                    <span><a rel="nofollow" href="/uttar-pradesh/noida/dlf-mall-of-india-noida/129733#reviews">145437 reviews</a></span>
+                                </div>
+                                <address class="is-size-7">Noida, Uttar Pradesh</address>
+
+                                                                    <div class="tags my-2">
+                                                                                    <span class="tag is-rounded">Shopping mall</span>
+                                                                            </div>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="column is-half">
+                    <div class="box p-0">
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-128x128 box p-0">
+                                    <img loading="lazy" src="https://files.yappe.in/place/small/mantri-square-mall-127201.webp" alt="Mantri Square Mall">
+                                </figure>
+                            </div>
+
+                            <div class="media-content py-2">
+                                <h3 class="is-size-5">
+                                    <a href="/karnataka/bengaluru/mantri-square-mall/127199">Mantri Square Mall</a>
+                                                                    </h3>
+                                <div class="is-size-7">
+                                    <span title="4.40">
+                                    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span></span>
+                                    <span><a rel="nofollow" href="/karnataka/bengaluru/mantri-square-mall/127199#reviews">144061 reviews</a></span>
+                                </div>
+                                <address class="is-size-7">Bengaluru, Karnataka</address>
+
+                                                                    <div class="tags my-2">
+                                                                                    <span class="tag is-rounded">Shopping mall</span>
+                                                                            </div>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="column is-half">
+                    <div class="box p-0">
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-128x128 box p-0">
+                                    <img loading="lazy" src="https://files.yappe.in/place/small/kempegowda-international-airport-bengaluru-6541547.webp" alt="Kempegowda International Airport Bengaluru (BLR)">
+                                </figure>
+                            </div>
+
+                            <div class="media-content py-2">
+                                <h3 class="is-size-5">
+                                    <a href="/karnataka/bengaluru/kempegowda-international-airport-bengaluru/725049">Kempegowda International Airport Bengaluru (BLR)</a>
+                                                                    </h3>
+                                <div class="is-size-7">
+                                    <span title="4.60">
+                                    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span></span>
+                                    <span><a rel="nofollow" href="/karnataka/bengaluru/kempegowda-international-airport-bengaluru/725049#reviews">143345 reviews</a></span>
+                                </div>
+                                <address class="is-size-7">Bengaluru, Karnataka</address>
+
+                                                                    <div class="tags my-2">
+                                                                                    <span class="tag is-rounded">International airport</span>
+                                                                                    <span class="tag is-rounded">Airport</span>
+                                                                            </div>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="column is-half">
+                    <div class="box p-0">
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-128x128 box p-0">
+                                    <img loading="lazy" src="https://files.yappe.in/place/small/phoenix-marketcity-pune-10112544.webp" alt="Phoenix Marketcity Pune">
+                                </figure>
+                            </div>
+
+                            <div class="media-content py-2">
+                                <h3 class="is-size-5">
+                                    <a href="/maharashtra/pune/phoenix-marketcity-pune/1786641">Phoenix Marketcity Pune</a>
+                                                                    </h3>
+                                <div class="is-size-7">
+                                    <span title="4.50">
+                                    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span></span>
+                                    <span><a rel="nofollow" href="/maharashtra/pune/phoenix-marketcity-pune/1786641#reviews">139554 reviews</a></span>
+                                </div>
+                                <address class="is-size-7">Pune, Maharashtra</address>
+
+                                                                    <div class="tags my-2">
+                                                                                    <span class="tag is-rounded">Shopping mall</span>
+                                                                                    <span class="tag is-rounded">Donut shop</span>
+                                                                            </div>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+    </div>
+
+    <div class="my-6 mx-2">
+        <div class="title is-3">Newly added places in India</div>
+        <div class="columns is-multiline">
+                            <div class="column is-half">
+                    <div class="box p-0">
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-128x128 box p-0">
+                                    <img loading="lazy" src="https://files.yappe.in/place/small/goswami-coaching-center-shahdol-11303216.webp" alt="Goswami Coaching Center Shahdol">
+                                </figure>
+                            </div>
+
+                            <div class="media-content py-2">
+                                <h3 class="is-size-5">
+                                    <a href="/madhya-pradesh/shahdol/goswami-coaching-center-shahdol/2496060">Goswami Coaching Center Shahdol</a>
+                                </h3>
+                                <div class="is-size-7">
+                                                                        <span title="5.00">
+                                    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span></span>
+                                    <span><a rel="nofollow" href="/madhya-pradesh/shahdol/goswami-coaching-center-shahdol/2496060#review">6 reviews</a></span>
+                                </div>
+                                <address class="is-size-7">Shahdol, Madhya Pradesh</address>
+                                
+                                                                    <div class="tags my-2">
+                                                                                    <span class="tag is-rounded">Coaching center</span>
+                                                                            </div>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="column is-half">
+                    <div class="box p-0">
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-128x128 box p-0">
+                                    <img loading="lazy" src="https://files.yappe.in/place/small/dr-mrityunjoy-gohain-orthopaedics-medimax-medical-hall-11303213.webp" alt="Dr. Mrityunjoy Gohain (Orthopaedics) - Medimax Medical Hall">
+                                </figure>
+                            </div>
+
+                            <div class="media-content py-2">
+                                <h3 class="is-size-5">
+                                    <a href="/assam/north-lakhimpur/dr-mrityunjoy-gohain-orthopaedics-medimax-medical-hall/2496058">Dr. Mrityunjoy Gohain (Orthopaedics) - Medimax Medical Hall</a>
+                                </h3>
+                                <div class="is-size-7">
+                                                                        <span title="4.40">
+                                    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span></span>
+                                    <span><a rel="nofollow" href="/assam/north-lakhimpur/dr-mrityunjoy-gohain-orthopaedics-medimax-medical-hall/2496058#review">9 reviews</a></span>
+                                </div>
+                                <address class="is-size-7">North Lakhimpur, Assam</address>
+                                
+                                                                    <div class="tags my-2">
+                                                                                    <span class="tag is-rounded">Orthopedic surgeon</span>
+                                                                            </div>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="column is-half">
+                    <div class="box p-0">
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-128x128 box p-0">
+                                    <img loading="lazy" src="https://files.yappe.in/place/small/dr-ranjan-bhuyan-dental-clinic-11303212.webp" alt="Dr. Ranjan Bhuyan Dental Clinic">
+                                </figure>
+                            </div>
+
+                            <div class="media-content py-2">
+                                <h3 class="is-size-5">
+                                    <a href="/assam/north-lakhimpur/dr-ranjan-bhuyan-dental-clinic/2496057">Dr. Ranjan Bhuyan Dental Clinic</a>
+                                </h3>
+                                <div class="is-size-7">
+                                                                        <span title="4.40">
+                                    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span></span>
+                                    <span><a rel="nofollow" href="/assam/north-lakhimpur/dr-ranjan-bhuyan-dental-clinic/2496057#review">8 reviews</a></span>
+                                </div>
+                                <address class="is-size-7">North Lakhimpur, Assam</address>
+                                
+                                                                    <div class="tags my-2">
+                                                                                    <span class="tag is-rounded">Dental clinic</span>
+                                                                            </div>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="column is-half">
+                    <div class="box p-0">
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-128x128 box p-0">
+                                    <img loading="lazy" src="https://files.yappe.in/place/small/mamta-caterers-11303209.webp" alt="Mamta caterers">
+                                </figure>
+                            </div>
+
+                            <div class="media-content py-2">
+                                <h3 class="is-size-5">
+                                    <a href="/gujarat/ahmedabad/mamta-caterers/2496056">Mamta caterers</a>
+                                </h3>
+                                <div class="is-size-7">
+                                                                        <span title="">
+                                    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span></span>
+                                    <span><a rel="nofollow" href="/gujarat/ahmedabad/mamta-caterers/2496056#review"> reviews</a></span>
+                                </div>
+                                <address class="is-size-7">Ahmedabad, Gujarat</address>
+                                
+                                                                    <div class="tags my-2">
+                                                                                    <span class="tag is-rounded">Catering food and drink supplier</span>
+                                                                            </div>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="column is-half">
+                    <div class="box p-0">
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-128x128 box p-0">
+                                    <img loading="lazy" src="https://files.yappe.in/place/small/biyoli-day-care-physiotherapy-center-11303207.webp" alt="Biyoli Day Care Physiotherapy Center">
+                                </figure>
+                            </div>
+
+                            <div class="media-content py-2">
+                                <h3 class="is-size-5">
+                                    <a href="/assam/north-lakhimpur/biyoli-day-care-physiotherapy-center/2496055">Biyoli Day Care Physiotherapy Center</a>
+                                </h3>
+                                <div class="is-size-7">
+                                                                        <span title="5.00">
+                                    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span></span>
+                                    <span><a rel="nofollow" href="/assam/north-lakhimpur/biyoli-day-care-physiotherapy-center/2496055#review">4 reviews</a></span>
+                                </div>
+                                <address class="is-size-7">North Lakhimpur, Assam</address>
+                                
+                                                                    <div class="tags my-2">
+                                                                                    <span class="tag is-rounded">Physical therapy clinic</span>
+                                                                                    <span class="tag is-rounded">Physical therapist</span>
+                                                                            </div>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="column is-half">
+                    <div class="box p-0">
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-128x128 box p-0">
+                                    <img loading="lazy" src="https://files.yappe.in/place/small/bhudev-caterers-11303203.webp" alt="Bhudev caterers">
+                                </figure>
+                            </div>
+
+                            <div class="media-content py-2">
+                                <h3 class="is-size-5">
+                                    <a href="/gujarat/ahmedabad/bhudev-caterers/2496054">Bhudev caterers</a>
+                                </h3>
+                                <div class="is-size-7">
+                                                                        <span title="5.00">
+                                    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span></span>
+                                    <span><a rel="nofollow" href="/gujarat/ahmedabad/bhudev-caterers/2496054#review">2 reviews</a></span>
+                                </div>
+                                <address class="is-size-7">Ahmedabad, Gujarat</address>
+                                
+                                                                    <div class="tags my-2">
+                                                                                    <span class="tag is-rounded">Caterer</span>
+                                                                            </div>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="column is-half">
+                    <div class="box p-0">
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-128x128 box p-0">
+                                    <img loading="lazy" src="https://files.yappe.in/place/small/gram-devi-maharani-maiya-11303201.webp" alt="Gram Devi(Maharani Maiya)">
+                                </figure>
+                            </div>
+
+                            <div class="media-content py-2">
+                                <h3 class="is-size-5">
+                                    <a href="/uttar-pradesh/ramaepur/gram-devi-maharani-maiya/2496053">Gram Devi(Maharani Maiya)</a>
+                                </h3>
+                                <div class="is-size-7">
+                                                                        <span title="4.10">
+                                    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span></span>
+                                    <span><a rel="nofollow" href="/uttar-pradesh/ramaepur/gram-devi-maharani-maiya/2496053#review">14 reviews</a></span>
+                                </div>
+                                <address class="is-size-7">Ramaepur, Uttar Pradesh</address>
+                                
+                                                                    <div class="tags my-2">
+                                                                                    <span class="tag is-rounded">Hindu temple</span>
+                                                                            </div>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="column is-half">
+                    <div class="box p-0">
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-128x128 box p-0">
+                                    <img loading="lazy" src="https://files.yappe.in/place/small/immanuel-dental-clinic-11303199.webp" alt="Immanuel Dental Clinic">
+                                </figure>
+                            </div>
+
+                            <div class="media-content py-2">
+                                <h3 class="is-size-5">
+                                    <a href="/assam/north-lakhimpur/immanuel-dental-clinic/2496052">Immanuel Dental Clinic</a>
+                                </h3>
+                                <div class="is-size-7">
+                                                                        <span title="5.00">
+                                    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span></span>
+                                    <span><a rel="nofollow" href="/assam/north-lakhimpur/immanuel-dental-clinic/2496052#review">11 reviews</a></span>
+                                </div>
+                                <address class="is-size-7">North Lakhimpur, Assam</address>
+                                
+                                                                    <div class="tags my-2">
+                                                                                    <span class="tag is-rounded">Dental clinic</span>
+                                                                            </div>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="column is-half">
+                    <div class="box p-0">
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-128x128 box p-0">
+                                    <img loading="lazy" src="https://files.yappe.in/place/small/purohit-caterers-11303198.webp" alt="Purohit Caterers">
+                                </figure>
+                            </div>
+
+                            <div class="media-content py-2">
+                                <h3 class="is-size-5">
+                                    <a href="/gujarat/ahmedabad/purohit-caterers/2496051">Purohit Caterers</a>
+                                </h3>
+                                <div class="is-size-7">
+                                                                        <span title="">
+                                    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span></span>
+                                    <span><a rel="nofollow" href="/gujarat/ahmedabad/purohit-caterers/2496051#review"> reviews</a></span>
+                                </div>
+                                <address class="is-size-7">Ahmedabad, Gujarat</address>
+                                
+                                                                    <div class="tags my-2">
+                                                                                    <span class="tag is-rounded">Catering food and drink supplier</span>
+                                                                            </div>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="column is-half">
+                    <div class="box p-0">
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-128x128 box p-0">
+                                    <img loading="lazy" src="https://files.yappe.in/place/small/siranjeevi-physiotherapy-and-pain-care-center-11303196.webp" alt="SIRANJEEVI PHYSIOTHERAPY AND PAIN CARE CENTER">
+                                </figure>
+                            </div>
+
+                            <div class="media-content py-2">
+                                <h3 class="is-size-5">
+                                    <a href="/assam/north-lakhimpur/siranjeevi-physiotherapy-and-pain-care-center/2496050">SIRANJEEVI PHYSIOTHERAPY AND PAIN CARE CENTER</a>
+                                </h3>
+                                <div class="is-size-7">
+                                                                        <span title="5.00">
+                                    <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span></span>
+                                    <span><a rel="nofollow" href="/assam/north-lakhimpur/siranjeevi-physiotherapy-and-pain-care-center/2496050#review">13 reviews</a></span>
+                                </div>
+                                <address class="is-size-7">North Lakhimpur, Assam</address>
+                                
+                                                                    <div class="tags my-2">
+                                                                                    <span class="tag is-rounded">Physical therapy clinic</span>
+                                                                            </div>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+    </div>
+
+    <div class="content">
+        <p></p>
+    </div>
+</main>
+
+
+    <footer class="footer mt-3">
+        <div class="container is-max-desktop">
+            <div class="columns">
+                <div class="column">
+                    <p class="has-text-centered">
+                        &copy; <a href="/" rel="nofollow">yappe.in</a> All rights reserved 2024.
+                    </p>
+                </div>
+                <div class="column">
+                    <div class="level is-mobile">
+                        <p class="level-item"><a class="dotted" href="/about" rel="nofollow">About us</a></p>
+                        <p class="level-item"><a class="dotted" href="/terms" rel="nofollow">Terms</a></p>
+                        <p class="level-item"><a class="dotted" href="/privacy" rel="nofollow">Privacy</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="has-text-centered">
+                <span>Made with <span class="has-text-danger">&hearts;</span> for Homo sapiens</span>
+            </p>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $(".navbar-burger").click(function() {
+                $(".navbar-burger").toggleClass("is-active");
+                $(".navbar-menu").toggleClass("is-active");
+            });
+
+            $('.gallery a').simpleLightbox({});
+        });
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2CVFJ32PTT"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-2CVFJ32PTT');
+    </script>
+
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'912f508dedd579cd',t:'MTczOTcyNzU0MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

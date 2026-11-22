@@ -1,0 +1,97 @@
+{
+  "audit_metadata": {
+    "corpus_total_samples": 2000,
+    "evaluation_scope": "CompPhish V4 2,000 independent evaluation corpus",
+    "threshold": 0.5,
+    "note": "Page-weighted (wi=1.0) vs. exact-text-group-weighted (wi=1/group_size) sensitivity analysis. Across exact text groups (1,835 unique), metrics remain robust and consistent."
+  },
+  "models": {
+    "V2_Baseline": {
+      "page_weighted": {
+        "TP": 83.0,
+        "FP": 24.0,
+        "TN": 1038.0,
+        "FN": 855.0,
+        "accuracy": 0.5605,
+        "precision": 0.7757009345794392,
+        "recall": 0.08848614072494669,
+        "specificity": 0.9774011299435028,
+        "f1_score": 0.1588516746411483,
+        "balanced_accuracy": 0.5329436353342247
+      },
+      "exact_text_group_weighted": {
+        "TP": 69.0,
+        "FP": 19.0,
+        "TN": 1033.1153846153848,
+        "FN": 713.8846153846154,
+        "accuracy": 0.6006078390274576,
+        "precision": 0.7840909090909091,
+        "recall": 0.08813559322033898,
+        "specificity": 0.9819411442149516,
+        "f1_score": 0.1584595680784348,
+        "balanced_accuracy": 0.5350383687176453
+      },
+      "delta_f1": -0.0003921065627134901,
+      "delta_recall": -0.00035054750460770945,
+      "delta_specificity": 0.004540014271448789
+    },
+    "V3_URL_Only": {
+      "page_weighted": {
+        "TP": 830.0,
+        "FP": 379.0,
+        "TN": 683.0,
+        "FN": 108.0,
+        "accuracy": 0.7565,
+        "precision": 0.6865177832919769,
+        "recall": 0.8848614072494669,
+        "specificity": 0.6431261770244822,
+        "f1_score": 0.7731718677224033,
+        "balanced_accuracy": 0.7639937921369746
+      },
+      "exact_text_group_weighted": {
+        "TP": 687.8846153846155,
+        "FP": 369.1153846153846,
+        "TN": 683.0,
+        "FN": 95.0,
+        "accuracy": 0.7470760846782646,
+        "precision": 0.6507896077432502,
+        "recall": 0.8786538933922869,
+        "specificity": 0.6491683421677938,
+        "f1_score": 0.7477475594205323,
+        "balanced_accuracy": 0.7639111177800404
+      },
+      "delta_f1": -0.025424308301871035,
+      "delta_recall": -0.0062075138571799915,
+      "delta_specificity": 0.006042165143311684
+    },
+    "V3_Dual": {
+      "page_weighted": {
+        "TP": 636.0,
+        "FP": 257.0,
+        "TN": 805.0,
+        "FN": 302.0,
+        "accuracy": 0.7205,
+        "precision": 0.7122060470324748,
+        "recall": 0.6780383795309168,
+        "specificity": 0.7580037664783428,
+        "f1_score": 0.6947023484434734,
+        "balanced_accuracy": 0.7180210730046298
+      },
+      "exact_text_group_weighted": {
+        "TP": 532.8846153846155,
+        "FP": 248.1153846153846,
+        "TN": 804.0,
+        "FN": 250.0,
+        "accuracy": 0.7285474743240411,
+        "precision": 0.6823106470993795,
+        "recall": 0.6806681405060182,
+        "specificity": 0.7641747395357339,
+        "f1_score": 0.6814884041218858,
+        "balanced_accuracy": 0.722421440020876
+      },
+      "delta_f1": -0.013213944321587623,
+      "delta_recall": 0.0026297609751013695,
+      "delta_specificity": 0.006170973057391116
+    }
+  }
+}

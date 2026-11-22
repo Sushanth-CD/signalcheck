@@ -1,0 +1,87 @@
+{
+  "manifest_name": "Phishing Classifier Model & Inference Implementation Freeze Manifest",
+  "freeze_timestamp_utc": "2026-10-31T21:22:00Z",
+  "project_path": "C:\\Projects\\cyber-security-awareness-platform",
+  "runtime_environment": {
+    "python": "3.14.6 (tags/v3.14.6:c63aec6, Jun 10 2026, 10:26:10) [MSC v.1944 64 bit (AMD64)]",
+    "scikit_learn": "1.8.0",
+    "scipy": "1.18.1",
+    "numpy": "2.5.4",
+    "joblib": "1.6.0",
+    "ijson": "3.6.0",
+    "pydantic": "2.14.1"
+  },
+  "frozen_model_artifacts": {
+    "v2_baseline": {
+      "relative_path": "backend/reports/ml/phishing_domain_holdout_v2/model.joblib",
+      "size_bytes": 8296368,
+      "sha256": "97ca5d41ea4322965eec838968e80838113be130684f9703f77a51e663355921",
+      "model_type": "Pipeline([('tfidf', TfidfVectorizer), ('classifier', LogisticRegression)])",
+      "feature_count": 168757
+    },
+    "v3_dual_channel": {
+      "relative_path": "backend/reports/ml/phishing_v3_experiments/dual_channel_v3_model.joblib",
+      "size_bytes": 2812543,
+      "sha256": "c0b514d976f88b025a3ebd101120cbbd1266dde6799564b65dba87023a16dfd9",
+      "model_type": "Pipeline([('features', FeatureUnion([('content_branch', ...), ('url_branch', ...)])), ('classifier', LogisticRegression)])"
+    },
+    "v3_content_only": {
+      "relative_path": "backend/reports/ml/phishing_v3_experiments/content_only_model.joblib",
+      "size_bytes": 2379487,
+      "sha256": "ff837956a76e31e12b0e47b9139f57cffe2894c104c677a0bcc788769bc71faf",
+      "model_type": "Pipeline([('features', ContentChannelExtractor + TfidfVectorizer), ('classifier', LogisticRegression)])"
+    },
+    "v3_url_only": {
+      "relative_path": "backend/reports/ml/phishing_v3_experiments/url_only_model.joblib",
+      "size_bytes": 434335,
+      "sha256": "d180be6e80207bbce0720bd4d846334247d8266a18f5860be6d204b1ab5dfd72",
+      "model_type": "Pipeline([('features', URLChannelExtractor + TfidfVectorizer), ('classifier', LogisticRegression)])"
+    }
+  },
+  "frozen_inference_implementations": {
+    "dual_channel_transformers": {
+      "relative_path": "backend/ml/dual_channel.py",
+      "size_bytes": 9223,
+      "sha256": "e84538622d0da89a23eb686e98aad3c027ec13e5f6ce067df0d6b04b4ffad249",
+      "key_classes": [
+        "ContentHTMLParser",
+        "ContentChannelExtractor",
+        "URLChannelExtractor",
+        "build_dual_channel_feature_pipeline"
+      ]
+    },
+    "text_normalization": {
+      "relative_path": "backend/ml/text_normalization.py",
+      "size_bytes": 261,
+      "sha256": "f47301d46729f105beb9d83cb6279d16f5e02a1d088f6a609833db4a2803888b",
+      "key_functions": [
+        "normalize_for_model"
+      ]
+    },
+    "url_extraction_v2": {
+      "relative_path": "backend/notebooks/phishing_url_extraction_v2.py",
+      "size_bytes": 17281,
+      "sha256": "0018830989247fbe2001ad493b838f0d74ee9d26643bb5cd85257fc32f746e11",
+      "key_functions": [
+        "extract_candidates",
+        "_valid_host",
+        "_DestinationHTMLParser"
+      ]
+    },
+    "hybrid_router_definition": {
+      "relative_path": "backend/reports/ml/phishing_v3_experiments/hybrid_routing_review/run_routing_evaluation.py",
+      "size_bytes": 18477,
+      "sha256": "777bdbae4913a866f0d36974744f0d32c8eda59568ee493e604940961420e7b3",
+      "routing_specifications": {
+        "html_regex": "(?is)<\\s*(?:!doctype\\s+html|html|head|body|meta|link|a|form|div|p)\\b",
+        "policy_3_rule": "V3 Dual for is_html=True; V2 otherwise",
+        "policy_4_rule": "V3 Dual for is_html=True OR text_len > 1000; V2 otherwise"
+      }
+    }
+  },
+  "frozen_reference_thresholds": {
+    "reference_threshold": 0.50,
+    "high_specificity_threshold": 0.68,
+    "high_recall_threshold": 0.35
+  }
+}

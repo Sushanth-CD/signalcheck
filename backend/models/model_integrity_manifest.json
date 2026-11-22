@@ -1,0 +1,31 @@
+{
+  "description": "Cryptographic integrity manifest for production-loaded ML models in SignalCheck.",
+  "generated_utc": "2026-11-10T07:30:00Z",
+  "hash_algorithm": "sha256",
+  "models": {
+    "phishing": {
+      "model_id": "phishing-tfidf-logreg-domain-grouped-v1",
+      "artifact_path": "backend/models/text/phishing_tfidf_logreg_domain_grouped.joblib",
+      "sha256": "42ce5d9c5a87a904528ac0f2235d4fe50103b494d6f9aa7d560247ca9a6170ca",
+      "size_bytes": 10582522,
+      "scikit_learn_version": "1.8.0",
+      "provenance": "Domain-grouped TF-IDF + Logistic Regression trained on PhishTank/OpenPhish/CommonCrawl holdout partition."
+    },
+    "sms": {
+      "model_id": "sms-05-c-combined-v1",
+      "artifact_path": "backend/models/sms/sms_05_model.joblib",
+      "sha256": "6b7ae684cde6bf041deb4963e6e5b4adf7c31ba12ceed2b6b1f838ccd7b77587",
+      "size_bytes": 2884128,
+      "scikit_learn_version": "1.8.0",
+      "provenance": "SMS-05-C: Combined Word + Character FeatureUnion + Logistic Regression (model_integrity_manifest.json)."
+    },
+    "android": {
+      "model_id": "android-random-forest-grouped-sklearn-1.8.0-v1",
+      "artifact_path": "backend/models/android/android_random_forest_grouped_sklearn_1_8_0.joblib",
+      "sha256": "c0f7aaad9e33d9609fbed32d020f6fd2c765c86637a2527acba65d6b650f6af0",
+      "size_bytes": 7831506,
+      "scikit_learn_version": "1.8.0",
+      "provenance": "Android Random Forest (200 estimators) trained on 226 tabular features from Heriot-Watt dataset (android_model_audit.md)."
+    }
+  }
+}

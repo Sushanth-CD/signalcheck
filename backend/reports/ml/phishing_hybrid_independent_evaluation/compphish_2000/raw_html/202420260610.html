@@ -1,0 +1,1037 @@
+<html xml:lang="de" lang="de" xmlns="http://www.w3.org/1999/xhtml"><head>
+<title>Bronies.de</title>
+<!-- start: headerinclude -->
+<link rel="alternate" type="application/rss+xml" title="Letzte Themen (RSS 2.0)" href="https://www.bronies.de/syndication.php">
+<link rel="alternate" type="application/atom+xml" title="Letzte Themen (Atom 1.0)" href="https://www.bronies.de/syndication.php?type=atom1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<script type="text/javascript" src="https://www.bronies.de/jscripts/jquery.js?ver=1800"></script>
+<script type="text/javascript" src="https://www.bronies.de/jscripts/jquery.plugins.min.js?ver=1800"></script>
+<script type="text/javascript" src="https://www.bronies.de/jscripts/general.js?ver=18001"></script>
+
+<script type="text/javascript" src="https://www.bronies.de/jscripts/imageresize.js?ver=1800"></script>
+<script type="text/javascript" src="https://www.bronies.de/jscripts/nopreloadspoiler.js?ver=18041"></script>
+<link type="text/css" rel="stylesheet" href="https://www.bronies.de/cache/themes/theme2/css3.css">
+<link type="text/css" rel="stylesheet" href="https://www.bronies.de/cache/themes/theme27/global.css">
+<link type="text/css" rel="stylesheet" href="https://www.bronies.de/cache/themes/theme27/custom.css">
+<!-- UNREADPOSTS_CSS -->
+<script type="text/javascript">
+<!--
+	lang.unknown_error = "Ein unbekannter Fehler ist aufgetreten.";
+
+	lang.select2_match = "Ein Ergebnis wurde gefunden, drücke die Eingabetaste um es auszuwählen.";
+	lang.select2_matches = "{1} Ergebnisse wurden gefunden, benutze die Pfeiltasten zum Navigieren.";
+	lang.select2_nomatches = "Keine Ergebnisse gefunden";
+	lang.select2_inputtooshort_single = "Bitte gib ein oder mehrere Zeichen ein";
+	lang.select2_inputtooshort_plural = "Bitte gib {1} oder mehr Zeichen ein";
+	lang.select2_inputtoolong_single = "Bitte lösche ein Zeichen";
+	lang.select2_inputtoolong_plural = "Bitte lösche {1} Zeichen";
+	lang.select2_selectiontoobig_single = "Du kannst nur einen Eintrag auswählen";
+	lang.select2_selectiontoobig_plural = "Du kannst nur {1} Einträge auswählen";
+	lang.select2_loadmore = "Lade weitere Ergebnisse...";
+	lang.select2_searching = "Suche...";
+
+	var cookieDomain = "www.bronies.de";
+	var cookiePath = "/";
+	var cookiePrefix = "";
+	var deleteevent_confirm = "Möchtest Du dieses Ereignis wirklich löschen?";
+	var removeattach_confirm = "Möchtest du die ausgewählten Anhänge wirklich löschen?";
+	var loading_text = 'Lade.<br />Bitte warten...';
+	var saving_changes = 'Änderungen werden gespeichert ...';
+	var use_xmlhttprequest = "1";
+	var my_post_key = "e497fa1bb888e738582f6484d5cf649d";
+	var rootpath = "https://www.bronies.de";
+	var imagepath = "https://www.bronies.de/images/sweetdreams";
+  	var yes_confirm = "Ja";
+	var no_confirm = "Nein";
+	var MyBBEditor = null;
+	var spinner_image = "https://www.bronies.de/images/sweetdreams/spinner.gif";
+	var spinner = "<img src='" + spinner_image +"' alt='' />";
+// -->
+</script>
+<!-- end: headerinclude -->
+<script type="text/javascript">
+
+<!--
+	lang.no_new_posts = "Forum enthält keine neuen Beiträge";
+	lang.click_mark_read = "Klicke hier, um das Forum als gelesen zu markieren";
+// -->
+</script>
+</head>
+<body>
+<!-- start: header -->
+<a name="top" id="top"></a>
+<div class="logo">
+	<a href="https://www.bronies.de/index.php"><img src="https://www.bronies.de/images/sweetdreams/logo2016-broniesde.png" alt="Bronies.de" title="Bronies.de" style="padding-right: 1px;"></a>
+</div>
+<div class="sidelogoleft"><div class="sidelogoright"></div></div>
+<div style="position: absolute; top: 270px; left: 890px;"></div>
+<!-- start: cookielaw_header -->
+<script type="text/javascript">
+jQuery(document).ready(function() {
+	jQuery('#cookies .cookielaw_disallow').click(function() {
+		if(!confirm('Bist du sicher, dass du Cookies nicht zulassen möchtest?'+'\r\n\r\n'+'Das bedeutet, dass du dich nicht im Forum anmelden kannst und die Funktionalität beim Surfen als Gast einschränkst.'))
+		{
+			return false;
+		}
+	});
+});
+</script>
+<div id="cookies" style="max-width: 900px; text-align: left; position: fixed; bottom: 10px; left: 50%; transform: translateX(-50%); border: 10px solid rgba(255, 255, 255, 0.5); border-radius: 5px;">
+	<form action="https://www.bronies.de/misc.php?action=cookielaw_change" method="post">
+		<table border="0" cellspacing="0" cellpadding="4" class="tborder">
+			<tbody><tr>		
+				<td class="thead"><strong>Dieses Forum nutzt Cookies</strong></td>
+			</tr>
+			<tr>		
+				<td class="trow1" style="background: white;">Dieses Forum verwendet Cookies, um deine Login-Informationen zu speichern, wenn du registriert bist, und deinen letzten Besuch, wenn du es nicht bist. Cookies sind kleine Textdokumente, die auf deinem Computer gespeichert sind; Die von diesem Forum gesetzten Cookies düfen nur auf dieser Website verwendet werden und stellen kein Sicherheitsrisiko dar. Cookies auf diesem Forum speichern auch die spezifischen Themen, die du gelesen hast und wann du zum letzten Mal gelesen hast. Bitte bestätige, ob du diese Cookies akzeptierst oder ablehnst.<br><br>Ein Cookie wird in deinem Browser unabhängig von der Wahl gespeichert, um zu verhindern, dass dir diese Frage erneut gestellt wird. Du kannst deine Cookie-Einstellungen jederzeit über den Link in der Fußzeile ändern.</td>
+			</tr>
+			<tr>		
+				<td class="tfoot"><div class="float_right"><!-- start: cookielaw_buttons_notify -->
+<input type="submit" name="okay" value="Ok"><!-- start: cookielaw_button_more_info -->
+<input type="submit" name="more_info" value="Mehr Information">
+<!-- end: cookielaw_button_more_info --><input type="hidden" name="my_post_key" value="e497fa1bb888e738582f6484d5cf649d">
+<!-- end: cookielaw_buttons_notify --></div></td>
+			</tr>
+		</tbody></table>
+	</form>
+</div>
+<!-- end: cookielaw_header --><div id="container">
+	<!-- start: header_welcomeblock_guest -->
+<div class="welcomeblock_bar1" style="height: 34px; background: url(https://www.bronies.de/images/sweetdreams/bar1.png) top left repeat-x; width: 100%; border-bottom: #505050; font-family: arial; font-size: 13px; color: #939393;">
+	<ul id="nav">
+		<li><a href="https://www.bronies.de/memberlist.php">Mitgliederliste</a></li>
+		<li><a href="https://www.bronies.de/misc.php?page=map_only_registered_members">Mitgliederkarte</a></li>
+		<li><a href="https://www.bronies.de/search.php?action=getdaily">Aktuelle Beiträge</a></li>
+		<li><a href="https://www.bronies.de/search.php?action=unreads">Ungelesene Beiträge</a></li>
+      	<li><a href="https://panel.bronyradiogermany.com/player?partner=bronies_de" onclick="javascript:void window.open('https://panel.bronyradiogermany.com/player?partner=bronies_de','brg-popup-radio','width=920,height=764,toolbar=0,menubar=0,location=0,status=0,scrollbars=0,resizable=0,left=0,top=0');return false;" type="popup">BRONY RADIO</a></li>
+		<li style="width: 270px; float:right;padding-right:15px;">
+			<form method="post" action="https://www.bronies.de/search.php">
+		<li style="width: 270px; float:right;padding-right:15px;">
+			
+				<input type="hidden" name="action" value="do_search">
+				<input type="hidden" name="postthread" value="0">
+				<input type="hidden" name="forums" value="all">
+				<input type="hidden" name="showresults" value="threads">
+				<input type="text" name="keywords" value="Themensuche..." onfocus="if(this.value == 'Themensuche...') { this.value = ''; }" onblur="if(this.value=='') { this.value='Themensuche...'; }" class="textbox" size="25" padding="0" style="padding-left: 20px; color: #d7d7d7; background: url(images/sweetdreams/searchbar1.png) center no-repeat; border: 0px; height: 20px; width: 171px;">
+				<input type="submit" class="button" value="Los" style="color: #b8b8b8; background: url(images/sweetdreams/searchbar2.png) center center no-repeat; border: 0px; height: 22px; width: 60px;">
+			</li></form>
+		</li>
+	</ul>
+</div>
+<div class="welcomeblock_bar1" style="height: 34px; background: url(https://www.bronies.de/images/sweetdreams/bar1.png) top left repeat-x; width: 100%; border-bottom: #505050; font-family: arial; font-size: 13px; color: #939393;">
+	<ul id="nav">
+      	<li><a href="https://www.bronies.de/misc.php?page=faq">FAQ</a></li>
+		<li><a href="http://meetup.bronies.de" target="blank">Meetup Gallery</a></li>
+		<li><a href="http://blog.bronies.de" target="_blank">Blog</a></li>
+		<li><a href="https://www.bronies.de/chat.php">Chat</a></li>
+		<li><a href="ts3server://176.31.240.108?port=9987">Teamspeak</a></li>
+		<li><a href="https://www.bronies.de/calendar.php">Kalender</a></li>
+		<!--<li><a href="http://advent.bronies.de/">Adventskalender</a></li>-->
+		<li><a href="https://www.bronies.de/misc.php?page=partner">Partner</a></li>
+		<li><a href="https://www.bronies.de/showthread.php?tid=24183">Discord-Server</a></li>
+		<li style="float:right;"><a href="https://www.bronies.de/search.php">Erweiterte Suche</a></li>
+	</ul>
+</div>
+<div class="welcomeblock_bar2"><div style="/*width: 100%;*/ position: absolute; top: 4px; left: 30px;">
+	<div style="padding-top: 3px;">
+		Hallo, Gast! (<a href="https://www.bronies.de/member.php?action=login" onclick="$('#quick_login').modal({ fadeDuration: 250, keepelement: true }); return false;" class="login"><span style="color: #FFFFFF;">Anmelden</span></a> — <a href="https://www.bronies.de/member.php?action=register"><span style="color: #FFFFFF;">Registrieren</span></a>)
+          <div class="modal" id="quick_login" style="display: none;">
+					<form method="post" action="https://www.bronies.de/member.php">
+						<input name="action" type="hidden" value="do_login">
+						<input name="url" type="hidden" value="https://www.bronies.de/">
+						<input name="quick_login" type="hidden" value="1">
+						<table width="100%" cellspacing="0" cellpadding="4" border="0" class="tborder">
+							<tbody><tr>
+								<td class="thead" colspan="2"><strong>Login</strong></td>
+							</tr>
+							<tr>
+								<td class="trow1" width="25%"><strong>Benutzername/E-Mail:</strong></td>
+								<td class="trow1"><input name="quick_username" id="quick_login_username" type="text" value="" class="textbox initial_focus"></td>
+							</tr>
+							<tr>
+								<td class="trow2"><strong>Passwort:</strong></td>
+								<td class="trow2">
+									<input name="quick_password" id="quick_login_password" type="password" value="" class="textbox"> <a href="https://www.bronies.de/member.php?action=lostpw" class="lost_password">Passwort vergessen?</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="trow1">&nbsp;</td>
+								<td class="trow1 remember_me">
+									<input name="quick_remember" id="quick_login_remember" type="checkbox" value="yes" class="checkbox" checked="checked">
+									<label for="quick_login_remember">Merken</label>
+								</td>
+							</tr>
+							<tr>
+								<td class="trow2" colspan="2">
+									<div align="center"><input name="submit" type="submit" class="button" value="Login"></div>
+								</td>
+							</tr>
+						</tbody></table>
+					</form>
+				</div>
+				<script type="text/javascript">
+					$("#quick_login input[name='url']").val($(location).attr('href'));
+				</script>
+	</div>
+</div>
+<!-- end: header_welcomeblock_guest -->
+	<div style="padding-right: 10px; position: absolute; top: 12px;right: 26px;">
+		13.08.2025, 20:38
+	</div>
+	<br>
+</div>
+<br>
+<div style="padding-left: 50px; color: #2e2e2e;">
+	<!-- start: nav -->
+
+<div class="navigation">
+<!-- start: nav_bit_active -->
+<span class="active">Bronies.de</span>
+<!-- end: nav_bit_active -->
+</div>
+<!-- end: nav -->
+
+</div>
+<hr class="hidden">
+<div id="content">  
+	
+	
+	
+
+	
+	
+	<br>
+	<div style="padding-left: 20px; padding-right: 20px;">
+<!-- end: header -->
+<!-- start: forumbit_depth1_cat -->
+<table border="0" cellspacing="0" cellpadding="4" class="tborder">
+<thead>
+<tr>
+<td class="thead" colspan="5">
+<div class="expcolimage"><img src="https://www.bronies.de/images/sweetdreams/collapse.png" id="cat_1_img" class="expander" alt="[-]" title="[-]" style="cursor: pointer;"></div>
+<div><strong><a href="forumdisplay.php?fid=1">Forentalk</a></strong><br><div class="smalltext">Alles zum Forum</div></div>
+</td>
+</tr>
+</thead>
+<tbody style="" id="cat_1_e">
+<tr>
+<td class="tcat" colspan="2"><span class="smalltext"><strong>Forum</strong></span></td>
+<td class="tcat" width="85" align="center" style="white-space: nowrap"><span class="smalltext"><strong>Themen</strong></span></td>
+<td class="tcat" width="85" align="center" style="white-space: nowrap"><span class="smalltext"><strong>Beiträge</strong></span></td>
+<td class="tcat" width="200" align="center"><span class="smalltext"><strong>Letzter Beitrag</strong></span></td>
+</tr>
+<!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow1" align="center" valign="center" width="1" style="border-left: 1px solid #323232; border-bottom: 1px solid #323232; padding: 20px;"><img src="https://www.bronies.de/images/sweetdreams/ficons/2_on.png" alt="Forum enthält neue Beiträge" title="Forum enthält neue Beiträge - Klicke hier, um das Forum als gelesen zu markieren" class="ajax_mark_read" id="mark_read_2" style="cursor: pointer;"></td>
+<td class="trow1" valign="center" style="border-bottom: 1px solid #323232;">
+<div class="forumbit_depth2_forum_description" style="-moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; -khtml-border-radius: 5px 5px 5px 5px; border: 1px solid #CCCCCC; background: #F0F0F0; padding: 5px;"><strong><a href="forumdisplay.php?fid=2">Foren-News</a></strong><div class="smalltext">Neuigkeiten rund um unser bronyhaftes Forum.</div></div>
+</td>
+<td class="trow1" valign="center" align="right" style="white-space: nowrap; border-bottom: 1px solid #323232; font-size: 18px; padding-right: 10px;" colspan="2">158 / 26.800</td>
+<td class="trow1" valign="center" align="left" style="white-space: nowrap; border-right: 1px solid #323232; border-bottom: 1px solid #323232; padding-left: 10px;"><!-- start: forumbit_depth2_forum_lastpost -->
+<span class="smalltext">
+<a href="showthread.php?tid=29524&amp;action=lastpost" title="Offline [Aprilscherz]"><strong>Offline [Aprilscherz]</strong></a>
+<br>11.04.2025<br>von <a href="https://www.bronies.de/member.php?action=profile&amp;uid=8219">Hovel</a></span>
+<!-- end: forumbit_depth2_forum_lastpost --></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow2" align="center" valign="center" width="1" style="border-left: 1px solid #323232; border-bottom: 1px solid #323232; padding: 20px;"><img src="https://www.bronies.de/images/sweetdreams/ficons/3_on.png" alt="Forum enthält neue Beiträge" title="Forum enthält neue Beiträge - Klicke hier, um das Forum als gelesen zu markieren" class="ajax_mark_read" id="mark_read_3" style="cursor: pointer;"></td>
+<td class="trow2" valign="center" style="border-bottom: 1px solid #323232;">
+<div class="forumbit_depth2_forum_description" style="-moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; -khtml-border-radius: 5px 5px 5px 5px; border: 1px solid #CCCCCC; background: #F0F0F0; padding: 5px;"><strong><a href="forumdisplay.php?fid=3">Feedback</a></strong><div class="smalltext">Lob &amp; Kritik, aber auch Vorschläge &amp; Ideen, gehören hier rein.</div></div>
+</td>
+<td class="trow2" valign="center" align="right" style="white-space: nowrap; border-bottom: 1px solid #323232; font-size: 18px; padding-right: 10px;" colspan="2">448 / 39.190</td>
+<td class="trow2" valign="center" align="left" style="white-space: nowrap; border-right: 1px solid #323232; border-bottom: 1px solid #323232; padding-left: 10px;"><!-- start: forumbit_depth2_forum_lastpost -->
+<span class="smalltext">
+<a href="showthread.php?tid=29395&amp;action=lastpost" title="Keine G5-Emojis im Forum"><strong>Keine G5-Emojis im Forum</strong></a>
+<br>06.06.2025<br>von <a href="https://www.bronies.de/member.php?action=profile&amp;uid=2043">HeavyMetalNeverDies!</a></span>
+<!-- end: forumbit_depth2_forum_lastpost --></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow1" align="center" valign="center" width="1" style="border-left: 1px solid #323232; border-bottom: 1px solid #323232; padding: 20px;"><img src="https://www.bronies.de/images/sweetdreams/ficons/84_on.png" alt="Forum enthält neue Beiträge" title="Forum enthält neue Beiträge - Klicke hier, um das Forum als gelesen zu markieren" class="ajax_mark_read" id="mark_read_84" style="cursor: pointer;"></td>
+<td class="trow1" valign="center" style="border-bottom: 1px solid #323232;">
+<div class="forumbit_depth2_forum_description" style="-moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; -khtml-border-radius: 5px 5px 5px 5px; border: 1px solid #CCCCCC; background: #F0F0F0; padding: 5px;"><strong><a href="forumdisplay.php?fid=84">Hall of Fame</a></strong><div class="smalltext">Besondere Threads des Forums</div></div>
+</td>
+<td class="trow1" valign="center" align="right" style="white-space: nowrap; border-bottom: 1px solid #323232; font-size: 18px; padding-right: 10px;" colspan="2">12 / 199</td>
+<td class="trow1" valign="center" align="left" style="white-space: nowrap; border-right: 1px solid #323232; border-bottom: 1px solid #323232; padding-left: 10px;"><!-- start: forumbit_depth2_forum_lastpost -->
+<span class="smalltext">
+<a href="showthread.php?tid=27908&amp;action=lastpost" title="HoF - Dolan-Fanclub"><strong>HoF - Dolan-Fanclub</strong></a>
+<br>01.04.2023<br>von <a href="https://www.bronies.de/member.php?action=profile&amp;uid=16317">Ponyfan2011</a></span>
+<!-- end: forumbit_depth2_forum_lastpost --></td>
+</tr>
+<!-- end: forumbit_depth2_forum -->
+</tbody>
+</table>
+<br>
+<!-- end: forumbit_depth1_cat --><!-- start: forumbit_depth1_cat -->
+<table border="0" cellspacing="0" cellpadding="4" class="tborder">
+<thead>
+<tr>
+<td class="thead" colspan="5">
+<div class="expcolimage"><img src="https://www.bronies.de/images/sweetdreams/collapse.png" id="cat_87_img" class="expander" alt="[-]" title="[-]" style="cursor: pointer;"></div>
+<div><strong><a href="forumdisplay.php?fid=87">My Little Pony: A New Generation</a></strong><br><div class="smalltext">Alles zur 5. Generation von MLP</div></div>
+</td>
+</tr>
+</thead>
+<tbody style="" id="cat_87_e">
+<tr>
+<td class="tcat" colspan="2"><span class="smalltext"><strong>Forum</strong></span></td>
+<td class="tcat" width="85" align="center" style="white-space: nowrap"><span class="smalltext"><strong>Themen</strong></span></td>
+<td class="tcat" width="85" align="center" style="white-space: nowrap"><span class="smalltext"><strong>Beiträge</strong></span></td>
+<td class="tcat" width="200" align="center"><span class="smalltext"><strong>Letzter Beitrag</strong></span></td>
+</tr>
+<!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow1" align="center" valign="center" width="1" style="border-left: 1px solid #323232; border-bottom: 1px solid #323232; padding: 20px;"><img src="https://www.bronies.de/images/sweetdreams/ficons/88_on.png" alt="Forum enthält neue Beiträge" title="Forum enthält neue Beiträge - Klicke hier, um das Forum als gelesen zu markieren" class="ajax_mark_read" id="mark_read_88" style="cursor: pointer;"></td>
+<td class="trow1" valign="center" style="border-bottom: 1px solid #323232;">
+<div class="forumbit_depth2_forum_description" style="-moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; -khtml-border-radius: 5px 5px 5px 5px; border: 1px solid #CCCCCC; background: #F0F0F0; padding: 5px;"><strong><a href="forumdisplay.php?fid=88">G5-News</a></strong><div class="smalltext">Neues zur 5. Generation</div></div>
+</td>
+<td class="trow1" valign="center" align="right" style="white-space: nowrap; border-bottom: 1px solid #323232; font-size: 18px; padding-right: 10px;" colspan="2">16 / 1.222</td>
+<td class="trow1" valign="center" align="left" style="white-space: nowrap; border-right: 1px solid #323232; border-bottom: 1px solid #323232; padding-left: 10px;"><!-- start: forumbit_depth2_forum_lastpost -->
+<span class="smalltext">
+<a href="showthread.php?tid=29547&amp;action=lastpost" title="Realverfilmung angekündigt"><strong>Realverfilmung angekündig...</strong></a>
+<br>21.07.2025<br>von <a href="https://www.bronies.de/member.php?action=profile&amp;uid=9007">Ayu</a></span>
+<!-- end: forumbit_depth2_forum_lastpost --></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow2" align="center" valign="center" width="1" style="border-left: 1px solid #323232; border-bottom: 1px solid #323232; padding: 20px;"><img src="https://www.bronies.de/images/sweetdreams/ficons/89_on.png" alt="Forum enthält neue Beiträge" title="Forum enthält neue Beiträge - Klicke hier, um das Forum als gelesen zu markieren" class="ajax_mark_read" id="mark_read_89" style="cursor: pointer;"></td>
+<td class="trow2" valign="center" style="border-bottom: 1px solid #323232;">
+<div class="forumbit_depth2_forum_description" style="-moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; -khtml-border-radius: 5px 5px 5px 5px; border: 1px solid #CCCCCC; background: #F0F0F0; padding: 5px;"><strong><a href="forumdisplay.php?fid=89">G5-Diskussionen</a></strong><div class="smalltext">Themen und Diskussionen zur 5. Generation</div></div>
+</td>
+<td class="trow2" valign="center" align="right" style="white-space: nowrap; border-bottom: 1px solid #323232; font-size: 18px; padding-right: 10px;" colspan="2">14 / 664</td>
+<td class="trow2" valign="center" align="left" style="white-space: nowrap; border-right: 1px solid #323232; border-bottom: 1px solid #323232; padding-left: 10px;"><!-- start: forumbit_depth2_forum_lastpost -->
+<span class="smalltext">
+<a href="showthread.php?tid=29032&amp;action=lastpost" title="Tell your Tale - &quot;Folgendiskussion&quot;"><strong>Tell your Tale - "Folgend...</strong></a>
+<br>17.10.2024<br>von <a href="https://www.bronies.de/member.php?action=profile&amp;uid=1214">sallycar</a></span>
+<!-- end: forumbit_depth2_forum_lastpost --></td>
+</tr>
+<!-- end: forumbit_depth2_forum -->
+</tbody>
+</table>
+<br>
+<!-- end: forumbit_depth1_cat --><!-- start: forumbit_depth1_cat -->
+<table border="0" cellspacing="0" cellpadding="4" class="tborder">
+<thead>
+<tr>
+<td class="thead" colspan="5">
+<div class="expcolimage"><img src="https://www.bronies.de/images/sweetdreams/collapse.png" id="cat_4_img" class="expander" alt="[-]" title="[-]" style="cursor: pointer;"></div>
+<div><strong><a href="forumdisplay.php?fid=4">My Little Pony: Friendship is Magic</a></strong><br><div class="smalltext">Alles zur Serie
+<span class="supervisors" style="float: right;">
+Supervisors: <a href="http://www.bronies.de/member.php?action=profile&amp;uid=3203" target="blank">starfox</a> &amp; <a href="http://www.bronies.de/member.php?action=profile&amp;uid=4344" target="blank">Railway Dash</a>
+</span></div></div>
+</td>
+</tr>
+</thead>
+<tbody style="" id="cat_4_e">
+<tr>
+<td class="tcat" colspan="2"><span class="smalltext"><strong>Forum</strong></span></td>
+<td class="tcat" width="85" align="center" style="white-space: nowrap"><span class="smalltext"><strong>Themen</strong></span></td>
+<td class="tcat" width="85" align="center" style="white-space: nowrap"><span class="smalltext"><strong>Beiträge</strong></span></td>
+<td class="tcat" width="200" align="center"><span class="smalltext"><strong>Letzter Beitrag</strong></span></td>
+</tr>
+<!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow2" align="center" valign="center" width="1" style="border-left: 1px solid #323232; border-bottom: 1px solid #323232; padding: 20px;"><img src="https://www.bronies.de/images/sweetdreams/ficons/5_on.png" alt="Forum enthält neue Beiträge" title="Forum enthält neue Beiträge - Klicke hier, um das Forum als gelesen zu markieren" class="ajax_mark_read" id="mark_read_5" style="cursor: pointer;"></td>
+<td class="trow2" valign="center" style="border-bottom: 1px solid #323232;">
+<div class="forumbit_depth2_forum_description" style="-moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; -khtml-border-radius: 5px 5px 5px 5px; border: 1px solid #CCCCCC; background: #F0F0F0; padding: 5px;"><strong><a href="forumdisplay.php?fid=5">Folgendiskussion</a></strong><div class="smalltext">Hier könnt ihr über einzelne Folgen diskutieren.<!-- start: forumbit_moderators -->
+<br>Moderiert von: <a href="member.php?action=profile&amp;uid=6503">Gron</a>
+<!-- end: forumbit_moderators --><!-- start: forumbit_subforums -->
+<br><strong>Unterforen:</strong> <a href="forumdisplay.php?fid=61" title="">Season 1</a>, <a href="forumdisplay.php?fid=62" title="">Season 2</a>, <a href="forumdisplay.php?fid=63" title="">Season 3</a>, <a href="forumdisplay.php?fid=64" title="">Season 4</a>, <a href="forumdisplay.php?fid=65" title="">Season 5</a>, <a href="forumdisplay.php?fid=75" title="">Season 6</a>, <a href="forumdisplay.php?fid=79" title="">Season 7</a>, <a href="forumdisplay.php?fid=82" title="">Season 8</a>, <a href="forumdisplay.php?fid=85" title="">Season 9</a>
+<!-- end: forumbit_subforums --></div></div>
+</td>
+<td class="trow2" valign="center" align="right" style="white-space: nowrap; border-bottom: 1px solid #323232; font-size: 18px; padding-right: 10px;" colspan="2">271 / 25.225</td>
+<td class="trow2" valign="center" align="left" style="white-space: nowrap; border-right: 1px solid #323232; border-bottom: 1px solid #323232; padding-left: 10px;"><!-- start: forumbit_depth2_forum_lastpost -->
+<span class="smalltext">
+<a href="showthread.php?tid=8275&amp;action=lastpost" title="3x04 One Bad Apple"><strong>3x04 One Bad Apple</strong></a>
+<br>01.12.2023<br>von <a href="https://www.bronies.de/member.php?action=profile&amp;uid=16409">161pony</a></span>
+<!-- end: forumbit_depth2_forum_lastpost --></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow1" align="center" valign="center" width="1" style="border-left: 1px solid #323232; border-bottom: 1px solid #323232; padding: 20px;"><img src="https://www.bronies.de/images/sweetdreams/ficons/22_on.png" alt="Forum enthält neue Beiträge" title="Forum enthält neue Beiträge - Klicke hier, um das Forum als gelesen zu markieren" class="ajax_mark_read" id="mark_read_22" style="cursor: pointer;"></td>
+<td class="trow1" valign="center" style="border-bottom: 1px solid #323232;">
+<div class="forumbit_depth2_forum_description" style="-moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; -khtml-border-radius: 5px 5px 5px 5px; border: 1px solid #CCCCCC; background: #F0F0F0; padding: 5px;"><strong><a href="forumdisplay.php?fid=22">Deutsche Synchro</a></strong><div class="smalltext">Diskussionen über die synchronisierte Fassung der Serie<!-- start: forumbit_moderators -->
+<br>Moderiert von: <a href="member.php?action=profile&amp;uid=1277">Conqi</a>
+<!-- end: forumbit_moderators --><!-- start: forumbit_subforums -->
+<br><strong>Unterforen:</strong> <a href="forumdisplay.php?fid=66" title="">Staffel 1</a>, <a href="forumdisplay.php?fid=67" title="">Staffel 2</a>, <a href="forumdisplay.php?fid=68" title="">Staffel 3</a>, <a href="forumdisplay.php?fid=69" title="">Staffel 4</a>, <a href="forumdisplay.php?fid=76" title="">Staffel 5</a>, <a href="forumdisplay.php?fid=78" title="">Staffel 6</a>, <a href="forumdisplay.php?fid=81" title="">Staffel 7</a>, <a href="forumdisplay.php?fid=83" title="">Staffel 8</a>, <a href="forumdisplay.php?fid=86" title="">Staffel 9</a>
+<!-- end: forumbit_subforums --></div></div>
+</td>
+<td class="trow1" valign="center" align="right" style="white-space: nowrap; border-bottom: 1px solid #323232; font-size: 18px; padding-right: 10px;" colspan="2">328 / 15.969</td>
+<td class="trow1" valign="center" align="left" style="white-space: nowrap; border-right: 1px solid #323232; border-bottom: 1px solid #323232; padding-left: 10px;"><!-- start: forumbit_depth2_forum_lastpost -->
+<span class="smalltext">
+<a href="showthread.php?tid=21159&amp;action=lastpost" title="Legale Streammöglichkeiten [MLP - Deutsch]"><strong>Legale Streammöglichkeite...</strong></a>
+<br>02.04.2025<br>von <a href="https://www.bronies.de/member.php?action=profile&amp;uid=2641">mrx1983</a></span>
+<!-- end: forumbit_depth2_forum_lastpost --></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow2" align="center" valign="center" width="1" style="border-left: 1px solid #323232; border-bottom: 1px solid #323232; padding: 20px;"><img src="https://www.bronies.de/images/sweetdreams/ficons/6_on.png" alt="Forum enthält neue Beiträge" title="Forum enthält neue Beiträge - Klicke hier, um das Forum als gelesen zu markieren" class="ajax_mark_read" id="mark_read_6" style="cursor: pointer;"></td>
+<td class="trow2" valign="center" style="border-bottom: 1px solid #323232;">
+<div class="forumbit_depth2_forum_description" style="-moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; -khtml-border-radius: 5px 5px 5px 5px; border: 1px solid #CCCCCC; background: #F0F0F0; padding: 5px;"><strong><a href="forumdisplay.php?fid=6">FiM-News</a></strong><div class="smalltext">Neues zum Thema "MLP:FiM"<!-- start: forumbit_moderators -->
+<br>Moderiert von: <a href="member.php?action=profile&amp;uid=10779">DrDerrek</a>
+<!-- end: forumbit_moderators --></div></div>
+</td>
+<td class="trow2" valign="center" align="right" style="white-space: nowrap; border-bottom: 1px solid #323232; font-size: 18px; padding-right: 10px;" colspan="2">252 / 27.983</td>
+<td class="trow2" valign="center" align="left" style="white-space: nowrap; border-right: 1px solid #323232; border-bottom: 1px solid #323232; padding-left: 10px;"><!-- start: forumbit_depth2_forum_lastpost -->
+<span class="smalltext">
+<a href="showthread.php?tid=25763&amp;action=lastpost" title="10 !! Jahre MLP:FiM"><strong>10 !! Jahre MLP:FiM</strong></a>
+<br>24.11.2024<br>von <a href="https://www.bronies.de/member.php?action=profile&amp;uid=16418">Twillight</a></span>
+<!-- end: forumbit_depth2_forum_lastpost --></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow1" align="center" valign="center" width="1" style="border-left: 1px solid #323232; border-bottom: 1px solid #323232; padding: 20px;"><img src="https://www.bronies.de/images/sweetdreams/ficons/24_on.png" alt="Forum enthält neue Beiträge" title="Forum enthält neue Beiträge - Klicke hier, um das Forum als gelesen zu markieren" class="ajax_mark_read" id="mark_read_24" style="cursor: pointer;"></td>
+<td class="trow1" valign="center" style="border-bottom: 1px solid #323232;">
+<div class="forumbit_depth2_forum_description" style="-moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; -khtml-border-radius: 5px 5px 5px 5px; border: 1px solid #CCCCCC; background: #F0F0F0; padding: 5px;"><strong><a href="forumdisplay.php?fid=24">Pony-Talk</a></strong><div class="smalltext">Themen und Diskussionen zur Serie<!-- start: forumbit_moderators -->
+<br>Moderiert von: <a href="member.php?action=profile&amp;uid=9656">Herrmannsegerman</a>
+<!-- end: forumbit_moderators --></div></div>
+</td>
+<td class="trow1" valign="center" align="right" style="white-space: nowrap; border-bottom: 1px solid #323232; font-size: 18px; padding-right: 10px;" colspan="2">634 / 34.930</td>
+<td class="trow1" valign="center" align="left" style="white-space: nowrap; border-right: 1px solid #323232; border-bottom: 1px solid #323232; padding-left: 10px;"><!-- start: forumbit_depth2_forum_lastpost -->
+<span class="smalltext">
+<a href="showthread.php?tid=29433&amp;action=lastpost" title="Lieblings-Ponys"><strong>Lieblings-Ponys</strong></a>
+<br>11.07.2025<br>von <a href="https://www.bronies.de/member.php?action=profile&amp;uid=15339">Lemon Green</a></span>
+<!-- end: forumbit_depth2_forum_lastpost --></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow2" align="center" valign="center" width="1" style="border-left: 1px solid #323232; border-bottom: 1px solid #323232; padding: 20px;"><img src="https://www.bronies.de/images/sweetdreams/ficons/10_on.png" alt="Forum enthält neue Beiträge" title="Forum enthält neue Beiträge - Klicke hier, um das Forum als gelesen zu markieren" class="ajax_mark_read" id="mark_read_10" style="cursor: pointer;"></td>
+<td class="trow2" valign="center" style="border-bottom: 1px solid #323232;">
+<div class="forumbit_depth2_forum_description" style="-moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; -khtml-border-radius: 5px 5px 5px 5px; border: 1px solid #CCCCCC; background: #F0F0F0; padding: 5px;"><strong><a href="forumdisplay.php?fid=10">Ponylogie</a></strong><div class="smalltext">Diskussionen über Geschichte, Wirtschaft und Co. von Equestria<!-- start: forumbit_moderators -->
+<br>Moderiert von: <a href="member.php?action=profile&amp;uid=1277">Conqi</a>
+<!-- end: forumbit_moderators --></div></div>
+</td>
+<td class="trow2" valign="center" align="right" style="white-space: nowrap; border-bottom: 1px solid #323232; font-size: 18px; padding-right: 10px;" colspan="2">576 / 25.791</td>
+<td class="trow2" valign="center" align="left" style="white-space: nowrap; border-right: 1px solid #323232; border-bottom: 1px solid #323232; padding-left: 10px;"><!-- start: forumbit_depth2_forum_lastpost -->
+<span class="smalltext">
+<a href="showthread.php?tid=10129&amp;action=lastpost" title="My Little Pony: Friendship is Magic - Realität oder Fiktion?"><strong>My Little Pony: Friendshi...</strong></a>
+<br>16.02.2025<br>von <a href="https://www.bronies.de/member.php?action=profile&amp;uid=3307">Space Warrior</a></span>
+<!-- end: forumbit_depth2_forum_lastpost --></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow1" align="center" valign="center" width="1" style="border-left: 1px solid #323232; border-bottom: 1px solid #323232; padding: 20px;"><img src="https://www.bronies.de/images/sweetdreams/ficons/56_on.png" alt="Forum enthält neue Beiträge" title="Forum enthält neue Beiträge - Klicke hier, um das Forum als gelesen zu markieren" class="ajax_mark_read" id="mark_read_56" style="cursor: pointer;"></td>
+<td class="trow1" valign="center" style="border-bottom: 1px solid #323232;">
+<div class="forumbit_depth2_forum_description" style="-moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; -khtml-border-radius: 5px 5px 5px 5px; border: 1px solid #CCCCCC; background: #F0F0F0; padding: 5px;"><strong><a href="forumdisplay.php?fid=56">Comics &amp; Bücher</a></strong><div class="smalltext">Alles zu den Comic-Geschichten, offiziellen Büchern und Zeitschriften<!-- start: forumbit_moderators -->
+<br>Moderiert von: <a href="member.php?action=profile&amp;uid=9263">Triss</a>
+<!-- end: forumbit_moderators --></div></div>
+</td>
+<td class="trow1" valign="center" align="right" style="white-space: nowrap; border-bottom: 1px solid #323232; font-size: 18px; padding-right: 10px;" colspan="2">213 / 5.358</td>
+<td class="trow1" valign="center" align="left" style="white-space: nowrap; border-right: 1px solid #323232; border-bottom: 1px solid #323232; padding-left: 10px;"><!-- start: forumbit_depth2_forum_lastpost -->
+<span class="smalltext">
+<a href="showthread.php?tid=16834&amp;action=lastpost" title="Comics - wo könnt ihr es euch holen?"><strong>Comics - wo könnt ihr es ...</strong></a>
+<br>29.10.2023<br>von <a href="https://www.bronies.de/member.php?action=profile&amp;uid=6068">Rainbowlicious</a></span>
+<!-- end: forumbit_depth2_forum_lastpost --></td>
+</tr>
+<!-- end: forumbit_depth2_forum -->
+</tbody>
+</table>
+<br>
+<!-- end: forumbit_depth1_cat --><!-- start: forumbit_depth1_cat -->
+<table border="0" cellspacing="0" cellpadding="4" class="tborder">
+<thead>
+<tr>
+<td class="thead" colspan="5">
+<div class="expcolimage"><img src="https://www.bronies.de/images/sweetdreams/collapse.png" id="cat_23_img" class="expander" alt="[-]" title="[-]" style="cursor: pointer;"></div>
+<div><strong><a href="forumdisplay.php?fid=23">Bronytum</a></strong><br><div class="smalltext">Alles zum Fandom
+
+<span class="supervisors" style="float: right;">
+Supervisors: <a href="http://www.bronies.de/member.php?action=profile&amp;uid=464" target="blank">MaSc</a> &amp; <a href="http://www.bronies.de/member.php?action=profile&amp;uid=1935" target="blank">InvaderPsi</a>
+</span></div></div>
+</td>
+</tr>
+</thead>
+<tbody style="" id="cat_23_e">
+<tr>
+<td class="tcat" colspan="2"><span class="smalltext"><strong>Forum</strong></span></td>
+<td class="tcat" width="85" align="center" style="white-space: nowrap"><span class="smalltext"><strong>Themen</strong></span></td>
+<td class="tcat" width="85" align="center" style="white-space: nowrap"><span class="smalltext"><strong>Beiträge</strong></span></td>
+<td class="tcat" width="200" align="center"><span class="smalltext"><strong>Letzter Beitrag</strong></span></td>
+</tr>
+<!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow1" align="center" valign="center" width="1" style="border-left: 1px solid #323232; border-bottom: 1px solid #323232; padding: 20px;"><img src="https://www.bronies.de/images/sweetdreams/ficons/7_on.png" alt="Forum enthält neue Beiträge" title="Forum enthält neue Beiträge - Klicke hier, um das Forum als gelesen zu markieren" class="ajax_mark_read" id="mark_read_7" style="cursor: pointer;"></td>
+<td class="trow1" valign="center" style="border-bottom: 1px solid #323232;">
+<div class="forumbit_depth2_forum_description" style="-moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; -khtml-border-radius: 5px 5px 5px 5px; border: 1px solid #CCCCCC; background: #F0F0F0; padding: 5px;"><strong><a href="forumdisplay.php?fid=7">Brony-Talk</a></strong><div class="smalltext">Brony-Themen und -Diskussionen<!-- start: forumbit_moderators -->
+<br>Moderiert von: <a href="member.php?action=profile&amp;uid=9263">Triss</a>
+<!-- end: forumbit_moderators --></div></div>
+</td>
+<td class="trow1" valign="center" align="right" style="white-space: nowrap; border-bottom: 1px solid #323232; font-size: 18px; padding-right: 10px;" colspan="2">1.164 / 92.741</td>
+<td class="trow1" valign="center" align="left" style="white-space: nowrap; border-right: 1px solid #323232; border-bottom: 1px solid #323232; padding-left: 10px;"><!-- start: forumbit_depth2_forum_lastpost -->
+<span class="smalltext">
+<a href="showthread.php?tid=28664&amp;action=lastpost" title="Vermisst ihr (ehemalige) User?"><strong>Vermisst ihr (ehemalige) ...</strong></a>
+<br>20.07.2025<br>von <a href="https://www.bronies.de/member.php?action=profile&amp;uid=77">Isegrim</a></span>
+<!-- end: forumbit_depth2_forum_lastpost --></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow2" align="center" valign="center" width="1" style="border-left: 1px solid #323232; border-bottom: 1px solid #323232; padding: 20px;"><img src="https://www.bronies.de/images/sweetdreams/ficons/20_on.png" alt="Forum enthält neue Beiträge" title="Forum enthält neue Beiträge - Klicke hier, um das Forum als gelesen zu markieren" class="ajax_mark_read" id="mark_read_20" style="cursor: pointer;"></td>
+<td class="trow2" valign="center" style="border-bottom: 1px solid #323232;">
+<div class="forumbit_depth2_forum_description" style="-moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; -khtml-border-radius: 5px 5px 5px 5px; border: 1px solid #CCCCCC; background: #F0F0F0; padding: 5px;"><strong><a href="forumdisplay.php?fid=20">Merchandising</a></strong><div class="smalltext">Hasbro-Produkte, Fanmade Merch' - und Marktplatz<!-- start: forumbit_moderators -->
+<br>Moderiert von: <a href="member.php?action=profile&amp;uid=9263">Triss</a>
+<!-- end: forumbit_moderators --><!-- start: forumbit_subforums -->
+<br><strong>Unterforen:</strong> <a href="forumdisplay.php?fid=38" title="">Fanmade Stuff</a>, <a href="forumdisplay.php?fid=40" title="">Flohmarkt</a>
+<!-- end: forumbit_subforums --></div></div>
+</td>
+<td class="trow2" valign="center" align="right" style="white-space: nowrap; border-bottom: 1px solid #323232; font-size: 18px; padding-right: 10px;" colspan="2">2.363 / 116.244</td>
+<td class="trow2" valign="center" align="left" style="white-space: nowrap; border-right: 1px solid #323232; border-bottom: 1px solid #323232; padding-left: 10px;"><!-- start: forumbit_depth2_forum_lastpost -->
+<span class="smalltext">
+<a href="showthread.php?tid=29556&amp;action=lastpost" title="Verkaufe/Tausche: Lifesize Roseluck von Limecraft"><strong>Verkaufe/Tausche: Lifesiz...</strong></a>
+<br>04.08.2025<br>von <a href="https://www.bronies.de/member.php?action=profile&amp;uid=16614">Ocellus</a></span>
+<!-- end: forumbit_depth2_forum_lastpost --></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow1" align="center" valign="center" width="1" style="border-left: 1px solid #323232; border-bottom: 1px solid #323232; padding: 20px;"><img src="https://www.bronies.de/images/sweetdreams/ficons/25_on.png" alt="Forum enthält neue Beiträge" title="Forum enthält neue Beiträge - Klicke hier, um das Forum als gelesen zu markieren" class="ajax_mark_read" id="mark_read_25" style="cursor: pointer;"></td>
+<td class="trow1" valign="center" style="border-bottom: 1px solid #323232;">
+<div class="forumbit_depth2_forum_description" style="-moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; -khtml-border-radius: 5px 5px 5px 5px; border: 1px solid #CCCCCC; background: #F0F0F0; padding: 5px;"><strong><a href="forumdisplay.php?fid=25">Treffen</a></strong><div class="smalltext">Der Platz für geplante Bronytreffen und Treffberichte<!-- start: forumbit_moderators -->
+<br>Moderiert von: <a href="member.php?action=profile&amp;uid=6503">Gron</a>
+<!-- end: forumbit_moderators --><!-- start: forumbit_subforums -->
+<br><strong>Unterforen:</strong> <a href="forumdisplay.php?fid=31" title="">Süden</a>, <a href="forumdisplay.php?fid=32" title="">Westen</a>, <a href="forumdisplay.php?fid=33" title="">Norden</a>, <a href="forumdisplay.php?fid=34" title="">Osten</a>, <a href="forumdisplay.php?fid=35" title="">Österreich &amp; Schweiz</a>, <a href="forumdisplay.php?fid=53" title="">Conventions</a>
+<!-- end: forumbit_subforums --></div></div>
+</td>
+<td class="trow1" valign="center" align="right" style="white-space: nowrap; border-bottom: 1px solid #323232; font-size: 18px; padding-right: 10px;" colspan="2">1.896 / 292.764</td>
+<td class="trow1" valign="center" align="left" style="white-space: nowrap; border-right: 1px solid #323232; border-bottom: 1px solid #323232; padding-left: 10px;"><!-- start: forumbit_depth2_forum_lastpost -->
+<span class="smalltext">
+<a href="showthread.php?tid=7583&amp;action=lastpost" title="Kölner Stammtisch [13.09.]"><strong>Kölner Stammtisch [13.09....</strong></a>
+<br>12.08.2025<br>von <a href="https://www.bronies.de/member.php?action=profile&amp;uid=3533">Cabraloca</a></span>
+<!-- end: forumbit_depth2_forum_lastpost --></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow2" align="center" valign="center" width="1" style="border-left: 1px solid #323232; border-bottom: 1px solid #323232; padding: 20px;"><img src="https://www.bronies.de/images/sweetdreams/ficons/8_on.png" alt="Forum enthält neue Beiträge" title="Forum enthält neue Beiträge - Klicke hier, um das Forum als gelesen zu markieren" class="ajax_mark_read" id="mark_read_8" style="cursor: pointer;"></td>
+<td class="trow2" valign="center" style="border-bottom: 1px solid #323232;">
+<div class="forumbit_depth2_forum_description" style="-moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; -khtml-border-radius: 5px 5px 5px 5px; border: 1px solid #CCCCCC; background: #F0F0F0; padding: 5px;"><strong><a href="forumdisplay.php?fid=8">Fanart</a></strong><div class="smalltext">Von Bronies erstellte Bilder, Zeichnungen und Comics zu MLP:FiM.<!-- start: forumbit_moderators -->
+<br>Moderiert von: <a href="member.php?action=profile&amp;uid=1935">InvaderPsi</a>, <a href="member.php?action=profile&amp;uid=464">MaSc</a>
+<!-- end: forumbit_moderators --><!-- start: forumbit_subforums -->
+<br><strong>Unterforen:</strong> <a href="forumdisplay.php?fid=45" title="">Fanart International</a>
+<!-- end: forumbit_subforums --></div></div>
+</td>
+<td class="trow2" valign="center" align="right" style="white-space: nowrap; border-bottom: 1px solid #323232; font-size: 18px; padding-right: 10px;" colspan="2">1.443 / 84.111</td>
+<td class="trow2" valign="center" align="left" style="white-space: nowrap; border-right: 1px solid #323232; border-bottom: 1px solid #323232; padding-left: 10px;"><!-- start: forumbit_depth2_forum_lastpost -->
+<span class="smalltext">
+<a href="showthread.php?tid=17462&amp;action=lastpost" title="SALLYCARS MS-Paint schmiererei"><strong>SALLYCARS MS-Paint schmie...</strong></a>
+<br>06.08.2025<br>von <a href="https://www.bronies.de/member.php?action=profile&amp;uid=1214">sallycar</a></span>
+<!-- end: forumbit_depth2_forum_lastpost --></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow1" align="center" valign="center" width="1" style="border-left: 1px solid #323232; border-bottom: 1px solid #323232; padding: 20px;"><img src="https://www.bronies.de/images/sweetdreams/ficons/9_on.png" alt="Forum enthält neue Beiträge" title="Forum enthält neue Beiträge - Klicke hier, um das Forum als gelesen zu markieren" class="ajax_mark_read" id="mark_read_9" style="cursor: pointer;"></td>
+<td class="trow1" valign="center" style="border-bottom: 1px solid #323232;">
+<div class="forumbit_depth2_forum_description" style="-moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; -khtml-border-radius: 5px 5px 5px 5px; border: 1px solid #CCCCCC; background: #F0F0F0; padding: 5px;"><strong><a href="forumdisplay.php?fid=9">Fanfic</a></strong><div class="smalltext">Ein Unterforum speziell für geschriebene Geschichten der Fans<!-- start: forumbit_moderators -->
+<br>Moderiert von: <a href="member.php?action=profile&amp;uid=1935">InvaderPsi</a>, <a href="member.php?action=profile&amp;uid=464">MaSc</a>
+<!-- end: forumbit_moderators --><!-- start: forumbit_subforums -->
+<br><strong>Unterforen:</strong> <a href="forumdisplay.php?fid=52" title="">Diskussionen, Empfehlungen, Sonstiges</a>
+<!-- end: forumbit_subforums --></div></div>
+</td>
+<td class="trow1" valign="center" align="right" style="white-space: nowrap; border-bottom: 1px solid #323232; font-size: 18px; padding-right: 10px;" colspan="2">964 / 40.232</td>
+<td class="trow1" valign="center" align="left" style="white-space: nowrap; border-right: 1px solid #323232; border-bottom: 1px solid #323232; padding-left: 10px;"><!-- start: forumbit_depth2_forum_lastpost -->
+<span class="smalltext">
+<a href="showthread.php?tid=10570&amp;action=lastpost" title="Die blauen Geschichten (deutsche MLP-Hörspielserie!)"><strong>Die blauen Geschichten (d...</strong></a>
+<br>07.08.2025<br>von <a href="https://www.bronies.de/member.php?action=profile&amp;uid=4231">elitecat</a></span>
+<!-- end: forumbit_depth2_forum_lastpost --></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow2" align="center" valign="center" width="1" style="border-left: 1px solid #323232; border-bottom: 1px solid #323232; padding: 20px;"><img src="https://www.bronies.de/images/sweetdreams/ficons/43_on.png" alt="Forum enthält neue Beiträge" title="Forum enthält neue Beiträge - Klicke hier, um das Forum als gelesen zu markieren" class="ajax_mark_read" id="mark_read_43" style="cursor: pointer;"></td>
+<td class="trow2" valign="center" style="border-bottom: 1px solid #323232;">
+<div class="forumbit_depth2_forum_description" style="-moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; -khtml-border-radius: 5px 5px 5px 5px; border: 1px solid #CCCCCC; background: #F0F0F0; padding: 5px;"><strong><a href="forumdisplay.php?fid=43">Fanclub</a></strong><div class="smalltext">Hier treffen sich die Fans unter den Bronies...<!-- start: forumbit_moderators -->
+<br>Moderiert von: <a href="member.php?action=profile&amp;uid=6503">Gron</a>
+<!-- end: forumbit_moderators --></div></div>
+</td>
+<td class="trow2" valign="center" align="right" style="white-space: nowrap; border-bottom: 1px solid #323232; font-size: 18px; padding-right: 10px;" colspan="2">454 / 116.820</td>
+<td class="trow2" valign="center" align="left" style="white-space: nowrap; border-right: 1px solid #323232; border-bottom: 1px solid #323232; padding-left: 10px;"><!-- start: forumbit_depth2_forum_lastpost -->
+<span class="smalltext">
+<a href="showthread.php?tid=3279&amp;action=lastpost" title="Der Fluttershy Fanclub [380 fluttertastische Mitglieder]"><strong>Der Fluttershy Fanclub [3...</strong></a>
+<br>11.08.2025<br>von <a href="https://www.bronies.de/member.php?action=profile&amp;uid=1214">sallycar</a></span>
+<!-- end: forumbit_depth2_forum_lastpost --></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow1" align="center" valign="center" width="1" style="border-left: 1px solid #323232; border-bottom: 1px solid #323232; padding: 20px;"><img src="https://www.bronies.de/images/sweetdreams/ficons/57_on.png" alt="Forum enthält neue Beiträge" title="Forum enthält neue Beiträge - Klicke hier, um das Forum als gelesen zu markieren" class="ajax_mark_read" id="mark_read_57" style="cursor: pointer;"></td>
+<td class="trow1" valign="center" style="border-bottom: 1px solid #323232;">
+<div class="forumbit_depth2_forum_description" style="-moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; -khtml-border-radius: 5px 5px 5px 5px; border: 1px solid #CCCCCC; background: #F0F0F0; padding: 5px;"><strong><a href="forumdisplay.php?fid=57">Collectible Card Game</a></strong><div class="smalltext">Der Bereich für das MLP-Sammelkartenspiel<!-- start: forumbit_moderators -->
+<br>Moderiert von: <a href="member.php?action=profile&amp;uid=9263">Triss</a>
+<!-- end: forumbit_moderators --><!-- start: forumbit_subforums -->
+<br><strong>Unterforen:</strong> <a href="forumdisplay.php?fid=59" title="">Tauschbörse</a>, <a href="forumdisplay.php?fid=58" title="">Treffen &amp; Turniere</a>
+<!-- end: forumbit_subforums --></div></div>
+</td>
+<td class="trow1" valign="center" align="right" style="white-space: nowrap; border-bottom: 1px solid #323232; font-size: 18px; padding-right: 10px;" colspan="2">271 / 13.947</td>
+<td class="trow1" valign="center" align="left" style="white-space: nowrap; border-right: 1px solid #323232; border-bottom: 1px solid #323232; padding-left: 10px;"><!-- start: forumbit_depth2_forum_lastpost -->
+<span class="smalltext">
+<a href="showthread.php?tid=29259&amp;action=lastpost" title="MLP CCG Karten übrige Sammlung abzugeben"><strong>MLP CCG Karten übrige Sam...</strong></a>
+<br>14.08.2024<br>von <a href="https://www.bronies.de/member.php?action=profile&amp;uid=16354">StarshinePony</a></span>
+<!-- end: forumbit_depth2_forum_lastpost --></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow2" align="center" valign="center" width="1" style="border-left: 1px solid #323232; border-bottom: 1px solid #323232; padding: 20px;"><img src="https://www.bronies.de/images/sweetdreams/ficons/41_on.png" alt="Forum enthält neue Beiträge" title="Forum enthält neue Beiträge - Klicke hier, um das Forum als gelesen zu markieren" class="ajax_mark_read" id="mark_read_41" style="cursor: pointer;"></td>
+<td class="trow2" valign="center" style="border-bottom: 1px solid #323232;">
+<div class="forumbit_depth2_forum_description" style="-moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; -khtml-border-radius: 5px 5px 5px 5px; border: 1px solid #CCCCCC; background: #F0F0F0; padding: 5px;"><strong><a href="forumdisplay.php?fid=41">Musik &amp; Videos</a></strong><div class="smalltext">Ponybezogene Audios, Musik und Videos gehören hier rein<!-- start: forumbit_moderators -->
+<br>Moderiert von: <a href="member.php?action=profile&amp;uid=1935">InvaderPsi</a>, <a href="member.php?action=profile&amp;uid=464">MaSc</a>
+<!-- end: forumbit_moderators --></div></div>
+</td>
+<td class="trow2" valign="center" align="right" style="white-space: nowrap; border-bottom: 1px solid #323232; font-size: 18px; padding-right: 10px;" colspan="2">634 / 22.350</td>
+<td class="trow2" valign="center" align="left" style="white-space: nowrap; border-right: 1px solid #323232; border-bottom: 1px solid #323232; padding-left: 10px;"><!-- start: forumbit_depth2_forum_lastpost -->
+<span class="smalltext">
+<a href="showthread.php?tid=490&amp;action=lastpost" title="MLP(FiM) Fan-Musik und Remixe"><strong>MLP(FiM) Fan-Musik und Re...</strong></a>
+<br>28.07.2025<br>von <a href="https://www.bronies.de/member.php?action=profile&amp;uid=1214">sallycar</a></span>
+<!-- end: forumbit_depth2_forum_lastpost --></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow1" align="center" valign="center" width="1" style="border-left: 1px solid #323232; border-bottom: 1px solid #323232; padding: 20px;"><img src="https://www.bronies.de/images/sweetdreams/ficons/29_on.png" alt="Forum enthält neue Beiträge" title="Forum enthält neue Beiträge - Klicke hier, um das Forum als gelesen zu markieren" class="ajax_mark_read" id="mark_read_29" style="cursor: pointer;"></td>
+<td class="trow1" valign="center" style="border-bottom: 1px solid #323232;">
+<div class="forumbit_depth2_forum_description" style="-moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; -khtml-border-radius: 5px 5px 5px 5px; border: 1px solid #CCCCCC; background: #F0F0F0; padding: 5px;"><strong><a href="forumdisplay.php?fid=29">Pony-Software &amp; Brony-Web</a></strong><div class="smalltext">Ponyprogramme und Internetdienste für Bronies<!-- start: forumbit_moderators -->
+<br>Moderiert von: <a href="member.php?action=profile&amp;uid=1935">InvaderPsi</a>, <a href="member.php?action=profile&amp;uid=464">MaSc</a>
+<!-- end: forumbit_moderators --></div></div>
+</td>
+<td class="trow1" valign="center" align="right" style="white-space: nowrap; border-bottom: 1px solid #323232; font-size: 18px; padding-right: 10px;" colspan="2">467 / 33.884</td>
+<td class="trow1" valign="center" align="left" style="white-space: nowrap; border-right: 1px solid #323232; border-bottom: 1px solid #323232; padding-left: 10px;"><!-- start: forumbit_depth2_forum_lastpost -->
+<span class="smalltext">
+<a href="showthread.php?tid=13778&amp;action=lastpost" title="Gameloft My Little Pony Spiel !"><strong>Gameloft My Little Pony S...</strong></a>
+<br>03.08.2025<br>von <a href="https://www.bronies.de/member.php?action=profile&amp;uid=12253">AGG7074</a></span>
+<!-- end: forumbit_depth2_forum_lastpost --></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow2" align="center" valign="center" width="1" style="border-left: 1px solid #323232; border-bottom: 1px solid #323232; padding: 20px;"><img src="https://www.bronies.de/images/sweetdreams/ficons/26_on.png" alt="Forum enthält neue Beiträge" title="Forum enthält neue Beiträge - Klicke hier, um das Forum als gelesen zu markieren" class="ajax_mark_read" id="mark_read_26" style="cursor: pointer;"></td>
+<td class="trow2" valign="center" style="border-bottom: 1px solid #323232;">
+<div class="forumbit_depth2_forum_description" style="-moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; -khtml-border-radius: 5px 5px 5px 5px; border: 1px solid #CCCCCC; background: #F0F0F0; padding: 5px;"><strong><a href="forumdisplay.php?fid=26">RPG-Ecke</a></strong><div class="smalltext">Der Bereich für Rollenspiele (Beiträge werden nicht gezählt)<!-- start: forumbit_moderators -->
+<br>Moderiert von: <a href="member.php?action=profile&amp;uid=1277">Conqi</a>, <a href="member.php?action=profile&amp;uid=7191">DaaVid</a>, <a href="member.php?action=profile&amp;uid=10779">DrDerrek</a>, <a href="member.php?action=profile&amp;uid=9656">Herrmannsegerman</a>
+<!-- end: forumbit_moderators --><!-- start: forumbit_subforums -->
+<br><strong>Unterforen:</strong> <a href="forumdisplay.php?fid=28" title="">Infos &amp; Diskussionen</a>, <a href="forumdisplay.php?fid=36" title="">Anmeldungen &amp; Charaktere</a>, <a href="forumdisplay.php?fid=37" title="">Umfragen, Planungen, Ideen</a>, <a href="forumdisplay.php?fid=51" title="">Archiv</a>
+<!-- end: forumbit_subforums --></div></div>
+</td>
+<td class="trow2" valign="center" align="right" style="white-space: nowrap; border-bottom: 1px solid #323232; font-size: 18px; padding-right: 10px;" colspan="2">993 / 231.690</td>
+<td class="trow2" valign="center" align="left" style="white-space: nowrap; border-right: 1px solid #323232; border-bottom: 1px solid #323232; padding-left: 10px;"><!-- start: forumbit_depth2_forum_lastpost -->
+<span class="smalltext">
+<a href="showthread.php?tid=29437&amp;action=lastpost" title="Deutschsprachige Begriffe im Fandom?"><strong>Deutschsprachige Begriffe...</strong></a>
+<br>23.04.2024<br>von <a href="https://www.bronies.de/member.php?action=profile&amp;uid=8809">Scootadash</a></span>
+<!-- end: forumbit_depth2_forum_lastpost --></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow1" align="center" valign="center" width="1" style="border-left: 1px solid #323232; border-bottom: 1px solid #323232; padding: 20px;"><img src="https://www.bronies.de/images/sweetdreams/ficons/70_on.png" alt="Forum enthält neue Beiträge" title="Forum enthält neue Beiträge - Klicke hier, um das Forum als gelesen zu markieren" class="ajax_mark_read" id="mark_read_70" style="cursor: pointer;"></td>
+<td class="trow1" valign="center" style="border-bottom: 1px solid #323232;">
+<div class="forumbit_depth2_forum_description" style="-moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; -khtml-border-radius: 5px 5px 5px 5px; border: 1px solid #CCCCCC; background: #F0F0F0; padding: 5px;"><strong><a href="forumdisplay.php?fid=70">RPG-Ecke light</a></strong><div class="smalltext">Ein Ort für alle RPGs ohne Ziel und Leitung (Beiträge werden nicht gezählt)<!-- start: forumbit_moderators -->
+<br>Moderiert von: <a href="member.php?action=profile&amp;uid=1277">Conqi</a>, <a href="member.php?action=profile&amp;uid=7191">DaaVid</a>, <a href="member.php?action=profile&amp;uid=10779">DrDerrek</a>, <a href="member.php?action=profile&amp;uid=9656">Herrmannsegerman</a>
+<!-- end: forumbit_moderators --><!-- start: forumbit_subforums -->
+<br><strong>Unterforen:</strong> <a href="forumdisplay.php?fid=71" title="">Infos &amp; Diskussionen</a>, <a href="forumdisplay.php?fid=72" title="">Anmeldung &amp; Charaktere</a>, <a href="forumdisplay.php?fid=73" title="">Umfragen, Planungen, Ideen</a>, <a href="forumdisplay.php?fid=74" title="">Archiv</a>
+<!-- end: forumbit_subforums --></div></div>
+</td>
+<td class="trow1" valign="center" align="right" style="white-space: nowrap; border-bottom: 1px solid #323232; font-size: 18px; padding-right: 10px;" colspan="2">1.130 / 2.026.916</td>
+<td class="trow1" valign="center" align="left" style="white-space: nowrap; border-right: 1px solid #323232; border-bottom: 1px solid #323232; padding-left: 10px;"><!-- start: forumbit_depth2_forum_lastpost -->
+<span class="smalltext">
+<a href="showthread.php?tid=25623&amp;action=lastpost" title="RPG: Die Zukunft von Colterrytown"><strong>RPG: Die Zukunft von Colt...</strong></a>
+<br>12.05.2024<br>von <a href="https://www.bronies.de/member.php?action=profile&amp;uid=6535">N7 Rainbow Dash</a></span>
+<!-- end: forumbit_depth2_forum_lastpost --></td>
+</tr>
+<!-- end: forumbit_depth2_forum -->
+</tbody>
+</table>
+<br>
+<!-- end: forumbit_depth1_cat --><!-- start: forumbit_depth1_cat -->
+<table border="0" cellspacing="0" cellpadding="4" class="tborder">
+<thead>
+<tr>
+<td class="thead" colspan="5">
+<div class="expcolimage"><img src="https://www.bronies.de/images/sweetdreams/collapse.png" id="cat_11_img" class="expander" alt="[-]" title="[-]" style="cursor: pointer;"></div>
+<div><strong><a href="forumdisplay.php?fid=11">Off-Topic</a></strong><br><div class="smalltext">Alles zum Rest
+
+<span class="supervisors" style="float: right;">
+Supervisors: <a href="http://www.bronies.de/member.php?action=profile&amp;uid=2220" target="blank">Koyo</a>
+</span></div></div>
+</td>
+</tr>
+</thead>
+<tbody style="" id="cat_11_e">
+<tr>
+<td class="tcat" colspan="2"><span class="smalltext"><strong>Forum</strong></span></td>
+<td class="tcat" width="85" align="center" style="white-space: nowrap"><span class="smalltext"><strong>Themen</strong></span></td>
+<td class="tcat" width="85" align="center" style="white-space: nowrap"><span class="smalltext"><strong>Beiträge</strong></span></td>
+<td class="tcat" width="200" align="center"><span class="smalltext"><strong>Letzter Beitrag</strong></span></td>
+</tr>
+<!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow1" align="center" valign="center" width="1" style="border-left: 1px solid #323232; border-bottom: 1px solid #323232; padding: 20px;"><img src="https://www.bronies.de/images/sweetdreams/ficons/12_on.png" alt="Forum enthält neue Beiträge" title="Forum enthält neue Beiträge - Klicke hier, um das Forum als gelesen zu markieren" class="ajax_mark_read" id="mark_read_12" style="cursor: pointer;"></td>
+<td class="trow1" valign="center" style="border-bottom: 1px solid #323232;">
+<div class="forumbit_depth2_forum_description" style="-moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; -khtml-border-radius: 5px 5px 5px 5px; border: 1px solid #CCCCCC; background: #F0F0F0; padding: 5px;"><strong><a href="forumdisplay.php?fid=12">Film &amp; Fernsehen</a></strong><div class="smalltext">Andere Serien, Shows und Filme<!-- start: forumbit_moderators -->
+<br>Moderiert von: <a href="member.php?action=profile&amp;uid=10779">DrDerrek</a>
+<!-- end: forumbit_moderators --></div></div>
+</td>
+<td class="trow1" valign="center" align="right" style="white-space: nowrap; border-bottom: 1px solid #323232; font-size: 18px; padding-right: 10px;" colspan="2">575 / 31.575</td>
+<td class="trow1" valign="center" align="left" style="white-space: nowrap; border-right: 1px solid #323232; border-bottom: 1px solid #323232; padding-left: 10px;"><!-- start: forumbit_depth2_forum_lastpost -->
+<span class="smalltext">
+<a href="showthread.php?tid=28705&amp;action=lastpost" title="Hazbin Hotel, Helluva Boss &amp; andere Vivziepop-Werke"><strong>Hazbin Hotel, Helluva Bos...</strong></a>
+<br>02.08.2025<br>von <a href="https://www.bronies.de/member.php?action=profile&amp;uid=8809">Scootadash</a></span>
+<!-- end: forumbit_depth2_forum_lastpost --></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow2" align="center" valign="center" width="1" style="border-left: 1px solid #323232; border-bottom: 1px solid #323232; padding: 20px;"><img src="https://www.bronies.de/images/sweetdreams/ficons/13_on.png" alt="Forum enthält neue Beiträge" title="Forum enthält neue Beiträge - Klicke hier, um das Forum als gelesen zu markieren" class="ajax_mark_read" id="mark_read_13" style="cursor: pointer;"></td>
+<td class="trow2" valign="center" style="border-bottom: 1px solid #323232;">
+<div class="forumbit_depth2_forum_description" style="-moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; -khtml-border-radius: 5px 5px 5px 5px; border: 1px solid #CCCCCC; background: #F0F0F0; padding: 5px;"><strong><a href="forumdisplay.php?fid=13">Games &amp; Konsolen</a></strong><div class="smalltext">Die Welt der Videospiele und Zocker<!-- start: forumbit_moderators -->
+<br>Moderiert von: <a href="member.php?action=profile&amp;uid=7191">DaaVid</a>
+<!-- end: forumbit_moderators --><!-- start: forumbit_subforums -->
+<br><strong>Unterforen:</strong> <a href="forumdisplay.php?fid=50" title="">Clans &amp; Verabredungen</a>
+<!-- end: forumbit_subforums --></div></div>
+</td>
+<td class="trow2" valign="center" align="right" style="white-space: nowrap; border-bottom: 1px solid #323232; font-size: 18px; padding-right: 10px;" colspan="2">1.710 / 153.632</td>
+<td class="trow2" valign="center" align="left" style="white-space: nowrap; border-right: 1px solid #323232; border-bottom: 1px solid #323232; padding-left: 10px;"><!-- start: forumbit_depth2_forum_lastpost -->
+<span class="smalltext">
+<a href="showthread.php?tid=23696&amp;action=lastpost" title="Sammelthread für die Lego Spiele"><strong>Sammelthread für die Lego...</strong></a>
+<br>09.06.2025<br>von <a href="https://www.bronies.de/member.php?action=profile&amp;uid=1522">Pokemon-pony</a></span>
+<!-- end: forumbit_depth2_forum_lastpost --></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow1" align="center" valign="center" width="1" style="border-left: 1px solid #323232; border-bottom: 1px solid #323232; padding: 20px;"><img src="https://www.bronies.de/images/sweetdreams/ficons/54_on.png" alt="Forum enthält neue Beiträge" title="Forum enthält neue Beiträge - Klicke hier, um das Forum als gelesen zu markieren" class="ajax_mark_read" id="mark_read_54" style="cursor: pointer;"></td>
+<td class="trow1" valign="center" style="border-bottom: 1px solid #323232;">
+<div class="forumbit_depth2_forum_description" style="-moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; -khtml-border-radius: 5px 5px 5px 5px; border: 1px solid #CCCCCC; background: #F0F0F0; padding: 5px;"><strong><a href="forumdisplay.php?fid=54">Internet &amp; Technik</a></strong><div class="smalltext">Hardware, Software und das Web, sowie Computer allgemein<!-- start: forumbit_moderators -->
+<br>Moderiert von: <a href="member.php?action=profile&amp;uid=1277">Conqi</a>
+<!-- end: forumbit_moderators --></div></div>
+</td>
+<td class="trow1" valign="center" align="right" style="white-space: nowrap; border-bottom: 1px solid #323232; font-size: 18px; padding-right: 10px;" colspan="2">828 / 45.770</td>
+<td class="trow1" valign="center" align="left" style="white-space: nowrap; border-right: 1px solid #323232; border-bottom: 1px solid #323232; padding-left: 10px;"><!-- start: forumbit_depth2_forum_lastpost -->
+<span class="smalltext">
+<a href="showthread.php?tid=15537&amp;action=lastpost" title="Youtube Update"><strong>Youtube Update</strong></a>
+<br>05.08.2025<br>von <a href="https://www.bronies.de/member.php?action=profile&amp;uid=226">Killbeat</a></span>
+<!-- end: forumbit_depth2_forum_lastpost --></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow2" align="center" valign="center" width="1" style="border-left: 1px solid #323232; border-bottom: 1px solid #323232; padding: 20px;"><img src="https://www.bronies.de/images/sweetdreams/ficons/47_on.png" alt="Forum enthält neue Beiträge" title="Forum enthält neue Beiträge - Klicke hier, um das Forum als gelesen zu markieren" class="ajax_mark_read" id="mark_read_47" style="cursor: pointer;"></td>
+<td class="trow2" valign="center" style="border-bottom: 1px solid #323232;">
+<div class="forumbit_depth2_forum_description" style="-moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; -khtml-border-radius: 5px 5px 5px 5px; border: 1px solid #CCCCCC; background: #F0F0F0; padding: 5px;"><strong><a href="forumdisplay.php?fid=47">Musik &amp; Literatur</a></strong><div class="smalltext">Lieder, Bücher, Comics, Instrumente, DJs, Bands und Autoren<!-- start: forumbit_moderators -->
+<br>Moderiert von: <a href="member.php?action=profile&amp;uid=7191">DaaVid</a>, <a href="member.php?action=profile&amp;uid=2220">Koyo</a>
+<!-- end: forumbit_moderators --></div></div>
+</td>
+<td class="trow2" valign="center" align="right" style="white-space: nowrap; border-bottom: 1px solid #323232; font-size: 18px; padding-right: 10px;" colspan="2">428 / 26.626</td>
+<td class="trow2" valign="center" align="left" style="white-space: nowrap; border-right: 1px solid #323232; border-bottom: 1px solid #323232; padding-left: 10px;"><!-- start: forumbit_depth2_forum_lastpost -->
+<span class="smalltext">
+<a href="showthread.php?tid=2531&amp;action=lastpost" title="Eure Musikrichtung - KURZ &amp; KNAPP"><strong>Eure Musikrichtung - KURZ...</strong></a>
+<br>09.05.2025<br>von <a href="https://www.bronies.de/member.php?action=profile&amp;uid=14252">Lorenor Nightmare</a></span>
+<!-- end: forumbit_depth2_forum_lastpost --></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow1" align="center" valign="center" width="1" style="border-left: 1px solid #323232; border-bottom: 1px solid #323232; padding: 20px;"><img src="https://www.bronies.de/images/sweetdreams/ficons/77_on.png" alt="Forum enthält neue Beiträge" title="Forum enthält neue Beiträge - Klicke hier, um das Forum als gelesen zu markieren" class="ajax_mark_read" id="mark_read_77" style="cursor: pointer;"></td>
+<td class="trow1" valign="center" style="border-bottom: 1px solid #323232;">
+<div class="forumbit_depth2_forum_description" style="-moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; -khtml-border-radius: 5px 5px 5px 5px; border: 1px solid #CCCCCC; background: #F0F0F0; padding: 5px;"><strong><a href="forumdisplay.php?fid=77">Anime &amp; Manga</a></strong><div class="smalltext">Otaku-Paradise. Kore wa kawaii desu ne! ^_^<!-- start: forumbit_moderators -->
+<br>Moderiert von: <a href="member.php?action=profile&amp;uid=7191">DaaVid</a>
+<!-- end: forumbit_moderators --></div></div>
+</td>
+<td class="trow1" valign="center" align="right" style="white-space: nowrap; border-bottom: 1px solid #323232; font-size: 18px; padding-right: 10px;" colspan="2">141 / 11.536</td>
+<td class="trow1" valign="center" align="left" style="white-space: nowrap; border-right: 1px solid #323232; border-bottom: 1px solid #323232; padding-left: 10px;"><!-- start: forumbit_depth2_forum_lastpost -->
+<span class="smalltext">
+<a href="showthread.php?tid=29538&amp;action=lastpost" title="Anime oder Manga? Was mögt ihr mehr?"><strong>Anime oder Manga? Was mög...</strong></a>
+<br>14.06.2025<br>von <a href="https://www.bronies.de/member.php?action=profile&amp;uid=14252">Lorenor Nightmare</a></span>
+<!-- end: forumbit_depth2_forum_lastpost --></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow2" align="center" valign="center" width="1" style="border-left: 1px solid #323232; border-bottom: 1px solid #323232; padding: 20px;"><img src="https://www.bronies.de/images/sweetdreams/ficons/80_on.png" alt="Forum enthält neue Beiträge" title="Forum enthält neue Beiträge - Klicke hier, um das Forum als gelesen zu markieren" class="ajax_mark_read" id="mark_read_80" style="cursor: pointer;"></td>
+<td class="trow2" valign="center" style="border-bottom: 1px solid #323232;">
+<div class="forumbit_depth2_forum_description" style="-moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; -khtml-border-radius: 5px 5px 5px 5px; border: 1px solid #CCCCCC; background: #F0F0F0; padding: 5px;"><strong><a href="forumdisplay.php?fid=80">Furry</a></strong><div class="smalltext">Notices Subforum. OwO What's this?<!-- start: forumbit_moderators -->
+<br>Moderiert von: <a href="member.php?action=profile&amp;uid=7191">DaaVid</a>, <a href="member.php?action=profile&amp;uid=2220">Koyo</a>
+<!-- end: forumbit_moderators --></div></div>
+</td>
+<td class="trow2" valign="center" align="right" style="white-space: nowrap; border-bottom: 1px solid #323232; font-size: 18px; padding-right: 10px;" colspan="2">25 / 1.760</td>
+<td class="trow2" valign="center" align="left" style="white-space: nowrap; border-right: 1px solid #323232; border-bottom: 1px solid #323232; padding-left: 10px;"><!-- start: forumbit_depth2_forum_lastpost -->
+<span class="smalltext">
+<a href="showthread.php?tid=1015&amp;action=lastpost" title="Furry"><strong>Furry</strong></a>
+<br>08.01.2024<br>von <a href="https://www.bronies.de/member.php?action=profile&amp;uid=16409">161pony</a></span>
+<!-- end: forumbit_depth2_forum_lastpost --></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow1" align="center" valign="center" width="1" style="border-left: 1px solid #323232; border-bottom: 1px solid #323232; padding: 20px;"><img src="https://www.bronies.de/images/sweetdreams/ficons/14_on.png" alt="Forum enthält neue Beiträge" title="Forum enthält neue Beiträge - Klicke hier, um das Forum als gelesen zu markieren" class="ajax_mark_read" id="mark_read_14" style="cursor: pointer;"></td>
+<td class="trow1" valign="center" style="border-bottom: 1px solid #323232;">
+<div class="forumbit_depth2_forum_description" style="-moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; -khtml-border-radius: 5px 5px 5px 5px; border: 1px solid #CCCCCC; background: #F0F0F0; padding: 5px;"><strong><a href="forumdisplay.php?fid=14">Diskussionen</a></strong><div class="smalltext">Ob persönlich oder politisch - hier kann man diskutieren<!-- start: forumbit_moderators -->
+<br>Moderiert von: <a href="member.php?action=profile&amp;uid=7191">DaaVid</a>, <a href="member.php?action=profile&amp;uid=2220">Koyo</a>
+<!-- end: forumbit_moderators --><!-- start: forumbit_subforums -->
+<br><strong>Unterforen:</strong> <a href="forumdisplay.php?fid=42" title="">Atelier</a>
+<!-- end: forumbit_subforums --></div></div>
+</td>
+<td class="trow1" valign="center" align="right" style="white-space: nowrap; border-bottom: 1px solid #323232; font-size: 18px; padding-right: 10px;" colspan="2">1.090 / 110.032</td>
+<td class="trow1" valign="center" align="left" style="white-space: nowrap; border-right: 1px solid #323232; border-bottom: 1px solid #323232; padding-left: 10px;"><!-- start: forumbit_depth2_forum_lastpost -->
+<span class="smalltext">
+<a href="showthread.php?tid=25843&amp;action=lastpost" title="Gedenken: an allgemein bekannte Persönlichkeiten"><strong>Gedenken: an allgemein be...</strong></a>
+<br>25.07.2025<br>von <a href="https://www.bronies.de/member.php?action=profile&amp;uid=12947">Herr Mahlzahn</a></span>
+<!-- end: forumbit_depth2_forum_lastpost --></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow2" align="center" valign="center" width="1" style="border-left: 1px solid #323232; border-bottom: 1px solid #323232; padding: 20px;"><img src="https://www.bronies.de/images/sweetdreams/ficons/55_on.png" alt="Forum enthält neue Beiträge" title="Forum enthält neue Beiträge - Klicke hier, um das Forum als gelesen zu markieren" class="ajax_mark_read" id="mark_read_55" style="cursor: pointer;"></td>
+<td class="trow2" valign="center" style="border-bottom: 1px solid #323232;">
+<div class="forumbit_depth2_forum_description" style="-moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; -khtml-border-radius: 5px 5px 5px 5px; border: 1px solid #CCCCCC; background: #F0F0F0; padding: 5px;"><strong><a href="forumdisplay.php?fid=55">Smalltalk</a></strong><div class="smalltext">Lorem ipsum: Lockere Gespräche über Dies &amp; Das<!-- start: forumbit_moderators -->
+<br>Moderiert von: <a href="member.php?action=profile&amp;uid=9656">Herrmannsegerman</a>
+<!-- end: forumbit_moderators --></div></div>
+</td>
+<td class="trow2" valign="center" align="right" style="white-space: nowrap; border-bottom: 1px solid #323232; font-size: 18px; padding-right: 10px;" colspan="2">781 / 98.440</td>
+<td class="trow2" valign="center" align="left" style="white-space: nowrap; border-right: 1px solid #323232; border-bottom: 1px solid #323232; padding-left: 10px;"><!-- start: forumbit_depth2_forum_lastpost -->
+<span class="smalltext">
+<a href="showthread.php?tid=634&amp;action=lastpost" title="Haustiere"><strong>Haustiere</strong></a>
+<br>09.08.2025<br>von <a href="https://www.bronies.de/member.php?action=profile&amp;uid=2">Mc. Hoof</a></span>
+<!-- end: forumbit_depth2_forum_lastpost --></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow1" align="center" valign="center" width="1" style="border-left: 1px solid #323232; border-bottom: 1px solid #323232; padding: 20px;"><img src="https://www.bronies.de/images/sweetdreams/ficons/60_on.png" alt="Forum enthält neue Beiträge" title="Forum enthält neue Beiträge - Klicke hier, um das Forum als gelesen zu markieren" class="ajax_mark_read" id="mark_read_60" style="cursor: pointer;"></td>
+<td class="trow1" valign="center" style="border-bottom: 1px solid #323232;">
+<div class="forumbit_depth2_forum_description" style="-moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; -khtml-border-radius: 5px 5px 5px 5px; border: 1px solid #CCCCCC; background: #F0F0F0; padding: 5px;"><strong><a href="forumdisplay.php?fid=60">Geburtstage &amp; Vorstellungen</a></strong><div class="smalltext">Der kleine Ort für Glückwünsche und Begrüßungen
+(Beiträge werden nicht gezählt)<!-- start: forumbit_moderators -->
+<br>Moderiert von: <a href="member.php?action=profile&amp;uid=9656">Herrmannsegerman</a>
+<!-- end: forumbit_moderators --></div></div>
+</td>
+<td class="trow1" valign="center" align="right" style="white-space: nowrap; border-bottom: 1px solid #323232; font-size: 18px; padding-right: 10px;" colspan="2">847 / 7.358</td>
+<td class="trow1" valign="center" align="left" style="white-space: nowrap; border-right: 1px solid #323232; border-bottom: 1px solid #323232; padding-left: 10px;"><!-- start: forumbit_depth2_forum_lastpost -->
+<span class="smalltext">
+<a href="showthread.php?tid=29559&amp;action=lastpost" title="Guten Tag"><strong>Guten Tag</strong></a>
+<br>Vor 33 Minuten<br>von <a href="https://www.bronies.de/member.php?action=profile&amp;uid=16504">Julholsch</a></span>
+<!-- end: forumbit_depth2_forum_lastpost --></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow2" align="center" valign="center" width="1" style="border-left: 1px solid #323232; border-bottom: 1px solid #323232; padding: 20px;"><img src="https://www.bronies.de/images/sweetdreams/ficons/15_on.png" alt="Forum enthält neue Beiträge" title="Forum enthält neue Beiträge - Klicke hier, um das Forum als gelesen zu markieren" class="ajax_mark_read" id="mark_read_15" style="cursor: pointer;"></td>
+<td class="trow2" valign="center" style="border-bottom: 1px solid #323232;">
+<div class="forumbit_depth2_forum_description" style="-moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; -khtml-border-radius: 5px 5px 5px 5px; border: 1px solid #CCCCCC; background: #F0F0F0; padding: 5px;"><strong><a href="forumdisplay.php?fid=15">Spaß &amp; Sinnlos</a></strong><div class="smalltext">Sonstige Unterhaltungen (Beiträge werden nicht gezählt)<!-- start: forumbit_moderators -->
+<br>Moderiert von: <a href="member.php?action=profile&amp;uid=7191">DaaVid</a>
+<!-- end: forumbit_moderators --><!-- start: forumbit_subforums -->
+<br><strong>Unterforen:</strong> <a href="forumdisplay.php?fid=46" title="">Offtopic-Fanclubs</a>
+<!-- end: forumbit_subforums --></div></div>
+</td>
+<td class="trow2" valign="center" align="right" style="white-space: nowrap; border-bottom: 1px solid #323232; font-size: 18px; padding-right: 10px;" colspan="2">2.293 / 789.534</td>
+<td class="trow2" valign="center" align="left" style="white-space: nowrap; border-right: 1px solid #323232; border-bottom: 1px solid #323232; padding-left: 10px;"><!-- start: forumbit_depth2_forum_lastpost -->
+<span class="smalltext">
+<a href="showthread.php?tid=27936&amp;action=lastpost" title="Freud'sche Verleser"><strong>Freud'sche Verleser</strong></a>
+<br>Vor 1 Stunde<br>von <a href="https://www.bronies.de/member.php?action=profile&amp;uid=8809">Scootadash</a></span>
+<!-- end: forumbit_depth2_forum_lastpost --></td>
+</tr>
+<!-- end: forumbit_depth2_forum --><!-- start: forumbit_depth2_forum -->
+<tr>
+<td class="trow1" align="center" valign="center" width="1" style="border-left: 1px solid #323232; border-bottom: 1px solid #323232; padding: 20px;"><img src="https://www.bronies.de/images/sweetdreams/ficons/16_on.png" alt="Forum enthält neue Beiträge" title="Forum enthält neue Beiträge - Klicke hier, um das Forum als gelesen zu markieren" class="ajax_mark_read" id="mark_read_16" style="cursor: pointer;"></td>
+<td class="trow1" valign="center" style="border-bottom: 1px solid #323232;">
+<div class="forumbit_depth2_forum_description" style="-moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; -khtml-border-radius: 5px 5px 5px 5px; border: 1px solid #CCCCCC; background: #F0F0F0; padding: 5px;"><strong><a href="forumdisplay.php?fid=16">Forenspielchen</a></strong><div class="smalltext">Spielplatz &amp; Rätselecke (Beiträge werden nicht gezählt)<!-- start: forumbit_moderators -->
+<br>Moderiert von: <a href="member.php?action=profile&amp;uid=7191">DaaVid</a>, <a href="member.php?action=profile&amp;uid=9656">Herrmannsegerman</a>
+<!-- end: forumbit_moderators --></div></div>
+</td>
+<td class="trow1" valign="center" align="right" style="white-space: nowrap; border-bottom: 1px solid #323232; font-size: 18px; padding-right: 10px;" colspan="2">703 / 2.649.868</td>
+<td class="trow1" valign="center" align="left" style="white-space: nowrap; border-right: 1px solid #323232; border-bottom: 1px solid #323232; padding-left: 10px;"><!-- start: forumbit_depth2_forum_lastpost -->
+<span class="smalltext">
+<a href="showthread.php?tid=6235&amp;action=lastpost" title="Gut vs. Böse"><strong>Gut vs. Böse</strong></a>
+<br>Vor 1 Minute<br>von <a href="https://www.bronies.de/member.php?action=profile&amp;uid=12947">Herr Mahlzahn</a></span>
+<!-- end: forumbit_depth2_forum_lastpost --></td>
+</tr>
+<!-- end: forumbit_depth2_forum -->
+</tbody>
+</table>
+<br>
+<!-- end: forumbit_depth1_cat -->
+
+
+
+<!-- start: index_boardstats -->
+<table border="0" cellspacing="0" cellpadding="4" class="tborder">
+<thead>
+<tr>
+<td class="thead">
+<div class="expcolimage"><img src="https://www.bronies.de/images/sweetdreams/collapse.png" id="boardstats_img" class="expander" alt="[-]" title="[-]" style="cursor: pointer;"></div>
+<div style="font-size: 18px; text-shadow: #000000 1px 1px 0px; font-family: arial, sans-serif;">Foren-Statistiken</div>
+</td>
+</tr>
+</thead>
+<tbody style="" id="boardstats_e">
+<!-- start: index_whosonline -->
+<tr>
+<td class="tcat"><span>Wer ist online? [<strong><a href="online.php">Vollständige Liste</a></strong>]</span></td>
+</tr>
+<tr>
+<td class="trow1" valign="center" style="border-left: 1px solid #323232; border-right: 1px solid #323232; color: #525252;"><img src="//www.bronies.de/whosonline-rd.png" style="float: left; padding: 15px;"><div style="margin-left: 78px; padding-top: 15px;"><span class="smalltext">891 Benutzer aktiv in den letzten 15 Minuten: 7 Mitglieder, 2 davon unsichtbar und 884 Gäste<br><a href="https://www.bronies.de/member.php?action=profile&amp;uid=12947">Herr Mahlzahn</a>, <a href="https://www.bronies.de/member.php?action=profile&amp;uid=15370">hoergwuenk</a>, <a href="https://www.bronies.de/member.php?action=profile&amp;uid=5201">Lefteyehawk</a>, <a href="https://www.bronies.de/member.php?action=profile&amp;uid=15447">Pezi</a>, <a href="https://www.bronies.de/member.php?action=profile&amp;uid=8809">Scootadash</a></span></div></td>
+</tr>
+<!-- end: index_whosonline -->
+<!-- start: index_birthdays -->
+<tr><td class="tcat"><span class="smalltext"><strong>Heutige Geburtstage</strong></span></td></tr>
+<tr>
+<td class="trow1"><span class="smalltext"><a href="https://www.bronies.de/member.php?action=profile&amp;uid=988">Fuffelpups</a> (38), <a href="https://www.bronies.de/member.php?action=profile&amp;uid=1325">BionicPony</a> (31), <a href="https://www.bronies.de/member.php?action=profile&amp;uid=2011">FurFlux</a> (33), <a href="https://www.bronies.de/member.php?action=profile&amp;uid=6282">RetroFreak138</a> (28), <a href="https://www.bronies.de/member.php?action=profile&amp;uid=8425">Hagane</a> (34), <a href="https://www.bronies.de/member.php?action=profile&amp;uid=11027">DarkChaos</a> (36) - 7 versteckt</span></td>
+</tr>
+<!-- end: index_birthdays -->
+<!-- start: index_stats -->
+<tr><td class="tcat">Foren-Statistiken</td></tr>
+<tr>
+<td class="trow1" style="border-left: 1px solid #323232; border-right: 1px solid #323232; border-bottom: 1px solid #323232; color: #525252;"><img src="//www.bronies.de/statistics-fs.png" style="float: left; padding: 15px;"><span class="smalltext">
+<div style="padding-top: 7px;">Alle Mitglieder haben insgesamt 8.061.395 Beiträge in 27.662 Themen erstellt<br>
+Registrierte Mitglieder: 16.534<br>
+Unser neuestes Mitglied heißt: <strong><a href="https://www.bronies.de/member.php?action=profile&amp;uid=16617">Krafti</a></strong><br>
+Besucherrekord: 4.485 (18.07.2014 um 21:11 Uhr)</div>
+</span>
+</td>
+</tr>
+<!-- end: index_stats -->
+</tbody>
+</table>
+<!-- end: index_boardstats -->
+
+
+<!-- start: footer -->
+	</div>
+    <br>
+    <div align="right" style="margin-right:20px"><!-- start: footer_themeselect -->
+<div class="theme">
+<form method="post" action="/index.php" id="theme_select">
+	
+	<input type="hidden" name="my_post_key" value="e497fa1bb888e738582f6484d5cf649d">
+	<!-- start: footer_themeselector -->
+<select name="theme" onchange="MyBB.changeTheme();">
+<optgroup label="Einfache Themeauswahl">
+<!-- start: usercp_themeselector_option -->
+<option value="39">MyBB GoMobile</option>
+<!-- end: usercp_themeselector_option --><!-- start: usercp_themeselector_option -->
+<option value="62">Applejack</option>
+<!-- end: usercp_themeselector_option --><!-- start: usercp_themeselector_option -->
+<option value="41">Bat Ponies</option>
+<!-- end: usercp_themeselector_option --><!-- start: usercp_themeselector_option -->
+<option value="43">Brony Fair</option>
+<!-- end: usercp_themeselector_option --><!-- start: usercp_themeselector_option -->
+<option value="28">Chrysalis</option>
+<!-- end: usercp_themeselector_option --><!-- start: usercp_themeselector_option -->
+<option value="64">Crazy about Ponies</option>
+<!-- end: usercp_themeselector_option --><!-- start: usercp_themeselector_option -->
+<option value="26">Daring Do</option>
+<!-- end: usercp_themeselector_option --><!-- start: usercp_themeselector_option -->
+<option value="57">Derpy Muffin</option>
+<!-- end: usercp_themeselector_option --><!-- start: usercp_themeselector_option -->
+<option value="36">Discord</option>
+<!-- end: usercp_themeselector_option --><!-- start: usercp_themeselector_option -->
+<option value="45">Fantastic Fantasy</option>
+<!-- end: usercp_themeselector_option --><!-- start: usercp_themeselector_option -->
+<option value="22">Gala Dreams</option>
+<!-- end: usercp_themeselector_option --><!-- start: usercp_themeselector_option -->
+<option value="34">Hearth's Warming Eve 2013</option>
+<!-- end: usercp_themeselector_option --><!-- start: usercp_themeselector_option -->
+<option value="23">Luna Dreams 2012</option>
+<!-- end: usercp_themeselector_option --><!-- start: usercp_themeselector_option -->
+<option value="31">Luna Dreams 2013</option>
+<!-- end: usercp_themeselector_option --><!-- start: usercp_themeselector_option -->
+<option value="46">Luna Dreams 2015</option>
+<!-- end: usercp_themeselector_option --><!-- start: usercp_themeselector_option -->
+<option value="30">Lyra Green</option>
+<!-- end: usercp_themeselector_option --><!-- start: usercp_themeselector_option -->
+<option value="68">Maud Pie</option>
+<!-- end: usercp_themeselector_option --><!-- start: usercp_themeselector_option -->
+<option value="53">Meme Theme</option>
+<!-- end: usercp_themeselector_option --><!-- start: usercp_themeselector_option -->
+<option value="55">Neutral</option>
+<!-- end: usercp_themeselector_option --><!-- start: usercp_themeselector_option -->
+<option value="44">Over 10.000</option>
+<!-- end: usercp_themeselector_option --><!-- start: usercp_themeselector_option -->
+<option value="61">Pinkie Pie</option>
+<!-- end: usercp_themeselector_option --><!-- start: usercp_themeselector_option -->
+<option value="27">Pony Dreams</option>
+<!-- end: usercp_themeselector_option --><!-- start: usercp_themeselector_option -->
+<option value="15">Pony Dreams 2012</option>
+<!-- end: usercp_themeselector_option --><!-- start: usercp_themeselector_option -->
+<option value="40">Pony Dreams 2014</option>
+<!-- end: usercp_themeselector_option --><!-- start: usercp_themeselector_option -->
+<option value="56">Pony Dreams 2016</option>
+<!-- end: usercp_themeselector_option --><!-- start: usercp_themeselector_option -->
+<option value="63">Princess Celestia</option>
+<!-- end: usercp_themeselector_option --><!-- start: usercp_themeselector_option -->
+<option value="69">Rainbow Dash</option>
+<!-- end: usercp_themeselector_option --><!-- start: usercp_themeselector_option -->
+<option value="65">Rarity</option>
+<!-- end: usercp_themeselector_option --><!-- start: usercp_themeselector_option -->
+<option value="58">Rock Sisters</option>
+<!-- end: usercp_themeselector_option --><!-- start: usercp_themeselector_option -->
+<option value="66">Scootaloo</option>
+<!-- end: usercp_themeselector_option --><!-- start: usercp_themeselector_option -->
+<option value="29">Soviet Solar Empire</option>
+<!-- end: usercp_themeselector_option --><!-- start: usercp_themeselector_option -->
+<option value="67">Sunset Shimmer</option>
+<!-- end: usercp_themeselector_option --><!-- start: usercp_themeselector_option -->
+<option value="42">Testpony's Crackle Time No.1</option>
+<!-- end: usercp_themeselector_option --><!-- start: usercp_themeselector_option -->
+<option value="60">Timberwolves</option>
+<!-- end: usercp_themeselector_option --><!-- start: usercp_themeselector_option -->
+<option value="59">Vaporwave</option>
+<!-- end: usercp_themeselector_option --><!-- start: usercp_themeselector_option -->
+<option value="70">HIVE</option>
+<!-- end: usercp_themeselector_option --><!-- start: usercp_themeselector_option -->
+<option value="71">Jsjaj</option>
+<!-- end: usercp_themeselector_option --><!-- start: usercp_themeselector_option -->
+<option value="73">Österreich - Summer Meetup 2019</option>
+<!-- end: usercp_themeselector_option --><!-- start: usercp_themeselector_option -->
+<option value="72">SSSSS</option>
+<!-- end: usercp_themeselector_option -->
+</optgroup>
+</select>
+<!-- end: footer_themeselector -->
+	<!-- start: gobutton -->
+<input type="submit" class="button" value="Los">
+<!-- end: gobutton -->
+</form>
+</div>
+<!-- end: footer_themeselect --></div>
+    <br>
+    </div>
+  </div>
+<div id="footer">
+	<div class="upper">
+        <br>
+        <script language="Javascript" src="//www.bronies.de/counter/counter.php?page=bronies"> </script><img src="//www.bronies.de/counter/styles/black_white/1.png" border="0"><img src="//www.bronies.de/counter/styles/black_white/2.png" border="0"><img src="//www.bronies.de/counter/styles/black_white/4.png" border="0"><img src="//www.bronies.de/counter/styles/black_white/5.png" border="0"><img src="//www.bronies.de/counter/styles/black_white/8.png" border="0"><img src="//www.bronies.de/counter/styles/black_white/2.png" border="0"><img src="//www.bronies.de/counter/styles/black_white/5.png" border="0"><img src="//www.bronies.de/counter/styles/black_white/2.png" border="0">
+		<div class="wrapper"><span style="font-weight: bold; display: block">
+			<br>
+			<!-- start: footer_contactus -->
+<a href="mailto:admin@bronies.de">Kontakt</a> |
+<!-- end: footer_contactus -->
+			<a href="https://www.bronies.de/misc.php?action=markread&amp;my_post_key=e497fa1bb888e738582f6484d5cf649d" onclick="if(confirm('Wirklich alles als gelesen markieren?')) { return true; } else {event.preventDefault();return false;}">Alle Foren als gelesen markieren</a> |
+			<a href="https://www.bronies.de/showteam.php">Forenteam</a> | 
+			<a href="https://www.bronies.de/stats.php">Statistiken</a> | 
+			<a href="https://www.bronies.de/showthread.php?tid=2" target="_blank">Forenregeln</a> | 
+			<a href="https://www.bronies.de/misc.php?page=impressum">Impressum</a> |
+			<a href="https://www.bronies.de/misc.php?page=privacypolicy">Datenschutzerklärung</a> |
+			<a href="https://www.bronies.de/archive/index.php">Druckansicht</a> | 
+			<a href="https://www.bronies.de/misc.php?action=help">Hilfe</a> | 
+			<a href="https://www.bronies.de/misc.php?action=syndication">RSS</a>
+             | <a href="misc.php?action=switch_version&amp;my_post_key=ec6924aa3f1e112e7827b481b17a2b13">Mobile Version</a>
+			<br>
+			<br>
+			</span>
+		</div>
+		<div class="wrapper">
+			<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+				<input type="hidden" name="cmd" value="_s-xclick">
+				<input type="hidden" name="hosted_button_id" value="CAUAMCJVYU7KY">
+				<input type="image" src="https://bronies.de/images/btn_donate_LG.png" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button">
+			</form>
+		</div>
+	</div>
+	<div class="lower">
+		<div class="wrapper">
+            <br>
+			<div id="copyright">
+				<!-- MyBB is free software developed and maintained by a volunteer community.
+					It would be much appreciated by the MyBB Group if you left the full copyright and "powered by" notice intact,
+					to show your support for MyBB.  If you choose to remove or modify the copyright below,
+					you may be refused support on the MyBB Community Forums.
+
+					This is free software, support us and we'll support you. -->
+				Deutsche Übersetzung: <a href="http://www.mybboard.de/" target="_blank">MyBBoard.de</a>, Powered by <a href="http://www.mybb.com" target="_blank">MyBB</a>, © 2002-2025 <a href="http://www.mybb.com" target="_blank">MyBB Group</a>.
+                <br>We do not own My Little Pony: Friendship Is Magic. We are not affiliated with Hasbro Inc. All rights reserved to their respective owners.<br><br>
+				<!-- End powered by -->
+			</div>
+		</div>
+      
+	</div>
+<!-- The following piece of code allows MyBB to run scheduled tasks. DO NOT REMOVE --><!-- start: task_image -->
+<img src="https://www.bronies.de/task.php" width="1" height="1" alt="">
+<!-- end: task_image --><!-- End task image code --><!-- UNREADPOSTS_JS -->
+
+</div>
+<!-- end: footer -->
+
+
+</body></html>

@@ -1,0 +1,1308 @@
+serial_number,source_dataset,source_group,ground_truth_category,binary_phishing_label,modality,campaign_id,char_length,prob_smishing,pred_smishing_50
+SMS05_00001,ExAIS_USER 7,ExAIS,commercial_spam,0,linkless,none,160,0.055134,0
+SMS05_00003,ExAIS_USER 1,ExAIS,ham,0,linkless,none,153,0.51827,1
+SMS05_00017,ExAIS_USER 2,ExAIS,ham,0,linkless,none,63,0.123698,0
+SMS05_00026,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,url_bearing,none,73,0.449643,0
+SMS05_00027,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,98,0.981122,1
+SMS05_00038,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,124,0.993591,1
+SMS05_00045,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,624,141,0.95597,1
+SMS05_00047,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,3372,45,0.63225,1
+SMS05_00054,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,62,0.081682,0
+SMS05_00056,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,32,0.432315,0
+SMS05_00060,UCI,UCI,ham,0,linkless,none,59,0.087151,0
+SMS05_00061,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,linkless,none,131,0.928868,1
+SMS05_00062,ExAIS_USER 4,ExAIS,ham,0,linkless,none,11,0.089452,0
+SMS05_00076,ExAIS_USER 16,ExAIS,commercial_spam,0,linkless,none,66,0.250602,0
+SMS05_00090,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,121,0.997644,1
+SMS05_00130,UCI,UCI,commercial_spam,0,linkless,none,106,0.144101,0
+SMS05_00135,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,30999,148,0.987801,1
+SMS05_00162,ExAIS_USER 2,ExAIS,ham,0,linkless,none,48,0.124241,0
+SMS05_00166,ExAIS_USER 11,ExAIS,ham,0,linkless,none,51,0.015189,0
+SMS05_00182,ExAIS_USER 17,ExAIS,ham,0,linkless,none,23,0.125596,0
+SMS05_00185,ExAIS_USER 16,ExAIS,ham,0,linkless,none,151,0.085184,0
+SMS05_00191,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,18,0.264525,0
+SMS05_00192,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1327,67,0.903188,1
+SMS05_00194,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,820,104,0.972081,1
+SMS05_00199,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,95,0.083294,0
+SMS05_00203,ExAIS_USER 16,ExAIS,commercial_spam,0,linkless,none,157,0.309148,0
+SMS05_00204,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,25,0.057894,0
+SMS05_00216,UCI,UCI,ham,0,linkless,none,48,0.174165,0
+SMS05_00254,UCI,UCI,ham,0,linkless,none,42,0.041112,0
+SMS05_00265,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,106,0.995682,1
+SMS05_00269,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,linkless,none,134,0.218795,0
+SMS05_00272,ExAIS_USER 6,ExAIS,commercial_spam,0,linkless,none,278,0.04148,0
+SMS05_00279,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,810,136,0.957217,1
+SMS05_00283,ExAIS_USER 16,ExAIS,ham,0,linkless,none,54,0.042896,0
+SMS05_00290,UCI,UCI,ham,0,linkless,none,13,0.078028,0
+SMS05_00295,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,url_bearing,none,101,0.936224,1
+SMS05_00297,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,linkless,none,146,0.899081,1
+SMS05_00299,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,242,0.989575,1
+SMS05_00307,ExAIS_USER 14,ExAIS,commercial_spam,0,linkless,none,98,0.184491,0
+SMS05_00310,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,217,0.759439,1
+SMS05_00313,ExAIS_USER 13,ExAIS,ham,0,linkless,none,110,0.112111,0
+SMS05_00314,UCI,UCI,ham,0,linkless,none,15,0.081416,0
+SMS05_00318,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,120,0.976867,1
+SMS05_00329,ExAIS_USER 7,ExAIS,ham,0,linkless,none,19,0.085091,0
+SMS05_00330,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,688,138,0.972182,1
+SMS05_00350,ExAIS_USER 16,ExAIS,ham,0,linkless,none,99,0.078417,0
+SMS05_00355,UCI,UCI,ham,0,linkless,none,23,0.077263,0
+SMS05_00361,ExAIS_USER 19,ExAIS,commercial_spam,0,linkless,none,134,0.165833,0
+SMS05_00367,ExAIS_USER 17,ExAIS,commercial_spam,0,linkless,none,46,0.196348,0
+SMS05_00373,ExAIS_USER 11,ExAIS,ham,0,linkless,none,52,0.119619,0
+SMS05_00375,UCI,UCI,ham,0,linkless,none,85,0.093239,0
+SMS05_00380,ExAIS_USER 12,ExAIS,commercial_spam,0,linkless,none,94,0.068695,0
+SMS05_00390,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,37,0.475464,0
+SMS05_00393,ExAIS_USER 1,ExAIS,commercial_spam,0,linkless,none,100,0.08869,0
+SMS05_00406,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,220,0.982769,1
+SMS05_00419,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1771,100,0.851203,1
+SMS05_00434,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,linkless,none,96,0.087009,0
+SMS05_00437,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,63,0.131049,0
+SMS05_00444,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,95,0.083326,0
+SMS05_00456,ExAIS_USER 10,ExAIS,ham,0,linkless,none,144,0.068324,0
+SMS05_00457,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,34912,137,0.907912,1
+SMS05_00462,UCI,UCI,ham,0,linkless,none,37,0.060372,0
+SMS05_00463,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1393,128,0.989745,1
+SMS05_00472,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,191,0.023551,0
+SMS05_00504,ExAIS_USER 16,ExAIS,ham,0,linkless,none,105,0.055387,0
+SMS05_00516,ExAIS_USER 16,ExAIS,ham,0,linkless,none,11,0.075252,0
+SMS05_00518,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,116,0.998389,1
+SMS05_00536,ExAIS_USER 19,ExAIS,ham,0,linkless,none,82,0.236523,0
+SMS05_00547,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,148,0.997579,1
+SMS05_00554,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,175,0.949465,1
+SMS05_00558,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,259,0.998278,1
+SMS05_00580,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,linkless,none,156,0.498512,0
+SMS05_00584,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,32,0.066553,0
+SMS05_00594,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,140,0.994194,1
+SMS05_00596,UCI,UCI,ham,0,linkless,none,165,0.034725,0
+SMS05_00601,ExAIS_USER 4,ExAIS,commercial_spam,0,linkless,none,135,0.059217,0
+SMS05_00615,UCI,UCI,ham,0,linkless,none,59,0.023744,0
+SMS05_00616,UCI,UCI,ham,0,linkless,none,131,0.056664,0
+SMS05_00620,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,147,0.920692,1
+SMS05_00636,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,38,0.037413,0
+SMS05_00642,ExAIS_USER 17,ExAIS,commercial_spam,0,linkless,none,153,0.170219,0
+SMS05_00652,ExAIS_USER 13,ExAIS,commercial_spam,0,linkless,none,160,0.104487,0
+SMS05_00659,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,28,0.032311,0
+SMS05_00667,UCI,UCI,ham,0,linkless,none,70,0.068082,0
+SMS05_00676,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,49,0.908385,1
+SMS05_00683,ExAIS_USER 16,ExAIS,ham,0,linkless,none,90,0.152828,0
+SMS05_00685,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1489,66,0.897198,1
+SMS05_00700,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,url_bearing,none,143,0.984657,1
+SMS05_00707,ExAIS_USER 14,ExAIS,commercial_spam,0,linkless,none,125,0.667761,1
+SMS05_00709,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,linkless,none,52,0.651061,1
+SMS05_00713,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,228,0.916747,1
+SMS05_00715,ExAIS_USER 17,ExAIS,commercial_spam,0,linkless,none,148,0.026754,0
+SMS05_00721,ExAIS_USER 15,ExAIS,ham,0,linkless,none,83,0.102192,0
+SMS05_00727,ExAIS_USER 4,ExAIS,commercial_spam,0,linkless,none,151,0.076488,0
+SMS05_00739,UCI,UCI,ham,0,linkless,none,93,0.04952,0
+SMS05_00746,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,2141,126,0.947767,1
+SMS05_00756,ExAIS_USER 6,ExAIS,ham,0,linkless,none,98,0.058862,0
+SMS05_00758,ExAIS_USER 2,ExAIS,ham,0,linkless,none,113,0.033003,0
+SMS05_00761,UCI,UCI,ham,0,linkless,none,22,0.075718,0
+SMS05_00762,ExAIS_USER 16,ExAIS,commercial_spam,0,linkless,none,96,0.058957,0
+SMS05_00764,UCI,UCI,ham,0,linkless,none,444,0.134142,0
+SMS05_00770,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1783,60,0.74945,1
+SMS05_00775,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,118,0.853097,1
+SMS05_00780,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1214,86,0.96281,1
+SMS05_00789,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,url_bearing,none,141,0.963632,1
+SMS05_00792,UCI,UCI,ham,0,linkless,none,298,0.118316,0
+SMS05_00795,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,154,0.066481,0
+SMS05_00811,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,linkless,none,104,0.155737,0
+SMS05_00812,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1430,158,0.98702,1
+SMS05_00828,ExAIS_USER 1,ExAIS,commercial_spam,0,linkless,none,132,0.232242,0
+SMS05_00853,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,3458,109,0.855489,1
+SMS05_00871,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,443,0.90651,1
+SMS05_00883,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,399,125,0.897667,1
+SMS05_00892,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1436,132,0.453262,0
+SMS05_00899,UCI,UCI,ham,0,linkless,none,22,0.020506,0
+SMS05_00902,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,linkless,none,136,0.875084,1
+SMS05_00910,ExAIS_USER 14,ExAIS,commercial_spam,0,linkless,none,36,0.136412,0
+SMS05_00912,UCI,UCI,ham,0,linkless,none,58,0.032437,0
+SMS05_00913,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,url_bearing,none,167,0.225724,0
+SMS05_00915,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,833,197,0.835861,1
+SMS05_00919,ExAIS_USER 7,ExAIS,commercial_spam,0,linkless,none,161,0.069861,0
+SMS05_00930,ExAIS_USER 18,ExAIS,ham,0,linkless,none,124,0.073443,0
+SMS05_00932,ExAIS_USER 12,ExAIS,commercial_spam,0,linkless,none,154,0.063945,0
+SMS05_00943,UCI,UCI,ham,0,linkless,none,103,0.029959,0
+SMS05_00949,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,125,0.968498,1
+SMS05_00950,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,url_bearing,none,125,0.997122,1
+SMS05_00955,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1465,194,0.98956,1
+SMS05_00960,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,93,0.847747,1
+SMS05_00961,ExAIS_USER 15,ExAIS,commercial_spam,0,linkless,none,91,0.064675,0
+SMS05_00984,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,91,0.664712,1
+SMS05_00988,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,206,0.956535,1
+SMS05_00993,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,68,0.063046,0
+SMS05_00994,ExAIS_USER 15,ExAIS,ham,0,linkless,none,19,0.159818,0
+SMS05_01000,UCI,UCI,ham,0,linkless,none,53,0.115686,0
+SMS05_01001,UCI,UCI,ham,0,linkless,none,32,0.104314,0
+SMS05_01013,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,linkless,none,145,0.740007,1
+SMS05_01017,ExAIS_USER 15,ExAIS,commercial_spam,0,linkless,none,102,0.089976,0
+SMS05_01021,UCI,UCI,ham,0,linkless,none,55,0.031611,0
+SMS05_01022,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,linkless,none,136,0.310913,0
+SMS05_01029,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,278,0.986776,1
+SMS05_01038,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,113,0.07452,0
+SMS05_01043,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,877,287,0.851985,1
+SMS05_01061,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,linkless,none,155,0.720728,1
+SMS05_01064,UCI,UCI,ham,0,linkless,none,205,0.062565,0
+SMS05_01065,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,139,0.718806,1
+SMS05_01070,ExAIS_USER 10,ExAIS,ham,0,linkless,none,156,0.12112,0
+SMS05_01074,ExAIS_USER 2,ExAIS,commercial_spam,0,linkless,none,171,0.159678,0
+SMS05_01076,ExAIS_USER 19,ExAIS,ham,0,linkless,none,119,0.260944,0
+SMS05_01077,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,linkless,none,150,0.848722,1
+SMS05_01082,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,30,0.054122,0
+SMS05_01093,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,128,0.997471,1
+SMS05_01095,UCI,UCI,ham,0,linkless,none,132,0.28863,0
+SMS05_01098,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,290,0.054339,0
+SMS05_01123,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,26,0.052842,0
+SMS05_01149,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,linkless,none,153,0.099168,0
+SMS05_01152,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,linkless,none,145,0.642774,1
+SMS05_01157,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,116,0.980654,1
+SMS05_01159,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,162,0.998404,1
+SMS05_01161,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,80,0.782604,1
+SMS05_01167,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,132,0.875158,1
+SMS05_01170,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,654,143,0.941639,1
+SMS05_01171,UCI,UCI,ham,0,linkless,none,98,0.050987,0
+SMS05_01193,ExAIS_USER 14,ExAIS,ham,0,linkless,none,159,0.116125,0
+SMS05_01202,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,64,0.047908,0
+SMS05_01203,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1844,113,0.988635,1
+SMS05_01204,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,url_bearing,none,368,0.920629,1
+SMS05_01206,UCI,UCI,ham,0,linkless,none,54,0.045536,0
+SMS05_01207,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,52,0.062799,0
+SMS05_01212,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,271,0.874589,1
+SMS05_01217,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,16,0.182908,0
+SMS05_01220,ExAIS_USER 10,ExAIS,commercial_spam,0,linkless,none,112,0.059846,0
+SMS05_01250,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,url_bearing,none,300,0.038099,0
+SMS05_01252,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,343,0.998867,1
+SMS05_01254,UCI,UCI,ham,0,linkless,none,26,0.148108,0
+SMS05_01261,ExAIS_USER 12,ExAIS,ham,0,linkless,none,47,0.633731,1
+SMS05_01266,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,2166,192,0.930093,1
+SMS05_01273,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,43,0.183562,0
+SMS05_01275,UCI,UCI,commercial_spam,0,linkless,none,144,0.151228,0
+SMS05_01277,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,135,0.104442,0
+SMS05_01283,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,3520,157,0.977445,1
+SMS05_01290,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,148,0.779007,1
+SMS05_01299,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,156,0.995104,1
+SMS05_01307,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,25,0.207121,0
+SMS05_01313,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,19498,150,0.944777,1
+SMS05_01320,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,24469,156,0.93516,1
+SMS05_01322,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,34979,156,0.954834,1
+SMS05_01327,UCI,UCI,ham,0,linkless,none,34,0.181271,0
+SMS05_01338,ExAIS_USER 16,ExAIS,commercial_spam,0,linkless,none,151,0.042375,0
+SMS05_01345,ExAIS_USER 16,ExAIS,commercial_spam,0,linkless,none,154,0.056051,0
+SMS05_01346,ExAIS_USER 16,ExAIS,ham,0,linkless,none,69,0.139242,0
+SMS05_01363,ExAIS_USER 16,ExAIS,commercial_spam,0,linkless,none,218,0.120465,0
+SMS05_01364,ExAIS_USER 13,ExAIS,commercial_spam,0,linkless,none,156,0.11912,0
+SMS05_01366,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,316,0.755448,1
+SMS05_01369,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,982,136,0.887557,1
+SMS05_01378,ExAIS_USER 9,ExAIS,ham,0,linkless,none,99,0.160229,0
+SMS05_01379,UCI,UCI,ham,0,linkless,none,67,0.042573,0
+SMS05_01381,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,linkless,none,143,0.178022,0
+SMS05_01393,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,277,0.991387,1
+SMS05_01396,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,480,122,0.820487,1
+SMS05_01440,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,30269,112,0.907748,1
+SMS05_01450,ExAIS_USER 15,ExAIS,commercial_spam,0,linkless,none,116,0.159061,0
+SMS05_01460,ExAIS_USER 16,ExAIS,commercial_spam,0,linkless,none,128,0.050658,0
+SMS05_01461,ExAIS_USER 16,ExAIS,ham,0,linkless,none,36,0.206821,0
+SMS05_01467,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,158,0.998844,1
+SMS05_01468,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,linkless,none,157,0.929038,1
+SMS05_01473,UCI,UCI,ham,0,linkless,none,46,0.241205,0
+SMS05_01487,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,132,0.44156,0
+SMS05_01488,ExAIS_USER 7,ExAIS,ham,0,linkless,none,152,0.030144,0
+SMS05_01490,ExAIS_USER 15,ExAIS,commercial_spam,0,linkless,none,99,0.133069,0
+SMS05_01499,ExAIS_USER 15,ExAIS,commercial_spam,0,linkless,none,139,0.018286,0
+SMS05_01501,ExAIS_USER 16,ExAIS,ham,0,linkless,none,99,0.140956,0
+SMS05_01513,ExAIS_USER 5,ExAIS,ham,0,linkless,none,160,0.037264,0
+SMS05_01522,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,115,0.993379,1
+SMS05_01528,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,url_bearing,none,148,0.957342,1
+SMS05_01530,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1830,123,0.8847,1
+SMS05_01536,UCI,UCI,ham,0,linkless,none,48,0.038487,0
+SMS05_01545,ExAIS_USER 16,ExAIS,commercial_spam,0,linkless,none,161,0.041168,0
+SMS05_01551,ExAIS_USER 12,ExAIS,ham,0,linkless,none,66,0.07186,0
+SMS05_01558,ExAIS_USER 20,ExAIS,commercial_spam,0,linkless,none,86,0.079572,0
+SMS05_01571,UCI,UCI,ham,0,linkless,none,123,0.029557,0
+SMS05_01575,ExAIS_USER 19,ExAIS,ham,0,linkless,none,132,0.100696,0
+SMS05_01579,UCI,UCI,ham,0,linkless,none,51,0.105646,0
+SMS05_01582,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,184,0.995781,1
+SMS05_01584,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,34923,90,0.856878,1
+SMS05_01585,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1907,135,0.908178,1
+SMS05_01590,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,linkless,none,91,0.367978,0
+SMS05_01622,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,244,0.936889,1
+SMS05_01624,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,113,0.969878,1
+SMS05_01631,ExAIS_USER 19,ExAIS,ham,0,linkless,none,45,0.072623,0
+SMS05_01636,ExAIS_USER 18,ExAIS,ham,0,linkless,none,45,0.21054,0
+SMS05_01641,ExAIS_USER 14,ExAIS,commercial_spam,0,linkless,none,86,0.111071,0
+SMS05_01642,UCI,UCI,ham,0,linkless,none,25,0.213971,0
+SMS05_01646,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,192,0.975187,1
+SMS05_01647,ExAIS_USER 15,ExAIS,ham,0,linkless,none,152,0.038094,0
+SMS05_01649,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,2173,162,0.976701,1
+SMS05_01674,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,31018,140,0.974979,1
+SMS05_01678,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,2229,137,0.69502,1
+SMS05_01687,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,110,0.085921,0
+SMS05_01691,ExAIS_USER 12,ExAIS,commercial_spam,0,linkless,none,75,0.256475,0
+SMS05_01696,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,100,0.148861,0
+SMS05_01701,UCI,UCI,ham,0,linkless,none,165,0.033868,0
+SMS05_01715,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1474,132,0.974387,1
+SMS05_01717,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,url_bearing,none,218,0.928955,1
+SMS05_01721,ExAIS_USER 15,ExAIS,commercial_spam,0,linkless,none,151,0.136023,0
+SMS05_01727,UCI,UCI,ham,0,linkless,none,51,0.058278,0
+SMS05_01741,ExAIS_USER 12,ExAIS,commercial_spam,0,linkless,none,138,0.039397,0
+SMS05_01750,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,139,0.075242,0
+SMS05_01751,ExAIS_USER 19,ExAIS,ham,0,linkless,none,12,0.109932,0
+SMS05_01753,ExAIS_USER 7,ExAIS,commercial_spam,0,linkless,none,150,0.06614,0
+SMS05_01758,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1285,109,0.496197,0
+SMS05_01761,ExAIS_USER 4,ExAIS,ham,0,linkless,none,132,0.080497,0
+SMS05_01766,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,120,0.981644,1
+SMS05_01785,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1778,57,0.976217,1
+SMS05_01788,ExAIS_USER 7,ExAIS,commercial_spam,0,linkless,none,157,0.222099,0
+SMS05_01793,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,22,0.018391,0
+SMS05_01802,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,2177,98,0.923953,1
+SMS05_01809,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,74,0.021488,0
+SMS05_01816,ExAIS_USER 12,ExAIS,ham,0,linkless,none,158,0.072166,0
+SMS05_01819,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,83,0.75602,1
+SMS05_01823,ExAIS_USER 7,ExAIS,ham,0,linkless,none,94,0.064674,0
+SMS05_01824,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1754,134,0.914183,1
+SMS05_01840,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1895,139,0.482372,0
+SMS05_01845,UCI,UCI,ham,0,linkless,none,84,0.069099,0
+SMS05_01848,ExAIS_USER 16,ExAIS,ham,0,linkless,none,48,0.084859,0
+SMS05_01856,UCI,UCI,ham,0,linkless,none,54,0.031904,0
+SMS05_01857,ExAIS_USER 16,ExAIS,ham,0,linkless,none,107,0.082591,0
+SMS05_01860,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,3228,119,0.600389,1
+SMS05_01864,ExAIS_USER 10,ExAIS,ham,0,linkless,none,8,0.081501,0
+SMS05_01891,ExAIS_USER 10,ExAIS,ham,0,linkless,none,163,0.116621,0
+SMS05_01893,ExAIS_USER 16,ExAIS,commercial_spam,0,linkless,none,158,0.149318,0
+SMS05_01899,ExAIS_USER 16,ExAIS,commercial_spam,0,linkless,none,161,0.113568,0
+SMS05_01906,ExAIS_USER 18,ExAIS,ham,0,linkless,none,16,0.138265,0
+SMS05_01916,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,67,0.115538,0
+SMS05_01921,UCI,UCI,ham,0,linkless,none,35,0.105971,0
+SMS05_01925,ExAIS_USER 16,ExAIS,ham,0,linkless,none,131,0.074067,0
+SMS05_01935,UCI,UCI,ham,0,linkless,none,130,0.061183,0
+SMS05_01943,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,135,0.983323,1
+SMS05_01945,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,20345,103,0.905397,1
+SMS05_01971,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,246,103,0.933415,1
+SMS05_01993,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,823,0.943322,1
+SMS05_02002,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,url_bearing,none,110,0.948421,1
+SMS05_02009,ExAIS_USER 4,ExAIS,ham,0,linkless,none,78,0.128746,0
+SMS05_02034,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,linkless,none,47,0.831056,1
+SMS05_02035,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,132,0.691604,1
+SMS05_02036,ExAIS_USER 2,ExAIS,commercial_spam,0,linkless,none,176,0.068746,0
+SMS05_02037,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,138,0.997496,1
+SMS05_02043,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,linkless,none,126,0.931686,1
+SMS05_02050,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,3062,129,0.953389,1
+SMS05_02060,ExAIS_USER 19,ExAIS,commercial_spam,0,linkless,none,145,0.033598,0
+SMS05_02061,ExAIS_USER 15,ExAIS,commercial_spam,0,linkless,none,121,0.068985,0
+SMS05_02066,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,linkless,none,63,0.218889,0
+SMS05_02076,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,58,0.07093,0
+SMS05_02080,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,171,0.995333,1
+SMS05_02084,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,linkless,none,135,0.723755,1
+SMS05_02098,UCI,UCI,ham,0,linkless,none,27,0.221487,0
+SMS05_02100,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,384,136,0.98632,1
+SMS05_02105,ExAIS_USER 19,ExAIS,commercial_spam,0,linkless,none,136,0.051475,0
+SMS05_02106,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,139,0.220492,0
+SMS05_02115,ExAIS_USER 12,ExAIS,commercial_spam,0,linkless,none,163,0.026982,0
+SMS05_02134,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,76,0.21611,0
+SMS05_02135,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,431,91,0.9829,1
+SMS05_02138,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,34926,137,0.893099,1
+SMS05_02152,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,377,0.390944,0
+SMS05_02154,ExAIS_USER 10,ExAIS,ham,0,linkless,none,308,0.115637,0
+SMS05_02162,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,30,0.149709,0
+SMS05_02168,ExAIS_USER 19,ExAIS,ham,0,linkless,none,156,0.034637,0
+SMS05_02175,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,238,0.995323,1
+SMS05_02178,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,230,0.99331,1
+SMS05_02190,ExAIS_USER 14,ExAIS,commercial_spam,0,linkless,none,134,0.339207,0
+SMS05_02195,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,663,135,0.966667,1
+SMS05_02205,ExAIS_USER 17,ExAIS,ham,0,linkless,none,124,0.047025,0
+SMS05_02212,UCI,UCI,ham,0,linkless,none,26,0.032742,0
+SMS05_02213,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,31,0.056481,0
+SMS05_02216,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,122,0.981977,1
+SMS05_02227,UCI,UCI,ham,0,linkless,none,30,0.085841,0
+SMS05_02242,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,138,0.938913,1
+SMS05_02246,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,3437,186,0.987634,1
+SMS05_02247,ExAIS_USER 15,ExAIS,commercial_spam,0,linkless,none,113,0.056421,0
+SMS05_02251,UCI,UCI,ham,0,linkless,none,31,0.189354,0
+SMS05_02259,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,157,0.077363,0
+SMS05_02269,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,linkless,none,181,0.444823,0
+SMS05_02270,ExAIS_USER 7,ExAIS,commercial_spam,0,linkless,none,156,0.070442,0
+SMS05_02273,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,121,0.071151,0
+SMS05_02274,ExAIS_USER 16,ExAIS,ham,0,linkless,none,24,0.092489,0
+SMS05_02297,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,114,61,0.545439,1
+SMS05_02300,ExAIS_USER 15,ExAIS,commercial_spam,0,linkless,none,138,0.110672,0
+SMS05_02309,ExAIS_USER 2,ExAIS,commercial_spam,0,linkless,none,150,0.156588,0
+SMS05_02313,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,108,0.977057,1
+SMS05_02314,UCI,UCI,ham,0,linkless,none,104,0.052603,0
+SMS05_02319,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,164,0.999163,1
+SMS05_02321,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,linkless,none,125,0.424896,0
+SMS05_02329,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,19,0.204865,0
+SMS05_02333,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,121,0.982897,1
+SMS05_02344,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,2267,117,0.980557,1
+SMS05_02349,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,100,0.899515,1
+SMS05_02351,UCI,UCI,ham,0,linkless,none,23,0.115455,0
+SMS05_02357,ExAIS_USER 14,ExAIS,ham,0,linkless,none,145,0.035649,0
+SMS05_02381,ExAIS_USER 19,ExAIS,commercial_spam,0,linkless,none,160,0.113282,0
+SMS05_02386,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,88,0.163035,0
+SMS05_02387,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,url_bearing,none,125,0.86937,1
+SMS05_02388,ExAIS_USER 16,ExAIS,ham,0,linkless,none,14,0.115675,0
+SMS05_02394,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,21,0.905301,1
+SMS05_02396,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,256,0.986765,1
+SMS05_02399,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,36,0.03059,0
+SMS05_02404,ExAIS_USER 15,ExAIS,commercial_spam,0,linkless,none,156,0.07314,0
+SMS05_02411,ExAIS_USER 7,ExAIS,commercial_spam,0,linkless,none,159,0.183833,0
+SMS05_02413,UCI,UCI,ham,0,linkless,none,281,0.062326,0
+SMS05_02419,ExAIS_USER 11,ExAIS,commercial_spam,0,linkless,none,121,0.244864,0
+SMS05_02420,ExAIS_USER 16,ExAIS,commercial_spam,0,linkless,none,87,0.031535,0
+SMS05_02425,ExAIS_USER 9,ExAIS,commercial_spam,0,linkless,none,100,0.115654,0
+SMS05_02437,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1877,116,0.972022,1
+SMS05_02447,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,135,0.963699,1
+SMS05_02455,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,url_bearing,none,80,0.528237,1
+SMS05_02460,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1614,182,0.803547,1
+SMS05_02468,ExAIS_USER 10,ExAIS,ham,0,linkless,none,157,0.08782,0
+SMS05_02469,UCI,UCI,ham,0,linkless,none,45,0.027253,0
+SMS05_02479,ExAIS_USER 17,ExAIS,ham,0,linkless,none,6,0.233914,0
+SMS05_02488,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,397,0.998168,1
+SMS05_02489,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,url_bearing,none,155,0.189104,0
+SMS05_02494,ExAIS_USER 11,ExAIS,ham,0,linkless,none,57,0.108017,0
+SMS05_02499,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,2583,117,0.91104,1
+SMS05_02503,ExAIS_USER 12,ExAIS,ham,0,linkless,none,68,0.024316,0
+SMS05_02504,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1898,146,0.912599,1
+SMS05_02506,ExAIS_USER 12,ExAIS,ham,0,linkless,none,130,0.296535,0
+SMS05_02513,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,linkless,none,135,0.438467,0
+SMS05_02516,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,196,0.988175,1
+SMS05_02526,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,115,0.133296,0
+SMS05_02530,ExAIS_USER 11,ExAIS,ham,0,linkless,none,36,0.067868,0
+SMS05_02537,UCI,UCI,ham,0,linkless,none,114,0.505398,1
+SMS05_02574,UCI,UCI,ham,0,linkless,none,236,0.028717,0
+SMS05_02577,ExAIS_USER 19,ExAIS,commercial_spam,0,linkless,none,211,0.027692,0
+SMS05_02580,ExAIS_USER 19,ExAIS,commercial_spam,0,linkless,none,141,0.322884,0
+SMS05_02588,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,2162,166,0.987048,1
+SMS05_02591,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,34915,143,0.852613,1
+SMS05_02592,ExAIS_USER 1,ExAIS,ham,0,linkless,none,133,0.072124,0
+SMS05_02594,ExAIS_USER 5,ExAIS,ham,0,linkless,none,138,0.070455,0
+SMS05_02603,ExAIS_USER 19,ExAIS,ham,0,linkless,none,32,0.031932,0
+SMS05_02610,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,144,0.077858,0
+SMS05_02632,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1297,34,0.959371,1
+SMS05_02635,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,626,121,0.431681,0
+SMS05_02637,UCI,UCI,ham,0,linkless,none,158,0.060333,0
+SMS05_02642,ExAIS_USER 19,ExAIS,ham,0,linkless,none,30,0.057766,0
+SMS05_02646,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,147,0.993212,1
+SMS05_02647,ExAIS_USER 19,ExAIS,ham,0,linkless,none,115,0.520368,1
+SMS05_02649,ExAIS_USER 7,ExAIS,commercial_spam,0,linkless,none,129,0.091619,0
+SMS05_02671,ExAIS_USER 16,ExAIS,commercial_spam,0,linkless,none,4,0.09461,0
+SMS05_02676,ExAIS_USER 7,ExAIS,commercial_spam,0,linkless,none,141,0.037152,0
+SMS05_02678,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1861,200,0.870374,1
+SMS05_02694,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,162,75,0.576611,1
+SMS05_02696,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,linkless,none,139,0.687257,1
+SMS05_02699,ExAIS_USER 16,ExAIS,commercial_spam,0,linkless,none,54,0.045521,0
+SMS05_02702,ExAIS_USER 16,ExAIS,commercial_spam,0,linkless,none,131,0.163359,0
+SMS05_02706,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,2301,103,0.976423,1
+SMS05_02709,UCI,UCI,ham,0,linkless,none,106,0.044446,0
+SMS05_02712,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,134,0.073094,0
+SMS05_02723,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1795,114,0.765176,1
+SMS05_02738,UCI,UCI,ham,0,linkless,none,62,0.055162,0
+SMS05_02743,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,11200,146,0.955612,1
+SMS05_02754,ExAIS_USER 11,ExAIS,ham,0,linkless,none,82,0.086481,0
+SMS05_02755,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,56,0.066943,0
+SMS05_02758,ExAIS_USER 10,ExAIS,ham,0,linkless,none,144,0.066118,0
+SMS05_02765,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1518,173,0.983935,1
+SMS05_02766,ExAIS_USER 19,ExAIS,ham,0,linkless,none,67,0.125523,0
+SMS05_02769,ExAIS_USER 19,ExAIS,commercial_spam,0,linkless,none,130,0.233361,0
+SMS05_02777,UCI,UCI,ham,0,linkless,none,136,0.075831,0
+SMS05_02790,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,44,0.079903,0
+SMS05_02799,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,linkless,none,101,0.21924,0
+SMS05_02802,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1974,89,0.949833,1
+SMS05_02809,ExAIS_USER 18,ExAIS,commercial_spam,0,linkless,none,273,0.121806,0
+SMS05_02811,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,70,0.947197,1
+SMS05_02822,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,52,0.145404,0
+SMS05_02823,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,2677,159,0.788346,1
+SMS05_02840,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,129,0.509751,1
+SMS05_02846,ExAIS_USER 19,ExAIS,ham,0,linkless,none,68,0.141509,0
+SMS05_02847,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,162,0.027418,0
+SMS05_02849,ExAIS_USER 20,ExAIS,commercial_spam,0,linkless,none,126,0.191804,0
+SMS05_02854,UCI,UCI,ham,0,linkless,none,49,0.148924,0
+SMS05_02861,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,linkless,none,152,0.971311,1
+SMS05_02868,ExAIS_USER 11,ExAIS,ham,0,linkless,none,55,0.121794,0
+SMS05_02869,ExAIS_USER 1,ExAIS,ham,0,linkless,none,26,0.076194,0
+SMS05_02873,ExAIS_USER 11,ExAIS,ham,0,linkless,none,41,0.10964,0
+SMS05_02874,ExAIS_USER 18,ExAIS,commercial_spam,0,linkless,none,258,0.186739,0
+SMS05_02878,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1623,65,0.943345,1
+SMS05_02887,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,39,0.019426,0
+SMS05_02892,ExAIS_USER 16,ExAIS,commercial_spam,0,linkless,none,154,0.068959,0
+SMS05_02903,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,60,0.031791,0
+SMS05_02904,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,32,0.07698,0
+SMS05_02905,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,47,0.068132,0
+SMS05_02908,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,111,0.989507,1
+SMS05_02922,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,17,0.068613,0
+SMS05_02931,UCI,UCI,ham,0,linkless,none,126,0.060554,0
+SMS05_02933,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,28881,162,0.887458,1
+SMS05_02935,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,65,0.031934,0
+SMS05_02940,ExAIS_USER 17,ExAIS,commercial_spam,0,linkless,none,46,0.186202,0
+SMS05_02957,UCI,UCI,ham,0,linkless,none,100,0.112214,0
+SMS05_02961,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,2190,62,0.621866,1
+SMS05_02962,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,url_bearing,none,148,0.997888,1
+SMS05_02963,UCI,UCI,ham,0,linkless,none,192,0.077205,0
+SMS05_02966,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,616,145,0.940806,1
+SMS05_02967,ExAIS_USER 7,ExAIS,commercial_spam,0,linkless,none,146,0.062494,0
+SMS05_03002,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,url_bearing,none,143,0.730337,1
+SMS05_03004,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,72,0.040131,0
+SMS05_03012,ExAIS_USER 13,ExAIS,commercial_spam,0,linkless,none,152,0.037891,0
+SMS05_03014,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,156,0.997609,1
+SMS05_03027,ExAIS_USER 14,ExAIS,commercial_spam,0,linkless,none,155,0.119705,0
+SMS05_03037,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1989,112,0.598585,1
+SMS05_03039,ExAIS_USER 4,ExAIS,ham,0,linkless,none,143,0.098622,0
+SMS05_03043,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,24,0.062103,0
+SMS05_03089,ExAIS_USER 14,ExAIS,commercial_spam,0,linkless,none,147,0.115589,0
+SMS05_03092,ExAIS_USER 7,ExAIS,ham,0,linkless,none,23,0.059289,0
+SMS05_03094,ExAIS_USER 15,ExAIS,commercial_spam,0,linkless,none,103,0.136484,0
+SMS05_03106,UCI,UCI,ham,0,linkless,none,53,0.093913,0
+SMS05_03123,UCI,UCI,ham,0,linkless,none,81,0.124692,0
+SMS05_03127,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,linkless,none,136,0.873999,1
+SMS05_03131,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1668,175,0.983323,1
+SMS05_03133,ExAIS_USER 13,ExAIS,commercial_spam,0,linkless,none,21,0.4666,0
+SMS05_03138,ExAIS_USER 16,ExAIS,ham,0,linkless,none,174,0.058083,0
+SMS05_03141,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,76,0.033123,0
+SMS05_03149,ExAIS_USER 12,ExAIS,commercial_spam,0,linkless,none,155,0.036924,0
+SMS05_03158,ExAIS_USER 10,ExAIS,ham,0,linkless,none,124,0.136589,0
+SMS05_03163,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,34974,107,0.930359,1
+SMS05_03170,ExAIS_USER 7,ExAIS,ham,0,linkless,none,69,0.055301,0
+SMS05_03171,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,143,0.994202,1
+SMS05_03179,ExAIS_USER 10,ExAIS,ham,0,linkless,none,25,0.118831,0
+SMS05_03182,ExAIS_USER 12,ExAIS,commercial_spam,0,linkless,none,158,0.04239,0
+SMS05_03188,ExAIS_USER 19,ExAIS,commercial_spam,0,linkless,none,115,0.075501,0
+SMS05_03197,ExAIS_USER 4,ExAIS,commercial_spam,0,linkless,none,108,0.053804,0
+SMS05_03199,ExAIS_USER 16,ExAIS,ham,0,linkless,none,144,0.08516,0
+SMS05_03204,UCI,UCI,ham,0,linkless,none,26,0.062845,0
+SMS05_03206,UCI,UCI,ham,0,linkless,none,35,0.144674,0
+SMS05_03212,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,35093,120,0.958081,1
+SMS05_03215,ExAIS_USER 11,ExAIS,ham,0,linkless,none,42,0.171521,0
+SMS05_03230,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,33029,160,0.952867,1
+SMS05_03233,ExAIS_USER 15,ExAIS,commercial_spam,0,linkless,none,112,0.129785,0
+SMS05_03236,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,39,0.245601,0
+SMS05_03259,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1609,160,0.985654,1
+SMS05_03262,UCI,UCI,ham,0,linkless,none,62,0.241658,0
+SMS05_03264,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,871,207,0.556675,1
+SMS05_03274,ExAIS_USER 12,ExAIS,commercial_spam,0,linkless,none,135,0.169027,0
+SMS05_03283,ExAIS_USER 16,ExAIS,commercial_spam,0,linkless,none,236,0.061293,0
+SMS05_03285,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,974,0.987188,1
+SMS05_03296,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,url_bearing,none,108,0.999093,1
+SMS05_03299,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1288,154,0.955369,1
+SMS05_03321,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,120,0.426168,0
+SMS05_03325,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,3491,37,0.684194,1
+SMS05_03329,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,177,0.998499,1
+SMS05_03330,UCI,UCI,ham,0,linkless,none,145,0.040792,0
+SMS05_03338,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,28,0.10034,0
+SMS05_03339,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,linkless,none,126,0.101612,0
+SMS05_03344,ExAIS_USER 11,ExAIS,commercial_spam,0,linkless,none,27,0.132796,0
+SMS05_03350,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,71,0.06762,0
+SMS05_03351,UCI,UCI,ham,0,linkless,none,114,0.216398,0
+SMS05_03356,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,url_bearing,none,116,0.995353,1
+SMS05_03365,ExAIS_USER 2,ExAIS,ham,0,linkless,none,56,0.028,0
+SMS05_03375,ExAIS_USER 19,ExAIS,commercial_spam,0,linkless,none,158,0.033641,0
+SMS05_03406,UCI,UCI,ham,0,linkless,none,48,0.018391,0
+SMS05_03407,ExAIS_USER 12,ExAIS,commercial_spam,0,linkless,none,114,0.139664,0
+SMS05_03420,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1692,152,0.939494,1
+SMS05_03421,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,24919,156,0.355598,0
+SMS05_03423,ExAIS_USER 12,ExAIS,commercial_spam,0,linkless,none,45,0.08547,0
+SMS05_03425,ExAIS_USER 4,ExAIS,ham,0,linkless,none,219,0.017083,0
+SMS05_03426,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,101,0.89269,1
+SMS05_03433,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,31369,140,0.976142,1
+SMS05_03434,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,linkless,none,146,0.209889,0
+SMS05_03441,ExAIS_USER 16,ExAIS,ham,0,linkless,none,207,0.163867,0
+SMS05_03444,ExAIS_USER 10,ExAIS,ham,0,linkless,none,160,0.203105,0
+SMS05_03454,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,url_bearing,none,149,0.51162,1
+SMS05_03460,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,43,0.024154,0
+SMS05_03465,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,url_bearing,none,159,0.161389,0
+SMS05_03478,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,88,0.028795,0
+SMS05_03497,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,url_bearing,none,160,0.118495,0
+SMS05_03505,ExAIS_USER 7,ExAIS,ham,0,linkless,none,124,0.049104,0
+SMS05_03507,ExAIS_USER 19,ExAIS,ham,0,linkless,none,128,0.145592,0
+SMS05_03514,UCI,UCI,ham,0,linkless,none,59,0.057514,0
+SMS05_03518,ExAIS_USER 16,ExAIS,ham,0,linkless,none,16,0.141025,0
+SMS05_03526,ExAIS_USER 19,ExAIS,commercial_spam,0,linkless,none,159,0.053949,0
+SMS05_03538,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,2168,29,0.477724,0
+SMS05_03550,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,2180,197,0.881761,1
+SMS05_03561,ExAIS_USER 11,ExAIS,ham,0,linkless,none,104,0.028998,0
+SMS05_03565,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,49,0.767364,1
+SMS05_03569,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,2058,43,0.628993,1
+SMS05_03571,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,60,0.068985,0
+SMS05_03574,ExAIS_USER 7,ExAIS,ham,0,linkless,none,115,0.055418,0
+SMS05_03577,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,65,0.045285,0
+SMS05_03578,UCI,UCI,ham,0,linkless,none,21,0.032432,0
+SMS05_03582,ExAIS_USER 19,ExAIS,ham,0,linkless,none,82,0.034072,0
+SMS05_03584,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1078,369,0.942555,1
+SMS05_03586,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,linkless,none,105,0.226876,0
+SMS05_03593,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,url_bearing,none,57,0.938798,1
+SMS05_03597,ExAIS_USER 19,ExAIS,ham,0,linkless,none,83,0.059511,0
+SMS05_03599,ExAIS_USER 4,ExAIS,ham,0,linkless,none,77,0.075771,0
+SMS05_03604,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,577,138,0.996487,1
+SMS05_03611,UCI,UCI,ham,0,linkless,none,75,0.053086,0
+SMS05_03616,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,853,138,0.96124,1
+SMS05_03618,ExAIS_USER 19,ExAIS,commercial_spam,0,linkless,none,146,0.156751,0
+SMS05_03631,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,136,0.998176,1
+SMS05_03632,UCI,UCI,ham,0,linkless,none,36,0.102408,0
+SMS05_03639,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,36,0.013901,0
+SMS05_03647,ExAIS_USER 7,ExAIS,commercial_spam,0,linkless,none,159,0.068506,0
+SMS05_03654,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,131,0.975356,1
+SMS05_03660,ExAIS_USER 10,ExAIS,commercial_spam,0,linkless,none,146,0.24108,0
+SMS05_03662,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,70,0.066391,0
+SMS05_03663,ExAIS_USER 17,ExAIS,ham,0,linkless,none,142,0.048591,0
+SMS05_03668,ExAIS_USER 11,ExAIS,ham,0,linkless,none,118,0.045802,0
+SMS05_03702,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,3452,90,0.993235,1
+SMS05_03707,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,243,0.977112,1
+SMS05_03709,UCI,UCI,ham,0,linkless,none,115,0.041979,0
+SMS05_03713,UCI,UCI,ham,0,linkless,none,81,0.021286,0
+SMS05_03720,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,64,0.186589,0
+SMS05_03721,ExAIS_USER 2,ExAIS,ham,0,linkless,none,68,0.07595,0
+SMS05_03724,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,url_bearing,none,113,0.9997,1
+SMS05_03725,ExAIS_USER 17,ExAIS,commercial_spam,0,linkless,none,142,0.091736,0
+SMS05_03730,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,35118,51,0.805339,1
+SMS05_03735,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,112,0.777084,1
+SMS05_03738,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,49,0.087188,0
+SMS05_03739,UCI,UCI,ham,0,linkless,none,37,0.133087,0
+SMS05_03746,UCI,UCI,ham,0,linkless,none,50,0.053699,0
+SMS05_03749,UCI,UCI,ham,0,linkless,none,45,0.203082,0
+SMS05_03756,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,url_bearing,none,97,0.996613,1
+SMS05_03760,UCI,UCI,ham,0,linkless,none,27,0.072418,0
+SMS05_03763,UCI,UCI,ham,0,linkless,none,24,0.117412,0
+SMS05_03764,ExAIS_USER 15,ExAIS,commercial_spam,0,linkless,none,139,0.22974,0
+SMS05_03775,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,61,0.097671,0
+SMS05_03782,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,2637,81,0.876471,1
+SMS05_03783,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,url_bearing,none,134,0.97362,1
+SMS05_03789,ExAIS_USER 14,ExAIS,commercial_spam,0,linkless,none,93,0.133518,0
+SMS05_03800,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,132,0.944081,1
+SMS05_03803,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,linkless,none,163,0.117124,0
+SMS05_03804,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,linkless,none,143,0.596537,1
+SMS05_03808,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,175,0.993798,1
+SMS05_03809,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,161,0.995772,1
+SMS05_03814,ExAIS_USER 12,ExAIS,commercial_spam,0,linkless,none,125,0.175801,0
+SMS05_03841,UCI,UCI,ham,0,linkless,none,138,0.075016,0
+SMS05_03848,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,68,0.031097,0
+SMS05_03852,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,119,0.9989,1
+SMS05_03864,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,35,0.192485,0
+SMS05_03867,ExAIS_USER 12,ExAIS,commercial_spam,0,linkless,none,153,0.103809,0
+SMS05_03881,UCI,UCI,ham,0,linkless,none,53,0.123721,0
+SMS05_03886,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,linkless,none,140,0.214389,0
+SMS05_03891,UCI,UCI,ham,0,linkless,none,611,0.021324,0
+SMS05_03898,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,32,0.026554,0
+SMS05_03902,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,url_bearing,none,118,0.943618,1
+SMS05_03916,UCI,UCI,ham,0,linkless,none,38,0.140014,0
+SMS05_03920,UCI,UCI,ham,0,linkless,none,63,0.083689,0
+SMS05_03921,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,227,0.844819,1
+SMS05_03922,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,161,0.974407,1
+SMS05_03924,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,linkless,none,161,0.116724,0
+SMS05_03929,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,119,0.999488,1
+SMS05_03938,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,58,0.034028,0
+SMS05_03969,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,312,156,0.994307,1
+SMS05_03989,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,3492,135,0.942482,1
+SMS05_03995,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,linkless,none,147,0.12275,0
+SMS05_03997,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,2564,59,0.318402,0
+SMS05_04010,UCI,UCI,ham,0,linkless,none,31,0.116636,0
+SMS05_04011,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,2195,159,0.986816,1
+SMS05_04021,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,90,0.901706,1
+SMS05_04022,ExAIS_USER 14,ExAIS,commercial_spam,0,linkless,none,152,0.058969,0
+SMS05_04025,UCI,UCI,ham,0,linkless,none,41,0.06256,0
+SMS05_04027,ExAIS_USER 13,ExAIS,commercial_spam,0,linkless,none,108,0.25653,0
+SMS05_04029,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,983,116,0.879379,1
+SMS05_04032,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,113,0.253213,0
+SMS05_04035,ExAIS_USER 16,ExAIS,ham,0,linkless,none,114,0.049458,0
+SMS05_04043,UCI,UCI,ham,0,linkless,none,30,0.086039,0
+SMS05_04044,ExAIS_USER 16,ExAIS,ham,0,linkless,none,133,0.021105,0
+SMS05_04045,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,263,0.985398,1
+SMS05_04050,ExAIS_USER 10,ExAIS,ham,0,linkless,none,140,0.053402,0
+SMS05_04051,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,166,0.326061,0
+SMS05_04057,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,2210,136,0.896457,1
+SMS05_04058,ExAIS_USER 17,ExAIS,ham,0,linkless,none,100,0.098767,0
+SMS05_04059,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,2358,161,0.974622,1
+SMS05_04069,UCI,UCI,ham,0,linkless,none,91,0.068869,0
+SMS05_04075,UCI,UCI,ham,0,linkless,none,32,0.041867,0
+SMS05_04095,UCI,UCI,ham,0,linkless,none,89,0.154788,0
+SMS05_04101,ExAIS_USER 16,ExAIS,commercial_spam,0,linkless,none,237,0.060802,0
+SMS05_04104,ExAIS_USER 10,ExAIS,ham,0,linkless,none,133,0.072887,0
+SMS05_04113,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,url_bearing,none,125,0.91211,1
+SMS05_04115,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,39,0.15344,0
+SMS05_04117,ExAIS_USER 10,ExAIS,ham,0,linkless,none,160,0.093512,0
+SMS05_04118,ExAIS_USER 7,ExAIS,commercial_spam,0,linkless,none,159,0.039018,0
+SMS05_04130,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,148,0.91019,1
+SMS05_04132,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,302,167,0.940578,1
+SMS05_04147,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,82,0.184462,0
+SMS05_04148,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,linkless,none,163,0.15753,0
+SMS05_04150,UCI,UCI,ham,0,linkless,none,38,0.155637,0
+SMS05_04164,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,2562,147,0.978292,1
+SMS05_04172,ExAIS_USER 15,ExAIS,commercial_spam,0,linkless,none,142,0.291133,0
+SMS05_04176,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1059,328,0.941237,1
+SMS05_04192,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,3373,140,0.933707,1
+SMS05_04198,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,134,0.991657,1
+SMS05_04203,UCI,UCI,ham,0,linkless,none,39,0.09831,0
+SMS05_04213,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1019,150,0.983647,1
+SMS05_04216,ExAIS_USER 16,ExAIS,commercial_spam,0,linkless,none,157,0.037101,0
+SMS05_04217,ExAIS_USER 19,ExAIS,commercial_spam,0,linkless,none,124,0.210699,0
+SMS05_04224,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,845,134,0.814277,1
+SMS05_04237,ExAIS_USER 19,ExAIS,commercial_spam,0,linkless,none,172,0.059435,0
+SMS05_04242,ExAIS_USER 16,ExAIS,ham,0,linkless,none,27,0.101165,0
+SMS05_04244,ExAIS_USER 15,ExAIS,commercial_spam,0,linkless,none,88,0.090505,0
+SMS05_04246,ExAIS_USER 14,ExAIS,commercial_spam,0,linkless,none,132,0.146236,0
+SMS05_04247,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,828,114,0.953106,1
+SMS05_04259,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,335,175,0.917895,1
+SMS05_04265,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,252,0.979627,1
+SMS05_04268,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,213,121,0.853436,1
+SMS05_04275,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,145,0.972343,1
+SMS05_04281,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,41,0.953695,1
+SMS05_04283,ExAIS_USER 3,ExAIS,commercial_spam,0,linkless,none,132,0.403815,0
+SMS05_04286,ExAIS_USER 14,ExAIS,commercial_spam,0,linkless,none,155,0.017701,0
+SMS05_04298,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,20485,160,0.98321,1
+SMS05_04300,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,108,0.750799,1
+SMS05_04302,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,170,0.998638,1
+SMS05_04324,ExAIS_USER 3,ExAIS,commercial_spam,0,linkless,none,113,0.090083,0
+SMS05_04328,ExAIS_USER 7,ExAIS,commercial_spam,0,linkless,none,150,0.033092,0
+SMS05_04339,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,24,0.05202,0
+SMS05_04342,ExAIS_USER 16,ExAIS,ham,0,linkless,none,159,0.161723,0
+SMS05_04343,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,url_bearing,none,154,0.36219,0
+SMS05_04344,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,2806,65,0.988434,1
+SMS05_04351,ExAIS_USER 15,ExAIS,commercial_spam,0,linkless,none,109,0.323132,0
+SMS05_04353,ExAIS_USER 19,ExAIS,commercial_spam,0,linkless,none,43,0.309735,0
+SMS05_04387,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,3526,22,0.920673,1
+SMS05_04389,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,135,0.978342,1
+SMS05_04396,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,72,0.969091,1
+SMS05_04406,UCI,UCI,ham,0,linkless,none,67,0.214772,0
+SMS05_04417,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,55,0.151276,0
+SMS05_04418,ExAIS_USER 4,ExAIS,ham,0,linkless,none,157,0.051535,0
+SMS05_04425,ExAIS_USER 19,ExAIS,ham,0,linkless,none,11,0.185544,0
+SMS05_04432,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,2619,152,0.910993,1
+SMS05_04445,ExAIS_USER 13,ExAIS,commercial_spam,0,linkless,none,141,0.350343,0
+SMS05_04456,ExAIS_USER 16,ExAIS,commercial_spam,0,linkless,none,185,0.042601,0
+SMS05_04458,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,linkless,none,105,0.155301,0
+SMS05_04459,ExAIS_USER 19,ExAIS,ham,0,linkless,none,62,0.189413,0
+SMS05_04460,ExAIS_USER 10,ExAIS,commercial_spam,0,linkless,none,206,0.448245,0
+SMS05_04482,ExAIS_USER 14,ExAIS,ham,0,linkless,none,155,0.065661,0
+SMS05_04496,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,2145,148,0.924565,1
+SMS05_04498,ExAIS_USER 16,ExAIS,ham,0,linkless,none,159,0.072971,0
+SMS05_04499,ExAIS_USER 11,ExAIS,ham,0,linkless,none,17,0.061984,0
+SMS05_04500,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,408,0.961527,1
+SMS05_04518,ExAIS_USER 18,ExAIS,commercial_spam,0,linkless,none,291,0.146837,0
+SMS05_04520,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,116,0.999354,1
+SMS05_04523,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,460,112,0.966964,1
+SMS05_04542,ExAIS_USER 7,ExAIS,ham,0,linkless,none,50,0.026845,0
+SMS05_04545,ExAIS_USER 15,ExAIS,commercial_spam,0,linkless,none,118,0.115544,0
+SMS05_04549,ExAIS_USER 19,ExAIS,ham,0,linkless,none,10,0.098577,0
+SMS05_04552,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,41,0.041431,0
+SMS05_04562,UCI,UCI,ham,0,linkless,none,53,0.048693,0
+SMS05_04569,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,292,0.996048,1
+SMS05_04575,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,url_bearing,none,160,0.146613,0
+SMS05_04586,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,67,0.085784,0
+SMS05_04594,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,99,0.879413,1
+SMS05_04608,ExAIS_USER 13,ExAIS,commercial_spam,0,linkless,none,125,0.071917,0
+SMS05_04618,ExAIS_USER 10,ExAIS,commercial_spam,0,linkless,none,186,0.184559,0
+SMS05_04622,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,linkless,none,158,0.9211,1
+SMS05_04627,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,159,0.994329,1
+SMS05_04630,UCI,UCI,ham,0,linkless,none,32,0.033001,0
+SMS05_04631,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,97,0.048634,0
+SMS05_04632,UCI,UCI,ham,0,linkless,none,101,0.064011,0
+SMS05_04641,ExAIS_USER 19,ExAIS,ham,0,linkless,none,70,0.072459,0
+SMS05_04653,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,396,0.988689,1
+SMS05_04657,ExAIS_USER 15,ExAIS,commercial_spam,0,linkless,none,140,0.188712,0
+SMS05_04663,UCI,UCI,ham,0,linkless,none,140,0.011622,0
+SMS05_04671,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1646,117,0.971044,1
+SMS05_04677,UCI,UCI,ham,0,linkless,none,48,0.029015,0
+SMS05_04683,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,146,0.997104,1
+SMS05_04686,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,12834,96,0.625935,1
+SMS05_04688,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,34928,111,0.747729,1
+SMS05_04691,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,595,16,0.57583,1
+SMS05_04706,ExAIS_USER 15,ExAIS,commercial_spam,0,linkless,none,140,0.042209,0
+SMS05_04716,UCI,UCI,ham,0,linkless,none,76,0.0263,0
+SMS05_04724,UCI,UCI,ham,0,linkless,none,29,0.232987,0
+SMS05_04725,ExAIS_USER 14,ExAIS,commercial_spam,0,linkless,none,148,0.162757,0
+SMS05_04743,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,137,0.97214,1
+SMS05_04744,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,30267,70,0.823959,1
+SMS05_04746,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,20,0.072849,0
+SMS05_04768,ExAIS_USER 9,ExAIS,commercial_spam,0,linkless,none,34,0.167394,0
+SMS05_04778,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,289,0.065983,0
+SMS05_04781,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,69,0.796793,1
+SMS05_04788,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,406,0.984491,1
+SMS05_04796,UCI,UCI,ham,0,linkless,none,39,0.063729,0
+SMS05_04799,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,url_bearing,none,153,0.817656,1
+SMS05_04802,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,url_bearing,none,124,0.986393,1
+SMS05_04818,UCI,UCI,ham,0,linkless,none,47,0.048262,0
+SMS05_04822,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,2266,193,0.97336,1
+SMS05_04824,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1648,156,0.986316,1
+SMS05_04825,ExAIS_USER 17,ExAIS,commercial_spam,0,linkless,none,46,0.186821,0
+SMS05_04830,ExAIS_USER 16,ExAIS,commercial_spam,0,linkless,none,103,0.026679,0
+SMS05_04833,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,126,0.981994,1
+SMS05_04840,ExAIS_USER 16,ExAIS,commercial_spam,0,linkless,none,92,0.050023,0
+SMS05_04841,ExAIS_USER 14,ExAIS,commercial_spam,0,linkless,none,111,0.729589,1
+SMS05_04843,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,102,0.998802,1
+SMS05_04844,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,245,0.928772,1
+SMS05_04852,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,171,0.997604,1
+SMS05_04853,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,linkless,none,152,0.156898,0
+SMS05_04864,ExAIS_USER 19,ExAIS,ham,0,linkless,none,30,0.208673,0
+SMS05_04865,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,243,0.992222,1
+SMS05_04869,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,2250,164,0.828444,1
+SMS05_04902,ExAIS_USER 19,ExAIS,commercial_spam,0,linkless,none,153,0.333542,0
+SMS05_04915,UCI,UCI,ham,0,linkless,none,69,0.11878,0
+SMS05_04917,ExAIS_USER 19,ExAIS,ham,0,linkless,none,71,0.082151,0
+SMS05_04918,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1006,48,0.969427,1
+SMS05_04943,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,159,0.987309,1
+SMS05_04945,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,25238,55,0.925188,1
+SMS05_04950,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,70,0.95702,1
+SMS05_04954,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,237,0.143114,0
+SMS05_04956,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,270,0.991697,1
+SMS05_04972,ExAIS_USER 2,ExAIS,commercial_spam,0,linkless,none,25,0.085784,0
+SMS05_04989,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,35,114,0.987495,1
+SMS05_04993,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,26,0.164566,0
+SMS05_05000,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,34987,141,0.842499,1
+SMS05_05005,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,124,0.978751,1
+SMS05_05011,ExAIS_USER 15,ExAIS,ham,0,linkless,none,60,0.010453,0
+SMS05_05022,UCI,UCI,ham,0,linkless,none,44,0.126469,0
+SMS05_05027,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,url_bearing,none,64,0.993393,1
+SMS05_05037,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,linkless,none,153,0.876017,1
+SMS05_05040,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,28,0.846477,1
+SMS05_05042,ExAIS_USER 10,ExAIS,ham,0,linkless,none,141,0.100584,0
+SMS05_05045,ExAIS_USER 17,ExAIS,ham,0,linkless,none,126,0.106541,0
+SMS05_05046,ExAIS_USER 12,ExAIS,commercial_spam,0,linkless,none,130,0.084364,0
+SMS05_05048,ExAIS_USER 10,ExAIS,ham,0,linkless,none,142,0.070501,0
+SMS05_05053,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,89,0.040894,0
+SMS05_05057,ExAIS_USER 12,ExAIS,commercial_spam,0,linkless,none,138,0.127641,0
+SMS05_05063,ExAIS_USER 16,ExAIS,commercial_spam,0,linkless,none,158,0.150939,0
+SMS05_05065,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,24,0.039625,0
+SMS05_05071,ExAIS_USER 12,ExAIS,commercial_spam,0,linkless,none,150,0.064529,0
+SMS05_05074,ExAIS_USER 19,ExAIS,ham,0,linkless,none,41,0.231646,0
+SMS05_05077,ExAIS_USER 4,ExAIS,ham,0,linkless,none,86,0.054908,0
+SMS05_05081,ExAIS_USER 16,ExAIS,commercial_spam,0,linkless,none,190,0.074662,0
+SMS05_05085,ExAIS_USER 2,ExAIS,ham,0,linkless,none,30,0.095136,0
+SMS05_05095,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,170,0.997193,1
+SMS05_05108,ExAIS_USER 16,ExAIS,ham,0,linkless,none,26,0.238795,0
+SMS05_05109,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,linkless,none,154,0.89924,1
+SMS05_05118,ExAIS_USER 17,ExAIS,commercial_spam,0,linkless,none,153,0.121798,0
+SMS05_05124,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,264,0.998458,1
+SMS05_05126,ExAIS_USER 12,ExAIS,commercial_spam,0,linkless,none,139,0.156495,0
+SMS05_05132,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,url_bearing,none,689,0.976808,1
+SMS05_05137,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,linkless,none,150,0.182067,0
+SMS05_05139,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,129,0.974044,1
+SMS05_05169,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,linkless,none,164,0.846513,1
+SMS05_05173,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,154,0.986993,1
+SMS05_05177,ExAIS_USER 10,ExAIS,ham,0,linkless,none,158,0.14247,0
+SMS05_05181,UCI,UCI,ham,0,linkless,none,65,0.056455,0
+SMS05_05185,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,169,0.828894,1
+SMS05_05194,ExAIS_USER 17,ExAIS,ham,0,linkless,none,125,0.106666,0
+SMS05_05214,UCI,UCI,ham,0,linkless,none,26,0.09157,0
+SMS05_05218,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,3409,37,0.989782,1
+SMS05_05223,ExAIS_USER 4,ExAIS,commercial_spam,0,linkless,none,11,0.193566,0
+SMS05_05251,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,linkless,none,102,0.088612,0
+SMS05_05254,UCI,UCI,ham,0,linkless,none,50,0.088918,0
+SMS05_05256,ExAIS_USER 16,ExAIS,ham,0,linkless,none,82,0.044852,0
+SMS05_05260,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,url_bearing,none,132,0.126211,0
+SMS05_05263,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,186,135,0.748166,1
+SMS05_05273,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,url_bearing,none,74,0.862909,1
+SMS05_05279,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,84,0.930937,1
+SMS05_05291,UCI,UCI,ham,0,linkless,none,324,0.068129,0
+SMS05_05302,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,linkless,none,124,0.513119,1
+SMS05_05317,ExAIS_USER 10,ExAIS,commercial_spam,0,linkless,none,107,0.064766,0
+SMS05_05319,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,952,191,0.973719,1
+SMS05_05325,ExAIS_USER 16,ExAIS,ham,0,linkless,none,78,0.052221,0
+SMS05_05328,ExAIS_USER 15,ExAIS,commercial_spam,0,linkless,none,89,0.054591,0
+SMS05_05336,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,128,0.81385,1
+SMS05_05341,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,2560,147,0.894744,1
+SMS05_05344,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,53,0.091547,0
+SMS05_05346,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,120,0.06654,0
+SMS05_05349,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,url_bearing,none,247,0.021133,0
+SMS05_05351,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,179,0.983196,1
+SMS05_05361,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1369,160,0.984938,1
+SMS05_05363,ExAIS_USER 17,ExAIS,ham,0,linkless,none,11,0.139818,0
+SMS05_05373,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,136,0.916261,1
+SMS05_05374,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,3321,153,0.979532,1
+SMS05_05386,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1527,107,0.919246,1
+SMS05_05388,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,60,0.209347,0
+SMS05_05413,ExAIS_USER 17,ExAIS,commercial_spam,0,linkless,none,160,0.081905,0
+SMS05_05427,UCI,UCI,ham,0,linkless,none,129,0.068276,0
+SMS05_05439,UCI,UCI,ham,0,linkless,none,150,0.049,0
+SMS05_05445,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,131,0.985461,1
+SMS05_05448,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,105,0.962737,1
+SMS05_05452,ExAIS_USER 19,ExAIS,commercial_spam,0,linkless,none,105,0.046027,0
+SMS05_05457,UCI,UCI,ham,0,linkless,none,142,0.061181,0
+SMS05_05467,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,240,0.917856,1
+SMS05_05471,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,250,0.990037,1
+SMS05_05478,ExAIS_USER 16,ExAIS,ham,0,linkless,none,10,0.025215,0
+SMS05_05480,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,137,0.131512,0
+SMS05_05497,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,linkless,none,146,0.720746,1
+SMS05_05502,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,139,0.98233,1
+SMS05_05503,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,url_bearing,none,113,0.152039,0
+SMS05_05506,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,54,0.294327,0
+SMS05_05512,UCI,UCI,ham,0,linkless,none,52,0.082037,0
+SMS05_05534,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,linkless,none,140,0.586053,1
+SMS05_05557,ExAIS_USER 3,ExAIS,commercial_spam,0,linkless,none,158,0.124537,0
+SMS05_05561,UCI,UCI,ham,0,linkless,none,69,0.044994,0
+SMS05_05569,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,151,0.648622,1
+SMS05_05570,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,701,45,0.674764,1
+SMS05_05572,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,url_bearing,none,133,0.75343,1
+SMS05_05583,UCI,UCI,ham,0,linkless,none,28,0.143459,0
+SMS05_05591,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,35,0.68912,1
+SMS05_05610,ExAIS_USER 11,ExAIS,ham,0,linkless,none,228,0.184728,0
+SMS05_05622,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,325,0.97485,1
+SMS05_05623,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,111,0.997757,1
+SMS05_05628,UCI,UCI,ham,0,linkless,none,118,0.082048,0
+SMS05_05630,ExAIS_USER 15,ExAIS,commercial_spam,0,linkless,none,151,0.076502,0
+SMS05_05633,ExAIS_USER 10,ExAIS,commercial_spam,0,linkless,none,148,0.137843,0
+SMS05_05634,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,url_bearing,none,365,0.393286,0
+SMS05_05642,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,55,0.074387,0
+SMS05_05663,ExAIS_USER 19,ExAIS,ham,0,linkless,none,115,0.255649,0
+SMS05_05664,ExAIS_USER 15,ExAIS,commercial_spam,0,linkless,none,132,0.203443,0
+SMS05_05666,UCI,UCI,ham,0,linkless,none,107,0.056562,0
+SMS05_05667,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,36,0.053474,0
+SMS05_05673,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,url_bearing,none,146,0.525184,1
+SMS05_05681,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,38,0.268643,0
+SMS05_05686,ExAIS_USER 12,ExAIS,commercial_spam,0,linkless,none,160,0.094425,0
+SMS05_05692,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,2531,143,0.88635,1
+SMS05_05695,ExAIS_USER 10,ExAIS,ham,0,linkless,none,148,0.08385,0
+SMS05_05702,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,402,0.864876,1
+SMS05_05703,UCI,UCI,ham,0,linkless,none,80,0.018281,0
+SMS05_05712,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,url_bearing,none,557,0.950381,1
+SMS05_05716,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,linkless,none,119,0.179224,0
+SMS05_05720,UCI,UCI,ham,0,linkless,none,44,0.021493,0
+SMS05_05738,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,126,0.989661,1
+SMS05_05740,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,41,0.094269,0
+SMS05_05755,UCI,UCI,ham,0,linkless,none,21,0.093077,0
+SMS05_05762,UCI,UCI,ham,0,linkless,none,38,0.052671,0
+SMS05_05769,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1742,149,0.944215,1
+SMS05_05772,ExAIS_USER 16,ExAIS,commercial_spam,0,linkless,none,152,0.066343,0
+SMS05_05774,ExAIS_USER 15,ExAIS,ham,0,linkless,none,285,0.056379,0
+SMS05_05779,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,2735,71,0.932265,1
+SMS05_05787,UCI,UCI,ham,0,linkless,none,45,0.050144,0
+SMS05_05794,UCI,UCI,ham,0,linkless,none,72,0.084825,0
+SMS05_05798,UCI,UCI,ham,0,linkless,none,27,0.125195,0
+SMS05_05804,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,301,0.024454,0
+SMS05_05807,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,linkless,none,160,0.907885,1
+SMS05_05813,ExAIS_USER 19,ExAIS,commercial_spam,0,linkless,none,93,0.116111,0
+SMS05_05817,ExAIS_USER 14,ExAIS,commercial_spam,0,linkless,none,166,0.037844,0
+SMS05_05820,UCI,UCI,ham,0,linkless,none,54,0.056711,0
+SMS05_05829,ExAIS_USER 12,ExAIS,commercial_spam,0,linkless,none,160,0.154343,0
+SMS05_05832,ExAIS_USER 12,ExAIS,ham,0,linkless,none,10,0.23,0
+SMS05_05844,ExAIS_USER 13,ExAIS,commercial_spam,0,linkless,none,133,0.103601,0
+SMS05_05850,ExAIS_USER 16,ExAIS,ham,0,linkless,none,160,0.08314,0
+SMS05_05854,UCI,UCI,ham,0,linkless,none,36,0.249583,0
+SMS05_05862,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,161,0.992873,1
+SMS05_05871,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,186,0.977181,1
+SMS05_05881,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,53,0.179747,0
+SMS05_05887,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,420,158,0.96063,1
+SMS05_05891,UCI,UCI,ham,0,linkless,none,81,0.031564,0
+SMS05_05902,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,url_bearing,none,159,0.847889,1
+SMS05_05903,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,146,0.08212,0
+SMS05_05904,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,74,0.10735,0
+SMS05_05905,UCI,UCI,commercial_spam,0,linkless,none,156,0.546584,1
+SMS05_05908,ExAIS_USER 10,ExAIS,commercial_spam,0,linkless,none,100,0.280796,0
+SMS05_05909,UCI,UCI,ham,0,linkless,none,57,0.055781,0
+SMS05_05911,ExAIS_USER 2,ExAIS,commercial_spam,0,linkless,none,180,0.273096,0
+SMS05_05916,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1328,102,0.981562,1
+SMS05_05920,UCI,UCI,ham,0,linkless,none,62,0.03854,0
+SMS05_05922,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,28,0.179102,0
+SMS05_05927,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,41,0.033699,0
+SMS05_05941,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,77,0.061596,0
+SMS05_05956,ExAIS_USER 15,ExAIS,commercial_spam,0,linkless,none,146,0.10738,0
+SMS05_05958,UCI,UCI,ham,0,linkless,none,38,0.156532,0
+SMS05_05981,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,131,0.99555,1
+SMS05_06001,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,70,0.085106,0
+SMS05_06005,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,url_bearing,none,110,0.994349,1
+SMS05_06022,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,709,79,0.159296,0
+SMS05_06026,ExAIS_USER 15,ExAIS,ham,0,linkless,none,146,0.120736,0
+SMS05_06029,ExAIS_USER 10,ExAIS,ham,0,linkless,none,152,0.07601,0
+SMS05_06030,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,22782,116,0.940679,1
+SMS05_06032,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,49,0.047953,0
+SMS05_06041,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,linkless,none,154,0.882085,1
+SMS05_06047,ExAIS_USER 12,ExAIS,commercial_spam,0,linkless,none,84,0.06825,0
+SMS05_06056,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,181,0.662403,1
+SMS05_06069,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,107,0.05493,0
+SMS05_06072,ExAIS_USER 14,ExAIS,commercial_spam,0,linkless,none,119,0.109182,0
+SMS05_06075,UCI,UCI,ham,0,linkless,none,87,0.071628,0
+SMS05_06079,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,31,0.156425,0
+SMS05_06080,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,35014,135,0.896965,1
+SMS05_06090,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1056,122,0.989306,1
+SMS05_06104,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,110,0.054041,0
+SMS05_06110,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,146,0.964831,1
+SMS05_06112,UCI,UCI,ham,0,linkless,none,94,0.068687,0
+SMS05_06121,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1722,87,0.535167,1
+SMS05_06124,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,238,0.996177,1
+SMS05_06128,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,7350,93,0.95168,1
+SMS05_06129,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,34,0.071874,0
+SMS05_06130,UCI,UCI,ham,0,linkless,none,65,0.237194,0
+SMS05_06131,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,30,0.03503,0
+SMS05_06133,ExAIS_USER 1,ExAIS,ham,0,linkless,none,32,0.137688,0
+SMS05_06151,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,linkless,none,145,0.646579,1
+SMS05_06163,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,36,0.096992,0
+SMS05_06173,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1084,198,0.851269,1
+SMS05_06182,UCI,UCI,ham,0,linkless,none,41,0.03557,0
+SMS05_06191,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,166,0.981522,1
+SMS05_06193,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,2140,166,0.86911,1
+SMS05_06206,ExAIS_USER 12,ExAIS,commercial_spam,0,linkless,none,145,0.023405,0
+SMS05_06212,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,url_bearing,none,152,0.928286,1
+SMS05_06213,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,124,0.995366,1
+SMS05_06250,ExAIS_USER 16,ExAIS,commercial_spam,0,linkless,none,112,0.143537,0
+SMS05_06256,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,251,0.991326,1
+SMS05_06260,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,117,0.97807,1
+SMS05_06261,ExAIS_USER 16,ExAIS,ham,0,linkless,none,161,0.034057,0
+SMS05_06267,ExAIS_USER 10,ExAIS,ham,0,linkless,none,69,0.09475,0
+SMS05_06269,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,144,0.957847,1
+SMS05_06275,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,114,0.99412,1
+SMS05_06291,ExAIS_USER 1,ExAIS,commercial_spam,0,linkless,none,99,0.690522,1
+SMS05_06295,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,83,0.046666,0
+SMS05_06301,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,66,0.110929,0
+SMS05_06308,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,136,0.902942,1
+SMS05_06312,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,52,0.985818,1
+SMS05_06320,UCI,UCI,ham,0,linkless,none,87,0.066615,0
+SMS05_06321,ExAIS_USER 19,ExAIS,commercial_spam,0,linkless,none,166,0.049683,0
+SMS05_06335,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,151,0.987434,1
+SMS05_06338,ExAIS_USER 8,ExAIS,ham,0,linkless,none,291,0.048963,0
+SMS05_06339,ExAIS_USER 12,ExAIS,commercial_spam,0,linkless,none,130,0.056217,0
+SMS05_06340,UCI,UCI,ham,0,linkless,none,158,0.099616,0
+SMS05_06345,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,3380,139,0.800197,1
+SMS05_06354,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1044,238,0.70737,1
+SMS05_06357,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,161,0.931795,1
+SMS05_06390,ExAIS_USER 19,ExAIS,ham,0,linkless,none,78,0.062408,0
+SMS05_06396,UCI,UCI,ham,0,linkless,none,128,0.013037,0
+SMS05_06412,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,66,0.02622,0
+SMS05_06413,UCI,UCI,ham,0,linkless,none,38,0.447229,0
+SMS05_06415,ExAIS_USER 2,ExAIS,ham,0,linkless,none,68,0.050008,0
+SMS05_06427,UCI,UCI,ham,0,linkless,none,30,0.342688,0
+SMS05_06438,UCI,UCI,ham,0,linkless,none,97,0.073953,0
+SMS05_06447,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,86,0.049225,0
+SMS05_06458,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,6,144,0.97778,1
+SMS05_06463,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,160,0.996228,1
+SMS05_06465,ExAIS_USER 19,ExAIS,ham,0,linkless,none,19,0.190324,0
+SMS05_06467,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,linkless,none,129,0.076799,0
+SMS05_06474,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,url_bearing,none,180,0.990189,1
+SMS05_06479,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,824,247,0.446113,0
+SMS05_06483,ExAIS_USER 16,ExAIS,commercial_spam,0,linkless,none,159,0.086531,0
+SMS05_06484,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,129,0.979379,1
+SMS05_06486,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,139,0.597259,1
+SMS05_06488,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,156,0.088928,0
+SMS05_06497,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,26,0.047143,0
+SMS05_06507,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,url_bearing,none,123,0.077653,0
+SMS05_06508,UCI,UCI,ham,0,linkless,none,83,0.028298,0
+SMS05_06515,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,url_bearing,none,23,0.590802,1
+SMS05_06520,ExAIS_USER 19,ExAIS,commercial_spam,0,linkless,none,145,0.088239,0
+SMS05_06525,ExAIS_USER 16,ExAIS,ham,0,linkless,none,160,0.101052,0
+SMS05_06527,ExAIS_USER 19,ExAIS,commercial_spam,0,linkless,none,128,0.100378,0
+SMS05_06531,ExAIS_USER 16,ExAIS,ham,0,linkless,none,123,0.123767,0
+SMS05_06550,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,url_bearing,none,128,0.953765,1
+SMS05_06559,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,url_bearing,none,108,0.347062,0
+SMS05_06561,UCI,UCI,ham,0,linkless,none,40,0.042555,0
+SMS05_06564,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1743,145,0.995408,1
+SMS05_06574,ExAIS_USER 10,ExAIS,ham,0,linkless,none,8,0.081916,0
+SMS05_06576,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,33670,123,0.781971,1
+SMS05_06580,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,linkless,none,124,0.113274,0
+SMS05_06585,UCI,UCI,ham,0,linkless,none,96,0.144951,0
+SMS05_06587,ExAIS_USER 10,ExAIS,ham,0,linkless,none,52,0.192549,0
+SMS05_06592,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,592,140,0.990873,1
+SMS05_06599,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,124,0.998141,1
+SMS05_06623,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,linkless,none,143,0.409531,0
+SMS05_06628,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,74,0.979693,1
+SMS05_06630,ExAIS_USER 10,ExAIS,ham,0,linkless,none,142,0.137684,0
+SMS05_06663,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,2566,134,0.851291,1
+SMS05_06674,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,868,292,0.585683,1
+SMS05_06677,ExAIS_USER 2,ExAIS,ham,0,linkless,none,45,0.116725,0
+SMS05_06680,UCI,UCI,ham,0,linkless,none,32,0.040431,0
+SMS05_06681,ExAIS_USER 7,ExAIS,commercial_spam,0,linkless,none,134,0.255623,0
+SMS05_06689,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,linkless,none,145,0.933208,1
+SMS05_06690,ExAIS_USER 14,ExAIS,ham,0,linkless,none,31,0.283792,0
+SMS05_06699,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,667,251,0.983054,1
+SMS05_06705,UCI,UCI,ham,0,linkless,none,29,0.09456,0
+SMS05_06710,ExAIS_USER 11,ExAIS,ham,0,linkless,none,157,0.224349,0
+SMS05_06714,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,75,0.968982,1
+SMS05_06734,ExAIS_USER 10,ExAIS,ham,0,linkless,none,136,0.126289,0
+SMS05_06742,ExAIS_USER 16,ExAIS,ham,0,linkless,none,155,0.062169,0
+SMS05_06748,UCI,UCI,ham,0,linkless,none,76,0.074742,0
+SMS05_06755,ExAIS_USER 18,ExAIS,ham,0,linkless,none,18,0.279514,0
+SMS05_06781,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,url_bearing,none,5,0.186043,0
+SMS05_06784,ExAIS_USER 12,ExAIS,commercial_spam,0,linkless,none,105,0.163677,0
+SMS05_06788,ExAIS_USER 16,ExAIS,commercial_spam,0,linkless,none,236,0.06241,0
+SMS05_06791,ExAIS_USER 2,ExAIS,ham,0,linkless,none,151,0.040025,0
+SMS05_06795,ExAIS_USER 2,ExAIS,ham,0,linkless,none,30,0.081292,0
+SMS05_06796,ExAIS_USER 4,ExAIS,commercial_spam,0,linkless,none,51,0.409244,0
+SMS05_06803,ExAIS_USER 11,ExAIS,ham,0,linkless,none,56,0.040379,0
+SMS05_06811,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,90,0.947325,1
+SMS05_06812,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,2148,158,0.979438,1
+SMS05_06820,ExAIS_USER 4,ExAIS,commercial_spam,0,linkless,none,72,0.122835,0
+SMS05_06823,UCI,UCI,ham,0,linkless,none,51,0.064546,0
+SMS05_06826,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,121,0.578493,1
+SMS05_06832,ExAIS_USER 4,ExAIS,ham,0,linkless,none,24,0.074574,0
+SMS05_06841,UCI,UCI,ham,0,linkless,none,53,0.184284,0
+SMS05_06844,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,125,0.0603,0
+SMS05_06845,ExAIS_USER 16,ExAIS,commercial_spam,0,linkless,none,154,0.089612,0
+SMS05_06858,UCI,UCI,ham,0,linkless,none,106,0.064726,0
+SMS05_06862,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,169,0.982286,1
+SMS05_06864,UCI,UCI,ham,0,linkless,none,130,0.065512,0
+SMS05_06867,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,195,0.964616,1
+SMS05_06868,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,42,0.824236,1
+SMS05_06871,ExAIS_USER 11,ExAIS,ham,0,linkless,none,70,0.059622,0
+SMS05_06876,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,280,0.97496,1
+SMS05_06884,ExAIS_USER 15,ExAIS,commercial_spam,0,linkless,none,156,0.100861,0
+SMS05_06887,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,linkless,none,160,0.150151,0
+SMS05_06888,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,3496,105,0.929759,1
+SMS05_06893,UCI,UCI,ham,0,linkless,none,63,0.177948,0
+SMS05_06899,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1753,143,0.947247,1
+SMS05_06906,ExAIS_USER 10,ExAIS,commercial_spam,0,linkless,none,131,0.094224,0
+SMS05_06916,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,7430,116,0.975491,1
+SMS05_06921,ExAIS_USER 13,ExAIS,commercial_spam,0,linkless,none,190,0.174042,0
+SMS05_06933,ExAIS_USER 19,ExAIS,ham,0,linkless,none,139,0.044021,0
+SMS05_06938,UCI,UCI,ham,0,linkless,none,24,0.064007,0
+SMS05_06942,ExAIS_USER 17,ExAIS,ham,0,linkless,none,14,0.127653,0
+SMS05_06943,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,2261,116,0.97876,1
+SMS05_06945,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,674,158,0.993939,1
+SMS05_06950,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,135,0.101522,0
+SMS05_06951,ExAIS_USER 2,ExAIS,commercial_spam,0,linkless,none,151,0.040999,0
+SMS05_06953,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,177,0.041132,0
+SMS05_06964,ExAIS_USER 15,ExAIS,commercial_spam,0,linkless,none,141,0.095704,0
+SMS05_06971,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1873,185,0.911822,1
+SMS05_06977,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,40,0.069319,0
+SMS05_06986,ExAIS_USER 16,ExAIS,commercial_spam,0,linkless,none,163,0.1023,0
+SMS05_06994,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,46,0.079748,0
+SMS05_07000,UCI,UCI,ham,0,linkless,none,49,0.181947,0
+SMS05_07007,ExAIS_USER 16,ExAIS,commercial_spam,0,linkless,none,137,0.196721,0
+SMS05_07008,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,linkless,none,96,0.854058,1
+SMS05_07020,UCI,UCI,ham,0,linkless,none,61,0.029117,0
+SMS05_07024,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,150,0.864071,1
+SMS05_07032,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,67,0.976926,1
+SMS05_07036,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,87,0.909196,1
+SMS05_07048,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,url_bearing,none,134,0.985627,1
+SMS05_07052,ExAIS_USER 8,ExAIS,commercial_spam,0,linkless,none,152,0.09078,0
+SMS05_07053,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,107,0.03024,0
+SMS05_07055,UCI,UCI,ham,0,linkless,none,33,0.046179,0
+SMS05_07063,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,10112,56,0.968256,1
+SMS05_07070,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,64,0.080222,0
+SMS05_07075,UCI,UCI,commercial_spam,0,linkless,none,152,0.048203,0
+SMS05_07077,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,url_bearing,none,138,0.21777,0
+SMS05_07093,UCI,UCI,ham,0,linkless,none,26,0.056011,0
+SMS05_07098,ExAIS_USER 12,ExAIS,commercial_spam,0,linkless,none,146,0.067056,0
+SMS05_07099,ExAIS_USER 15,ExAIS,commercial_spam,0,linkless,none,110,0.250412,0
+SMS05_07125,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,url_bearing,none,123,0.494043,0
+SMS05_07130,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,3387,127,0.952238,1
+SMS05_07132,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,141,0.93581,1
+SMS05_07134,UCI,UCI,ham,0,linkless,none,28,0.081183,0
+SMS05_07142,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,231,0.986531,1
+SMS05_07146,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,71,0.950428,1
+SMS05_07153,ExAIS_USER 9,ExAIS,commercial_spam,0,linkless,none,152,0.088109,0
+SMS05_07159,UCI,UCI,ham,0,linkless,none,30,0.171921,0
+SMS05_07188,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,144,0.996504,1
+SMS05_07189,ExAIS_USER 19,ExAIS,ham,0,linkless,none,191,0.059652,0
+SMS05_07196,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,846,132,0.842019,1
+SMS05_07209,UCI,UCI,ham,0,linkless,none,28,0.186584,0
+SMS05_07210,UCI,UCI,ham,0,linkless,none,45,0.013133,0
+SMS05_07215,UCI,UCI,ham,0,linkless,none,64,0.029143,0
+SMS05_07218,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,74,0.050648,0
+SMS05_07225,ExAIS_USER 12,ExAIS,commercial_spam,0,linkless,none,20,0.213182,0
+SMS05_07227,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,linkless,none,132,0.740978,1
+SMS05_07234,ExAIS_USER 16,ExAIS,ham,0,linkless,none,136,0.066573,0
+SMS05_07239,UCI,UCI,ham,0,linkless,none,33,0.036016,0
+SMS05_07252,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,70,0.061861,0
+SMS05_07253,ExAIS_USER 2,ExAIS,ham,0,linkless,none,30,0.059811,0
+SMS05_07254,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,8348,133,0.940829,1
+SMS05_07257,ExAIS_USER 15,ExAIS,ham,0,linkless,none,67,0.011438,0
+SMS05_07262,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,81,0.07833,0
+SMS05_07268,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,2125,99,0.982791,1
+SMS05_07276,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,linkless,none,160,0.140362,0
+SMS05_07278,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,url_bearing,none,113,0.949222,1
+SMS05_07310,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,24,84,0.992241,1
+SMS05_07315,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,28,0.021485,0
+SMS05_07317,UCI,UCI,ham,0,linkless,none,45,0.101755,0
+SMS05_07323,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1876,135,0.990336,1
+SMS05_07326,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,url_bearing,none,110,0.937876,1
+SMS05_07328,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,82,0.427609,0
+SMS05_07337,ExAIS_USER 12,ExAIS,ham,0,linkless,none,103,0.124885,0
+SMS05_07341,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,31,0.130528,0
+SMS05_07363,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,133,0.031067,0
+SMS05_07366,ExAIS_USER 11,ExAIS,ham,0,linkless,none,149,0.062883,0
+SMS05_07376,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,58,0.026152,0
+SMS05_07377,ExAIS_USER 10,ExAIS,ham,0,linkless,none,70,0.120363,0
+SMS05_07378,ExAIS_USER 15,ExAIS,commercial_spam,0,linkless,none,127,0.090207,0
+SMS05_07396,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,125,0.999556,1
+SMS05_07418,UCI,UCI,ham,0,linkless,none,67,0.123839,0
+SMS05_07422,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,65,0.054852,0
+SMS05_07435,ExAIS_USER 16,ExAIS,commercial_spam,0,linkless,none,152,0.065614,0
+SMS05_07439,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,147,0.919838,1
+SMS05_07447,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,34496,121,0.949547,1
+SMS05_07449,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,linkless,none,151,0.195737,0
+SMS05_07463,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,url_bearing,none,69,0.039659,0
+SMS05_07479,ExAIS_USER 14,ExAIS,ham,0,linkless,none,53,0.067587,0
+SMS05_07480,ExAIS_USER 19,ExAIS,commercial_spam,0,linkless,none,151,0.389674,0
+SMS05_07490,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,24,0.06538,0
+SMS05_07491,UCI,UCI,ham,0,linkless,none,47,0.206744,0
+SMS05_07499,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,42,0.232245,0
+SMS05_07500,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,35106,64,0.965643,1
+SMS05_07507,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,93,0.834394,1
+SMS05_07514,UCI,UCI,ham,0,linkless,none,60,0.07348,0
+SMS05_07515,ExAIS_USER 19,ExAIS,ham,0,linkless,none,104,0.11819,0
+SMS05_07517,UCI,UCI,ham,0,linkless,none,123,0.071434,0
+SMS05_07528,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,620,112,0.937628,1
+SMS05_07536,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,52,0.946345,1
+SMS05_07539,ExAIS_USER 10,ExAIS,commercial_spam,0,linkless,none,78,0.114307,0
+SMS05_07546,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,url_bearing,none,165,0.069716,0
+SMS05_07562,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,141,0.997683,1
+SMS05_07566,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,153,0.973169,1
+SMS05_07570,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,81,0.924005,1
+SMS05_07578,ExAIS_USER 14,ExAIS,commercial_spam,0,linkless,none,131,0.060584,0
+SMS05_07579,ExAIS_USER 19,ExAIS,ham,0,linkless,none,117,0.223228,0
+SMS05_07584,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,281,0.975383,1
+SMS05_07586,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,linkless,none,156,0.258769,0
+SMS05_07596,ExAIS_USER 19,ExAIS,commercial_spam,0,linkless,none,160,0.090858,0
+SMS05_07599,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,36,0.049604,0
+SMS05_07607,ExAIS_USER 10,ExAIS,commercial_spam,0,linkless,none,132,0.879293,1
+SMS05_07622,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,linkless,none,158,0.894283,1
+SMS05_07623,ExAIS_USER 9,ExAIS,commercial_spam,0,linkless,none,117,0.139004,0
+SMS05_07625,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,7394,214,0.864138,1
+SMS05_07639,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,7363,89,0.953691,1
+SMS05_07646,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,160,0.877311,1
+SMS05_07650,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,linkless,none,82,0.795074,1
+SMS05_07655,ExAIS_USER 16,ExAIS,ham,0,linkless,none,116,0.139088,0
+SMS05_07666,ExAIS_USER 19,ExAIS,commercial_spam,0,linkless,none,156,0.309211,0
+SMS05_07670,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,202,0.883678,1
+SMS05_07677,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,linkless,none,158,0.701549,1
+SMS05_07694,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,31017,140,0.975264,1
+SMS05_07703,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1306,117,0.858135,1
+SMS05_07704,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,linkless,none,147,0.697275,1
+SMS05_07716,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,143,0.997244,1
+SMS05_07729,UCI,UCI,ham,0,linkless,none,149,0.090161,0
+SMS05_07736,ExAIS_USER 16,ExAIS,commercial_spam,0,linkless,none,101,0.049279,0
+SMS05_07748,ExAIS_USER 15,ExAIS,commercial_spam,0,linkless,none,138,0.150598,0
+SMS05_07752,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1030,152,0.986223,1
+SMS05_07755,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,42,0.172165,0
+SMS05_07757,ExAIS_USER 12,ExAIS,commercial_spam,0,linkless,none,123,0.2942,0
+SMS05_07764,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,url_bearing,none,112,0.892366,1
+SMS05_07765,ExAIS_USER 15,ExAIS,commercial_spam,0,linkless,none,145,0.034833,0
+SMS05_07792,ExAIS_USER 20,ExAIS,commercial_spam,0,linkless,none,234,0.220877,0
+SMS05_07793,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,129,0.999313,1
+SMS05_07795,ExAIS_USER 8,ExAIS,ham,0,linkless,none,52,0.085578,0
+SMS05_07803,ExAIS_USER 19,ExAIS,commercial_spam,0,linkless,none,167,0.433208,0
+SMS05_07811,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,147,0.986602,1
+SMS05_07812,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,105,0.967353,1
+SMS05_07815,UCI,UCI,ham,0,linkless,none,65,0.099921,0
+SMS05_07817,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,131,0.053503,0
+SMS05_07820,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1512,264,0.833375,1
+SMS05_07828,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,969,138,0.930612,1
+SMS05_07861,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,205,72,0.935739,1
+SMS05_07865,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1852,144,0.923556,1
+SMS05_07875,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,7399,45,0.974131,1
+SMS05_07886,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1723,154,0.979202,1
+SMS05_07892,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,140,0.994009,1
+SMS05_07893,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,linkless,none,101,0.171519,0
+SMS05_07898,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,131,0.986815,1
+SMS05_07901,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,38,0.04906,0
+SMS05_07907,ExAIS_USER 15,ExAIS,ham,0,linkless,none,20,0.467815,0
+SMS05_07910,ExAIS_USER 4,ExAIS,ham,0,linkless,none,71,0.32738,0
+SMS05_07917,UCI,UCI,ham,0,linkless,none,25,0.145216,0
+SMS05_07936,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,188,0.019583,0
+SMS05_07941,UCI,UCI,ham,0,linkless,none,46,0.143263,0
+SMS05_07951,ExAIS_USER 19,ExAIS,commercial_spam,0,linkless,none,154,0.180716,0
+SMS05_07958,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,url_bearing,none,137,0.178685,0
+SMS05_07959,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,2629,123,0.799035,1
+SMS05_07961,ExAIS_USER 9,ExAIS,commercial_spam,0,linkless,none,119,0.161569,0
+SMS05_07976,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,2196,148,0.83059,1
+SMS05_07979,UCI,UCI,ham,0,linkless,none,47,0.094277,0
+SMS05_08000,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,url_bearing,none,105,0.974061,1
+SMS05_08003,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,219,0.673298,1
+SMS05_08022,UCI,UCI,ham,0,linkless,none,85,0.035485,0
+SMS05_08028,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,79,0.387487,0
+SMS05_08031,UCI,UCI,ham,0,linkless,none,51,0.038512,0
+SMS05_08036,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,232,0.988565,1
+SMS05_08040,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,127,0.074511,0
+SMS05_08042,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,22,0.082726,0
+SMS05_08043,ExAIS_USER 13,ExAIS,commercial_spam,0,linkless,none,8,0.224143,0
+SMS05_08045,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,linkless,none,149,0.876154,1
+SMS05_08048,UCI,UCI,ham,0,linkless,none,53,0.055253,0
+SMS05_08051,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,url_bearing,none,126,0.979248,1
+SMS05_08055,ExAIS_USER 16,ExAIS,commercial_spam,0,linkless,none,83,0.118046,0
+SMS05_08056,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,2121,127,0.782215,1
+SMS05_08066,ExAIS_USER 16,ExAIS,commercial_spam,0,linkless,none,138,0.120722,0
+SMS05_08067,UCI,UCI,ham,0,linkless,none,156,0.066336,0
+SMS05_08071,ExAIS_USER 17,ExAIS,ham,0,linkless,none,32,0.34274,0
+SMS05_08074,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,91,0.105267,0
+SMS05_08084,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,132,0.971533,1
+SMS05_08086,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,70,0.087403,0
+SMS05_08089,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,151,0.895915,1
+SMS05_08105,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,7420,41,0.993184,1
+SMS05_08106,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,89,0.5624,1
+SMS05_08110,UCI,UCI,ham,0,linkless,none,88,0.042569,0
+SMS05_08114,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,20472,70,0.991461,1
+SMS05_08122,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,251,0.272748,0
+SMS05_08127,ExAIS_USER 12,ExAIS,ham,0,linkless,none,109,0.231156,0
+SMS05_08131,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,95,0.085977,0
+SMS05_08141,UCI,UCI,ham,0,linkless,none,34,0.357866,0
+SMS05_08142,UCI,UCI,ham,0,linkless,none,142,0.060302,0
+SMS05_08156,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,31,0.222111,0
+SMS05_08160,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,url_bearing,none,139,0.961263,1
+SMS05_08162,ExAIS_USER 19,ExAIS,commercial_spam,0,linkless,none,153,0.064625,0
+SMS05_08167,ExAIS_USER 16,ExAIS,ham,0,linkless,none,300,0.173336,0
+SMS05_08176,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,23070,150,0.946003,1
+SMS05_08184,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,linkless,none,148,0.859685,1
+SMS05_08188,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1423,151,0.938058,1
+SMS05_08189,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,linkless,none,114,0.100914,0
+SMS05_08190,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,url_bearing,none,22,0.109962,0
+SMS05_08191,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,2595,64,0.712387,1
+SMS05_08192,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,42,0.038154,0
+SMS05_08196,UCI,UCI,ham,0,linkless,none,49,0.320606,0
+SMS05_08199,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,116,0.997798,1
+SMS05_08201,ExAIS_USER 16,ExAIS,commercial_spam,0,linkless,none,151,0.090614,0
+SMS05_08214,ExAIS_USER 16,ExAIS,ham,0,linkless,none,129,0.167476,0
+SMS05_08217,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,198,0.992215,1
+SMS05_08225,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,46,0.149242,0
+SMS05_08243,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,120,0.08493,0
+SMS05_08244,UCI,UCI,ham,0,linkless,none,150,0.042696,0
+SMS05_08248,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,6742,61,0.907273,1
+SMS05_08257,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,54,0.09763,0
+SMS05_08267,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,linkless,none,133,0.107986,0
+SMS05_08279,UCI,UCI,ham,0,linkless,none,148,0.061713,0
+SMS05_08284,UCI,UCI,ham,0,linkless,none,35,0.151085,0
+SMS05_08286,UCI,UCI,ham,0,linkless,none,50,0.039552,0
+SMS05_08289,ExAIS_USER 8,ExAIS,commercial_spam,0,linkless,none,4,0.058991,0
+SMS05_08297,ExAIS_USER 16,ExAIS,commercial_spam,0,linkless,none,142,0.030351,0
+SMS05_08324,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,155,0.991915,1
+SMS05_08338,ExAIS_USER 7,ExAIS,commercial_spam,0,linkless,none,157,0.082316,0
+SMS05_08342,UCI,UCI,ham,0,linkless,none,43,0.219907,0
+SMS05_08343,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,108,0.973643,1
+SMS05_08345,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,117,0.979909,1
+SMS05_08353,ExAIS_USER 16,ExAIS,ham,0,linkless,none,131,0.082247,0
+SMS05_08354,ExAIS_USER 10,ExAIS,commercial_spam,0,linkless,none,115,0.056945,0
+SMS05_08364,UCI,UCI,ham,0,linkless,none,146,0.055483,0
+SMS05_08371,UCI,UCI,ham,0,linkless,none,35,0.040157,0
+SMS05_08395,UCI,UCI,ham,0,linkless,none,81,0.142464,0
+SMS05_08397,ExAIS_USER 12,ExAIS,commercial_spam,0,linkless,none,20,0.213416,0
+SMS05_08398,ExAIS_USER 19,ExAIS,ham,0,linkless,none,119,0.216171,0
+SMS05_08401,UCI,UCI,ham,0,linkless,none,8,0.087553,0
+SMS05_08405,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1689,221,0.867735,1
+SMS05_08408,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1517,144,0.841708,1
+SMS05_08419,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,138,0.044563,0
+SMS05_08420,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,url_bearing,none,166,0.977861,1
+SMS05_08424,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,197,0.686282,1
+SMS05_08434,ExAIS_USER 10,ExAIS,ham,0,linkless,none,113,0.216956,0
+SMS05_08440,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,237,0.849771,1
+SMS05_08443,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,22,0.050367,0
+SMS05_08458,ExAIS_USER 17,ExAIS,ham,0,linkless,none,30,0.121901,0
+SMS05_08462,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,url_bearing,none,95,0.497647,0
+SMS05_08476,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,24615,143,0.962654,1
+SMS05_08477,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,110,0.999558,1
+SMS05_08479,ExAIS_USER 10,ExAIS,ham,0,linkless,none,152,0.261448,0
+SMS05_08483,ExAIS_USER 13,ExAIS,ham,0,linkless,none,187,0.258023,0
+SMS05_08491,ExAIS_USER 16,ExAIS,commercial_spam,0,linkless,none,131,0.206655,0
+SMS05_08495,ExAIS_USER 16,ExAIS,commercial_spam,0,linkless,none,138,0.081105,0
+SMS05_08497,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,13468,112,0.970447,1
+SMS05_08516,ExAIS_USER 11,ExAIS,ham,0,linkless,none,78,0.153952,0
+SMS05_08520,UCI,UCI,ham,0,linkless,none,147,0.040641,0
+SMS05_08525,ExAIS_USER 1,ExAIS,commercial_spam,0,linkless,none,131,0.393759,0
+SMS05_08532,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,19276,155,0.875335,1
+SMS05_08534,ExAIS_USER 12,ExAIS,commercial_spam,0,linkless,none,133,0.063209,0
+SMS05_08539,ExAIS_USER 11,ExAIS,ham,0,linkless,none,26,0.048363,0
+SMS05_08540,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,1058,160,0.985721,1
+SMS05_08542,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,190,0.636072,1
+SMS05_08562,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,123,0.210889,0
+SMS05_08566,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,2598,127,0.971506,1
+SMS05_08582,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,538,123,0.893336,1
+SMS05_08587,Mishra_Soni_2022,Mishra_Soni_2022,commercial_spam,0,url_bearing,none,162,0.20147,0
+SMS05_08605,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,382,0.052497,0
+SMS05_08606,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,287,121,0.980153,1
+SMS05_08623,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,3457,118,0.988489,1
+SMS05_08635,UCI,UCI,commercial_spam,0,linkless,none,150,0.780699,1
+SMS05_08637,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,linkless,none,167,0.922965,1
+SMS05_08643,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,linkless,none,180,0.67067,1
+SMS05_08671,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,url_bearing,none,158,0.966009,1
+SMS05_08673,ExAIS_USER 7,ExAIS,commercial_spam,0,linkless,none,150,0.042128,0
+SMS05_08687,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,131,0.982144,1
+SMS05_08700,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,644,146,0.973351,1
+SMS05_08704,Mishra_Soni_2022,Mishra_Soni_2022,smishing,1,linkless,none,144,0.917387,1
+SMS05_08711,IMC_2025_reportsmishing,IMC_2025_reportsmishing,smishing,1,linkless,none,124,0.99347,1
+SMS05_08715,Mishra_Soni_2022,Mishra_Soni_2022,ham,0,linkless,none,28,0.075943,0
+SMS05_08723,UCI,UCI,ham,0,linkless,none,130,0.043893,0
+SMS05_08725,ExAIS_USER 16,ExAIS,ham,0,linkless,none,106,0.035587,0
+SMS05_08727,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,20487,150,0.950459,1
+SMS05_08730,WSPR_NCSU,WSPR_NCSU,smishing,1,url_bearing,3200,76,0.981585,1

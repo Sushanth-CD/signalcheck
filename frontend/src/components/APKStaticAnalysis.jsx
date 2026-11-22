@@ -1,0 +1,972 @@
+import { useState, useRef, useEffect } from "react";
+import {
+  analyzeAPK,
+  fetchAPKHistory,
+  fetchAPKReportJson,
+  getAPKReportPdfUrl,
+} from "../api/analyze.js";
+import {
+  FileTextIcon,
+  ShieldAlertIcon,
+  ShieldCheckIcon,
+  AlertTriangleIcon,
+  InfoIcon,
+  ChevronDownIcon,
+  ChevronUpIcon,
+} from "./ui/Icons.jsx";
+
+const MAX_FILE_SIZE = 25 * 1024 * 1024; // 25 MB
+
+export default function APKStaticAnalysis() {
+  const [file, setFile] = useState(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [result, setResult] = useState(null);
+  const [copiedSha, setCopiedSha] = useState(false);
+  const [expandedSection, setExpandedSection] = useState(null);
+
+  // History & Export States
+  const [historyItems, setHistoryItems] = useState([]);
+  const [isHistoryLoading, setIsHistoryLoading] = useState(false);
+  const [historyError, setHistoryError] = useState("");
+  const [isHistoryOpen, setIsHistoryOpen] = useState(true);
+
+  // Stage C3: Educational expanded findings state
+  const [expandedFindings, setExpandedFindings] = useState({});
+
+  // Stage C4: Asynchronous worker job state
+  const [jobStatus, setJobStatus] = useState(""); // "queued", "running", "done", "failed", "timeout"
+
+  function toggleFindingExplanation(findingId) {
+    setExpandedFindings((prev) => ({
+      ...prev,
+      [findingId]: !prev[findingId],
+    }));
+  }
+
+  const fileInputRef = useRef(null);
+  const abortControllerRef = useRef(null);
+
+  async function loadHistory() {
+    setIsHistoryLoading(true);
+    setHistoryError("");
+    try {
+      const data = await fetchAPKHistory(20, 0);
+      setHistoryItems(data.items || []);
+    } catch (err) {
+      setHistoryError(err instanceof Error ? err.message : "Failed to load history.");
+    } finally {
+      setIsHistoryLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    loadHistory();
+  }, []);
+
+  function handleFileSelected(selectedFile) {
+    if (!selectedFile) return;
+
+    if (!selectedFile.name.toLowerCase().endsWith(".apk")) {
+      setError("Please select a valid Android package file (.apk).");
+      setFile(null);
+      setResult(null);
+      return;
+    }
+
+    if (selectedFile.size > MAX_FILE_SIZE) {
+      setError(`File size (${(selectedFile.size / (1024 * 1024)).toFixed(1)} MB) exceeds the 25 MB upload limit.`);
+      setFile(null);
+      setResult(null);
+      return;
+    }
+
+    setError("");
+    setResult(null);
+    setFile(selectedFile);
+  }
+
+  function handleDragOver(e) {
+    e.preventDefault();
+    setIsDragging(true);
+  }
+
+  function handleDragLeave(e) {
+    e.preventDefault();
+    setIsDragging(false);
+  }
+
+  function handleDrop(e) {
+    e.preventDefault();
+    setIsDragging(false);
+    if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+      handleFileSelected(e.dataTransfer.files[0]);
+    }
+  }
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    if (!file || isLoading) return;
+
+    setIsLoading(true);
+    setError("");
+    setResult(null);
+    setJobStatus("queued");
+
+    const controller = new AbortController();
+    abortControllerRef.current = controller;
+
+    try {
+      const response = await analyzeAPK(
+        file,
+        (status) => setJobStatus(status),
+        controller.signal
+      );
+      setResult(response);
+      setJobStatus("done");
+      // Reload history to show the newly saved record
+      loadHistory();
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to analyze APK.");
+      setJobStatus("failed");
+    } finally {
+      setIsLoading(false);
+      abortControllerRef.current = null;
+    }
+  }
+
+  function handleCancel() {
+    if (abortControllerRef.current) {
+      abortControllerRef.current.abort();
+    }
+    setIsLoading(false);
+    setJobStatus("");
+  }
+
+  function handleReset() {
+    handleCancel();
+    setFile(null);
+    setResult(null);
+    setError("");
+    setJobStatus("");
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
+  }
+
+  async function handleLoadHistoryItem(recordId) {
+    setIsLoading(true);
+    setError("");
+    try {
+      const fullReport = await fetchAPKReportJson(recordId);
+      setResult(fullReport);
+      window.scrollTo({ top: 300, behavior: "smooth" });
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to load historical report.");
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
+  function copySha256() {
+    if (!result?.sha256) return;
+    navigator.clipboard.writeText(result.sha256).then(() => {
+      setCopiedSha(true);
+      setTimeout(() => setCopiedSha(false), 2000);
+    });
+  }
+
+  const indicatorLevelLabels = {
+    no_notable_indicators: {
+      title: "No Characteristic Threat Indicators Detected",
+      variant: "clean",
+      badge: "No Notable Indicators",
+      icon: ShieldCheckIcon,
+      desc: "Static review of package metadata, permissions, and bytecode did not uncover typical high-risk indicators or known trojan patterns.",
+    },
+    some_indicators: {
+      title: "Some Suspicious Indicators Flagged",
+      variant: "warning",
+      badge: "Moderate Indicators",
+      icon: AlertTriangleIcon,
+      desc: "Static inspection flagged sensitive permissions or structural patterns that warrant caution and closer inspection.",
+    },
+    many_indicators: {
+      title: "Multiple High-Risk Indicators Flagged",
+      variant: "threat",
+      badge: "Elevated Risk Indicators",
+      icon: ShieldAlertIcon,
+      desc: "Static analysis detected multiple high-risk combinations (such as SMS interception, overlay handling, or unsigned binaries).",
+    },
+  };
+
+  const levelInfo = result ? indicatorLevelLabels[result.indicator_level] : null;
+
+  return (
+    <section className="sc-apk-analysis-container" aria-labelledby="apk-static-heading">
+      <div className="analyzer-intro">
+        <div className="step-icon" aria-hidden="true">APK</div>
+        <div>
+          <p className="eyebrow">STATIC PACKAGE INSPECTION (RESEARCH LAB)</p>
+          <h2 id="apk-static-heading">Android APK Static Analysis</h2>
+          <p>
+            Upload an Android package file (.apk) for safe, server-side static structural and bytecode analysis.
+          </p>
+        </div>
+      </div>
+
+      <div className="sc-privacy-notice-banner" role="note">
+        <InfoIcon size={18} />
+        <span>
+          <strong>Ephemeral Safety Guarantee:</strong> The uploaded package is inspected statically inside a restricted container, is <strong>never installed or executed</strong>, and is <strong>deleted immediately</strong> upon completion.
+        </span>
+      </div>
+
+      <form onSubmit={handleSubmit} className="sc-apk-upload-form">
+        <div
+          className={`sc-dropzone ${isDragging ? "sc-dropzone--active" : ""} ${file ? "sc-dropzone--has-file" : ""}`}
+          onDragOver={handleDragOver}
+          onDragLeave={handleDragLeave}
+          onDrop={handleDrop}
+          onClick={() => !file && fileInputRef.current?.click()}
+          role="region"
+          aria-label="APK file dropzone"
+          tabIndex={0}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              if (!file) fileInputRef.current?.click();
+            }
+          }}
+        >
+          <input
+            type="file"
+            ref={fileInputRef}
+            accept=".apk,application/vnd.android.package-archive"
+            style={{ display: "none" }}
+            onChange={(e) => handleFileSelected(e.target.files?.[0])}
+            aria-label="Upload APK file"
+          />
+
+          {!file ? (
+            <div className="sc-dropzone__prompt">
+              <FileTextIcon size={40} className="sc-dropzone__icon" />
+              <p className="sc-dropzone__title">Drag and drop an .apk package here, or click to browse</p>
+              <span className="sc-dropzone__hint">Maximum file size: 25 MB</span>
+            </div>
+          ) : (
+            <div className="sc-dropzone__file-info">
+              <FileTextIcon size={32} className="sc-dropzone__icon" />
+              <div>
+                <strong>{file.name}</strong>
+                <span>{(file.size / (1024 * 1024)).toFixed(2)} MB</span>
+              </div>
+              <button
+                type="button"
+                className="button button-quiet sc-dropzone__remove-btn"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleReset();
+                }}
+                disabled={isLoading}
+              >
+                Change File
+              </button>
+            </div>
+          )}
+        </div>
+
+        <div className="form-actions" style={{ marginTop: "1rem" }}>
+          <button
+            className="button button-primary"
+            type="submit"
+            disabled={!file || isLoading}
+          >
+            {isLoading ? (
+              jobStatus === "running"
+                ? "Running isolated worker…"
+                : jobStatus === "queued"
+                ? "Queued in worker pool…"
+                : "Analyzing APK…"
+            ) : "Start Static Analysis →"}
+          </button>
+          {isLoading && (
+            <button
+              className="button button-quiet"
+              type="button"
+              onClick={handleCancel}
+            >
+              Cancel
+            </button>
+          )}
+          {file && !isLoading && (
+            <button
+              className="button button-quiet"
+              type="button"
+              onClick={handleReset}
+            >
+              Clear
+            </button>
+          )}
+        </div>
+      </form>
+
+      {/* Asynchronous Worker Status Indicator */}
+      {isLoading && (
+        <div
+          className="sc-worker-status-card"
+          role="status"
+          style={{
+            marginTop: "1.25rem",
+            padding: "14px 18px",
+            background: "var(--color-surface, #ffffff)",
+            border: "1px solid var(--color-border, #e2e8f0)",
+            borderRadius: "10px",
+            display: "flex",
+            alignItems: "center",
+            gap: "12px",
+          }}
+        >
+          <span className="spinner" aria-hidden="true" style={{ width: "20px", height: "20px", borderTopColor: "var(--color-primary, #0284c7)" }} />
+          <div>
+            <div style={{ fontWeight: 600, fontSize: "0.9rem", color: "var(--color-text, #0f172a)" }}>
+              {jobStatus === "running"
+                ? "Static Analysis Worker In Progress"
+                : "Job Queued in Isolated Worker"}
+            </div>
+            <div style={{ fontSize: "0.8rem", color: "var(--color-text-secondary, #64748b)" }}>
+              {jobStatus === "running"
+                ? "Parsing manifest, Dalvik bytecode, and digital certificates in sandboxed process (max 30s timeout)..."
+                : "Waiting for worker process allocation..."}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ARIA Live Status Region */}
+      <div aria-live="polite" className="sr-only">
+        {isLoading && "Static APK analysis in progress. Please wait."}
+        {error && `Error: ${error}`}
+        {result && `Analysis completed. Indicator level: ${result.indicator_level}`}
+      </div>
+
+      {error && (
+        <div className="error-banner" role="alert" style={{ marginTop: "1.5rem" }}>
+          <span className="error-symbol" aria-hidden="true">!</span>
+          <div>
+            <strong>Analysis Failed</strong>
+            <p>{error}</p>
+          </div>
+        </div>
+      )}
+
+      {/* Result Display */}
+      {result && (
+        <div className="sc-apk-results" id="apk-analysis-result">
+          {/* Rule-Based Indicator Engine Summary Card */}
+          <section className="sc-indicator-scoring-card" aria-labelledby="indicator-scoring-title" style={{
+            background: "var(--color-surface, #ffffff)",
+            border: "1px solid var(--color-border, #e2e8f0)",
+            borderRadius: "12px",
+            padding: "20px 24px",
+            marginBottom: "1.5rem",
+            boxShadow: "0 2px 6px rgba(0, 0, 0, 0.04)"
+          }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: "12px" }}>
+              <div>
+                <span className="eyebrow" style={{ fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.05em", color: "var(--color-text-secondary, #64748b)" }}>
+                  DETERMINISTIC HEURISTIC SCORING ({result.indicator_summary?.scoring_version || "apk-rules-v1"})
+                </span>
+                <h3 id="indicator-scoring-title" style={{ margin: "4px 0 6px 0", fontSize: "1.25rem", fontWeight: 700, color: "var(--color-text, #0f172a)" }}>
+                  Indicator Level: {result.indicator_summary?.level || (result.indicator_level === "many_indicators" ? "High" : result.indicator_level === "some_indicators" ? "Medium" : "Low")} ({result.indicator_summary?.total_points ?? 0} points)
+                </h3>
+                <p style={{ margin: 0, fontSize: "0.875rem", color: "var(--color-text-secondary, #64748b)", fontStyle: "italic" }}>
+                  {result.indicator_summary?.disclaimer || "Heuristic indicator level, a signal to check and not a malware verdict."}
+                </p>
+              </div>
+              <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
+                <span className={`sc-severity-pill sc-severity-pill--${(result.indicator_summary?.level === "High" || result.indicator_level === "many_indicators") ? "high" : (result.indicator_summary?.level === "Medium" || result.indicator_level === "some_indicators") ? "medium" : "low"}`} style={{ fontSize: "0.85rem", padding: "6px 14px", fontWeight: 700 }}>
+                  {result.indicator_summary?.level || (result.indicator_level === "many_indicators" ? "High" : result.indicator_level === "some_indicators" ? "Medium" : "Low")} Level
+                </span>
+              </div>
+            </div>
+
+            {/* Contributing Rules and Combination Bonuses */}
+            <div style={{ marginTop: "16px", paddingTop: "14px", borderTop: "1px solid var(--color-border, #f1f5f9)" }}>
+              <div style={{ fontWeight: 600, fontSize: "0.875rem", color: "var(--color-text, #1e293b)", marginBottom: "8px" }}>
+                Contributing Rules & Bonuses:
+              </div>
+              {(!result.indicator_summary?.rule_contributions || result.indicator_summary.rule_contributions.length === 0) ? (
+                <p style={{ fontSize: "0.8125rem", color: "var(--color-text-secondary, #64748b)", margin: 0 }}>
+                  No heuristic rules triggered (0 base points).
+                </p>
+              ) : (
+                <ul style={{ margin: 0, paddingLeft: "20px", fontSize: "0.8125rem", color: "var(--color-text, #334155)" }}>
+                  {result.indicator_summary.rule_contributions.map((rule) => (
+                    <li key={rule.rule_id} style={{ marginBottom: "4px" }}>
+                      <strong>{rule.title}</strong> (<code>{rule.rule_id}</code>): <strong>+{rule.points} pts</strong>
+                    </li>
+                  ))}
+                  {result.indicator_summary.combination_contributions?.map((combo) => (
+                    <li key={combo.id} style={{ marginBottom: "4px", color: "var(--color-primary-dark, #0284c7)" }}>
+                      <strong>Bonus: {combo.name}</strong>: <strong>+{combo.points} pts</strong> — <em>{combo.description}</em>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+
+            {/* How this is calculated expander */}
+            <details className="sc-scoring-calc-expander" style={{
+              marginTop: "16px",
+              paddingTop: "12px",
+              borderTop: "1px solid var(--color-border, #f1f5f9)",
+              fontSize: "0.8125rem"
+            }}>
+              <summary style={{ cursor: "pointer", fontWeight: 600, color: "var(--color-primary, #0284c7)" }}>
+                How this is calculated
+              </summary>
+              <div style={{ marginTop: "10px", lineHeight: 1.6, color: "var(--color-text-secondary, #475569)" }}>
+                <p style={{ margin: "0 0 10px 0" }}>
+                  The indicator level is calculated deterministically using versioned rule weights (<code>apk-rules-v1</code>). It evaluates structural manifest declarations, bytecode references, and combination bonuses. <strong>No machine learning model, statistical probability, or classifier is used.</strong>
+                </p>
+                <div style={{ marginBottom: "10px" }}>
+                  <strong>Level Cut Points:</strong>
+                  <ul style={{ margin: "4px 0 0 0", paddingLeft: "20px" }}>
+                    <li><strong>Low:</strong> 0 – 19 points</li>
+                    <li><strong>Medium:</strong> 20 – 49 points</li>
+                    <li><strong>High:</strong> 50+ points</li>
+                  </ul>
+                </div>
+                <div style={{ overflowX: "auto" }}>
+                  <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.75rem", marginTop: "8px" }}>
+                    <thead>
+                      <tr style={{ background: "var(--color-surface-subtle, #f8fafc)", borderBottom: "1px solid var(--color-border, #e2e8f0)", textAlign: "left" }}>
+                        <th style={{ padding: "6px 8px" }}>Rule / Heuristic</th>
+                        <th style={{ padding: "6px 8px" }}>Weight</th>
+                        <th style={{ padding: "6px 8px" }}>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr style={{ borderBottom: "1px solid var(--color-border, #f1f5f9)" }}>
+                        <td style={{ padding: "6px 8px" }}><code>RULE_SMS_EXFILTRATION_CAPABILITY</code></td>
+                        <td style={{ padding: "6px 8px" }}><strong>30 pts</strong></td>
+                        <td style={{ padding: "6px 8px" }}>SMS permissions declared with internet communication capability.</td>
+                      </tr>
+                      <tr style={{ borderBottom: "1px solid var(--color-border, #f1f5f9)" }}>
+                        <td style={{ padding: "6px 8px" }}><code>RULE_ACCESSIBILITY_OVERLAY_COMBO</code></td>
+                        <td style={{ padding: "6px 8px" }}><strong>30 pts</strong></td>
+                        <td style={{ padding: "6px 8px" }}>Accessibility service implementation paired with system overlay window.</td>
+                      </tr>
+                      <tr style={{ borderBottom: "1px solid var(--color-border, #f1f5f9)" }}>
+                        <td style={{ padding: "6px 8px" }}><code>RULE_DEVICE_ADMIN_PRIVILEGE</code></td>
+                        <td style={{ padding: "6px 8px" }}><strong>25 pts</strong></td>
+                        <td style={{ padding: "6px 8px" }}>Device administration receiver declared granting system lockout controls.</td>
+                      </tr>
+                      <tr style={{ borderBottom: "1px solid var(--color-border, #f1f5f9)" }}>
+                        <td style={{ padding: "6px 8px" }}><code>RULE_COMMAND_EXECUTION</code></td>
+                        <td style={{ padding: "6px 8px" }}><strong>20 pts</strong></td>
+                        <td style={{ padding: "6px 8px" }}>Bytecode references Runtime.getRuntime().exec() or ProcessBuilder.</td>
+                      </tr>
+                      <tr style={{ borderBottom: "1px solid var(--color-border, #f1f5f9)" }}>
+                        <td style={{ padding: "6px 8px" }}><code>RULE_DYNAMIC_CODE_LOADING</code></td>
+                        <td style={{ padding: "6px 8px" }}><strong>20 pts</strong></td>
+                        <td style={{ padding: "6px 8px" }}>Dynamic class loading (DexClassLoader / PathClassLoader) in bytecode.</td>
+                      </tr>
+                      <tr style={{ borderBottom: "1px solid var(--color-border, #f1f5f9)" }}>
+                        <td style={{ padding: "6px 8px" }}><code>RULE_UNSIGNED_PACKAGE</code></td>
+                        <td style={{ padding: "6px 8px" }}><strong>20 pts</strong></td>
+                        <td style={{ padding: "6px 8px" }}>Container lacks valid cryptographic signature blocks.</td>
+                      </tr>
+                      <tr style={{ borderBottom: "1px solid var(--color-border, #f1f5f9)" }}>
+                        <td style={{ padding: "6px 8px" }}><code>RULE_PACKAGE_INSTALLER</code></td>
+                        <td style={{ padding: "6px 8px" }}><strong>15 pts</strong></td>
+                        <td style={{ padding: "6px 8px" }}>Application requests package installation permissions.</td>
+                      </tr>
+                      <tr style={{ borderBottom: "1px solid var(--color-border, #f1f5f9)" }}>
+                        <td style={{ padding: "6px 8px" }}><code>RULE_BOOT_PERSISTENCE</code></td>
+                        <td style={{ padding: "6px 8px" }}><strong>10 pts</strong></td>
+                        <td style={{ padding: "6px 8px" }}>Configured with RECEIVE_BOOT_COMPLETED receiver for startup persistence.</td>
+                      </tr>
+                      <tr style={{ borderBottom: "1px solid var(--color-border, #f1f5f9)" }}>
+                        <td style={{ padding: "6px 8px" }}><code>RULE_DEBUG_SIGNED_CERT</code></td>
+                        <td style={{ padding: "6px 8px" }}><strong>10 pts</strong></td>
+                        <td style={{ padding: "6px 8px" }}>Package signed with publicly known Android debug certificate.</td>
+                      </tr>
+                      <tr style={{ borderBottom: "1px solid var(--color-border, #f1f5f9)" }}>
+                        <td style={{ padding: "6px 8px" }}><code>RULE_HARDCODED_IP_URL</code></td>
+                        <td style={{ padding: "6px 8px" }}><strong>10 pts</strong></td>
+                        <td style={{ padding: "6px 8px" }}>Direct numeric IP URL endpoint strings circumventing DNS.</td>
+                      </tr>
+                      <tr style={{ borderBottom: "1px solid var(--color-border, #f1f5f9)" }}>
+                        <td style={{ padding: "6px 8px" }}><code>RULE_OBFUSCATION_HINT</code></td>
+                        <td style={{ padding: "6px 8px" }}><strong>5 pts</strong></td>
+                        <td style={{ padding: "6px 8px" }}>Elevated short identifier ratio indicating symbol renaming.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div style={{ marginTop: "12px", overflowX: "auto" }}>
+                  <strong>Combination Risk Bonuses:</strong>
+                  <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.75rem", marginTop: "4px" }}>
+                    <thead>
+                      <tr style={{ background: "var(--color-surface-subtle, #f8fafc)", borderBottom: "1px solid var(--color-border, #e2e8f0)", textAlign: "left" }}>
+                        <th style={{ padding: "4px 8px" }}>Combination</th>
+                        <th style={{ padding: "4px 8px" }}>Bonus</th>
+                        <th style={{ padding: "4px 8px" }}>Rationale</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr style={{ borderBottom: "1px solid var(--color-border, #f1f5f9)" }}>
+                        <td style={{ padding: "4px 8px" }}>SMS Exfiltration + Dynamic Code Loading</td>
+                        <td style={{ padding: "4px 8px" }}><strong>+15 pts</strong></td>
+                        <td style={{ padding: "4px 8px" }}>Combines sensitive SMS interception with dynamic code retrieval.</td>
+                      </tr>
+                      <tr style={{ borderBottom: "1px solid var(--color-border, #f1f5f9)" }}>
+                        <td style={{ padding: "4px 8px" }}>Accessibility Overlay + Command Execution</td>
+                        <td style={{ padding: "4px 8px" }}><strong>+15 pts</strong></td>
+                        <td style={{ padding: "4px 8px" }}>Combines UI overlay capabilities with raw system process execution.</td>
+                      </tr>
+                      <tr style={{ borderBottom: "1px solid var(--color-border, #f1f5f9)" }}>
+                        <td style={{ padding: "4px 8px" }}>Package Installer + Dynamic Code Loading</td>
+                        <td style={{ padding: "4px 8px" }}><strong>+15 pts</strong></td>
+                        <td style={{ padding: "4px 8px" }}>Combines secondary package installation with external code loading.</td>
+                      </tr>
+                      <tr style={{ borderBottom: "1px solid var(--color-border, #f1f5f9)" }}>
+                        <td style={{ padding: "4px 8px" }}>Device Admin + Boot Persistence</td>
+                        <td style={{ padding: "4px 8px" }}><strong>+10 pts</strong></td>
+                        <td style={{ padding: "4px 8px" }}>Combines elevated device administration with automatic boot survival.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </details>
+          </section>
+
+          {/* Header Summary Card */}
+          <section
+            className={`sc-analysis-summary sc-analysis-summary--${levelInfo.variant}`}
+            aria-labelledby="apk-verdict-title"
+          >
+            <div className="sc-analysis-summary__header">
+              <div className="sc-analysis-summary__badge-group">
+                <span className={`sc-verdict-badge sc-verdict-badge--${levelInfo.variant}`} role="status">
+                  <levelInfo.icon size={16} className="sc-verdict-badge__icon" />
+                  <span>{levelInfo.badge}</span>
+                </span>
+                <span className="sc-analysis-summary__eyebrow">APK-STATIC-V1 HEURISTICS</span>
+              </div>
+              <h3 id="apk-verdict-title" className="sc-analysis-summary__title">
+                {levelInfo.title}
+              </h3>
+              <p className="sc-analysis-summary__desc">{levelInfo.desc}</p>
+            </div>
+
+            {/* SHA-256, App Meta, and PDF Download Button */}
+            <div className="sc-apk-meta-grid">
+              <div className="sc-apk-meta-item">
+                <span className="sc-apk-meta-label">SHA-256 Fingerprint:</span>
+                <div className="sc-apk-sha-box">
+                  <code>{result.sha256}</code>
+                  <button
+                    type="button"
+                    className="button button-quiet sc-copy-btn"
+                    onClick={copySha256}
+                    aria-label="Copy SHA-256 fingerprint"
+                  >
+                    {copiedSha ? "Copied!" : "Copy"}
+                  </button>
+
+                  {/* Download PDF Report Button */}
+                  {result.id && (
+                    <a
+                      href={getAPKReportPdfUrl(result.id)}
+                      download={`signalcheck-report-${result.app.package_name || "apk"}.pdf`}
+                      className="button button-primary sc-download-pdf-btn"
+                      style={{ marginLeft: "auto", textDecoration: "none" }}
+                    >
+                      Download PDF Report ↓
+                    </a>
+                  )}
+                </div>
+              </div>
+
+              <div className="sc-apk-grid-cols">
+                <div>
+                  <span className="sc-apk-meta-label">Package Name:</span>
+                  <strong>{result.app.package_name || "Unknown"}</strong>
+                </div>
+                <div>
+                  <span className="sc-apk-meta-label">Version:</span>
+                  <span>{result.app.version_name || "N/A"} (code {result.app.version_code || "N/A"})</span>
+                </div>
+                <div>
+                  <span className="sc-apk-meta-label">SDK Compatibility:</span>
+                  <span>Min: {result.app.min_sdk || "N/A"} | Target: {result.app.target_sdk || "N/A"}</span>
+                </div>
+                <div>
+                  <span className="sc-apk-meta-label">Archive Size:</span>
+                  <span>{(result.file_size / (1024 * 1024)).toFixed(2)} MB</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Security Findings Table / Cards */}
+          <section className="sc-apk-section" aria-labelledby="findings-title">
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", flexWrap: "wrap", gap: "8px" }}>
+              <h3 id="findings-title" className="sc-section-title" style={{ margin: 0 }}>
+                Static Security Findings ({result.findings.length})
+              </h3>
+            </div>
+
+            {/* Severity Guidance Legend */}
+            <div className="sc-severity-legend" role="region" aria-label="Severity rating guide" style={{
+              background: "var(--color-surface, #ffffff)",
+              border: "1px solid var(--color-border, #e2e8f0)",
+              borderRadius: "8px",
+              padding: "12px 16px",
+              margin: "12px 0 16px 0",
+              fontSize: "0.85rem",
+              lineHeight: 1.5,
+              color: "var(--color-text-secondary, #475569)"
+            }}>
+              <div style={{ fontWeight: 600, marginBottom: "6px", color: "var(--color-text, #1e293b)" }}>
+                Understanding Indicator Severity (Signals, Not Conclusive Verdicts):
+              </div>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "12px" }}>
+                <div>
+                  <span className="sc-severity-pill sc-severity-pill--high" style={{ marginRight: "6px" }}>HIGH</span>
+                  <strong>High Sensitivity Signal:</strong> Capabilities frequently abused by malware (e.g. SMS exfiltration, accessibility overlays, unsigned packages). Check carefully against intended app functionality.
+                </div>
+                <div>
+                  <span className="sc-severity-pill sc-severity-pill--medium" style={{ marginRight: "6px" }}>MEDIUM</span>
+                  <strong>Moderate Scrutiny Signal:</strong> Common dual-use features (e.g. boot receivers, dynamic class loading, debug certs, package installer) that require context to evaluate.
+                </div>
+                <div>
+                  <span className="sc-severity-pill sc-severity-pill--low" style={{ marginRight: "6px" }}>LOW</span>
+                  <strong>Informational Indicator:</strong> Typical software hygiene or build characteristics (e.g. code minification or naming obfuscation) standard across commercial software.
+                </div>
+              </div>
+            </div>
+
+            {result.findings.length === 0 ? (
+              <p className="sc-empty-state">No specific high-severity heuristic rules triggered.</p>
+            ) : (
+              <div className="sc-findings-list">
+                {result.findings.map((f) => {
+                  const isExpanded = !!expandedFindings[f.id];
+                  return (
+                    <div key={f.id} className={`sc-finding-card sc-finding-card--${f.severity}`}>
+                      <div className="sc-finding-card__header">
+                        <span className={`sc-severity-pill sc-severity-pill--${f.severity}`}>
+                          {f.severity.toUpperCase()}
+                        </span>
+                        <span className="sc-finding-card__category">{f.category}</span>
+                        <h4 className="sc-finding-card__title">{f.title}</h4>
+                      </div>
+                      <div className="sc-finding-card__body">
+                        <p><strong>Evidence:</strong> <code>{f.evidence}</code></p>
+                        <p><strong>Why It Matters:</strong> {f.why_it_matters}</p>
+
+                        {/* Expandable Learn More Teaching Section */}
+                        {f.explanation && (
+                          <div style={{ marginTop: "12px", borderTop: "1px dashed var(--color-border, #e2e8f0)", paddingTop: "8px" }}>
+                            <button
+                              type="button"
+                              className="button button-quiet"
+                              onClick={() => toggleFindingExplanation(f.id)}
+                              aria-expanded={isExpanded}
+                              aria-controls={`explanation-${f.id}`}
+                              style={{
+                                display: "inline-flex",
+                                alignItems: "center",
+                                gap: "6px",
+                                fontSize: "0.85rem",
+                                padding: "4px 8px",
+                                cursor: "pointer",
+                                color: "var(--color-primary, #0284c7)",
+                                background: "transparent",
+                                border: "none",
+                                fontWeight: 500,
+                              }}
+                            >
+                              {isExpanded ? <ChevronUpIcon size={14} /> : <ChevronDownIcon size={14} />}
+                              <span>{isExpanded ? "Hide detailed guidance" : "Learn more: what this signal means & safe uses"}</span>
+                            </button>
+
+                            {isExpanded && (
+                              <div
+                                id={`explanation-${f.id}`}
+                                className="sc-finding-explanation"
+                                style={{
+                                  marginTop: "8px",
+                                  padding: "12px",
+                                  background: "var(--color-surface-subtle, #f8fafc)",
+                                  borderRadius: "6px",
+                                  border: "1px solid var(--color-border, #e2e8f0)",
+                                  fontSize: "0.875rem",
+                                  lineHeight: 1.55,
+                                  color: "var(--color-text, #1e293b)",
+                                }}
+                              >
+                                <div style={{ marginBottom: "8px" }}>
+                                  <strong style={{ color: "var(--color-text, #0f172a)" }}>What It Means: </strong>
+                                  <span>{f.explanation.what_it_means}</span>
+                                </div>
+                                <div style={{ marginBottom: "8px" }}>
+                                  <strong style={{ color: "var(--color-text, #0f172a)" }}>Why Attackers Use It: </strong>
+                                  <span>{f.explanation.why_attackers_use_it}</span>
+                                </div>
+                                {f.explanation.legit_uses && f.explanation.legit_uses.length > 0 && (
+                                  <div style={{ marginBottom: "8px" }}>
+                                    <strong style={{ color: "var(--color-text, #0f172a)" }}>Legitimate Uses (False-Alarm Awareness):</strong>
+                                    <ul style={{ margin: "4px 0 0 16px", padding: 0 }}>
+                                      {f.explanation.legit_uses.map((use, idx) => (
+                                        <li key={idx} style={{ marginBottom: "2px" }}>{use}</li>
+                                      ))}
+                                    </ul>
+                                  </div>
+                                )}
+                                <div style={{ marginBottom: "8px" }}>
+                                  <strong style={{ color: "var(--color-text, #0f172a)" }}>What To Do: </strong>
+                                  <span>{f.explanation.what_to_do}</span>
+                                </div>
+                                {f.explanation.learn_more_tags && f.explanation.learn_more_tags.length > 0 && (
+                                  <div style={{ display: "flex", gap: "6px", flexWrap: "wrap", alignItems: "center", marginTop: "8px" }}>
+                                    <span style={{ fontSize: "0.75rem", color: "var(--color-text-secondary, #64748b)" }}>Topic Tags:</span>
+                                    {f.explanation.learn_more_tags.map((tag) => (
+                                      <span
+                                        key={tag}
+                                        style={{
+                                          fontSize: "0.75rem",
+                                          padding: "2px 8px",
+                                          background: "var(--color-surface, #ffffff)",
+                                          border: "1px solid var(--color-border, #cbd5e1)",
+                                          borderRadius: "12px",
+                                          color: "var(--color-text-secondary, #475569)",
+                                        }}
+                                      >
+                                        #{tag}
+                                      </span>
+                                    ))}
+                                  </div>
+                                )}
+                              </div>
+                            )}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+          </section>
+
+          {/* Grouped Permissions */}
+          <section className="sc-apk-section" aria-labelledby="permissions-title">
+            <h3 id="permissions-title" className="sc-section-title">
+              Declared Permissions ({result.permissions.all_declared.length})
+            </h3>
+            <div className="sc-permission-groups-grid">
+              {Object.entries(result.permissions)
+                .filter(([k, list]) => k !== "all_declared" && list.length > 0)
+                .map(([category, list]) => (
+                  <div key={category} className="sc-perm-card">
+                    <h4>{category.replace("_", " ").toUpperCase()} ({list.length})</h4>
+                    <ul>
+                      {list.map((p) => (
+                        <li key={p}><code>{p.replace("android.permission.", "")}</code></li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+            </div>
+          </section>
+
+          {/* Signing & Certificate Facts */}
+          <section className="sc-apk-section" aria-labelledby="signing-title">
+            <h3 id="signing-title" className="sc-section-title">Cryptographic Signature Facts</h3>
+            <div className="sc-signing-box">
+              <p><strong>Signed:</strong> {result.signing.is_signed ? "Yes" : "No (Unsigned archive)"}</p>
+              {result.signing.signature_schemes.length > 0 && (
+                <p><strong>Schemes:</strong> {result.signing.signature_schemes.join(", ")}</p>
+              )}
+              <p><strong>Debug Certificate:</strong> {result.signing.is_debug_signed ? "Yes (Flagged)" : "No"}</p>
+              <p><strong>Self-Signed:</strong> {result.signing.is_self_signed ? "Yes" : "No"}</p>
+
+              {result.signing.certificates.map((c, idx) => (
+                <div key={idx} className="sc-cert-details">
+                  <p><strong>Subject:</strong> <code>{c.subject || "N/A"}</code></p>
+                  <p><strong>Issuer:</strong> <code>{c.issuer || "N/A"}</code></p>
+                  <p><strong>Validity:</strong> {c.valid_from} to {c.valid_to}</p>
+                  <p><strong>Fingerprint:</strong> <code>{c.sha256_fingerprint}</code></p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Collapsible Technical Bytecode Details */}
+          <section className="sc-apk-section">
+            <button
+              type="button"
+              className="sc-collapse-trigger"
+              onClick={() => setExpandedSection(expandedSection === "tech" ? null : "tech")}
+              aria-expanded={expandedSection === "tech"}
+            >
+              <span>Technical Bytecode Indicators</span>
+              {expandedSection === "tech" ? <ChevronUpIcon size={18} /> : <ChevronDownIcon size={18} />}
+            </button>
+
+            {expandedSection === "tech" && (
+              <div className="sc-collapsed-panel">
+                <dl className="sc-tech-dl">
+                  <div>
+                    <dt>Dynamic Code Loading:</dt>
+                    <dd>{result.code_indicators.dynamic_code_loading ? "Observed" : "Not observed"}</dd>
+                  </div>
+                  <div>
+                    <dt>Reflection API Usage:</dt>
+                    <dd>{result.code_indicators.reflection_use ? "Observed" : "Not observed"}</dd>
+                  </div>
+                  <div>
+                    <dt>Runtime.exec / Shell:</dt>
+                    <dd>{result.code_indicators.runtime_exec ? "Observed" : "Not observed"}</dd>
+                  </div>
+                  <div>
+                    <dt>Telephony / SMS Send APIs:</dt>
+                    <dd>{result.code_indicators.sms_send_apis ? "Observed" : "Not observed"}</dd>
+                  </div>
+                  <div>
+                    <dt>Accessibility Event Handling:</dt>
+                    <dd>{result.code_indicators.accessibility_event_handling ? "Observed" : "Not observed"}</dd>
+                  </div>
+                  <div>
+                    <dt>Native Libraries (.so):</dt>
+                    <dd>{result.code_indicators.native_library_presence ? "Present" : "None"}</dd>
+                  </div>
+                  <div>
+                    <dt>Short Name Obfuscation Ratio:</dt>
+                    <dd>{(result.code_indicators.obfuscation_name_ratio_hint * 100).toFixed(1)}%</dd>
+                  </div>
+                </dl>
+
+                {result.code_indicators.discovered_urls.length > 0 && (
+                  <div style={{ marginTop: "1rem" }}>
+                    <h4>Extracted URLs &amp; IP Endpoints (First {result.code_indicators.discovered_urls.length}):</h4>
+                    <ul className="sc-url-list">
+                      {result.code_indicators.discovered_urls.map((u, idx) => (
+                        <li key={idx}><code>{u}</code></li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            )}
+          </section>
+
+          {/* Mandatory Permanent Static Limitations Section */}
+          <section className="sc-limitations-panel" aria-labelledby="limitations-heading">
+            <div className="sc-limitations-header">
+              <ShieldCheckIcon size={20} />
+              <h4 id="limitations-heading">Scientific Scope &amp; Static Limitations</h4>
+            </div>
+            <ul className="sc-limitations-list">
+              {result.limitations.map((lim, idx) => (
+                <li key={idx}>{lim}</li>
+              ))}
+            </ul>
+          </section>
+        </div>
+      )}
+
+      {/* Historical Analyses Panel */}
+      <section className="sc-apk-section sc-apk-history-section" aria-labelledby="history-heading" style={{ marginTop: "2rem" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1rem" }}>
+          <h3 id="history-heading" className="sc-section-title" style={{ margin: 0 }}>
+            Recent Static Analyses ({historyItems.length})
+          </h3>
+          <button
+            type="button"
+            className="button button-quiet"
+            onClick={loadHistory}
+            disabled={isHistoryLoading}
+            style={{ fontSize: "var(--sc-text-xs)" }}
+          >
+            {isHistoryLoading ? "Refreshing…" : "Refresh History"}
+          </button>
+        </div>
+
+        {historyError && (
+          <p className="sc-history-error" style={{ color: "var(--sc-color-danger-600)", fontSize: "var(--sc-text-xs)" }}>
+            {historyError}
+          </p>
+        )}
+
+        {isHistoryLoading && historyItems.length === 0 ? (
+          <p className="sc-empty-state">Loading analysis history…</p>
+        ) : historyItems.length === 0 ? (
+          <p className="sc-empty-state">No previous static APK analyses found on this server.</p>
+        ) : (
+          <div className="sc-history-list" style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+            {historyItems.map((item) => (
+              <div
+                key={item.id}
+                className="sc-history-item"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  padding: "0.75rem 1rem",
+                  backgroundColor: "var(--sc-surface-subtle)",
+                  border: "1px solid var(--sc-border-subtle)",
+                  borderRadius: "var(--sc-radius-md)",
+                  gap: "1rem",
+                  flexWrap: "wrap",
+                }}
+              >
+                <div style={{ display: "flex", flexDirection: "column", gap: "0.25rem", minWidth: "200px" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                    <strong>{item.package_name || "Unknown Package"}</strong>
+                    <span className={`sc-severity-pill sc-severity-pill--${item.indicator_level === "many_indicators" ? "high" : item.indicator_level === "some_indicators" ? "medium" : "low"}`}>
+                      {item.indicator_level.replace("_", " ")}
+                    </span>
+                  </div>
+                  <span style={{ fontSize: "var(--sc-text-xs)", color: "var(--sc-text-muted)" }}>
+                    SHA-256: <code>{item.sha256.slice(0, 16)}…</code> | {(item.file_size / (1024 * 1024)).toFixed(2)} MB
+                  </span>
+                  <span style={{ fontSize: "0.7rem", color: "var(--sc-text-muted)" }}>
+                    {item.created_at ? new Date(item.created_at).toLocaleString() : ""}
+                  </span>
+                </div>
+
+                <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginLeft: "auto" }}>
+                  <button
+                    type="button"
+                    className="button button-quiet"
+                    onClick={() => handleLoadHistoryItem(item.id)}
+                    style={{ fontSize: "var(--sc-text-xs)" }}
+                  >
+                    View Report
+                  </button>
+                  <a
+                    href={getAPKReportPdfUrl(item.id)}
+                    download={`signalcheck-report-${item.package_name || "apk"}-${item.sha256.slice(0, 8)}.pdf`}
+                    className="button button-quiet"
+                    style={{ fontSize: "var(--sc-text-xs)", textDecoration: "none" }}
+                  >
+                    PDF ↓
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </section>
+    </section>
+  );
+}

@@ -1,0 +1,47 @@
+{
+  "manifest_name": "sms05_split_manifest.csv",
+  "creation_timestamp_utc": "2026-11-02T16:00:00Z",
+  "total_candidates": 8735,
+  "unique_normalized_hashes": 8145,
+  "unique_groups": 8145,
+  "binary_label_mapping": {
+    "smishing": 1,
+    "ham": 0,
+    "commercial_spam": 0
+  },
+  "partition_counts": {
+    "train": {
+      "total": 6123,
+      "pct": 70.1,
+      "smishing": 2380,
+      "smishing_url_bearing": 1190,
+      "smishing_linkless": 1190,
+      "ham": 2450,
+      "commercial_spam": 1293
+    },
+    "validation": {
+      "total": 1305,
+      "pct": 14.94,
+      "smishing": 510,
+      "smishing_url_bearing": 255,
+      "smishing_linkless": 255,
+      "ham": 524,
+      "commercial_spam": 271
+    },
+    "test": {
+      "total": 1307,
+      "pct": 14.96,
+      "smishing": 510,
+      "smishing_url_bearing": 255,
+      "smishing_linkless": 255,
+      "ham": 526,
+      "commercial_spam": 271
+    }
+  },
+  "exais_participant_distribution": {
+    "train_unique_users": 20,
+    "validation_unique_users": 19,
+    "test_unique_users": 20,
+    "notes": "ExAIS participants are shared across partitions. Partitions measure template-, message-, and campaign-level generalization, not user holdout."
+  }
+}

@@ -1,0 +1,297 @@
+<html ng-app="bmApp" class="ng-scope"><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    <title>Bitmotion</title>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bitmotiontab.net">
+    <meta property="og:title" content="Bitmotion - New Tab page with animated background and the weather forecast">
+    <meta property="og:image" content="https://bitmotiontab.net/landing7/bitmotion_share-url_img_2x.png">
+    <meta property="og:description" content="Enhance your browsing and search experience. With this beautiful customizable animation you will be always glad to open a new tab. Also you can check the weather in your location right from this page. Bitmotion is a great choice for those who are tired of boring new tab extensions.">
+    <meta property="og:site_name" content="Bitmotion">
+    <link rel="stylesheet" type="text/css" href="landing1/css/style.css?v=3">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,700" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="landing1/js/angular.min.js"></script>
+    <script type="text/javascript" src="landing1/js/ngDialog.min.js"></script>
+    <script type="text/javascript" src="landing1/js/angular-sanitize.min.js"></script>
+    <script type="text/javascript" src="landing1/js/main.js?v=2"></script>
+</head>
+<body ng-controller="MainCtrl as main_ctrl" ng-class="os" ng-style="{'background-color': background.bg}" class="ng-scope theme_windows" style="background-color: rgb(0, 0, 0);">
+<header class="cleafix">
+    <div class="pull-left">
+			<!-- ngIf: selectedWidgets['weather-widget'] --><span class="geo ng-scope" ng-click="showPopup('weatherPopup')" ng-if="selectedWidgets['weather-widget']">
+				<span ng-bind="weatherSettings.city.name" class="ng-binding">Chennai</span>
+			</span><!-- end ngIf: selectedWidgets['weather-widget'] -->
+    </div>
+    <div class="pull-right">
+        <nav>
+            <a href="https://mail.google.com/">Gmail</a>
+            <a href="https://images.google.com/">Images</a>
+            <a href="https://www.google.com/videohp">Video</a>
+            <a href="/privacy.html">Privacy Policy</a>
+            <a href="/terms.html">Terms of Use</a>
+        </nav>
+        <div class="item" ng-click="animationSettings.pause = animationSettings.pause ? false : true">
+            <!-- ngIf: animationSettings.pause -->
+            <!-- ngIf: !animationSettings.pause --><i class="icon-pause ng-scope" title="Pause animation" ng-if="!animationSettings.pause"></i><!-- end ngIf: !animationSettings.pause -->
+        </div>
+        <div class="item">
+            <i class="icon-settings" ng-click="toggleDropdown('settings')"></i>
+            <div class="dropdown settings" id="settings">
+                <div class="section section_top">
+                    <ul>
+                        <li class="weather-settings" ng-click="showPopup('weatherPopup')">Weather Settings</li>
+                    </ul>
+                </div>
+                <div class="section">
+                    <div class="checkbox-holder">
+                        <input type="checkbox" ng-model="selectedWidgets['quick-bar']" ng-click="saveWidgets()" id="quickBar" class="ng-pristine ng-untouched ng-valid ng-not-empty">
+                        <label for="quickBar">Show Quick Widgets Bar</label>
+                    </div>
+                    <div class="checkbox-holder">
+                        <input type="checkbox" ng-model="selectedWidgets['weather-widget']" ng-click="saveWidgets()" id="weatherWidget" class="ng-pristine ng-untouched ng-valid ng-not-empty">
+                        <label for="weatherWidget">Show Weather</label>
+                    </div>
+                </div>
+                <div class="section">
+                    <h2 class="subtitle">Animation Style</h2>
+                    <ul class="anim-styles">
+                        <!-- ngRepeat: item in animationStyles --><li ng-repeat="item in animationStyles" class="anim-styles__item ng-scope square active" ng-class="[item, {'active': item === animationSettings.shape, 'locked': animationSettings.locked &amp;&amp; $index > 1}]" ng-click="changeAnimationShape(item, $index)">
+                            <span class="tooltip">Unlock Style</span>
+                        </li><!-- end ngRepeat: item in animationStyles --><li ng-repeat="item in animationStyles" class="anim-styles__item ng-scope circle" ng-class="[item, {'active': item === animationSettings.shape, 'locked': animationSettings.locked &amp;&amp; $index > 1}]" ng-click="changeAnimationShape(item, $index)">
+                            <span class="tooltip">Unlock Style</span>
+                        </li><!-- end ngRepeat: item in animationStyles --><li ng-repeat="item in animationStyles" class="anim-styles__item ng-scope diamond locked" ng-class="[item, {'active': item === animationSettings.shape, 'locked': animationSettings.locked &amp;&amp; $index > 1}]" ng-click="changeAnimationShape(item, $index)">
+                            <span class="tooltip">Unlock Style</span>
+                        </li><!-- end ngRepeat: item in animationStyles --><li ng-repeat="item in animationStyles" class="anim-styles__item ng-scope star locked" ng-class="[item, {'active': item === animationSettings.shape, 'locked': animationSettings.locked &amp;&amp; $index > 1}]" ng-click="changeAnimationShape(item, $index)">
+                            <span class="tooltip">Unlock Style</span>
+                        </li><!-- end ngRepeat: item in animationStyles --><li ng-repeat="item in animationStyles" class="anim-styles__item ng-scope pac-man locked" ng-class="[item, {'active': item === animationSettings.shape, 'locked': animationSettings.locked &amp;&amp; $index > 1}]" ng-click="changeAnimationShape(item, $index)">
+                            <span class="tooltip">Unlock Style</span>
+                        </li><!-- end ngRepeat: item in animationStyles --><li ng-repeat="item in animationStyles" class="anim-styles__item ng-scope heart locked" ng-class="[item, {'active': item === animationSettings.shape, 'locked': animationSettings.locked &amp;&amp; $index > 1}]" ng-click="changeAnimationShape(item, $index)">
+                            <span class="tooltip">Unlock Style</span>
+                        </li><!-- end ngRepeat: item in animationStyles -->
+                    </ul>
+                    <h2 class="subtitle">Animation Speed</h2>
+                    <div class="range">
+                        <input type="range" ng-model="animationSettings.speed" min="2" max="20" step="1" style="direction: rtl;" class="ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-min ng-valid-max ng-valid-step">
+                    </div>
+                    <div class="checkbox-holder">
+                        <input type="checkbox" ng-model="animationSettings.reverse" id="animationReverse" class="ng-pristine ng-untouched ng-valid ng-not-empty">
+                        <label for="animationReverse">Reverse Direction</label>
+                    </div>
+                    <div class="checkbox-holder">
+                        <input type="checkbox" ng-model="animationSettings.pause" ng-true-value="false" ng-false-value="true" id="animationState" class="ng-pristine ng-untouched ng-valid ng-not-empty">
+                        <label for="animationState">Play Animation</label>
+                    </div>
+
+                    <div class="checkbox-holder">
+                        <input type="checkbox" ng-model="animationSettings.random" id="animationRandom" class="ng-pristine ng-untouched ng-valid ng-empty">
+                        <label for="animationRandom">Random Animation</label>
+                    </div>
+                </div>
+                <div class="section">
+                    <h2 class="subtitle">Background</h2>
+                    <ul class="bglist">
+                        <!-- ngRepeat: bglist in backgrounds track by $index --><li class="bglist__item ng-scope selected" ng-repeat="bglist in backgrounds track by $index" ng-click="background.bg = bglist; saveBackground();" ng-style="{'background-color': bglist}" ng-class="{'selected': background.bg === bglist}" style="background-color: rgb(0, 0, 0);"></li><!-- end ngRepeat: bglist in backgrounds track by $index --><li class="bglist__item ng-scope" ng-repeat="bglist in backgrounds track by $index" ng-click="background.bg = bglist; saveBackground();" ng-style="{'background-color': bglist}" ng-class="{'selected': background.bg === bglist}" style="background-color: rgb(32, 50, 90);"></li><!-- end ngRepeat: bglist in backgrounds track by $index --><li class="bglist__item ng-scope" ng-repeat="bglist in backgrounds track by $index" ng-click="background.bg = bglist; saveBackground();" ng-style="{'background-color': bglist}" ng-class="{'selected': background.bg === bglist}" style="background-color: rgb(65, 65, 65);"></li><!-- end ngRepeat: bglist in backgrounds track by $index --><li class="bglist__item ng-scope" ng-repeat="bglist in backgrounds track by $index" ng-click="background.bg = bglist; saveBackground();" ng-style="{'background-color': bglist}" ng-class="{'selected': background.bg === bglist}" style="background-color: rgb(62, 47, 35);"></li><!-- end ngRepeat: bglist in backgrounds track by $index --><li class="bglist__item ng-scope" ng-repeat="bglist in backgrounds track by $index" ng-click="background.bg = bglist; saveBackground();" ng-style="{'background-color': bglist}" ng-class="{'selected': background.bg === bglist}" style="background-color: rgb(23, 90, 82);"></li><!-- end ngRepeat: bglist in backgrounds track by $index --><li class="bglist__item ng-scope" ng-repeat="bglist in backgrounds track by $index" ng-click="background.bg = bglist; saveBackground();" ng-style="{'background-color': bglist}" ng-class="{'selected': background.bg === bglist}" style="background-color: rgb(61, 5, 60);"></li><!-- end ngRepeat: bglist in backgrounds track by $index --><li class="bglist__item ng-scope" ng-repeat="bglist in backgrounds track by $index" ng-click="background.bg = bglist; saveBackground();" ng-style="{'background-color': bglist}" ng-class="{'selected': background.bg === bglist}" style="background-color: rgb(37, 117, 211);"></li><!-- end ngRepeat: bglist in backgrounds track by $index --><li class="bglist__item ng-scope" ng-repeat="bglist in backgrounds track by $index" ng-click="background.bg = bglist; saveBackground();" ng-style="{'background-color': bglist}" ng-class="{'selected': background.bg === bglist}" style="background-color: rgb(39, 189, 130);"></li><!-- end ngRepeat: bglist in backgrounds track by $index --><li class="bglist__item ng-scope" ng-repeat="bglist in backgrounds track by $index" ng-click="background.bg = bglist; saveBackground();" ng-style="{'background-color': bglist}" ng-class="{'selected': background.bg === bglist}" style="background-color: rgb(216, 171, 4);"></li><!-- end ngRepeat: bglist in backgrounds track by $index --><li class="bglist__item ng-scope" ng-repeat="bglist in backgrounds track by $index" ng-click="background.bg = bglist; saveBackground();" ng-style="{'background-color': bglist}" ng-class="{'selected': background.bg === bglist}" style="background-color: rgb(220, 97, 30);"></li><!-- end ngRepeat: bglist in backgrounds track by $index --><li class="bglist__item ng-scope" ng-repeat="bglist in backgrounds track by $index" ng-click="background.bg = bglist; saveBackground();" ng-style="{'background-color': bglist}" ng-class="{'selected': background.bg === bglist}" style="background-color: rgb(123, 34, 151);"></li><!-- end ngRepeat: bglist in backgrounds track by $index --><li class="bglist__item ng-scope" ng-repeat="bglist in backgrounds track by $index" ng-click="background.bg = bglist; saveBackground();" ng-style="{'background-color': bglist}" ng-class="{'selected': background.bg === bglist}" style="background-color: rgb(166, 11, 71);"></li><!-- end ngRepeat: bglist in backgrounds track by $index -->
+                    </ul>
+                    <h2 class="subtitle" style="margin-bottom: 15px;">Auto Change Color</h2>
+                    <div class="radio">
+                        <input type="radio" id="never" name="changeMode" ng-model="background.changeMode" value="never" ng-change="saveBackground()" class="ng-pristine ng-untouched ng-valid ng-not-empty"><label for="never">Never</label>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" id="random" name="changeMode" ng-model="background.changeMode" value="random" ng-change="saveBackground()" class="ng-pristine ng-untouched ng-valid ng-not-empty"><label for="random">Every Time</label>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" id="everyhour" name="changeMode" ng-model="background.changeMode" value="everyhour" ng-change="saveBackground()" class="ng-pristine ng-untouched ng-valid ng-not-empty"><label for="everyhour">Every Hour</label>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" id="everyday" name="changeMode" ng-model="background.changeMode" value="everyday" ng-change="saveBackground()" class="ng-pristine ng-untouched ng-valid ng-not-empty"><label for="everyday">Every Day</label>
+                    </div>
+                </div>
+
+                <ul>
+                    <li><a href="/contacts.php">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+<section class="main" id="board">
+    <div class="search-holder">
+        <img src="landing1/images/logo_bitmotion.png" style="margin-bottom: 10px;float:right;" width="118">
+        <search-form type="search" placeholder="Search web" class="ng-isolate-scope"><form class="search-form ng-pristine ng-valid" ng-submit="submit()">
+	<input type="text" placeholder="Search web" ng-model="inputValue" ng-keydown="switchSugg($event)" ng-change="getSuggestions()" ng-focus-if="true" class="ng-pristine ng-untouched ng-valid ng-empty">
+	<ul class="suggestions ng-hide" ng-show="showSuggestions">
+		<li class="nothing ng-hide" ng-show="nothingFound">Nothing found.</li>
+		<!-- ngRepeat: suggestion in suggestions -->
+		<li class="enter ng-hide" ng-show="showSuggestions">Press Enter to search</li>
+	</ul>
+</form>
+</search-form>
+        <!-- ngIf: selectedWidgets['quick-bar'] --><div class="quick-bar ng-scope" ng-if="selectedWidgets['quick-bar']">
+            <a href="https://www.youtube.com/" class="quick-bar__item youtube"></a>
+            <a href="https://www.facebook.com/" class="quick-bar__item facebook"></a>
+            <a href="https://twitter.com/" class="quick-bar__item twitter"></a>
+            <a href="https://www.instagram.com/" class="quick-bar__item instagram"></a>
+            <a href="https://www.pinterest.com/" class="quick-bar__item pinterest"></a>
+            <a href="https://www.linkedin.com/" class="quick-bar__item linkedin"></a>
+            <a href="https://www.amazon.com/" class="quick-bar__item amazon"></a>
+        </div><!-- end ngIf: selectedWidgets['quick-bar'] -->
+    </div>
+    <div class="widgets-holder">
+        <!-- ngRepeat: column in widgets --><div class="column ng-scope" dnd-list="widgets[$index]" ng-repeat="column in widgets">
+            <!-- ngRepeat: widget in column --><!-- ngIf: selectedWidgets[widget.name] --><render name="widget.name" ng-repeat="widget in column" ng-if="selectedWidgets[widget.name]" class="ng-scope ng-isolate-scope"><weather-widget class="ng-scope"><div class="widget weather-widget">
+	<div class="top-line" as-sortable-item-handle=""></div>
+	<div class="widget-body" ng-show="weatherSuccess">
+		<div class="main-info">
+			<span class="temp-holder">
+				<i class="wi weather-icon_48px weather-icon_ weather-icon_04n weather-icon_803"></i>
+				<span class="temp"><span ng-show="(weatherSettings.units == 'c' &amp;&amp; today.temp > 0 || weatherSettings.units == 'f' &amp;&amp; today.tempF > 0)" class="">+</span><span ng-bind="(weatherSettings.units=='c')?today.temp:today.tempF" class="ng-binding">29</span>°</span>
+				<span class="units">
+					<span ng-class="(weatherSettings.units == 'f')?'active':''">F</span>
+					<span ng-class="(weatherSettings.units == 'c')?'active':''" class="active">C</span>
+				</span>
+			</span>
+			<span class="weather-item">
+				<i class="wind-icon" ng-style="{'transform': 'rotate('+today.wind_direction + 'deg)'}" style="transform: rotate(245deg);"></i>
+				<span>Wind</span>
+				<span class="value wind ng-binding" ng-bind="(weatherSettings.units == 'c')?today.wind_speed:today.wind_speed_mph">6.18 kph</span>
+			</span>
+			<span class="weather-item">
+				<i class="humidity-icon"></i>
+				<span>Humidity</span>
+				<span class="value hum ng-binding" ng-bind="today.humidity">61</span>%
+			</span>
+			<span class="weather-item">
+				<i class="pressure-icon"></i>
+				<span>Pressure</span>
+				<span class="value hum ng-binding" ng-bind="(weatherSettings.units === 'c') ? today.pressure : today.pressureImperial">754 mm Hg</span>
+			</span>
+			<span class="weather-item">
+				<i class="sunrise-icon"></i>
+				<span>Sunrise</span>
+				<span class="value hum ng-binding" ng-bind="(weatherSettings.units == 'c') ? today.sunrise : today.sunriseF">5:53</span>
+			</span>
+			<span class="weather-item">
+				<i class="sunset-icon"></i>
+				<span>Sunset</span>
+				<span class="value hum ng-binding" ng-bind="(weatherSettings.units == 'c') ? today.sunset : today.sunsetF">18:37</span>
+			</span>
+		</div>
+	</div>
+</div>
+</weather-widget></render><!-- end ngIf: selectedWidgets[widget.name] --><!-- end ngRepeat: widget in column -->
+        </div><!-- end ngRepeat: column in widgets -->
+    </div>
+</section>
+<div class="container reversed" ng-class="{'reversed': animationSettings.reverse}">
+    <style class="ng-binding">
+        .bubble {
+            animation-duration: 8s;
+        }
+        .container.reversed .bubble {
+            animation-duration: 8s;
+        }
+    </style>
+    <div class="bubble-wrap square" ng-class="[animationSettings.shape, {'paused': animationSettings.pause}]">
+        <!-- ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range --><div class="bubble ng-scope" ng-repeat="i in 100 | range" <="" div="">
+    </div><!-- end ngRepeat: i in 100 | range -->
+</div>
+
+
+</div></body></html>

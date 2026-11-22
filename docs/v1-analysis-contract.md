@@ -4,6 +4,8 @@
 **Version:** 1.0  
 **Status:** Initial integration contract; provisional pending implementation and evaluation
 
+> **Historical document:** This contract describes the retired rule-based `POST /api/analyze` implementation. The active application now exposes the ML-only APIs documented in [ml-only-architecture.md](ml-only-architecture.md). The rule definitions below are not active runtime behavior.
+
 This contract defines the first text-analysis API and its user-facing risk assessment. Rule definitions, match conditions, and weights remain governed by [detection_rules.md](../detection_rules.md). Problem scope and user context remain described in [problem_research.md](../problem_research.md). This document does not establish detection effectiveness or accuracy.
 
 ## 1. Scope and enabled rules

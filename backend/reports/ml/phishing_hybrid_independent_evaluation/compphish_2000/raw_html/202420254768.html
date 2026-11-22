@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <meta name="supported-color-schemes" content="dark light">
+    <meta name="color-scheme" content="dark light">
+    <meta name="theme-color" content="">
+    
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1143782-6"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-1143782-6');
+	</script>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="https://media.idownloadblog.com/wp-content/themes/idb-amp/assets/images/favicons/apple-touch-icon.png">
+	<link rel="shortcut icon" type="image/png" sizes="32x32" href="https://media.idownloadblog.com/wp-content/themes/idb-amp/assets/images/favicons/favicon-32x32.png">
+	<link rel="shortcut icon" type="image/png" sizes="16x16" href="https://media.idownloadblog.com/wp-content/themes/idb-amp/assets/images/favicons/favicon-16x16.png">
+    
+    <link rel="stylesheet" href="https://media.idownloadblog.com/wp-content/themes/idb-amp/assets/css/google-amp.min.css" type="text/css" media="all"/>
+    <link data-minify="1" rel="stylesheet" href="https://media.idownloadblog.com/wp-content/uploads/wp_rocket/cache/min/1/wp-content/themes/idb-amp/assets/css/style.css?ver=1685039864" type="text/css" media="all"/>
+
+    <link rel="stylesheet" href="https://media.idownloadblog.com/wp-content/themes/idb-amp/assets/css/style-dark.css?v=1745076448" media="(prefers-color-scheme: dark)">
+    <link rel="stylesheet" href="https://media.idownloadblog.com/wp-content/themes/idb-amp/assets/css/style-light.css?v=1745076448" media="(prefers-color-scheme: no-preference), (prefers-color-scheme: light)">
+	
+    <script data-ezscrex="false" data-cfasync="false" data-pagespeed-no-defer="">
+        const mode = localStorage.getItem('dark-mode-toggle');
+        let system_setting_is_dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        let theme_color = '';
+
+        if (mode) {
+            document.documentElement.setAttribute("data-theme", mode);
+            theme_color = mode;
+        } else {
+            if (system_setting_is_dark) {
+                theme_color = 'dark'
+            }
+        }
+
+
+        let darkCSS = document.querySelectorAll('link[rel=stylesheet]')[2];
+        let lightCSS = document.querySelectorAll('link[rel=stylesheet]')[3];
+
+        if (theme_color == 'dark') {
+            darkCSS.disabled = false;
+            darkCSS.media = 'all';
+            lightCSS.disabled = true;
+            lightCSS.media = 'not all';
+        } else {
+            darkCSS.disabled = true;
+            darkCSS.media = 'not all';
+            lightCSS.disabled = false;
+            lightCSS.media = 'all';
+        }
+
+    </script>
+    <script type="module" src="https://unpkg.com/dark-mode-toggle" data-rocket-defer defer></script>
+    <script data-minify="1" defer src="https://media.idownloadblog.com/wp-content/uploads/wp_rocket/cache/min/1/wp-content/themes/idb-amp/assets/js/darkmode.js?ver=1685039864"></script>
+    <script>
+      if (window.location.protocol === 'http:') {
+        window.location.protocol = 'https:';
+      }
+      // If `prefers-color-scheme` is not supported, fall back to light mode.
+      // In this case, light.css will be downloaded with `highest` priority.
+      if (!window.matchMedia('(prefers-color-scheme)').matches) {
+        document.documentElement.style.display = 'none';
+        document.head.insertAdjacentHTML(
+            'beforeend',
+            '<link data-minify="1" rel="stylesheet" href="https://media.idownloadblog.com/wp-content/uploads/wp_rocket/cache/min/1/wp-content/themes/idb-amp/assets/css/style-light.css?ver=1685039864" onload="document.documentElement.style.display = ``">'
+        );
+      }
+    </script> 
+
+        
+    <script data-no-optimize="1" data-cfasync="false">!function(){"use strict";function e(e){const t=e.match(/((?=([a-z0-9._!#$%+^&*()[\]<>-]+))\2@[a-z0-9._-]+\.[a-z0-9._-]+)/gi);return t?t[0]:""}function t(t){return e(a(t.toLowerCase()))}function a(e){return e.replace(/\s/g,"")}async function n(e){const t={sha256Hash:"",sha1Hash:""};if(!("msCrypto"in window)&&"https:"===location.protocol&&"crypto"in window&&"TextEncoder"in window){const a=(new TextEncoder).encode(e),[n,c]=await Promise.all([s("SHA-256",a),s("SHA-1",a)]);t.sha256Hash=n,t.sha1Hash=c}return t}async function s(e,t){const a=await crypto.subtle.digest(e,t);return Array.from(new Uint8Array(a)).map(e=>("00"+e.toString(16)).slice(-2)).join("")}function c(e){let t=!0;return Object.keys(e).forEach(a=>{0===e[a].length&&(t=!1)}),t}function i(e,t,a){e.splice(t,1);const n="?"+e.join("&")+a.hash;history.replaceState(null,"",n)}var o={checkEmail:e,validateEmail:t,trimInput:a,hashEmail:n,hasHashes:c,removeEmailAndReplaceHistory:i,detectEmails:async function(){const e=new URL(window.location.href),a=Array.from(e.searchParams.entries()).map(e=>`${e[0]}=${e[1]}`);let s,o;const r=["adt_eih","sh_kit"];if(a.forEach((e,t)=>{const a=decodeURIComponent(e),[n,c]=a.split("=");if("adt_ei"===n&&(s={value:c,index:t,emsrc:"url"}),r.includes(n)){o={value:c,index:t,emsrc:"sh_kit"===n?"urlhck":"urlh"}}}),s)t(s.value)&&n(s.value).then(e=>{if(c(e)){const t={value:e,created:Date.now()};localStorage.setItem("adt_ei",JSON.stringify(t)),localStorage.setItem("adt_emsrc",s.emsrc)}});else if(o){const e={value:{sha256Hash:o.value,sha1Hash:""},created:Date.now()};localStorage.setItem("adt_ei",JSON.stringify(e)),localStorage.setItem("adt_emsrc",o.emsrc)}s&&i(a,s.index,e),o&&i(a,o.index,e)},cb:"adthrive"};const{detectEmails:r,cb:l}=o;r()}();
+</script><meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	<style data-no-optimize="1" data-cfasync="false">
+	.adthrive-ad {
+		margin-top: 10px;
+		margin-bottom: 10px;
+		text-align: center;
+		overflow-x: visible;
+		clear: both;
+		line-height: 0;
+	}
+	/* Add background and border below homepage and archive content ads */
+/* Light Mode*/
+html[data-theme='light'] .home.adthrive-device-phone .adthrive-content,
+html[data-theme='light'] .archive.adthrive-device-phone .adthrive-content {
+border-bottom: 30px solid #f5f5f5;
+margin-top: 0;
+background-color: #f5f5f5;
+}
+html[data-theme='light'] .home.adthrive-device-desktop .adthrive-content,
+html[data-theme='light'] .home.adthrive-device-tablet .adthrive-content,
+html[data-theme='light'] .archive.adthrive-device-desktop .adthrive-content,
+html[data-theme='light'] .archive.adthrive-device-tablet .adthrive-content {
+border-bottom: 1px solid #f5f5f5;
+padding-bottom: 10px;
+}
+/* Dark Mode -- REMOVED 3/12/24 ZD 323470 --
+html[data-theme='dark'] .home.adthrive-device-phone .adthrive-content,
+html[data-theme='dark'] .archive.adthrive-device-phone .adthrive-content,
+html[data-theme='dark'] .page.adthrive-device-phone .adthrive-content,
+html[data-theme='dark'] .single.adthrive-device-phone .adthrive-content {
+border-bottom: 30px solid #1c1c1c;
+margin-top: 0;
+background-color: #1c1c1c;
+}
+html[data-theme='dark'] .home.adthrive-device-desktop .adthrive-content,
+html[data-theme='dark'] .home.adthrive-device-tablet .adthrive-content,
+html[data-theme='dark'] .archive.adthrive-device-desktop .adthrive-content,
+html[data-theme='dark'] .archive.adthrive-device-tablet .adthrive-content,
+html[data-theme='dark'] .single.adthrive-device-desktop .adthrive-content,
+html[data-theme='dark'] .single.adthrive-device-tablet .adthrive-content,
+html[data-theme='dark'] .page.adthrive-device-desktop .adthrive-content,
+html[data-theme='dark'] .page.adthrive-device-tablet .adthrive-content {
+border-bottom: 1px solid #1c1c1c;
+padding-bottom: 10px;
+}
+ END BACKGROUND BORDER ADS */ 
+
+/* Video Spacing ZD 263481 */
+div[id^="cls-video-container"] {
+margin: 0px 20px 15px 20px!important;
+}
+.adthrive-collapse-player {
+padding: 0px!important;
+width: 100%!important;
+}
+.adthrive-player-title {
+margin-left: 0px!important;
+}
+/* END Video Spacing */
+
+
+/* Adjust Mobile Content ads margin ZD 323470 */
+body.single.adthrive-device-phone .adthrive-content {
+margin-top: 20px!important;
+margin-bottom: 20px!important;
+}
+/* END Adjust Mobile Content ads margin ZD 323470 */</style>
+<script data-no-optimize="1" data-cfasync="false">
+	window.adthriveCLS = {
+		enabledLocations: ['Content', 'Recipe'],
+		injectedSlots: [],
+		injectedFromPlugin: true,
+		branch: 'e4c11ce',bucket: 'prod',			};
+	window.adthriveCLS.siteAds = {"betaTester":false,"targeting":[{"value":"60a80052d53602ac913692cb","key":"siteId"},{"value":"6233884dc2c4b47088fa5458","key":"organizationId"},{"value":"iDB","key":"siteName"},{"value":"AdThrive Edge","key":"service"},{"value":"on","key":"bidding"},{"value":["Tech"],"key":"verticals"}],"siteUrl":"https://idownloadblog.com/","siteId":"60a80052d53602ac913692cb","siteName":"iDB","breakpoints":{"tablet":768,"desktop":1024},"cloudflare":null,"adUnits":[{"sequence":null,"targeting":[{"value":["Header"],"key":"location"}],"devices":["tablet","phone"],"name":"Header","sticky":false,"location":"Header","dynamic":{"pageSelector":"body","spacing":0,"max":1,"lazyMax":null,"enable":true,"lazy":false,"elementSelector":"#blog-posts","skip":0,"classNames":[],"position":"afterbegin","every":1,"enabled":true},"stickyOverlapSelector":"","adSizes":[[1,1],[300,50],[320,50]],"priority":399,"autosize":true},{"sequence":1,"targeting":[{"value":["Sidebar"],"key":"location"}],"devices":["desktop"],"name":"Sidebar_1","sticky":false,"location":"Sidebar","dynamic":{"pageSelector":"","spacing":0,"max":1,"lazyMax":null,"enable":true,"lazy":false,"elementSelector":"#idb-sidebar > *","skip":0,"classNames":[],"position":"afterend","every":1,"enabled":true},"stickyOverlapSelector":"","adSizes":[[1,1],[120,240],[160,600],[250,250],[300,50],[300,250],[300,420],[300,600],[300,1050],[320,50],[320,100],[336,280]],"priority":299,"autosize":true},{"sequence":9,"targeting":[{"value":["Sidebar"],"key":"location"},{"value":true,"key":"sticky"}],"devices":["desktop"],"name":"Sidebar_9","sticky":true,"location":"Sidebar","dynamic":{"pageSelector":"","spacing":0,"max":1,"lazyMax":null,"enable":true,"lazy":false,"elementSelector":"#idb-sidebar","skip":0,"classNames":[],"position":"beforeend","every":1,"enabled":true},"stickyOverlapSelector":"#idb-footer","adSizes":[[1,1],[120,240],[160,600],[250,250],[300,50],[300,250],[300,420],[300,600],[300,1050],[320,50],[320,100],[336,280]],"priority":291,"autosize":true},{"sequence":null,"targeting":[{"value":["Content"],"key":"location"}],"devices":["desktop"],"name":"Content","sticky":false,"location":"Content","dynamic":{"pageSelector":"body.home, body.archive","spacing":0,"max":2,"lazyMax":7,"enable":true,"lazy":true,"elementSelector":"article.post","skip":0,"classNames":[],"position":"afterend","every":2,"enabled":true},"stickyOverlapSelector":"","adSizes":[[120,240],[250,250],[300,250],[320,50],[320,100],[336,280],[468,60],[728,90],[970,90],[1,1],[300,300],[552,334],[300,50],[728,250],[970,250],[1,2]],"priority":199,"autosize":true},{"sequence":null,"targeting":[{"value":["Content"],"key":"location"}],"devices":["tablet","phone"],"name":"Content","sticky":false,"location":"Content","dynamic":{"pageSelector":"body.home, body.archive","spacing":0,"max":2,"lazyMax":10,"enable":true,"lazy":true,"elementSelector":"article.post","skip":0,"classNames":[],"position":"afterend","every":2,"enabled":true},"stickyOverlapSelector":"","adSizes":[[120,240],[250,250],[300,250],[320,50],[320,100],[336,280],[468,60],[728,90],[970,90],[1,1],[300,300],[552,334],[300,50],[728,250],[970,250],[1,2]],"priority":199,"autosize":true},{"sequence":null,"targeting":[{"value":["Content"],"key":"location"}],"devices":["desktop"],"name":"Content","sticky":false,"location":"Content","dynamic":{"pageSelector":"body.single, body.page:not(.home)","spacing":0.85,"max":7,"lazyMax":4,"enable":true,"lazy":true,"elementSelector":".entry-content > p, .entry-content > ul, .entry-content > ol, .entry-content > .wallpaper > .wallpaper-item:nth-of-type(2n)","skip":5,"classNames":[],"position":"afterend","every":1,"enabled":true},"stickyOverlapSelector":"","adSizes":[[120,240],[250,250],[300,250],[320,50],[320,100],[336,280],[468,60],[728,90],[970,90],[1,1],[300,300],[552,334],[300,50],[728,250],[970,250],[1,2]],"priority":199,"autosize":true},{"sequence":null,"targeting":[{"value":["Content"],"key":"location"}],"devices":["tablet","phone"],"name":"Content","sticky":false,"location":"Content","dynamic":{"pageSelector":"body.single, body.page:not(.home)","spacing":1.3,"max":5,"lazyMax":8,"enable":true,"lazy":true,"elementSelector":".entry-content > p, .entry-content > ul, .entry-content > ol, .entry-content > .wallpaper > .wallpaper-item:nth-of-type(2n)","skip":2,"classNames":[],"position":"afterend","every":1,"enabled":true},"stickyOverlapSelector":"","adSizes":[[120,240],[250,250],[300,250],[320,50],[320,100],[336,280],[468,60],[728,90],[970,90],[1,1],[300,300],[552,334],[300,50],[728,250],[970,250],[1,2]],"priority":199,"autosize":true},{"sequence":null,"targeting":[{"value":["Below Post"],"key":"location"}],"devices":["desktop","tablet","phone"],"name":"Below_Post","sticky":false,"location":"Below Post","dynamic":{"pageSelector":"body.single","spacing":0,"max":0,"lazyMax":1,"enable":true,"lazy":true,"elementSelector":".post-tags","skip":0,"classNames":[],"position":"afterend","every":1,"enabled":true},"stickyOverlapSelector":"","adSizes":[[120,240],[250,250],[300,250],[320,50],[320,100],[336,280],[468,60],[728,90],[1,1]],"priority":99,"autosize":true},{"sequence":null,"targeting":[{"value":["Footer"],"key":"location"},{"value":true,"key":"sticky"}],"devices":["desktop","tablet","phone"],"name":"Footer","sticky":true,"location":"Footer","dynamic":{"pageSelector":"","spacing":0,"max":1,"lazyMax":null,"enable":true,"lazy":false,"elementSelector":"body","skip":0,"classNames":[],"position":"beforeend","every":1,"enabled":true},"stickyOverlapSelector":"","adSizes":[[320,50],[320,100],[728,90],[970,90],[468,60],[1,1],[300,50]],"priority":-1,"autosize":true}],"adDensityLayout":{"mobile":{"adDensity":0.24,"onePerViewport":false},"pageOverrides":[{"mobile":{"adDensity":0.26,"onePerViewport":false},"note":null,"pageSelector":"body.home, body.blog, body.archive","desktop":{"adDensity":0.27,"onePerViewport":false}}],"desktop":{"adDensity":0.24,"onePerViewport":false}},"adDensityEnabled":true,"siteExperiments":[],"adTypes":{"sponsorTileDesktop":true,"interscrollerDesktop":true,"nativeBelowPostDesktop":true,"miniscroller":true,"largeFormatsMobile":false,"nativeMobileContent":true,"inRecipeRecommendationMobile":true,"nativeMobileRecipe":true,"sponsorTileMobile":true,"expandableCatalogAdsMobile":false,"outstreamMobile":true,"nativeHeaderMobile":true,"inRecipeRecommendationDesktop":true,"nativeDesktopContent":true,"outstreamDesktop":true,"animatedFooter":true,"skylineHeader":false,"expandableFooter":false,"nativeDesktopSidebar":true,"videoFootersMobile":true,"videoFootersDesktop":true,"interscroller":false,"nativeDesktopRecipe":true,"nativeHeaderDesktop":true,"nativeBelowPostMobile":true,"expandableCatalogAdsDesktop":false,"largeFormatsDesktop":false},"adOptions":{"theTradeDesk":true,"rtbhouse":true,"undertone":true,"sidebarConfig":{"dynamicStickySidebar":{"minHeight":1800,"enabled":true,"blockedSelectors":[]}},"footerCloseButton":true,"teads":true,"pmp":true,"thirtyThreeAcross":true,"sharethrough":true,"optimizeVideoPlayersForEarnings":true,"removeVideoTitleWrapper":true,"pubMatic":true,"infiniteScroll":false,"yahoossp":false,"improvedigital":true,"spa":false,"stickyContainerConfig":{"recipeDesktop":{"minHeight":null,"enabled":false},"blockedSelectors":[],"stickyHeaderSelectors":[],"content":{"minHeight":null,"enabled":false},"recipeMobile":{"minHeight":null,"enabled":false}},"sonobi":true,"yieldmo":true,"footerSelector":"#idb-footer","amazonUAM":true,"gamMCMEnabled":true,"gamMCMChildNetworkCode":"22611478312","stickyContainerAds":false,"rubicon":true,"conversant":false,"openx":true,"customCreativeEnabled":true,"mobileHeaderHeight":1,"secColor":"#000000","unruly":true,"mediaGrid":true,"bRealTime":true,"adInViewTime":null,"gumgum":true,"comscoreFooter":true,"desktopInterstitial":false,"footerCloseButtonDesktop":false,"ozone":true,"isAutoOptimized":false,"adform":true,"comscoreTAL":true,"targetaff":false,"bgColor":"#FFFFFF","advancePlaylistOptions":{"playlistPlayer":{"enabled":true},"relatedPlayer":{"enabled":true,"applyToFirst":true}},"kargo":true,"liveRampATS":true,"footerCloseButtonMobile":false,"interstitialBlockedPageSelectors":"","prioritizeShorterVideoAds":true,"allowSmallerAdSizes":true,"comscore":"Tech","wakeLock":null,"mobileInterstitial":false,"tripleLift":true,"sensitiveCategories":["alc","ast","cbd","conl","cosm","dat","drg","gamc","gamv","pol","rel","sst","srh","ske","tob","wtl"],"liveRamp":true,"mobileInterstitialBlockedPageSelectors":"","adthriveEmailIdentity":true,"criteo":true,"nativo":true,"infiniteScrollOptions":{"selector":"","heightThreshold":0},"siteAttributes":{"mobileHeaderSelectors":[],"desktopHeaderSelectors":[]},"dynamicContentSlotLazyLoading":true,"clsOptimizedAds":true,"ogury":true,"aidem":false,"verticals":["Tech"],"inImage":false,"usCMP":{"enabled":false,"regions":[]},"advancePlaylist":true,"flipp":false,"delayLoading":false,"inImageZone":null,"appNexus":true,"rise":true,"liveRampId":"","infiniteScrollRefresh":false,"indexExchange":true},"siteAdsProfiles":[],"featureRollouts":{"disable-adv-playlist-optimization":{"featureRolloutId":22,"data":null,"enabled":true},"disable-wake-lock":{"featureRolloutId":21,"data":{},"enabled":true}},"videoPlayers":{"contextual":{"autoplayCollapsibleEnabled":true,"overrideEmbedLocation":true,"defaultPlayerType":"collapse"},"videoEmbed":"wordpress","footerSelector":"#idb-footer","contentSpecificPlaylists":[],"players":[{"devices":["desktop","mobile"],"formattedType":"Stationary Related","description":"","id":4074042,"title":"Stationary related player - desktop and mobile","type":"stationaryRelated","enabled":true,"playerId":"rDiD8oe8"},{"playlistId":"","pageSelector":"","devices":["mobile"],"mobileLocation":"bottom-right","description":"","skip":2,"title":"Sticky related player - mobile","type":"stickyRelated","enabled":true,"formattedType":"Sticky Related","elementSelector":".entry-content > p, .entry-content > ul, .entry-content > ol","id":4074044,"position":"afterend","saveVideoCloseState":false,"shuffle":false,"mobileHeaderSelector":null,"playerId":"rDiD8oe8"},{"playlistId":"","pageSelector":"","devices":["desktop"],"description":"","skip":2,"title":"Sticky related player - desktop","type":"stickyRelated","enabled":true,"formattedType":"Sticky Related","elementSelector":".entry-content > p, .entry-content > ul, .entry-content > ol","id":4074043,"position":"afterend","saveVideoCloseState":false,"shuffle":false,"mobileHeaderSelector":null,"playerId":"rDiD8oe8"},{"playlistId":"IYdkLuG6","pageSelector":"body.single","devices":["mobile"],"mobileLocation":"bottom-right","description":"","skip":2,"title":"Watch our latest videos","type":"stickyPlaylist","enabled":false,"footerSelector":"#idb-footer","formattedType":"Sticky Playlist","elementSelector":".entry-content > p, .entry-content > ul, .entry-content > ol","id":4074046,"position":"afterend","saveVideoCloseState":false,"shuffle":true,"mobileHeaderSelector":null,"playerId":"DLWA64ju"},{"playlistId":"IYdkLuG6","pageSelector":"body.single","devices":["desktop"],"description":"","skip":2,"title":"Watch our latest videos","type":"stickyPlaylist","enabled":true,"footerSelector":"#idb-footer","formattedType":"Sticky Playlist","elementSelector":".entry-content > p, .entry-content > ul, .entry-content > ol","id":4074045,"position":"afterend","saveVideoCloseState":false,"shuffle":true,"mobileHeaderSelector":null,"playerId":"DLWA64ju"}],"partners":{"theTradeDesk":true,"unruly":true,"mediaGrid":true,"undertone":true,"gumgum":true,"adform":true,"pmp":true,"kargo":true,"thirtyThreeAcross":true,"stickyOutstream":{"desktop":{"enabled":true},"blockedPageSelectors":"body.single","mobileLocation":null,"allowOnHomepage":true,"mobile":{"enabled":false},"saveVideoCloseState":false,"mobileHeaderSelector":"","allowForPageWithStickyPlayer":{"enabled":false}},"sharethrough":true,"tripleLift":true,"pubMatic":true,"criteo":true,"yahoossp":false,"nativo":true,"improvedigital":true,"aidem":false,"yieldmo":true,"amazonUAM":true,"rubicon":true,"appNexus":true,"rise":true,"openx":true,"indexExchange":true}}};</script>
+
+<script data-no-optimize="1" data-cfasync="false">
+(function(w, d) {
+	w.adthrive = w.adthrive || {};
+	w.adthrive.cmd = w.adthrive.cmd || [];
+	w.adthrive.plugin = 'adthrive-ads-3.7.1';
+	w.adthrive.host = 'ads.adthrive.com';
+	w.adthrive.integration = 'plugin';
+
+	var commitParam = (w.adthriveCLS && w.adthriveCLS.bucket !== 'prod' && w.adthriveCLS.branch) ? '&commit=' + w.adthriveCLS.branch : '';
+
+	var s = d.createElement('script');
+	s.async = true;
+	s.referrerpolicy='no-referrer-when-downgrade';
+	s.src = 'https://' + w.adthrive.host + '/sites/60a80052d53602ac913692cb/ads.min.js?referrer=' + w.encodeURIComponent(w.location.href) + commitParam + '&cb=' + (Math.floor(Math.random() * 100) + 1) + '';
+	var n = d.getElementsByTagName('script')[0];
+	n.parentNode.insertBefore(s, n);
+})(window, document);
+</script>
+<link rel="dns-prefetch" href="https://ads.adthrive.com/"><link rel="preconnect" href="https://ads.adthrive.com/"><link rel="preconnect" href="https://ads.adthrive.com/" crossorigin>
+	<!-- This site is optimized with the Yoast SEO Premium plugin v24.5 (Yoast SEO v24.5) - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>iDownloadBlog – Apple Blog: iPhone • Watch • iOS • Mac</title><link rel="preload" data-rocket-preload as="image" href="https://media.idownloadblog.com/wp-content/uploads/2023/04/Games-Accessories-Deals-for-Nintendo-Switch-1500x1000.jpg" fetchpriority="high">
+	<meta name="description" content="The best Apple blog providing news, reviews, tutorials, and jailbreak info, about everything iPhone, iPad, Apple Watch, Apple TV, Mac and iOS." />
+	<link rel="canonical" href="https://www.idownloadblog.com/" />
+	<link rel="next" href="https://www.idownloadblog.com/page/2/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="iDownloadBlog.com" />
+	<meta property="og:description" content="The best Apple blog providing news, reviews, tutorials, and jailbreak info, about everything iPhone, iPad, Apple Watch, Apple TV, Mac and iOS." />
+	<meta property="og:url" content="https://www.idownloadblog.com/" />
+	<meta property="og:site_name" content="iDownloadBlog.com" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@iDownloadBlog" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","@id":"https://www.idownloadblog.com/","url":"https://www.idownloadblog.com/","name":"iDownloadBlog – Apple Blog: iPhone • Watch • iOS • Mac","isPartOf":{"@id":"https://www.idownloadblog.com/#website"},"about":{"@id":"https://www.idownloadblog.com/#organization"},"description":"The best Apple blog providing news, reviews, tutorials, and jailbreak info, about everything iPhone, iPad, Apple Watch, Apple TV, Mac and iOS.","breadcrumb":{"@id":"https://www.idownloadblog.com/#breadcrumb"},"inLanguage":"en-US"},{"@type":"BreadcrumbList","@id":"https://www.idownloadblog.com/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]},{"@type":"WebSite","@id":"https://www.idownloadblog.com/#website","url":"https://www.idownloadblog.com/","name":"iDownloadBlog","description":"iPhone - iPad - iOS","publisher":{"@id":"https://www.idownloadblog.com/#organization"},"alternateName":"iDB","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.idownloadblog.com/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https://www.idownloadblog.com/#organization","name":"iDownloadblog.com","url":"https://www.idownloadblog.com/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://www.idownloadblog.com/#/schema/logo/image/","url":"https://media.idownloadblog.com/wp-content/uploads/2021/12/iDB-logo.png","contentUrl":"https://media.idownloadblog.com/wp-content/uploads/2021/12/iDB-logo.png","width":1200,"height":1200,"caption":"iDownloadblog.com"},"image":{"@id":"https://www.idownloadblog.com/#/schema/logo/image/"},"sameAs":["http://www.facebook.com/iDownloadBlog","https://x.com/iDownloadBlog","https://www.instagram.com/idownloadblog/","https://www.youtube.com/idb/"]}]}</script>
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+
+<link rel="alternate" type="application/rss+xml" title="iDownloadBlog.com &raquo; Feed" href="https://www.idownloadblog.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="iDownloadBlog.com &raquo; Comments Feed" href="https://www.idownloadblog.com/comments/feed/" />
+<style id='classic-theme-styles-inline-css'>
+/**
+ * These rules are needed for backwards compatibility.
+ * They should match the button element rules in the base theme.json file.
+ */
+.wp-block-button__link {
+	color: #ffffff;
+	background-color: #32373c;
+	border-radius: 9999px; /* 100% causes an oval, but any explicit but really high value retains the pill shape. */
+
+	/* This needs a low specificity so it won't override the rules from the button element if defined in theme.json. */
+	box-shadow: none;
+	text-decoration: none;
+
+	/* The extra 2px are added to size solids the same as the outline versions.*/
+	padding: calc(0.667em + 2px) calc(1.333em + 2px);
+
+	font-size: 1.125em;
+}
+
+.wp-block-file__button {
+	background: #32373c;
+	color: #ffffff;
+	text-decoration: none;
+}
+
+</style>
+<style id='global-styles-inline-css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel="https://api.w.org/" href="https://www.idownloadblog.com/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.idownloadblog.com/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.7.2" />
+<script type='text/javascript'>window.presslabs = {"home_url":"https:\/\/www.idownloadblog.com"}</script><script type='text/javascript'>
+	(function () {
+		var pl_beacon = document.createElement('script');
+		pl_beacon.type = 'text/javascript';
+		pl_beacon.async = true;
+		var host = 'https://www.idownloadblog.com';
+		if ('https:' == document.location.protocol) {
+			host = host.replace('http://', 'https://');
+		}
+		pl_beacon.src = host + '/' + 'AptigGTH1BON' + '.js?ts=' + Math.floor((Math.random() * 100000) + 1);
+		var first_script_tag = document.getElementsByTagName('script')[0];
+		first_script_tag.parentNode.insertBefore(pl_beacon, first_script_tag);
+	})();
+</script><script data-no-optimize='1' data-cfasync='false' id='cls-disable-ads-e4c11ce'>var cls_disable_ads=function(t){"use strict";window.adthriveCLS.buildDate="2025-04-18";const e="Content",i="Recipe";const s=new class{info(t,e,...i){this.call(console.info,t,e,...i)}warn(t,e,...i){this.call(console.warn,t,e,...i)}error(t,e,...i){this.call(console.error,t,e,...i),this.sendErrorLogToCommandQueue(t,e,...i)}event(t,e,...i){var s;"debug"===(null==(s=window.adthriveCLS)?void 0:s.bucket)&&this.info(t,e)}sendErrorLogToCommandQueue(t,e,...i){window.adthrive=window.adthrive||{},window.adthrive.cmd=window.adthrive.cmd||[],window.adthrive.cmd.push((()=>{void 0!==window.adthrive.logError&&"function"==typeof window.adthrive.logError&&window.adthrive.logError(t,e,i)}))}call(t,e,i,...s){const o=[`%c${e}::${i} `],a=["color: #999; font-weight: bold;"];s.length>0&&"string"==typeof s[0]&&o.push(s.shift()),a.push(...s);try{Function.prototype.apply.call(t,console,[o.join(""),...a])}catch(t){return void console.error(t)}}},o=t=>{const e=window.location.href;return t.some((t=>new RegExp(t,"i").test(e)))};class a{checkCommandQueue(){this.adthrive&&this.adthrive.cmd&&this.adthrive.cmd.forEach((t=>{const e=t.toString(),i=this.extractAPICall(e,"disableAds");i&&this.disableAllAds(this.extractPatterns(i));const s=this.extractAPICall(e,"disableContentAds");s&&this.disableContentAds(this.extractPatterns(s));const o=this.extractAPICall(e,"disablePlaylistPlayers");o&&this.disablePlaylistPlayers(this.extractPatterns(o))}))}extractPatterns(t){const e=t.match(/["'](.*?)['"]/g);if(null!==e)return e.map((t=>t.replace(/["']/g,"")))}extractAPICall(t,e){const i=new RegExp(e+"\\((.*?)\\)","g"),s=t.match(i);return null!==s&&s[0]}disableAllAds(t){t&&!o(t)||(this.all=!0,this.reasons.add("all_page"))}disableContentAds(t){t&&!o(t)||(this.content=!0,this.recipe=!0,this.locations.add(e),this.locations.add(i),this.reasons.add("content_plugin"))}disablePlaylistPlayers(t){t&&!o(t)||(this.video=!0,this.locations.add("Video"),this.reasons.add("video_page"))}urlHasEmail(t){if(!t)return!1;return null!==/([A-Z0-9._%+-]+(@|%(25)*40)[A-Z0-9.-]+\.[A-Z]{2,})/i.exec(t)}constructor(t){this.adthrive=t,this.all=!1,this.content=!1,this.recipe=!1,this.video=!1,this.locations=new Set,this.reasons=new Set,(this.urlHasEmail(window.location.href)||this.urlHasEmail(window.document.referrer))&&(this.all=!0,this.reasons.add("all_email"));try{this.checkCommandQueue(),null!==document.querySelector(".tag-novideo")&&(this.video=!0,this.locations.add("Video"),this.reasons.add("video_tag"))}catch(t){s.error("ClsDisableAds","checkCommandQueue",t)}}}const n=window.adthriveCLS;return n&&(n.disableAds=new a(window.adthrive)),t.ClsDisableAds=a,t}({});
+</script><script data-no-optimize='1' data-cfasync='false' id='cls-header-insertion-e4c11ce'>var cls_header_insertion=function(e){"use strict";window.adthriveCLS.buildDate="2025-04-18";const t="Content",i="Recipe",s="Footer",a="Header_1",n="Header",o="Sidebar";const r=new class{info(e,t,...i){this.call(console.info,e,t,...i)}warn(e,t,...i){this.call(console.warn,e,t,...i)}error(e,t,...i){this.call(console.error,e,t,...i),this.sendErrorLogToCommandQueue(e,t,...i)}event(e,t,...i){var s;"debug"===(null==(s=window.adthriveCLS)?void 0:s.bucket)&&this.info(e,t)}sendErrorLogToCommandQueue(e,t,...i){window.adthrive=window.adthrive||{},window.adthrive.cmd=window.adthrive.cmd||[],window.adthrive.cmd.push((()=>{void 0!==window.adthrive.logError&&"function"==typeof window.adthrive.logError&&window.adthrive.logError(e,t,i)}))}call(e,t,i,...s){const a=[`%c${t}::${i} `],n=["color: #999; font-weight: bold;"];s.length>0&&"string"==typeof s[0]&&a.push(s.shift()),n.push(...s);try{Function.prototype.apply.call(e,console,[a.join(""),...n])}catch(e){return void console.error(e)}}},l=(e,t)=>null==e||e!=e?t:e,c=(e=>{const t={};return function(...i){const s=JSON.stringify(i);if(t[s])return t[s];const a=e.apply(this,i);return t[s]=a,a}})((()=>{const e=navigator.userAgent,t=/Tablet|iPad|Playbook|Nook|webOS|Kindle|Android (?!.*Mobile).*Safari|CrOS/i.test(e);return/Mobi|iP(hone|od)|Opera Mini/i.test(e)&&!t})),d=["siteId","siteName","adOptions","breakpoints","adUnits"],h=(e,t=d)=>{if(!e)return!1;for(let i=0;i<t.length;i++)if(!e[t[i]])return!1;return!0};class u{}class m extends u{get(){if(this._probability<0||this._probability>1)throw new Error(`Invalid probability: ${this._probability}`);return Math.random()<this._probability}constructor(e){super(),this._probability=e}}class b{get enabled(){return!!this._clsGlobalData&&!!this._clsGlobalData.siteAds&&h(this._clsGlobalData.siteAds)}get error(){return!(!this._clsGlobalData||!this._clsGlobalData.error)}set siteAds(e){this._clsGlobalData.siteAds=e}get siteAds(){return this._clsGlobalData.siteAds}set disableAds(e){this._clsGlobalData.disableAds=e}get disableAds(){return this._clsGlobalData.disableAds}set enabledLocations(e){this._clsGlobalData.enabledLocations=e}get enabledLocations(){return this._clsGlobalData.enabledLocations}get injectedFromPlugin(){return this._clsGlobalData.injectedFromPlugin}set injectedFromPlugin(e){this._clsGlobalData.injectedFromPlugin=e}get injectedFromSiteAds(){return this._clsGlobalData.injectedFromSiteAds}set injectedFromSiteAds(e){this._clsGlobalData.injectedFromSiteAds=e}overwriteInjectedSlots(e){this._clsGlobalData.injectedSlots=e}setInjectedSlots(e){this._clsGlobalData.injectedSlots=this._clsGlobalData.injectedSlots||[],this._clsGlobalData.injectedSlots.push(e)}get injectedSlots(){return this._clsGlobalData.injectedSlots}setInjectedVideoSlots(e){this._clsGlobalData.injectedVideoSlots=this._clsGlobalData.injectedVideoSlots||[],this._clsGlobalData.injectedVideoSlots.push(e)}get injectedVideoSlots(){return this._clsGlobalData.injectedVideoSlots}setInjectedScripts(e){this._clsGlobalData.injectedScripts=this._clsGlobalData.injectedScripts||[],this._clsGlobalData.injectedScripts.push(e)}get getInjectedScripts(){return this._clsGlobalData.injectedScripts}setExperiment(e,t,i=!1){this._clsGlobalData.experiments=this._clsGlobalData.experiments||{},this._clsGlobalData.siteExperiments=this._clsGlobalData.siteExperiments||{};(i?this._clsGlobalData.siteExperiments:this._clsGlobalData.experiments)[e]=t}getExperiment(e,t=!1){const i=t?this._clsGlobalData.siteExperiments:this._clsGlobalData.experiments;return i&&i[e]}setWeightedChoiceExperiment(e,t,i=!1){this._clsGlobalData.experimentsWeightedChoice=this._clsGlobalData.experimentsWeightedChoice||{},this._clsGlobalData.siteExperimentsWeightedChoice=this._clsGlobalData.siteExperimentsWeightedChoice||{};(i?this._clsGlobalData.siteExperimentsWeightedChoice:this._clsGlobalData.experimentsWeightedChoice)[e]=t}getWeightedChoiceExperiment(e,t=!1){var i,s;const a=t?null==(i=this._clsGlobalData)?void 0:i.siteExperimentsWeightedChoice:null==(s=this._clsGlobalData)?void 0:s.experimentsWeightedChoice;return a&&a[e]}get branch(){return this._clsGlobalData.branch}get bucket(){return this._clsGlobalData.bucket}set videoDisabledFromPlugin(e){this._clsGlobalData.videoDisabledFromPlugin=e}get videoDisabledFromPlugin(){return this._clsGlobalData.videoDisabledFromPlugin}set targetDensityLog(e){this._clsGlobalData.targetDensityLog=e}get targetDensityLog(){return this._clsGlobalData.targetDensityLog}getIOSDensity(e){const t=[{weight:100,adDensityPercent:0},{weight:0,adDensityPercent:25},{weight:0,adDensityPercent:50}],i=t.map((e=>e.weight)),{index:s}=(e=>{const t={index:-1,weight:-1};if(!e||0===e.length)return t;const i=e.reduce(((e,t)=>e+t),0);if(0===i)return t;const s=Math.random()*i;let a=0,n=e[a];for(;s>n;)n+=e[++a];return{index:a,weight:e[a]}})(i),a=e-e*(t[s].adDensityPercent/100);return this.setWeightedChoiceExperiment("iosad",t[s].adDensityPercent),a}getTargetDensity(e){return((e=navigator.userAgent)=>/iP(hone|od|ad)/i.test(e))()?this.getIOSDensity(e):e}get removeVideoTitleWrapper(){return this._clsGlobalData.siteAds.adOptions.removeVideoTitleWrapper}constructor(){this._clsGlobalData=window.adthriveCLS}}class p{setExperimentKey(e=!1){this._clsOptions.setExperiment(this.abgroup,this.result,e)}constructor(){this._clsOptions=new b,this.shouldUseCoreExperimentsConfig=!1}}class g extends p{get result(){return this._result}run(){return new m(this.weight).get()}constructor(e){super(),this._result=!1,this.key="ParallaxAdsExperiment",this.abgroup="parallax",this._choices=[{choice:!0},{choice:!1}],this.weight=0;!!c()&&e.largeFormatsMobile&&(this._result=this.run(),this.setExperimentKey())}}const y=[[728,90],[300,250],[300,600],[320,50],[970,250],[160,600],[300,1050],[336,280],[970,90],[300,50],[320,100],[468,60],[250,250],[120,240],[1,1],[300,300],[552,334],[300,420],[728,250],[320,300],[300,390]],_=[[300,600],[160,600]],D=new Map([[s,1],[n,2],[o,3],[t,4],[i,5],["Sidebar_sticky",6],["Below Post",7]]),v=(e,t)=>{const{location:a,sticky:n}=e;if(a===i&&t){const{recipeMobile:e,recipeDesktop:i}=t;if(c()&&(null==e?void 0:e.enabled))return!0;if(!c()&&(null==i?void 0:i.enabled))return!0}return a===s||n},S=(e,a)=>{const r=a.adUnits,d=(e=>!!e.adTypes&&new g(e.adTypes).result)(a);return r.filter((e=>void 0!==e.dynamic&&e.dynamic.enabled)).map((r=>{const h=r.location.replace(/\s+/g,"_"),u="Sidebar"===h?0:2;return{auctionPriority:D.get(h)||8,location:h,sequence:l(r.sequence,1),sizes:(m=r.adSizes,y.filter((([e,t])=>m.some((([i,s])=>e===i&&t===s))))).filter((t=>((e,[t,a],r)=>{const{location:l,sequence:d}=e;if(l===s)return!("phone"===r&&320===t&&100===a);if(l===n)return!0;if(l===i)return!(c()&&"phone"===r&&(300===t&&390===a||320===t&&300===a));if(l===o){const t=e.adSizes.some((([,e])=>e<=300)),i=a>300;return!(!i||t)||9===d||(d&&d<=5?!i||e.sticky:!i)}return!0})(r,t,e))).concat(d&&r.location===t?_:[]),devices:r.devices,pageSelector:l(r.dynamic.pageSelector,"").trim(),elementSelector:l(r.dynamic.elementSelector,"").trim(),position:l(r.dynamic.position,"beforebegin"),max:Math.floor(l(r.dynamic.max,0)),spacing:l(r.dynamic.spacing,0),skip:Math.floor(l(r.dynamic.skip,0)),every:Math.max(Math.floor(l(r.dynamic.every,1)),1),classNames:r.dynamic.classNames||[],sticky:v(r,a.adOptions.stickyContainerConfig),stickyOverlapSelector:l(r.stickyOverlapSelector,"").trim(),autosize:r.autosize,special:l(r.targeting,[]).filter((e=>"special"===e.key)).reduce(((e,t)=>e.concat(...t.value)),[]),lazy:l(r.dynamic.lazy,!1),lazyMax:l(r.dynamic.lazyMax,u),lazyMaxDefaulted:0!==r.dynamic.lazyMax&&!r.dynamic.lazyMax,name:r.name};var m}))},w=(e,t)=>{const i=(e=>{let t=e.clientWidth;if(getComputedStyle){const i=getComputedStyle(e,null);t-=parseFloat(i.paddingLeft||"0")+parseFloat(i.paddingRight||"0")}return t})(t),s=e.sticky&&e.location===o;return e.sizes.filter((t=>{const a=!e.autosize||(t[0]<=i||t[0]<=320),n=!s||t[1]<=window.innerHeight-100;return a&&n}))},f=e=>`adthrive-${e.location.replace("_","-").toLowerCase()}`;class G{start(){try{const e=S(this._device,this.adthriveCLS.siteAds).filter((e=>this.locationEnabled(e))).filter((e=>{return t=e,i=this._device,t.devices.includes(i);var t,i}));for(let t=0;t<e.length;t++)window.requestAnimationFrame(this.inject.bind(this,e[t],document))}catch(e){r.error("ClsHeaderInjector","start",e)}}inject(e,t=document){if("complete"===document.readyState)return;if(0!==e.pageSelector.length){if(!document.querySelector(e.pageSelector))return void window.requestAnimationFrame(this.inject.bind(this,e,document))}const i=this.getElements(e.elementSelector,t);if(i){const s=this.getDynamicElementId(e),n=f(e),o=(e=>`${f(e)}-${e.sequence}`)(e),r=[n,o,...e.classNames],l=this.addAd(i,s,e.position,r);if(l){const i=w(e,l);if(i.length>0){const s={clsDynamicAd:e,dynamicAd:e,element:l,sizes:i,name:a,infinite:t!==document};this.adthriveCLS.injectedSlots.some((e=>e.name===a))||this.adthriveCLS.injectedSlots.push(s),l.style.minHeight=this.deviceToMinHeight[this._device]}}}else window.requestAnimationFrame(this.inject.bind(this,e,document))}getDynamicElementId(e){return`AdThrive_${e.location}_${e.sequence}_${this._device}`}getElements(e,t=document){return t.querySelector(e)}addAd(e,t,i,s=[]){if(!document.getElementById(t)){const a=`<div id="${t}" class="adthrive-ad ${s.join(" ")}"></div>`;e.insertAdjacentHTML(i,a)}return document.getElementById(t)}locationEnabled(e){return!(this.adthriveCLS.disableAds&&this.adthriveCLS.disableAds.all)&&e.location===n&&1===e.sequence&&1===e.max&&0===e.spacing}constructor(e){this.adthriveCLS=e,this.deviceToMinHeight={desktop:"90px",tablet:"90px",phone:"50px"};const{tablet:t,desktop:i}=this.adthriveCLS.siteAds.breakpoints;this._device=((e,t)=>{const i=window.innerWidth;return i>=t?"desktop":i>=e?"tablet":"phone"})(t,i)}}return(()=>{const e=window.adthriveCLS;e&&e.siteAds&&h(e.siteAds)&&window.requestAnimationFrame&&new G(e).start()})(),e.ClsHeaderInjector=G,e}({});
+</script><noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><style id="rocket-lazyrender-inline-css">[data-wpr-lazyrender] {content-visibility: auto;}</style><meta name="generator" content="WP Rocket 3.18.2" data-wpr-features="wpr_defer_js wpr_minify_js wpr_lazyload_images wpr_lazyload_iframes wpr_automatic_lazy_rendering wpr_oci wpr_minify_css wpr_preload_links wpr_desktop" /></head>
+
+<body class="home blog post-dopamine-jailbreak-v2-4-4-update">
+
+	<script>
+		window.addEventListener('DOMContentLoaded', (event) => {
+			  [document.querySelector('#dark-mode-toggle-1').shadowRoot.querySelector('input#t'), document.querySelector('#dark-mode-toggle-mobile').shadowRoot.querySelector('input#t')].forEach(function (item) {
+               item.addEventListener('click', function () {
+                       if (document.querySelector('#dark-mode-toggle-1').mode == 'light') {
+                           darkCSS.disabled = false;
+                           darkCSS.media = 'all';
+                           lightCSS.disabled = true;
+                           lightCSS.media = 'not all';
+                           document.querySelector('meta[name="theme-color"]').content = 'black'
+                       } else {
+                           darkCSS.disabled = true;
+                           darkCSS.media = 'not all';
+                           lightCSS.disabled = false;
+                           lightCSS.media = 'all';
+                           document.querySelector('meta[name="theme-color"]').content = 'white'
+                       }
+                   });
+            });
+		});
+ 	</script>
+    
+	
+	<section  class="idb-section" id="idb-header">
+     	<header  class="mega-menu full-width">
+       		<div  class="container-fluid">
+         		<div class="header">
+             		<div  class="row">
+               			<div class="col-lg-12 col-sm-12 col-xs-12">
+                 			<nav class="main-menu" id="main-menu">
+                   				<!-- Mobile -->
+                    		 	<div id="mobile-header" class="mobile">
+                       				<label for="mobile" class="mobile-open"><span class="main-menu-dropdown-icon"></span></label>
+                       				<a href="/" id="mobile-logo" target="_top" title="iDownloadBlog Home" class="mobile-show"></a>
+                       				<div id="search-icon-mobile"class="mobile-show"></div>
+                     			</div>
+                     
+                     			<div id="search-mobile" class="search-wrapper">
+                       				<div class="site-search">
+                         				<div id="search-box-mobile" class="header-item-search" hidden>
+                           					<input type="checkbox" id="toggle-search" />
+                           					<label for="toggle-search" class="toggle-search" title="Search"></label>
+                           					<form method="get" id="search-form-mobile" action="https://www.idownloadblog.com/">
+                             					<label class="search-form-label screen-reader-text" for="searchform-1"></label>
+                             					<span class="icon"></span>
+                             					<input class="search-form-input" type="search" name="s" id="searchform-2" placeholder="Search...">
+                             					<input class="search-form-submit" type="submit" value="Search">
+                             					<div class="search-form-close"></div>
+                           					</form>
+                         				</div>
+                       				</div>
+                     			</div>
+                     
+                     			<input type="checkbox" id="mobile">
+                     
+                    			<ul class="main-menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+                      				<li class="main-menu-logo"><a href="/" target="_top"></a></li>
+                                    <ul class="mobile-options-wrapper">
+                                        <li><label for="mobile" class="mobile-close"><span class="main-menu-dropdown-icon"></span></label></li>
+                                        <li class="mobile-only">
+                                            <dark-mode-toggle
+                                                    id="dark-mode-toggle-mobile"
+                                                    appearance="toggle"
+                                            ></dark-mode-toggle>
+                                        </li>
+                                    </ul>
+                      				<li class="mobile-only section"><span>Sections</span></li>
+                      			 	<ul itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" class="wrap-items">
+                        				<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-864276" class="menu-item menu-item-type-custom menu-item-object-custom no-main-menu-dropdown top-link menu-item-864276 nav-item"><a title="Tips" href="https://www.idownloadblog.com/tag/tutorial/">Tips</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-864282" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children main-menu-dropdown top-link main-menu-dropdown menu-item-864282 nav-item"><a title="Wallpapers" href="https://www.idownloadblog.com/tag/wallpaper/" aria-haspopup="true" aria-expanded="false" class="nav-link" id="menu-item-dropdown-864282">Wallpapers</a><label class="main-menu-dropdown-icon" for="main-menu-dropdown-list-864282" on="tap:AMP.setState({menuChevron864282:!menuChevron864282});"><i [class]="menuChevron864282?'arrow-up arrow-up-mobile':'arrow-down arrow-down-mobile'" class="arrow-down arrow-down-mobile"></i></label><input type="checkbox" id="main-menu-dropdown-list-864282">
+<ul class="main-menu-dropdown-list" aria-labelledby="arrow-up arrow-up-mobile&#039;:&#039;arrow-down arrow-down-mobile&#039;" role="menu">
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-864283" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-864283 nav-item"><a title="Abstract Wallpapers" href="https://www.idownloadblog.com/tag/abstract-wallpapers/">Abstract Wallpapers</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-864284" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-864284 nav-item"><a title="Apple Wallpapers" href="https://www.idownloadblog.com/tag/apple-wallpapers/">Apple Wallpapers</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-864285" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-864285 nav-item"><a title="City Wallpapers" href="https://www.idownloadblog.com/tag/city-wallpapers/">City Wallpapers</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-864286" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-864286 nav-item"><a title="Colorful Wallpapers" href="https://www.idownloadblog.com/tag/colorful-wallpapers/">Colorful Wallpapers</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-864287" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-864287 nav-item"><a title="Fantasy Wallpapers" href="https://www.idownloadblog.com/tag/fantasy-wallpapers/">Fantasy Wallpapers</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-864288" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-864288 nav-item"><a title="Geometric Wallpapers" href="https://www.idownloadblog.com/tag/geometric-wallpapers/">Geometric Wallpapers</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-864289" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-864289 nav-item"><a title="Gradient Wallpapers" href="https://www.idownloadblog.com/tag/gradient-wallpapers/">Gradient Wallpapers</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-864290" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-864290 nav-item"><a title="Landscape Wallpapers" href="https://www.idownloadblog.com/tag/landscape-wallpapers/">Landscape Wallpapers</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-864291" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-864291 nav-item"><a title="Minimalist Wallpapers" href="https://www.idownloadblog.com/tag/minimalist-wallpapers/">Minimalist Wallpapers</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-864292" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-864292 nav-item"><a title="Nature Wallpapers" href="https://www.idownloadblog.com/tag/nature-wallpapers/">Nature Wallpapers</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-864293" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-864293 nav-item"><a title="Sky Wallpapers" href="https://www.idownloadblog.com/tag/sky-wallpapers/">Sky Wallpapers</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-864294" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-864294 nav-item"><a title="Space Wallpapers" href="https://www.idownloadblog.com/tag/space-wallpapers/">Space Wallpapers</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-864295" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-864295 nav-item"><a title="TV &amp; Movies Wallpapers" href="https://www.idownloadblog.com/tag/tv-movies-wallpapers/">TV &#038; Movies Wallpapers</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-864296" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-864296 nav-item"><a title="Video Games Wallpapers" href="https://www.idownloadblog.com/tag/video-games-wallpapers/">Video Games Wallpapers</a></li>
+</ul>
+</li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-864277" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children main-menu-dropdown top-link main-menu-dropdown menu-item-864277 nav-item"><a title="Jailbreak" href="https://www.idownloadblog.com/tag/jailbreak/" aria-haspopup="true" aria-expanded="false" class="nav-link" id="menu-item-dropdown-864277">Jailbreak</a><label class="main-menu-dropdown-icon" for="main-menu-dropdown-list-864277" on="tap:AMP.setState({menuChevron864277:!menuChevron864277});"><i [class]="menuChevron864277?'arrow-up arrow-up-mobile':'arrow-down arrow-down-mobile'" class="arrow-down arrow-down-mobile"></i></label><input type="checkbox" id="main-menu-dropdown-list-864277">
+<ul class="main-menu-dropdown-list" aria-labelledby="arrow-up arrow-up-mobile&#039;:&#039;arrow-down arrow-down-mobile&#039;" role="menu">
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-864278" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-864278 nav-item"><a title="Jailbreak News" href="https://www.idownloadblog.com/tag/jailbreak/">Jailbreak News</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-864279" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-864279 nav-item"><a title="Jailbreak Tweaks" href="https://www.idownloadblog.com/tag/jailbreak-apps-tweaks/">Jailbreak Tweaks</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-864280" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-864280 nav-item"><a title="Jailbreak Guide" href="https://www.idownloadblog.com/jailbreak/">Jailbreak Guide</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-864281" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-864281 nav-item"><a title="Unlock Guide" href="https://www.idownloadblog.com/unlock/">Unlock Guide</a></li>
+</ul>
+</li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-865813" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children main-menu-dropdown top-link main-menu-dropdown menu-item-865813 nav-item"><a title="Devices" href="#" aria-haspopup="true" aria-expanded="false" class="nav-link" id="menu-item-dropdown-865813">Devices</a><label class="main-menu-dropdown-icon" for="main-menu-dropdown-list-865813" on="tap:AMP.setState({menuChevron865813:!menuChevron865813});"><i [class]="menuChevron865813?'arrow-up arrow-up-mobile':'arrow-down arrow-down-mobile'" class="arrow-down arrow-down-mobile"></i></label><input type="checkbox" id="main-menu-dropdown-list-865813">
+<ul class="main-menu-dropdown-list" aria-labelledby="arrow-up arrow-up-mobile&#039;:&#039;arrow-down arrow-down-mobile&#039;" role="menu">
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-864300" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-864300 nav-item"><a title="iPhone" href="https://www.idownloadblog.com/tag/iphone/">iPhone</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-864301" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-864301 nav-item"><a title="iPad" href="https://www.idownloadblog.com/tag/ipad/">iPad</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-985009" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-985009 nav-item"><a title="Vision Pro" href="https://www.idownloadblog.com/tag/vision-pro/">Vision Pro</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-864302" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-864302 nav-item"><a title="Apple Watch" href="https://www.idownloadblog.com/tag/apple-watch/">Apple Watch</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-864303" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-864303 nav-item"><a title="Mac" href="https://www.idownloadblog.com/tag/mac/">Mac</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-864304" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-864304 nav-item"><a title="Apple TV" href="https://www.idownloadblog.com/tag/apple-tv/">Apple TV</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-864305" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-864305 nav-item"><a title="AirPods" href="https://www.idownloadblog.com/tag/airpods/">AirPods</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-864306" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-864306 nav-item"><a title="AirTag" href="https://www.idownloadblog.com/tag/airtag/">AirTag</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-864307" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-864307 nav-item"><a title="HomePod" href="https://www.idownloadblog.com/tag/homepod/">HomePod</a></li>
+</ul>
+</li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-921659" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children main-menu-dropdown top-link main-menu-dropdown menu-item-921659 nav-item"><a title="Our Apps" href="https://apps.apple.com/us/developer/new-marketing-lab-inc/id1080727702?see-all=i-phonei-pad-apps" aria-haspopup="true" aria-expanded="false" class="nav-link" id="menu-item-dropdown-921659">Our Apps</a><label class="main-menu-dropdown-icon" for="main-menu-dropdown-list-921659" on="tap:AMP.setState({menuChevron921659:!menuChevron921659});"><i [class]="menuChevron921659?'arrow-up arrow-up-mobile':'arrow-down arrow-down-mobile'" class="arrow-down arrow-down-mobile"></i></label><input type="checkbox" id="main-menu-dropdown-list-921659">
+<ul class="main-menu-dropdown-list" aria-labelledby="arrow-up arrow-up-mobile&#039;:&#039;arrow-down arrow-down-mobile&#039;" role="menu">
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-921675" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-921675 nav-item"><a title="iDB app" href="https://apps.apple.com/us/app/idb-app/id1086682264">iDB app</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-921663" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-921663 nav-item"><a title="Compress Photos" href="https://apps.apple.com/us/app/compress-photos-pictures/id1449007043">Compress Photos</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-921669" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-921669 nav-item"><a title="Compress Videos" href="https://apps.apple.com/us/app/compress-videos-resize-video/id1473857051">Compress Videos</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-921668" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-921668 nav-item"><a title="Contact Groups" href="https://apps.apple.com/us/app/contact-groups-text-email/id1469359033">Contact Groups</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-921667" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-921667 nav-item"><a title="Event Countdown" href="https://apps.apple.com/us/app/event-countdown-timer-widget/id1464521575">Event Countdown</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-921664" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-921664 nav-item"><a title="EXIF Metadata" href="https://apps.apple.com/us/app/exif-metadata/id1455197364">EXIF Metadata</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-921660" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-921660 nav-item"><a title="Export Contact" href="https://apps.apple.com/app/export-contact/id1342636975">Export Contact</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-921662" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-921662 nav-item"><a title="Export Contacts to Excel" href="https://apps.apple.com/us/app/export-contacts-to-excel/id1447767072">Export Contacts to Excel</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-921670" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-921670 nav-item"><a title="PDF Calendar" href="https://apps.apple.com/us/app/pdf-calendar-print-share/id1487085350">PDF Calendar</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-921671" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-921671 nav-item"><a title="Photos to PDF" href="https://apps.apple.com/us/app/photos-to-pdf-converter/id1534140649">Photos to PDF</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-921665" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-921665 nav-item"><a title="Reposter for Instagram" href="https://apps.apple.com/us/app/reposter-for-instagram/id1455355839">Reposter for Instagram</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-921661" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-921661 nav-item"><a title="Split Video" href="https://apps.apple.com/us/app/split-video-long-story-maker/id1443057163">Split Video</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-921673" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-921673 nav-item"><a title="Math Facts" href="https://apps.apple.com/us/app/times-tables-multiplications/id1584946916">Math Facts</a></li>
+</ul>
+</li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-864298" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children main-menu-dropdown top-link main-menu-dropdown menu-item-864298 nav-item"><a title="Deals" href="https://www.idownloadblog.com/tag/deal/" aria-haspopup="true" aria-expanded="false" class="nav-link" id="menu-item-dropdown-864298">Deals</a><label class="main-menu-dropdown-icon" for="main-menu-dropdown-list-864298" on="tap:AMP.setState({menuChevron864298:!menuChevron864298});"><i [class]="menuChevron864298?'arrow-up arrow-up-mobile':'arrow-down arrow-down-mobile'" class="arrow-down arrow-down-mobile"></i></label><input type="checkbox" id="main-menu-dropdown-list-864298">
+<ul class="main-menu-dropdown-list" aria-labelledby="arrow-up arrow-up-mobile&#039;:&#039;arrow-down arrow-down-mobile&#039;" role="menu">
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-939542" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-939542 nav-item"><a title="Latest Deals" href="https://www.idownloadblog.com/tag/deal/">Latest Deals</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-940431" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-940431 nav-item"><a title="Best prepaid plans" href="https://www.idownloadblog.com/best-prepaid-plans/">Best prepaid plans</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-923613" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-923613 nav-item"><a title="AirPods Deals" href="https://www.idownloadblog.com/airpods-deals/">AirPods Deals</a></li>
+</ul>
+</li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-970989" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children main-menu-dropdown top-link main-menu-dropdown menu-item-970989 nav-item"><a title="Top Picks" href="#" aria-haspopup="true" aria-expanded="false" class="nav-link" id="menu-item-dropdown-970989">Top Picks</a><label class="main-menu-dropdown-icon" for="main-menu-dropdown-list-970989" on="tap:AMP.setState({menuChevron970989:!menuChevron970989});"><i [class]="menuChevron970989?'arrow-up arrow-up-mobile':'arrow-down arrow-down-mobile'" class="arrow-down arrow-down-mobile"></i></label><input type="checkbox" id="main-menu-dropdown-list-970989">
+<ul class="main-menu-dropdown-list" aria-labelledby="arrow-up arrow-up-mobile&#039;:&#039;arrow-down arrow-down-mobile&#039;" role="menu">
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-970990" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-970990 nav-item"><a title="Best iPhone 15 cases" href="https://www.idownloadblog.com/2023/09/23/best-iphone-15-cases/">Best iPhone 15 cases</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-970991" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-970991 nav-item"><a title="Best USB-C Cables" href="https://www.idownloadblog.com/2023/09/21/best-usb-c-cables-for-iphone-15/">Best USB-C Cables</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-970992" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-970992 nav-item"><a title="Best MagSafe Tripods" href="https://www.idownloadblog.com/2023/07/25/best-magsafe-tripods-for-iphone/">Best MagSafe Tripods</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-970993" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-970993 nav-item"><a title="Best iPhone Stands for FaceTime" href="https://www.idownloadblog.com/2023/10/06/best-iphone-stands-for-facetime-on-apple-tv/">Best iPhone Stands for FaceTime</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-970994" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-970994 nav-item"><a title="More Top Picks" href="https://www.idownloadblog.com/tag/top-picks/">More Top Picks</a></li>
+</ul>
+</li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-865900" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-has-children main-menu-dropdown top-link main-menu-dropdown active menu-item-865900 nav-item"><a title="More" href="https://www.idownloadblog.com/#" aria-haspopup="true" aria-expanded="false" class="nav-link" id="menu-item-dropdown-865900" aria-current="page">More</a><label class="main-menu-dropdown-icon" for="main-menu-dropdown-list-865900" on="tap:AMP.setState({menuChevron865900:!menuChevron865900});"><i [class]="menuChevron865900?'arrow-up arrow-up-mobile':'arrow-down arrow-down-mobile'" class="arrow-down arrow-down-mobile"></i></label><input type="checkbox" id="main-menu-dropdown-list-865900">
+<ul class="main-menu-dropdown-list" aria-labelledby="arrow-up arrow-up-mobile&#039;:&#039;arrow-down arrow-down-mobile&#039;" role="menu">
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-864308" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-864308 nav-item"><a title="Accessories" href="https://www.idownloadblog.com/tag/accessories/">Accessories</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-864665" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-864665 nav-item"><a title="Download" href="https://www.idownloadblog.com/download/">Download</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-865901" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-865901 nav-item"><a title="About" href="https://www.idownloadblog.com/about">About</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-865902" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-865902 nav-item"><a title="Contact" href="https://www.idownloadblog.com/contact">Contact</a></li>
+</ul>
+</li>
+                       					
+                        				<li class="search-menu">
+                          					<div class="search-wrapper">
+                          					 	<ul class="list-inline" id="idb-social"><li class="list-inline-item social-icon"><a href="https://www.youtube.com/idb" target="_blank"><i class="fab fa-youtube"></i></a></li><li class="list-inline-item social-icon"><a href="https://x.com/iDownloadBlog" target="_blank"><i class="fab fa-twitter"></i></a></li><li class="list-inline-item social-icon"><a href="https://www.facebook.com/iDownloadBlog" target="_blank"><i class="fab fa-facebook-f"></i></a></li><li class="list-inline-item social-icon"><a href="https://www.instagram.com/idownloadblog/" target="_blank"><i class="fab fa-instagram"></i></a></li><li class="list-inline-item social-icon"><a href="https://dashboard.mailerlite.com/forms/17776/56906554208683471/share" target="_blank"><i class="far fa-envelope"></i></a></li><li class="list-inline-item social-icon"><a href="/feed" target="_blank"><i class="fas fa-rss"></i></a></li></ul>                            					<dark-mode-toggle
+                            						id="dark-mode-toggle-1"
+                            						appearance="toggle"
+                            						permanent="true"
+                            					></dark-mode-toggle>
+                            					<div id="search-icon"></div>
+                            					<div class="site-search">
+                              						<div id="search-box" class="header-item-search" hidden>
+                                						<input type="checkbox" id="toggle-search" />
+                                						<label for="toggle-search" class="toggle-search" title="Search"></label>
+                                						<form method="get" id="search-form" action="https://www.idownloadblog.com/">
+	<label class="search-form-label screen-reader-text" for="searchform-1"></label>
+    <span class="icon"></span>
+    <input class="search-form-input" type="search" name="s" id="searchform-1" placeholder="Search...">
+	<input class="search-form-submit" type="submit" value="Search">
+    <div class="search-form-close"></div>
+</form>                              						</div>
+                            					</div>
+                          					</div>
+                        				</li>
+                     				</ul>
+                      			 	<li class="mobile-only section"><span>Follow us</span></li>
+                      				<li class="mobile-only social-link"><a href="https://geo.itunes.apple.com/us/app/idb-app/id1086682264?at=11l4L8&ct=iDBfooter" target="_blank">iDB app</a></li>
+                     				<li class="mobile-only social-link"><a href="#" target="_blank">iDB podcast</a></li>
+                      				<li class="mobile-only social-link"><a href="https://dashboard.mailerlite.com/forms/17776/56906554208683471/share" target="_blank">Newsletter</a></li>
+                      				<li class="mobile-only social-link"><a href="https://x.com/iDownloadBlog" target="_blank">X</a></li>
+                      				<li class="mobile-only social-link"><a href="https://www.facebook.com/iDownloadBlog" target="_blank">Facebook</a></li>
+                      				<li class="mobile-only social-link"><a href="https://youtube.com/idb/" target="_blank">YouTube</a></li>
+                      				<li class="mobile-only social-link"><a href="https://www.instagram.com/idownloadblog/" target="_blank">Instagram</a></li>
+                      				<li class="mobile-only social-link"><a href="/feed" target="_blank">RSS</a></li>
+                    			</ul>
+                   				<!-- Mobile END -->
+                 			</nav>
+               			</div>
+             		</div>
+         		</div>
+
+       		</div>
+     	</header> 
+        <script>
+            document.querySelector('#search-icon-mobile').addEventListener('click', function () {
+                document.querySelector('#search-box-mobile').style.display = 'block';
+                document.querySelector('#search-icon-mobile').style.display = 'none';
+            });
+
+            document.querySelector('#search-mobile .search-form-close').addEventListener('click', function () {
+                document.querySelector('#search-box-mobile').style.display = 'none';
+                document.querySelector('#search-icon-mobile').style.display = 'block';
+            });
+
+            document.querySelector('#search-icon').addEventListener('click', function () {
+                document.querySelector('.search-menu .site-search #search-box').style.display = 'block';
+                document.querySelector('#search-icon').style.display = 'none';
+                document.querySelector('#idb-social').style.display = 'none';
+            });
+
+            document.querySelector('.search-menu .site-search .search-form-close').addEventListener('click', function () {
+                document.querySelector('.site-search #search-box').style.display = 'none';
+                document.querySelector('#search-icon').style.display = 'block';
+                if (window.innerWidth > 1350) {
+                	document.querySelector('#idb-social').style.display = 'block';
+                }
+            });
+            var needsReset = false;
+				window.onresize = function() {
+    				if( this.innerWidth <= 1350 ) {
+        				myResizeFunction();
+    				} else {
+        				if( needsReset ) {
+           					document.querySelector('#idb-social').style.display = 'block';
+        				}
+    				}
+				}
+				window.onload = function() {
+    				if( this.innerWidth <= 1350 ) {
+        				myResizeFunction();
+    				}
+				}
+				function myResizeFunction() {
+					document.querySelector('#idb-social').style.display = 'none';
+					needsReset = true;
+				}
+        </script>
+	</section>
+<main  class="idb-section" id="idb-index">
+	<div  class="container">
+		<div class="row">
+			<div class="col-lg-9 col-md-12 col-sm-12 col-xs-12" id="blog-posts">
+					<article class="post-1034871 post type-post status-publish format-standard has-post-thumbnail hentry category-featured category-jailbreak category-news category-push tag-dopamine tag-github tag-ios tag-ios-15 tag-ios-16 tag-ipad tag-ipados tag-iphone tag-jailbreak tag-news tag-software tag-update" id="post-1034871">
+		<header class="entry-header">
+							<h2><a href="https://www.idownloadblog.com/2025/04/19/dopamine-jailbreak-v2-4-4-update/" title="Dopamine v2.4.4 released to introduce additional bug fixes and improvements for jailbreakers">Dopamine v2.4.4 released to introduce additional bug fixes and improvements for jailbreakers</a></h2>
+			
+						<div class="byline">
+			
+							
+				<a class="author" href="https://www.idownloadblog.com/author/anthonybouchard/" title="Anthony Bouchard">Anthony Bouchard</a>  &#8729; April 19, 2025			</div>
+										<div class="post-thumbnail">
+					<img width="1500" height="1000" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201500%201000'%3E%3C/svg%3E" class="mx-auto d-block wp-post-image" alt="Dopamine jailbreak banner." decoding="async" fetchpriority="high" data-lazy-src="https://media.idownloadblog.com/wp-content/uploads/2024/06/Dopamine-Jailbreak-Master-Banner-1500x1000.jpg" /><noscript><img width="1500" height="1000" src="https://media.idownloadblog.com/wp-content/uploads/2024/06/Dopamine-Jailbreak-Master-Banner-1500x1000.jpg" class="mx-auto d-block wp-post-image" alt="Dopamine jailbreak banner." decoding="async" fetchpriority="high" /></noscript>				</div>
+					</header><!-- .entry-header -->
+		<div class="entry-content">
+			<p>Security searcher and jailbreak developer Lars Fröder (@opa334dev) released an updated version of the Dopamine jailbreak tool on Saturday, officially bringing it up to version 2.4.4.</p>
+		</div>
+		
+				<div class="text-center read-more-button">
+			<a class="btn btn-idb text-center" href="https://www.idownloadblog.com/2025/04/19/dopamine-jailbreak-v2-4-4-update/" title="Dopamine v2.4.4 released to introduce additional bug fixes and improvements for jailbreakers">Read More</a>
+		</div>
+		
+		
+		    </article>
+    	<article class="post-1034857 post type-post status-publish format-standard has-post-thumbnail hentry category-accessories category-featured category-news category-push tag-accessories tag-games tag-news tag-nintendo tag-nintendo-switch-2" id="post-1034857">
+		<header class="entry-header">
+							<h2><a href="https://www.idownloadblog.com/2025/04/18/nintendo-switch-2-pre-order-united-states-april-25th/" title="Nintendo says Nintendo Switch 2 now slated to go on pre-order in United States on April 24th">Nintendo says Nintendo Switch 2 now slated to go on pre-order in United States on April 24th</a></h2>
+			
+						<div class="byline">
+			
+							
+				<a class="author" href="https://www.idownloadblog.com/author/anthonybouchard/" title="Anthony Bouchard">Anthony Bouchard</a>  &#8729; April 18, 2025			</div>
+										<div class="post-thumbnail">
+					<img width="1500" height="1000" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201500%201000'%3E%3C/svg%3E" class="mx-auto d-block wp-post-image" alt="Nintendo Switch 2." decoding="async" data-lazy-src="https://media.idownloadblog.com/wp-content/uploads/2025/01/Nintendo-Switch-2-Promo-1500x1000.jpg" /><noscript><img width="1500" height="1000" src="https://media.idownloadblog.com/wp-content/uploads/2025/01/Nintendo-Switch-2-Promo-1500x1000.jpg" class="mx-auto d-block wp-post-image" alt="Nintendo Switch 2." decoding="async" /></noscript>				</div>
+					</header><!-- .entry-header -->
+		<div class="entry-content">
+			<p>After the United States imposed reciprocal tariffs on other counties, Nintendo announced at the beginning of the month that it was delaying pre-orders for the Nintendo Switch 2 in the United States so that the company could “assess the potential impact of tariffs and evolving market conditions.”</p>
+		</div>
+		
+				<div class="text-center read-more-button">
+			<a class="btn btn-idb text-center" href="https://www.idownloadblog.com/2025/04/18/nintendo-switch-2-pre-order-united-states-april-25th/" title="Nintendo says Nintendo Switch 2 now slated to go on pre-order in United States on April 24th">Read More</a>
+		</div>
+		
+		
+		    </article>
+    	<article class="post-1034824 post type-post status-publish format-standard has-post-thumbnail hentry category-apps category-push category-how-to-and-tutorials tag-app-store-apps tag-apple tag-apple-sports tag-apps tag-guide tag-how-to tag-iphone tag-sports tag-tips tag-tricks tag-tutorial" id="post-1034824">
+		<header class="entry-header">
+							<h2><a href="https://www.idownloadblog.com/2025/04/18/share-game-cards-apple-sports-tutorial/" title="Apple Sports: How to share poster-like game cards featuring the headline score">Apple Sports: How to share poster-like game cards featuring the headline score</a></h2>
+			
+						<div class="byline">
+			
+							
+				<a class="author" href="https://www.idownloadblog.com/author/dujkan/" title="Christian Zibreg">Christian Zibreg</a>  &#8729; April 18, 2025			</div>
+										<div class="post-thumbnail">
+					<img width="1500" height="1000" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201500%201000'%3E%3C/svg%3E" class="mx-auto d-block wp-post-image" alt="An in-chat Apple Sports game card displayed in the iPhone&#039;s Messages app." decoding="async" data-lazy-src="https://media.idownloadblog.com/wp-content/uploads/2025/04/Apple-Sports-App-Game-Card-Sharing-iMessage-Featured-1500x1000.jpg" /><noscript><img width="1500" height="1000" src="https://media.idownloadblog.com/wp-content/uploads/2025/04/Apple-Sports-App-Game-Card-Sharing-iMessage-Featured-1500x1000.jpg" class="mx-auto d-block wp-post-image" alt="An in-chat Apple Sports game card displayed in the iPhone&#039;s Messages app." decoding="async" /></noscript>				</div>
+					</header><!-- .entry-header -->
+		<div class="entry-content">
+			<p>Learn how to share visual game cards in the Apple Sports app with your iMessage friends or publish them as poster-like images on social media.</p>
+		</div>
+		
+				<div class="text-center read-more-button">
+			<a class="btn btn-idb text-center" href="https://www.idownloadblog.com/2025/04/18/share-game-cards-apple-sports-tutorial/" title="Apple Sports: How to share poster-like game cards featuring the headline score">Read More</a>
+		</div>
+		
+		
+		    </article>
+    	<article class="post-1034783 post type-post status-publish format-standard has-post-thumbnail hentry category-apps category-featured category-news category-push category-how-to-and-tutorials tag-apple tag-guide tag-how-to tag-instagram tag-instagram-reels tag-meta tag-share tag-social tag-tips tag-tricks tag-tutorial" id="post-1034783">
+		<header class="entry-header">
+							<h2><a href="https://www.idownloadblog.com/2025/04/18/what-is-instagram-blend-how-does-it-work/" title="What is Instagram Blend? How does it work? How do I create one?">What is Instagram Blend? How does it work? How do I create one?</a></h2>
+			
+						<div class="byline">
+			
+							
+				<a class="author" href="https://www.idownloadblog.com/author/dujkan/" title="Christian Zibreg">Christian Zibreg</a>  &#8729; April 18, 2025			</div>
+										<div class="post-thumbnail">
+					<img width="1500" height="1000" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201500%201000'%3E%3C/svg%3E" class="mx-auto d-block wp-post-image" alt="Marketing image showcasing the Instagram Blend feature." decoding="async" data-lazy-src="https://media.idownloadblog.com/wp-content/uploads/2025/04/Meta-Instagram-Blend-Shared-Reels-Feed-1500x1000.jpg" /><noscript><img width="1500" height="1000" src="https://media.idownloadblog.com/wp-content/uploads/2025/04/Meta-Instagram-Blend-Shared-Reels-Feed-1500x1000.jpg" class="mx-auto d-block wp-post-image" alt="Marketing image showcasing the Instagram Blend feature." decoding="async" /></noscript>				</div>
+					</header><!-- .entry-header -->
+		<div class="entry-content">
+			<p>Here's how Instagram Blend works and how to use it to create a shared reels feed combining recommendations that you and select friends may like.</p>
+		</div>
+		
+				<div class="text-center read-more-button">
+			<a class="btn btn-idb text-center" href="https://www.idownloadblog.com/2025/04/18/what-is-instagram-blend-how-does-it-work/" title="What is Instagram Blend? How does it work? How do I create one?">Read More</a>
+		</div>
+		
+		
+		    </article>
+    	<article class="post-1034530 post type-post status-publish format-standard has-post-thumbnail hentry category-featured category-news category-how-to-and-tutorials tag-apple-music tag-apps tag-how-to tag-music tag-tutorial tag-windows tag-windows-pc" id="post-1034530">
+		<header class="entry-header">
+							<h2><a href="https://www.idownloadblog.com/2025/04/18/set-apple-music-as-default-player-on-windows-pc/" title="How to set Apple Music as the default music player on Windows PC">How to set Apple Music as the default music player on Windows PC</a></h2>
+			
+						<div class="byline">
+			
+							
+				<a class="author" href="https://www.idownloadblog.com/author/ankur/" title="Ankur Thakur">Ankur Thakur</a>  &#8729; April 16, 2025			</div>
+										<div class="post-thumbnail">
+					<img width="1500" height="1000" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201500%201000'%3E%3C/svg%3E" class="mx-auto d-block wp-post-image" alt="Apple Music playing a song in full screen on Windows PC" decoding="async" data-lazy-src="https://media.idownloadblog.com/wp-content/uploads/2025/04/Apple-Music-on-full-screen-on-Windows-PC-1500x1000.jpg" /><noscript><img width="1500" height="1000" src="https://media.idownloadblog.com/wp-content/uploads/2025/04/Apple-Music-on-full-screen-on-Windows-PC-1500x1000.jpg" class="mx-auto d-block wp-post-image" alt="Apple Music playing a song in full screen on Windows PC" decoding="async" /></noscript>				</div>
+					</header><!-- .entry-header -->
+		<div class="entry-content">
+			<p>This tutorial explains how and why to set Apple Music as the default media player on your Windows PC.</p>
+		</div>
+		
+				<div class="text-center read-more-button">
+			<a class="btn btn-idb text-center" href="https://www.idownloadblog.com/2025/04/18/set-apple-music-as-default-player-on-windows-pc/" title="How to set Apple Music as the default music player on Windows PC">Read More</a>
+		</div>
+		
+		
+		    </article>
+    	<article class="post-1034711 post type-post status-publish format-standard has-post-thumbnail hentry category-accessories category-deals category-featured category-news category-push tag-accessories tag-deals tag-games tag-nintendo tag-nintendo-switch tag-sale" id="post-1034711">
+		<header class="entry-header">
+							<h2><a href="https://www.idownloadblog.com/2025/04/17/nintendo-switch-deals-part-122/" title="Big savings on Nintendo Switch games and accessories to give your next game night the boost it needs">Big savings on Nintendo Switch games and accessories to give your next game night the boost it needs</a></h2>
+			
+						<div class="byline">
+			
+							
+				<a class="author" href="https://www.idownloadblog.com/author/anthonybouchard/" title="Anthony Bouchard">Anthony Bouchard</a>  &#8729; April 17, 2025			</div>
+										<div class="post-thumbnail">
+					<img width="1500" height="1000" src="https://media.idownloadblog.com/wp-content/uploads/2023/04/Games-Accessories-Deals-for-Nintendo-Switch-1500x1000.jpg" class="mx-auto d-block wp-post-image" alt="Games &amp; Accessories Deals for Nintendo Switch" decoding="async" />				</div>
+					</header><!-- .entry-header -->
+		<div class="entry-content">
+			<p>The iDownloadBlog team are as big of Nintendo Switch fans as the next mobile console gamer, which is one of the reasons why we track the latest Nintendo Switch game and accessory deals every week and share them with our readers.</p>
+		</div>
+		
+				<div class="text-center read-more-button">
+			<a class="btn btn-idb text-center" href="https://www.idownloadblog.com/2025/04/17/nintendo-switch-deals-part-122/" title="Big savings on Nintendo Switch games and accessories to give your next game night the boost it needs">Read More</a>
+		</div>
+		
+		
+		    </article>
+    	<article class="post-1034707 post type-post status-publish format-standard has-post-thumbnail hentry category-accessories category-featured category-news tag-accessories tag-desktop tag-led tag-light tag-nanoleaf tag-news" id="post-1034707">
+		<header class="entry-header">
+							<h2><a href="https://www.idownloadblog.com/2025/04/17/nanoleaf-pegboard-desk-dock/" title="Nanoleaf introduces new RGB backlit Pegboard Desk Dock for organizing your desktop">Nanoleaf introduces new RGB backlit Pegboard Desk Dock for organizing your desktop</a></h2>
+			
+						<div class="byline">
+			
+							
+				<a class="author" href="https://www.idownloadblog.com/author/anthonybouchard/" title="Anthony Bouchard">Anthony Bouchard</a>  &#8729; April 17, 2025			</div>
+										<div class="post-thumbnail">
+					<img width="1500" height="1000" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201500%201000'%3E%3C/svg%3E" class="mx-auto d-block wp-post-image" alt="Nanoleaf Pegboard Desk Dock." decoding="async" data-lazy-src="https://media.idownloadblog.com/wp-content/uploads/2025/04/Nanoleaf-Pegboard-Desk-Dock-1-1500x1000.jpg" /><noscript><img width="1500" height="1000" src="https://media.idownloadblog.com/wp-content/uploads/2025/04/Nanoleaf-Pegboard-Desk-Dock-1-1500x1000.jpg" class="mx-auto d-block wp-post-image" alt="Nanoleaf Pegboard Desk Dock." decoding="async" /></noscript>				</div>
+					</header><!-- .entry-header -->
+		<div class="entry-content">
+			<p>Our friends over at Nanoleaf are out with yet another spiffy new product this week, this time helping to not only elevate the appearance of your desk space with smart RGB LED lighting, but also to help organize your desk accessories and peripherals.</p>
+		</div>
+		
+				<div class="text-center read-more-button">
+			<a class="btn btn-idb text-center" href="https://www.idownloadblog.com/2025/04/17/nanoleaf-pegboard-desk-dock/" title="Nanoleaf introduces new RGB backlit Pegboard Desk Dock for organizing your desktop">Read More</a>
+		</div>
+		
+		
+		    </article>
+    	<article class="post-1034700 post type-post status-publish format-standard has-post-thumbnail hentry category-featured category-jailbreak category-news tag-altstore tag-altstore-pal tag-ios tag-ipad tag-ipados tag-iphone tag-jailbreak tag-jit tag-news tag-sideload" id="post-1034700">
+		<header class="entry-header">
+							<h2><a href="https://www.idownloadblog.com/2025/04/17/altstore-team-celebrates-altstore-pals-anniversary-with-notarized-build-of-altstore-classic-that-doesnt-expire-or-count-against-app-limit/" title="AltStore team celebrates AltStore PAL&#8217;s anniversary with notarized build of AltStore Classic that doesn&#8217;t expire or count against app limit">AltStore team celebrates AltStore PAL&#8217;s anniversary with notarized build of AltStore Classic that doesn&#8217;t expire or count against app limit</a></h2>
+			
+						<div class="byline">
+			
+							
+				<a class="author" href="https://www.idownloadblog.com/author/anthonybouchard/" title="Anthony Bouchard">Anthony Bouchard</a>  &#8729; April 17, 2025			</div>
+										<div class="post-thumbnail">
+					<img width="1500" height="1000" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201500%201000'%3E%3C/svg%3E" class="mx-auto d-block wp-post-image" alt="AltStore PAL 1 year anniversary." decoding="async" data-lazy-src="https://media.idownloadblog.com/wp-content/uploads/2025/04/AltStore-PAL-1-Year-Anniversary-Banner-1500x1000.jpg" /><noscript><img width="1500" height="1000" src="https://media.idownloadblog.com/wp-content/uploads/2025/04/AltStore-PAL-1-Year-Anniversary-Banner-1500x1000.jpg" class="mx-auto d-block wp-post-image" alt="AltStore PAL 1 year anniversary." decoding="async" /></noscript>				</div>
+					</header><!-- .entry-header -->
+		<div class="entry-content">
+			<p>In a major announcement shared to social media platform 𝕏 (formerly Twitter) on Thursday, the AltStore team said that it was celebrating the one-year anniversary of the launch of AltStore PAL in the European Union with a new version of AltStore Classic that users can acquire directly from AltStore PAL.</p>
+		</div>
+		
+				<div class="text-center read-more-button">
+			<a class="btn btn-idb text-center" href="https://www.idownloadblog.com/2025/04/17/altstore-team-celebrates-altstore-pals-anniversary-with-notarized-build-of-altstore-classic-that-doesnt-expire-or-count-against-app-limit/" title="AltStore team celebrates AltStore PAL&#8217;s anniversary with notarized build of AltStore Classic that doesn&#8217;t expire or count against app limit">Read More</a>
+		</div>
+		
+		
+		    </article>
+    	<article class="post-1034691 post type-post status-publish format-standard has-post-thumbnail hentry category-featured category-news category-push tag-facebook tag-facebook-messenger tag-instagram tag-meta tag-threads tag-whatsapp" id="post-1034691">
+		<header class="entry-header">
+							<h2><a href="https://www.idownloadblog.com/2025/04/17/meta-removes-apple-intelligence-facebook-instagram-whatsap-threads-messenger/" title="Meta removes Apple Intelligence from Facebook, Instagram and WhatsApp">Meta removes Apple Intelligence from Facebook, Instagram and WhatsApp</a></h2>
+			
+						<div class="byline">
+			
+							
+				<a class="author" href="https://www.idownloadblog.com/author/dujkan/" title="Christian Zibreg">Christian Zibreg</a>  &#8729; April 17, 2025			</div>
+										<div class="post-thumbnail">
+					<img width="1500" height="1000" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201500%201000'%3E%3C/svg%3E" class="mx-auto d-block wp-post-image" alt="Meta AI logo set against a blurred background." decoding="async" data-lazy-src="https://media.idownloadblog.com/wp-content/uploads/2025/04/Meta-AI-logo-1500x1000.jpg" /><noscript><img width="1500" height="1000" src="https://media.idownloadblog.com/wp-content/uploads/2025/04/Meta-AI-logo-1500x1000.jpg" class="mx-auto d-block wp-post-image" alt="Meta AI logo set against a blurred background." decoding="async" /></noscript>				</div>
+					</header><!-- .entry-header -->
+		<div class="entry-content">
+			<p>Apple Intelligence is no longer available inside of Meta's most popular apps such as Facebook, Instagram, WhatsApp, Messenger and Threads.</p>
+		</div>
+		
+				<div class="text-center read-more-button">
+			<a class="btn btn-idb text-center" href="https://www.idownloadblog.com/2025/04/17/meta-removes-apple-intelligence-facebook-instagram-whatsap-threads-messenger/" title="Meta removes Apple Intelligence from Facebook, Instagram and WhatsApp">Read More</a>
+		</div>
+		
+		
+		    </article>
+    	<article class="post-1034682 post type-post status-publish format-standard has-post-thumbnail hentry category-featured category-news category-push tag-apple tag-apple-headset tag-headset tag-rumor tag-rumors tag-titanium tag-vision-pro" id="post-1034682">
+		<header class="entry-header">
+							<h2><a href="https://www.idownloadblog.com/2025/04/17/apple-vision-air-headset-thinner-lighter-rumor/" title="Rumor: “Apple Vision Air” will be thinner and lighter than the Vision Pro">Rumor: “Apple Vision Air” will be thinner and lighter than the Vision Pro</a></h2>
+			
+						<div class="byline">
+			
+							
+				<a class="author" href="https://www.idownloadblog.com/author/dujkan/" title="Christian Zibreg">Christian Zibreg</a>  &#8729; April 17, 2025			</div>
+										<div class="post-thumbnail">
+					<img width="1500" height="1000" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201500%201000'%3E%3C/svg%3E" class="mx-auto d-block wp-post-image" alt="Vision Pro headset in an Apple store." decoding="async" data-lazy-src="https://media.idownloadblog.com/wp-content/uploads/2025/02/Apple-Vision-Pro-AR-Headset-Store-Display-1500x1000.jpg" /><noscript><img width="1500" height="1000" src="https://media.idownloadblog.com/wp-content/uploads/2025/02/Apple-Vision-Pro-AR-Headset-Store-Display-1500x1000.jpg" class="mx-auto d-block wp-post-image" alt="Vision Pro headset in an Apple store." decoding="async" /></noscript>				</div>
+					</header><!-- .entry-header -->
+		<div class="entry-content">
+			<p>Apple's next headset should be called Vision Air and be lighter than the Vision Pro thanks to the use of titanium for some of its internal components.</p>
+		</div>
+		
+				<div class="text-center read-more-button">
+			<a class="btn btn-idb text-center" href="https://www.idownloadblog.com/2025/04/17/apple-vision-air-headset-thinner-lighter-rumor/" title="Rumor: “Apple Vision Air” will be thinner and lighter than the Vision Pro">Read More</a>
+		</div>
+		
+		
+		    </article>
+    	<article class="post-1034648 post type-post status-publish format-standard has-post-thumbnail hentry category-featured category-news category-push tag-apple tag-bug tag-carplay tag-fix tag-ios tag-ios-18 tag-ios-18-4 tag-ipad tag-ipados tag-ipados-18 tag-ipados-18-4 tag-iphone tag-mac tag-macos tag-macos-sequoia tag-security tag-update" id="post-1034648">
+		<header class="entry-header">
+							<h2><a href="https://www.idownloadblog.com/2025/04/17/apple-ios-18-4-1-carplay-connection-issue-fix-security-update/" title="iOS 18.4.1 fixes connection issue with wireless CarPlay">iOS 18.4.1 fixes connection issue with wireless CarPlay</a></h2>
+			
+						<div class="byline">
+			
+							
+				<a class="author" href="https://www.idownloadblog.com/author/dujkan/" title="Christian Zibreg">Christian Zibreg</a>  &#8729; April 17, 2025			</div>
+										<div class="post-thumbnail">
+					<img width="1500" height="1000" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201500%201000'%3E%3C/svg%3E" class="mx-auto d-block wp-post-image" alt="Message notifications in CarPlay" decoding="async" data-lazy-src="https://media.idownloadblog.com/wp-content/uploads/2022/06/Message-notifications-CarPlay-1500x1000.jpg" /><noscript><img width="1500" height="1000" src="https://media.idownloadblog.com/wp-content/uploads/2022/06/Message-notifications-CarPlay-1500x1000.jpg" class="mx-auto d-block wp-post-image" alt="Message notifications in CarPlay" decoding="async" /></noscript>				</div>
+					</header><!-- .entry-header -->
+		<div class="entry-content">
+			<p>Wireless CarPlay in iOS 18.4 was causing an unknown percentage of drivers connection issues, but Apple's iOS 18.4.1 update fixes the problem.</p>
+		</div>
+		
+				<div class="text-center read-more-button">
+			<a class="btn btn-idb text-center" href="https://www.idownloadblog.com/2025/04/17/apple-ios-18-4-1-carplay-connection-issue-fix-security-update/" title="iOS 18.4.1 fixes connection issue with wireless CarPlay">Read More</a>
+		</div>
+		
+		
+		    </article>
+    	<article class="post-1034412 post type-post status-publish format-standard has-post-thumbnail hentry category-featured category-news category-how-to-and-tutorials tag-how-to tag-iphone tag-passcode tag-security tag-stolen-device-protection tag-tutorial" id="post-1034412">
+		<header class="entry-header">
+							<h2><a href="https://www.idownloadblog.com/2025/04/17/how-to-turn-off-stolen-device-protection-iphone/" title="Why and how to turn off Stolen Device Protection on iPhone">Why and how to turn off Stolen Device Protection on iPhone</a></h2>
+			
+						<div class="byline">
+			
+							
+				<a class="author" href="https://www.idownloadblog.com/author/ankur/" title="Ankur Thakur">Ankur Thakur</a>  &#8729; April 16, 2025			</div>
+										<div class="post-thumbnail">
+					<img width="1500" height="1000" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201500%201000'%3E%3C/svg%3E" class="mx-auto d-block wp-post-image" alt="Stolen Device Protection on iPhone" decoding="async" data-lazy-src="https://media.idownloadblog.com/wp-content/uploads/2025/04/Stolen-Device-Protection-on-iPhone-1500x1000.jpg" /><noscript><img width="1500" height="1000" src="https://media.idownloadblog.com/wp-content/uploads/2025/04/Stolen-Device-Protection-on-iPhone-1500x1000.jpg" class="mx-auto d-block wp-post-image" alt="Stolen Device Protection on iPhone" decoding="async" /></noscript>				</div>
+					</header><!-- .entry-header -->
+		<div class="entry-content">
+			<p>Learn how to disable the Stolen Device Protection feature on your iPhone to avoid the one-hour wait for Apple Account changes.</p>
+		</div>
+		
+				<div class="text-center read-more-button">
+			<a class="btn btn-idb text-center" href="https://www.idownloadblog.com/2025/04/17/how-to-turn-off-stolen-device-protection-iphone/" title="Why and how to turn off Stolen Device Protection on iPhone">Read More</a>
+		</div>
+		
+		
+		    </article>
+    					<div class="clearfix"></div>
+											<nav id="post-navigation" class="navigation clearfix next-previous">
+    					<a href="https://www.idownloadblog.com/page/2/" class="btn next-posts">Older Articles &gt;</a>					</nav>				
+										
+									</div><!-- .col-lg-9 -->
+			
+
+	<div id="idb-sidebar" role="complementary" class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+		<aside class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"></div></aside><aside class="widget widget_idb_featured"><div class="widget-title">Featured Stories</div>				<article>
+					<h3><a href="https://www.idownloadblog.com/2025/04/19/dopamine-jailbreak-v2-4-4-update/" title="Dopamine v2.4.4 released to introduce additional bug fixes and improvements for jailbreakers">Dopamine v2.4.4 released to introduce additional bug fixes and improvements for jailbreakers</a></h3>
+				</article>
+							<article>
+					<h3><a href="https://www.idownloadblog.com/2025/04/18/nintendo-switch-2-pre-order-united-states-april-25th/" title="Nintendo says Nintendo Switch 2 now slated to go on pre-order in United States on April 24th">Nintendo says Nintendo Switch 2 now slated to go on pre-order in United States on April 24th</a></h3>
+				</article>
+							<article>
+					<h3><a href="https://www.idownloadblog.com/2025/04/18/what-is-instagram-blend-how-does-it-work/" title="What is Instagram Blend? How does it work? How do I create one?">What is Instagram Blend? How does it work? How do I create one?</a></h3>
+				</article>
+							<article>
+					<h3><a href="https://www.idownloadblog.com/2025/04/18/set-apple-music-as-default-player-on-windows-pc/" title="How to set Apple Music as the default music player on Windows PC">How to set Apple Music as the default music player on Windows PC</a></h3>
+				</article>
+							<article>
+					<h3><a href="https://www.idownloadblog.com/2025/04/17/nintendo-switch-deals-part-122/" title="Big savings on Nintendo Switch games and accessories to give your next game night the boost it needs">Big savings on Nintendo Switch games and accessories to give your next game night the boost it needs</a></h3>
+				</article>
+			</aside><aside class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"></div></aside>	</div>
+		</div><!-- /.row -->
+	</div><!-- /.container -->			
+</main>
+
+
+	
+
+
+		<footer data-wpr-lazyrender="1" role="contentinfo" id="idb-footer">
+			<div  class="text-center">
+				<p><a href="https://geo.itunes.apple.com/us/app/idb-app/id1086682264?at=11l4L8&ct=iDBfooter" class="font-weight-bold" target="_blank">Download the iDB app</a></p>
+				<ul itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" class="wrap-items"><li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-864311" class="menu-item menu-item-type-custom menu-item-object-custom no-main-menu-dropdown top-link menu-item-864311 nav-item"><a title="About" href="https://www.idownloadblog.com/about">About</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-864312" class="menu-item menu-item-type-custom menu-item-object-custom no-main-menu-dropdown top-link menu-item-864312 nav-item"><a title="Contact" href="https://www.idownloadblog.com/contact/">Contact</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-864313" class="menu-item menu-item-type-custom menu-item-object-custom no-main-menu-dropdown top-link menu-item-864313 nav-item"><a title="Disclosure" href="https://www.idownloadblog.com/disclosure/">Disclosure</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-864314" class="menu-item menu-item-type-custom menu-item-object-custom no-main-menu-dropdown top-link menu-item-864314 nav-item"><a title="Privacy" href="https://www.idownloadblog.com/privacy-policy/">Privacy</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-864315" class="menu-item menu-item-type-custom menu-item-object-custom no-main-menu-dropdown top-link menu-item-864315 nav-item"><a title="Unsubscribe" href="https://www.idownloadblog.com/push/">Unsubscribe</a></li>
+</ul>				<p id="copyright">2025 &copy; iDownloadBlog.com  This website is not affiliated with Apple.</p>
+			</div>
+		</footer>
+		
+		</div>
+	<script data-no-optimize='1' data-cfasync='false' id='cls-insertion-e4c11ce'>!function(){"use strict";function e(){return e=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var i=arguments[t];for(var n in i)Object.prototype.hasOwnProperty.call(i,n)&&(e[n]=i[n])}return e},e.apply(this,arguments)}window.adthriveCLS.buildDate="2025-04-18";const t="addensity",i="adlayout",n="interstitial",s="stickyoutstream",o="Below_Post",r="Content",a="Recipe",l="Footer",c="Header",d="Sidebar",h="desktop",u="mobile",p="Video_Collapse_Autoplay_SoundOff",m="Video_Individual_Autoplay_SOff",g="Video_Coll_SOff_Smartphone",y="Video_In-Post_ClicktoPlay_SoundOn",_=e=>{const t={};return function(...i){const n=JSON.stringify(i);if(t[n])return t[n];const s=e.apply(this,i);return t[n]=s,s}},f=navigator.userAgent,v=_((e=>/Chrom|Applechromium/.test(e||f))),b=_((()=>/WebKit/.test(f))),S=_((()=>v()?"chromium":b()?"webkit":"other"));const x=new class{info(e,t,...i){this.call(console.info,e,t,...i)}warn(e,t,...i){this.call(console.warn,e,t,...i)}error(e,t,...i){this.call(console.error,e,t,...i),this.sendErrorLogToCommandQueue(e,t,...i)}event(e,t,...i){var n;"debug"===(null==(n=window.adthriveCLS)?void 0:n.bucket)&&this.info(e,t)}sendErrorLogToCommandQueue(e,t,...i){window.adthrive=window.adthrive||{},window.adthrive.cmd=window.adthrive.cmd||[],window.adthrive.cmd.push((()=>{void 0!==window.adthrive.logError&&"function"==typeof window.adthrive.logError&&window.adthrive.logError(e,t,i)}))}call(e,t,i,...n){const s=[`%c${t}::${i} `],o=["color: #999; font-weight: bold;"];n.length>0&&"string"==typeof n[0]&&s.push(n.shift()),o.push(...n);try{Function.prototype.apply.call(e,console,[s.join(""),...o])}catch(e){return void console.error(e)}}},w=(e,t)=>null==e||e!=e?t:e,E=e=>{const t=e.offsetHeight,i=e.offsetWidth,n=e.getBoundingClientRect(),s=document.body,o=document.documentElement,r=window.pageYOffset||o.scrollTop||s.scrollTop,a=window.pageXOffset||o.scrollLeft||s.scrollLeft,l=o.clientTop||s.clientTop||0,c=o.clientLeft||s.clientLeft||0,d=Math.round(n.top+r-l),h=Math.round(n.left+a-c);return{top:d,left:h,bottom:d+t,right:h+i,width:i,height:t}},C=e=>{let t={};const i=((e=window.location.search)=>{const t=0===e.indexOf("?")?1:0;return e.slice(t).split("&").reduce(((e,t)=>{const[i,n]=t.split("=");return e.set(i,n),e}),new Map)})().get(e);if(i)try{const n=decodeURIComponent(i).replace(/\+/g,"");t=JSON.parse(n),x.event("ExperimentOverridesUtil","getExperimentOverrides",e,t)}catch(e){}return t},A=_(((e=navigator.userAgent)=>/Windows NT|Macintosh/i.test(e))),D=_((()=>{const e=navigator.userAgent,t=/Tablet|iPad|Playbook|Nook|webOS|Kindle|Android (?!.*Mobile).*Safari|CrOS/i.test(e);return/Mobi|iP(hone|od)|Opera Mini/i.test(e)&&!t})),P=(e,t,i=document)=>{const n=((e=document)=>{const t=e.querySelectorAll("article");if(0===t.length)return null;const i=Array.from(t).reduce(((e,t)=>t.offsetHeight>e.offsetHeight?t:e));return i&&i.offsetHeight>1.5*window.innerHeight?i:null})(i),s=n?[n]:[],o=[];e.forEach((e=>{const n=Array.from(i.querySelectorAll(e.elementSelector)).slice(0,e.skip);var r;(r=e.elementSelector,r.includes(",")?r.split(","):[r]).forEach((r=>{const a=i.querySelectorAll(r);for(let i=0;i<a.length;i++){const r=a[i];if(t.map.some((({el:e})=>e.isEqualNode(r))))continue;const l=r&&r.parentElement;l&&l!==document.body?s.push(l):s.push(r),-1===n.indexOf(r)&&o.push({dynamicAd:e,element:r})}}))}));const r=((e=document)=>(e===document?document.body:e).getBoundingClientRect().top)(i),a=o.sort(((e,t)=>e.element.getBoundingClientRect().top-r-(t.element.getBoundingClientRect().top-r)));return[s,a]};class k{}const O=["mcmpfreqrec"];const I=new class extends k{init(e){this._gdpr="true"===e.gdpr,this._shouldQueue=this._gdpr}clearQueue(e){e&&(this._shouldQueue=!1,this._sessionStorageHandlerQueue.forEach((e=>{this.setSessionStorage(e.key,e.value)})),this._localStorageHandlerQueue.forEach((e=>{if("adthrive_abgroup"===e.key){const t=Object.keys(e.value)[0],i=e.value[t],n=e.value[`${t}_weight`];this.getOrSetABGroupLocalStorageValue(t,i,n,{value:24,unit:"hours"})}else e.expiry?"internal"===e.type?this.setExpirableInternalLocalStorage(e.key,e.value,{expiry:e.expiry,resetOnRead:e.resetOnRead}):this.setExpirableExternalLocalStorage(e.key,e.value,{expiry:e.expiry,resetOnRead:e.resetOnRead}):"internal"===e.type?this.setInternalLocalStorage(e.key,e.value):this.setExternalLocalStorage(e.key,e.value)})),this._cookieHandlerQueue.forEach((e=>{"internal"===e.type?this.setInternalCookie(e.key,e.value):this.setExternalCookie(e.key,e.value)}))),this._sessionStorageHandlerQueue=[],this._localStorageHandlerQueue=[],this._cookieHandlerQueue=[]}readInternalCookie(e){return this._verifyInternalKey(e),this._readCookie(e)}readExternalCookie(e){return this._readCookie(e)}readInternalLocalStorage(e){return this._verifyInternalKey(e),this._readFromLocalStorage(e)}readExternalLocalStorage(e){return this._readFromLocalStorage(e)}readSessionStorage(e){const t=window.sessionStorage.getItem(e);if(!t)return null;try{return JSON.parse(t)}catch(e){return t}}deleteCookie(e){document.cookie=`${e}=; SameSite=None; Secure; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`}deleteLocalStorage(e){window.localStorage.removeItem(e)}deleteSessionStorage(e){window.sessionStorage.removeItem(e)}setInternalCookie(e,t,i){this._verifyInternalKey(e),this._setCookieValue("internal",e,t,i)}setExternalCookie(e,t,i){this._setCookieValue("external",e,t,i)}setInternalLocalStorage(e,t){if(this._verifyInternalKey(e),this._gdpr&&this._shouldQueue){const i={key:e,value:t,type:"internal"};this._localStorageHandlerQueue.push(i)}else{const i="string"==typeof t?t:JSON.stringify(t);window.localStorage.setItem(e,i)}}setExternalLocalStorage(e,t){if(this._gdpr&&this._shouldQueue){const i={key:e,value:t,type:"external"};this._localStorageHandlerQueue.push(i)}else{const i="string"==typeof t?t:JSON.stringify(t);window.localStorage.setItem(e,i)}}setExpirableInternalLocalStorage(e,t,i){this._verifyInternalKey(e);try{var n;const o=null!=(n=null==i?void 0:i.expiry)?n:{value:400,unit:"days"};var s;const r=null!=(s=null==i?void 0:i.resetOnRead)&&s;if(this._gdpr&&this._shouldQueue){const i={key:e,value:t,type:"internal",expires:this._getExpiryDate(o),expiry:o,resetOnRead:r};this._localStorageHandlerQueue.push(i)}else{const i={value:t,type:"internal",expires:this._getExpiryDate(o),expiry:o,resetOnRead:r};window.localStorage.setItem(e,JSON.stringify(i))}}catch(e){console.error(e)}}setExpirableExternalLocalStorage(e,t,i){try{var n;const o=null!=(n=null==i?void 0:i.expiry)?n:{value:400,unit:"days"};var s;const r=null!=(s=null==i?void 0:i.resetOnRead)&&s;if(this._gdpr&&this._shouldQueue){const i={key:e,value:JSON.stringify(t),type:"external",expires:this._getExpiryDate(o),expiry:o,resetOnRead:r};this._localStorageHandlerQueue.push(i)}else{const i={value:t,type:"external",expires:this._getExpiryDate(o),expiry:o,resetOnRead:r};window.localStorage.setItem(e,JSON.stringify(i))}}catch(e){console.error(e)}}setSessionStorage(e,t){if(this._gdpr&&this._shouldQueue){const i={key:e,value:t};this._sessionStorageHandlerQueue.push(i)}else{const i="string"==typeof t?t:JSON.stringify(t);window.sessionStorage.setItem(e,i)}}getOrSetABGroupLocalStorageValue(t,i,n,s,o=!0){const r="adthrive_abgroup",a=this.readInternalLocalStorage(r);if(null!==a){const e=a[t];var l;const i=null!=(l=a[`${t}_weight`])?l:null;if(this._isValidABGroupLocalStorageValue(e))return[e,i]}const c=e({},a,{[t]:i,[`${t}_weight`]:n});return s?this.setExpirableInternalLocalStorage(r,c,{expiry:s,resetOnRead:o}):this.setInternalLocalStorage(r,c),[i,n]}_isValidABGroupLocalStorageValue(e){return null!=e&&!("number"==typeof e&&isNaN(e))}_getExpiryDate({value:e,unit:t}){const i=new Date;return"milliseconds"===t?i.setTime(i.getTime()+e):"seconds"==t?i.setTime(i.getTime()+1e3*e):"minutes"===t?i.setTime(i.getTime()+60*e*1e3):"hours"===t?i.setTime(i.getTime()+60*e*60*1e3):"days"===t?i.setTime(i.getTime()+24*e*60*60*1e3):"months"===t&&i.setTime(i.getTime()+30*e*24*60*60*1e3),i.toUTCString()}_resetExpiry(e){return e.expires=this._getExpiryDate(e.expiry),e}_readCookie(e){const t=document.cookie.split("; ").find((t=>t.split("=")[0]===e));if(!t)return null;const i=t.split("=")[1];if(i)try{return JSON.parse(decodeURIComponent(i))}catch(e){return decodeURIComponent(i)}return null}_readFromLocalStorage(e){const t=window.localStorage.getItem(e);if(!t)return null;try{const n=JSON.parse(t),s=n.expires&&(new Date).getTime()>new Date(n.expires).getTime();if("adthrive_abgroup"===e&&n.created)return window.localStorage.removeItem(e),null;if(n.resetOnRead&&n.expires&&!s){const t=this._resetExpiry(n);var i;return window.localStorage.setItem(e,JSON.stringify(n)),null!=(i=t.value)?i:t}if(s)return window.localStorage.removeItem(e),null;if(!n.hasOwnProperty("value"))return n;try{return JSON.parse(n.value)}catch(e){return n.value}}catch(e){return t}}_setCookieValue(e,t,i,n){try{if(this._gdpr&&this._shouldQueue){const n={key:t,value:i,type:e};this._cookieHandlerQueue.push(n)}else{var s;const e=this._getExpiryDate(null!=(s=null==n?void 0:n.expiry)?s:{value:400,unit:"days"});var o;const a=null!=(o=null==n?void 0:n.sameSite)?o:"None";var r;const l=null==(r=null==n?void 0:n.secure)||r,c="object"==typeof i?JSON.stringify(i):i;document.cookie=`${t}=${c}; SameSite=${a}; ${l?"Secure;":""} expires=${e}; path=/`}}catch(e){}}_verifyInternalKey(e){const t=e.startsWith("adthrive_"),i=e.startsWith("adt_");if(!t&&!i&&!O.includes(e))throw new Error('When reading an internal cookie, the key must start with "adthrive_" or "adt_" or be part of the allowed legacy keys.')}constructor(...e){super(...e),this.name="BrowserStorage",this.disable=!1,this.gdprPurposes=[1],this._sessionStorageHandlerQueue=[],this._localStorageHandlerQueue=[],this._cookieHandlerQueue=[],this._shouldQueue=!1}},M=(e,i,o)=>{switch(i){case t:return((e,t)=>{const i=e.adDensityEnabled,n=e.adDensityLayout.pageOverrides.find((e=>!!document.querySelector(e.pageSelector)&&(e[t].onePerViewport||"number"==typeof e[t].adDensity)));return!i||!n})(e,o);case s:return(e=>{var t,i,n;const s=null==(n=e.videoPlayers)||null==(i=n.partners)||null==(t=i.stickyOutstream)?void 0:t.blockedPageSelectors;return!s||!document.querySelector(s)})(e);case n:return(e=>{const t=e.adOptions.interstitialBlockedPageSelectors;return!t||!document.querySelector(t)})(e);default:return!0}},L=t=>{try{return{valid:!0,elements:document.querySelectorAll(t)}}catch(t){return e({valid:!1},t)}},R=e=>""===e?{valid:!0}:L(e),T=(e,t)=>{if(!e)return!1;const i=!!e.enabled,n=null==e.dateStart||Date.now()>=e.dateStart,s=null==e.dateEnd||Date.now()<=e.dateEnd,o=null===e.selector||""!==e.selector&&!!document.querySelector(e.selector),r="mobile"===e.platform&&"mobile"===t,a="desktop"===e.platform&&"desktop"===t,l=null===e.platform||"all"===e.platform||r||a,c="bernoulliTrial"===e.experimentType?1===e.variants.length:(e=>{const t=e.reduce(((e,t)=>t.weight?t.weight+e:e),0);return e.length>0&&e.every((e=>{const t=e.value,i=e.weight;return!(null==t||"number"==typeof t&&isNaN(t)||!i)}))&&100===t})(e.variants);return c||x.error("SiteTest","validateSiteExperiment","experiment presented invalid choices for key:",e.key,e.variants),i&&n&&s&&o&&l&&c},j=["siteId","siteName","adOptions","breakpoints","adUnits"];class H{get enabled(){return!!this._clsGlobalData&&!!this._clsGlobalData.siteAds&&((e,t=j)=>{if(!e)return!1;for(let i=0;i<t.length;i++)if(!e[t[i]])return!1;return!0})(this._clsGlobalData.siteAds)}get error(){return!(!this._clsGlobalData||!this._clsGlobalData.error)}set siteAds(e){this._clsGlobalData.siteAds=e}get siteAds(){return this._clsGlobalData.siteAds}set disableAds(e){this._clsGlobalData.disableAds=e}get disableAds(){return this._clsGlobalData.disableAds}set enabledLocations(e){this._clsGlobalData.enabledLocations=e}get enabledLocations(){return this._clsGlobalData.enabledLocations}get injectedFromPlugin(){return this._clsGlobalData.injectedFromPlugin}set injectedFromPlugin(e){this._clsGlobalData.injectedFromPlugin=e}get injectedFromSiteAds(){return this._clsGlobalData.injectedFromSiteAds}set injectedFromSiteAds(e){this._clsGlobalData.injectedFromSiteAds=e}overwriteInjectedSlots(e){this._clsGlobalData.injectedSlots=e}setInjectedSlots(e){this._clsGlobalData.injectedSlots=this._clsGlobalData.injectedSlots||[],this._clsGlobalData.injectedSlots.push(e)}get injectedSlots(){return this._clsGlobalData.injectedSlots}setInjectedVideoSlots(e){this._clsGlobalData.injectedVideoSlots=this._clsGlobalData.injectedVideoSlots||[],this._clsGlobalData.injectedVideoSlots.push(e)}get injectedVideoSlots(){return this._clsGlobalData.injectedVideoSlots}setInjectedScripts(e){this._clsGlobalData.injectedScripts=this._clsGlobalData.injectedScripts||[],this._clsGlobalData.injectedScripts.push(e)}get getInjectedScripts(){return this._clsGlobalData.injectedScripts}setExperiment(e,t,i=!1){this._clsGlobalData.experiments=this._clsGlobalData.experiments||{},this._clsGlobalData.siteExperiments=this._clsGlobalData.siteExperiments||{};(i?this._clsGlobalData.siteExperiments:this._clsGlobalData.experiments)[e]=t}getExperiment(e,t=!1){const i=t?this._clsGlobalData.siteExperiments:this._clsGlobalData.experiments;return i&&i[e]}setWeightedChoiceExperiment(e,t,i=!1){this._clsGlobalData.experimentsWeightedChoice=this._clsGlobalData.experimentsWeightedChoice||{},this._clsGlobalData.siteExperimentsWeightedChoice=this._clsGlobalData.siteExperimentsWeightedChoice||{};(i?this._clsGlobalData.siteExperimentsWeightedChoice:this._clsGlobalData.experimentsWeightedChoice)[e]=t}getWeightedChoiceExperiment(e,t=!1){var i,n;const s=t?null==(i=this._clsGlobalData)?void 0:i.siteExperimentsWeightedChoice:null==(n=this._clsGlobalData)?void 0:n.experimentsWeightedChoice;return s&&s[e]}get branch(){return this._clsGlobalData.branch}get bucket(){return this._clsGlobalData.bucket}set videoDisabledFromPlugin(e){this._clsGlobalData.videoDisabledFromPlugin=e}get videoDisabledFromPlugin(){return this._clsGlobalData.videoDisabledFromPlugin}set targetDensityLog(e){this._clsGlobalData.targetDensityLog=e}get targetDensityLog(){return this._clsGlobalData.targetDensityLog}getIOSDensity(e){const t=[{weight:100,adDensityPercent:0},{weight:0,adDensityPercent:25},{weight:0,adDensityPercent:50}],i=t.map((e=>e.weight)),{index:n}=(e=>{const t={index:-1,weight:-1};if(!e||0===e.length)return t;const i=e.reduce(((e,t)=>e+t),0);if(0===i)return t;const n=Math.random()*i;let s=0,o=e[s];for(;n>o;)o+=e[++s];return{index:s,weight:e[s]}})(i),s=e-e*(t[n].adDensityPercent/100);return this.setWeightedChoiceExperiment("iosad",t[n].adDensityPercent),s}getTargetDensity(e){return((e=navigator.userAgent)=>/iP(hone|od|ad)/i.test(e))()?this.getIOSDensity(e):e}get removeVideoTitleWrapper(){return this._clsGlobalData.siteAds.adOptions.removeVideoTitleWrapper}constructor(){this._clsGlobalData=window.adthriveCLS}}class V{static getScrollTop(){return(window.pageYOffset||document.documentElement.scrollTop)-(document.documentElement.clientTop||0)}static getScrollBottom(){return this.getScrollTop()+(document.documentElement.clientHeight||0)}static shufflePlaylist(e){let t,i,n=e.length;for(;0!==n;)i=Math.floor(Math.random()*e.length),n-=1,t=e[n],e[n]=e[i],e[i]=t;return e}static isMobileLandscape(){return window.matchMedia("(orientation: landscape) and (max-height: 480px)").matches}static playerViewable(e){const t=e.getBoundingClientRect();return this.isMobileLandscape()?window.innerHeight>t.top+t.height/2&&t.top+t.height/2>0:window.innerHeight>t.top+t.height/2}static createQueryString(e){return Object.keys(e).map((t=>`${t}=${e[t]}`)).join("&")}static createEncodedQueryString(e){return Object.keys(e).map((t=>`${t}=${encodeURIComponent(e[t])}`)).join("&")}static setMobileLocation(e){return"top-left"===(e=e||"bottom-right")?e="adthrive-collapse-top-left":"top-right"===e?e="adthrive-collapse-top-right":"bottom-left"===e?e="adthrive-collapse-bottom-left":"bottom-right"===e?e="adthrive-collapse-bottom-right":"top-center"===e&&(e=D()?"adthrive-collapse-top-center":"adthrive-collapse-bottom-right"),e}static addMaxResolutionQueryParam(e){const t=`max_resolution=${D()?"320":"1280"}`,[i,n]=String(e).split("?");return`${i}?${n?n+`&${t}`:t}`}}class G{constructor(e){this._clsOptions=e,this.removeVideoTitleWrapper=w(this._clsOptions.siteAds.adOptions.removeVideoTitleWrapper,!1);const t=this._clsOptions.siteAds.videoPlayers;this.footerSelector=w(t&&t.footerSelector,""),this.players=w(t&&t.players.map((e=>(e.mobileLocation=V.setMobileLocation(e.mobileLocation),e))),[]),this.relatedSettings=t&&t.contextual}}class N{constructor(e){this.mobileStickyPlayerOnPage=!1,this.playlistPlayerAdded=!1,this.relatedPlayerAdded=!1,this.footerSelector="",this.removeVideoTitleWrapper=!1,this.videoAdOptions=new G(e),this.players=this.videoAdOptions.players,this.relatedSettings=this.videoAdOptions.relatedSettings,this.removeVideoTitleWrapper=this.videoAdOptions.removeVideoTitleWrapper,this.footerSelector=this.videoAdOptions.footerSelector}}class W{}class B extends W{get(){if(this._probability<0||this._probability>1)throw new Error(`Invalid probability: ${this._probability}`);return Math.random()<this._probability}constructor(e){super(),this._probability=e}}class F{setExperimentKey(e=!1){this._clsOptions.setExperiment(this.abgroup,this.result,e)}constructor(){this._clsOptions=new H,this.shouldUseCoreExperimentsConfig=!1}}class z extends F{get result(){return this._result}run(){return new B(this.weight).get()}constructor(e){super(),this._result=!1,this.key="ParallaxAdsExperiment",this.abgroup="parallax",this._choices=[{choice:!0},{choice:!1}],this.weight=0;!!D()&&e.largeFormatsMobile&&(this._result=this.run(),this.setExperimentKey())}}const q=[[728,90],[300,250],[300,600],[320,50],[970,250],[160,600],[300,1050],[336,280],[970,90],[300,50],[320,100],[468,60],[250,250],[120,240],[1,1],[300,300],[552,334],[300,420],[728,250],[320,300],[300,390]],U=[[300,600],[160,600]],Q=new Map([[l,1],[c,2],[d,3],[r,4],[a,5],["Sidebar_sticky",6],["Below Post",7]]),J=(e,t)=>{const{location:i,sticky:n}=e;if(i===a&&t){const{recipeMobile:e,recipeDesktop:i}=t;if(D()&&(null==e?void 0:e.enabled))return!0;if(!D()&&(null==i?void 0:i.enabled))return!0}return i===l||n},K=(e,t)=>{const i=t.adUnits,n=(e=>!!e.adTypes&&new z(e.adTypes).result)(t);return i.filter((e=>void 0!==e.dynamic&&e.dynamic.enabled)).map((i=>{const s=i.location.replace(/\s+/g,"_"),o="Sidebar"===s?0:2;return{auctionPriority:Q.get(s)||8,location:s,sequence:w(i.sequence,1),sizes:(h=i.adSizes,q.filter((([e,t])=>h.some((([i,n])=>e===i&&t===n))))).filter((t=>((e,[t,i],n)=>{const{location:s,sequence:o}=e;if(s===l)return!("phone"===n&&320===t&&100===i);if(s===c)return!0;if(s===a)return!(D()&&"phone"===n&&(300===t&&390===i||320===t&&300===i));if(s===d){const t=e.adSizes.some((([,e])=>e<=300)),n=i>300;return!(!n||t)||9===o||(o&&o<=5?!n||e.sticky:!n)}return!0})(i,t,e))).concat(n&&i.location===r?U:[]),devices:i.devices,pageSelector:w(i.dynamic.pageSelector,"").trim(),elementSelector:w(i.dynamic.elementSelector,"").trim(),position:w(i.dynamic.position,"beforebegin"),max:Math.floor(w(i.dynamic.max,0)),spacing:w(i.dynamic.spacing,0),skip:Math.floor(w(i.dynamic.skip,0)),every:Math.max(Math.floor(w(i.dynamic.every,1)),1),classNames:i.dynamic.classNames||[],sticky:J(i,t.adOptions.stickyContainerConfig),stickyOverlapSelector:w(i.stickyOverlapSelector,"").trim(),autosize:i.autosize,special:w(i.targeting,[]).filter((e=>"special"===e.key)).reduce(((e,t)=>e.concat(...t.value)),[]),lazy:w(i.dynamic.lazy,!1),lazyMax:w(i.dynamic.lazyMax,o),lazyMaxDefaulted:0!==i.dynamic.lazyMax&&!i.dynamic.lazyMax,name:i.name};var h}))},Y=(e,t)=>{const i=(e=>{let t=e.clientWidth;if(getComputedStyle){const i=getComputedStyle(e,null);t-=parseFloat(i.paddingLeft||"0")+parseFloat(i.paddingRight||"0")}return t})(t),n=e.sticky&&e.location===d;return e.sizes.filter((t=>{const s=!e.autosize||(t[0]<=i||t[0]<=320),o=!n||t[1]<=window.innerHeight-100;return s&&o}))};class Z{constructor(e){this.clsOptions=e,this.enabledLocations=[o,r,a,d]}}const X=e=>`adthrive-${e.location.replace("_","-").toLowerCase()}`,ee=e=>`${X(e)}-${e.sequence}`;function te(e,t){void 0===t&&(t={});var i=t.insertAt;if(e&&"undefined"!=typeof document){var n=document.head||document.getElementsByTagName("head")[0],s=document.createElement("style");s.type="text/css","top"===i&&n.firstChild?n.insertBefore(s,n.firstChild):n.appendChild(s),s.styleSheet?s.styleSheet.cssText=e:s.appendChild(document.createTextNode(e))}}const ie=e=>e.some((e=>null!==document.querySelector(e)));function ne(e,t,i,n){var s,o=arguments.length,r=o<3?t:null===n?n=Object.getOwnPropertyDescriptor(t,i):n;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(e,t,i,n);else for(var a=e.length-1;a>=0;a--)(s=e[a])&&(r=(o<3?s(r):o>3?s(t,i,r):s(t,i))||r);return o>3&&r&&Object.defineProperty(t,i,r),r}function se(e,t){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(e,t)}"function"==typeof SuppressedError&&SuppressedError;class oe extends W{static fromArray(e,t){return new oe(e.map((([e,t])=>({choice:e,weight:t}))),t)}addChoice(e,t){this._choices.push({choice:e,weight:t})}get(){const e=(t=0,i=100,Math.random()*(i-t)+t);var t,i;let n=0;for(const{choice:t,weight:i}of this._choices)if(n+=i,n>=e)return t;return this._default}get totalWeight(){return this._choices.reduce(((e,{weight:t})=>e+t),0)}constructor(e=[],t){super(),this._choices=e,this._default=t}}const re=()=>(e,t,i)=>{const n=i.value;n&&(i.value=function(...e){const t=(e=>{if(null===e)return null;const t=e.map((({choice:e})=>e));return(e=>{let t=5381,i=e.length;for(;i;)t=33*t^e.charCodeAt(--i);return t>>>0})(JSON.stringify(t)).toString(16)})(this._choices),i=this._expConfigABGroup?this._expConfigABGroup:this.abgroup,s=i?i.toLowerCase():this.key?this.key.toLowerCase():"",o=t?`${s}_${t}`:s,r=this.localStoragePrefix?`${this.localStoragePrefix}-${o}`:o,a=I.readInternalLocalStorage("adthrive_branch");!1===(a&&a.enabled)&&I.deleteLocalStorage(r);const l=(()=>n.apply(this,e))(),c=(d=this._choices,h=l,null!=(p=null==(u=d.find((({choice:e})=>e===h)))?void 0:u.weight)?p:null);var d,h,u,p;const[m,g]=I.getOrSetABGroupLocalStorageValue(r,l,c,{value:24,unit:"hours"});return this._stickyResult=m,this._stickyWeight=g,m})};class ae{get enabled(){return void 0!==this.experimentConfig}_isValidResult(e,t=()=>!0){return t()&&(e=>null!=e&&!("number"==typeof e&&isNaN(e)))(e)}}class le extends ae{_isValidResult(e){return super._isValidResult(e,(()=>this._resultValidator(e)||"control"===e))}run(){if(!this.enabled)return x.error("CLSWeightedChoiceSiteExperiment","run","() => %o","No experiment config found. Defaulting to control."),"control";if(!this._mappedChoices||0===this._mappedChoices.length)return x.error("CLSWeightedChoiceSiteExperiment","run","() => %o","No experiment variants found. Defaulting to control."),"control";const e=new oe(this._mappedChoices).get();return this._isValidResult(e)?e:(x.error("CLSWeightedChoiceSiteExperiment","run","() => %o","Invalid result from experiment choices. Defaulting to control."),"control")}constructor(...e){super(...e),this._resultValidator=()=>!0}}class ce{getSiteExperimentByKey(e){const t=this.siteExperiments.filter((t=>t.key.toLowerCase()===e.toLowerCase()))[0],i=C("at_site_features"),n=(s=(null==t?void 0:t.variants[1])?null==t?void 0:t.variants[1].value:null==t?void 0:t.variants[0].value,o=i[e],typeof s==typeof o);var s,o;return t&&i[e]&&n&&(t.variants=[{displayName:"test",value:i[e],weight:100,id:0}]),t}constructor(e){var t,i;this.siteExperiments=[],this._clsOptions=e,this._device=D()?"mobile":"desktop",this.siteExperiments=null!=(i=null==(t=this._clsOptions.siteAds.siteExperiments)?void 0:t.filter((e=>{const t=e.key,i=T(e,this._device),n=M(this._clsOptions.siteAds,t,this._device);return i&&n})))?i:[]}}class de extends le{get result(){return this._result}run(){if(!this.enabled)return x.error("CLSAdLayoutSiteExperiment","run","() => %o","No experiment config found. Defaulting to empty class name."),"";const e=new oe(this._mappedChoices).get();return this._isValidResult(e)?e:(x.error("CLSAdLayoutSiteExperiment","run","() => %o","Invalid result from experiment choices. Defaulting to empty class name."),"")}_mapChoices(){return this._choices.map((({weight:e,value:t})=>({weight:e,choice:t})))}constructor(e){super(),this._choices=[],this._mappedChoices=[],this._result="",this._resultValidator=e=>"string"==typeof e,this.key=i,this.abgroup=i,this._clsSiteExperiments=new ce(e),this.experimentConfig=this._clsSiteExperiments.getSiteExperimentByKey(this.key),this.enabled&&this.experimentConfig&&(this._choices=this.experimentConfig.variants,this._mappedChoices=this._mapChoices(),this._result=this.run(),e.setWeightedChoiceExperiment(this.abgroup,this._result,!0))}}ne([re(),se("design:type",Function),se("design:paramtypes",[]),se("design:returntype",void 0)],de.prototype,"run",null);class he extends le{get result(){return this._result}run(){if(!this.enabled)return x.error("CLSTargetAdDensitySiteExperiment","run","() => %o","No experiment config found. Defaulting to control."),"control";const e=new oe(this._mappedChoices).get();return this._isValidResult(e)?e:(x.error("CLSTargetAdDensitySiteExperiment","run","() => %o","Invalid result from experiment choices. Defaulting to control."),"control")}_mapChoices(){return this._choices.map((({weight:e,value:t})=>({weight:e,choice:"number"==typeof t?(t||0)/100:"control"})))}constructor(e){super(),this._choices=[],this._mappedChoices=[],this._result="control",this._resultValidator=e=>"number"==typeof e,this.key=t,this.abgroup=t,this._clsSiteExperiments=new ce(e),this.experimentConfig=this._clsSiteExperiments.getSiteExperimentByKey(this.key),this.enabled&&this.experimentConfig&&(this._choices=this.experimentConfig.variants,this._mappedChoices=this._mapChoices(),this._result=this.run(),e.setWeightedChoiceExperiment(this.abgroup,this._result,!0))}}ne([re(),se("design:type",Function),se("design:paramtypes",[]),se("design:returntype",void 0)],he.prototype,"run",null);const ue="250px";class pe{start(){try{var e,t;(e=>{const t=document.body,i=`adthrive-device-${e}`;if(!t.classList.contains(i))try{t.classList.add(i)}catch(e){x.error("BodyDeviceClassComponent","init",{message:e.message});const t="classList"in document.createElement("_");x.error("BodyDeviceClassComponent","init.support",{support:t})}})(this._device);const s=new de(this._clsOptions);if(s.enabled){const e=s.result,t=e.startsWith(".")?e.substring(1):e;if((e=>/^[-_a-zA-Z]+[-_a-zA-Z0-9]*$/.test(e))(t))try{document.body.classList.add(t)}catch(e){x.error("ClsDynamicAdsInjector","start",`Uncaught CSS Class error: ${e}`)}else x.error("ClsDynamicAdsInjector","start",`Invalid class name: ${t}`)}const o=K(this._device,this._clsOptions.siteAds).filter((e=>this._locationEnabled(e))).filter((e=>{return t=e,i=this._device,t.devices.includes(i);var t,i})).filter((e=>{return 0===(t=e).pageSelector.length||null!==document.querySelector(t.pageSelector);var t})),r=this.inject(o);var i,n;if(null==(t=this._clsOptions.siteAds.adOptions.stickyContainerConfig)||null==(e=t.content)?void 0:e.enabled)if(!ie(this._clsOptions.siteAds.adOptions.stickyContainerConfig.blockedSelectors||[]))te(`\n  .adthrive-device-phone .adthrive-sticky-content {\n    height: 450px !important;\n    margin-bottom: 100px !important;\n  }\n  .adthrive-content.adthrive-sticky {\n    position: -webkit-sticky;\n    position: sticky !important;\n    top: 42px !important;\n    margin-top: 42px !important;\n  }\n  .adthrive-content.adthrive-sticky:after {\n    content: "— Advertisement. Scroll down to continue. —";\n    font-size: 10pt;\n    margin-top: 5px;\n    margin-bottom: 5px;\n    display:block;\n    color: #888;\n  }\n  .adthrive-sticky-container {\n    position: relative;\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-start;\n    align-items: center;\n    min-height:${(null==(n=this._clsOptions.siteAds.adOptions.stickyContainerConfig)||null==(i=n.content)?void 0:i.minHeight)||400}px !important;\n    margin: 10px 0 10px 0;\n    background-color: #FAFAFA;\n    padding-bottom:0px;\n  }\n  `);r.forEach((e=>this._clsOptions.setInjectedSlots(e)))}catch(e){x.error("ClsDynamicAdsInjector","start",e)}}inject(e,t=document){this._densityDevice="desktop"===this._device?h:u,this._overrideDefaultAdDensitySettingsWithSiteExperiment();const i=this._clsOptions.siteAds,n=w(i.adDensityEnabled,!0),s=i.adDensityLayout&&n,o=e.filter((e=>s?e.location!==r:e)),a=e.filter((e=>s?e.location===r:null));return[...o.length?this._injectNonDensitySlots(o,t):[],...a.length?this._injectDensitySlots(a,t):[]]}_injectNonDensitySlots(e,t=document){var i;const n=[],s=[];if(e.some((e=>e.location===a&&e.sticky))&&!ie((null==(i=this._clsOptions.siteAds.adOptions.stickyContainerConfig)?void 0:i.blockedSelectors)||[])){var o,r;const e=this._clsOptions.siteAds.adOptions.stickyContainerConfig;(e=>{te(`\n  .adthrive-recipe.adthrive-sticky {\n    position: -webkit-sticky;\n    position: sticky !important;\n    top: 42px !important;\n    margin-top: 42px !important;\n  }\n  .adthrive-recipe-sticky-container {\n    position: relative;\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-start;\n    align-items: center;\n    min-height:${e||400}px !important;\n    margin: 10px 0 10px 0;\n    background-color: #FAFAFA;\n    padding-bottom:0px;\n  }\n  `)})("phone"===this._device?null==e||null==(o=e.recipeMobile)?void 0:o.minHeight:null==e||null==(r=e.recipeDesktop)?void 0:r.minHeight)}for(const i of e)this._insertNonDensityAds(i,n,s,t);return s.forEach((({location:e,element:t})=>{t.style.minHeight=this.locationToMinHeight[e]})),n}_injectDensitySlots(e,t=document){try{this._calculateMainContentHeightAndAllElements(e,t)}catch(e){return[]}const{onePerViewport:i,targetAll:n,targetDensityUnits:s,combinedMax:o,numberOfUnits:r}=this._getDensitySettings(e,t);return this._absoluteMinimumSpacingByDevice=i?window.innerHeight:this._absoluteMinimumSpacingByDevice,r?(this._adInjectionMap.filterUsed(),this._findElementsForAds(r,i,n,o,s,t),this._insertAds()):[]}_overrideDefaultAdDensitySettingsWithSiteExperiment(){var e;if(null==(e=this._clsTargetAdDensitySiteExperiment)?void 0:e.enabled){const e=this._clsTargetAdDensitySiteExperiment.result;"number"==typeof e&&(this._clsOptions.siteAds.adDensityEnabled=!0,this._clsOptions.siteAds.adDensityLayout[this._densityDevice].adDensity=e)}}_getDensitySettings(e,t=document){const i=this._clsOptions.siteAds.adDensityLayout,n=this._determineOverrides(i.pageOverrides),s=n.length?n[0]:i[this._densityDevice],o=this._clsOptions.getTargetDensity(s.adDensity),r=s.onePerViewport,a=this._shouldTargetAllEligible(o);let l=this._getTargetDensityUnits(o,a);const c=this._clsOptions.getWeightedChoiceExperiment("iosad");l<1&&c&&(l=1);const d=this._getCombinedMax(e,t),h=Math.min(this._totalAvailableElements.length,l,...d>0?[d]:[]);return this._pubLog={onePerViewport:r,targetDensity:o,targetDensityUnits:l,combinedMax:d},{onePerViewport:r,targetAll:a,targetDensityUnits:l,combinedMax:d,numberOfUnits:h}}_determineOverrides(e){return e.filter((e=>{const t=R(e.pageSelector);return""===e.pageSelector||t.elements&&t.elements.length})).map((e=>e[this._densityDevice]))}_shouldTargetAllEligible(e){return e===this._densityMax}_getTargetDensityUnits(e,t){return t?this._totalAvailableElements.length:Math.floor(e*this._mainContentHeight/(1-e)/this._minDivHeight)-this._recipeCount}_getCombinedMax(e,t=document){return w(e.filter((e=>{let i;try{i=t.querySelector(e.elementSelector)}catch(e){}return i})).map((e=>Number(e.max)+Number(e.lazyMaxDefaulted?0:e.lazyMax))).sort(((e,t)=>t-e))[0],0)}_elementLargerThanMainContent(e){return e.offsetHeight>=this._mainContentHeight&&this._totalAvailableElements.length>1}_elementDisplayNone(e){const t=window.getComputedStyle(e,null).display;return t&&"none"===t||"none"===e.style.display}_isBelowMaxes(e,t){return this._adInjectionMap.map.length<e&&this._adInjectionMap.map.length<t}_findElementsForAds(e,t,i,n,s,o=document){this._clsOptions.targetDensityLog={onePerViewport:t,combinedMax:n,targetDensityUnits:s,targetDensityPercentage:this._pubLog.targetDensity,mainContentHeight:this._mainContentHeight,recipeCount:this._recipeCount,numberOfEls:this._totalAvailableElements.length};const r=e=>{for(const{dynamicAd:t,element:r}of this._totalAvailableElements)if(this._logDensityInfo(r,t.elementSelector,e),!(!i&&this._elementLargerThanMainContent(r)||this._elementDisplayNone(r))){if(!this._isBelowMaxes(n,s))break;this._checkElementSpacing({dynamicAd:t,element:r,insertEvery:e,targetAll:i,target:o})}!this._usedAbsoluteMinimum&&this._smallerIncrementAttempts<5&&(++this._smallerIncrementAttempts,r(this._getSmallerIncrement(e)))},a=this._getInsertEvery(e,t,s);r(a)}_getSmallerIncrement(e){let t=.6*e;return t<=this._absoluteMinimumSpacingByDevice&&(t=this._absoluteMinimumSpacingByDevice,this._usedAbsoluteMinimum=!0),t}_insertNonDensityAds(e,t,i,n=document){let s=0,o=0,r=0;e.spacing>0&&(s=window.innerHeight*e.spacing,o=s);const l=this._repeatDynamicAds(e),c=this.getElements(e.elementSelector,n);e.skip;for(let h=e.skip;h<c.length&&!(r+1>l.length);h+=e.every){let u=c[h];if(s>0){const{bottom:e}=E(u);if(e<=o)continue;o=e+s}const p=l[r],m=`${p.location}_${p.sequence}`;t.some((e=>e.name===m))&&(r+=1);const g=this.getDynamicElementId(p),y=X(e),_=ee(e),f=[e.location===d&&e.sticky&&e.sequence&&e.sequence<=5?"adthrive-sticky-sidebar":"",e.location===a&&e.sticky?"adthrive-recipe-sticky-container":"",y,_,...e.classNames],v=this.addAd(u,g,e.position,f);if(v){const s=Y(p,v);if(s.length){const o={clsDynamicAd:e,dynamicAd:p,element:v,sizes:s,name:m,infinite:n!==document};t.push(o),i.push({location:p.location,element:v}),e.location===a&&++this._recipeCount,r+=1}u=v}}}_insertAds(){const e=[];return this._adInjectionMap.filterUsed(),this._adInjectionMap.map.forEach((({el:t,dynamicAd:i,target:n},s)=>{const o=Number(i.sequence)+s,r=i.max,a=i.lazy&&o>r;i.sequence=o,i.lazy=a;const l=this._addContentAd(t,i,n);l&&(i.used=!0,e.push(l))})),e}_getInsertEvery(e,t,i){let n=this._absoluteMinimumSpacingByDevice;return this._moreAvailableElementsThanUnitsToInject(i,e)?(this._usedAbsoluteMinimum=!1,n=this._useWiderSpacing(i,e)):(this._usedAbsoluteMinimum=!0,n=this._useSmallestSpacing(t)),t&&window.innerHeight>n?window.innerHeight:n}_useWiderSpacing(e,t){return this._mainContentHeight/Math.min(e,t)}_useSmallestSpacing(e){return e&&window.innerHeight>this._absoluteMinimumSpacingByDevice?window.innerHeight:this._absoluteMinimumSpacingByDevice}_moreAvailableElementsThanUnitsToInject(e,t){return this._totalAvailableElements.length>e||this._totalAvailableElements.length>t}_logDensityInfo(e,t,i){const{onePerViewport:n,targetDensity:s,targetDensityUnits:o,combinedMax:r}=this._pubLog;this._totalAvailableElements.length}_checkElementSpacing({dynamicAd:t,element:i,insertEvery:n,targetAll:s,target:o=document}){(this._isFirstAdInjected()||this._hasProperSpacing(i,t,s,n))&&this._markSpotForContentAd(i,e({},t),o)}_isFirstAdInjected(){return!this._adInjectionMap.map.length}_markSpotForContentAd(e,t,i=document){const n="beforebegin"===t.position||"afterbegin"===t.position;this._adInjectionMap.add(e,this._getElementCoords(e,n),t,i),this._adInjectionMap.sort()}_hasProperSpacing(e,t,i,n){const s="beforebegin"===t.position||"afterbegin"===t.position,r="beforeend"===t.position||"afterbegin"===t.position,a=i||this._isElementFarEnoughFromOtherAdElements(e,n,s),l=r||this._isElementNotInRow(e,s),c=-1===e.id.indexOf(`AdThrive_${o}`);return a&&l&&c}_isElementFarEnoughFromOtherAdElements(e,t,i){const n=this._getElementCoords(e,i);let s=!1;for(let e=0;e<this._adInjectionMap.map.length;e++){const i=this._adInjectionMap.map[e].coords,o=this._adInjectionMap.map[e+1]&&this._adInjectionMap.map[e+1].coords;if(s=n-t>i&&(!o||n+t<o),s)break}return s}_isElementNotInRow(e,t){const i=e.previousElementSibling,n=e.nextElementSibling,s=t?!i&&n||i&&e.tagName!==i.tagName?n:i:n;return!(!s||0!==e.getBoundingClientRect().height)||(!s||e.getBoundingClientRect().top!==s.getBoundingClientRect().top)}_calculateMainContentHeightAndAllElements(e,t=document){const[i,n]=((e,t,i=document)=>{const[n,s]=P(e,t,i);if(0===n.length)throw Error("No Main Content Elements Found");return[Array.from(n).reduce(((e,t)=>t.offsetHeight>e.offsetHeight?t:e))||document.body,s]})(e,this._adInjectionMap,t);this._mainContentDiv=i,this._totalAvailableElements=n,this._mainContentHeight=((e,t="div #comments, section .comments")=>{const i=e.querySelector(t);return i?e.offsetHeight-i.offsetHeight:e.offsetHeight})(this._mainContentDiv)}_getElementCoords(e,t=!1){const i=e.getBoundingClientRect();return(t?i.top:i.bottom)+window.scrollY}_addContentAd(e,t,i=document){var n,s;let o=null;const r=X(t),a=ee(t),l=(null==(s=this._clsOptions.siteAds.adOptions.stickyContainerConfig)||null==(n=s.content)?void 0:n.enabled)?"adthrive-sticky-container":"",c=this.addAd(e,this.getDynamicElementId(t),t.position,[l,r,a,...t.classNames]);if(c){const e=Y(t,c);if(e.length){c.style.minHeight=this.locationToMinHeight[t.location];o={clsDynamicAd:t,dynamicAd:t,element:c,sizes:e,name:`${t.location}_${t.sequence}`,infinite:i!==document}}}return o}getDynamicElementId(e){return`AdThrive_${e.location}_${e.sequence}_${this._device}`}getElements(e,t=document){return t.querySelectorAll(e)}addAd(e,t,i,n=[]){if(!document.getElementById(t)){const s=`<div id="${t}" class="adthrive-ad ${n.join(" ")}"></div>`;e.insertAdjacentHTML(i,s)}return document.getElementById(t)}_repeatDynamicAds(t){const i=[],n=t.location===a?99:this.locationMaxLazySequence.get(t.location),s=t.lazy?w(n,0):0,o=t.max,r=t.lazyMax,l=0===s&&t.lazy?o+r:Math.min(Math.max(s-t.sequence+1,0),o+r),c=Math.max(o,l);for(let n=0;n<c;n++){const s=Number(t.sequence)+n;if("Recipe_1"!==t.name||5!==s){const r=t.lazy&&n>=o;i.push(e({},t,{sequence:s,lazy:r}))}}return i}_locationEnabled(e){const t=this._clsOptions.enabledLocations.includes(e.location),i=this._clsOptions.disableAds&&this._clsOptions.disableAds.all||document.body.classList.contains("adthrive-disable-all"),n=!document.body.classList.contains("adthrive-disable-content")&&!this._clsOptions.disableAds.reasons.has("content_plugin");return t&&!i&&n}constructor(e,t){this._clsOptions=e,this._adInjectionMap=t,this._recipeCount=0,this._mainContentHeight=0,this._mainContentDiv=null,this._totalAvailableElements=[],this._minDivHeight=250,this._densityDevice=h,this._pubLog={onePerViewport:!1,targetDensity:0,targetDensityUnits:0,combinedMax:0},this._densityMax=.99,this._smallerIncrementAttempts=0,this._absoluteMinimumSpacingByDevice=250,this._usedAbsoluteMinimum=!1,this._infPageEndOffset=0,this.locationMaxLazySequence=new Map([[a,5]]),this.locationToMinHeight={Below_Post:ue,Content:ue,Recipe:ue,Sidebar:ue};const{tablet:i,desktop:n}=this._clsOptions.siteAds.breakpoints;this._device=((e,t)=>{const i=window.innerWidth;return i>=t?"desktop":i>=e?"tablet":"phone"})(i,n),this._config=new Z(e),this._clsOptions.enabledLocations=this._config.enabledLocations,this._clsTargetAdDensitySiteExperiment=this._clsOptions.siteAds.siteExperiments?new he(this._clsOptions):null}}function me(e,t){if(null==e)return{};var i,n,s={},o=Object.keys(e);for(n=0;n<o.length;n++)i=o[n],t.indexOf(i)>=0||(s[i]=e[i]);return s}class ge{get enabled(){return!0}}class ye extends ge{setPotentialPlayersMap(){const e=this._videoConfig.players||[],t=this._filterPlayerMap(),i=e.filter((e=>"stationaryRelated"===e.type&&e.enabled));return t.stationaryRelated=i,this._potentialPlayerMap=t,this._potentialPlayerMap}_filterPlayerMap(){const e=this._videoConfig.players,t={stickyRelated:[],stickyPlaylist:[],stationaryRelated:[]};return e&&e.length?e.filter((e=>{var t;return null==(t=e.devices)?void 0:t.includes(this._device)})).reduce(((e,t)=>(e[t.type]||(x.event(this._component,"constructor","Unknown Video Player Type detected",t.type),e[t.type]=[]),t.enabled&&e[t.type].push(t),e)),t):t}_checkPlayerSelectorOnPage(e){const t=this._potentialPlayerMap[e].map((e=>({player:e,playerElement:this._getPlacementElement(e)})));return t.length?t[0]:{player:null,playerElement:null}}_getOverrideElement(e,t,i){if(e&&t){const n=document.createElement("div");t.insertAdjacentElement(e.position,n),i=n}else{const{player:e,playerElement:t}=this._checkPlayerSelectorOnPage("stickyPlaylist");if(e&&t){const n=document.createElement("div");t.insertAdjacentElement(e.position,n),i=n}}return i}_shouldOverrideElement(e){const t=e.getAttribute("override-embed");return"true"===t||"false"===t?"true"===t:!!this._videoConfig.relatedSettings&&this._videoConfig.relatedSettings.overrideEmbedLocation}_checkPageSelector(e,t,i=[]){if(e&&t&&0===i.length){return!("/"===window.location.pathname)&&x.event("VideoUtils","getPlacementElement",new Error(`PSNF: ${e} does not exist on the page`)),!1}return!0}_getElementSelector(e,t,i){return t&&t.length>i?t[i]:(x.event("VideoUtils","getPlacementElement",new Error(`ESNF: ${e} does not exist on the page`)),null)}_getPlacementElement(e){const{pageSelector:t,elementSelector:i,skip:n}=e,s=R(t),{valid:o,elements:r}=s,a=me(s,["valid","elements"]),l=L(i),{valid:c,elements:d}=l,h=me(l,["valid","elements"]);if(""!==t&&!o)return x.error("VideoUtils","getPlacementElement",new Error(`${t} is not a valid selector`),a),null;if(!c)return x.error("VideoUtils","getPlacementElement",new Error(`${i} is not a valid selector`),h),null;if(!this._checkPageSelector(t,o,r))return null;return this._getElementSelector(i,d,n)||null}_getEmbeddedPlayerType(e){let t=e.getAttribute("data-player-type");return t&&"default"!==t||(t=this._videoConfig.relatedSettings?this._videoConfig.relatedSettings.defaultPlayerType:"static"),this._stickyRelatedOnPage&&(t="static"),t}_getMediaId(e){const t=e.getAttribute("data-video-id");return!!t&&(this._relatedMediaIds.push(t),t)}_createRelatedPlayer(e,t,i,n){"collapse"===t?this._createCollapsePlayer(e,i):"static"===t&&this._createStaticPlayer(e,i,n)}_createCollapsePlayer(t,i){const{player:n,playerElement:s}=this._checkPlayerSelectorOnPage("stickyRelated"),o=n||this._potentialPlayerMap.stationaryRelated[0];if(o&&o.playerId){this._shouldOverrideElement(i)&&(i=this._getOverrideElement(n,s,i)),i=document.querySelector(`#cls-video-container-${t} > div`)||i,this._createStickyRelatedPlayer(e({},o,{mediaId:t}),i)}else x.error(this._component,"_createCollapsePlayer","No video player found")}_createStaticPlayer(t,i,n){if(this._potentialPlayerMap.stationaryRelated.length&&this._potentialPlayerMap.stationaryRelated[0].playerId){const s=this._potentialPlayerMap.stationaryRelated[0];this._createStationaryRelatedPlayer(e({},s,{mediaOrPlaylistId:t}),i,n)}else x.error(this._component,"_createStaticPlayer","No video player found")}_shouldRunAutoplayPlayers(){return!(!this._isVideoAllowedOnPage()||!this._potentialPlayerMap.stickyRelated.length&&!this._potentialPlayerMap.stickyPlaylist.length)}_setPlaylistMediaIdWhenStationaryOnPage(t,i){if(this._potentialPlayerMap.stationaryRelated.length&&this._potentialPlayerMap.stationaryRelated[0].playerId&&t&&t.length){const n=t[0].getAttribute("data-video-id");return n?e({},i,{mediaId:n}):i}return i}_determineAutoplayPlayers(e){const t=this._component,i="VideoManagerComponent"===t,n=this._context;if(this._stickyRelatedOnPage)return void x.event(t,"stickyRelatedOnPage",i&&{device:n&&n.device,isDesktop:this._device}||{});const{playerElement:s}=this._checkPlayerSelectorOnPage("stickyPlaylist");let{player:o}=this._checkPlayerSelectorOnPage("stickyPlaylist");o&&o.playerId&&s?(o=this._setPlaylistMediaIdWhenStationaryOnPage(e,o),this._createPlaylistPlayer(o,s)):Math.random()<.01&&setTimeout((()=>{x.event(t,"noStickyPlaylist",i&&{vendor:"none",device:n&&n.device,isDesktop:this._device}||{})}),1e3)}_initializeRelatedPlayers(e){const t=new Map;for(let i=0;i<e.length;i++){const n=e[i],s=n.offsetParent,o=this._getEmbeddedPlayerType(n),r=this._getMediaId(n);if(s&&r){const e=(t.get(r)||0)+1;t.set(r,e),this._createRelatedPlayer(r,o,n,e)}}}constructor(e,t,i){super(),this._videoConfig=e,this._component=t,this._context=i,this._stickyRelatedOnPage=!1,this._relatedMediaIds=[],this._device=A()?"desktop":"mobile",this._potentialPlayerMap=this.setPotentialPlayersMap()}}class _e extends ye{init(){this._initializePlayers()}_wrapVideoPlayerWithCLS(e,t,i=0){if(e.parentNode){const n=e.offsetWidth*(9/16),s=this._createGenericCLSWrapper(n,t,i);return e.parentNode.insertBefore(s,e),s.appendChild(e),s}return null}_createGenericCLSWrapper(e,t,i){const n=document.createElement("div");return n.id=`cls-video-container-${t}`,n.className="adthrive",n.style.minHeight=`${e+i}px`,n}_getTitleHeight(){const e=document.createElement("h3");e.style.margin="10px 0",e.innerText="Title",e.style.visibility="hidden",document.body.appendChild(e);const t=window.getComputedStyle(e),i=parseInt(t.height,10),n=parseInt(t.marginTop,10),s=parseInt(t.marginBottom,10);return document.body.removeChild(e),Math.min(i+s+n,50)}_initializePlayers(){const e=document.querySelectorAll(this._IN_POST_SELECTOR);e.length&&this._initializeRelatedPlayers(e),this._shouldRunAutoplayPlayers()&&this._determineAutoplayPlayers(e)}_createStationaryRelatedPlayer(e,t,i){const n="mobile"===this._device?[400,225]:[640,360],s=y;if(t&&e.mediaOrPlaylistId){const o=`${e.mediaOrPlaylistId}_${i}`,r=this._wrapVideoPlayerWithCLS(t,o);this._playersAddedFromPlugin.push(e.mediaOrPlaylistId),r&&this._clsOptions.setInjectedVideoSlots({playerId:e.playerId,playerName:s,playerSize:n,element:r,type:"stationaryRelated"})}}_createStickyRelatedPlayer(e,t){const i="mobile"===this._device?[400,225]:[640,360],n=m;if(this._stickyRelatedOnPage=!0,this._videoConfig.mobileStickyPlayerOnPage="mobile"===this._device,t&&e.position&&e.mediaId){const s=document.createElement("div");t.insertAdjacentElement(e.position,s);const o=this._getTitleHeight(),r=this._wrapVideoPlayerWithCLS(s,e.mediaId,this._WRAPPER_BAR_HEIGHT+o);this._playersAddedFromPlugin.push(e.mediaId),r&&this._clsOptions.setInjectedVideoSlots({playlistId:e.playlistId,playerId:e.playerId,playerSize:i,playerName:n,element:s,type:"stickyRelated"})}}_createPlaylistPlayer(e,t){const i=e.playlistId,n="mobile"===this._device?g:p,s="mobile"===this._device?[400,225]:[640,360];this._videoConfig.mobileStickyPlayerOnPage=!0;const o=document.createElement("div");t.insertAdjacentElement(e.position,o);let r=this._WRAPPER_BAR_HEIGHT;e.title&&(r+=this._getTitleHeight());const a=this._wrapVideoPlayerWithCLS(o,i,r);this._playersAddedFromPlugin.push(`playlist-${i}`),a&&this._clsOptions.setInjectedVideoSlots({playlistId:e.playlistId,playerId:e.playerId,playerSize:s,playerName:n,element:o,type:"stickyPlaylist"})}_isVideoAllowedOnPage(){const e=this._clsOptions.disableAds;if(e&&e.video){let t="";e.reasons.has("video_tag")?t="video tag":e.reasons.has("video_plugin")?t="video plugin":e.reasons.has("video_page")&&(t="command queue");const i=t?"ClsVideoInsertionMigrated":"ClsVideoInsertion";return x.error(i,"isVideoAllowedOnPage",new Error(`DBP: Disabled by publisher via ${t||"other"}`)),!1}return!this._clsOptions.videoDisabledFromPlugin}constructor(e,t){super(e,"ClsVideoInsertion"),this._videoConfig=e,this._clsOptions=t,this._IN_POST_SELECTOR=".adthrive-video-player",this._WRAPPER_BAR_HEIGHT=36,this._playersAddedFromPlugin=[],t.removeVideoTitleWrapper&&(this._WRAPPER_BAR_HEIGHT=0)}}class fe{add(e,t,i,n=document){this._map.push({el:e,coords:t,dynamicAd:i,target:n})}get map(){return this._map}sort(){this._map.sort((({coords:e},{coords:t})=>e-t))}filterUsed(){this._map=this._map.filter((({dynamicAd:e})=>!e.used))}reset(){this._map=[]}constructor(){this._map=[]}}class ve extends fe{}const be=e=>{const t=S(),i=(()=>{const e=D()?"mobile":"tablet";return A(f)?"desktop":e})(),n=e.siteAdsProfiles;let s=null;if(n&&n.length)for(const e of n){const n=e.targeting.device,o=e.targeting.browserEngine,r=n&&n.length&&n.includes(i),a=o&&o.length&&o.includes(t);r&&a&&(s=e)}return s};try{(()=>{const e=new H;e&&e.enabled&&(e.siteAds&&(e=>{const t=be(e);if(t){const e=t.profileId;document.body.classList.add(`raptive-profile-${e}`)}})(e.siteAds),new pe(e,new ve).start(),new _e(new N(e),e).init())})()}catch(e){x.error("CLS","pluginsertion-iife",e),window.adthriveCLS&&(window.adthriveCLS.injectedFromPlugin=!1)}}();
+</script><script data-no-optimize="1" data-cfasync="false">(function () {var clsElements = document.querySelectorAll("script[id^='cls-']"); window.adthriveCLS && clsElements && clsElements.length === 0 ? window.adthriveCLS.injectedFromPlugin = false : ""; })();</script><style id='core-block-supports-inline-css'>
+/**
+ * Core styles: block-supports
+ */
+
+</style>
+<script id="disqus_count-js-extra">
+var countVars = {"disqusShortname":"idownloadblog"};
+</script>
+<script data-minify="1" src="https://media.idownloadblog.com/wp-content/uploads/wp_rocket/cache/min/1/wp-content/plugins/disqus-comment-system/public/js/comment_count.js?ver=1685039864" id="disqus_count-js" data-rocket-defer defer></script>
+<script id="rocket-browser-checker-js-after">
+class RocketBrowserCompatibilityChecker {
+
+	constructor( options ) {
+		this.passiveSupported = false;
+
+		this._checkPassiveOption( this );
+		this.options = this.passiveSupported ? options : false;
+	}
+
+	/**
+	 * Initializes browser check for addEventListener passive option.
+	 *
+	 * @link https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#Safely_detecting_option_support
+	 * @private
+	 *
+	 * @param self Instance of this object.
+	 * @returns {boolean}
+	 */
+	_checkPassiveOption( self ) {
+		try {
+			const options = {
+				// This function will be called when the browser attempts to access the passive property.
+				get passive() {
+					self.passiveSupported = true;
+					return false;
+				}
+			};
+
+			window.addEventListener( 'test', null, options );
+			window.removeEventListener( 'test', null, options );
+		} catch ( err ) {
+			self.passiveSupported = false;
+		}
+	}
+
+	/**
+	 * Checks if the browser supports requestIdleCallback and cancelIdleCallback. If no, shims its behavior with a polyfills.
+	 *
+	 * @link @link https://developers.google.com/web/updates/2015/08/using-requestidlecallback
+	 */
+	initRequestIdleCallback() {
+		if ( ! 'requestIdleCallback' in window ) {
+			window.requestIdleCallback = ( cb ) => {
+				const start = Date.now();
+				return setTimeout( () => {
+					cb( {
+						didTimeout: false,
+						timeRemaining: function timeRemaining() {
+							return Math.max( 0, 50 - ( Date.now() - start ) );
+						}
+					} );
+				}, 1 );
+			};
+		}
+
+		if ( ! 'cancelIdleCallback' in window ) {
+			window.cancelIdleCallback = ( id ) => clearTimeout( id );
+		}
+	}
+
+	/**
+	 * Detects if data saver mode is on.
+	 *
+	 * @link https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/save-data/#detecting_the_save-data_setting
+	 *
+	 * @returns {boolean|boolean}
+	 */
+	isDataSaverModeOn() {
+		return (
+			'connection' in navigator
+			&&
+			true === navigator.connection.saveData
+		);
+	}
+
+	/**
+	 * Checks if the browser supports link prefetch.
+	 *
+	 * @returns {boolean|boolean}
+	 */
+	supportsLinkPrefetch() {
+		const elem = document.createElement( 'link' );
+		return (
+			elem.relList
+			&&
+			elem.relList.supports
+			&&
+			elem.relList.supports( 'prefetch' )
+			&&
+			window.IntersectionObserver
+			&&
+			'isIntersecting' in IntersectionObserverEntry.prototype
+		);
+	}
+
+	isSlowConnection() {
+		return (
+			'connection' in navigator
+			&&
+			'effectiveType' in navigator.connection
+			&&
+			(
+				'2g' === navigator.connection.effectiveType
+				||
+				'slow-2g' === navigator.connection.effectiveType
+			)
+		)
+	}
+}
+</script>
+<script id="rocket-preload-links-js-extra">
+var RocketPreloadLinksConfig = {"excludeUris":"\/2015\/04\/22\/how-to-delete-your-instagram-account\/|\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index.php\/)?(.*)wp-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/www.idownloadblog.com","onHoverDelay":"100","rateThrottle":"3"};
+</script>
+<script id="rocket-preload-links-js-after">
+class RocketPreloadLinks {
+
+	constructor( browser, config ) {
+		this.browser = browser;
+		this.config  = config;
+		this.options = this.browser.options;
+
+		this.prefetched = new Set;
+		this.eventTime  = null;
+		this.threshold  = 1111;
+		this.numOnHover = 0;
+	}
+
+	/**
+	 * Initializes the handler.
+	 */
+	init() {
+		if (
+			! this.browser.supportsLinkPrefetch()
+			||
+			this.browser.isDataSaverModeOn()
+			||
+			this.browser.isSlowConnection()
+		) {
+			return;
+		}
+
+		this.regex = {
+			excludeUris: RegExp( this.config.excludeUris, 'i' ),
+			images: RegExp( '.(' + this.config.imageExt + ')$', 'i' ),
+			fileExt: RegExp( '.(' + this.config.fileExt + ')$', 'i' )
+		};
+
+		this._initListeners( this );
+	}
+
+	/**
+	 * Initializes the event listeners.
+	 *
+	 * @private
+	 *
+	 * @param self instance of this object, used for binding "this" to the listeners.
+	 */
+	_initListeners( self ) {
+		// Setting onHoverDelay to -1 disables the "on-hover" feature.
+		if ( this.config.onHoverDelay > -1 ) {
+			document.addEventListener( 'mouseover', self.listener.bind( self ), self.listenerOptions );
+		}
+
+		document.addEventListener( 'mousedown', self.listener.bind( self ), self.listenerOptions );
+		document.addEventListener( 'touchstart', self.listener.bind( self ), self.listenerOptions );
+	}
+
+	/**
+	 * Event listener. Processes when near or on a valid <a> hyperlink.
+	 *
+	 * @param Event event Event instance.
+	 */
+	listener( event ) {
+		const linkElem = event.target.closest( 'a' );
+		const url      = this._prepareUrl( linkElem );
+		if ( null === url ) {
+			return;
+		}
+
+		switch ( event.type ) {
+			case 'mousedown':
+			case 'touchstart':
+				this._addPrefetchLink( url );
+				break;
+			case 'mouseover':
+				this._earlyPrefetch( linkElem, url, 'mouseout' );
+		}
+	}
+
+	/**
+	 *
+	 * @private
+	 *
+	 * @param Element|null linkElem
+	 * @param object url
+	 * @param string resetEvent
+	 */
+	_earlyPrefetch( linkElem, url, resetEvent ) {
+		const doPrefetch = () => {
+			falseTrigger = null;
+
+			// Start the rate throttle: 1 sec timeout.
+			if ( 0 === this.numOnHover ) {
+				setTimeout( () => this.numOnHover = 0, 1000 );
+			}
+			// Bail out when exceeding the rate throttle.
+			else if ( this.numOnHover > this.config.rateThrottle ) {
+				return;
+			}
+
+			this.numOnHover++;
+			this._addPrefetchLink( url );
+		};
+
+		// Delay to avoid false triggers for hover/touch/tap.
+		let falseTrigger = setTimeout( doPrefetch, this.config.onHoverDelay );
+
+		// On reset event, reset the false trigger timer.
+		const reset = () => {
+			linkElem.removeEventListener( resetEvent, reset, { passive: true } );
+			if ( null === falseTrigger ) {
+				return;
+			}
+
+			clearTimeout( falseTrigger );
+			falseTrigger = null;
+		};
+		linkElem.addEventListener( resetEvent, reset, { passive: true } );
+	}
+
+	/**
+	 * Adds a <link rel="prefetch" href="<url>"> for the given URL.
+	 *
+	 * @param string url The Given URL to prefetch.
+	 */
+	_addPrefetchLink( url ) {
+		this.prefetched.add( url.href );
+
+		return new Promise( ( resolve, reject ) => {
+			const elem   = document.createElement( 'link' );
+			elem.rel     = 'prefetch';
+			elem.href    = url.href;
+			elem.onload  = resolve;
+			elem.onerror = reject;
+
+			document.head.appendChild( elem );
+		} ).catch(() => {
+			// ignore and continue.
+		});
+	}
+
+	/**
+	 * Prepares the target link's URL.
+	 *
+	 * @private
+	 *
+	 * @param Element|null linkElem Instance of the link element.
+	 * @returns {null|*}
+	 */
+	_prepareUrl( linkElem ) {
+		if (
+			null === linkElem
+			||
+			typeof linkElem !== 'object'
+			||
+			! 'href' in linkElem
+			||
+			// Link prefetching only works on http/https protocol.
+			[ 'http:', 'https:' ].indexOf( linkElem.protocol ) === -1
+		) {
+			return null;
+		}
+
+		const origin   = linkElem.href.substring( 0, this.config.siteUrl.length );
+		const pathname = this._getPathname( linkElem.href, origin );
+		const url      = {
+			original: linkElem.href,
+			protocol: linkElem.protocol,
+			origin: origin,
+			pathname: pathname,
+			href: origin + pathname
+		};
+
+		return this._isLinkOk( url ) ? url : null;
+	}
+
+	/**
+	 * Gets the URL's pathname. Note: ensures the pathname matches the permalink structure.
+	 *
+	 * @private
+	 *
+	 * @param object url Instance of the URL.
+	 * @param string origin The target link href's origin.
+	 * @returns {string}
+	 */
+	_getPathname( url, origin ) {
+		let pathname = origin
+			? url.substring( this.config.siteUrl.length )
+			: url;
+
+		if ( ! pathname.startsWith( '/' ) ) {
+			pathname = '/' + pathname;
+		}
+
+		if ( this._shouldAddTrailingSlash( pathname ) ) {
+			return pathname + '/';
+		}
+
+		return pathname;
+	}
+
+	_shouldAddTrailingSlash( pathname ) {
+		return (
+			this.config.usesTrailingSlash
+			&&
+			! pathname.endsWith( '/' )
+			&&
+			! this.regex.fileExt.test( pathname )
+		);
+	}
+
+	/**
+	 * Checks if the given link element is okay to process.
+	 *
+	 * @private
+	 *
+	 * @param object url URL parts object.
+	 *
+	 * @returns {boolean}
+	 */
+	_isLinkOk( url ) {
+		if ( null === url || typeof url !== 'object' ) {
+			return false;
+		}
+
+		return (
+			! this.prefetched.has( url.href )
+			&&
+			url.origin === this.config.siteUrl // is an internal document.
+			&&
+			url.href.indexOf( '?' ) === -1 // not a query string.
+			&&
+			url.href.indexOf( '#' ) === -1 // not an anchor.
+			&&
+			! this.regex.excludeUris.test( url.href ) // not excluded.
+			&&
+			! this.regex.images.test( url.href ) // not an image.
+		);
+	}
+
+	/**
+	 * Named static constructor to encapsulate how to create the object.
+	 */
+	static run() {
+		// Bail out if the configuration not passed from the server.
+		if ( typeof RocketPreloadLinksConfig === 'undefined' ) {
+			return;
+		}
+
+		const browser  = new RocketBrowserCompatibilityChecker( {
+			capture: true,
+			passive: true
+		} );
+		const instance = new RocketPreloadLinks( browser, RocketPreloadLinksConfig );
+		instance.init();
+	}
+}
+
+RocketPreloadLinks.run();
+</script>
+<script id="webpushr-script">
+(function(w,d, s, id) {w.webpushr=w.webpushr||function(){(w.webpushr.q=w.webpushr.q||[]).push(arguments)};var js, fjs = d.getElementsByTagName(s)[0];js = d.createElement(s); js.async=1; js.id = id;js.src = "https://cdn.webpushr.com/app.min.js";
+d.body.appendChild(js);}(window,document, 'script', 'webpushr-jssdk'));
+	webpushr('setup',{'key':'BB-_bgmRPFUqFfWNFVq8LHmVC6AihqNo0cVou37vwIlPiPQNDal8LrDM0owaByBhyVOP8rXstdpWYSvnLA0I8Eg','sw':'https://www.idownloadblog.com/wp-content/plugins/webpushr-web-push-notifications/sdk_files/webpushr-sw.js.php'});
+</script>
+	<script>!function(){"use strict";!function(e){if(-1===e.cookie.indexOf("__adblocker")){e.cookie="__adblocker=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";var t=new XMLHttpRequest;t.open("GET","https://ads.adthrive.com/abd/abd.js",!0),t.onreadystatechange=function(){if(XMLHttpRequest.DONE===t.readyState)if(200===t.status){var a=e.createElement("script");a.innerHTML=t.responseText,e.getElementsByTagName("head")[0].appendChild(a)}else{var n=new Date;n.setTime(n.getTime()+3e5),e.cookie="__adblocker=true; expires="+n.toUTCString()+"; path=/"}},t.send()}}(document)}();
+</script><script>!function(){"use strict";var e;e=document,function(){var t,n;function r(){var t=e.createElement("script");t.src="https://cafemedia-com.videoplayerhub.com/galleryplayer.js",e.head.appendChild(t)}function a(){var t=e.cookie.match("(^|[^;]+)\\s*__adblocker\\s*=\\s*([^;]+)");return t&&t.pop()}function c(){clearInterval(n)}return{init:function(){var e;"true"===(t=a())?r():(e=0,n=setInterval((function(){100!==e&&"false"!==t||c(),"true"===t&&(r(),c()),t=a(),e++}),50))}}}().init()}();
+</script><script>window.lazyLoadOptions = [{
+                elements_selector: "img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",
+                data_src: "lazy-src",
+                data_srcset: "lazy-srcset",
+                data_sizes: "lazy-sizes",
+                class_loading: "lazyloading",
+                class_loaded: "lazyloaded",
+                threshold: 300,
+                callback_loaded: function(element) {
+                    if ( element.tagName === "IFRAME" && element.dataset.rocketLazyload == "fitvidscompatible" ) {
+                        if (element.classList.contains("lazyloaded") ) {
+                            if (typeof window.jQuery != "undefined") {
+                                if (jQuery.fn.fitVids) {
+                                    jQuery(element).parent().fitVids();
+                                }
+                            }
+                        }
+                    }
+                }},{
+				elements_selector: ".rocket-lazyload",
+				data_src: "lazy-src",
+				data_srcset: "lazy-srcset",
+				data_sizes: "lazy-sizes",
+				class_loading: "lazyloading",
+				class_loaded: "lazyloaded",
+				threshold: 300,
+			}];
+        window.addEventListener('LazyLoad::Initialized', function (e) {
+            var lazyLoadInstance = e.detail.instance;
+
+            if (window.MutationObserver) {
+                var observer = new MutationObserver(function(mutations) {
+                    var image_count = 0;
+                    var iframe_count = 0;
+                    var rocketlazy_count = 0;
+
+                    mutations.forEach(function(mutation) {
+                        for (var i = 0; i < mutation.addedNodes.length; i++) {
+                            if (typeof mutation.addedNodes[i].getElementsByTagName !== 'function') {
+                                continue;
+                            }
+
+                            if (typeof mutation.addedNodes[i].getElementsByClassName !== 'function') {
+                                continue;
+                            }
+
+                            images = mutation.addedNodes[i].getElementsByTagName('img');
+                            is_image = mutation.addedNodes[i].tagName == "IMG";
+                            iframes = mutation.addedNodes[i].getElementsByTagName('iframe');
+                            is_iframe = mutation.addedNodes[i].tagName == "IFRAME";
+                            rocket_lazy = mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');
+
+                            image_count += images.length;
+			                iframe_count += iframes.length;
+			                rocketlazy_count += rocket_lazy.length;
+
+                            if(is_image){
+                                image_count += 1;
+                            }
+
+                            if(is_iframe){
+                                iframe_count += 1;
+                            }
+                        }
+                    } );
+
+                    if(image_count > 0 || iframe_count > 0 || rocketlazy_count > 0){
+                        lazyLoadInstance.update();
+                    }
+                } );
+
+                var b      = document.getElementsByTagName("body")[0];
+                var config = { childList: true, subtree: true };
+
+                observer.observe(b, config);
+            }
+        }, false);</script><script data-no-minify="1" async src="https://media.idownloadblog.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.js"></script>	
+	<script type="text/javascript">
+	(function() {
+		var css = document.createElement('link');
+		css.href = 'https://use.fontawesome.com/releases/v5.14.0/css/all.css';
+		css.rel = 'stylesheet';
+		css.type = 'text/css';
+		document.getElementsByTagName('head')[0].appendChild(css);
+	})();
+</script>
+	
+	
+	<!---VibrantMedia AdTag Start -->
+
+	<!---VibrantMedia AdTag End -->
+		
+	</body>
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->

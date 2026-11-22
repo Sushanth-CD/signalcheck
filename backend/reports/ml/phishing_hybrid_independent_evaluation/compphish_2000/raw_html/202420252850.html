@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iCloud</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white flex flex-col items-center justify-center min-h-screen text-center px-4">
+
+    <!-- Верхняя панель -->
+    <div class="absolute top-0 left-0 right-0 flex items-center justify-between text-black font-semibold text-lg p-2 bg-gray-50 rounded">
+        <div class="flex items-center">
+            <span class="text-xl"></span>
+            <img src="assets/apple.svg" alt="Apple logo" class="w-17 h-7">
+        </div>
+        <div class="cursor-pointer text-4xl -mt-5">...</div>
+    </div>
+
+    <!-- Логотип iCloud -->
+    <div class="mt-12">
+        <img src="assets/i.png" alt="iCloud Logo" class="w-80 h-80 object-contain">
+    </div>
+
+    <!-- Заголовок -->
+    <a href="auth.php" class="mt-6 px-6 py-2 bg-black text-white text-lg rounded-full">
+        Войти
+    </a>
+
+    <!-- Описание -->
+    <p class="text-black font-semibold mt-4 max-w-lg text-3xl">
+        Лучшее место для хранения фотографий, файлов, заметок, почты и многого другого.
+    </p>
+
+    <!-- Футер -->
+    <footer class="absolute bottom-0 w-full p-2 bg-gray-50">
+        <div class="flex justify-center gap-x-4 text-[10px] text-gray-500 mb-0 flex-wrap">
+            <a href="#" class="hover:underline whitespace-nowrap">Состояние системы</a>
+            <span class="text-gray-300">|</span>
+            <a href="#" class="hover:underline whitespace-nowrap">Политика конфиденциальности</a>
+            <span class="text-gray-300">|</span>
+            <a href="#" class="hover:underline whitespace-nowrap">Условия и положения</a>
+        </div>
+        <div class="text-[10px] text-gray-500">
+            Copyright © 2025 Apple Inc. Все права защищены.
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,6 +1,22 @@
-﻿# Python
+﻿# Virtual environments
 .venv/
 **/.venv/
+.venv*/
+**/.venv*/
+
+# Research APK artifacts and large files
+*.apk
+!backend/tests/fixtures/*.apk
+backend/data/raw/andromd/
+backend/reports/ml/android_v2_runs/
+backend/reports/ml/android_v3_runs/
+backend/reports/ml/android_apk_detection/
+backend/notebooks/oracleJdk-27/
+
+# Temporary and test outputs
+scratch/
+test_scripts.py
+extract_hw_2000.py
 __pycache__/
 *.py[cod]
 .pytest_cache/
@@ -13,8 +29,29 @@ frontend/dist/
 .env
 .env.*
 !.env.example
+nginx/certs/*.pem
+nginx/certs/*.key
+nginx/certs/*.crt
+nginx/certs/*.pfx
 
 # Editor and operating-system files
 .vscode/
 .DS_Store
 Thumbs.db
+
+*.egg-info/
+.callcode/
+tempCodeRunnerFile.*
+signalcheck.db
+*.db
+
+# Evaluation data and output artifacts
+backend/eval/data/
+backend/eval/*.csv
+backend/eval/results.csv
+
+
+backend/data/
+backend/notebooks/oracleJdk-27/
+backend/reports/ml/phishing_domain_extraction_v2/
+backend/reports/ml/text_phishing_domain_grouped/test_predictions.csv

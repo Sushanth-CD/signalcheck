@@ -1,0 +1,131 @@
+{
+  "manifest_format_version": "1.0.0",
+  "created_utc": "2026-10-31T15:45:00Z",
+  "project": "Cyber Security Awareness Platform",
+  "purpose": "Freeze models, feature extractors, and routing rules prior to independent evaluation",
+  "status": "FROZEN_READ_ONLY",
+  "models": {
+    "v2_baseline": {
+      "model_name": "Phishing Classifier V2 (TF-IDF + Logistic Regression)",
+      "relative_path": "backend/reports/ml/phishing_domain_holdout_v2/model.joblib",
+      "sha256": "97ca5d41ea4322965eec838968e80838113be130684f9703f77a51e663355921",
+      "file_size_bytes": 8296368,
+      "feature_count": 168757,
+      "pipeline_steps": ["tfidf", "classifier"],
+      "hyperparameters": {
+        "vectorizer": {
+          "analyzer": "word",
+          "ngram_range": [1, 2],
+          "min_df": 2,
+          "max_df": 0.995,
+          "max_features": 200000,
+          "sublinear_tf": true,
+          "lowercase": false,
+          "preprocessing": "backend.ml.text_normalization.normalize_for_model"
+        },
+        "logistic_regression": {
+          "C": 1.0,
+          "solver": "liblinear",
+          "class_weight": null,
+          "max_iter": 2000,
+          "random_state": 20261026
+        }
+      },
+      "reference_threshold": 0.50
+    },
+    "v3_dual_channel": {
+      "model_name": "Phishing Classifier V3 Dual-Channel (Content + URL TF-IDF)",
+      "relative_path": "backend/reports/ml/phishing_v3_experiments/dual_channel_v3_model.joblib",
+      "sha256": "c0b514d976f88b025a3ebd101120cbbd1266dde6799564b65dba87023a16dfd9",
+      "file_size_bytes": 2812543,
+      "pipeline_steps": ["features", "classifier"],
+      "feature_branches": {
+        "content_branch": {
+          "extractor": "backend.ml.dual_channel.ContentChannelExtractor",
+          "extraction_scope": "HTML title, anchor text, visible body text (excluding script/style/markup); URLs stripped in plain text",
+          "vectorizer": {
+            "analyzer": "word",
+            "ngram_range": [1, 2],
+            "min_df": 2,
+            "max_df": 0.995,
+            "max_features": 150000,
+            "sublinear_tf": true,
+            "lowercase": false
+          }
+        },
+        "url_branch": {
+          "extractor": "backend.ml.dual_channel.URLChannelExtractor",
+          "extraction_scope": "High-confidence offline URLs; host_<hostname>, subdomain labels, path tokens, param_<key> names (values excluded)",
+          "vectorizer": {
+            "analyzer": "word",
+            "ngram_range": [1, 2],
+            "min_df": 2,
+            "max_df": 0.995,
+            "max_features": 50000,
+            "sublinear_tf": true,
+            "lowercase": false
+          }
+        }
+      },
+      "logistic_regression": {
+        "C": 1.0,
+        "solver": "liblinear",
+        "class_weight": null,
+        "max_iter": 2000,
+        "random_state": 20261026
+      },
+      "reference_threshold": 0.50
+    },
+    "v3_content_only": {
+      "model_name": "Phishing Classifier V3 Content-Only Baseline",
+      "relative_path": "backend/reports/ml/phishing_v3_experiments/content_only_model.joblib",
+      "sha256": "ff837956a76e31e12b0e47b9139f57cffe2894c104c677a0bcc788769bc71faf",
+      "file_size_bytes": 2379487,
+      "reference_threshold": 0.50
+    },
+    "v3_url_only": {
+      "model_name": "Phishing Classifier V3 URL-Only Baseline",
+      "relative_path": "backend/reports/ml/phishing_v3_experiments/url_only_model.joblib",
+      "sha256": "d180be6e80207bbce0720bd4d846334247d8266a18f5860be6d204b1ab5dfd72",
+      "file_size_bytes": 434335,
+      "reference_threshold": 0.50
+    }
+  },
+  "routing_rules": {
+    "detection_rules": {
+      "html_detection_regex": "(?is)<\\s*(?:!doctype\\s+html|html|head|body|meta|link|a|form|div|p)\\b",
+      "long_message_threshold_chars": 1000,
+      "short_message_threshold_chars": 100,
+      "short_url_only_criteria": "text_len <= 100 AND has_urls == True AND is_html == False"
+    },
+    "candidate_policies": {
+      "policy_1": {
+        "name": "Policy 1 (V2 All)",
+        "routing_rule": "Route all inputs to V2"
+      },
+      "policy_2": {
+        "name": "Policy 2 (V3 Dual All)",
+        "routing_rule": "Route all inputs to V3 Dual-Channel"
+      },
+      "policy_3": {
+        "name": "Policy 3 (HTML -> V3 Dual, else V2) [Primary Candidate]",
+        "routing_rule": "If match(html_detection_regex) -> route to V3 Dual; Else -> route to V2"
+      },
+      "policy_4": {
+        "name": "Policy 4 (HTML or Long -> V3 Dual, else V2) [Alternative Candidate]",
+        "routing_rule": "If match(html_detection_regex) OR length(text) > 1000 -> route to V3 Dual; Else -> route to V2"
+      }
+    }
+  },
+  "evaluation_thresholds": {
+    "primary_threshold": 0.50,
+    "high_specificity_threshold": 0.68,
+    "max_f1_threshold": 0.35
+  },
+  "invariants": {
+    "no_model_retraining": true,
+    "no_split_modification": true,
+    "no_v2_test_set_access_as_independent_evidence": true,
+    "offline_evaluation_only": true
+  }
+}

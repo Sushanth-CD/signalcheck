@@ -1,0 +1,1998 @@
+
+
+<!-- THEME DEBUG -->
+<!-- CALL: theme('html') -->
+<!-- FILE NAME SUGGESTIONS:
+   * html--front.tpl.php
+   * html--node.tpl.php
+   x html.tpl.php
+-->
+<!-- BEGIN OUTPUT from 'sites/all/themes/ernet/templates_changes/html.tpl.php' -->
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="ie6 ie" lang="en" dir="ltr"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 ie" lang="en" dir="ltr"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 ie" lang="en" dir="ltr"> <![endif]-->
+<!--[if gt IE 8]> <!--> <html class="" lang="en" dir="ltr"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="alternate" type="application/rss+xml" title="Official Website of ERNET India Education &amp; Research Network RSS" href="https://ernet.in/rss.xml" />
+<link rel="shortcut icon" href="https://ernet.in/sites/all/themes/ernet/favicon.ico" type="image/vnd.microsoft.icon" />
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+   <title>Official Website of ERNET India Education &amp; Research Network</title>   <style   media="all">
+@import url("https://ernet.in/modules/system/system.base.css?seca94");
+@import url("https://ernet.in/modules/system/system.menus.css?seca94");
+@import url("https://ernet.in/modules/system/system.messages.css?seca94");
+@import url("https://ernet.in/modules/system/system.theme.css?seca94");
+</style>
+<style   media="all">
+@import url("https://ernet.in/modules/comment/comment.css?seca94");
+@import url("https://ernet.in/sites/all/modules/date/date_api/date.css?seca94");
+@import url("https://ernet.in/sites/all/modules/date/date_popup/themes/datepicker.1.7.css?seca94");
+@import url("https://ernet.in/sites/all/modules/date/date_repeat_field/date_repeat_field.css?seca94");
+@import url("https://ernet.in/modules/field/theme/field.css?seca94");
+@import url("https://ernet.in/modules/node/node.css?seca94");
+@import url("https://ernet.in/modules/search/search.css?seca94");
+@import url("https://ernet.in/modules/user/user.css?seca94");
+@import url("https://ernet.in/modules/forum/forum.css?seca94");
+@import url("https://ernet.in/sites/all/modules/views/css/views.css?seca94");
+@import url("https://ernet.in/sites/all/modules/ckeditor/css/ckeditor.css?seca94");
+</style>
+<style   media="all">
+@import url("https://ernet.in/sites/all/modules/ctools/css/ctools.css?seca94");
+@import url("https://ernet.in/sites/all/modules/panels/css/panels.css?seca94");
+</style>
+<link   rel="stylesheet" href="https://ernet.in/sites/all/modules/popup/popup.css?seca94" media="all" />
+<style   media="all">
+@import url("https://ernet.in/modules/locale/locale.css?seca94");
+@import url("https://ernet.in/sites/all/modules/custom_search/custom_search.css?seca94");
+@import url("https://ernet.in/sites/all/modules/styleswitcher/styleswitcher.overlay.css?seca94");
+@import url("https://ernet.in/sites/all/modules/quicktabs/css/quicktabs.css?seca94");
+@import url("https://ernet.in/sites/all/modules/quicktabs/quicktabs_tabstyles/tabstyles/navlist/navlist.css?seca94");
+</style>
+<style   media="all">
+@import url("https://ernet.in/sites/all/themes/ernet/style.css?seca94");
+</style>
+<link   rel="stylesheet" href="https://ernet.in/styleswitcher/css/berry?seca94" media="all" id="styleswitcher-css" />
+  <script   src="https://ernet.in/misc/jquery.js?v=1.4.4"></script>
+<script   src="https://ernet.in/misc/jquery-extend-3.4.0.js?v=1.4.4"></script>
+<script   src="https://ernet.in/misc/jquery.once.js?v=1.2"></script>
+<script   src="https://ernet.in/misc/drupal.js?seca94"></script>
+<script   src="https://ernet.in/misc/jquery.cookie.js?v=1.0"></script>
+<script   src="https://ernet.in/misc/progress.js?seca94"></script>
+<script   src="https://ernet.in/sites/all/modules/colorbox/js/colorbox.js?seca94"></script>
+<script   src="https://ernet.in/sites/all/modules/colorbox/js/colorbox_load.js?seca94"></script>
+<script   src="https://ernet.in/sites/all/modules/colorbox/js/colorbox_inline.js?seca94"></script>
+<script   src="https://ernet.in/sites/all/modules/popup/popup.js?seca94"></script>
+<script   src="https://ernet.in/sites/all/modules/custom_search/js/custom_search.js?seca94"></script>
+<script   src="https://ernet.in/sites/all/modules/styleswitcher/styleswitcher.js?seca94"></script>
+<script   src="https://ernet.in/sites/all/modules/quicktabs/js/quicktabs.js?seca94"></script>
+<script   src="https://ernet.in/sites/all/themes/ernet/js/slider.js?seca94"></script>
+<script  >
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"berry","theme_token":"wWYCGXRpyA_0ZWyKKQVweXa1YmBlqjkudO3PvDRv-OE","js":{"misc\/jquery.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"misc\/jquery.cookie.js":1,"misc\/progress.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox_load.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox_inline.js":1,"sites\/all\/modules\/popup\/popup.js":1,"sites\/all\/modules\/custom_search\/js\/custom_search.js":1,"sites\/all\/modules\/styleswitcher\/styleswitcher.js":1,"sites\/all\/modules\/quicktabs\/js\/quicktabs.js":1,"sites\/all\/themes\/ernet\/js\/slider.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/comment\/comment.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"sites\/all\/modules\/date\/date_popup\/themes\/datepicker.1.7.css":1,"sites\/all\/modules\/date\/date_repeat_field\/date_repeat_field.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"modules\/forum\/forum.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ckeditor\/css\/ckeditor.css":1,"\/example2\/colorbox.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/panels\/css\/panels.css":1,"sites\/all\/modules\/popup\/popup.css":1,"modules\/locale\/locale.css":1,"sites\/all\/modules\/custom_search\/custom_search.css":1,"sites\/all\/modules\/styleswitcher\/styleswitcher.overlay.css":1,"sites\/all\/modules\/quicktabs\/css\/quicktabs.css":1,"sites\/all\/modules\/quicktabs\/quicktabs_tabstyles\/tabstyles\/navlist\/navlist.css":1,"sites\/all\/themes\/ernet\/style.css":1,"https:\/\/ernet.in\/styleswitcher\/css\/berry":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"popup":{"effects":{"show":{"default":"this.body.show();","fade":"\n        if (this.opacity){\n          this.body.fadeTo(\u0027medium\u0027,this.opacity);\n        }else{\n          this.body.fadeIn(\u0027medium\u0027);\n        }","slide-down":"this.body.slideDown(\u0027medium\u0027)","slide-down-fade":"\n        this.body.animate(\n          {\n            height:\u0027show\u0027,\n            opacity:(this.opacity ? this.opacity : \u0027show\u0027)\n          }, \u0027medium\u0027\n        );"},"hide":{"default":"this.body.hide();","fade":"this.body.fadeOut(\u0027medium\u0027);","slide-down":"this.body.slideUp(\u0027medium\u0027);","slide-down-fade":"\n        this.body.animate(\n          {\n            height:\u0027hide\u0027,\n            opacity:\u0027hide\u0027\n          }, \u0027medium\u0027\n        );"}},"linger":"0","delay":"0"},"custom_search":{"form_target":"_self","solr":0},"styleSwitcher":{"styles":{"custom\/theme2":{"label":"......","name":"custom\/theme2","path":"https:\/\/ernet.in\/sites\/all\/themes\/ernet\/style2.css","is_default":false,"status":true,"weight":0,"_i":0,"theme":"berry"},"custom\/default":{"label":"....","name":"custom\/default","path":"https:\/\/ernet.in\/styleswitcher\/css\/berry","is_default":false,"status":true,"weight":0,"_i":1,"theme":"berry"}},"default":"custom\/default","enableOverlay":1,"cookieExpire":31536000,"theme":"berry"},"urlIsAjaxTrusted":{"\/":true},"quicktabs":{"qt_about_us":{"name":"about_us","tabs":[{"nid":"210","view_mode":"full","hide_title":1},{"nid":"137","view_mode":"full","hide_title":1},{"nid":"2","view_mode":"full","hide_title":1},{"nid":"107","view_mode":"full","hide_title":1},{"nid":"5","view_mode":"full","hide_title":1},{"nid":"4","view_mode":"full","hide_title":1},{"nid":"767","view_mode":"full","hide_title":1}],"custom_search":{"form_target":"_self","solr":0}}}});
+//--><!]]>
+</script>
+   <!-- <link href='//fonts.googleapis.com/css?family=Anton|Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>     
+  changes dated  09-oct-2017   -->
+   
+   
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+    <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  
+<script>
+	jQuery(document).ready(function () {	
+	/* jQuery('.navigation li').hover(
+		function () {
+			jQuery('ul', this).slideDown();
+		}, 
+		function () {
+			jQuery('ul', this).slideUp();	
+		}
+	); */
+	
+/* 	$('.menu > ul > li > a').focus(function () {
+		$('.menu > ul > li').removeClass('force-show');
+		$(this).parent().addClass('force-show');
+	});
+
+	$(document).click(function () {
+		$('.menu > ul > li').removeClass('force-show');
+	}); */
+	
+	/* jQuery(document).on('focus','.navigation .expanded',function(){
+	//jQuery('.navigation li').focus(function() {  
+	   jQuery('ul', this).slideDown();
+	}).on('blur','.navigation .expanded',function(){ 
+		jQuery('.expanded ul').not(this).slideUp();
+	}); */
+	 $(document).on('focus', '#navigation> .container> ul > li > a', function () {
+            $('#navigation> .container> ul > li').removeClass('force-show');
+            $(this).parent().addClass('force-show');
+        });
+
+
+	$(document).click(function () {
+		$('#navigation> .container> ul > li').removeClass('force-show');
+	});
+	/* jQuery(document).on('focus','.navigation .expanded',function(){
+	//jQuery('.navigation li').focus(function() {  
+	   jQuery('ul', this).slideDown();
+	},function () {
+			jQuery('ul', this).slideUp();	
+		}
+	);
+	jQuery(document).focus('.navigation .expanded',function(){
+	//jQuery('.navigation li').focus(function() {  
+	   $(this).trigger('mouseenter');
+	}); */
+	
+	$("a[href$='.pdf'],a[href$='.Pdf'],a[href$='.PDF']").each(function() {
+	
+if( location.hostname === this.hostname ) {
+var url = $(this).attr('href');
+var filename = url.substring(url.lastIndexOf('/')+1);
+var newurl='/sites/default/files/pdf/'+filename;
+
+var newurlall='https://ernet.in/sites/default/files/pdf/'+filename;
+				if(newurl==url || newurlall==url){
+				 var links='https://ernet.in/sites/default/files/pdf/';
+		$(this).attr('href','https://ernet.in/sites/default/files/pdf/'+filename);
+		$('<img class="file-icon2" alt="PDF icon" title="application/pdf" src="https://ernet.in/modules/file/icons/application-pdf.png"><span class="newsize">('+getFileSize(links+filename)+')</span>').insertAfter(this);
+
+
+				}
+				var newurl2='/sites/default/files/'+filename;
+				var newurlall2='https://ernet.in/sites/default/files/'+filename;
+				if(newurl2==url || newurlall2==url){
+					var links='https://ernet.in/sites/default/files/';
+					if(getFileSize(links+filename)=='0byte'){
+						$(this).attr('href','https://ernet.in/sites/default/files/'+filename);
+		             			  var links='https://ernet.in/sites/default/files/';
+		$(this).attr('href','https://ernet.in/sites/default/files/'+filename);
+		$('<img class="file-icon2" alt="PDF icon" title="application/pdf" src="https://ernet.in/modules/file/icons/application-pdf.png"><span class="newsize">('+getFileSize(links+filename)+')</span>').insertAfter(this); 
+					}
+					else{
+						$(this).attr('href','https://ernet.in/sites/default/files/'+filename);
+		$('<img class="file-icon2" alt="PDF icon" title="application/pdf" src="https://ernet.in/modules/file/icons/application-pdf.png"><span class="newsize">('+getFileSize(links+filename)+')</span>').insertAfter(this);
+					}
+					
+					 
+		
+
+
+				}
+				else{
+			
+				}
+
+}
+
+
+});
+
+
+$( 'a' ).each(function() {
+  if( location.hostname === this.hostname || !this.hostname.length ) {
+      $(this).addClass('local');
+  } else {
+     $(this).addClass('external');
+	}
+});
+
+/* $(".external").click(function () {
+	var href= $(this).attr('href');
+   
+ if (confirm("External site that opens in a new window " + href) == true) {
+        return true;
+    } else {
+        return false;
+    }
+
+}); 
+
+
+$("li.en a").click(function () {
+	var href= $(this).attr('href');
+   
+ if (confirm("क्या आप वेबसाइट की भाषा अंग्रेजी परिवर्तित  करना चाहते है ? ") == true) {
+        return true;
+    } else {
+        return false;
+    }
+
+});
+$("li.hi a").click(function () {
+	var href= $(this).attr('href');
+   
+ if (confirm("Do you want to change website language in Hindi ?") == true) {
+        return true;
+    } else {
+        return false;
+    }
+
+}); */
+
+$(document).ready(function() {
+    var elements = $("#edit-submitted-name");
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].oninvalid = function(e) {
+            e.target.setCustomValidity("");
+
+            if (!e.target.validity.valid) {
+                e.target.setCustomValidity("Please fill out this field"); 
+            }
+        };
+    }
+	var elements4 = $("#edit-submitted-country");
+    for (var i = 0; i < elements4.length; i++) {
+        elements4[i].oninvalid = function(e) {
+            e.target.setCustomValidity("");
+
+            if (!e.target.validity.valid) {
+                e.target.setCustomValidity("Please fill out this field"); 
+            }
+        };
+    }
+	var elements5 = $("#edit-submitted-state");
+    for (var i = 0; i < elements5.length; i++) {
+        elements5[i].oninvalid = function(e) {
+            e.target.setCustomValidity("");
+
+            if (!e.target.validity.valid) {
+                e.target.setCustomValidity("Please fill out this field"); 
+            }
+        };
+    }
+	var elements6 = $("#edit-submitted-city");
+    for (var i = 0; i < elements6.length; i++) {
+        elements6[i].oninvalid = function(e) {
+            e.target.setCustomValidity("");
+
+            if (!e.target.validity.valid) {
+                e.target.setCustomValidity("Please fill out this field"); 
+            }
+        };
+    }
+	var elements7 = $("#edit-submitted-address");
+    for (var i = 0; i < elements7.length; i++) {
+        elements7[i].oninvalid = function(e) {
+            e.target.setCustomValidity("");
+
+            if (!e.target.validity.valid) {
+                e.target.setCustomValidity("Please fill out this field"); 
+            }
+        };
+    }
+	
+	var elements8 = $("#edit-submitted-contactnumber");
+    for (var i = 0; i < elements8.length; i++) {
+        elements8[i].oninvalid = function(e) {
+            e.target.setCustomValidity("");
+
+            if (!e.target.validity.valid) {
+                e.target.setCustomValidity("Please fill out this field"); 
+            }
+        };
+    }
+	
+	var elements9 = $("#edit-submitted-subject");
+    for (var i = 0; i < elements9.length; i++) {
+        elements9[i].oninvalid = function(e) {
+            e.target.setCustomValidity("");
+
+            if (!e.target.validity.valid) {
+                e.target.setCustomValidity("Please fill out this field"); 
+            }
+        };
+    }
+	var elements2 = $("#edit-submitted-email");
+    for (var i = 0; i < elements2.length; i++) {
+        elements2[i].oninvalid = function(e) {
+            e.target.setCustomValidity("");
+
+            if (!e.target.validity.valid) {
+                e.target.setCustomValidity("Please Write e-mail"); 
+            }
+        };
+    }
+	var elements3 = $("#edit-submitted-message");
+    for (var i = 0; i < elements3.length; i++) {
+        elements3[i].oninvalid = function(e) {
+            e.target.setCustomValidity("");
+
+            if (!e.target.validity.valid) {
+                e.target.setCustomValidity("Please write your feedback"); 
+            }
+        };
+    }
+});
+// onsubmit starts for feedback
+$(document).ready(function(){  
+    $(".webform-client-form").submit(function(e) {
+		var alpha = /^\s*[a-zA-Z\s]+\s*$/;
+		if(!alpha.test($(".feedback-name").val())){
+			e.preventDefault();
+			alert("Only alphabets are alloweded for name.");
+			$(".feedback-name").focus();
+		}
+		//var alphanumers = /^[a-zA-Z0-9.,- ]+$/;
+		var alphanumers = /^\s*[a-zA-Z0-9,.-\s]+\s*$/;
+		if(!alphanumers.test($(".feedback-feedback").val())){
+			e.preventDefault();
+			alert("No special characters are allowed in feedback");
+			$(".feedback-feedback").focus();
+		}
+		var captcha_value = $('#edit-captcha-response').val();
+  if(captcha_value == "")
+  {
+   e.preventDefault();
+    alert("Please enter the captcha");
+   $("#edit-captcha-response").focus();
+  }
+var x = $(".email").val();
+  var atpos = x.indexOf("@");
+  var dotpos = x.lastIndexOf(".");
+  if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+  e.preventDefault();
+        alert("Please enter a valid e-mail address");
+  $(".email").focus();
+  }
+		   
+    });
+});
+	
+	
+
+
+
+
+	
+	function getFileSize(url)
+{
+    var fileSize = '';
+    var http = new XMLHttpRequest();
+    http.open('HEAD', url, false); // false = Synchronous
+
+    http.send(null); // it will stop here until this http request is complete
+
+    // when we are here, we already have a response, b/c we used Synchronous XHR
+
+    if (http.status === 200) {
+        fileSize = http.getResponseHeader('content-length');
+      /*  console.log('fileSize = ' + fileSize); */
+    }
+	
+	
+	
+	return formatSizeUnits(fileSize);
+}
+function formatSizeUnits(bytes){
+      if      (bytes>=1073741824) {bytes=(bytes/1073741824).toFixed(2)+'GB';}
+      else if (bytes>=1048576)    {bytes=(bytes/1048576).toFixed(2)+'MB';}
+      else if (bytes>=1024)       {bytes=(bytes/1024).toFixed(2)+'KB';}
+      else if (bytes>1)           {bytes=bytes+'bytes';}
+      else if (bytes==1)          {bytes=bytes+'byte';}
+      else                        {bytes='0byte';}
+      return bytes;
+}
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    var elements = document.getElementsByTagName("input");
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].oninvalid = function(e) {
+            e.target.setCustomValidity("");
+            if (!e.target.validity.valid) {
+              //  e.target.setCustomValidity("Please fill out this field");
+            }
+        };
+        elements[i].oninput = function(e) {
+            e.target.setCustomValidity("");
+        };
+    }
+});
+	});
+	</script>
+</head>
+
+<body class="html front not-logged-in one-sidebar sidebar-first page-node i18n-en" >
+  
+
+<!-- THEME DEBUG -->
+<!-- CALL: theme('region') -->
+<!-- FILE NAME SUGGESTIONS:
+   * region--page-top.tpl.php
+   x region.tpl.php
+-->
+<!-- BEGIN OUTPUT from 'sites/all/themes/ernet/templates_changes/region.tpl.php' -->
+ <!-- /.region -->
+
+<!-- END OUTPUT from 'sites/all/themes/ernet/templates_changes/region.tpl.php' -->
+
+  
+
+<!-- THEME DEBUG -->
+<!-- CALL: theme('page') -->
+<!-- FILE NAME SUGGESTIONS:
+   x page--front.tpl.php
+   * page--node.tpl.php
+   * page.tpl.php
+-->
+<!-- BEGIN OUTPUT from 'sites/all/themes/ernet/templates_changes/page--front.tpl.php' -->
+<!-- <div id="loader" class="flexbox" style="position:fixed;z-index:999;width:100vw; height:100vh; background:#fff; align-items: center; justify-content: center; display:flex"><img alt="Loading..." src="/sites/all/themes/ernet/images/loader.gif"></div>
+<script>
+var myVar;
+myFunction();
+function myFunction() {
+  myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loader").remove();
+}
+</script> -->
+
+
+	
+
+	<script  src='sites/all/themes/ernet/assets/js/jquery.min.js'></script>
+	<script src="sites/all/themes/ernet/js/jquery.js"></script>	
+	<script src="sites/all/themes/ernet/js/ImageScroll.js"></script>	
+
+	<script  src="sites/all/themes/ernet/assets/js/modernizr-latest.js"></script> 
+	<script  src='sites/all/themes/ernet/assets/js/fancybox/jquery.fancybox.pack.js'></script>
+
+	<script src='sites/all/themes/ernet/assets/js/jquery.mobile.customized.min.js'></script>
+	<script  src='sites/all/themes/ernet/assets/js/jquery.easing.1.3.js'></script> 
+	<script src='sites/all/themes/ernet/assets/js/camera.min.js'></script> 
+	<script src="sites/all/themes/ernet/assets/js/bootstrap.min.js"></script> 
+	<script src="sites/all/themes/ernet/assets/js/custom.js"></script>
+
+	<link rel="stylesheet" media="screen" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" />
+	<link rel="stylesheet" href="sites/all/themes/ernet/assets/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="sites/all/themes/ernet/assets/css/font-awesome.min.css" /> 
+	<link rel="stylesheet" href="sites/all/themes/ernet/assets/css/bootstrap-theme.css" media="screen" /> 
+	<link rel="stylesheet" href="sites/all/themes/ernet/assets/css/style.css">
+	<link rel="stylesheet" href="sites/all/themes/ernet/css/style.css">
+	<link rel='stylesheet' id='camera-css'  href='sites/all/themes/ernet/assets/css/camera.css'  media='all' />
+
+	<script>
+	(function ($) { // JavaScript should be compatible with other libraries than jQuery
+	$(function(){
+	$(document).ready(function(){
+	//$("#custom-search-blocks-form-1").removeAttr("role");
+	//$( ".quicktabs-style-sky li a" ).attr( "href","javascript:void(0)" );
+	$( ".quicktabs-style-sky li a").attr("tabindex","0");
+	$( ".quicktabs-style-sky li").attr("tabindex","0");
+
+	});
+	});
+	})(jQuery);
+		jQuery(document).ready(function () {	
+		/* jQuery('.navigation li').hover(
+			function () {
+				jQuery('ul', this).slideDown();
+			}, 
+			function () {
+				jQuery('ul', this).slideUp();	
+			}
+		); */
+		
+					$('.style-theme2').attr('title','Black Theme');
+		$('.style-default').attr('title','Default Theme');
+				});
+		
+		
+		</script>
+	<script>
+
+	$(document).ready(function(){
+
+			 $(".custom-list p").contents().unwrap();
+			 });
+			 
+	</script>
+<style>
+
+    .om-advertisement {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  font-size: 15px;
+  background-image: linear-gradient(135deg, #065659 10%, #5151E5 100%);
+  white-space: nowrap;
+  padding: 10px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.text-advertisement-new {
+	 display: block !important;
+  display: inline-block;
+  color: white !important;
+  text-decoration: none;
+  position: relative;
+  font-weight: bold;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.text-advertisement-new:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.file-icon2,
+.newsize {
+  vertical-align: middle;
+}
+
+.advertisement-content {
+  display: inline-block;
+  position: absolute;
+  animation: scroll-right 20s linear infinite;
+}
+
+@keyframes scroll-right {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+
+  
+span.logo-information {
+    display: block;
+    margin-left: 4px;
+    color: #000000;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: arial;
+}
+
+.form-actions {
+    width: 25%;
+    display: inline-block;
+}
+
+.tag-text {
+    display: inline-block;
+    padding-top: 30px;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: left;
+    width: 80%;
+    color: #000000;
+    margin-left: 10px;
+}
+
+.tag-image {
+    padding-top: 14px;
+    display: inline-block;
+    width: 10%;
+}
+
+
+
+.form-item-custom-search-blocks-form-1 {
+    width: 70%;
+    display: inline-block;
+}
+
+/*
+#popup-banner {
+        position: fixed;
+        top: 40%;
+        left: 84%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        max-width: 500px;
+        background-color: #5151E5;
+        border: 2px solid #ddd;
+        z-index: 1000;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        text-align: center;
+         border-radius: 15px;
+    }
+
+    .popup-content {
+        position: relative;
+    }
+
+    .popup-close {
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        background: #f44336;
+        color: white;
+        font-weight: bold;
+        padding: 5px 10px;
+        cursor: pointer;
+        border-radius: 50%; /* Curved close button */
+    }*/
+ /* #popup-banner button:hover {
+	    background-color: #0056b3;
+	}
+
+#popup-banner button a {
+    color: white;
+    text-decoration: none;
+}
+
+#popup-banner button a:hover {
+    text-decoration: underline;
+}*/
+
+</style>
+		  
+	<div class="header_top_container">
+		<div class="container">
+		 <div class="row">
+<!--		 <div class="col-md-4" >
+		 <a href="https://ernet.in/" id="home"><img src="sites/all/themes/ernet/assets/images/wh.png" width="20" alt="This is home logo image">
+		 <b style="color:#000">Home</b></a>
+		 </div> -->
+
+		 <div class="col-md-7 ">
+			 <div class="topbar-right">
+				 <ul>
+						<li class="header-hide"><a href="https://www.ernet.in/content/screen-reader-access" >Screen Reader Access</a></li>
+						<li class="header-hide header-skip"><a href="#COntentDiv">Skip to main content</a></li>
+						<li class="header-hide">
+
+<!-- THEME DEBUG -->
+<!-- CALL: theme('region') -->
+<!-- FILE NAME SUGGESTIONS:
+   * region--homepage-header.tpl.php
+   x region.tpl.php
+-->
+<!-- BEGIN OUTPUT from 'sites/all/themes/ernet/templates_changes/region.tpl.php' -->
+<div class="region region-homepage-header">
+  
+
+<!-- THEME DEBUG -->
+<!-- CALL: theme('block') -->
+<!-- FILE NAME SUGGESTIONS:
+   * block--styleswitcher--styleswitcher.tpl.php
+   * block--styleswitcher.tpl.php
+   * block--homepage-header.tpl.php
+   x block.tpl.php
+-->
+<!-- BEGIN OUTPUT from 'sites/all/themes/ernet/templates_changes/block.tpl.php' -->
+<section id="block-styleswitcher-styleswitcher" class="block block-styleswitcher">
+
+        <h2 class="block-title">Style Switcher</h2>
+    
+  <div class="content">
+    <div class="item-list"><ul><li class="first"><a href="https://ernet.in/styleswitcher/switch/berry/custom/theme2?destination=node" class="style-switcher custom-style style-theme2" data-rel="custom/theme2" rel="nofollow">......</a></li>
+<li class="last"><a href="https://ernet.in/styleswitcher/switch/berry/custom/default?destination=node" class="style-switcher custom-style style-default" data-rel="custom/default" rel="nofollow">....</a></li>
+</ul></div>  </div>
+  
+</section> <!-- /.block -->
+
+<!-- END OUTPUT from 'sites/all/themes/ernet/templates_changes/block.tpl.php' -->
+
+</div>
+ <!-- /.region -->
+
+<!-- END OUTPUT from 'sites/all/themes/ernet/templates_changes/region.tpl.php' -->
+
+</li>
+													<li class="header-hide aminus"><a href="#" id="decfont" title="Decrease Font" style="font-size:11px;">A-</a></li>
+							<li class="header-hide anormal"><a href="#" id="normal" title="Normal Font" style="font-size:12px;">A</a></li>
+							<li class="header-hide aplus"><a href="#" id="incfont" title="Increase Font" style="font-size:13px;">A+</a></li>
+												<li id="header-hindi">
+						
+
+<!-- THEME DEBUG -->
+<!-- CALL: theme('region') -->
+<!-- FILE NAME SUGGESTIONS:
+   * region--language-switcher.tpl.php
+   x region.tpl.php
+-->
+<!-- BEGIN OUTPUT from 'sites/all/themes/ernet/templates_changes/region.tpl.php' -->
+<div class="region region-language-switcher">
+  
+
+<!-- THEME DEBUG -->
+<!-- CALL: theme('block') -->
+<!-- FILE NAME SUGGESTIONS:
+   * block--locale--language.tpl.php
+   * block--locale.tpl.php
+   * block--language-switcher.tpl.php
+   x block.tpl.php
+-->
+<!-- BEGIN OUTPUT from 'sites/all/themes/ernet/templates_changes/block.tpl.php' -->
+<section id="block-locale-language" class="block block-locale">
+
+        <h2 class="block-title">Languages</h2>
+    
+  <div class="content">
+    <ul class="language-switcher-locale-url"><li class="en first active"><a href="https://ernet.in/" class="language-link active" xml:lang="en" lang="en">English</a></li>
+<li class="hi last"><a href="https://xn--m1bd4e9a1b9i.xn--h2brj9c/" class="language-link" xml:lang="hi" lang="hi">हिन्दी</a></li>
+</ul>  </div>
+  
+</section> <!-- /.block -->
+
+<!-- END OUTPUT from 'sites/all/themes/ernet/templates_changes/block.tpl.php' -->
+
+</div>
+ <!-- /.region -->
+
+<!-- END OUTPUT from 'sites/all/themes/ernet/templates_changes/region.tpl.php' -->
+
+
+						</li>
+						 <!-- <li><a href="#">Punjabi</a></li> -->
+				</ul>
+			</div>
+		 </div>
+			
+		<div class="col-md-5" id="serach-div-cntnt" >
+		<div ><a href="http://email.gov.in" title="Ernet email" target="_blank">
+    <img src="/sites/all/themes/ernet/img/email.png" 
+         height="25" 
+         width="80" 
+         alt="Email icon for Ernet" 
+         style="margin-right:5px">
+</a>
+<a href="http://ernet.eoffice.gov.in" title="Ernet e-office" target="_blank">
+    <img src="/sites/all/themes/ernet/img/eoffice.png" 
+         height="25" 
+         width="80" 
+         alt="E-office icon for Ernet" 
+         style="margin-right:13px">
+</a>
+</div>
+			
+
+<!-- THEME DEBUG -->
+<!-- CALL: theme('region') -->
+<!-- FILE NAME SUGGESTIONS:
+   * region--content-searching.tpl.php
+   x region.tpl.php
+-->
+<!-- BEGIN OUTPUT from 'sites/all/themes/ernet/templates_changes/region.tpl.php' -->
+<div class="region region-content-searching">
+  
+
+<!-- THEME DEBUG -->
+<!-- CALL: theme('block') -->
+<!-- FILE NAME SUGGESTIONS:
+   * block--custom-search-blocks--1.tpl.php
+   * block--custom-search-blocks.tpl.php
+   * block--content-searching.tpl.php
+   x block.tpl.php
+-->
+<!-- BEGIN OUTPUT from 'sites/all/themes/ernet/templates_changes/block.tpl.php' -->
+<section id="block-custom-search-blocks-1" class="block block-custom-search-blocks">
+
+        <h2 class="block-title">Custom Search 1</h2>
+    
+  <div class="content">
+    <form class="search-form" action="/" method="post" id="custom-search-blocks-form-1" accept-charset="UTF-8"><div><div class="form-item form-type-textfield form-item-custom-search-blocks-form-1">
+  <label for="edit-custom-search-blocks-form-1--2">Search this site </label>
+ <input title="Enter the terms you wish to search for." class="custom-search-box form-text" placeholder="" type="text" id="edit-custom-search-blocks-form-1--2" name="custom_search_blocks_form_1" value="" size="15" maxlength="128" />
+</div>
+<input type="hidden" name="delta" value="1" />
+<input type="hidden" name="form_build_id" value="form-ZGsXJw98kTBlrCNLHiqOxBUex21_s7V315LUP5FC9YY" />
+<input type="hidden" name="form_id" value="custom_search_blocks_form_1" />
+<div class="form-actions form-wrapper" id="edit-actions--2"><input type="submit" id="edit-submit--2" name="op" value="Search" class="form-submit" /></div></div></form>  </div>
+  
+</section> <!-- /.block -->
+
+<!-- END OUTPUT from 'sites/all/themes/ernet/templates_changes/block.tpl.php' -->
+
+</div>
+ <!-- /.region -->
+
+<!-- END OUTPUT from 'sites/all/themes/ernet/templates_changes/region.tpl.php' -->
+
+		</div>
+
+		 </div>
+		
+		</div>
+		</div>
+		<script >
+		$(document).ready(function () {
+			$('#incfont').click(function () {
+				curSize = parseInt($("#COntentDiv").css('font-size')) + 2;
+				if (curSize <= 14)
+				$("#COntentDiv").css('font-size', curSize);
+				
+				$("#footer ul li a").css('font-size', curSize);
+				$("#footer p").css('font-size', curSize);
+				$("#footer div").css('font-size', curSize);
+				$("#footer h4").css('font-size', curSize);
+				$("#navigation ul li a").css('font-size', curSize);
+				$("#COntentDiv p").css('font-size', curSize);
+				$("#COntentDiv div ul li a").css('font-size', curSize);
+				$("#COntentDiv ul li a").css('font-size', curSize);
+				$("#COntentDiv h2").css('font-size', curSize);
+				$(".wrapstagp").css('font-size', curSize);
+				$("span").css('font-size', curSize);
+			});
+			$('#decfont').click(function () {
+				curSize = parseInt($("#COntentDiv").css('font-size')) - 2;
+				if (curSize >= 12)
+				$("#COntentDiv").css('font-size', curSize);
+				 $("#navigation ul li a").css('font-size', curSize);
+				 $("#footer p").css('font-size', curSize);
+				 $("#footer div").css('font-size', curSize);
+				 $("#footer h4").css('font-size', curSize);
+				 $("#footer ul li a").css('font-size', curSize);
+				$("#COntentDiv p").css('font-size', curSize);
+				$("#COntentDiv div ul li a").css('font-size', curSize);
+				$("#COntentDiv ul li a").css('font-size', curSize);
+				$("#COntentDiv h2").css('font-size', curSize);
+				$(".wrapstagp").css('font-size', curSize);
+				$("span").css('font-size', curSize);
+			});
+			$('#normal').click(function () {
+			  $("#COntentDiv").css('font-size', '14px');
+				 $("#navigation ul li a").css('font-size', '14px');
+				 $("#footer p").css('font-size', '14px');
+				 $("#footer h4").css('font-size', '');
+				 $("#footer div").css('font-size', '14px');
+				 $("#footer ul li a").css('font-size', '14px');
+				$("#COntentDiv p").css('font-size', '14px');
+				$("#COntentDiv div ul li a").css('font-size', '14px');
+				$("#COntentDiv ul li a").css('font-size', '14px');
+				$("#COntentDiv h2").css('font-size', '14px');
+				$(".wrapstagp").css('font-size', '14px');
+				$("span").css('font-size', '14px');
+				
+			});
+			
+			
+			 $(".slidertitle").css("display", "block");
+		});
+
+
+	
+	</script>
+	<div id="header-top">
+		<div class="container" >
+			<div class="col-md-6 " style="position:relative;">
+						  <a href="https://ernet.in/" title="Official Website of ERNET India Education &amp; Research Network"  id="logo">
+				<img src="https://ernet.in/sites/all/themes/ernet/logo.png" alt="This is Home logo" width="439px" />
+				<!-- <img src="/sites/all/themes/ernet/75.png" alt="Meity" width="" height="86px" style="float:right; position:absolute"> -->
+				<div class="logo-information">
+					<span class="top_text"> Education and Research Network of India
+</span>
+					<span class="bottom_text">शिक्षण एवं अनुसंधान नेटवर्क ऑफ इंडिया </span> 
+				</div>
+
+			  </a>
+					</div>
+
+ <div class="col-md-2 " style="position:relative;">
+ <div class="nav-brand-logo">
+                            <a target="_blank" href="https://yoga.ayush.gov.in/YAP/Home.php"> <img src=" https://yoga.ayush.gov.in/YAP/IDY/img/logo-img/yoga-logo.png" alt="" width="60" height="70" ></a>
+                        </div>
+		</div>
+			
+			<div class="col-md-4  text-right">
+			  <!-- <div class="tag-text">
+				<div class="tagtext-1">Ministry of Electronics &amp; Information Technology</div>
+				<div class="tagtext-1">Government of India</div>
+			    </div>  
+			    <div class="tag-image"><img alt="Emblem of india" src="/sites/all/themes/ernet/images/Emblem_of_India1.png"></div>
+			 -->
+			 <a title="Ministry of Electronics & IT; Govt of India" href="https://www.meity.gov.in/" target="_blank">
+    <img src="/sites/all/themes/ernet/images/meity.png" alt="Ministry of Electronics & IT; Govt of India Emblem" width="" height="">
+</a>
+<!-- <a title="G20" href="https://www.g20.org" target="_blank">
+    <img src="/sites/all/themes/ernet/images/G20 Logo.png" alt="G20 logo" width="160px" height="">
+</a>
+<a title="ITU WTSA 2024" href="https://www.itu.int/wtsa/2024/" target="_blank">
+    <img src="/sites/all/themes/ernet/images/ITUWSTA PNG LOGO.png" alt="ITU WTSA 2024 logo" width="100px" height="">
+</a> -->
+ 
+			</div>
+
+
+			  <div class="col-md-6 place-right">
+						
+				
+					
+			
+						
+						<div class="clearfix"></div>
+			
+				
+				<!--/.nav-collapse -->
+			</div> 
+		</div>
+		<!-- /.container -->
+	</div> <!-- /#header-top -->
+
+	<!-- <div id="popup-banner" style="display: none;">
+    <div class="popup-content">
+        <span id="popup-close" class="popup-close">&times;</span>
+        <p style="font-size: 19px;">Welcome to ERNET India! Check out our latest updates.</p>
+        <p style="font-size: 19px;">Find the perfect webhosting plan for your business </p>
+         <p style="font-size: 19px;">starting @200</p>
+         <button style="font-size: 25px;"><a href = "https://ernet.in/content/web-hosting-services-0">Explore More...</a></button>
+    </div>
+</div> -->
+
+<script>
+    $(document).ready(function() {
+        // Show the popup banner on page load
+        $('#popup-banner').fadeIn();
+
+        // Close the popup when the close button is clicked
+        $('#popup-close').click(function() {
+            $('#popup-banner').fadeOut();
+        });
+
+        $('#show-menu').click(function() {
+            $('#navigation').toggle();
+        });
+    });
+</script>
+
+
+<div class="responsive-menu">
+    <div class="navigate" id="show-menu">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+</div>
+
+<nav id="navigation" class="navigation">
+    <div class="container clearfix">
+        <ul class="menu"><li class="first leaf"><a href="https://ernet.in/" title="" class="active">Home</a></li>
+<li class="expanded"><a href="https://ernet.in/content/about-us">About Us</a><ul class="menu"><li class="first leaf"><a href="https://ernet.in/content/history">History</a></li>
+<li class="leaf"><a href="https://ernet.in/content/citizen-charter">Citizen Charter</a></li>
+<li class="leaf"><a href="https://ernet.in/content/mission">Mission</a></li>
+<li class="leaf"><a href="https://ernet.in/content/corporate-highlights">Corporate Highlights</a></li>
+<li class="leaf"><a href="https://ernet.in/content/organisation-chart">Organisation Chart</a></li>
+<li class="leaf"><a href="https://ernet.in/content/ernet-centres">ERNET Centres</a></li>
+<li class="last leaf"><a href="https://ernet.in/content/act-rules">Act &amp; Rules</a></li>
+</ul></li>
+<li class="expanded"><a href="https://ernet.in/content/dg-desk">DG Desk</a><ul class="menu"><li class="first leaf"><a href="https://ernet.in/content/director-general-ernet-india">DG-ERNET India</a></li>
+<li class="leaf"><a href="https://ernet.in/content/talk-cyber-security-dg-ernet-india">DG-Talk</a></li>
+<li class="last leaf"><a href="https://ernet.in/content/dg-gallery">DG-Gallery</a></li>
+</ul></li>
+<li class="expanded"><a href="https://ernet.in/content/who-who">Who is Who</a><ul class="menu"><li class="first leaf"><a href="https://ernet.in/content/know-your-ministers">Know Your Ministers</a></li>
+<li class="leaf"><a href="https://ernet.in/content/secretary-meity">Secretary-MeitY</a></li>
+<li class="leaf"><a href="https://ernet.in/content/director-general">Director General</a></li>
+<li class="leaf"><a href="https://ernet.in/content/governing-council-general-body-0">Governing Council</a></li>
+<li class="leaf"><a href="https://ernet.in/content/executive-committee">Executive Committee</a></li>
+<li class="last leaf"><a href="https://ernet.in/content/ernet-telephone-directory">Staff Directory</a></li>
+</ul></li>
+<li class="expanded"><a href="https://ernet.in/" class="active">Info</a><ul class="menu"><li class="first last leaf"><a href="https://ernet.in/content/internal-complaints-committee">INTERNAL COMPLAINTS COMMITTEE</a></li>
+</ul></li>
+<li class="expanded"><a href="https://ernet.in/content/events">Events</a><ul class="menu"><li class="first leaf"><a href="https://ernet.in/content/vigilance-awareness-week-2024">Vigilance Awareness Week - 2024</a></li>
+<li class="leaf"><a href="https://ernet.in/content/farewell-shri-alkesh-kumar-sharma">Farewell of Shri Alkesh Kumar Sharma</a></li>
+<li class="leaf"><a href="https://ernet.in/content/har-ghar-tiranga">Har Ghar Tiranga</a></li>
+<li class="leaf"><a href="https://ernet.in/content/chennai-rd-lab">Chennai R&amp;D Lab</a></li>
+<li class="expanded"><a href="https://ernet.in/" class="active">MoU</a><ul class="menu"><li class="first leaf"><a href="https://ernet.in/content/nitttr">NITTTR</a></li>
+<li class="leaf"><a href="https://ernet.in/content/pondicherry-university">Pondicherry University</a></li>
+<li class="last leaf"><a href="https://ernet.in/content/aicte">AICTE</a></li>
+</ul></li>
+<li class="collapsed"><a href="https://ernet.in/content/past-events">Past event</a></li>
+<li class="last leaf"><a href="https://ernet.in/content/swachhata-pakhwada-01-15-feburary-2024">Swachhata Pakhwada on 01-15 Feburary 2024</a></li>
+</ul></li>
+<li class="expanded"><a href="https://ernet.in/" class="active">Services</a><ul class="menu"><li class="first leaf"><a href="https://ernet.in/content/domain-registration">Domain Registration</a></li>
+<li class="leaf"><a href="https://ernet.in/content/eduroam-0" target="_blank">Eduroam</a></li>
+<li class="leaf"><a href="https://ernet.in/content/web-hosting-services-0">Web Hosting</a></li>
+<li class="leaf"><a href="https://ernet.in/content/campus-wide-networking">Campus Wide Networking</a></li>
+<li class="last leaf"><a href="https://ernet.in/content/vsat-communication-services">VSAT Communication</a></li>
+</ul></li>
+<li class="expanded"><a href="https://ernet.in/content/projects-0">Projects</a><ul class="menu"><li class="first leaf"><a href="https://ernet.in/content/ongoing-projects">Ongoing Projects</a></li>
+<li class="leaf"><a href="https://ernet.in/content/completed-projects">Completed Projects</a></li>
+<li class="last leaf"><a href="https://ernet.in/content/work-based-learning">WORK BASED LEARNING</a></li>
+</ul></li>
+<li class="expanded"><a href="https://ernet.in/" class="active">RTI</a><ul class="menu"><li class="first leaf"><a href="https://ernet.in/content/right-information-act" title="right to information">Right To Information</a></li>
+<li class="last leaf"><a href="https://ernet.in/content/rti-disclosure">RTI-Disclosure</a></li>
+</ul></li>
+<li class="leaf"><a href="https://ernet.in/recruitment">Careers</a></li>
+<li class="expanded"><a href="https://ernet.in/" class="active">Notifications</a><ul class="menu"><li class="first leaf"><a href="https://ernet.in/tender">Tenders</a></li>
+<li class="last leaf"><a href="https://ernet.in/circulars">Circulars &amp; Notices</a></li>
+</ul></li>
+<li class="leaf"><a href="https://ernet.in/content/help-desk">Help Desk</a></li>
+<li class="last leaf"><a href="https://ernet.in/content/contact-us">Contact Us</a></li>
+</ul>    </div>
+</nav>
+<script>
+    // Toggle main menu in mobile view
+    document.getElementById('show-menu').addEventListener('click', function () {
+        const menu = document.querySelector('#navigation .menu');
+        menu.classList.toggle('active');
+    });
+
+    // Toggle submenus in mobile view
+    document.querySelectorAll('#navigation .menu > li').forEach(item => {
+        item.addEventListener('click', function (event) {
+            // Prevent parent menu from closing if submenu is toggled
+            if (window.innerWidth <= 768) {
+                const submenu = this.querySelector('ul');
+                if (submenu) {
+                    event.stopPropagation();
+                    submenu.classList.toggle('active');
+                    this.classList.toggle('expand'); // For rotating the arrow
+                }
+            }
+        });
+    });
+</script>
+<style>
+	@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+    }
+
+    .menu.active {
+        display: block;
+    }
+
+    .menu ul {
+        display: none; /* Hidden by default */
+    }
+
+    .menu ul.active {
+        display: block; /* Show submenu when active */
+    }
+
+    .menu > li > a::after {
+        content: '▼'; /* Add a dropdown arrow */
+        float: right;
+        font-size: 12px;
+        margin-left: 10px;
+        transition: transform 0.3s;
+    }
+
+    .menu > li.expand > a::after {
+        transform: rotate(180deg); /* Rotate arrow when expanded */
+    }
+}
+</style>
+<script>
+    document.getElementById('show-menu').addEventListener('click', function() {
+        const navigation = document.getElementById('navigation');
+        if (navigation.style.display === "none" || navigation.style.display === "") {
+            navigation.style.display = "block"; // Show the menu
+        } else {
+            navigation.style.display = "none"; // Hide the menu
+        }
+    });
+</script>
+
+
+
+
+	<script >
+
+		$(document).ready(function(){
+			
+			$('#show-menu').click(function(){
+				$('#navigation').toggle();
+			});
+			
+			
+		});
+		document.querySelectorAll('.text-advertisement-new').forEach(function(element) {
+    element.style.display = 'block'; // Or any other display property
+});
+
+
+	</script>
+	<!-- /#navigation -->
+	
+
+	<!-- START SLIDER -->
+	<script src="sites/all/themes/ernet/js/jssor.slider-21.1.6.mini.js" ></script>
+	<script >
+			jQuery(document).ready(function ($) {
+				
+				var jssor_1_SlideoTransitions = [
+				  [{b:-1,d:1,o:-1},{b:0,d:1000,o:1}],
+				  [{b:1900,d:2000,x:-379,e:{x:7}}],
+				  [{b:1900,d:2000,x:-379,e:{x:7}}],
+				  [{b:-1,d:1,o:-1,r:288,sX:9,sY:9},{b:1000,d:900,x:-1400,y:-660,o:1,r:-288,sX:-9,sY:-9,e:{r:6}},{b:1900,d:1600,x:-200,o:-1,e:{x:16}}]
+				];
+				
+				var jssor_1_options = {
+				  $AutoPlay: true,
+				  $SlideDuration: 800,
+				  $SlideEasing: $Jease$.$OutQuint,
+				  $PauseOnHover:0,
+				  $CaptionSliderOptions: {
+					$Class: $JssorCaptionSlideo$,
+					$Transitions: jssor_1_SlideoTransitions
+				  },
+				  $ArrowNavigatorOptions: {
+					$Class: $JssorArrowNavigator$
+				  },
+				  $BulletNavigatorOptions: {
+					$Class: $JssorBulletNavigator$
+				  }
+				};
+				
+				var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+				
+				/*responsive code begin*/
+				/*you can remove responsive code if you don't want the slider scales while window resizing*/
+				function ScaleSlider() {
+					var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+					if (refSize) {
+						refSize = Math.min(refSize, 1920);
+						jssor_1_slider.$ScaleWidth(refSize);
+					}
+					else {
+						window.setTimeout(ScaleSlider, 30);
+					}
+				}
+				ScaleSlider();
+			   if (!navigator.userAgent.match(/(iPhone|iPod|iPad|BlackBerry|IEMobile)/)) 
+				{
+					$(window).bind('resize', ScaleSlider);
+				}
+				$('.StartSlideshowBtn').click(function ()
+				{
+				
+		if (jssor_1_slider.$IsAutoPlaying())
+			{
+			jssor_1_slider.$Pause();
+	$('.StartSlideshowBtn_img').attr('src', 'sites/all/themes/ernet/images/pause2.png');
+		}
+		else
+			{
+			jssor_1_slider.$Play();
+	$('.StartSlideshowBtn_img').attr('src', 'sites/all/themes/ernet/images/play2.png');
+		}
+	});
+				/*responsive code end*/
+			});
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</script>
+	   
+	<div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 1349px; height: 450px; overflow: hidden; visibility: visible;">
+			<!-- Loading Screen -->
+			
+			<div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 1349px; height: 450px; overflow: hidden;">
+
+			<!-- <div data-p="225.00" data-po="80% 55%" style="display: block;">
+					<img data-u="image" src="sites/all/themes/ernet/images/image-vigilance.jpeg" alt="This is banner image1" /></a>
+				</div> -->
+				<!-- <div data-p="225.00" data-po="80% 55%" style="display: block;">
+					<img data-u="image" src="sites/all/themes/ernet/images/swachta_hi_seva.jpg" alt="This is banner image1" /></a>
+				</div> -->
+				<!-- <div data-p="225.00" data-po="80% 55%" style="display: block;">
+					<img data-u="image" src="sites/all/themes/ernet/images/intro_pic_en.png" alt="This is banner image1" /></a>
+				</div> -->
+				<!-- <div data-p="225.00" data-po="80% 55%" style="display: block;">
+					<img data-u="image" src="sites/all/themes/ernet/images/Yoga-banner-Ernet2.png" alt="This is banner image1" /></a>
+				</div> -->
+				<!-- <div data-p="225.00" data-po="80% 55%" style="display: block;">
+					<a href="https://innovateindia.mygov.in/ppc-2024/?utm_source=mygov_ppcbanner&utm_medium=banner" target="_blank"> <img data-u="image" src="sites/all/themes/ernet/images/DG-Ernet-4.jpg" alt="This is banner image2" /></a>
+				</div>  -->
+                 
+				<div data-p="225.00" data-po="80% 55%" style="display: block;">
+					<a href="https://yoga.ayush.gov.in/"><img data-u="image" src="sites/all/themes/ernet/images/pmbanner2.jpg" alt="" /></a>
+				</div>
+				<div data-p="225.00" data-po="80% 55%" style="display: block;">
+					<a href="https://yoga.ayush.gov.in/"><img data-u="image" src="sites/all/themes/ernet/images/slider-image2-new.jpg" alt="" /></a>
+				</div>
+				<div data-p="225.00" data-po="80% 55%" style="display: block;">
+					<a href="https://ernet.in/content/eduroam-0"><img data-u="image" src="sites/all/themes/ernet/images/Slider-image53.png" alt="" /></a>
+				</div>
+				
+				
+				<div data-p="225.00" data-po="80% 55%" style="display: block;">
+				<a href="https://ernet.in/content/eduroam-0"><img data-u="image" src="sites/all/themes/ernet/images/slider-image5.png" alt="This is banner image3" /></a>
+				</div>	
+
+				<div data-p="225.00" data-po="80% 55%" style="display: block;">
+					<a href="https://ernet.in/content/web-hosting-services-0" target="_blank"><img data-u="image" src="sites/all/themes/ernet/images/slider-image4.png" alt="" /></a>
+				</div>
+
+				<div data-p="225.00" data-po="80% 55%" style="display: block;">
+					<a href="https://ernet.in/content/eduroam-0"><img data-u="image" src="sites/all/themes/ernet/images/slider-image6.jpg" alt="" /></a>
+				</div>
+				
+				
+
+			
+			
+				
+
+			<!--	 <div data-p="225.00" data-po="80% 55%" style="display: block;">
+					<img data-u="image" src="sites/all/themes/ernet/images/slider-image4.png" alt="" />
+				</div> -->
+			
+			</div>
+
+			
+			<!-- Bullet Navigator Skin Begin -->
+			<!-- jssor slider bullet navigator skin 01 -->
+		   
+			<!-- bullet navigator container -->
+			<div tabindex="0" data-u="navigator" class="jssorb01" style="position: absolute; bottom: 16px; right: 60px;">
+				<!-- bullet navigator item prototype -->
+				<div data-u="prototype" style="POSITION: absolute; WIDTH: 12px; HEIGHT: 12px; display:none"></div>
+			</div>
+			<!-- Bullet Navigator Skin End -->
+			
+			<!-- Arrow Navigator Skin Begin -->
+		
+			<div class="StartSlideshowBtn" tabindex="0" >
+			<img alt="play" src="sites/all/themes/ernet/images/play2.png" class="StartSlideshowBtn_img" />
+			</div>
+			<!-- Arrow Left -->
+			<span data-u="arrowleft" class="jssora05l" style="width: 40px; height: 40px; top: 123px; left: 8px;">
+			</span>
+			<!-- Arrow Right -->
+			<span data-u="arrowright" class="jssora05r" style="width: 40px; height: 40px; top: 123px; right: 8px">
+			</span>
+			<!-- Arrow Navigator Skin End -->
+			
+			
+			<!-- <div class="heading-text">	Welcome to ERNET India
+												
+								<h1 class="animated flipInY delay1">Welcome To ERNET India</h1> <br />
+								<p>Education & Research Network</p>
+							</div> -->
+			<!-- Bullet Navigator -->
+			<div data-u="navigator" class="jssorb05" style="bottom:16px;right:16px;float:right; left:0px;" data-autocenter="1">
+				<!-- bullet navigator item prototype -->
+				<div data-u="prototype" style="width:16px;height:16px;"></div>
+			</div>
+			<!-- Arrow Navigator -->
+			<span data-u="arrowleft" class="jssora22l" style="top:0px;left:8px;width:40px;height:58px;" data-autocenter="2"></span>
+			<span data-u="arrowright" class="jssora22r" style="top:0px;right:8px;width:40px;height:58px;" data-autocenter="2"></span>
+			<!-- Arrow Navigator Skin End -->
+			<a style="display: none" href="http://www.jssor.com">slider html</a>
+			<!-- Trigger -->
+		</div>
+		<div class="om-advertisement">
+			<a class="text-advertisement-new" target="_blank" href="/sites/default/files/pdf/Mha_om-website-hosting.pdf">Office Memorandum for Hosting of Government related websites.</a>
+		</div>
+		
+      
+   
+ 
+	<div class="clear"></div>
+	
+	<!-- END SLIDER -->
+
+
+	<div class="container clearfix">
+				<!-- / start homepage header block -->
+			<div class="page-header" style="display:none;">
+							</div> <!-- / end homepage header -->
+			<div class="clear"></div>
+				<div class="full">
+		
+		
+
+				</div>
+		<div class="clear"></div>
+					<div class="clear">
+
+		</div>
+	</div> <!-- /.container -->
+
+	<section class="container" id="COntentDiv">
+
+		  <div class="row">
+		  
+			<div class="col-md-8"> 
+				
+
+<!-- THEME DEBUG -->
+<!-- CALL: theme('region') -->
+<!-- FILE NAME SUGGESTIONS:
+   * region--homepage-tab.tpl.php
+   x region.tpl.php
+-->
+<!-- BEGIN OUTPUT from 'sites/all/themes/ernet/templates_changes/region.tpl.php' -->
+<div class="region region-homepage-tab">
+  
+
+<!-- THEME DEBUG -->
+<!-- CALL: theme('block') -->
+<!-- FILE NAME SUGGESTIONS:
+   * block--quicktabs--about-us.tpl.php
+   * block--quicktabs.tpl.php
+   * block--homepage-tab.tpl.php
+   x block.tpl.php
+-->
+<!-- BEGIN OUTPUT from 'sites/all/themes/ernet/templates_changes/block.tpl.php' -->
+<section id="block-quicktabs-about-us" class="block block-quicktabs">
+
+      
+  <div class="content">
+    <div  id="quicktabs-about_us" class="quicktabs-wrapper quicktabs-style-navlist"><div class="item-list"><ul class="quicktabs-tabs quicktabs-style-navlist"><li class="active first"><a href="https://ernet.in/node" class="active"> welcome</a></li>
+<li><a href="https://ernet.in/node" class="active">Network</a></li>
+<li><a href="https://ernet.in/node" class="active">Services</a></li>
+<li><a href="https://ernet.in/node" class="active">Projects</a></li>
+<li><a href="https://ernet.in/node" class="active">Training</a></li>
+<li><a href="https://ernet.in/node" class="active">R &amp; D</a></li>
+<li class="last"><a href="https://ernet.in/node" class="active">Domain</a></li>
+</ul></div><div id="quicktabs-container-about_us" class="quicktabs_main quicktabs-style-navlist"><div  id="quicktabs-tabpage-about_us-0" class="quicktabs-tabpage ">
+
+<!-- THEME DEBUG -->
+<!-- CALL: theme('node') -->
+<!-- FILE NAME SUGGESTIONS:
+   * node--210.tpl.php
+   * node--page.tpl.php
+   x node.tpl.php
+-->
+<!-- BEGIN OUTPUT from 'sites/all/themes/ernet/templates_changes/node.tpl.php' -->
+  <article id="node-210" class="node node-page clearfix" about="https://ernet.in/content/welcome-ernet" typeof="foaf:Document">
+
+            <header>
+	
+        
+            	   	        <span property="dc:title" content="" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="0" datatype="xsd:integer" class="rdf-meta element-hidden"></span>  
+      
+          </header>
+	  
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><h2 style=" margin-left:13px; text-align:center; margin-top:-3px"><span style="color: #004bb1">ERNET INDIA<br />
+<span style="font-size:12px;color:#004bb1">An autonomous Scientific Society<br />
+Ministry of Electronics and Information Technology, GoI</span></h2>
+
+<p style= "text-align: justify";><span style="font-family:Lato,sans-serif;">ERNET India, an autonomous scientific society under the administrative control of the Ministry of Electronics &amp; Information Technology is functioning under the overall control and guidance of its Governing Council. The Hon’ble Minister for Electronics &amp; Information Technology is the Chairperson of the Council and the members have been chosen from premier academic &amp; research institutions, government organizations and professional bodies. ERNET India is serving academic and research institutions in the country by innovatively connecting them on Intranet and Internet using appropriate state-of-the-art technologies. Institutions anywhere in the country can now be connected to ERNET network.</span></p>
+
+<h4><a href="https://ernet.in/content/welcome-ernet-0"><span style="font-size:14px; float: right; color:#004bb1 ">View More</span></a></h4>
+</div></div></div>  </div>
+
+      <footer>
+                </footer>
+  
+  
+  </article> <!-- /.node -->
+
+<!-- END OUTPUT from 'sites/all/themes/ernet/templates_changes/node.tpl.php' -->
+
+</div><div  id="quicktabs-tabpage-about_us-1" class="quicktabs-tabpage quicktabs-hide">
+
+<!-- THEME DEBUG -->
+<!-- CALL: theme('node') -->
+<!-- FILE NAME SUGGESTIONS:
+   * node--137.tpl.php
+   * node--page.tpl.php
+   x node.tpl.php
+-->
+<!-- BEGIN OUTPUT from 'sites/all/themes/ernet/templates_changes/node.tpl.php' -->
+  <article id="node-137" class="node node-page clearfix" about="https://ernet.in/content/network" typeof="foaf:Document">
+
+            <header>
+	
+        
+            	   	        <span property="dc:title" content="" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="0" datatype="xsd:integer" class="rdf-meta element-hidden"></span>  
+      
+          </header>
+	  
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><img src="/sites/all/themes/ernet/quicktab-logo/network.png" width="40" height="40" alt="About-Network"><h2 style="display:inline-block; margin-left:13px;"><span style="color: #05719b">Network</span></h2>
+
+<p style= "text-align: justify";>The ERNET network is a judicious mix of terrestrial and satellite based wide area network. The satellite Wide Area Network (WAN) uses Very Small Aperture Terminal (VSAT) technology which is easily
+deployable and facilitates reliable and quick access to remote areas.</p>
+<h5><span style="color: #05719b">IPv6 Enabled Network</span></h5>
+<p style= "text-align: justify";>ERNET network supports IPv4 and IPv6 Internet Protocol in native mode with dual stack, unicast and multicast.</p>
+<h5><span style="color: #05719b">VSAT Network</span></h5>
+<p style= "text-align: justify";>ERNET India operates a VSAT network in C-Band using GSAT satellite for providing Internet & Intranet access to education and research institutions located all over the country. </p>
+
+<h4><a href="https://ernet.in/network"><span style="font-size:14px; float: right">View More</span></a></h4>
+</div></div></div>  </div>
+
+      <footer>
+                </footer>
+  
+  
+  </article> <!-- /.node -->
+
+<!-- END OUTPUT from 'sites/all/themes/ernet/templates_changes/node.tpl.php' -->
+
+</div><div  id="quicktabs-tabpage-about_us-2" class="quicktabs-tabpage quicktabs-hide">
+
+<!-- THEME DEBUG -->
+<!-- CALL: theme('node') -->
+<!-- FILE NAME SUGGESTIONS:
+   * node--2.tpl.php
+   * node--page.tpl.php
+   x node.tpl.php
+-->
+<!-- BEGIN OUTPUT from 'sites/all/themes/ernet/templates_changes/node.tpl.php' -->
+  <article id="node-2" class="node node-page clearfix" about="https://ernet.in/node/2" typeof="foaf:Document">
+
+            <header>
+	
+        
+            	   	        <span property="dc:title" content="" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="0" datatype="xsd:integer" class="rdf-meta element-hidden"></span>  
+      
+          </header>
+	  
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><img src="/sites/all/themes/ernet/quicktab-logo/services.png" width="40" height="40" alt="About-services"><h2 style="display:inline-block; margin-left:13px;"><span style="color: #05719b">Services</span></h2>
+
+<p style= "text-align: justify";>ERNET PoPs provide four types of services, namely, Access Services, Application Services, Hosting Services and Operations Support Services.</p>
+<h5><span style="color: #05719b">Access Services</span></h5>
+<p style= "text-align: justify";>Access Services at the ERNET PoP comprise of services that provide access to the ERNET network. Subscribers use radio links and VSATs with satellite bandwidth for data rate up to 50 Mbps.</p>
+<h5><span style="color: #05719b">Application Services</span></h5>
+<p style= "text-align: justify";>Network Application Services comprise of applications provided for ERNET subscribers like eduroam –Global wi-fi roaming services, Domain name service and hosting services etc.</p>
+<h4><a href="https://ernet.in/services"><span style="font-size:14px; float: right">View More</span></a></h4>
+</div></div></div>  </div>
+
+      <footer>
+                </footer>
+  
+  
+  </article> <!-- /.node -->
+
+<!-- END OUTPUT from 'sites/all/themes/ernet/templates_changes/node.tpl.php' -->
+
+</div><div  id="quicktabs-tabpage-about_us-3" class="quicktabs-tabpage quicktabs-hide">
+
+<!-- THEME DEBUG -->
+<!-- CALL: theme('node') -->
+<!-- FILE NAME SUGGESTIONS:
+   * node--107.tpl.php
+   * node--page.tpl.php
+   x node.tpl.php
+-->
+<!-- BEGIN OUTPUT from 'sites/all/themes/ernet/templates_changes/node.tpl.php' -->
+  <article id="node-107" class="node node-page clearfix" about="https://ernet.in/content/project" typeof="foaf:Document">
+
+            <header>
+	
+        
+            	   	        <span property="dc:title" content="" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="0" datatype="xsd:integer" class="rdf-meta element-hidden"></span>  
+      
+          </header>
+	  
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><img src="/sites/all/themes/ernet/quicktab-logo/project.png" width="40" height="40" alt="About-Projects"><h2 style="display:inline-block; margin-left:13px;"><span style="color: #05719b">Projects</span></h2>
+
+
+<p style= "text-align: justify";>ERNET has conceptualized, developed and implemented large number of projects on turn-key basis for various Educational Institutes and Research Organization. Several National and International Projects have been done by ERNET India.</p>
+<h5 style="display:inline-block; margin-left:13px; text-align: justify"><span style="color: #05719b">Development/renovation of Government websites to make them accessible for Persons with Disabilities (PwD)</span></h5>
+<h5 style="display:inline-block; margin-left:13px;"><span style="color: #05719b">NASSCOM – MeitY – ERNET Center of Excellence (CoE) for Internet of Things (IoT)</span></h5>
+<h5 style="display:inline-block; margin-left:13px;"><span style="color: #05719b">Internet of Things (IoT) management framework for Smart Cities</span></h5>
+<h5 style="display:inline-block; margin-left:13px;"><span style="color: #05719b">Information Security Education & Awareness (ISEA)-Phase II</h5>
+<h4><a href="https://ernet.in/content/projects"><span style="font-size:14px; float: right">View More</span></a></h4>
+</div></div></div>  </div>
+
+      <footer>
+                </footer>
+  
+  
+  </article> <!-- /.node -->
+
+<!-- END OUTPUT from 'sites/all/themes/ernet/templates_changes/node.tpl.php' -->
+
+</div><div  id="quicktabs-tabpage-about_us-4" class="quicktabs-tabpage quicktabs-hide">
+
+<!-- THEME DEBUG -->
+<!-- CALL: theme('node') -->
+<!-- FILE NAME SUGGESTIONS:
+   * node--5.tpl.php
+   * node--page.tpl.php
+   x node.tpl.php
+-->
+<!-- BEGIN OUTPUT from 'sites/all/themes/ernet/templates_changes/node.tpl.php' -->
+  <article id="node-5" class="node node-page clearfix" about="https://ernet.in/node/5" typeof="foaf:Document">
+
+            <header>
+	
+        
+            	   	        <span property="dc:title" content="" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="0" datatype="xsd:integer" class="rdf-meta element-hidden"></span>  
+      
+          </header>
+	  
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><img src="/sites/all/themes/ernet/quicktab-logo/training.png" width="40" height="40" alt="About-Training"><h2 style="display:inline-block; margin-left:13px;"><span style="color: #05719b">Training</span></h2>
+
+<p style= "text-align: justify";>As a part of Digital India Initiative, ERNET India successfully envisaged, implemented and operated Smart Virtual Classroom facilities in 3204 Govt. owned/controlled schools plus 50 DIETs in Himachal Pradesh, Gujarat, Rajasthan, Tripura, Haryana, Andhra Pradesh and Tamil Nadu. The implemented Smart Virtual Classroom successfully improved the quality of education, addressed the need of specialized teaching staff at remote/rural location and provided a single cross-state ICT enabled knowledge sharing platform for training & skill development of educationist / teachers. Under the project, so far 20,016 sessions have been conducted which benefitted 70,77,600 students and also trained 65,092 teachers across 3204 schools and 50 DIETs. ERNET India has also organized IPv6 training programs.</p>
+
+<h4><a href="https://ernet.in/content/training"><span style="font-size:14px; float: right">View More</span></a></h4>
+</div></div></div>  </div>
+
+      <footer>
+                </footer>
+  
+  
+  </article> <!-- /.node -->
+
+<!-- END OUTPUT from 'sites/all/themes/ernet/templates_changes/node.tpl.php' -->
+
+</div><div  id="quicktabs-tabpage-about_us-5" class="quicktabs-tabpage quicktabs-hide">
+
+<!-- THEME DEBUG -->
+<!-- CALL: theme('node') -->
+<!-- FILE NAME SUGGESTIONS:
+   * node--4.tpl.php
+   * node--page.tpl.php
+   x node.tpl.php
+-->
+<!-- BEGIN OUTPUT from 'sites/all/themes/ernet/templates_changes/node.tpl.php' -->
+  <article id="node-4" class="node node-page clearfix" about="https://ernet.in/node/4" typeof="foaf:Document">
+
+            <header>
+	
+        
+            	   	        <span property="dc:title" content="" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="0" datatype="xsd:integer" class="rdf-meta element-hidden"></span>  
+      
+          </header>
+	  
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><img src="/sites/all/themes/ernet/quicktab-logo/rnd.png" width="40" height="40" alt="R&D"><h2 style="display:inline-block; margin-left:13px;"><span style="color: #05719b">Research & Development</span></h2>
+
+<p style= "text-align: justify";> ERNET India has been carrying out research experiments on Visible Light Communications / LiFi jointly with IIT Madras and IIIT Delhi. Further, it is proposed to set up an Indoor Hybrid LiFi-WiFi multi user testbed under the MeitY funded joint project with IIITD to demonstrate various mobility scenarios and perform link aggregation experiments. The seamless mobility between
+WiFi and LiFi will be demonstrated with this set up in a typical auditorium setting. </p>
+<p style= "text-align: justify";>ERNET India is executing a joint project with IISc Bangalore on “Designing Reliable and Low-latency Networks for Tactile Cyber-Physical Systems” funded by MeitY. The objective of this project is to design and implement Tactile Cyber-Physical System that addresses the challenges of achieving real-time interaction between physical and virtual worlds in prominent applications like remote surgery and virtual reality that require ultra-reliable low latency communications (URLLC).</p>
+
+<h4><span style="font-size:14px; float: right"><a href="<?php global $base_url; print $base_url;?>/research-and-development">View More</a></span></h4>
+</div></div></div>  </div>
+
+      <footer>
+                </footer>
+  
+  
+  </article> <!-- /.node -->
+
+<!-- END OUTPUT from 'sites/all/themes/ernet/templates_changes/node.tpl.php' -->
+
+</div><div  id="quicktabs-tabpage-about_us-6" class="quicktabs-tabpage quicktabs-hide">
+
+<!-- THEME DEBUG -->
+<!-- CALL: theme('node') -->
+<!-- FILE NAME SUGGESTIONS:
+   * node--767.tpl.php
+   * node--page.tpl.php
+   x node.tpl.php
+-->
+<!-- BEGIN OUTPUT from 'sites/all/themes/ernet/templates_changes/node.tpl.php' -->
+  <article id="node-767" class="node node-page clearfix" about="https://ernet.in/content/domain-quicktab" typeof="foaf:Document">
+
+            <header>
+	
+        
+            	   	        <span property="dc:title" content="" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="0" datatype="xsd:integer" class="rdf-meta element-hidden"></span>  
+      
+          </header>
+	  
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><img src="/sites/all/themes/ernet/quicktab-logo/domain.png" width="40" height="40" alt="Domain"><h2 style="display:inline-block; margin-left:13px;"><span style="color: #05719b">Domain registration</span></h2>
+
+<p style= "text-align: justify";>ERNET India is an exclusive domain registrar for education and research domains; registering the domains under ac.in, edu.in &amp; res.in from 2005.The domain registration, renewal &amp; modification process is fully automated with online payment facility for registering and renewing domain names on just a click. The automated website is GIGW compliant. In automated system, customer can modify online their DNS entries and other permissible information related to their institution. ERNET registers domain names under विद्या.भारत under Internationalized domain names (IDN). </p>
+<p style= "text-align: justify";>Since the users had challenges to manage their domains registered with ERNET, DNS Authoritative Name server Service for Educational &amp; Research institutions was started on a commercial basis by ERNET. This has facilitated users apart from also bringing about revenue for ERNET. For this DNS server has been setup. Also to enhance credentials for restricting Private and non recogonised institute to register domain name under academic and educational domain new SoP was framed and implemented during the year. During the financial year April 20 - March 2021, ERNET had registered/ renewed approx. 5700 academic/educational/research domains and Total 15000 domains have been registered.</p>
+
+<h4><span style="font-size:14px; float: right"><a href="https://www.registry.ernet.in/" target="_blank">View More</a></span></h4></div></div></div>  </div>
+
+      <footer>
+                </footer>
+  
+  
+  </article> <!-- /.node -->
+
+<!-- END OUTPUT from 'sites/all/themes/ernet/templates_changes/node.tpl.php' -->
+
+</div></div></div>  </div>
+  
+</section> <!-- /.block -->
+
+<!-- END OUTPUT from 'sites/all/themes/ernet/templates_changes/block.tpl.php' -->
+
+</div>
+ <!-- /.region -->
+
+<!-- END OUTPUT from 'sites/all/themes/ernet/templates_changes/region.tpl.php' -->
+
+
+<!-- <p><marquee hspace="60" vspace="20" style="margin: 20px 60px;"><a href="/sites/default/files/pdf/circulars/ACTION PLAN SP 2019.pdf" target="_blank"><strong><font color="red">SWACHTA PAKHWADA To Be Observed from : 1ST - 15TH Feb, 2019</font></strong></a></marquee> </p> -->
+<!--				<h2 class="rtejustify">Welcome to ERNET</h2>
+				<p>ERNET India is the National Research and Education Network dedicated to support the needs of the research and education community within the country. It was established in 1998 as an autonomous scientific society under the Ministry of Electronics & Information Technology (MeitY), Government of India. It operates ERNET network – a pan-Indian terrestrial and satellite network with 5 points of presence at premier research and academic institutions.</p>
+				<h5>Our Vision </h5>
+<p>To advance Indian Research and Education by operating and developing world class Networks, Applications and Services.</p>
+<h5>Our Mission </h5>
+<p>Provide Network Infrastructure Services and Connectivity addressing the requirements of India’s Research and Education sector facilitating them to become increasingly efficient and effective in their chosen field. Undertaking cutting edge Research and Development in Networking and its Applications and also development of Human Resources in Networking.</p> -->
+		  
+		  
+<!-- <p><marquee hspace="60" vspace="20" style="margin: 20px 60px;"><a href="/sites/default/files/pdf/circulars/ACTION PLAN SP 2019.pdf" target="_blank"><strong><font color="red">SWACHTA PAKHWADA To Be Observed from : 1ST - 15TH Feb, 2019</font></strong></a></marquee> </p> -->
+			
+			 </div>
+				  
+			  
+			  <div class="col-md-4">
+			  <div class="title-box clearfix "><h2 tabindex="0" class="title-box_primary clearfix">Latest News <a  href="latest-news" tabindex="0" >View More </a></h2></div> 
+				<div class="list styled custom-list">
+					<div id="multilines">
+					
+					<ul class="newsticker">
+											
+					<li><p><a href="https://ernet.in/content/clarification-seek-tender-%E2%80%9Crevamping-upgradation-existing-wi-fi-campus-network-lbsnaa">Clarification to seek from Tender for “Revamping / Upgradation of existing Wi-Fi Campus Network of LBSNAA, Mussoorie (Uttarakhand)” published by ERNET India over GeM vide Bid No.GEM/2025/B/5942559, dated 12.02.2025 and its Subsequent Corrigendum.</a></p>
+										<span><img src="sites/all/themes/ernet/assets/images/icon_new.gif" alt="latest news icon"></span></li>
+					
+											
+					<li><p><a href="https://ernet.in/sites/default/files/pdf/10 Notice for extension of bid submission.pdf" target="_blank"><span style="color:#006400;">Notice for extension of date for Submission of bids in r/o Tender for “Revamping / Upgradation of existing Wi-Fi Campus Network of LBSNAA, Mussoorie (Uttarakhand)” through Govt. e-Marketplace (GeM) vide Bid No.: GEM/2025/B/5942559, dated 12.02.2025.</span></a></p>
+										<span><img src="sites/all/themes/ernet/assets/images/icon_new.gif" alt="latest news icon"></span></li>
+					
+											
+					<li><h1 tabindex="0"><a href="https://ernet.in/content/tender-revamping-upgradation-existing-wi-fi-campus-network-lbsnaa-mussoorie-uttarakhand" target="_self">Tender For Revamping / Upgradation of Existing Wi-Fi Campus Network of LBSNAA, Mussoorie (Uttarakhand) Through Govt. e-Marketplace (GeM)</a></h1>
+										<span><img src="sites/all/themes/ernet/assets/images/icon_new.gif" alt="latest news icon"></span></li>
+					
+											
+					<li><p><a href="https://ernet.in/content/tender-published-ernet-selection-system-integrator-supply-and-setting-ict-infrastructure" target="_self">Query Response for the Tender "Supply and Setting up of ICT Infrastructure at Data Centers, Remote Sites and Operations &amp; Maintenance" - GEM/2024/B/5639049</a></p>
+					</li>
+					
+											
+					<li><p><a href="https://ernet.in/content/tender-published-ernet-selection-system-integrator-supply-and-setting-ict-infrastructure">Online Pre-Bid meeting fof "Supply and Setting up of ICT Infrastructure at Data Centers, Remote Sites and Operations & Maintenance" GEM/2024/B/5639049</a></p>					</li>
+					
+											
+					<li><p><a href="http://ernet.in/sites/default/files/pdf/Corrigendum 2_eoi.pdf">Corrigendum 2: Inviting Expression of Interest For Empanelment for Setting up Wi-Fi Enabled Campus Network in Universities/Colleges/Institutions</a></p>					</li>
+					
+											
+					<li><p><a href="https://pib.gov.in/PressReleseDetailm.aspx?PRID=1993201">Secretary, MeitY launches ERNET India’s web portal for domain registration, DNS and value-added services for educational institutions</a></p>
+					</li>
+					
+											
+					<li><p><a href="https://ernet.in/content/filling-various-posts-ernet-india-deputation-basis-2">Filling up the various posts in ERNET India on Deputation Basis</a></p>
+					</li>
+					
+											
+					<li><p><a href="https://ernet.in/content/work-based-learning">Walk-in Interview for 6 months Internship at ERNET India</a> .</p>
+					</li>
+					
+											
+					<li><p><a href="https://ernet.in/content/work-based-learning"><span style="font-family:verdana,geneva,sans-serif;">Work Based Learning (WBL) programme</span></a></p>
+					</li>
+					
+										</ul>
+					</div>
+					
+					
+				</div>
+			 </div>
+		  </div>
+	</section>
+		  
+		  
+	<div class="container bottomlogo">
+		  
+		  <h2 tabindex="0" style="margin-bottom:0px;">Related Links</h2>
+		  
+		  <ul id="imgs">			
+			
+		  <li><a href="http://meity.gov.in/" title="Ministry of Electronics & Information Technology (MeitY)" target="_blank"><img src="sites/default/files/relatedlinks/MeitY_Logo.jpg" alt="Ministry of Electronics & Information Technology (MeitY), Government of India" style="height:87px; width:229px;"></a></li>
+
+
+						
+			
+		  <li><a href="https://india.gov.in/" title="National Portal of India" target="_blank"><img src="sites/default/files/relatedlinks/india-gov-in.jpg" alt="india.gov.in - National Portal of India" style="height:87px; width:229px;"></a></li>
+
+
+						
+			
+		  <li><a href="https://rtionline.gov.in/" title="RTI Online" target="_blank"><img src="sites/default/files/relatedlinks/RTI_0.jpg" alt="RTI Online, Government of India" style="height:87px; width:229px;"></a></li>
+
+
+						
+			
+		  <li><a href="http://www.nvsp.in/" title="NATIONAL VOTERS' SERVICES PORTAL India" target="_blank"><img src="sites/default/files/relatedlinks/NationalVotersServicePortal.jpg" alt="NATIONAL VOTERS' SERVICES PORTAL" style="height:87px; width:229px;"></a></li>
+
+
+						
+			
+		  <li><a href="https://ipv6.ernet.in/" title="IPv6" target="_blank"><img src="sites/default/files/relatedlinks/Ipv62.jpg" alt="IPv6 networks" style="height:87px; width:229px;"></a></li>
+
+
+						
+			
+		  <li><a href="http://eduroam.in/" title="Eduroam" target="_blank"><img src="sites/default/files/relatedlinks/dg3.jpg" alt="Eduroam - Global service" style="height:87px; width:229px;"></a></li>
+
+
+						
+			
+		  <li><a href="http://gandhi.gov.in/" title="Gandhi 150th anniversary" target="_blank"><img src="sites/default/files/relatedlinks/web-portal-logo.jpg" alt="Gandhi 150th anniversary" style="height:87px; width:229px;"></a></li>
+
+
+						
+			
+		  <li><a href="https://www.mygov.in/covid-19/?cbps=1" title="" target="_blank"><img src="sites/default/files/relatedlinks/Aarogya-Setu-Logo.jpg" alt="Arogya Setu" style="height:87px; width:229px;"></a></li>
+
+
+						
+			
+		  <li><a href="http://smartclass.svc.ernet.in/" title="" target="_blank"><img src="sites/default/files/relatedlinks/svc image1.jpg" alt="Smart Virtual Class" style="height:87px; width:229px;"></a></li>
+
+
+						
+			
+		  <li><a href="https://amritmahotsav.nic.in/" title="" target="_blank"><img src="sites/default/files/relatedlinks/azadi_0.jpg" alt="Azadi Ka Amrit Mahotsav" style="height:87px; width:229px;"></a></li>
+
+
+						
+			
+		  <li><a href="https://rashtragaan.in/" title="" target="_blank"><img src="sites/default/files/relatedlinks/anthem.jpg" alt="National Anthem" style="height:87px; width:229px;"></a></li>
+
+
+						
+			
+		  <li><a href="https://www.cowin.gov.in/" title="" target="_blank"><img src="sites/default/files/relatedlinks/covin-banner.jpg" alt="Cowin" style="height:87px; width:229px;"></a></li>
+
+
+						
+			
+		  <li><a href="https://www.digitalindia.gov.in/" title="Digital India" target="_blank"><img src="sites/default/files/relatedlinks/digital-India.jpg" alt="Digital India" style="height:87px; width:229px;"></a></li>
+
+
+						
+			
+		  <li><a href="https://web.umang.gov.in" title="Umang" target="_blank"><img src="sites/default/files/relatedlinks/Umang.jpg" alt="Umang" style="height:87px; width:229px;"></a></li>
+
+
+						
+			
+		  <li><a href="https://www.digilocker.gov.in/" title="DigiLocker" target="_blank"><img src="sites/default/files/relatedlinks/digiLocker.png" alt="DigiLocker" style="height:87px; width:229px;"></a></li>
+
+
+						
+			
+		  <li><a href="https://www.skillindia.gov.in/" title="Skill India" target="_blank"><img src="sites/default/files/relatedlinks/Skill-India.jpg" alt="Skill India" style="height:87px; width:229px;"></a></li>
+
+
+						
+			
+		  <li><a href="https://www.makeinindia.com/" title="Make In India" target="_blank"><img src="sites/default/files/relatedlinks/makeinindia.jpg" alt="Make In India" style="height:87px; width:229px;"></a></li>
+
+
+						
+			
+		  <li><a href="https://www.g20.in/" title="G20 Summit" target="_blank"><img src="sites/default/files/relatedlinks/G20-2022_0.jpg" alt="G20 Summit" style="height:87px; width:229px;"></a></li>
+
+
+			</ul>	<div class="clear"></div>
+	</div>
+		  
+
+	<div class="clear"></div>
+	<footer id="footer">
+	 
+			<div class="container">
+	   <div class="row">
+	  <div class="footerbottom">
+		
+		<div class="col-md-3 col-sm-6">
+		  <div class="footerwidget">
+			<h4 tabindex="0">
+			 Category			</h4>
+			<div class="menu-course">
+			  <ul class="menu">
+								<li><a href="https://www.ernet.in/content/projects">Projects</a></li>
+								<li><a href="https://www.ernet.in/research-and-development">Research and Development</a></li>
+								<li><a href="https://www.ernet.in/services">Services</a></li>
+								<li><a href="https://www.ernet.in/network">Network</a></li>
+								<li><a href="https://www.ernet.in/content/training">Training</a></li>
+							  </ul>
+			</div>
+		  </div>
+		</div>
+		<div class="col-md-3 col-sm-3">
+		  <div class="footerwidget">
+			<h4 tabindex="0">
+			  Policies			</h4>
+			<div class="menu-course">
+			  <ul class="menu">
+								<li><a href="https://www.ernet.in/content/privacy-policy">Privacy Policy</a></li>
+								<li><a href="https://www.ernet.in/content/hyperlink-policy">Hyperlink Policy</a></li>
+								<li><a href="https://www.ernet.in/content/copyright-policy">Copyright Policy</a></li>
+								<li><a href="https://www.ernet.in/content/disclaimer">Disclaimer</a></li>
+								<li><a href="https://www.ernet.in/content/accessibility-statement">Accessibility Statement</a></li>
+								<li><a href="https://www.ernet.in/content/terms-conditions">Terms and Conditions</a></li>
+								<li><a href="https://www.ernet.in/content/security-policy">Security Policy</a></li>
+							  </ul>
+			</div>
+		  </div>
+		</div>
+		<div class="col-md-3 col-sm-3">
+		  <div class="footerwidget">
+		  		<h4 tabindex="0">Other Links</h4>
+		  		<div class="menu-course">
+			  <ul class="menu">
+		  			 									<li><a href="https://www.ernet.in/" > Home 
+																		</a> </li> 
+									
+										 									<li><a href="https://www.ernet.in/content/about-us"  > About Us </a></li>
+																		</a> </li> 
+									
+										 									<li><a href="https://www.ernet.in/content/site-map"  > Sitemap </a></li>
+																		</a> </li> 
+									
+										 									<li><a href="https://www.ernet.in/content/feedback"  > Feedback </a></li>
+																		</a> </li> 
+									
+										 									<li><a href="https://www.ernet.in/content/terms-of-use"  > Terms of Use </a></li>
+																		</a> </li> 
+									
+										 									<li><a href="https://www.ernet.in/content/contact-us"  > Contact </a></li>
+																		</a> </li> 
+									
+										 									<li><a href="https://www.ernet.in/content/help"  > Help </a></li>
+																		</a> </li> 
+									
+										 									<li><a href="https://www.ernet.in/content/web-information-manager"  > Web Information Manager </a></li>
+																		</a> </li> 
+									
+																	
+							</ul>
+						</div>
+		  </div>
+		</div>
+		
+		<div class="col-md-3 col-sm-6" tabindex="0"> 
+					<div>
+<h4>Contact</h4>
+
+<p>ERNET India<br />
+5th Floor, Block-I, A Wing,<br />
+DMRC IT Park, Shastri Park,<br />
+Delhi-110053<br />
+Phone : +91 11-22170578<br />
+Fax:+91 11-22170602</p>
+</div>
+		</div>
+		
+	  </div>
+	</div>
+
+	
+				
+
+				<div class="clear"></div>
+				<!--CLEAR FLOATS-->
+			</div>
+			<div class="footer2">
+				<div class="container">
+					<div class="row">
+						
+						<div class="col-md-7 panel ">
+							<div class="panel-body">
+								<p class="" tabindex="0">
+																	Copyright &copy; All Rights Reserved - Official Website of ERNET India Education & Research Network  
+																
+								</p>
+							</div>
+						</div>
+						<div class="col-md-5 panel place-right">
+							<div class="footer-visitor" tabindex="0" ><strong>Visitors:</strong>30014534 
+							</div>
+							<div class="footer-modified" tabindex="0" >
+							<strong>Last update: </strong>
+							17-Apr-2025 3:58 pm				
+
+
+							</div>
+						</div>
+					</div>
+					<!-- /row of panels -->
+				</div>
+			</div>
+			<div class="footer_logo">
+				<div class="container">
+					<a href="https://jigsaw.w3.org/css-validator/validator?uri=https://ernet.in" 
+   target="_blank" 
+   style="text-decoration: none;" 
+   title="Valid CSS!">
+    <img src="https://jigsaw.w3.org/css-validator/images/vcss" 
+         alt="CSS Validation by W3C" />
+</a>
+
+<a href="https://www.w3.org/WAI/WCAG2AA-Conformance" 
+   title="Explanation of WCAG 2.0 Level Double-A Conformance" 
+   target="_blank">
+    <img src="https://www.w3.org/WAI/wcag2AA" 
+         alt="WCAG 2.0 AA Conformance logo" />
+</a>
+
+<a href="/sites/default/files/pdf/ERNET_GIGW_Certificate.pdf" 
+   target="_blank" 
+   title="GIGW Certificate">
+    <img src="/sites/all/themes/ernet/images/wqc-img.png" 
+         alt="GIGW Certificate" />
+</a>
+
+				</div>
+			</div>
+		</footer>
+		
+		<script  src="sites/all/themes/ernet/js/endlessRiver.js"></script>	
+		<script>
+			   
+				$(document).ready(function(){
+				$(".newsticker").css("height", "275px");
+				$("#imgs").endlessRiver();
+				});	
+				
+				$('#communities').click(false);
+				
+				</script>
+	<script src="sites/all/themes/ernet/js/newsTicker.js"></script> 
+	<script>
+				var multilines = $('#multilines .newsticker').newsTicker({
+					row_height: 115,
+					speed: 800,
+					prevButton: $('#multilines .prev-button'),
+					nextButton: $('#multilines .next-button'),
+					stopButton: $('#multilines .stop-button'),
+					startButton: $('#multilines .start-button'),
+				});
+
+				var oneliner = $('#oneliner .newsticker').newsTicker({
+					row_height: 44,
+					max_rows: 1,
+					time: 5000,
+					nextButton: $('#oneliner .header')
+				});
+
+				// Pause newsTicker on .header hover
+				$('#oneliner .header').hover(function() {
+					oneliner.newsTicker('pause');
+				}, function() {
+					oneliner.newsTicker('unpause');
+				});
+				
+				
+				
+				
+				
+				$(document).ready(function () {
+		$("ul.menu li").hover(function () { //When trigger is hovered...
+			$(this).children("ul.menu").show();
+		}, function () {
+			$(this).children("ul.menu").slideUp();
+		});
+	});	
+					
+			</script>
+			
+			
+				 
+	<script>
+	$(document).ready(function(){
+	  $('.field-item').attr('tabindex','0');
+	  $('.prev').attr('tabindex','0');
+	  $('.pause').attr('tabindex','0');
+	  $('.next').attr('tabindex','0');
+	});
+
+
+
+	</script>
+
+
+
+<!-- END OUTPUT from 'sites/all/themes/ernet/templates_changes/page--front.tpl.php' -->
+
+  </body>
+
+</html>
+<!-- END OUTPUT from 'sites/all/themes/ernet/templates_changes/html.tpl.php' -->
+

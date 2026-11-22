@@ -1,0 +1,237 @@
+{
+  "total_samples": 2000,
+  "unique_normalized_text_hashes": 1835,
+  "exact_duplicate_clique_pairs": 1073,
+  "total_components": 1835,
+  "largest_component_size": 26,
+  "singleton_count": 1789,
+  "components_size_gt_1": 46,
+  "records_in_components_gt_1": 211,
+  "mixed_label_components_count": 1,
+  "mixed_label_components": [
+    {
+      "hash": "a7fe83ec64bb23eb28090598db3d166ed98e52e39d1afbbfd74c579553f93e4e",
+      "size": 26,
+      "labels": {
+        "phishing": 23,
+        "legitimate": 3
+      },
+      "cohorts": {
+        "phishtank_feed": 12,
+        "crawl_2024_2025_batch1": 12,
+        "crawl_2025_batch2": 2
+      },
+      "serials": [
+        9157096,
+        202420256114,
+        202420255956,
+        202420261595,
+        202420256733,
+        202420259935,
+        202420259083,
+        202420250137,
+        202420259074,
+        202420256919,
+        202420259372,
+        202420256721,
+        202420259567,
+        202420256741,
+        9157773,
+        9158195,
+        9162809,
+        9160671,
+        9159608,
+        9159912,
+        9162782,
+        9162783,
+        9162521,
+        9162507,
+        9154638,
+        202420260111
+      ]
+    }
+  ],
+  "component_size_distribution": {
+    "26": 2,
+    "17": 1,
+    "12": 1,
+    "11": 1,
+    "9": 1,
+    "8": 1,
+    "6": 1,
+    "5": 2,
+    "4": 3,
+    "3": 8,
+    "2": 25,
+    "1": 1789
+  },
+  "top_components_detail": [
+    {
+      "hash": "d762ff29efab23c4eece3b88b4bf59584747674abb696678e0995ca661ce2912",
+      "size": 26,
+      "labels": {
+        "phishing": 26
+      },
+      "cohorts": {
+        "phishtank_feed": 23,
+        "openphish_feed": 3
+      },
+      "serials": [
+        9160700,
+        9162472,
+        9162479,
+        9162532
+      ]
+    },
+    {
+      "hash": "a7fe83ec64bb23eb28090598db3d166ed98e52e39d1afbbfd74c579553f93e4e",
+      "size": 26,
+      "labels": {
+        "phishing": 23,
+        "legitimate": 3
+      },
+      "cohorts": {
+        "phishtank_feed": 12,
+        "crawl_2024_2025_batch1": 12,
+        "crawl_2025_batch2": 2
+      },
+      "serials": [
+        9157096,
+        202420256114,
+        202420255956,
+        202420261595
+      ]
+    },
+    {
+      "hash": "653d6bbe21f85d6810dfe5074717eac8c393eaa306fce8a08ab51dbb7bdf5837",
+      "size": 17,
+      "labels": {
+        "phishing": 17
+      },
+      "cohorts": {
+        "crawl_2024_2025_batch1": 17
+      },
+      "serials": [
+        202420255630,
+        202420255703,
+        202420255211,
+        202420254915
+      ]
+    },
+    {
+      "hash": "b3b0da6ab101f3a5ee82505797d63275b59f9f0db8fc6bead94df3a785b55e81",
+      "size": 12,
+      "labels": {
+        "phishing": 12
+      },
+      "cohorts": {
+        "crawl_2024_2025_batch1": 10,
+        "phishtank_feed": 2
+      },
+      "serials": [
+        202420250813,
+        202420251067,
+        202420251078,
+        202420250805
+      ]
+    },
+    {
+      "hash": "db427589955885cadf7783d172dc471352212b5c1cdd2b24a967bcdc5221f534",
+      "size": 11,
+      "labels": {
+        "phishing": 11
+      },
+      "cohorts": {
+        "openphish_feed": 11
+      },
+      "serials": [
+        83500,
+        83000,
+        91100,
+        80900
+      ]
+    },
+    {
+      "hash": "8561717b4f47e804701803b4cbe55c61dcb3ff67841f8cb5b4a422a669b1ab9b",
+      "size": 9,
+      "labels": {
+        "phishing": 9
+      },
+      "cohorts": {
+        "phishtank_feed": 9
+      },
+      "serials": [
+        9156427,
+        9162556,
+        9159341,
+        9159103
+      ]
+    },
+    {
+      "hash": "1c26d54a5ef0efde769ca36e498e5685ff32a92eeb9c9c49d5ed0277c454c5ab",
+      "size": 8,
+      "labels": {
+        "phishing": 8
+      },
+      "cohorts": {
+        "crawl_2024_2025_batch1": 8
+      },
+      "serials": [
+        202420255386,
+        202420255161,
+        202420255885,
+        202420255477
+      ]
+    },
+    {
+      "hash": "ada289ae3992b18c294b7661d207dac511e1656abf1da5e3125a567098ec8148",
+      "size": 6,
+      "labels": {
+        "phishing": 6
+      },
+      "cohorts": {
+        "openphish_feed": 3,
+        "phishtank_feed": 3
+      },
+      "serials": [
+        37600,
+        9160529,
+        9160527,
+        9162071
+      ]
+    },
+    {
+      "hash": "8bff37788d513a4f090df4c6108abf360aedab668fde1ad864b0f0d4eb49f361",
+      "size": 5,
+      "labels": {
+        "phishing": 5
+      },
+      "cohorts": {
+        "crawl_2024_2025_batch1": 5
+      },
+      "serials": [
+        202420255624,
+        202420255655,
+        202420255158,
+        202420255684
+      ]
+    },
+    {
+      "hash": "cb46232557f92d06227e64a702126f23e7fbbceb550c2f66926bfcecaff557d0",
+      "size": 5,
+      "labels": {
+        "legitimate": 5
+      },
+      "cohorts": {
+        "crawl_2024_2025_batch1": 4,
+        "crawl_2025_batch2": 1
+      },
+      "serials": [
+        202420256040,
+        202420256121,
+        202420256106,
+        202420256160
+      ]
+    }
+  ]
+}

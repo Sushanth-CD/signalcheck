@@ -1,0 +1,17 @@
+case,input,expected_hostname,actual_hostname,parser_status,expected_registrable_domain,actual_registrable_domain,expected_destination_grouped,actual_destination_grouped,pass,notes
+https scheme/path,https://example.com/path,example.com,example.com,normalized_hostname,example.com,example.com,True,True,True,
+http subdomain/path,http://sub.example.com/path,sub.example.com,sub.example.com,normalized_hostname,example.com,example.com,True,True,True,
+bare host/path,example.com/path,example.com,example.com,normalized_hostname,example.com,example.com,True,True,True,
+port,https://example.com:8443/path,example.com,example.com,normalized_hostname,example.com,example.com,True,True,True,
+query and fragment,https://example.com/p?q=1#frag,example.com,example.com,normalized_hostname,example.com,example.com,True,True,True,
+IPv4,http://192.0.2.10/a,192.0.2.10,192.0.2.10,ip_literal,,,True,True,True,
+IPv6,https://[2001:db8::1]:9443/a,2001:db8::1,2001:db8::1,ip_literal,,,True,True,True,
+Unicode IDN,https://bücher.com/path,xn--bcher-kva.com,xn--bcher-kva.com,normalized_hostname,xn--bcher-kva.com,xn--bcher-kva.com,True,True,True,
+punycode,https://xn--bcher-kva.com/path,xn--bcher-kva.com,xn--bcher-kva.com,normalized_hostname,xn--bcher-kva.com,xn--bcher-kva.com,True,True,True,
+public suffix only,https://co.uk,co.uk,co.uk,normalized_hostname,,,False,True,False,accepted by exact-host fallback despite no PSL registrable domain
+private suffix,https://tenant.github.io/app,tenant.github.io,tenant.github.io,normalized_hostname,tenant.github.io,tenant.github.io,True,True,True,
+localhost,http://localhost:8000,,,unqualified_hostname,,,False,False,True,
+malformed port,https://example.com:99999/path,,,malformed_url,,,False,False,True,
+invalid host label,https://bad..example.com/path,,,malformed_url,,,False,False,True,
+ordinary prose URL mention,I read example.com yesterday,example.com,example.com,normalized_hostname,example.com,example.com,False,True,False,bare candidate 'example.com' is PSL-mapped and treated as a destination
+URL-shaped but unregistered host,https://aol.comsite/path,aol.comsite,aol.comsite,normalized_hostname,,,False,True,False,accepted by exact-host fallback despite no PSL registrable domain

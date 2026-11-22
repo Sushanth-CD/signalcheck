@@ -1,0 +1,817 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--
+<script>
+function isMobile(){
+    return (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino|android|ipad|playbook|silk/i.test(navigator.userAgent||navigator.vendor||window.opera)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test((navigator.userAgent||navigator.vendor||window.opera).substr(0,4)))
+}
+if(isMobile())
+{
+	//var mobile_app_url=document.getElementById('app_url_hb').value;
+	window.location='http://m.raaga.com/'+window.location.pathname.substring(1);
+}
+</script>
+-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="https://www.raaga.com/splash/jquery.selectbox-0.5.js"></script>
+<script type="text/javascript">
+	var ROOT_FOLDER ="https://www.raaga.com/";
+	$(document).ready(function() {
+		$('#Items').selectbox();
+		
+		$('.test_comments .comm1').hover(function(){
+			$('.t_hover_play_b',this).show();
+			$('.sp_overlay_bg',this).show();
+		},function(){
+			$('.t_hover_play_b',this).hide();
+			$('.sp_overlay_bg',this).hide();
+		});
+	});
+	$(document).click(function(e) {
+		if (e.target.id != 'splash_channels_div' && !$('#splash_channels_div').find(e.target).length && e.target.id != 'splash_channels_link' && !$('#splash_channels_link').find(e.target).length) {
+			//$("#splash_channels_div").slideUp();
+		}
+	});
+
+	 function after_login()
+	 {
+		window.location = ROOT_FOLDER;
+	 }
+
+	function show_artist_video(video_link)
+	{
+		document.getElementById('artist_video_iframe').src=video_link+'?rel=0';
+	}
+	
+	function show_channels()
+	{
+		if($('.channels_1').css("display")=="none")
+		{
+			$('.channels_1').slideDown();
+		}
+		else
+		$('.channels_1').slideUp();
+	}
+	</script>
+
+<script type="text/javascript" src="https://www.raaga.com/js/popuplib.js"></script>
+<script type="text/javascript" src="https://www.raaga.com/js/jquery.widget.js"></script> 
+
+
+<script type="text/javascript">
+
+ WIDGET_URL = ROOT_FOLDER+"oauthlogin.php";
+  var upgradeToken = function() {
+    window.location = '';
+  };
+
+
+</script>
+<script type="text/javascript">
+window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[(new Date).getTime()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var s=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(s,function(e,t){f[t]=o(l+t,!0,"api")}),f.addPageAction=o(l+"addPageAction",!0),f.setCurrentRouteName=o(l+"routeName",!0),t.exports=newrelic,f.interaction=function(){return(new r).get()};var d=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(p+"tracer",[Date.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return t.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){d[t]=o(p+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,(new Date).getTime()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o){if(!p.aborted){e&&e(n,r,o);for(var i=t(o),a=v(n),u=a.length,c=0;c<u;c++)a[c].apply(i,r);var f=s[w[n]];return f&&f.push([y,n,r,i]),i}}function d(e,t){b[e]=v(e).concat(t)}function v(e){return b[e]||[]}function g(e){return l[e]=l[e]||o(n)}function m(e,t){f(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var b={},w={},y={on:d,emit:n,get:g,listeners:v,context:t,buffer:m,abort:a,aborted:!1};return y}function i(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},l={},p=t.exports=o();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!h++){var e=y.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return f.abort();c(b,function(t,n){e[t]||(e[t]=n)}),u("mark",["onload",a()],null,"api");var n=l.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===l.readyState&&i()}function i(){u("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var u=e("handle"),c=e(2),f=e("ee"),s=window,l=s.document,p="addEventListener",d="attachEvent",v=s.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:v,REQ:s.Request,EV:s.Event,PR:s.Promise,MO:s.MutationObserver},e(1);var m=""+location,b={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1016.min.js"},w=v&&g&&g[p]&&!/CriOS/.test(navigator.userAgent),y=t.exports={offset:a(),origin:m,features:{},xhrWrappable:w};l[p]?(l[p]("DOMContentLoaded",i,!1),s[p]("load",r,!1)):(l[d]("onreadystatechange",o),s[d]("onload",r)),u("mark",["firstbyte",a()],null,"api");var h=0},{}]},{},["loader"]);
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Raaga - Hindi Tamil Telugu Malayalam Kannada Punjabi Bengali Gujarati Marathi Rajasthani Songs MP3 downloads music videos</title>
+<meta name="description" content=" Hindi, Tamil, Telugu, Malayalam, Kannada, Punjabi, Bengali Songs and Videos Online.
+MP3 Downloads Latest Hindi, Tamil Telugu and Malayalam songs in Real audio. New Hindi, Tamil Telugu and Malayalam songs, video clips.
+Bollywood, music, Chat, Movies, Hindi songs, Bhangra songs, pics of bollywood stars, and much much more. Read the latest Hindi, Tamil and Telugu movie reviews. Browse through the
+archives Illayaraja, Rehman, Kishore Kumar, Sharukh, Salman, Amir, Amitabh, Mohammad, Rafi, Lata, Mangeshkar, Yesudas, Rajini, SPB, Yesudas, TMS, Gemini and more "/>
+<meta name="keywords" content="bollywood, tamil, hindi, telugu, actress, actors, music, hindi, songs, bhangra, mp3, movies, india, news, india, chat, business, cricket.Illayaraja, Rehman, Kishore Kumar, Sharukh, Salman, Amir, Amitabh, Mohammad, Rafi, Lata, Mangeshkar, Yesudas, Rajini, SPB, Yesudas, TMS, Gemini, chiru, chiranjeevi, nagarjuna, raaga, raga, Tamil, music, site, South, Indian, India, Sri, Lankan, Lanka, bollywood, Bollywood, songs, picutres, pics, Aishwarya, Rai, Kajol, Meena, Kamal, Hasan, Rajini, Kanth
+Prabu, Deva, A.R., Rehman, Rahman, Rahuman, Tamil entertainment, actresses, actors, Tamil music, best, Hindi, Malayalam, Telungu, Kannada, Nadu, Andhra, chat, live, celebrities, free, Pradesh, Karnataka, Madras, Chennai, Bombay, Ooty, songs, Tamil, tamil, india, bollywood, Bollywood, Indian, south, South, Telugu, telugu, Andhra, pradesh, andhra, Pradesh, hindi, Hindi, Uttar, Delhi,raaga, Tamil songs, tamil lyrics, tamil music, tamil top 10, tamil movies reviews, realauido streaming,tamil mp3,bakthi,padal,paadal,Tamil films,latest tamil movies,Illayaraja,Ilaiyaraja,A.R.Rahman,rahman,Deva,M.S.Viswanathan,MSV,Kamal Hassan,Rajinikanth,Ajith,Madhavan, Aishwarya Rai,A.M.Raja,P.B.Srinivas,S.P.B,T.M.Soundarajan,Susheela,Janaki,Shailaja,Chithra,Hariharan,Karthik Raja,Bavatharini,Vidhyasagar,S.A.Rajkumar,Gangai Amaran"/>
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" />
+<link href='http://fonts.googleapis.com/css?family=Lato:400,700italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="https://www.raaga.com/splash/app_promo_bottom.css">
+<link rel="stylesheet" type="text/css" href="https://www.raaga.com/splash/splash_new.css">
+<link type="text/css" rel="stylesheet" href="https://www.raaga.com/splash/splash_v4.css" />
+<link type="text/css" rel="stylesheet" href="https://www.raaga.com/splash/arrow.css" />
+<link rel="shortcut icon" href="https://www.raaga.com/splash/r_browse.ico">
+<link rel="stylesheet" href="https://www.raaga.com/splash/css/animations.css">
+<link rel="stylesheet" href="https://www.raaga.com/splash/css/ani_mation.css">
+
+<link rel="stylesheet" type="text/css" href="https://www.raaga.com/splash/selectbox.css" />
+<script src="https://use.fontawesome.com/1a7981c762.js" async></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+
+<meta property="fb:app_id" content="139936336101"/>
+<meta property="og:site_name" content="Raaga.com"/>
+<meta property="og:title" content="Join me on Raaga"/>
+<meta property="og:description" content="I'm listening to the best music on Raaga, for FREE! Get Raaga to check out my mix, search and play your favorites, and make your own playlists. And don't miss out on the Live Radio and the mood based radio.">
+<meta property="og:image" content="https://dxi0htcskl9ob.cloudfront.net/raaga-mainog.jpg">
+<meta property="og:url" content="https:https://www.raaga.com">
+<meta property="og:type"   content="website" /> 
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "url": "https://www.raaga.com",
+  "logo": "https://dxi0htcskl9ob.cloudfront.net/images/RaagaNew120x120.png"
+}</script><script type="application/ld+json">
+
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "Raaga",
+  "url": "https://www.raaga.com",
+  "sameAs": [
+    "https://www.facebook.com/raagacom",
+    "https://www.instagram.com/raagacom/",
+    "https://twitter.com/raagadotcom"
+  ]
+}</script>
+<style>
+	.rsplash_feture{top: 0px;}
+	.raaga_apps_ds{top:0px;}
+</style>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PBVDTHD');</script>
+<!-- End Google Tag Manager -->
+</head>
+
+
+<body class="bg-shape"  id="cbp-so-scroller">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PBVDTHD"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+	<div class="app_promo_bottom" style="display: none;">
+		
+	</div>
+<!-- Header Area wrapper Starts -->
+    <header id="header-wrap">
+      <!-- Navbar Start -->
+      <nav class="navbar navbar-expand-md bg-inverse fixed-top scrolling-navbar">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <a href="https://www.raaga.com/" class="navbar-brand"><img src="https://jscss.raaga.com/v2/splash/images/raaga_logo_new.png" alt="www.raaga.com" title="www.raaga.com"></a>       
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+           <i class="fa fa-bars" aria-hidden="true"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto w-100 justify-content-start clearfix menu_padding">
+              <li class="nav-item">
+                <a class="nav-link dropdown-toggle"  data-toggle="dropdown" title="Music"  href="https://www.raaga.com/home">
+					Music  <span class="caret"></span></a>
+                  <ul  class="dropdown-menu">
+          <li><a title="Songs" href="https://www.raaga.com/telugu-songs">Songs</a></li>
+          <li><a href="https://www.raaga.com/popular" title="Popular">Popular</a></li>
+          <li><a href="https://www.raaga.com/discover" title="Discover">Discover</a></li>
+        </ul>               
+              </li>
+              
+              <li class="nav-item">
+                <a title="Playlists" class="nav-link" href="https://www.raaga.com/playlists">
+                  Playlists
+                </a>
+              </li>
+              <li class="nav-item">
+                <a title="Radio" class="nav-link" href="https://www.raaga.com/radio">
+                  Radio
+                </a>
+              </li>
+              <li class="nav-item">
+                <a title="My Raaga" class="nav-link" href="https://www.raaga.com/myraaga">
+                  My Raaga
+                </a>
+              </li>
+              <li class="nav-item">
+                <a title="Podcasts" class="nav-link" href="https://www.raaga.com/talk">
+                  Podcasts
+                </a>
+              </li>
+              <li class="nav-item">
+                <a title="Live" class="nav-link" href="https://www.raaga.com/telugu/live/radio">
+                  Live
+                </a>
+              </li>
+              
+            </ul>
+            
+             <ul class="navbar-nav mr-auto w-100 justify-content-end clearfix">
+              <li class="nav-item">
+                <a title="Get Premium" class="nav-link get_premium" href="https://www.raaga.com/premium">
+                  Premium
+                </a>
+              </li>
+              <li class="nav-item">
+                <a title="Apps" class="nav-link dropdown-toggle" data-toggle="dropdown" href="https://www.raaga.com/apps">
+					Apps  <span class="caret"></span></a>
+                  <ul  class="dropdown-menu">
+                  	<li><a title="Android Mobiles" href="https://play.google.com/store/apps/details?id=com.raaga.android&hl=en_IN" target="_blank">Android</a></li>
+		          	<li><a title="iOS Mobiles" href="https://apps.apple.com/in/app/raaga-a-world-of-music/id421217877" target="_blank">iOS</a></li>
+		           	<li><a title="Windows Desktop" href="https://www.raaga.com/app/desktop" target="_blank">Windows Desktop</a></li>
+					<li><a title="Alexa" href="https://www.amazon.in/Raaga-LLC/dp/B07NGCN727" target="_blank">Alexa</a></li>
+					<li><a title="Android TV" href="https://play.google.com/store/apps/details?id=com.raaga.android&rdid=com.raaga.android" target="_blank">Android TV</a></li>
+					<li><a title="Apple TV" href="https://apps.apple.com/us/app/raaga-hindi-tamil-telugu-songs/id421217877" target="_blank">Apple TV</a></li>
+					<li><a title="Fire TV" href="https://www.amazon.com/Raaga-Hindi-Tamil-Telugu-songs/dp/B06XRHYW95" target="_blank">Fire TV</a></li>
+					<li><a title="More Apps" href="https://www.raaga.com/apps" target="_blank">More...</a></li>
+		  
+        </ul>               
+              </li>
+                            <li class="nav-item">
+			    
+                <a class="nav-link" href="https://www.raaga.com/login" title="Login">
+                  Login
+                </a>
+              </li>
+				              
+            </ul>
+            
+          </div>
+        </div>
+      </nav>
+      <!-- Navbar End -->
+     </header>
+ <section class="hero-area">
+		<div class="container-fluid">
+		<div class="row align-items-center text-center text-md-left">
+		<div class="col-md-6 col-lg-7 col-xl-6 offset-xl-1 mob_show">
+<img class="img-fluid hero-img" src="https://jscss.raaga.com/v2/splash/images/right_bg_new_full.png" alt="Raaga right bg">
+</div>
+		<div class="col-md-6 col-lg-5 mb-5 mb-md-0">
+<h1>The Listening<br>Destination</h1>
+
+<div id="rotate"> <div class="rotate_txt"><span class="rotate_img"><img  src="https://jscss.raaga.com/v2/splash/images/muic_splash.png"></span><span class="rotate_inner">Music in 20+ regional languages across 30 genres</span></div> <div class="rotate_txt"><span class="rotate_img"><img  src="https://jscss.raaga.com/v2/splash/images/pray_hand_splash.png"></span><span class="rotate_inner">Largest archive of devotional music</span></div> <div class="rotate_txt"><span class="rotate_img"><img  src="https://jscss.raaga.com/v2/splash/images/sitar_splash.png"></span><span class="rotate_inner">In-depth catalog of Hindustani & Classical music</span></div> <div class="rotate_txt"><span class="rotate_img"><img  src="https://jscss.raaga.com/v2/splash/images/playlists_splash.png"></span><span class="rotate_inner">Millions of Playlists for every mood </span></div><div class="rotate_txt"><span class="rotate_img"><img  src="https://jscss.raaga.com/v2/splash/images/stories_splash.png"></span><span class="rotate_inner">Largest catalog of Regional Shows & Audio Stories</span></div>
+<div class="rotate_txt"><span class="rotate_img"><img src="https://jscss.raaga.com/v2/splash/images/live_splash.png"></span><span class="rotate_inner">Live radio in 10 regional languages</span></div> </div> 
+<div class="appstore-button d-flex flex-row justify-content-start">
+<div class="buttons flex-row d-flex">
+<i class="fa fa-apple" aria-hidden="true"></i>
+<div class="desc">
+<a href="https://apps.apple.com/in/app/raaga-a-world-of-music/id421217877" target="_blank" title="Available on iOS App Store">
+<p>
+<span>Available</span> <br>
+on App Store
+</p>
+</a>
+</div>
+</div>
+<div class="buttons dark flex-row d-flex">
+<i class="fa fa-android" aria-hidden="true"></i>
+<div class="desc">
+<a href="https://play.google.com/store/apps/details?id=com.raaga.android&hl=en_IN" target="_blank" title="Available on Play Store">
+<p>
+<span>Available</span> <br>
+on Play Store
+</p>
+</a>
+</div>
+</div>
+</div>
+<div class="raaga_devices">
+	<img src="https://jscss.raaga.com/v2/splash/images/splash_devices.png">
+</div>
+</div>
+<div class="col-md-6 col-lg-7 col-xl-6 offset-xl-1 mob_hidden">
+<img class="img-fluid hero-img" src="https://jscss.raaga.com/v2/splash/images/right_bg_new_full.png" alt="Right backgroun raaga">
+</div>
+			</div>
+			
+		</div>
+	</section>
+	<section class="splash_navigation">
+	<ul>
+		<li><a title="Hindi songs" href="https://www.raaga.com/hindi">Hindi</a></li>
+		<li><a title="Tamil songs" href="https://www.raaga.com/tamil">Tamil</a></li>
+		<li><a title="Telugu songs" href="https://www.raaga.com/telugu">Telugu</a></li>
+		<li><a title="Kannada songs" href="https://www.raaga.com/kannada">Kannada</a></li>
+		<li><a title="Malayalam songs" href="https://www.raaga.com/malayalam">Malayalam</a></li>		
+		<li><a title="Punjabi songs" href="https://www.raaga.com/punjabi">Punjabi</a></li>
+		<li><a title="Bengali songs" href="https://www.raaga.com/bengali">Bengali</a></li>
+		<li><a title="Gujarati songs" href="https://www.raaga.com/gujarati">Gujarati</a></li>
+		<li><a title="Rajasthani songs" href="https://www.raaga.com/rajasthani">Rajasthani</a></li>		
+		<li><a title="Haryanvi songs" href="https://www.raaga.com/haryanvi">Haryanvi</a></li>
+		<li><a title="Bhojpuri songs" href="https://www.raaga.com/bhojpuri">Bhojpuri</a></li>		
+		<li><a title="Marathi songs" href="https://www.raaga.com/marathi">Marathi</a></li>
+        <li><a title="Assamese songs" href="https://www.raaga.com/assamese">Assamese</a></li>
+        <li><a title="Arabic songs" href="https://www.raaga.com/arabic">Arabic</a></li>
+		<li><a title="Banjara songs" href="https://www.raaga.com/banjara">Banjara</a></li>
+		<li><a title="Nepali songs" href="https://www.raaga.com/nepali">Nepali</a></li>
+		<li><a title="bhadravahi songs" href="https://www.raaga.com/bhadravahi">Bhadravahi</a></li>
+		<li><a title="chhatisgari songs" href="https://www.raaga.com/chhatisgari">Chhatisgari</a></li>
+		<li><a title="dogri songs" href="https://www.raaga.com/dogri">Dogri</a></li>
+		<li><a title="Garhwali songs" href="https://www.raaga.com/garhwali">Garhwali</a></li>
+		<li><a title="Himachali songs" href="https://www.raaga.com/himachali">Himachali</a></li>
+		<li><a title="kashmiri songs" href="https://www.raaga.com/kashmiri">Kashmiri</a></li>
+		<li><a title="kokborok songs" href="https://www.raaga.com/kokborok">Kokborok</a></li>
+		<li><a title="maithili songs" href="https://www.raaga.com/maithili">Maithili</a></li>
+		<li><a title="odia songs" href="https://www.raaga.com/odia">Odia</a></li>
+		<li><a title="parsee songs" href="https://www.raaga.com/parsee">Parsee</a></li>
+		<li><a title="tulu songs" href="https://www.raaga.com/tulu">Tulu</a></li>
+		<li><a title="Carnatic songs" href="https://www.raaga.com/carnatic">Carnatic</a></li>
+		<li><a title="Hindustani songs" href="https://www.raaga.com/hindustani">Hindustani</a></li>
+		<li><a title="Sanskirt songs" href="https://www.raaga.com/sanskrit">Sanskirt</a></li>
+		<li><a title="Nirvana songs" href="https://www.raaga.com/nirvana">Nirvana</a></li>
+		<li><a title="Fusion songs" href="https://www.raaga.com/fusion">Fusion</a></li>
+		<li><a title="World Music songs" href="https://www.raaga.com/worldmusic">World Music</a></li>
+	</ul>
+		
+	</section>
+<section class="rsplash_feture og-grid cbp-so-section">
+  <div class="rsplash_feture_b">
+     <h4 class="un_limit">Unlimted Music Anytime, Anywhere</h4>
+     <p class="rsplash_text">Raaga has a huge catalog of songs, from massive hits to rare gems to cult classics, with more added every week. Discover, enjoy, and share the music you love.  
+</p>
+
+   <ul class="feature_box-con_option_f">
+               <li class="cbp-so-side cbp-so-side-left">
+                  <span class="op_box_mill_f"></span>
+                  <h3> Listen Everywhere</h3>
+                  <p>Accessing your music has never been so easy: simply download the Raaga app on your mobile or go to Raaga.com from your browser and you are good to go.</p>
+               </li>
+               
+               <li class="llll_f cbp-so-side cbp-so-side-right"> <span class="op_box_dic_f"></span> <h3>Download all your music</h3> <p>Say good bye to patchy internet connections and data overages. With Raaga Premium, you can download all your music and listen to them offline. No internet connection required! Your music is always with you.</p> </li> 
+               
+               
+               <li class="cbp-so-side cbp-so-side-left">
+                 <span class="op_box_offline_f"></span>
+                  <h3>My Music</h3>
+                  <p>Creat your own playlists perfect for parties, trips, and your workout. Follow your favorite artists or connect with friends to discover more music socially.</p>
+               </li>
+               
+               
+               <li class="llll_f cbp-so-side cbp-so-side-right">
+                <span class="op_box_bulid_f"></span>
+                  <h3>Radio</h3>
+                  <p>Listen to hours of 24/7 live radio in over 10 languages. Also choose from our artists-based radio channels or a mood-based channel.</p>
+               </li>
+             </ul>
+  </div>
+</section>
+<div class="raaga_apps_ds">
+ <!-- <h4 class="available_on"></h4>-->
+  <div class="apps_div_box">
+      
+        <a  href="https://itunes.apple.com/us/app/raaga--tamil-telugu-songs/id421217877" alt="iPhone App" title="iPhone App" target="_blank" class="apps_ions_rs">
+          <span class="ios_rs"></span>
+          <span class="text_apps">iOS</span>        </a> 
+        
+        <a href="https://play.google.com/store/apps/details?id=com.raaga.android&rdid=com.raaga.android" alt="Android App" title="Android App" target="_blank" class="apps_ions_rs">
+          <span class="and_rs"></span>
+          <span class="text_apps">Android</span></a>         
+        <a href="https://www.amazon.in/Raaga-LLC/dp/B07NGCN727" alt="Alexa" title="Alexa" target="_blank " class="apps_ions_rs">
+          <span class="alexa_icon"></span>
+          <span class="text_apps">Alexa</span></a> 
+        
+        <a href="https://itunes.apple.com/us/app/raaga-hindi-tamil-telugu-songs/id421217877?mt=8" alt="Apple TV" title="Apple TV" target="_blank" class="apps_ions_rs">
+          <span class="apple_tv"></span>
+          <span class="text_apps">Apple TV</span>        </a> 
+		  
+        <a href="https://play.google.com/store/apps/details?id=com.raaga.android&hl=en_IN" alt="Android TV" title="Android TV" target="_blank" class="apps_ions_rs">
+          <span class="android_tv"></span>
+          <span class="text_apps">Android TV</span></a> 
+        <a href="https://www.amazon.com/Raaga-Hindi-Tamil-Telugu-songs/dp/B06XRHYW95" alt="Fire TV" title="Fire TV" target="_blank" class="apps_ions_rs">
+          <span class="firetv"></span>
+          <span class="text_apps">Fire TV</span>        </a> 
+        <a href="https://play.google.com/store/apps/details?id=com.raaga.android&hl=en_IN" alt="Android Auto" title="Android Auto" target="_blank" class="apps_ions_rs">
+          <span class="android_auto"></span>
+          <span class="text_apps">Android Auto</span>        </a> 
+		<a href="https://itunes.apple.com/us/app/raaga-hindi-tamil-telugu-songs/id421217877?mt=8" alt="Apple Carplay" title="Apple Carplay" target="_blank" class="apps_ions_rs">
+          <span class="car_play"></span>
+          <span class="text_apps">Apple Carplay</span></a>
+		  
+		  </div>
+</div>
+<div class="rsplash_feture">
+  <div class="rsplash_feture_b og-grid cbp-so-section">
+    <div class="rs_card animate right_fade cbp-so-side cbp-so-side-left"> <iframe src="https://www.youtube.com/embed/A0geYxnMf3k" width="320" height="568" frameborder="0" allowfullscreen="allowfullscreen"></iframe>   </div>
+   <div class="rs_right">
+     <h4 class="rs_premium_t">Raaga Premium</h4>
+     <p class="rsplash_text1">Download songs, and listen without Internet. Listen to HD music or download it to your device.</p>
+      
+      <div class="list_icon cbp-so-side cbp-so-side-right">
+        <a><span class="un_music"></span>Unlimited Downloads</a>
+        <a><span class="no_net"></span>No internet connection required</a>
+        <a><span class="hg_m"></span>High quality music</a>
+        <a><span class="free_ad"></span>Ad free experience</a>
+        <a><span class="off_l"></span>Offline access anytime, anywhere</a>      </div>
+        
+        <div class="splash_get_premium"><a href="https://www.raaga.com/premium" target="_blank" title="Get Premium">Get Premium</a></div>
+        
+   </div>
+  </div>
+</div>
+
+<div class="rsplash_feture"> <div class="rsplash_feture_b og-grid cbp-so-section cbp-so-init cbp-so-animate"> <h4 class="un_limit">Introducing Raaga TALK</h4> <p class="rsplash_text">Make your commute the best part of the day with daily news, audio stories, podcasts and personalized talk radio for every topic in your regional language.</p> <div class="talk_icons"><img src="https://dxi0htcskl9ob.cloudfront.net/splash/images/talk_icons.png"></div><div class="discover_but"><a href="https://www.raaga.com/talk" title="Talk" target="_blank">Discover Talk</a></div> </div><div class="splash_talk"></div> </div>
+
+<div class="rsplash_feture">
+  <div class="rsplash_feture_b og-grid cbp-so-section">
+     <h4 class="un_limit">Radio</h4>
+     <p class="rsplash_text">The Raaga radio experience offers you a wide choice of music to suite your taste. Listen to hours of nonstop music.</p>
+
+         <ul class="radio_raaga_sp">
+                 <li style=" width:25%;" class="cbp-so-side cbp-so-side-left">
+                   
+                     <span class="radio_live"></span>
+                   
+                   <div>
+                    <h4 class="sp_fea_title">Live</h4>
+                    <p class="rsplash_text_radio"> Pre-programmed live radio channels available in over 10 languages.</p>
+                   </div>
+                 </li>
+                 
+                  <li class="cbp-so-side cbp-so-side-bottom">
+                   
+                     <span class="radio_art_based"></span>
+                   
+                   <div>
+                    <h4 class="sp_fea_title">Artist-based radio channels</h4>
+                    <p class="rsplash_text_radio">Discover and enjoy hours of music from all your favorite artists categorized by actors, singers, composers and lyricists.</p>
+                   </div>
+                 </li>
+                 
+                  <li class="cbp-so-side cbp-so-side-bottom">
+                   
+                     <span class="radio_mood_based"></span>
+                   
+                   <div>
+                    <h4 class="sp_fea_title">Mood-based radio channels</h4>
+                    <p class="rsplash_text_radio">Raaga brings you the right music for every mood and moment. The perfect songs for your workout, your night in, or your commute to work.</p>
+                   </div>
+                 </li>
+                 
+               </ul>
+               <div class="discover_but"><a href="https://www.raaga.com/radio/popular" title="Radio" target="_blank">Play Radio</a></div>
+               
+  </div>
+</div>
+
+
+<div class="rsplash_feture">
+  <div class="rsplash_feture_b og-grid cbp-so-section" style="height:450px;">
+   
+   <div class="rs_right">
+     <h4 class="muy_raaga_te">My Raaga</h4>
+     <p class="rsplash_text1">Follow your favourite artists, create your own playlists, connect with friends and listen to music all day long.</p>
+      
+      <div class="list_icon cbp-so-side cbp-so-side-left">
+        <a><span class="list_2music"></span>Create & Share Playlists</a>
+        <a><span class="vie_p"></span>Follow your favorite celebs </a>
+        <a><span class="invi"></span>Connect with friends</a>
+        <a><span class="create_p"></span>Sync to your devices</a>      </div>
+        <div class="myraaga_but"><a href="https://www.raaga.com/myraaga" title="My Raaga" target="_blank">Go To My Raaga</a></div>
+        
+   </div> 
+  
+  
+  <div class="profile_img">
+    <div class="m_raaga_img"></div>
+  </div>
+  </div>
+</div>
+
+
+
+<div class="rsplash_feture" style="height:350px;">
+  <div class="rsplash_feture_b og-grid cbp-so-section">
+   
+    
+  <h4 class="un_limit">Connect with friends on Raaga</h4>
+     <p class="rsplash_text">When you love something, you want your friends to know about it. Post your favourite tracks on Facebook and Twitter and share your love for music with the world.</p>
+  
+   <div class="co_friends">
+    
+     <a href="https://www.raaga.com/" onclick="googleplus_signin(); return false;" id="LoginWithGoogleLink" class="co_friends_gg"></a>
+
+	 <form method="post" class="openids" id="openids">
+				   <a href="#" class="openid sign" title="OpenID"></a>
+	               <a href="javascript:;" class="co_friends_fb direct" title="Facebook"></a>
+	 </form>
+   </div>
+  
+  </div>
+</div>
+
+
+<div class="rsplash_feture">
+  <div class="rsplash_feture_b">
+     <h4 class="un_limit">Join your favorite artists</h4>
+     <p class="rsplash_text">Raaga offers an unique opportunity to stay connected with all your favorite celebs. Follow them and stay updated with all the latest music.</p>
+  <div class="div_testimonial">
+     
+     <div class="test_video animate right_fade">
+     <iframe id="artist_video_iframe" width="100%" height="315" src="https://www.youtube.com/embed/zTQudaKbtqI?rel=0" frameborder="0" allowfullscreen></iframe>
+     </div>
+     
+     <div class="test_comments">
+       <div class="comm1">
+         <a href="javascript:;">
+          <img src="https://www.raaga.com/splash/artist/blaaze_t.jpg" width="130px" height="100px" alt="blaaze" title="blaaze">
+          <div class="sp_overlay_bg"> </div>
+         </a> 
+            <a href="javascript:show_artist_video('https://www.youtube.com/embed/T_Y_h1QGFas');"><div class="t_hover_play_b"></div></a>   
+       </div>
+       
+       
+       <div class="comm1">
+         <a href="javascript:;">
+          <img src="https://www.raaga.com/splash/artist/nagarjuna_t.jpg" width="130px" height="100px" alt="nagarjuna" title="nagarjuna">
+          <div class="sp_overlay_bg"> </div>
+         </a>  
+          <a href="javascript:show_artist_video('https://www.youtube.com/embed/G8N91V7c9Bo');"><div class="t_hover_play_b"></div></a>  
+       </div>
+       
+       
+       <div class="comm1">
+         <a href="javascript:;">
+          <img src="https://www.raaga.com/splash/artist/naresh_iyer_t.jpg" width="120px" height="100px" alt="naresh iyer" title="naresh iyer">
+          <div class="sp_overlay_bg"> </div>
+         </a> 
+          <a href="javascript:show_artist_video('https://www.youtube.com/embed/RxCTx-cr14c');"><div class="t_hover_play_b"></div></a>   
+       </div>
+       
+       <div class="comm1">
+         <a href="javascript:;">
+          <img src="https://www.raaga.com/splash/artist/simbu_t.jpg" width="130px" height="100px" alt="simbu" title="simbu">
+          <div class="sp_overlay_bg"> </div>
+         </a>   
+          <a href="javascript:show_artist_video('https://www.youtube.com/embed/rDzolhbk8EY');"><div class="t_hover_play_b"></div></a> 
+       </div>
+       
+       <div class="comm1">
+         <a href="javascript:;">
+          <img src="https://www.raaga.com/splash/artist/sonu_nigam_t.jpg" width="120px" height="100px" alt="sonu nigam" title="sonu nigam">
+          <div class="sp_overlay_bg"> </div>
+         </a>   
+          <a href="javascript:show_artist_video('https://www.youtube.com/embed/zTQudaKbtqI');"><div class="t_hover_play_b"></div></a> 
+       </div>
+       
+       <div class="comm1">
+         <a href="javascript:;">
+          <img src="https://www.raaga.com/splash/artist/tamannah_t.jpg" width="130px" height="100px" alt="tamannah" title="tamannah">
+          <div class="sp_overlay_bg"> </div>
+         </a> 
+          <a href="javascript:show_artist_video('https://www.youtube.com/embed/OW__WcKZJU0');"><div class="t_hover_play_b"></div></a>   
+       </div>
+       
+       <div class="comm1">
+         <a href="javascript:;">
+          <img src="https://www.raaga.com/splash/artist/vijay_prakash_t.jpg" width="130px" height="100px" alt="vijay prakash" title="vijay prakash">
+          <div class="sp_overlay_bg"> </div>
+         </a>   
+          <a href="javascript:show_artist_video('https://www.youtube.com/embed/gVXcFZwHfgk');"><div class="t_hover_play_b"></div></a> 
+       </div>
+       
+       <div class="comm1">
+         <a href="javascript:;">
+          <img src="https://www.raaga.com/splash/artist/kajal_agarwal_t.jpg" width="130px" height="100px" alt="kajal agarwal" title="kajal agarwal">
+          <div class="sp_overlay_bg"> </div>
+         </a>   
+          <a href="javascript:show_artist_video('https://www.youtube.com/embed/uHzfotg6OhA');"><div class="t_hover_play_b"></div></a> 
+          
+       </div>
+       
+       <div class="comm1">
+         <a href="javascript:;">
+          <img src="https://www.raaga.com/splash/artist/sj_surya_t.jpg" width="130px" height="100px" alt="sj surya" title="sj surya">
+          <div class="sp_overlay_bg"> </div>
+         </a>  
+         
+         <a href="javascript:show_artist_video('https://www.youtube.com/embed/TBBDCVysdBc');"><div class="t_hover_play_b"></div></a> 
+       </div>
+       
+     </div>
+  </div>
+  </div>
+</div>
+
+
+
+<div class="label_footer" style="position: relative; top: 0px;">
+  <div class="label_footer_in">
+  	<div class="app_colum_box">
+		  <div class="split3"><h2><a href="https://www.raaga.com/apps/" target="_blank"><img src="https://www.raaga.com/splash/images/raaga_footer_logo.png" alt="Raaga" title="Raaga apps"></a></h2>
+			  <a class="storebut_link" href="https://apps.apple.com/in/app/raaga-a-world-of-music/id421217877" target="_blank"><img src="https://www.raaga.com/splash/images/ios_store_badge.png" alt="Apple Store" title="Raaga iOS App"></a>
+			  <a class="storebut_link" href="https://play.google.com/store/apps/details?id=com.raaga.android&hl=en_IN" target="_blank"><img src="https://www.raaga.com/splash/images/android_store_badge.png" title="Raaga Android App" alt="android Store"></a>
+			  <a class="storebut_link" href="https://www.amazon.com/Raaga-LLC/dp/B07P74S9FQ" target="_blank"><img src="https://www.raaga.com/splash/images/amazon_alexa.svg" alt="Alexa Store" title="Available in Alexa"></a>
+		  </div>
+		  <div class="split3"><h2><a href="https://aalaya.raaga.com/" target="_blank"><img src="https://www.raaga.com/splash/images/aalaya_footer_logo.png" alt="Aalaya" title="Aalaya apps"></a></h2>
+			    <a class="storebut_link" href="https://apps.apple.com/us/app/aalaya-mantras-bhajans/id1494890048" target="_blank"><img src="https://www.raaga.com/splash/images/ios_store_badge.png" alt="Apple Store" title="Aalaya iOS App"></a>
+			  <a class="storebut_link" href="https://play.google.com/store/apps/details?id=raaga.devotional.android&hl=en_IN" target="_blank"><img src="https://www.raaga.com/splash/images/android_store_badge.png" title="Aalaya Android App" alt="android Store"></a></div>
+		  <div class="split3"><h2 style="display: none;"><a href="#"><img src="https://www.raaga.com/splash/images/taala_footer_logo.png" alt="Taala" title="Taala apps"></a></h2>  <a style="display: none;" class="storebut_link" href="#"><img src="https://www.raaga.com/splash/images/ios_store_badge.png" alt="Apple Store" title="Taala iOS App"></a>
+			  <a style="display: none;" class="storebut_link" href="#"><img src="https://www.raaga.com/splash/images/android_store_badge.png" title="Taala Android App" alt="android Store"></a></div>
+	  </div>
+    <div class="fo_column_box">
+      <div class="label_fcolumn">
+        <h3>Music</h3>
+        <ul>
+          <li><a href="https://www.raaga.com/latest" title="New Release" class="history-ajaxy">New Release</a></li>
+          <li><a href="https://www.raaga.com/popular" title="Popular" class="history-ajaxy">Popular</a></li>
+          <li><a href="https://www.raaga.com/top10" title="Top 10" class="history-ajaxy">Top 10</a></li>
+          <li><a href="https://www.raaga.com/browse/devotional" title="Devotional" class="history-ajaxy">Devotional</a></li>
+          <li><a href="tamil/browse" class="history-ajaxy">Browse A-Z</a></li>
+        </ul>
+      </div>
+      <div class="label_fcolumn">
+        <h3>Radio</h3>
+        <ul>
+          <li><a href="https://www.raaga.com/tamil/radio/moods" title="Moods" class="history-ajaxy">Moods</a></li>
+                    <li><a href="https://www.raaga.com/tamil/radio/genres" title="Genres" class="history-ajaxy">Genres</a></li>
+                    <li><a href="https://www.raaga.com/tamil/radio/actors" title="Actors" class="history-ajaxy">Actors</a></li>
+                    <li><a href="https://www.raaga.com/tamil/radio/actresses" title="Actress" class="history-ajaxy">Actress</a></li>
+                    <li><a href="https://www.raaga.com/tamil/radio/musicdirs" title="Music Directos" class="history-ajaxy">Music Directos</a></li>
+        </ul>
+      </div>
+      <div class="label_fcolumn">
+        <h3>Playlist</h3>
+        <ul>
+          <li><a href="https://www.raaga.com/tamil/playlists" title="Themed Playlist" class="history-ajaxy">Themed Playlist</a></li>
+          <li><a href="https://www.raaga.com/tamil/playlists/all/recent" title="Recent" class="history-ajaxy">Recent</a></li>
+          <li><a href="https://www.raaga.com/tamil/playlists/all/popular" title="Popular" class="history-ajaxy">Popular</a></li>
+          
+        </ul>
+      </div>
+      <div class="label_fcolumn">
+        <h3>Connect with us</h3>
+		<div class="album-social-share"><i class="sprite fb"><a name="Facebook" href="https://www.facebook.com/raagacom" target="_blank"></a></i> <i class="sprite instagram"><a name="Instagram" href="https://www.instagram.com/raagacom/" target="_blank"></a></i> <i class="sprite twitter-new"><a name="Twitter" href="https://twitter.com/raagadotcom" target="_blank"></a></i>
+		<i class="sprite linkedin-new"><a title="Linkedin" name="Linkedin" href="https://www.linkedin.com/company/raaga-llc" target="_blank"></a></i>
+		</div>
+        <div class="social_all_bot">
+         <div class="twitter_lfooter">
+          <iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" src="https://platform.twitter.com/widgets/follow_button.1397089991.html#_=1397111674289&amp;id=twitter-widget-0&amp;lang=en&amp;screen_name=raagadotcom&amp;show_count=true&amp;show_screen_name=true&amp;size=m" class="twitter-follow-button twitter-follow-button" title="Twitter Follow Button" data-twttr-rendered="true" style="width: 142px; height: 20px;"></iframe>
+						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+         </div>
+         <div class="fb_lfooter">
+                <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffacebook.com%2Fraagacom&amp;width=130&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:130px; height:21px;" allowtransparency="true"></iframe>
+         </div>
+         <!-- <div class="goo_lfooter"> -->
+               <!-- Place this tag where you want the +1 button to render. -->
+		<!-- <div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background-color: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px; background-position: initial initial; background-repeat: initial initial;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" width="100%" id="I0_1397110699176" name="I0_1397110699176" src="https://apis.google.com/u/0/_/+1/fastbutton?usegapi=1&amp;size=medium&amp;annotation=bubble&amp;width=130&amp;origin=http%3A%2F%2Fp.raaga.com&amp;url=http%3A%2F%2Fwww.raaga.com%2F&amp;gsrc=3p&amp;ic=1&amp;jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.en.1cu-iA50uKs.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Fz%3Dzcms%2Frs%3DAItRSTNMuxQ-ILuxXT0Zy3BGEhpm-qvn7w#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh%2Conload&amp;id=I0_1397110699176&amp;parent=http%3A%2F%2Fwww.raaga.com&amp;pfname=&amp;rpctoken=11259045" data-gapiattached="true" title="+1"></iframe></div> -->
+
+		<!-- Place this tag after the last +1 button tag. -->
+         <!-- </div> -->
+         
+      </div>
+    </div>
+    
+  </div>
+  <div class="copy_rights_la">
+      <span>Copyright © 2025 Raaga.com. All Rights Reserved.</span>
+      <a href="https://www.raaga.com/terms-conditions" class="history-ajaxy">Terms</a>&nbsp;|&nbsp;
+      <a href="https://www.raaga.com/privacy" class="history-ajaxy">Privacy Policy</a>
+    </div>
+</div>
+</div>
+
+ 
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"4b3232b7f9","applicationID":"4288459","transactionName":"blxaMRFYDUsEABEPWVcWbRcKFhBICQIWDhlQV1wAGxcTUBU=","queueTime":0,"applicationTime":5,"atts":"QhtZR1lCHkU=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+<script>
+$(function() {
+
+		  $("form.openids:eq(0)").openid();
+
+	});
+function urlencode(str){
+  str = (str + '').toString();
+  return encodeURIComponent(str).replace(/!/g, '%21').replace(/'/g, '%27').replace(/\(/g, '%28').
+  replace(/\)/g, '%29').replace(/\*/g, '%2A').replace(/%20/g, '+');
+}
+
+function googleAPIOnLoad() {
+		gapi.client.load('plus','v1', function(e){
+		  //googleplus_signin()
+	});
+}
+ function googleplus_signin() {
+	 $(document).ready(function () {
+		 gapi.client.load('plus','v1', function(e){
+			 var authResult = "";
+             gapi.auth.authorize({
+                client_id: "685495747235-99p64hppoqe354b5p2irjrj1c9dna6qc.apps.googleusercontent.com",
+				apppackagename :'com.raaga.android', 
+                immediate: false,
+                response_type: "token",
+                scope: ["https://www.googleapis.com/auth/plus.login","https://www.googleapis.com/auth/plus.profile.emails.read","https://www.googleapis.com/auth/plus.stream.write"],
+                request_visible_actions: "https://schemas.google.com/AddActivity"
+               }, function(authResult) {
+				 
+                 var request = gapi.client.plus.people.get( {'userId' : 'me'} );
+                 request.execute( function(profile) {
+					 var userid=profile.getId;
+					 var email = profile['emails'].filter(function(v) {
+						return v.type === 'account'; // Filter out the primary email
+					})[0].value;
+
+					
+		
+						$('.co_friends').load(ROOT_FOLDER+'goolge_submit.php?action=google&r='+Math.random()+'&email='+urlencode(email)+'&name='+urlencode(profile.displayName)+'&gender='+profile.gender+'&foto='+profile.image.url+'&access_token='+authResult["access_token"],function(response){
+							
+							if(document.getElementById('loginchk_hb').value=="1")
+							{  
+								//window.location.reload();
+								after_login();
+							}
+							else
+							{
+								
+								alertmsg_display('Problem while registration!!!');
+								
+							}
+						});
+                 });
+                
+            });
+		 });
+		 });
+ }
+
+(function () {
+    var ad = document.createElement('script'); ad.type = 'text/javascript'; ad.async = true;
+    ad.src = 'https://plus.google.com/js/client:plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ad, s);
+})();
+
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-2238680-12', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+<script src="https://www.raaga.com/splash/js/modernizr.custom.js"></script>
+<script src="https://www.raaga.com/splash/js/classie.js"></script>
+<script src="https://www.raaga.com/splash/js/cbpScroller.js"></script>
+<script>
+new cbpScroller( document.getElementById( 'cbp-so-scroller' ) );
+</script>
+<script>
+	$(window).scroll(function(){
+	$('nav').toggleClass('navbar_scroll', $(this).scrollTop() > 50);
+});
+	</script>
+	<script>
+		(function($){
+    $.fn.extend({ 
+        rotaterator: function(options) {
+ 
+            var defaults = {
+                fadeSpeed: 500,
+                pauseSpeed: 100,
+				child:null
+            };
+             
+            var options = $.extend(defaults, options);
+         
+            return this.each(function() {
+                  var o =options;
+                  var obj = $(this);                
+                  var items = $(obj.children(), obj);
+				  items.each(function() {$(this).hide();})
+				  if(!o.child){var next = $(obj).children(':first');
+				  }else{var next = o.child;
+				  }
+
+				  $(next).fadeIn(o.fadeSpeed, function() {
+						$(next).delay(o.pauseSpeed).fadeOut(o.fadeSpeed, function() {
+							var next = $(this).next();
+							if (next.length == 0){
+									next = $(obj).children(':first');
+							}
+							$(obj).rotaterator({child : next, fadeSpeed : o.fadeSpeed, pauseSpeed : o.pauseSpeed});
+						})
+					});
+            });
+        }
+    });
+})(jQuery);
+
+ $(document).ready(function() {
+        $('#rotate').rotaterator({fadeSpeed:500, pauseSpeed:3000});
+
+     /*   if ($.cookie('raaga_popLayout') == null ){
+          $('.app_promo_bottom').slideDown('slow');
+          $.cookie('raaga_popLayout', 1, { expires: 1 });          
+        }
+         $(".app_promo_close").click(function(){
+            $('.app_promo_bottom').slideUp('slow');
+        });
+*/
+         var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+	    if (/android/i.test(userAgent)) {
+	        $('.ios').hide();
+	    }
+	    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+	       $('.andr').hide();
+	   }
+ });
+	</script>
+ 
+</html>

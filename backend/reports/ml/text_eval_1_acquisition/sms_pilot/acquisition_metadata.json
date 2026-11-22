@@ -1,0 +1,52 @@
+{
+  "milestone": "TEXT-EVAL-1 SMS Pilot Acquisition",
+  "created_utc": "2026-11-01T18:03:56.358694+00:00",
+  "random_seed": 20261101,
+  "sample_counts": {
+    "Cohort_A_Smishing": 100,
+    "Cohort_B_Legitimate_SMS": 100,
+    "Cohort_C_Commercial_Spam": 50,
+    "Total": 250
+  },
+  "cohort_sources": {
+    "Cohort_A": {
+      "source": "WSPR-NCSU SMS Phishing (IEEE S&P 2024)",
+      "license": "MIT License",
+      "campaign_sampling": "1 message per campaign across 100 distinct campaigns",
+      "sanitization": "destination phone numbers excluded from model input"
+    },
+    "Cohort_B": {
+      "subsets": [
+        {
+          "name": "UCI SMS Spam Collection (Ham)",
+          "count": 50,
+          "license": "CC BY 4.0",
+          "screening": "passed exact & simhash filter"
+        },
+        {
+          "name": "ExAIS_SMS (Ham)",
+          "count": 50,
+          "license": "Research Attribution",
+          "sanitization": "user metadata/timestamps stripped"
+        }
+      ],
+      "label": "dataset_ham"
+    },
+    "Cohort_C": {
+      "subsets": [
+        {
+          "name": "UCI SMS Spam Collection (Spam)",
+          "count": 25,
+          "license": "CC BY 4.0"
+        },
+        {
+          "name": "ExAIS_SMS (Spam)",
+          "count": 25,
+          "license": "Research Attribution"
+        }
+      ],
+      "label": "dataset_spam",
+      "semantics": "nuisance commercial spam, not phishing"
+    }
+  }
+}

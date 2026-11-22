@@ -1,0 +1,78 @@
+{
+  "frozen_sms03": {
+    "model_id": "sms_03_combined",
+    "artifact_sha256": "8dd043a3b8322b2e55ca34581466b6dd64bbbf0f24422952156c1176942644df",
+    "test_metrics": {
+      "n_samples": 1307,
+      "n_pos": 510,
+      "n_neg": 797,
+      "tp": 293,
+      "fp": 8,
+      "tn": 789,
+      "fn": 217,
+      "precision": 0.9734,
+      "recall": 0.5745,
+      "specificity": 0.99,
+      "f1": 0.7226,
+      "balanced_accuracy": 0.7822,
+      "accuracy": 0.8279,
+      "roc_auc": 0.9509,
+      "average_precision": 0.9404
+    },
+    "test_category_rates": {
+      "ham_total": 526,
+      "ham_false_positives": 2,
+      "ham_false_positive_rate": 0.0038,
+      "commercial_spam_total": 271,
+      "commercial_spam_false_positives": 6,
+      "commercial_spam_false_positive_rate": 0.0221,
+      "smishing_total": 510,
+      "smishing_true_positives": 293,
+      "smishing_recall": 0.5745,
+      "smishing_linkless_total": 255,
+      "smishing_linkless_true_positives": 64,
+      "smishing_linkless_recall": 0.251,
+      "smishing_url_bearing_total": 255,
+      "smishing_url_bearing_true_positives": 229,
+      "smishing_url_bearing_recall": 0.898
+    }
+  },
+  "frozen_sms05_winning": {
+    "model_id": "sms_05_c_combined",
+    "artifact_sha256": "6b7ae684cde6bf041deb4963e6e5b4adf7c31ba12ceed2b6b1f838ccd7b77587",
+    "test_metrics": {
+      "n_samples": 1307,
+      "n_pos": 510,
+      "n_neg": 797,
+      "tp": 479,
+      "fp": 14,
+      "tn": 783,
+      "fn": 31,
+      "precision": 0.9716,
+      "recall": 0.9392,
+      "specificity": 0.9824,
+      "f1": 0.9551,
+      "balanced_accuracy": 0.9608,
+      "accuracy": 0.9656,
+      "roc_auc": 0.9928,
+      "average_precision": 0.9909
+    },
+    "test_category_rates": {
+      "ham_total": 526,
+      "ham_false_positives": 4,
+      "ham_false_positive_rate": 0.0076,
+      "commercial_spam_total": 271,
+      "commercial_spam_false_positives": 10,
+      "commercial_spam_false_positive_rate": 0.0369,
+      "smishing_total": 510,
+      "smishing_true_positives": 479,
+      "smishing_recall": 0.9392,
+      "smishing_linkless_total": 255,
+      "smishing_linkless_true_positives": 236,
+      "smishing_linkless_recall": 0.9255,
+      "smishing_url_bearing_total": 255,
+      "smishing_url_bearing_true_positives": 243,
+      "smishing_url_bearing_recall": 0.9529
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "protocol": "Proposed V3 Source-Aware Stratified Split",
+  "total_records": 5400,
+  "total_components": 4801,
+  "partitions": {
+    "train": {
+      "total_records": 3789,
+      "component_count": 3190,
+      "source_categories": {
+        "ExAIS_commercial_spam": 1037,
+        "ExAIS_ham": 875,
+        "UCI_commercial_spam": 22,
+        "UCI_ham": 875,
+        "WSPR_NCSU_smishing": 980
+      },
+      "categories": {
+        "ham": 1750,
+        "commercial_spam": 1059,
+        "smishing": 980
+      },
+      "binary_labels": {
+        "0": 2809,
+        "1": 980
+      }
+    },
+    "validation": {
+      "total_records": 805,
+      "component_count": 805,
+      "source_categories": {
+        "ExAIS_commercial_spam": 216,
+        "ExAIS_ham": 187,
+        "UCI_commercial_spam": 5,
+        "UCI_ham": 187,
+        "WSPR_NCSU_smishing": 210
+      },
+      "categories": {
+        "ham": 374,
+        "commercial_spam": 221,
+        "smishing": 210
+      },
+      "binary_labels": {
+        "0": 595,
+        "1": 210
+      }
+    },
+    "test": {
+      "total_records": 806,
+      "component_count": 806,
+      "source_categories": {
+        "ExAIS_commercial_spam": 215,
+        "ExAIS_ham": 188,
+        "UCI_commercial_spam": 5,
+        "UCI_ham": 188,
+        "WSPR_NCSU_smishing": 210
+      },
+      "categories": {
+        "ham": 376,
+        "commercial_spam": 220,
+        "smishing": 210
+      },
+      "binary_labels": {
+        "0": 596,
+        "1": 210
+      }
+    }
+  },
+  "invariants_verified": {
+    "zero_component_overlap": true,
+    "zero_campaign_overlap": true,
+    "zero_exact_text_overlap": true,
+    "zero_near_duplicate_overlap": true
+  }
+}

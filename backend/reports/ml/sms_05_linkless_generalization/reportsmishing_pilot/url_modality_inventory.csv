@@ -1,0 +1,10 @@
+scam_type,total_records,url_bearing_count,url_bearing_pct,linkless_count,linkless_pct
+banking,10359,5016,48.42,5343,51.58
+others,4490,1503,33.47,2987,66.53
+government,1895,928,48.97,967,51.03
+delivery,1647,966,58.65,681,41.35
+telecom,1620,653,40.31,967,59.69
+spam,1384,564,40.75,820,59.25
+wrong number,292,27,9.25,265,90.75
+hey mum/dad,77,1,1.3,76,98.7
+unknown,1,0,0.0,1,100.0

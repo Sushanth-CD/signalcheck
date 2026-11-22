@@ -1,0 +1,501 @@
+benchmark_serial_number,source_row_id,standardized_category,binary_ground_truth,has_extractable_url,message_length,length_tier,raw_message_text,prediction_score,predicted_label,is_correct,error_type
+BENCH_001,3130,smishing,1,False,157,long,URGENT! We are trying to contact you. Last weekends draw shows that you have won a Â£900 prize GUARANTEED. Call 09061701939. Claim code S89. Valid 12hrs only,0.14446103144344338,0,0,false_negative
+BENCH_002,5137,ham,0,True,162,long,Hey! do u fancy meetin me at 4 at cha Â hav a lil beverage on me. if not txt or ring me and we can meet up l8r. quite tired got in at 3 v.pist ;) love Pete x x x,0.09073683331589057,0,1,correct
+BENCH_003,3384,commercial_spam,0,False,143,long,TheMob>Yo yo yo-Here comes a new selection of hot downloads for our members to get for FREE! Just click & open the next link sent to ur fone...,0.0853188436581224,0,1,correct
+BENCH_004,5827,smishing,1,True,105,medium,Natalie (20/F) is inviting you to be her friend. Reply YES-165 or NO-165 See her: www.SMS.ac/u/natalie2k9,0.1210977309708386,0,0,false_negative
+BENCH_005,5078,ham,0,False,122,medium,Sorry i now then c ur msg... Yar lor so poor thing... But only 4 one night... Tmr u'll have a brand new room 2 sleep in...,0.024757581577023218,0,1,correct
+BENCH_006,1176,ham,0,False,46,short,"Be a good person , but dont try to prove itï¿½",0.09036836764563178,0,1,correct
+BENCH_007,4046,commercial_spam,0,False,118,medium,Ur cash-balance is currently 500 pounds - to maximize ur cash-in now send CASH to 86688 only 150p/msg. CC: 08718720201,0.14286566028561434,0,1,correct
+BENCH_008,199,ham,0,False,42,short,"Greetings me, ! Consider yourself excused.",0.28196102154971614,0,1,correct
+BENCH_009,5693,commercial_spam,0,False,139,medium,1st wk FREE! Gr8 tones str8 2 u each wk. Txt NOKIA ON to 8007 for Classic Nokia tones or HIT ON to 8007 for Polys. Nokia/150p Poly/200p 16+,0.0746020780669307,0,1,correct
+BENCH_010,3763,commercial_spam,0,True,122,medium,"For ur chance to win Â£250 cash every wk TXT: PLAY to 83370. T's&C's www.music-trivia.net custcare 08715705022, 1x150p/wk.",0.19914062730364826,0,1,correct
+BENCH_011,1262,commercial_spam,0,False,162,long,GSOH? Good with the ladies?U could b a male gigolo? 2 join the uk's fastest growing mens club reply ONCALL. mjzgroup. 08714342399.2stop reply STOP. msg@Â£1.50rcvd,0.2280588543168338,0,1,correct
+BENCH_012,397,ham,0,False,70,short,"Yo, I'm at my parents' gettin cash. Good news: we picked up a downstem",0.19663560182744813,0,1,correct
+BENCH_013,2771,smishing,1,False,88,medium,Your account has been credited with 500 FREE Text Messages. To activate call 08718738034,0.14137501891388843,0,0,false_negative
+BENCH_014,976,smishing,1,True,151,long,Englishvocabulary ululate: to mourn loudly and shrilly AD: Unlimited FREE calls to any mobile try out today http://bit.ly/unlmtdfreecall share wid frnd,0.10368027790313243,0,0,false_negative
+BENCH_015,5379,commercial_spam,0,True,125,medium,Buy Space Invaders 4 a chance 2 win orig Arcade Game console. Press 0 for Games Arcade See o2.co.uk/games 4 Terms + settings.,0.23066466741922081,0,1,correct
+BENCH_016,4984,ham,0,False,34,short,Dear good morning now only i am up,0.03358469749282661,0,1,correct
+BENCH_017,2419,commercial_spam,0,False,101,medium,	Hey I am really want to chat  text hot to 69698 text charged at 150pm to unsubscribe text stop 69698,0.07201350729287695,0,1,correct
+BENCH_018,5130,commercial_spam,0,True,158,long,NON-STOP INTERNET and DOWNLOADING with Pocket Internet. Dial *234*2900# and get Games at a special price of Rs.3 everyday. Click and play: http://goo.gl/iRrIJ,0.26101396074321226,0,1,correct
+BENCH_019,5042,smishing,1,False,152,long,You are a winner U have been specially selected 2 receive Â£1000 or a 4* holiday (flights inc) speak to a live operator 2 claim 0871277810910p/min (18+),0.20952380662846898,0,0,false_negative
+BENCH_020,2109,smishing,1,True,161,long,Congratulations U can claim 2 VIP row A Tickets 2 C Blu in concert in November or Blu gift guaranteed Call 09061104276 to claim TS&Cs www.smsco.net costÂ£3.75max,0.3183568947090301,0,0,false_negative
+BENCH_021,4895,ham,0,True,40,short,Studying. But i.ll be free next weekend.,0.06842358285547781,0,1,correct
+BENCH_022,829,ham,0,False,41,short,Everybody had fun this evening. Miss you.,0.12383684156209451,0,1,correct
+BENCH_023,3315,smishing,1,True,164,long,"To cancel this order you should visit http/aetacms.com/.cas/auo.html/redirect-aopis.itï¿½to review your details. if you need additional help, contact Apple Support.",0.9662375861354654,1,1,correct
+BENCH_024,4877,ham,0,False,145,long,And smile for me right now as you go and the world will wonder what you are smiling about and think your crazy and keep away from you ... *grins*,0.03625213058515739,0,1,correct
+BENCH_025,3309,ham,0,False,41,short,That's y we haf to combine n c how lor...,0.07611814440271905,0,1,correct
+BENCH_026,2466,commercial_spam,0,True,157,long,"Residential plot allotment in New Moradabad Nearby Holiday Regency 5* Hotal, plots size 90,112,162,200,300,351,400sq.mtr, rate 5000@sq.mtr call on 9540953304",0.15760764154973822,0,1,correct
+BENCH_027,5469,smishing,1,False,126,medium,Dear Customer your pyatm wallet Has been booked and hold Your amount please complete your kyc contact customer care 7044518857,0.4414817591245572,0,0,false_negative
+BENCH_028,608,smishing,1,False,161,long,"Congrats! 1 year special cinema pass for 2 is yours. call 09061209467 now! C Suprman V, Matrix3, StarWars3, etc all 4 FREE! bx420-ip4-5we. 150pm. Dont miss out! ",0.06204481642842033,0,0,false_negative
+BENCH_029,5945,smishing,1,False,160,long,"Records indicate you were involved in an accident in the last 2.5 years. As such you are entitled to claim compensation, Reply CLAIM for info or STOP to opt out",0.5710302271348906,1,1,correct
+BENCH_030,3285,smishing,1,False,96,medium,WE WILL HOLD YOUR PAYTM AMOUNT AFTER SOMETIME COMPLETE YOUR PAYTM KYC PAYTM OFFICE PH 8927307655,0.3839982401845624,0,0,false_negative
+BENCH_031,3158,commercial_spam,0,False,33,short,88066 FROM 88066 LOST 3POUND HELP,0.11412884655273081,0,1,correct
+BENCH_032,639,ham,0,False,46,short,7 lor... Change 2 suntec... Wat time u coming?,0.06285909351659762,0,1,correct
+BENCH_033,3316,ham,0,False,11,short,I'm done...,0.0679721193796383,0,1,correct
+BENCH_034,3104,commercial_spam,0,False,158,long,"FREE NOKIA Or Motorola with upto 12mths 1/2price linerental, 500 FREE x-net mins&100txt/mth FREE B'tooth*. Call Mobileupd8 on 08001950382 or call 2optout/D3WV",0.07901468119068143,0,1,correct
+BENCH_035,553,smishing,1,False,155,long,Urgent! Please call 09061213237 from landline. Â£5000 cash or a luxury 4* Canary Islands Holiday await collection. T&Cs SAE PO Box 177. M227XY. 150ppm. 16+,0.18422051689017713,0,0,false_negative
+BENCH_036,3518,smishing,1,True,159,long,T-Mobile customer you may now claim your FREE CAMERA PHONE upgrade & a pay & go sim card for your loyalty. Call on 0845 021 3680.Offer ends 28thFeb.T&C's apply,0.21038321484157485,0,0,false_negative
+BENCH_037,550,smishing,1,False,81,medium,Please CALL 08712402578 immediately as there is an urgent message waiting for you,0.16251966756522662,0,0,false_negative
+BENCH_038,4087,smishing,1,True,150,long,URGENT: IRELAND GOV has issued a payment of 350 ï¿½ to all residents as part of its promise to battle COVID 19. Tap here to apply: http://url.ie/17j80,0.616295808486965,1,1,correct
+BENCH_039,2397,ham,0,False,86,medium,Sure but since my parents will be working on Tuesday I don't really need a cover story,0.06386092445403097,0,1,correct
+BENCH_040,2195,smishing,1,True,150,long,Congratulations ur awarded 500 of CD vouchers or 125gift guaranteed & Free entry 2 100 wkly draw txt MUSIC to 87066 TnCs www.Ldew.com1win150ppmx3age16,0.18369669144714015,0,0,false_negative
+BENCH_041,1046,smishing,1,True,157,long,	Moby Pub Quiz.Win a Â£100 High Street prize if u know who the new Duchess of Cornwall will be? Txt her first name to 82277.unsub STOP Â£1.50 008704050406 SP,0.12426441507045258,0,0,false_negative
+BENCH_042,2575,ham,0,False,28,short,"Cool, I'll text you in a few",0.06808338943616925,0,1,correct
+BENCH_043,4847,ham,0,False,33,short,I wait 4 Ã¼ inside da car park...,0.0991969799244497,0,1,correct
+BENCH_044,1698,ham,0,False,159,long,I miss you so much I'm so desparate I have recorded the message you left for me the other day and listen to it just to hear the sound of your voice. I love you,0.045562389527714686,0,1,correct
+BENCH_045,4646,smishing,1,False,147,long,Dear Voucher Holder 2 claim your 1st class airport lounge passes when using Your holiday voucher call 08704439680. When booking quote 1st class x 2,0.1864581983578986,0,0,false_negative
+BENCH_046,2736,smishing,1,False,149,long,XMAS REWARD IS WAITING FOR YOU! Our computer has randomly picked you from our loyal mobile customers to receive a Â£400 reward. Just call 09066380644,0.13911619704671502,0,0,false_negative
+BENCH_047,4919,ham,0,False,46,short,2mro i am not coming to gym machan. Goodnight.,0.07624907924295714,0,1,correct
+BENCH_048,5277,ham,0,False,62,short,No. To be nosy I guess. Idk am I over reacting if I'm freaked?,0.09923493553557093,0,1,correct
+BENCH_049,2133,ham,0,False,24,short,Hey anyway i have to :-),0.13181825401105982,0,1,correct
+BENCH_050,3707,ham,0,False,121,medium,"K, makes sense, btw carlos is being difficult so you guys are gonna smoke while I go pick up the second batch and get gas",0.061093747267933554,0,1,correct
+BENCH_051,1525,smishing,1,True,160,long,FREE MSG:We billed your mobile number by mistake from shortcode 83332.Please call 08081263000 to have charges refunded.This call will be free from a BT landline,0.11644913176284767,0,0,false_negative
+BENCH_052,2900,ham,0,False,22,short,You got called a tool?,0.06458189365940294,0,1,correct
+BENCH_053,5420,smishing,1,False,115,medium,Congratulations ur awarded 500 of CD vouchers or 125gift guaranteed & Free entry 2 100 wkly draw txt MUSIC to 87066,0.13914514636932043,0,0,false_negative
+BENCH_054,3936,ham,0,False,74,medium,Yunny i'm walking in citylink now Ã¼ faster come down... Me very hungry...,0.07783117727377419,0,1,correct
+BENCH_055,862,smishing,1,False,156,long,You have WON a guaranteed Â£1000 cash or a Â£2000 prize. To claim yr prize call our customer service representative on 08714712379 between 10am-7pm Cost 10p,0.1541844930982549,0,0,false_negative
+BENCH_056,605,smishing,1,False,155,long,Todays Voda numbers ending 1225 are selected to receive a Â£50award. If you have a match please call 08712300220 quoting claim code 3100 standard rates app,0.2575275225149497,0,0,false_negative
+BENCH_057,3038,smishing,1,False,137,medium,"Someone U know has asked our dating service 2 contact you! Cant guess who? CALL 09058095107 NOW all will be revealed. POBox 7, S3XY 150p ",0.057217346352625376,0,0,false_negative
+BENCH_058,2849,ham,0,False,43,short,Can not use foreign stamps in this country.,0.17318144179483375,0,1,correct
+BENCH_059,2012,smishing,1,False,148,long,"ATM BLOCK:Dear customer, Due to our system upgrade your ATM card has just been De-Activated. To Activate call customer care for help 6200992462 now.",0.28470428115836033,0,0,false_negative
+BENCH_060,5369,smishing,1,False,144,long,"THIS MOBILE NUMBER HAS GAINED THE SUM US$450,000.00 FROM MML/REF#1001, FOR DETAIL SEND YOUR NAME, ADDRESS AND NUMBER TO EMAIL MEGARESULT@USA.COM",0.41073870811876956,0,0,false_negative
+BENCH_061,4872,ham,0,False,49,short,Another month. I need chocolate weed and alcohol.,0.08006266458588587,0,1,correct
+BENCH_062,2949,smishing,1,False,161,long,Urgent Ur Â£500 guaranteed award is still unclaimed! Call 09066368327 NOW closingdate04/09/02 claimcode M39M51 Â£1.50pmmorefrommobile2Bremoved-MobyPOBox734LS27YF,0.18633687199971552,0,0,false_negative
+BENCH_063,292,ham,0,False,13,short,Ok. C u then.,0.06134136679354834,0,1,correct
+BENCH_064,4057,smishing,1,False,138,medium,We tried to contact you re your reply to our offer of a Video Handset? 750 anytime any networks mins? UNLIMITED TEXT? call 08000930705 NOW,0.10272219072196848,0,0,false_negative
+BENCH_065,1950,ham,0,False,39,short,at Customer place i will call you later,0.0327071518901747,0,1,correct
+BENCH_066,5963,commercial_spam,0,False,104,medium," call now 08707509020 Just 20p per min NTT Ltd, PO Box 1327 Croydon CR9 5WB 0870 is a national rate call",0.08015578005471627,0,1,correct
+BENCH_067,132,ham,0,False,53,short,Dun need to use dial up juz open da browser n surf...,0.07707975317290774,0,1,correct
+BENCH_068,2284,ham,0,False,29,short,Ã thk of wat to eat tonight.,0.07948084641147424,0,1,correct
+BENCH_069,2178,ham,0,False,75,medium,Yeah just open chat and click friend lists. Then make the list. Easy as pie,0.07282803365190497,0,1,correct
+BENCH_070,930,smishing,1,False,48,short,You have 1 new message. Please call 08712400200.,0.15663662206146034,0,0,false_negative
+BENCH_071,4714,smishing,1,False,136,medium,"Loan  INR5,00,000 - 7,50,000. Homeowners + Tenants welcome. Have you been previously refused? We can still help. Call Free 0800 1956669 ",0.09638039938111609,0,0,false_negative
+BENCH_072,543,ham,0,False,94,medium,"Hmmm.. Thk sure got time to hop ard... Ya, can go 4 free abt... Muz call u to discuss liao... ",0.030596152050418827,0,1,correct
+BENCH_073,140,commercial_spam,0,False,156,long,"FreeMsg Hey U, i just got 1 of these video/pic fones, reply WILD to this txt & ill send U my pics, hurry up Im so bored at work xxx (18 150p/rcvd STOP2stop)",0.0755767391077624,0,1,correct
+BENCH_074,4132,ham,0,False,36,short,Aight do you still want to get money,0.10751564405505312,0,1,correct
+BENCH_075,2094,ham,0,False,28,short,(You didn't hear it from me),0.1397790585393295,0,1,correct
+BENCH_076,4255,smishing,1,False,144,long,4mths half price Orange line rental & latest camera phones 4 FREE. Had your phone 11mths+? Call MobilesDirect free on 08000938768 to update now!,0.13937528767087515,0,0,false_negative
+BENCH_077,1467,smishing,1,False,99,medium,You have an important customer service announcement from PREMIER. Call FREEPHONE 0800 542 0578 now!,0.07686343239171747,0,0,false_negative
+BENCH_078,3358,smishing,1,False,168,long,"Todays Vodafone numbers ending 7148 are selected to receive a Rs.2,00,000 award. If you have a match please call 7679046492 quoting claim code 7834 standard rates apply",0.2770320623249552,0,0,false_negative
+BENCH_079,4962,ham,0,False,117,medium,"Night sweet, sleep well! I've just been to see The Exorcism of Emily Rose and may never sleep again! Hugs and snogs! ",0.035264468922615526,0,1,correct
+BENCH_080,489,smishing,1,False,149,long,	Do you want a NEW video phone750 anytime any network mins 150 text for only five pounds per week call 08000776320 now or reply for delivery tomorrow,0.10921779986020513,0,0,false_negative
+BENCH_081,2410,ham,0,False,94,medium,"Hmmm ... I thought we said 2 hours slave, not 3 ... You are late ... How should I punish you ?",0.0788279311294101,0,1,correct
+BENCH_082,4003,smishing,1,False,158,long,URGENT! We are trying to contact U. Todays draw shows that you have won a Â£800 prize GUARANTEED. Call 09050003092 from land line. Claim C52. Valid 12hrs only,0.10634538026166866,0,0,false_negative
+BENCH_083,842,commercial_spam,0,False,18,short,ringtoneking 84484,0.17875171400930376,0,1,correct
+BENCH_084,690,smishing,1,False,121,medium,tells u 2 call 09066358152 to claim Â£5000 prize. U have 2 enter all ur mobile & personal details @ the prompts. Careful!,0.13421542765169517,0,0,false_negative
+BENCH_085,1846,ham,0,False,74,medium,Yes princess! I want to please you every night. Your wish is my command...,0.14665155782971526,0,1,correct
+BENCH_086,4666,ham,0,False,24,short,Audrie lousy autocorrect,0.29792373334647526,0,1,correct
+BENCH_087,156,commercial_spam,0,True,101,medium,"Text82228>> Get more ringtones, logos and games from www.txt82228.com. Questions: info@txt82228.co.uk",0.558783444240871,1,0,false_positive
+BENCH_088,4449,smishing,1,True,128,medium,"URGENT! You have won a 1 week FREE membership in our Â£100,000 Prize Jackpot! Txt the word: CLAIM to No: 81010 T&C www.dbuk.net ",0.2487720518963871,0,0,false_negative
+BENCH_089,3329,ham,0,False,42,short,Actually getting ready to leave the house.,0.09652811575073368,0,1,correct
+BENCH_090,593,ham,0,False,86,medium,I agree. So i can stop thinkin about ipad. Can you please ask macho the same question.,0.15621920103041756,0,1,correct
+BENCH_091,28,ham,0,False,80,medium,Oh... Lk tt den we take e one tt ends at cine lor... Dun wan yogasana oso can...,0.14739061443173637,0,1,correct
+BENCH_092,2205,ham,0,False,49,short,Customer place i will call you when I wll be free,0.020031690515403974,0,1,correct
+BENCH_093,2749,smishing,1,False,120,medium,74355 XMAS iscoming & ur awarded either Â£500 CD gift vouchers & free entry 2 r Â£100 weekly draw txt MUSIC to 87066 TnC,0.12715941227506666,0,0,false_negative
+BENCH_094,388,smishing,1,False,126,medium,"Our dating service has been asked 2 contact U by someone shy! CALL 09058091870 NOW all will be revealed. POBox84, M26 3UZ 150p",0.09455583663165039,0,0,false_negative
+BENCH_095,280,ham,0,False,39,short,Hey what are you doing. Y no reply pa..,0.09884891103677908,0,1,correct
+BENCH_096,4541,smishing,1,False,154,long,"	As a valued customer, I am pleased to advise you that following recent review of your Mob No. you are awarded with ï¿½ 1500 Bonus Prize, call 09066364589",0.14535547039028382,0,0,false_negative
+BENCH_097,950,ham,0,False,31,short,"Sorry, was in the bathroom, sup",0.11401281132179061,0,1,correct
+BENCH_098,5250,smishing,1,True,176,long,"Urgent Message for CIBC Account Holder, Kindly  Login to our secure server to check your informationï¿½http://2cibc.mobileupdate.gram pianostudio.com/cibcfullz/Internet Support",0.8937004053477676,1,1,correct
+BENCH_099,502,smishing,1,False,149,long,"Dear V0DAF0NE Customer,You are a 5,00,000 winner of Guaranteed Caller Prize, this is our Final attempt to contact you! To Claim Call 8536074310 Now! ",0.20233314113301115,0,0,false_negative
+BENCH_100,2001,ham,0,False,19,short,"Come round, it's . ",0.10339058746090708,0,1,correct
+BENCH_101,3786,smishing,1,False,85,medium,"You've won tkts to the EURO2004 CUP FINAL or Â£800 CASH, to collect CALL 09058099802 ",0.09939787085365351,0,0,false_negative
+BENCH_102,3463,commercial_spam,0,False,129,medium,"Double mins and txts 4 6months FREE Bluetooth on Orange. Available on Sony, Nokia Motorola phones. Call MobileUpd8 on 08000839402",0.06717643254770644,0,1,correct
+BENCH_103,4317,commercial_spam,0,False,133,medium,"Ur balance is now Â£600. Next question: Complete the landmark, Big, A. Bob, B. Barry or C. Ben ?. Text A, B or C to 83738. Good luck!",0.08094555015196414,0,1,correct
+BENCH_104,2633,ham,0,False,37,short,What is your record for one night? :),0.14682175633839364,0,1,correct
+BENCH_105,3417,ham,0,False,97,medium,"We made it! Eta at taunton is 12:30 as planned, hope thatâs still okday?! Good to see you! :-xx",0.07842842438082691,0,1,correct
+BENCH_106,3532,commercial_spam,0,True,132,medium,U can WIN Â£100 of Music Gift Vouchers every week starting NOW Txt the word DRAW to 87066 TsCs www.ldew.com .150ppermessSubscription,0.1906473604633359,0,1,correct
+BENCH_107,2362,commercial_spam,0,False,70,short,This message is brought to you by GMW Ltd. and is not connected to the,0.09945492613340168,0,1,correct
+BENCH_108,4513,commercial_spam,0,False,162,long,"all the lastest from Stereophonics, Marley, Dizzee Racal, Libertines and The Strokes! Win Nookii games with Flirt!! Click TheMob WAP Bookmark or text WAP to 82468",0.06963096380394615,0,1,correct
+BENCH_109,48,smishing,1,True,161,long,Apple ID: [BUXCX7GBVwWCcOD Final Notification Your Apple 1D is due to expire today. Prevent this by confirming your Apple ID atï¿½http://verifyapple.uk Apple Inc,0.8467640407942182,1,1,correct
+BENCH_110,3586,commercial_spam,0,False,148,long,Ur cash-balance is currently 500 pounds - to maximize ur cash-in now send CASH to 86688 only 150p/msg. CC: 08708800282 HG/Suite342/2Lands Row/W1J6HL,0.1405895069755191,0,1,correct
+BENCH_111,1322,smishing,1,False,157,long,"	FreeMSG You have been awarded a FREE mini DIGITAL CAMERA, just reply SNAP to collect your prize! (quizclub Opt out? Stop 80122300p/wk SP:RWM Ph:08704050406)",0.36889757688453584,0,0,false_negative
+BENCH_112,1959,ham,0,False,73,medium,"Yeah, we can probably swing by once my roommate finishes up with his girl",0.08482255984179035,0,1,correct
+BENCH_113,4080,commercial_spam,0,False,153,long,Your next amazing xxx PICSFREE1 video will be sent to you enjoy! If one vid is not enough for 2day text back the keyword PICSFREE1 to get the next video.,0.05927362857674641,0,1,correct
+BENCH_114,5186,ham,0,False,169,long,"Hiya, sorry didn't hav signal. I haven't seen or heard from and neither has, which is unusual in itself! I'll put on the case and get him to sort it out! Hugs and snogs.",0.046315462405159664,0,1,correct
+BENCH_115,70,smishing,1,False,87,medium,	You have an important customer service announcement. Call FREEPHONE 0800 542 0825 now!,0.0769730265697801,0,0,false_negative
+BENCH_116,1542,commercial_spam,0,False,161,long,25p 4 alfie Moon's Children in need song on ur mob. Tell ur m8s. Txt Tone charity to 8007 for Nokias or Poly charity for polys: zed 08701417012 profit 2 charity.,0.0848164842410344,0,1,correct
+BENCH_117,2850,ham,0,False,15,short,Try neva mate!!,0.1589452959606868,0,1,correct
+BENCH_118,462,ham,0,False,112,medium,"Thank you so much. When we skyped wit kz and sura, we didnt get the pleasure of your company. Hope you are good.",0.05897999149551167,0,1,correct
+BENCH_119,4385,ham,0,False,22,short,Yeah get the unlimited,0.06459194448217721,0,1,correct
+BENCH_120,2959,ham,0,False,33,short,I'm wif him now buying tix lar...,0.06574698593791237,0,1,correct
+BENCH_121,1825,commercial_spam,0,True,157,long,"Rental  Helpline  9999991155 1000-100, 000 sq.ft. In Noida & Gr.Noida  OFFICE & INDUSTRIAL Use Goldenberg estates pvt.ltd. sandeep@goldenberg.in 999 999 1155",0.22191011927917398,0,1,correct
+BENCH_122,1844,ham,0,False,71,medium,I came hostel. I m going to sleep. Plz call me up before class. Hrishi.,0.05627522766779576,0,1,correct
+BENCH_123,1364,ham,0,False,39,short,"Call me da, i am waiting for your call.",0.0560673650072149,0,1,correct
+BENCH_124,1425,smishing,1,False,90,medium,Want explicit SEX in 30 secs? Ring 02073162414 now! Costs 20p/min Gsex POBOX 2667 WC1N 3XX,0.13794993997041724,0,0,false_negative
+BENCH_125,3599,ham,0,False,33,short,I am in bus on the way to calicut,0.03908233570778207,0,1,correct
+BENCH_126,653,smishing,1,False,145,long,Call from 08702490080 - tells u 2 call 09066358152 to claim Â£5000 prize. U have 2 enter all ur mobile & personal details @ the prompts. Careful!,0.10486087561708045,0,0,false_negative
+BENCH_127,4914,commercial_spam,0,False,148,long,Sorry! U can not unsubscribe yet. THE MOB offer package has a min term of 54 weeks> pls resubmit request after expiry. Reply THEMOB HELP 4 more info,0.16570530938017736,0,1,correct
+BENCH_128,5046,ham,0,False,21,short,Ok... Sweet dreams...,0.09304394575988782,0,1,correct
+BENCH_129,5393,smishing,1,False,154,long,(6171-M) RMO.00 AEON MY Rs. 4399 was charged on your card num**97 at LAZO-KLIA2 on 19/10/2016. Call 0327884425 if you did NOT perform this  TXN code356931,0.23758349291803743,0,0,false_negative
+BENCH_130,3594,commercial_spam,0,True,159,long,MORE THAN 60% UNITS SOLD in first 3 DAYS!!Unitech offers 2/3 bhk in sec 70 grgn@ 5250 psf!!1.5 YRS INTEREST FREE SCHEME.Call Agni 9212255555 to avail discounts,0.08118362035166622,0,1,correct
+BENCH_131,782,ham,0,False,175,long,Mmmm ...  Not fair ! You know my weaknesses ! *grins* *pushes you to your knee's* *exposes my belly and pulls your head to it* Don't forget ... I know yours too *wicked smile*,0.08848536748686993,0,1,correct
+BENCH_132,42,smishing,1,False,177,long,Phony Â£350 award - Todays Voda numbers ending XXXX are selected to receive a Â£350 award. If you have a match please call 08712300220 quoting claim code 3100 standard rates app,0.2469353522247211,0,0,false_negative
+BENCH_133,3036,smishing,1,False,61,short,Hey I am really * want to chat or see me  text to 08718738034,0.056154094933624554,0,0,false_negative
+BENCH_134,1307,smishing,1,False,158,long,UR Mobile Number Won 2Crores 35Lakh Rupees In Chevrolet Motors Award 2015 For Claim Send Name Phone Number Address  Age Toï¿½Email:chevmotorlondon@hotmail.com,0.40913432849178966,0,0,false_negative
+BENCH_135,4807,smishing,1,False,163,long,+449071512431 URGENT! This is the 2nd attempt to contact U!U have WON Â£1250 CALL 09071512433 b4 050703 T&CsBCM4235WC1N3XX. callcost 150ppm mobilesvary. maxÂ£7. 50,0.1527620055422757,0,0,false_negative
+BENCH_136,361,ham,0,False,45,short,"The table's occupied, I'm waiting by the tree",0.07313207164974836,0,1,correct
+BENCH_137,2009,smishing,1,False,152,long,u r a winner U ave been specially selected 2 receive Â£1000 cash or a 4* holiday (flights inc) speak to a live operator 2 claim 0871277810710p/min (18 ),0.2580339881745401,0,0,false_negative
+BENCH_138,796,smishing,1,False,159,long,"URGENT! Your Mobile No was awarded a Â£2,000 Bonus Caller Prize on 1/08/03! This is our 2nd attempt to contact YOU! Call 0871-4719-523 BOX95QU BT National Rate",0.34347166045255295,0,0,false_negative
+BENCH_139,2497,smishing,1,True,96,medium,A link to your picture has been sent. You can also use http://alto18.co.uk/wave/wave.asp?o=44345,0.7200667468402021,1,1,correct
+BENCH_140,5611,ham,0,False,41,short,"I'm not coming over, do whatever you want",0.0793095524669695,0,1,correct
+BENCH_141,1679,smishing,1,False,153,long,You are awarded a SiPix Digital Camera! call 09061221061 from landline. Delivery within 28days. T Cs Box177. M221BP. 2yr warranty. 150ppm. 16 . p pÂ£3.99,0.18993804068267334,0,0,false_negative
+BENCH_142,3408,ham,0,False,38,short,I'm good. Have you registered to vote?,0.1439086234900014,0,1,correct
+BENCH_143,2314,ham,0,False,127,medium,Carlos is taking his sweet time as usual so let me know when you and patty are done/want to smoke and I'll tell him to haul ass,0.03317864791652436,0,1,correct
+BENCH_144,2248,ham,0,False,161,long,There is os called ubandu which will run without installing in hard disk...you can use that os to copy the important files in system and give it to repair shop..,0.046276634604821655,0,1,correct
+BENCH_145,2517,smishing,1,True,109,medium,We owe you for the last tax year. Please follow our secure link http:Ow.ly/ozvo308t.Jxz for more information.,0.722350841963948,1,1,correct
+BENCH_146,3748,commercial_spam,0,False,141,long,TBS/PERSOLVO. been chasing us since Sept forÂ£38 definitely not paying now thanks to your information. We will ignore them. Kath. Manchester.,0.2560272215470765,0,1,correct
+BENCH_147,4668,smishing,1,False,115,medium,"	tddnewsletter@emc1.co.uk (More games from TheDailyDraw) Dear Helen, Dozens of Free Games - with great prizesWith..",0.12811057293856498,0,0,false_negative
+BENCH_148,1343,commercial_spam,0,False,157,long,"	u r subscribed 2 TEXTCOMP 250 wkly comp. 1st wk?s free question follows, subsequent wks charged@150p/msg.2 unsubscribe txt STOP 2 84128,custcare 08712405020",0.14562507099053795,0,1,correct
+BENCH_149,4076,smishing,1,False,149,long,PRIVATE! Your 2003 Account Statement for 07808 XXXXXX shows 800 un-redeemed S. I. M. points. Call 08719899217 Identifier Code: 41685 Expires 07/11/04,0.3427158311548207,0,0,false_negative
+BENCH_150,2762,smishing,1,False,149,long,"Dear V0DAF0NE Customer,You are a 5,00,000 winner of Guaranteed Caller Prize, this is our Final attempt to contact you! To Claim Call 6299257179 Now! ",0.20396011883552526,0,0,false_negative
+BENCH_151,4588,ham,0,False,29,short,Pls send me your address sir.,0.2073858700435517,0,1,correct
+BENCH_152,4029,smishing,1,False,97,medium,You are awarded a SiPix Digital Camera! call 09061221068 fromm landline. Delivery within 10 days.,0.1531151106108225,0,0,false_negative
+BENCH_153,86,commercial_spam,0,True,145,long,HMV BONUS SPECIAL 500 pounds of genuine HMV vouchers to be won. Just answer 4 easy questions. Send HMV to 86688 More info:www.100percent-real.com,0.30169044524256794,0,1,correct
+BENCH_154,4627,smishing,1,False,166,long,Todays Voda numbers ending with 7634 are selected to receive a Â£350 reward. If you have a match please call 08712300220 quoting claim code 7684 standard rates apply.,0.24245880572284192,0,0,false_negative
+BENCH_155,58,commercial_spam,0,False,156,long,Overcome programming challenges for multicore and learn the techniques to scale reliability. Attend Intel session at 3.45 PM at Microsoft Community TechDays,0.17039798236354775,0,1,correct
+BENCH_156,349,ham,0,False,29,short,Yup. Thk of u oso boring wat.,0.08275608000374318,0,1,correct
+BENCH_157,3822,ham,0,False,28,short,"Almost there, see u in a sec",0.09581710979968665,0,1,correct
+BENCH_158,2773,ham,0,False,44,short,Im just wondering what your doing right now?,0.07493175203166366,0,1,correct
+BENCH_159,5687,commercial_spam,0,True,156,long,Knock Knock Txt whose there to 80082 to enter r weekly draw 4 a Â£250 gift voucher 4 a store of yr choice. T&Cs www.tkls.com age16 to stoptxtstopÂ£1.50/week,0.2601359832705747,0,1,correct
+BENCH_160,230,ham,0,False,36,short,"I'm in a meeting, call me later at 4",0.03669603107973476,0,1,correct
+BENCH_161,994,smishing,1,False,100,medium,"our mobile number has won Â£5000, to claim calls us back or ring the claims hot line on 09050005321.",0.1926108561874023,0,0,false_negative
+BENCH_162,4102,smishing,1,False,124,medium,	Do you want a New Nokia 3510i colour phone DeliveredTomorrow? Wit 100 free texts + Free Camcorder reply or call 08000930705,0.18128215422024305,0,0,false_negative
+BENCH_163,2000,commercial_spam,0,False,136,medium,LIFE has never been this much fun and great until you came in. You made it truly special for me. I won't forget you! enjoy @ one gbp/sms,0.0682882689406352,0,1,correct
+BENCH_164,2625,ham,0,False,281,long,"Hello, my love ! How went your day ? Are you alright ? I think of you, my sweet and send a jolt to your heart to remind you ... I LOVE YOU! Can you hear it ? I screamed it across the sea for all the world to hear. Ahmad al Hallaq is loved ! and owned ! *possessive passionate kiss*",0.025580980602473314,0,1,correct
+BENCH_165,2581,smishing,1,False,154,long,"Dear customer your PAY2TMKYC has been expired, Itï¿½s will be bl0cked within 24 hour, please contact customer! Care phï¿½ 8536074310 immediately to verify",0.3662574283438707,0,0,false_negative
+BENCH_166,1030,ham,0,False,92,medium,"Aight text me when you're back at mu and I'll swing by, need somebody to get the door for me",0.021450089253715037,0,1,correct
+BENCH_167,664,smishing,1,False,158,long,"As a valued customer, I am pleased to advise you that following recent draw of your Mobile No. you are awarded with a Rs.2,00,000 Bonus Prize, call 6200992462",0.10923547003463036,0,0,false_negative
+BENCH_168,3077,ham,0,False,46,short,"Me not waking up until 4 in the afternoon, sup",0.11404377488130812,0,1,correct
+BENCH_169,1938,ham,0,False,42,short,Im good! I have been thinking about you...,0.06407113549842965,0,1,correct
+BENCH_170,2811,ham,0,False,54,short,"I HAVE A DATE ON SUNDAY WITH WILL, Hope U understand!!",0.04785664893556543,0,1,correct
+BENCH_171,5521,ham,0,False,113,medium,Oh thats late! Well have a good night and i will give u a call tomorrow. Iam now going to go to sleep night night,0.012122120524040941,0,1,correct
+BENCH_172,1462,smishing,1,False,158,long,XMAS Prize draws! We are trying to contact U. Todays draw shows that you have won a Â£2000 prize GUARANTEED. Call 09058094565 from land line. Valid 12hrs only,0.07818053609847074,0,0,false_negative
+BENCH_173,4901,ham,0,False,73,medium,"Come around  &lt;DECIMAL&gt; pm vikky..i'm otside nw, il come by tht time",0.0640354574554848,0,1,correct
+BENCH_174,4736,commercial_spam,0,True,96,medium,from www.Applausestore.com MonthlySubscription@50p/msg max6/month T&CsC web age16 2stop txt stop,0.4695597616290509,0,1,correct
+BENCH_175,305,ham,0,False,72,medium,Great! I hope you like your man well endowed. I am  &lt;#&gt;  inches...,0.03785984182432466,0,1,correct
+BENCH_176,1720,smishing,1,False,144,long,"DUETO THE CENTRAL BANK DIRECTIVE WITH REGARDS TO BVN UPDATE,YOUR ATM CARD HAS BEEN DE-ACTIVATED,TO RE-ACTIVATE CALL CUSTOMER CARE ON 08125000070",0.3302992668605379,0,0,false_negative
+BENCH_177,2518,ham,0,False,49,short,In that case I guess I'll see you at campus lodge,0.0613230165960701,0,1,correct
+BENCH_178,5064,smishing,1,False,139,medium,Please call our customer service representative on 0800 169 6031 between 10am-9pm as you have WON a guaranteed Â£1000 cash or Â£5000 prize!,0.1416561373041638,0,0,false_negative
+BENCH_179,1291,smishing,1,False,186,long,"URGENT! Dear FL1PKART Customer, We are trying to contact you. Last weekends draw shows that you w0n a Rs.6,00,000 prize GUARANTEED. Call 7908807538. Claim Code FLIP52. Valid 12hrs only. ",0.13022509976199545,0,0,false_negative
+BENCH_180,2504,smishing,1,False,158,long,	December only! Had your mobile 11mths+? You are entitled to update to the latest colour camera mobile for Free! Call The Mobile Update Co FREE on 08002986906,0.1244799714466117,0,0,false_negative
+BENCH_181,5179,smishing,1,False,156,long,Dear PAYTM customer your Paytm KYC has expired. Contact customer care No-8927307655 immediately. your account will Block within 24 hr. Thank you PAYTM TEAM.,0.2544108323879566,0,0,false_negative
+BENCH_182,1388,smishing,1,True,271,long,We would like to inform you that you have been recorded as leaving your home on 3 occasions yesterday. A fine of ï¿½35 has been added to your gov.ukï¿½account. For further information please visitï¿½gov.uk/ coronavirus-penalty-payment racking. Protect the NHS. Save lives,0.5669188367195213,1,1,correct
+BENCH_183,827,ham,0,False,22,short,I dled 3d its very imp,0.09653273611210404,0,1,correct
+BENCH_184,1084,ham,0,False,160,long,Yar i wanted 2 scold u yest but late already... I where got zhong se qing you? If u ask me b4 he ask me then i'll go out w u all lor. N u still can act so real.,0.027398596153487477,0,1,correct
+BENCH_185,3078,smishing,1,False,149,long,"Please call our customer service representative on 8536074310 between 10am-9pm as you have W0N a guaranteed cash prize of Rs.10,00,000. FL1PKART TEAM",0.12576173747989408,0,0,false_negative
+BENCH_186,4784,ham,0,False,7,short,:-) :-),0.18056723807043482,0,1,correct
+BENCH_187,3096,smishing,1,True,202,long,$9 Only!Sales on Official Oakley Sunglasses Online Store. 2016 New Styles All Up To 75% OFF. Final Day Flash Sale And Free Returns. Official Oakley Sunglasses Outlets At: http:// www.oakleyoutletsco.com,0.5963836770296448,1,1,correct
+BENCH_188,1285,smishing,1,False,48,short,	You have 1 new message. Please call 08715205273,0.16750802504012974,0,0,false_negative
+BENCH_189,3967,smishing,1,False,124,medium,"Congrats! 1 year special cinema pass for 2 is yours. call 09061209465 now! C Suprman V, Matrix3, StarWars3, etc all 4 FREE! ",0.06904988098402243,0,0,false_negative
+BENCH_190,3627,ham,0,False,15,short,ILL B DOWN SOON,0.12194566218662052,0,1,correct
+BENCH_191,4253,commercial_spam,0,False,74,medium,"accordingly. I repeat, just text the word ok on your mobile phone and send",0.039699776266451256,0,1,correct
+BENCH_192,2984,ham,0,False,137,medium,"Party's at my place at usf, no charge (but if you can contribute in any way it is greatly appreciated) and yeah, we got room for one more",0.060201239272675525,0,1,correct
+BENCH_193,2399,commercial_spam,0,True,127,medium,WIN a year supply of CDs 4 a store of ur choice worth Â£500 & enter our Â£100 Weekly draw txt MUSIC to 87066 Ts&Cs www.Ldew.com,0.2395823433435351,0,1,correct
+BENCH_194,2505,ham,0,False,127,medium,IM FINE BABES AINT BEEN UP 2 MUCH THO! SAW SCARY MOVIE YEST ITS QUITE FUNNY! WANT 2MRW AFTERNOON? AT TOWN OR MALL OR SUMTHIN?xx,0.08323931585935242,0,1,correct
+BENCH_195,5105,commercial_spam,0,False,143,long,Free entry in 2 a weekly comp for a chance to win an ipod. Txt POD to 80182 to get entry (std txt rate) T&C's apply 08452810073 for details 18+,0.19536321228636896,0,1,correct
+BENCH_196,2142,smishing,1,True,72,medium,Are you unique enough? Find out from 30th August. www.areyouunique.co.uk,0.3036246033660454,0,0,false_negative
+BENCH_197,2675,ham,0,False,142,long,Why must we sit around and wait for summer days to celebrate. Such a magical sight when the worlds dressed in white. Oooooh let there be snow.,0.05042708932273107,0,1,correct
+BENCH_198,3761,smishing,1,False,132,medium,Not heard from U4 a while. Call 4 rude chat private line 01223585334 to cum. Wan 2C pics of me gettin shagged then text PIX to 8552.,0.046446207459272144,0,0,false_negative
+BENCH_199,4667,smishing,1,False,126,medium,Dear Customer your pyatm wallet Has been booked and hold Your amount please complete your kyc contact customer care 6299257179,0.44719239058753996,0,0,false_negative
+BENCH_200,1074,ham,0,False,31,short,Hey so whats the plan this sat?,0.10540985875708207,0,1,correct
+BENCH_201,3980,smishing,1,False,144,long,URGENT! Your Mobile number has been awarded with a Â£2000 prize GUARANTEED. Call 09061790121 from land line. Claim 3030. Valid 12hrs only 150ppm,0.23691568177273598,0,0,false_negative
+BENCH_202,3818,ham,0,False,24,short,how are you? I miss you!,0.06490349035012256,0,1,correct
+BENCH_203,3048,smishing,1,False,148,long,"You are guaranteed the latest Nokia Phone, a 40GB iPod MP3 player or a Â£500 prize! Txt word: COLLECT to No: 83355! IBHltd LdnW15H 150p/Mtmsgrcvd18+",0.13225606152222835,0,0,false_negative
+BENCH_204,1951,ham,0,False,45,short,If you're thinking of lifting me one then no.,0.13975148563574952,0,1,correct
+BENCH_205,5840,smishing,1,False,115,medium,Congrats! Nokia 3650 video camera phone is your Call 09066382423 Calls cost 150ppm Ave call 3mins vary from mobiles,0.07525846609112362,0,0,false_negative
+BENCH_206,3008,commercial_spam,0,True,158,long,"SMS SERVICES. for your inclusive text credits, pls goto www.comuk.net login= 3qxj9 unsubscribe with STOP, no extra charge. help 08702840625.COMUK. 220-CM2 9AE",0.28044519906372584,0,1,correct
+BENCH_207,2007,ham,0,False,95,medium,"Gumby's has a special where a  &lt;#&gt; "" cheese pizza is $2 so I know what we're doin tonight",0.04655540847585507,0,1,correct
+BENCH_208,1331,ham,0,False,31,short,"Sorry, I'll call later in night",0.023372612393244396,0,1,correct
+BENCH_209,5306,ham,0,False,77,medium,I called but no one pick up e phone. I ask both of them already they said ok.,0.05361227290838789,0,1,correct
+BENCH_210,1409,ham,0,False,107,medium,Well I wasn't available as I washob nobbing with last night so they had to ask Nickey Platt instead of me!;,0.06263415577242261,0,1,correct
+BENCH_211,384,commercial_spam,0,False,33,short,FreeMsg>FAV XMAS TONES!Reply REAL,0.20600458962687931,0,1,correct
+BENCH_212,4383,ham,0,False,22,short,Haha i think i did too,0.10496043144625569,0,1,correct
+BENCH_213,819,smishing,1,False,69,short,"You have won ?2,000 cash or a ?5,000 prize! To claim, call09050000337",0.20422451091158433,0,0,false_negative
+BENCH_214,1336,commercial_spam,0,False,137,medium,(Bank of Granite issues Strong-Buy) EXPLOSIVE PICK FOR OUR MEMBERS *****UP OVER 300% *********** Nasdaq Symbol CDGT That is a $5.00 per..,0.11551704835209567,0,1,correct
+BENCH_215,5591,ham,0,False,51,short,I am going to sao mu today. Will be done only at 12,0.04265733238295995,0,1,correct
+BENCH_216,2155,smishing,1,False,90,medium,	Your unique user ID is 1172. For removal send STOP to 87239 customer services 08708034412,0.3997534781694282,0,0,false_negative
+BENCH_217,3161,ham,0,False,147,long,"I met you as a stranger and choose you as my friend. As long as the world stands, our friendship never ends. Lets be Friends forever!!! Gud nitz...",0.044476670741259196,0,1,correct
+BENCH_218,5101,ham,0,False,53,short,My uncles in canada...Wish you guys a great semester.,0.10103047284549416,0,1,correct
+BENCH_219,5733,smishing,1,False,147,long,	FreeMsg Why haven't you replied to my text? I'm female and live local. Luv to hear from u. Netcollex Ltd 08700621170150p per msg reply Stop to end,0.15991899678518662,0,0,false_negative
+BENCH_220,2566,smishing,1,False,160,long,	YOU ARE CHOSEN TO RECEIVE A Â£350 AWARD! Pls call claim number 09066364311 to collect your award which you are selected to receive as a valued mobile customer.,0.14690120007811977,0,0,false_negative
+BENCH_221,1094,smishing,1,False,116,medium,"You are guaranteed the latest Nokia Phone, a 40GB iPod MP3 player or a Â£1000 prize! Txt word: COLLECT to No: 83355!",0.14215932650952792,0,0,false_negative
+BENCH_222,5073,smishing,1,False,142,long,"URGENT! Your Mobile number has been awarded with a INR.2,00,000 prize GUARANTEED. Call 6200992462 from land line. Claim 3030. Valid 12hrs only",0.231147555083736,0,0,false_negative
+BENCH_223,1822,ham,0,False,59,short,"Sorry da thangam, very very sorry i am held up with prasad.",0.09840549732352585,0,1,correct
+BENCH_224,5897,commercial_spam,0,False,145,long,Hard LIVE 121 chat just 60p/min. Choose your girl and connect LIVE. Call 09094646899 now! Cheap Chat UK's biggest live service. VU BCM1896WC1N3XX,0.10046062103867077,0,1,correct
+BENCH_225,2970,commercial_spam,0,False,157,long,Block Breaker now comes in deluxe format with new features and great graphics from T-Mobile. Buy for just Â£5 by replying GET BBDELUXE and take the challenge,0.05335737398793577,0,1,correct
+BENCH_226,1674,smishing,1,False,132,medium,	Loa!! Homeowners + Tenants welcome. Have you been previously refused? We can still help. Call Free 0800 1956669 or text back 'help',0.05128704963796461,0,0,false_negative
+BENCH_227,1681,smishing,1,False,156,long,Dear PAYTM customer your Paytm KYC has expired. Contact customer care No-6299257179 immediately. your account will Block within 24 hr. Thank you PAYTM TEAM.,0.25148764611131696,0,0,false_negative
+BENCH_228,4611,ham,0,False,70,short,She ran off with a younger man. we will make pretty babies together :),0.11859575362621241,0,1,correct
+BENCH_229,2693,commercial_spam,0,False,161,long,"Ramprastha has Launched The Edge Towers in Gurgaon, @2800/-*Home Loan @ 0*% Just Pay 15% Now & EMI Starts On Possession 2/3/4 BHK Luxurious Flats Cal- 9650988282",0.08989262772361177,0,1,correct
+BENCH_230,501,ham,0,False,45,short,Hi mom we might be back later than  &lt;#&gt;,0.0504202933556058,0,1,correct
+BENCH_231,1271,commercial_spam,0,True,100,medium,FREE entry into our Â£250 weekly comp just send the word WIN to 80086 NOW. 18 T&C www.txttowin.co.uk,0.1493194190794073,0,1,correct
+BENCH_232,3444,smishing,1,False,160,long,"Today's Offer! Claim ur Â£150 worth of discount vouchers! Text YES to 85023 now! SavaMob, member offers mobile! T Cs 08717898035. Â£3.00 Sub. 16 . Unsub reply X",0.11616198656741021,0,0,false_negative
+BENCH_233,585,smishing,1,False,151,long,URGENT This is our 2nd attempt to contact U. Your Â£900 prize from YESTERDAY is still awaiting collection. To claim CALL NOW 09061702893. ACL03530150PM,0.4036133507536161,0,0,false_negative
+BENCH_234,3311,commercial_spam,0,True,159,long,"Minimal documentation,  Quick approval,  Low rates. Home Loan @9.25%.Loan Against Properties@11.5%. Call on 011-43065228 visit www.mymoneymantra.com.T$C apply.",0.5051066712041317,1,0,false_positive
+BENCH_235,4244,commercial_spam,0,False,139,medium,Want 2 get laid tonight? Want real Dogging locations sent direct 2 ur mob? Join the UK's largest Dogging Network bt Txting GRAVEL to 69888!,0.1243883676076086,0,1,correct
+BENCH_236,5248,commercial_spam,0,False,47,short,3. You have received your mobile content. Enjoy,0.22523645289813896,0,1,correct
+BENCH_237,1432,smishing,1,False,146,long,"Dear V0DAF0NE Customer,You are a W1NNER of Rs. 1,00,000 Guaranteed Prize, this is our Final attempt to contact you! To Claim Call 6299257179 Now! ",0.21076010808168183,0,0,false_negative
+BENCH_238,50,ham,0,False,83,medium,"I don't have anybody's number, I still haven't thought up a tactful way to ask alex",0.09200198716605745,0,1,correct
+BENCH_239,5225,commercial_spam,0,False,116,medium,Send a logo 2 ur lover - 2 names joined by a heart. Txt LOVE NAME1 NAME2 MOBNO eg LOVE ADAM EVE 07123456789 to 87077,0.0554713068962049,0,1,correct
+BENCH_240,3419,smishing,1,False,110,medium,Update_Now - 12Mths Half Price Orange line rental: 400mins...Call MobileUpd8 on 08000839402 or call2optout=J5Q,0.11173765192743182,0,0,false_negative
+BENCH_241,2873,smishing,1,True,161,long,Someone who came in contact with you tested positive or has shown symptoms for COVID-19 & recommends you self-isolate/get tested. More at COVID-19 anon.com/alert,0.3178357745537574,0,0,false_negative
+BENCH_242,2663,smishing,1,False,88,medium,200 FREE minutes to any mobile + 100 FREE text + FREE camcorder Reply or Call 8000930705,0.08342223044354978,0,0,false_negative
+BENCH_243,284,smishing,1,True,112,medium,"Dear Voucher Holder, To claim this weeks offer, at your PC please go to http://www.wtlp.co.uk/text. Ts&Cs apply.",0.8260539003609764,1,1,correct
+BENCH_244,844,ham,0,False,51,short,R u here yet? I'm wearing blue shirt n black pants.,0.27831328749028045,0,1,correct
+BENCH_245,1900,ham,0,False,37,short,Any way where are you and what doing.,0.024375330771104133,0,1,correct
+BENCH_246,2543,smishing,1,False,86,medium,"Claim a 200 shopping spree, just call 08717895698 now! Have you won! MobStoreQuiz10ppm",0.11068280906892232,0,0,false_negative
+BENCH_247,3190,smishing,1,False,158,long,"Shop till u Drop, IS IT YOU, either 10K, 5K, Â£500 Cash or Â£100 Travel voucher, Call now, 09064011000. NTT PO Box CR01327BT fixedline Cost 150ppm mobile vary",0.11480239514619502,0,0,false_negative
+BENCH_248,1292,smishing,1,False,128,medium,Your 2004 account for 07XXXXXXXXX shows 786 unredeemed points. To claim call 08719181259 Identifier code: XXXXX Expires 26.03.05,0.32534445422502195,0,0,false_negative
+BENCH_249,1592,smishing,1,False,155,long,	What do U want for Xmas? How about 100 free text messages & a new video phone with half price line rental? Call free now on 0800 0721072 to find out more!,0.03548252018331165,0,0,false_negative
+BENCH_250,1155,commercial_spam,0,False,132,medium,December only! You are entitled to update to the latest colour camera mobile for Free! Call The Mobile Update Co FREE on 08002986906,0.11935287614179199,0,1,correct
+BENCH_251,2915,commercial_spam,0,False,44,short,PRIVATE! Your 2003 Account Statement for 078,0.6970677188408445,1,0,false_positive
+BENCH_252,458,ham,0,False,94,medium,"Erm â¦ ill pick you up at about 6.45pm. That'll give enough time to get there, park and that.",0.07004283810377361,0,1,correct
+BENCH_253,379,smishing,1,False,147,long,You have WON a guaranteed Â£1000 cash or a Â£2000 prize. To claim yr prize call our customer service representative on 08714712394 between 10am-7pm,0.1632709596935508,0,0,false_negative
+BENCH_254,5806,ham,0,False,55,short,Water logging in desert. Geoenvironmental implications.,0.22307842312689585,0,1,correct
+BENCH_255,3930,commercial_spam,0,False,160,long,Your weekly Cool-Mob tones are ready to download !This weeks new Tones include: 1) Crazy Frog-AXEL F>>> 2) Akon-Lonely>>> 3) Black Eyed-Dont P >>>More info in n,0.2480340374980081,0,1,correct
+BENCH_256,587,smishing,1,True,159,long,URGENT: UKGOV has issued a payment of 458 GBP to all residents as part of its promise to battle COVID 19.  TAP here https:/uk-covid-19.webredirect.org/to apply,0.8156713553231879,1,1,correct
+BENCH_257,4976,smishing,1,False,131,medium,Dear (paytm)customer your paytm KYC has been suspended PAY-TM office PH 8536074310 Your Paytm A/C will block within 24hr Thank you.,0.3576193728809846,0,0,false_negative
+BENCH_258,3686,ham,0,False,32,short,I;m reaching in another 2 stops.,0.09985315817250082,0,1,correct
+BENCH_259,3099,commercial_spam,0,True,107,medium,FREE entry into our Â£350 weekly competition just text the word WIN to 80086 NOW. 18 T&C www.txttowin.co.uk,0.15890097688506838,0,1,correct
+BENCH_260,2390,commercial_spam,0,False,106,medium,Free entry in 2 a weekly comp for a chance to win an ipod. Txt POD to 80182 to get entry  call 08452810073,0.065612881376054,0,1,correct
+BENCH_261,2444,commercial_spam,0,False,154,long,CLAIRE here am havin borin time & am now alone U wanna cum over 2nite? Chat now 09099725823 hope 2 C U Luv CLAIRE xx CallsÂ£1/minmoremobsEMSPOBox45PO139WA,0.09740292298893431,0,1,correct
+BENCH_262,3483,smishing,1,False,146,long,"Please call our customer service representative on FREEPHONE 0808 145 5645 between 9am-11pm as you have WON a guaranteed INR 5,00,000 cash  prize!",0.1270088717174005,0,0,false_negative
+BENCH_263,3637,ham,0,False,36,short,Wat time r Ã¼ going to xin's hostel?,0.058925780214275095,0,1,correct
+BENCH_264,4413,smishing,1,False,159,long,"As a valued customer, I am pleased to advise you that following recent draw of your Mobile No. you are awarded with a Rs.10,00,000 Bonus Prize, call 7044518857",0.10840625814398892,0,0,false_negative
+BENCH_265,3332,smishing,1,True,254,long,"Nationwide has noticed your debit card was recently used on 23-05-2012 11:04:43, at APPLE ONLINE STORE for 1920.00 GBP If not you please urgently call fraud prevention on 03303800233 or Intl +443303800231. Do not reply by SMS http://www.nationwide.co.uk/",0.6449757659429683,1,1,correct
+BENCH_266,3299,ham,0,False,40,short,Yes..gauti and sehwag out of odi series.,0.10044470615920847,0,1,correct
+BENCH_267,4848,ham,0,False,26,short,I'm in chennai velachery:),0.09561773936321281,0,1,correct
+BENCH_268,2967,smishing,1,False,138,medium,Congratulations - in this week's competition draw u have won the ï¿½1450 prize to claim just call 09050002312 . T&Cs/stop SMS 08718727868.,0.1953164894319721,0,0,false_negative
+BENCH_269,3513,ham,0,False,27,short,PICK UR FONE UP NOW U DUMB?,0.24388141440706054,0,1,correct
+BENCH_270,1131,ham,0,False,32,short,What should i eat fo lunch senor,0.06965829166465955,0,1,correct
+BENCH_271,557,ham,0,False,45,short,Dude ive been seeing a lotta corvettes lately,0.20849438637099707,0,1,correct
+BENCH_272,777,commercial_spam,0,False,137,medium,Sunshine Quiz Wkly Q! Win a top Sony DVD player if u know which country Liverpool played in mid week? Txt ansr to 82277. Â£1.50 SP:Tyrone,0.14048753389127308,0,1,correct
+BENCH_273,4075,smishing,1,False,143,long,XMAS REWARD IS WAITING FOR YOU! Our computer has randomly picked you from our mobile customers to receive a $ 400 reward. Just call 09066364589,0.1387418412270863,0,0,false_negative
+BENCH_274,4820,ham,0,False,30,short,Have you heard from this week?,0.144948194635161,0,1,correct
+BENCH_275,1059,smishing,1,False,156,long,Guess what! Somebody you know secretly fancies you! Wanna find out who it is? Give us a call on 09065394973 from Landline DATEBox1282EssexCM61XN 150p/min 18,0.051452461815680334,0,0,false_negative
+BENCH_276,2230,smishing,1,False,159,long,"This is the 2nd time we have tried to contact u. U have won the Â£400 prize. 2 claim is easy, just call 087104711148 NOW! Only 10p per minute. BT-national-rate",0.11371987965355305,0,0,false_negative
+BENCH_277,2353,smishing,1,True,110,medium,"	Dear Voucher Holder, 2 claim this weeks offer, at your PC go to http://www.e-tlp.co.uk/expressoffer Ts&Cs app",0.7970432127546214,1,1,correct
+BENCH_278,451,ham,0,False,54,short,Hi darlin did youPhone me? Im atHome if youwanna chat.,0.20115805096983588,0,1,correct
+BENCH_279,151,ham,0,False,20,short,Ok..lets find outï¿½,0.11289302897073644,0,1,correct
+BENCH_280,731,ham,0,False,19,short,Where to get those?,0.0766577285116776,0,1,correct
+BENCH_281,4804,commercial_spam,0,False,127,medium,Great NEW Offer - DOUBLE Mins & DOUBLE Txt on best Orange tariffs AND get latest camera phones 4 FREE! Call on 08000839402 NOW!,0.06729549509404736,0,1,correct
+BENCH_282,2500,smishing,1,False,121,medium,"Mila, age23, blonde, new in UK. I look sex with UK guys. if u like fun with me. Text MTALK to 69866.18 .  Help08718728876",0.14186049327521666,0,0,false_negative
+BENCH_283,3123,smishing,1,False,161,long,URGENT! We are trying to contact you. Last weekends draw shows that you won a Â£1000 prize GUARANTEED. Call 09064012160. Claim Code K52. Valid 12hrs only. 150ppm,0.17615435235341087,0,0,false_negative
+BENCH_284,3670,commercial_spam,0,False,110,medium,	Jamster! To get your free wallpaper text HEART to 88888 now! T&C apply. 16 only. Need Help? Call 08701213186.,0.08349853512783437,0,1,correct
+BENCH_285,3868,smishing,1,False,96,medium,WE WILL HOLD YOUR PAYTM AMOUNT AFTER SOMETIME COMPLETE YOUR PAYTM KYC PAYTM OFFICE PH 7679046492,0.37727653593382154,0,0,false_negative
+BENCH_286,2787,commercial_spam,0,False,114,medium,No. 1 Nokia Tone 4 ur mob every week! Just txt NOK to 87021. 1st Tone FREE ! so get txtin now and tell ur friends.,0.03184583088937998,0,1,correct
+BENCH_287,3663,smishing,1,False,152,long,"Urgent! call 09066350760 from your landline. Your complimentary 4* Ibiza Holiday or 20,000 cash await collection SAE T&Cs PO BOX 434 SK3 8WP 150 ppm 18+",0.27951988027559743,0,0,false_negative
+BENCH_288,1702,smishing,1,False,174,long,todays vodafone numbers ending with 0089(my last four digits) are selected to received a Â£350 award. If your number matches please call 09063442151 to claim your Â£350 award,0.25995548220830644,0,0,false_negative
+BENCH_289,1624,smishing,1,False,139,medium,"Last Chance! Claim ur Â£350 worth of discount vouchers today! Text SHOP to 85023 now! SavaMob, offers mobile! T Cs SavaMob POBOX84, M263UZ.",0.12449643932598513,0,0,false_negative
+BENCH_290,3014,ham,0,False,107,medium,Yes we were outside for like 2 hours. And I called my whole family to wake them up cause it started at 1 am,0.057913483801964656,0,1,correct
+BENCH_291,4534,ham,0,False,73,medium,Was actually about to send you a reminder today. Have a wonderful weekend,0.13056326618350916,0,1,correct
+BENCH_292,2649,ham,0,False,52,short,Huh so fast... Dat means u havent finished painting?,0.09316582885623031,0,1,correct
+BENCH_293,5955,ham,0,False,24,short,Yeah I don't see why not,0.08720107417111486,0,1,correct
+BENCH_294,195,smishing,1,True,107,medium,"FREE2DAY sexy St George's Day pic of Jordan!Txt PIC to 89080 dont miss out, PocketBabe.co.uk 0870241182716 ",0.1793315487144984,0,0,false_negative
+BENCH_295,3575,ham,0,False,98,medium,K..k..i'm also fine:)when will you complete the course? Then u can come here and search for jobï¿½,0.08687614557689959,0,1,correct
+BENCH_296,1016,commercial_spam,0,False,162,long,"Fantasy Football is back on your TV. Go to Sky Gamestar on Sky Active and play Â£250k Dream Team. Scoring starts on Saturday, so register now!SKY OPT OUT to 88088",0.20548269931734814,0,1,correct
+BENCH_297,4105,commercial_spam,0,True,160,long,"U can WIN Â£100 of Music Gift Vouchers every week starting NOW Txt the word DRAW to 87066 TsCs www.Idew.com SkillGame, 1Winaweek, age16. 150ppermessSubscription",0.20023446157628522,0,1,correct
+BENCH_298,5190,smishing,1,False,127,medium,URGENT! Your Mobile number has been awarded with a Â£2000 Bonus Caller Prize. Call 09058095201 from land line. Valid 12hrs only,0.1624269787658561,0,0,false_negative
+BENCH_299,2011,smishing,1,False,172,long,07732584351 - Rodger Burns - MSG = We tried to call you re your reply to our sms for a free nokia mobile + free camcorder. Please call now 08000930705 for delivery tomorrow,0.23542154175701144,0,0,false_negative
+BENCH_300,3706,smishing,1,False,136,medium,PRIVATE! Your 2003 Account Statement for shows 800 un-redeemed S. I. M. points. Call 08719899230 Identifier Code: 41685 Expires 07/11/04,0.41841413113257325,0,0,false_negative
+BENCH_301,4177,smishing,1,False,144,long,URGENT! Your Mobile number has been awarded with a Â£2000 prize GUARANTEED. Call 09061790126 from land line. Claim 3030. Valid 12hrs only 150ppm,0.23772279849318553,0,0,false_negative
+BENCH_302,1706,smishing,1,False,184,long,"URGENT! Dear FL1PKART Customer, We are trying to contact you. Last weekends draw shows that you w0n a Rs.10,00,000 prize GUARANTEED. Call 8536074310. Claim Code K52. Valid 12hrs only. ",0.13140346816720574,0,0,false_negative
+BENCH_303,3647,ham,0,False,32,short,I have to take exam with march 3,0.06153621963438974,0,1,correct
+BENCH_304,2608,smishing,1,False,156,long,IMPORTANT MESSAGE. This is a final contact attempt. You have important messages waiting out our customer claims dept. Expires 13/4/04. Call 08717507382 NOW!,0.1834025347674495,0,0,false_negative
+BENCH_305,3836,smishing,1,True,144,long,URGENT! This is the 2nd attempt to contact U!U have WON Â£1000CALL 09071512432 b4 300603t&csBCM4235WC1N3XX.callcost150ppmmobilesvary. maxÂ£7. 50,0.21952689747698867,0,0,false_negative
+BENCH_306,5708,commercial_spam,0,False,161,long,Hi its LUCY Hubby at meetins all day Fri & I will B alone at hotel U fancy cumin over? Pls leave msg 2day 09099726395 Lucy x CallsÂ£1/minMobsmoreLKPOBOX177HP51FL,0.041818263048538175,0,1,correct
+BENCH_307,4483,smishing,1,False,134,medium,U are subscribed to the best Mobile Content Service in the UK for Â£3 per ten days until you send STOP to 83435. Helpline 08706091795.,0.09478101809746416,0,0,false_negative
+BENCH_308,5083,ham,0,False,41,short,Otherwise had part time job and tuition..,0.12775881351748616,0,1,correct
+BENCH_309,3241,commercial_spam,0,True,154,long,"Play CricEx LIVE during India vs. Netherlands match - WIN iPad,  Blackberry & Team India Jerseys at the end of the match. Logon to http://m.ibibo.com/c/10",0.39077677953430245,0,1,correct
+BENCH_310,5180,smishing,1,False,118,medium,You are entitled to update to the latest colour camera mobile for Free! Call The Mobile Update VCo FREE on 08002986906,0.11390426443835165,0,0,false_negative
+BENCH_311,2340,smishing,1,True,134,medium,PRIVATE! Your 2003 Account Statement for shows 1000 un-redeemed S.I.M. points. Call 08715203685 Identifier Code:4xx26 Expires 13/10/04,0.4437243399277055,0,0,false_negative
+BENCH_312,1729,ham,0,False,123,medium,I've sent my wife your text. After we buy them she'll tell you what to do. So just relax. We should go get them this wkend.,0.044884682597678145,0,1,correct
+BENCH_313,3855,smishing,1,True,136,medium,"Dear Customer,U've been selected to stay in F1VE STAR hotels - FOR T0DAY'S DRAW! Holiday valued at INR 5,00,000.Dial 8536074310 to claim",0.10206626782066638,0,0,false_negative
+BENCH_314,4063,smishing,1,False,126,medium,Dear Customer your pyatm wallet Has been booked and hold Your amount please complete your kyc contact customer care 7908807538,0.44274195101726604,0,0,false_negative
+BENCH_315,4425,smishing,1,False,128,medium,"Congratulations, your cv was reviewed and you have been shortlisted. Please complete the job application by dialling 120 *22446#",0.43844186690747566,0,0,false_negative
+BENCH_316,912,ham,0,False,36,short,Argh why there is nobody in town ;_;,0.07269175456734042,0,1,correct
+BENCH_317,5815,smishing,1,False,117,medium,"As a SIM subscriber, you are selected to receive a Bonus! Get it delivered to your door, call 08718738034, EXP. 30Apr",0.18712254874164436,0,0,false_negative
+BENCH_318,3705,commercial_spam,0,False,107,medium,"Oh my god! I've found your number again! I'm so glad, text me back xafter this msgs cst std ntwk chg Â£1.50",0.09866299479199139,0,1,correct
+BENCH_319,736,smishing,1,True,145,long,A transaction of AUD 590.3 was made with your bank account on 08/02/17 11:17:37 if unauthorised follow this link http://gommbanklogin:netbank.com,0.8664686341944011,1,1,correct
+BENCH_320,2598,ham,0,False,146,long,"Keep ur problems in ur heart, b'coz nobody will fight for u. Only u &amp; u have to fight for ur self &amp; win the battle. -VIVEKANAND- G 9t.. SD",0.0366852569682778,0,1,correct
+BENCH_321,3467,ham,0,False,123,medium,Thk some of em find wtc too far... Weiyi not goin... E rest i dunno yet... R ur goin 4 dinner den i might b able to join...,0.052389244083606,0,1,correct
+BENCH_322,1453,smishing,1,False,155,long,We tried to contact you re our offer of New Video Phone 750 anytime any network mins HALF PRICE Rental camcorder call 08000930705 or reply for delivery Wed,0.22915591790306603,0,0,false_negative
+BENCH_323,4263,ham,0,False,22,short,R u still working now?,0.1265275321947939,0,1,correct
+BENCH_324,2539,commercial_spam,0,False,158,long,FREE>Ringtone! Reply REAL or POLY eg REAL1 1. PushButton 2. DontCha 3. BabyGoodbye 4. GoldDigger 5. WeBeBurnin 1st tone FREE and 6 more when u join for Â£3/wk,0.06733618017347678,0,1,correct
+BENCH_325,5835,commercial_spam,0,True,64,short,Welcome! Please reply with your AGE and GENDER to begin. e.g 24M,0.35649287472227853,0,1,correct
+BENCH_326,2880,smishing,1,False,142,long,You have been specially selected to receive a 2000 pound award! Call 08712402050 BEFORE the lines close. Cost 10ppm. 16+. T&Cs apply. AG Promo,0.16497248070474393,0,0,false_negative
+BENCH_327,4795,commercial_spam,0,False,120,medium,No 1 POLYPHONIC tone 4 ur mob every week! Just txt PT2 to 87575. so get txtin now and tell ur friends. 16 reply HL 4info,0.05173113211559337,0,1,correct
+BENCH_328,5418,ham,0,False,40,short,I'm aight. Wat's happening on your side.,0.09154250432556692,0,1,correct
+BENCH_329,2102,smishing,1,False,157,long,URGENT! We are trying to contact U. Todays draw shows that you have won a Â£800 prize GUARANTEED. Call 09050001809 from land line. Claim M95. Valid12hrs only,0.10584316907601622,0,0,false_negative
+BENCH_330,1700,ham,0,False,295,long," All the Aeronautics professors wer calld &amp; they wer askd 2 sit in an aeroplane. Aftr they sat they wer told dat the plane ws made by their students. Dey all hurried out of d plane.. Bt only 1 didnt move... He said:""if it is made by my students,this wont even start........ Datz confidence..",0.035294867838789996,0,1,correct
+BENCH_331,5158,commercial_spam,0,True,131,medium,	New TEXTBUDDY Chat 2 horny guys in ur area 4 just 25p Free 2 receive Search postcode or at gaytextbuddy.com. TXT ONE name to 89693,0.15052647960559942,0,1,correct
+BENCH_332,46,ham,0,False,118,medium,Was actually sleeping and still might when u call back. So a text is gr8. You rock sis. Will send u a text wen i wake.,0.02161764351316856,0,1,correct
+BENCH_333,1768,commercial_spam,0,False,141,long,reat Investment with assured return *Commercial space by AIMS Sanya *0km frm Delhi *Nr Metro Station *Sec-15 Noida @ 9500/sqft Call 995309696,0.21768502246510055,0,1,correct
+BENCH_334,5069,smishing,1,True,158,long,You have an outstanding tax refund of 578.44G8P for the tax year 15/16. Please fill out the following form to process your refund http:///hmrc.taxrebate.co.uk,0.6220926640879657,1,1,correct
+BENCH_335,2294,ham,0,False,64,short,Just seeing your missed call my dear brother. Do have a gr8 day.,0.03597695567409812,0,1,correct
+BENCH_336,2875,smishing,1,False,131,medium,Dear (paytm)customer your paytm KYC has been suspended PAY-TM office PH 7044518857 Your Paytm A/C will block within 24hr Thank you.,0.35614955943390103,0,0,false_negative
+BENCH_337,2617,smishing,1,True,141,long,you'hv completed a transaction for AUD 788.93 on 06/02/17 03-27-31 pm. Please follow the link if it is not done by you http://commbank.netban,0.7492776503791766,1,1,correct
+BENCH_338,4381,ham,0,False,35,short,Dude how do you like the buff wind.,0.09003868662274425,0,1,correct
+BENCH_339,1703,smishing,1,True,165,long,Welcome to Paytm payment bank your re verification done successful in your wallet get 1205 cashback click in link and login your paytm http://7e4d6417.ngrok.io/paytm,0.9210157338561522,1,1,correct
+BENCH_340,2939,ham,0,False,25,short,"I'll see, but prolly yeah",0.07545140353581885,0,1,correct
+BENCH_341,3987,ham,0,False,43,short,I will reach ur home in  &lt;#&gt;  minutes,0.04085961004469755,0,1,correct
+BENCH_342,3767,smishing,1,False,96,medium,WE WILL HOLD YOUR PAYTM AMOUNT AFTER SOMETIME COMPLETE YOUR PAYTM KYC PAYTM OFFICE PH 7908807538,0.3764711850959777,0,0,false_negative
+BENCH_343,4900,smishing,1,False,182,long,"URGENT! Dear FL1PKART Customer, We are trying to contact you. Last weekends draw shows that you w0n a Rs.7,00,000 prize GUARANTEED. Call 7679046492. Claim Code L92 Valid 12hrs only. ",0.13074669494497462,0,0,false_negative
+BENCH_344,5952,ham,0,False,60,short,"As I entered my cabin my PA said, '' Happy B'day Boss !!''. ",0.0915806610163301,0,1,correct
+BENCH_345,2769,ham,0,False,83,medium,U r too much close to my heart. If u go away i will be shattered. Plz stay with me.,0.06104807284790015,0,1,correct
+BENCH_346,902,commercial_spam,0,False,114,medium,Free Top ringtone -sub to weekly ringtone-get 1st week free-send SUBPOLY to 81618-?3 per week-stop sms-08718727870,0.13944590241134225,0,1,correct
+BENCH_347,4165,smishing,1,False,149,long,"You are being contacted by our Dating Service by someone you know! To find out who it is, call from your mobile or landline 09064017305 PoBox75LDNS7 ",0.05326416534487524,0,0,false_negative
+BENCH_348,3630,commercial_spam,0,False,37,short,08714712388 between 10am-7pm Cost 10p,0.15358809690366848,0,1,correct
+BENCH_349,5399,ham,0,False,53,short,Maybe you should find something else to do instead???,0.11099018933152306,0,1,correct
+BENCH_350,4099,ham,0,True,155,long,HIYA STU WOT U UP 2.IM IN SO MUCH TRUBLE AT HOME AT MOMENT EVONE HATES ME EVEN U! WOT THE HELL AV I DONE NOW? Y WONT U JUST TELL ME TEXT BCK PLEASE LUV DAN,0.05107020615184736,0,1,correct
+BENCH_351,222,ham,0,False,83,medium,When did i use soc... I use it only at home... Ã dunno how 2 type it in word ar...,0.0391427519019372,0,1,correct
+BENCH_352,5249,smishing,1,True,104,medium,	eeta  (25/F) is inviting you to be her friend. Reply YES-440 or NO-440 See her: www.SMS.ac/u/nat2708198,0.12795839821679328,0,0,false_negative
+BENCH_353,76,ham,0,False,89,medium,Die... I accidentally deleted e msg i suppose 2 put in e sim archive. Haiz... I so sad...,0.11570677886642029,0,1,correct
+BENCH_354,2972,ham,0,False,46,short,No i am not having not any movies in my laptop,0.05818766220862166,0,1,correct
+BENCH_355,2163,smishing,1,False,144,long,"Urgent! Please call 0906346330. Your ABTA complimentary 4* Spanish Holiday or Â£10,000 cash await collection SAE T&Cs BOX 47 PO19 2EZ 150ppm 18+",0.3290630199516161,0,0,false_negative
+BENCH_356,3456,ham,0,False,77,medium,I dont know ask to my brother. Nothing problem some thing that. Just i told .,0.021674625551893315,0,1,correct
+BENCH_357,5293,smishing,1,False,116,medium,"Final Chance! Claim ur Â£150 worth of discount vouchers today! Text YES to 85023 now! SavaMob, member offers mobile!",0.09158027251266067,0,0,false_negative
+BENCH_358,5019,ham,0,False,63,short,I cannot come on Sunday as I HAVE A DATE ON SUNDAY WITH RIMCA!!,0.03854386972549694,0,1,correct
+BENCH_359,2549,smishing,1,False,148,long,"Please call our customer service representative on 7044518857 between 10am-9pm as you have W0N a guaranteed cash prize of Rs.5,00,000. FL1PKART TEAM",0.12440189284404264,0,0,false_negative
+BENCH_360,2632,smishing,1,True,156,long,For taking part in our mobile survey yesterday! You can now have 500 texts 2 use however you wish. 2 get txts just send TXT to 80160 T&C www.txt43.com 1.50p,0.1313912821904163,0,0,false_negative
+BENCH_361,5894,ham,0,False,39,short,Goodmorning today i am late for 15 min.,0.05126175133214801,0,1,correct
+BENCH_362,4389,smishing,1,False,162,long,"WELL DONE! Your 4* Costa Del Sol Holiday or Â£5000 await collection. Call 09050090033 Now toClaim. SAE, TCs, POBox334, Stockport, SK38xh, CostÂ£1.50/pm, Max10mins",0.18604407128694503,0,0,false_negative
+BENCH_363,1242,smishing,1,False,146,long,"ATM BLOCK:Dear customer, Due to our system upgrade your ATM card has just been BL0CKED. To Re-Activate call customer care for help 7044518857 now.",0.21754452653631257,0,0,false_negative
+BENCH_364,1908,smishing,1,True,125,medium,Friendly reminder don't forget to confirm your SAM update from the other day!ï¿½http://rghst.us/Htcdlas Reply STOP to opt out,0.8623653174560342,1,1,correct
+BENCH_365,904,ham,0,False,14,short,See you there!,0.1267994024009336,0,1,correct
+BENCH_366,1984,smishing,1,False,141,long,"Congrats! 2 mobile 3G Videophones R yours. call 09063458130 now! videochat wid your mates, play java games, Dload polyPH music, noline rentl.",0.1326493136860797,0,0,false_negative
+BENCH_367,4997,smishing,1,False,112,medium,"	You've won tkts to the EURO2004 CUP FINAL or Â£800 CASH, to collect CALL 09058099801 b4190604, POBOX 7876150ppm",0.10701319894612911,0,0,false_negative
+BENCH_368,3709,ham,0,False,141,long,You know my old Dom I told you about yesterday ? His name is Roger? He got in touch with me last night and wants me to meet him today at 2 pm,0.024620190936050307,0,1,correct
+BENCH_369,2848,commercial_spam,0,True,116,medium,"Want to funk up ur fone with a weekly new tone reply TONES2U 2 this text. www.ringtones.co.uk, the original n best. ",0.23989193048386037,0,1,correct
+BENCH_370,2820,commercial_spam,0,False,108,medium,Sunshine Quiz! Win a super Sony DVD recorder if you canname the capital of Australia? Text MQUIZ to 82277. B,0.1486137866484364,0,1,correct
+BENCH_371,3471,ham,0,False,90,medium,"Oh, yes, I've just been a little under the weather so i've kind of been coccooning at home",0.0713770652776604,0,1,correct
+BENCH_372,2950,smishing,1,False,97,medium,"You have won ?1,000 cash or a ?2,000 prize! To claim, call09050000327. T&C: RSTM, SW7 3SS. 150ppm",0.1961401200888536,0,0,false_negative
+BENCH_373,2046,ham,0,False,77,medium,I know girls always safe and selfish know i got it pa. Thank you. good night.,0.020427431241781546,0,1,correct
+BENCH_374,155,smishing,1,False,82,medium,	Please CALL 08712402779 immediately as there is an urgent message waiting for you,0.16283281319088086,0,0,false_negative
+BENCH_375,4986,ham,0,False,158,long,Miserable. They don't tell u that the side effects of birth control are massive gut wrenching cramps for the first 2 months. I didn't sleep at all last night.,0.030192997635165125,0,1,correct
+BENCH_376,2280,smishing,1,False,96,medium,WE WILL HOLD YOUR PAYTM AMOUNT AFTER SOMETIME COMPLETE YOUR PAYTM KYC PAYTM OFFICE PH 6200992462,0.37927277888203853,0,0,false_negative
+BENCH_377,3632,ham,0,False,113,medium,Hey cutie. How goes it? Here in WALES its kinda ok. There is like hills and shit but i still avent killed myself.,0.07296918584074281,0,1,correct
+BENCH_378,5147,commercial_spam,0,False,45,short,2/2 146tf150pï¿½win tickets..call 08701417012,0.11580833926387103,0,1,correct
+BENCH_379,1349,smishing,1,False,142,long,"URGENT! Your Mobile number has been awarded with a INR.2,00,000 prize GUARANTEED. Call 7679046492 from land line. Claim 3030. Valid 12hrs only",0.22907190899219484,0,0,false_negative
+BENCH_380,3724,smishing,1,False,132,medium,"This is the 2nd attempt to contract U, you have won this weeks top prize of either Â£1000 cash or Â£200 prize. Just call 09066361921",0.16222787300085742,0,0,false_negative
+BENCH_381,5655,smishing,1,False,154,long,"Dear customer your PAY2TMKYC has been expired, Itï¿½s will be bl0cked within 24 hour, please contact customer! Care phï¿½ 6200992462 immediately to verify",0.36838155409478734,0,0,false_negative
+BENCH_382,3317,ham,0,False,29,short,"Iâll leave around four, ok?",0.060950860402350496,0,1,correct
+BENCH_383,207,smishing,1,False,132,medium,U have a secret admirer who is looking 2 make contact with U-find out who they R*reveal who thinks UR so special-call on 09058094565,0.04297959709121313,0,0,false_negative
+BENCH_384,727,ham,0,False,25,short,Does daddy have a bb now.,0.10714557414818059,0,1,correct
+BENCH_385,2207,ham,0,False,119,medium,I calls you later. Afternoon onwords mtnl service get problem in south mumbai. I can hear you but you cann't listen me.,0.05886026552263787,0,1,correct
+BENCH_386,2440,commercial_spam,0,False,130,medium,"Hello darling how are you today? I would love to have a chat, why dont you tell me what you look like and what you are in to sexy?",0.02332074682319675,0,1,correct
+BENCH_387,5805,ham,0,False,27,short,Anything lor is she coming?,0.04743736311162978,0,1,correct
+BENCH_388,5847,smishing,1,False,168,long,"Urgent! call 09066612661 from landline. Your complementary 4* Tenerife Holiday or Â£10,000 cash await collection SAE T&Cs PO Box 3 WA14 2PX 150ppm 18+ Sender: Hol Offer",0.317167612438167,0,0,false_negative
+BENCH_389,5254,commercial_spam,0,False,158,long,Had your mobile 10 mths? Update to latest Orange camera/video phones for FREE. Save Â£s with Free texts/weekend calls. Text YES for a callback orno to opt out,0.12109821412955439,0,1,correct
+BENCH_390,3049,ham,0,False,84,medium,Lol that's different. I don't go trying to find every real life photo you ever took.,0.05651974677372178,0,1,correct
+BENCH_391,4006,ham,0,False,31,short,Yup i've finished c Ã¼ there...,0.1001711849436781,0,1,correct
+BENCH_392,1925,smishing,1,False,187,long,"URGENT! Dear FL1PKART Customer, We are trying to contact you. Last weekends draw shows that you w0n a Rs.4,00,000 prize GUARANTEED. Call 8927307655. Claim Code LUCKY52. Valid 12hrs only. ",0.12836873061531795,0,0,false_negative
+BENCH_393,5671,commercial_spam,0,True,118,medium,Hope you enjoyed your new content. text stop to 61610 to unsubscribe. help:08712400602450p Provided by tones2you.co.uk,0.3263782408190663,0,1,correct
+BENCH_394,4680,ham,0,False,40,short,As in i want custom officer discount oh.,0.12712017950538673,0,1,correct
+BENCH_395,4931,commercial_spam,0,False,156,long,"Twinks, bears, scallies, skins and jocks are calling now. Don't miss the weekend's fun. Call 08712466669 at 10p/min. 2 stop texts call 08712460324(nat rate)",0.06607533268784378,0,1,correct
+BENCH_396,515,commercial_spam,0,False,156,long,"England v Macedonia - dont miss the goals/team news. Txt ur national team to 87077 eg ENGLAND to 87077 Try:WALES, SCOTLAND 4txt/Ãº1.20 POBOXox36504W45WQ 16+",0.08835620046633032,0,1,correct
+BENCH_397,4836,ham,0,False,195,long,It just seems like weird timing that the night that all you and g want is for me to come smoke is the same day as when a shitstorm is attributed to me always coming over and making everyone smoke,0.01533096783677049,0,1,correct
+BENCH_398,5900,ham,0,False,15,short,You want to go?,0.12372613834160366,0,1,correct
+BENCH_399,2998,smishing,1,True,139,medium,Your SAM registration has been received! Click here to complete the processï¿½http://rghst.xyz/NPHTmtb Reply STOP 2 opt out of future texts,0.9045294969714662,1,1,correct
+BENCH_400,1879,smishing,1,False,154,long,BIG BROTHER ALERT! The computer has selected u for 10k cash or #150 voucher. Call 09064018838. NTT PO Box CRO1327 18+ BT Landline Cost 150ppm mobiles vary,0.15545636018370046,0,0,false_negative
+BENCH_401,4723,smishing,1,False,95,medium,Bored housewives! Chat n date now! 0871750.77.11! BT-national rate 10p/min only from landlines!,0.10836732688875263,0,0,false_negative
+BENCH_402,3777,ham,0,False,23,short,I love you both too :-),0.10442052161138483,0,1,correct
+BENCH_403,4136,ham,0,False,29,short,O shore are you takin the bus,0.06984678141769124,0,1,correct
+BENCH_404,4665,smishing,1,False,145,long,	U 447801259231 have a secret admirer who is looking 2 make contact with U-find out who they R*reveal who thinks UR so special-call on 0905809458,0.043764713112174884,0,0,false_negative
+BENCH_405,2456,smishing,1,False,70,short,"WINNER!7827156256 is chosen for $2500 CASH prize, call+38977148576 now",0.17388182936407612,0,0,false_negative
+BENCH_406,394,ham,0,False,126,medium,HI BABE U R MOST LIKELY TO BE IN BED BUT IM SO SORRY ABOUT TONIGHT! I REALLY WANNA SEE U TOMORROW SO CALL ME AT 9. LOVE ME XXX,0.02711676527314884,0,1,correct
+BENCH_407,3490,ham,0,False,19,short,I borrow ur bag ok.,0.08676208044967718,0,1,correct
+BENCH_408,4433,commercial_spam,0,True,159,long,"Price revising soon!! Agni Property Recommends Spaze Privy The Address in Sec-93, Gurgaon@28 Lac onwards. 2/3/4 BHK Apts available.To Book Call 9212255555 Now!",0.24941123002423168,0,1,correct
+BENCH_409,421,ham,0,False,12,short,Huh y lei...,0.12071520796741013,0,1,correct
+BENCH_410,3917,smishing,1,False,66,short,Your free gift is waiting to be collected. Simply call 08718738034,0.1134715992422743,0,0,false_negative
+BENCH_411,4043,smishing,1,False,156,long,Dear PAYTM customer your Paytm KYC has expired. Contact customer care No-7908807538 immediately. your account will Block within 24 hr. Thank you PAYTM TEAM.,0.2504624273136967,0,0,false_negative
+BENCH_412,601,smishing,1,False,133,medium,	Want the latest Video handset? 750 anytime any network mins? Half price line rental? Reply or call 08000930705 for delivery tomorrow,0.11302164296332838,0,0,false_negative
+BENCH_413,5895,smishing,1,True,135,medium,Your SAM registration has been received! Click here to complete the process http:/rghst.us/xRI2284 Reply STOP 2 opt out of future texts,0.9250713597467154,1,1,correct
+BENCH_414,4065,commercial_spam,0,False,137,medium,WIN a Â£200 Shopping spree every WEEK Starting NOW. 2 play text STORE to 88039. SkilGme. TsCs08714740323 1Winawk! age16 Â£1.50perweeksub.,0.1348710561344358,0,1,correct
+BENCH_415,4973,smishing,1,False,123,medium,"Your Mobile Won 500,000.00euro in Blackberry Netherlands Promo. For claims E-mail code: NL101 to claims@bbnetherlands.co.cc",0.46894273810098536,0,0,false_negative
+BENCH_416,1076,ham,0,False,85,medium,I like cheap! But iâm happy to splash out on the wine if it makes you feel better..,0.08132489448820913,0,1,correct
+BENCH_417,165,commercial_spam,0,False,158,long,I don't know u and u don't know me. Send CHAT to 86688 now and let's find each other! Only 150p/Msg rcvd. HG/Suite342/2Lands/Row/W1J6HL LDN. 18 years or over.,0.043082746169157395,0,1,correct
+BENCH_418,307,smishing,1,False,118,medium,	You are a winner U have been specially selected 2 receive Â£1000 cash  speak to a live operator 2 claim 0871277810810,0.28665371440247417,0,0,false_negative
+BENCH_419,1909,commercial_spam,0,False,156,long,FreeMsg: Fancy a flirt? Reply DATE now & join the UKs fastest growing mobile dating service. Msgs rcvd just 25p to optout txt stop to 83021. Reply DATE now!,0.1870244722509921,0,1,correct
+BENCH_420,2531,commercial_spam,0,True,152,long,-PLS STOP bootydelious (32/F) is inviting you to be her friend. Reply YES-434 or NO-434 See her: www.SMS.ac/u/bootydelious STOP? Send STOP FRND to 62468,0.17383339969891276,0,1,correct
+BENCH_421,5493,ham,0,False,51,short,Haiyoh... Maybe your hamster was jealous of million,0.24693717800834475,0,1,correct
+BENCH_422,373,ham,0,False,53,short,"If i let you do this, i want you in the house by 8am.",0.13901354827416296,0,1,correct
+BENCH_423,4637,ham,0,False,62,short,Well boy am I glad G wasted all night at applebees for nothing,0.07981101025041189,0,1,correct
+BENCH_424,571,commercial_spam,0,False,100,medium,"Free Msg: get Gnarls Barkleys ""Crazy"" ringtone TOTALLY FREE just reply GO to this message right now!",0.09584090877494625,0,1,correct
+BENCH_425,1911,ham,0,False,137,medium,Not yet. Just i'd like to keep in touch and it will be the easiest way to do that from barcelona. By the way how ru and how is the house?,0.01996236352991638,0,1,correct
+BENCH_426,5051,commercial_spam,0,False,150,long,"Sunshine Hols. To claim ur med holiday send a stamped self address envelope to Drinks on Us UK, PO Box 113, Bray, Wicklow, Eire. Quiz Starts Saturday!",0.27952781085393624,0,1,correct
+BENCH_427,1999,ham,0,False,15,short,Oh ok no prob..,0.08154776272102668,0,1,correct
+BENCH_428,2350,smishing,1,True,118,medium,IMPORTANT INFORMATION 4 ORANGE USER 0796XXXXXX. TODAY IS UR LUCKY DAY!2 FIND OUT WHY LOG ONTO http://www.urawinner.com,0.4986001105252519,0,0,false_negative
+BENCH_429,2891,ham,0,False,58,short,"HEY THERE BABE, HOW U DOIN? WOT U UP 2 2NITE LOVE ANNIE X.",0.10718634598306909,0,1,correct
+BENCH_430,4581,smishing,1,False,164,long,"Loan for any purpose Â£500 - Â£75,000. Homeowners + Tenants welcome. Have you been previously refused? We can still help. Call Free 0800 1956669 or text back 'help'",0.06103497999107905,0,0,false_negative
+BENCH_431,173,smishing,1,False,50,short,	You have 1 new voicemail. Please call 0871918154.,0.17951148348089702,0,0,false_negative
+BENCH_432,1806,commercial_spam,0,False,74,medium,it to 80488. Your 500 free text messages are valid until 31 December 2005.,0.11075781841621281,0,1,correct
+BENCH_433,4874,ham,0,False,112,medium,"Single line with a big meaning::::: ""Miss anything 4 ur ""Best Life"" but, don't miss ur best life for anythingï¿½",0.05021648283181279,0,1,correct
+BENCH_434,5087,smishing,1,False,138,medium,"Dear PAYTM customer your paytm KYC has been suspended, paytm office PH 6291628992 Account will block within 24 hour. Thank you. PAYTM TEAM",0.35326772686387037,0,0,false_negative
+BENCH_435,3578,ham,0,False,25,short,"Alright, see you in a bit",0.08935112441696662,0,1,correct
+BENCH_436,5759,ham,0,False,25,short,Its good to hear from you,0.0533840514855398,0,1,correct
+BENCH_437,4222,ham,0,False,39,short,Dear how is chechi. Did you talk to her,0.06276063367016457,0,1,correct
+BENCH_438,1596,ham,0,False,35,short,I told that am coming on wednesday.,0.04723453601038033,0,1,correct
+BENCH_439,5960,ham,0,False,38,short,Still otside le..u come 2morrow maga..,0.15466269381932488,0,1,correct
+BENCH_440,4310,smishing,1,True,160,long,Majestic mountains to calm beaches. Adventure holidays to quiet getaways. Manali to Ooty. Puri to Munnar. Holiday for 25 years.EMIs frm Rs.2366. T&C. 9895930777,0.14428346407217915,0,0,false_negative
+BENCH_441,5854,ham,0,False,60,short,"It wont b until 2.15 as trying 2 sort house out, is that ok?",0.0645696576685151,0,1,correct
+BENCH_442,5325,ham,0,False,44,short,Anything lor if they all go then i go lor...,0.029102638108971162,0,1,correct
+BENCH_443,4497,smishing,1,False,143,long,You have won a guaranteed Â£200 award or even Â£1000 cashto claim UR award call free on 08000407165 (18+) 2 stop getstop on 88222 PHP. RG21 4JX,0.15636786459838928,0,0,false_negative
+BENCH_444,99,ham,0,False,110,medium,What's up my own oga. Left my phone at home and just saw ur messages. Hope you are good. Have a great weekend.,0.037403121177327164,0,1,correct
+BENCH_445,935,ham,0,False,100,medium,Aiyo cos i sms Ã¼ then Ã¼ neva reply so i wait 4 Ã¼ to reply lar. I tot Ã¼ havent finish ur lab wat.,0.07169362667791879,0,1,correct
+BENCH_446,2701,ham,0,True,283,long,Take care and sleep well.you need to learn to change in life.you only need to get CONVINCED on that.i will wait but no more conversations between us.GET CONVINCED by that time.Your family is over for you in many senses.respect them but not overemphasise.or u have no role in my life.,0.0283569321617447,0,1,correct
+BENCH_447,4439,commercial_spam,0,True,160,long,"Nova Medical Centers, conducts a shoulder Pain clinic on Mar 5th.Consult our renowned shoulder specialists Dr.Mahesh Reddy & Dr.Jatty Call-9686578312,9980295914",0.19685867892352216,0,1,correct
+BENCH_448,5236,commercial_spam,0,False,116,medium,Only 1 day left for SAWAN KI BAHAR compt. for Agents/DOs/CLIAs. Qualify the competition and win maximum prizes...SDM,0.11882051533937651,0,1,correct
+BENCH_449,1015,smishing,1,True,150,long,Congratulations ur awarded either Â£500 of CD gift vouchers & Free entry 2 our Â£100 weekly draw txt MUSIC to 87066 TnCs www.Ldew.com1win150ppmx3age16,0.1919334623626033,0,0,false_negative
+BENCH_450,3939,ham,0,False,41,short,Is that seriously how you spell his name?,0.050353962479953926,0,1,correct
+BENCH_451,4563,ham,0,False,160,long,As per your request 'Melle Melle (Oru Minnaminunginte Nurungu Vettam)' has been set as your callertune for all Callers. Press *9 to copy your friends Callertune,0.19291408192514875,0,1,correct
+BENCH_452,2795,commercial_spam,0,False,104,medium,This message is free. Welcome to the new & improved Sex & Dogging club! To unsubscribe from this service,0.12095427085220099,0,1,correct
+BENCH_453,1788,commercial_spam,0,False,156,long,"Hi there, 2nights ur lucky night! Uve been invited 2 XCHAT, the Uks wildest chat! Txt CHAT to 86688 now! 150p/MsgrcvdHG/Suite342/2Lands/Row/W1J6HL LDN 18yrs",0.08157106898551016,0,1,correct
+BENCH_454,4488,ham,0,False,21,short,I'm homeï¿½call meï¿½,0.04931368186577171,0,1,correct
+BENCH_455,4338,smishing,1,False,126,medium,Dear Customer your pyatm wallet Has been booked and hold Your amount please complete your kyc contact customer care 8536074310,0.44261192244561676,0,0,false_negative
+BENCH_456,4956,commercial_spam,0,False,132,medium,"Win the newest ÂHarry Potter and the Order of the Phoenix . reply HARRY, answer 5 questions - chance to be the first among readers!",0.1606757605801045,0,1,correct
+BENCH_457,733,commercial_spam,0,False,107,medium,"FREE RING TONE just text ""POLYS"" to 87131. Then every week get a new tone. 0870737910216yrs only Â£1.50/wk.",0.046509042589028445,0,1,correct
+BENCH_458,554,commercial_spam,0,False,101,medium,"We know someone who you know that fancies you. Call 09058097218 to find out who. POBox 6, LS15HB 150p",0.0470507785322301,0,1,correct
+BENCH_459,680,smishing,1,False,157,long,URGENT! We are trying to contact U. Todays draw shows that you have won a Â£800 prize GUARANTEED. Call 09050001808 from land line. Claim M95. Valid12hrs only,0.10613525797666398,0,0,false_negative
+BENCH_460,5,smishing,1,True,76,medium,BankOfAmerica Alert 137943. Please follow http://bit.do/cgjK-and re-activate,0.7453827720905285,1,1,correct
+BENCH_461,2369,ham,0,False,16,short,Then ur sis how?,0.0593656773172348,0,1,correct
+BENCH_462,2507,commercial_spam,0,True,151,long,"One call can change your life.Weight loss & gain 5 to 25 kg no side effect, 100% ayurvedic product with money back guarantee.CALL-9871993238,9871965149",0.12398923346362568,0,1,correct
+BENCH_463,5315,smishing,1,True,154,long,HMRC GOVUK:0ur records show that your tax refund of ï¿½398.90 can now be claime. Please continue via:https://ukhmrc-tax-refund.comï¿½to claim your refund.,0.917249053105634,1,1,correct
+BENCH_464,414,smishing,1,True,107,medium,	Loans for any purpose even if you have Bad Credit! Tenants Welcome. Call NoWorriesLoans.com on 08717111821,0.2351082533202679,0,0,false_negative
+BENCH_465,1876,smishing,1,False,49,short,You have 1 new voicemail. Please call 08719181503,0.17677290777050136,0,0,false_negative
+BENCH_466,649,ham,0,False,80,medium,Have you had a good day? Mine was really busy are you up to much tomorrow night?,0.04508526046516054,0,1,correct
+BENCH_467,4987,smishing,1,True,129,medium,You have WON a guaranteed Â£1000 cash or a Â£2000 prize.To claim yr prize call our customer service representative on 08714712413,0.17443069358945895,0,0,false_negative
+BENCH_468,5886,ham,0,False,43,short,Mmm so yummy babe ... Nice jolt to the suzy,0.05279449258590762,0,1,correct
+BENCH_469,1910,ham,0,False,45,short,Thanks for this hope you had a good day today,0.03101261378840949,0,1,correct
+BENCH_470,2748,ham,0,False,59,short,I am busy on Sunday as I HAVE A DATE ON SUNDAY WITH LITCI!!,0.039884226134062145,0,1,correct
+BENCH_471,4754,commercial_spam,0,False,72,medium,RECPT 1/3. You have ordered a Ringtone. Your order is being processed...,0.3115143799683235,0,1,correct
+BENCH_472,5943,commercial_spam,0,False,137,medium,Ur cash-balance is currently 500 pounds - to maximize ur cash-in now send GO to 86688 only 150p/msg. CC: 08718720201 PO BOX 114/14 TCR/W1,0.13788077013270822,0,1,correct
+BENCH_473,2971,smishing,1,False,160,long,"As a valued customer, I am pleased to advise you that following recent review of your Mobile No. you are awarded with a Rs.5,00,000 Bonus Prize, call 8536074310",0.13403776997721475,0,0,false_negative
+BENCH_474,2428,commercial_spam,0,False,101,medium,subscribe to weekly ringtone-get 1st week free-send SUBPOLY to 81618-?3 per week-stop sms-08718727870,0.10861338345231916,0,1,correct
+BENCH_475,1224,commercial_spam,0,True,152,long,sports fans - get the latest sports news str* 2 ur mobile 1 wk FREE PLUS a FREE TONE Txt SPORT ON to 8007 www.getzed.co.uk 0870141701216+ norm 4txt/120p,0.13433876663040528,0,1,correct
+BENCH_476,1795,smishing,1,False,150,long,WINNER! As a valued network customer you hvae been selected to receive a Â£900 reward! To collect call 09061701444. Valid 24 hours only. ACL03530150PM,0.0966908736454809,0,0,false_negative
+BENCH_477,2661,commercial_spam,0,False,134,medium,"Think ur smart ? Win Â£200 this week in our weekly quiz, text PLAY to 85222 now!T&Cs WinnersClub PO BOX 84, M26 3UZ. 16+. GBP1.50/week",0.11198303875302344,0,1,correct
+BENCH_478,2445,ham,0,False,159,long,Yeah you should. I think you can use your gt atm now to register. Not sure but if there's anyway i can help let me know. But when you do be sure you are ready.,0.05900584950637063,0,1,correct
+BENCH_479,4892,smishing,1,True,161,long,Congratulations ur awarded either a yrs supply of CDs from Virgin Records or a Mystery Gift GUARANTEED Call 09061104283 Ts&Cs www.smsco.net Â£1.50pm approx 3mins,0.24088279617072808,0,0,false_negative
+BENCH_480,3219,smishing,1,True,145,long,PRIVATE! Your 2003 Account Statement for 07815296484 shows 800 un-redeemed S.I.M. points. Call 08718738001 Identifier Code 41782 Expires 18/11/04,0.43750155023285625,0,0,false_negative
+BENCH_481,1561,ham,0,False,69,short,"Sir, I am waiting for your callï¿½I have an urgent meeting later on..",0.06687521730439834,0,1,correct
+BENCH_482,1659,smishing,1,False,155,long,	Had your mobile 11 months or more? U R entitled to Update to the latest colour mobiles with camera for Free! Call The Mobile Update Co FREE on 08002986030,0.09166291114795275,0,0,false_negative
+BENCH_483,4444,ham,0,False,45,short,And popping &lt;#&gt; ibuprofens was no help.,0.07505362515889152,0,1,correct
+BENCH_484,5502,commercial_spam,0,False,140,medium,1000's of girls many local 2 u who r virgins 2 this & r ready 2 4fil ur every sexual need. Can u 4fil theirs? text CUTE to 69911(Â£1.50p. m),0.060345365879894225,0,1,correct
+BENCH_485,5238,smishing,1,False,161,long,"This is the 2nd time we have tried 2 contact u. U have won the Â£750 Pound prize. 2 claim is easy, call 087187272008 NOW1! Only 10p per minute. BT-national-rate.",0.1546929412555705,0,0,false_negative
+BENCH_486,4138,ham,0,False,26,short,K k pa Had your lunch aha.,0.18945226990839334,0,1,correct
+BENCH_487,5181,smishing,1,False,148,long,	FreeMsg Today's the day if you are ready! I'm  & live in your town. I love sex fun & games! Netcollex Ltd 08700621170150p per msg reply Stop to end,0.24118527567569406,0,0,false_negative
+BENCH_488,3672,commercial_spam,0,False,73,medium,Mobile Club: Choose any of the top quality items for your mobile. 7cfca1a,0.12612128905444092,0,1,correct
+BENCH_489,5256,smishing,1,False,148,long,PRIVATE! Your 2003 Account Statement for 07973788240 shows 800 un-redeemed S. I. M. points. Call 08715203649 Identifier Code: 40533 Expires 31/10/04,0.4358609674629212,0,0,false_negative
+BENCH_490,3830,smishing,1,False,161,long,"Someone has contacted our dating service and entered your phone becausethey fancy you! To find out who it is call from a landline 09058098002. PoBox1, W14RG 150p",0.10112157653841437,0,0,false_negative
+BENCH_491,4402,ham,0,False,90,medium,I was about to do it when i texted. I finished a long time ago and showered and er'ything!,0.05327948591955219,0,1,correct
+BENCH_492,4424,ham,0,False,95,medium,I hate when she does this. She turns what should be a fun day into an annoying day of quarrels.,0.056830942829418356,0,1,correct
+BENCH_493,4903,ham,0,False,84,medium,"Edison has rightly said, ""A fool can ask more questions than a wise man can answer"" ",0.09351279609686843,0,1,correct
+BENCH_494,2273,ham,0,True,87,medium,Sorry da:)i was thought of calling you lot of times:)lil busy.i will call you at noon..,0.035743637071112604,0,1,correct
+BENCH_495,2044,ham,0,False,147,long,Yar he quite clever but aft many guesses lor. He got ask me 2 bring but i thk darren not so willing 2 go. Aiya they thk leona still not attach wat.,0.03910561823803023,0,1,correct
+BENCH_496,2501,smishing,1,False,127,medium,Urgent! Please call 09061213237 from a landline. Â£5000 cash or a 4* holiday await collection. T &Cs SAE PO Box 177 M227XY. 16+,0.1963330649829646,0,0,false_negative
+BENCH_497,5818,ham,0,False,33,short,K...k...when will you give treat?,0.08837642107037695,0,1,correct
+BENCH_498,3069,ham,0,False,25,short,You still coming tonight?,0.15344966957186015,0,1,correct
+BENCH_499,330,ham,0,False,45,short,Re your call; You didn't see my facebook huh?,0.09595414759765157,0,1,correct
+BENCH_500,3566,ham,0,False,66,short,I'm stuck in da middle of da row on da right hand side of da lt...,0.03499240140472238,0,1,correct

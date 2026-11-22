@@ -11,7 +11,15 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from backend.notebooks import phishing_url_extraction_v2 as extraction
-from backend.ml.psl_service import is_psl_suffix, load_psl_rules, psl_registrable_domains
+from backend.ml.psl_service import (
+    JAVA,
+    PSL_FILE,
+    is_psl_suffix,
+    load_psl_rules,
+    psl_registrable_domains,
+)
+
+JDK_AVAILABLE = JAVA.is_file() and PSL_FILE.is_file()
 
 
 @dataclass(frozen=True)
@@ -135,6 +143,7 @@ def run_parser_cases() -> list[dict[str, object]]:
     return rows
 
 
+@unittest.skipUnless(JDK_AVAILABLE, "local JDK with Public Suffix List not available")
 class PhishingURLExtractionV2Tests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:

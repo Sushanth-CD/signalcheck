@@ -354,11 +354,13 @@ Evaluates a prepared 226-feature Android permission vector.
 
 ## 11. Testing & Quality Verification
 
-Run the full backend test suite (51 automated tests):
+Run the full backend test suite:
 ```bash
 cd backend
 python -m pytest -v
 ```
+
+> **Note on CI & Offline URL Extraction Tests:** The 6 regression tests in `backend/tests/test_phishing_url_extraction_v2.py` require a local Oracle JDK with its bundled Public Suffix List (`backend/notebooks/oracleJdk-27/`). Because this directory is gitignored and absent in CI environments, these tests automatically skip in CI with `"local JDK with Public Suffix List not available"`. Fallback approximations are intentionally forbidden to ensure evaluation fidelity.
 
 Run frontend production build verification:
 ```bash

@@ -51,3 +51,7 @@ backend/eval/*.csv
 backend/eval/results.csv
 
 
+backend/data/
+backend/notebooks/oracleJdk-27/
+backend/reports/ml/phishing_domain_extraction_v2/
+backend/reports/ml/text_phishing_domain_grouped/test_predictions.csv

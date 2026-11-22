@@ -211,151 +211,19 @@ jobs:
           # Ensure fixture is copied into the backend container for test requests and assertions
           docker cp "$FIXTURE_PATH" signalcheck-backend:/tmp/TestActivity.apk
 
-          # Upload APK via backend container port/exec
+          # Upload APK via backend container
           echo "Submitting APK to backend..."
-          POST_RES=$(docker exec -i signalcheck-backend python -c "
-          import urllib.request, json
-          # Read fixture and post via internal loopback
-          with open('/tmp/TestActivity.apk', 'rb') as f:
-              data = f.read()
-          boundary = '----WebKitFormBoundary7MA4YWxkTrZu0gW'
-          body = (
-              f'--{boundary}\r\n'
-              'Content-Disposition: form-data; name=\"file\"; filename=\"TestActivity.apk\"\r\n'
-              'Content-Type: application/vnd.android.package-archive\r\n\r\n'
-          ).encode() + data + f'\r\n--{boundary}--\r\n'.encode()
-          req = urllib.request.Request(
-              'http://127.0.0.1:8000/api/apk/analyze?async_mode=true',
-              data=body,
-              headers={
-                  'Content-Type': f'multipart/form-data; boundary={boundary}',
-                  'Cookie': 'signalcheck_apk_sid=ci_integration_test_session_token_1234567890',
-              },
-              method='POST'
-          )
-          with urllib.request.urlopen(req) as resp:
-              print(resp.read().decode())
-          ")
-          echo "Enqueue response: $POST_RES"
-          JOB_ID=$(echo "$POST_RES" | jq -r '.job_id')
-          if [ -z "$JOB_ID" ] || [ "$JOB_ID" = "null" ]; then
-            echo "FAILED: Did not obtain valid job_id from enqueue endpoint!"
-            exit 1
-          fi
+          JOB_ID=$(python .github/scripts/upload_apk.py)
           echo "Enqueued Job ID: $JOB_ID"
 
           # Poll for job completion
-          STATUS=""
-          RESULT=""
-          for i in {1..30}; do
-            POLL_RES=$(docker exec signalcheck-backend python -c "
-            import urllib.request
-            req = urllib.request.Request(
-                'http://127.0.0.1:8000/api/apk/jobs/$JOB_ID',
-                headers={'Cookie': 'signalcheck_apk_sid=ci_integration_test_session_token_1234567890'},
-            )
-            with urllib.request.urlopen(req) as resp:
-                print(resp.read().decode())
-            ")
-            STATUS=$(echo "$POLL_RES" | jq -r '.status')
-            echo "Poll attempt $i: status = $STATUS"
-            if [ "$STATUS" = "done" ]; then
-              RESULT=$(echo "$POLL_RES" | jq '.result')
-              break
-            fi
-            if [ "$STATUS" = "failed" ] || [ "$STATUS" = "timeout" ]; then
-              echo "FAILED: Job entered terminal failure state: $STATUS"
-              exit 1
-            fi
-            sleep 1
-          done
+          python .github/scripts/poll_job.py "$JOB_ID" /tmp/job_result.json
 
-          if [ "$STATUS" != "done" ]; then
-            echo "FAILED: Job did not complete within 30 seconds!"
-            exit 1
-          fi
-
-          # Assertions on result
-          SCHEMA_VER=$(echo "$RESULT" | jq -r '.analysis_version')
-          echo "Analysis version: $SCHEMA_VER"
-          if [ "$SCHEMA_VER" != "apk-static-v1" ]; then
-            echo "FAILED: schema_version is '$SCHEMA_VER', expected 'apk-static-v1'!"
-            exit 1
-          fi
-
-          FINDINGS_COUNT=$(echo "$RESULT" | jq '.findings | length')
-          echo "Findings count: $FINDINGS_COUNT"
-          if [ "$FINDINGS_COUNT" -lt 0 ]; then
-            echo "FAILED: findings list is missing!"
-            exit 1
-          fi
-
-          # Assert that after reaching 'done', the job key no longer exists in Redis and upload bytes are absent
-          echo "Checking Redis payload cleanup..."
-          JOB_KEY_EXISTS=$(docker exec signalcheck-redis redis-cli exists "rq:job:$JOB_ID")
-          echo "Redis job key exists: $JOB_KEY_EXISTS"
-          if [ "$JOB_KEY_EXISTS" != "0" ]; then
-            echo "FAILED: Job key 'rq:job:$JOB_ID' still exists in Redis after reaching terminal 'done' state!"
-            exit 1
-          fi
+          # Assertions on result schema and Redis key cleanup
+          python .github/scripts/assert_result.py "$JOB_ID" /tmp/job_result.json
 
           # Type-aware raw scan across all Redis keys with positive control assertion
-          docker exec signalcheck-backend python -c "
-          import redis, zlib
-
-          with open('/tmp/TestActivity.apk', 'rb') as f:
-              first_64 = f.read(64)
-          assert len(first_64) == 64, 'Fixture read failed to obtain 64 bytes'
-
-          r = redis.from_url('redis://redis:6379/0')
-
-          def scan_redis_for_target_bytes(conn, target):
-              matched_keys = []
-              for k in conn.keys('*'):
-                  k_type = conn.type(k)
-                  if isinstance(k_type, bytes):
-                      k_type = k_type.decode('utf-8')
-                  raw_blobs = []
-                  if k_type == 'string':
-                      val = conn.get(k)
-                      if val: raw_blobs.append(val)
-                  elif k_type == 'hash':
-                      h = conn.hgetall(k)
-                      for f_val in h.values():
-                          raw_blobs.append(f_val)
-                          try:
-                              raw_blobs.append(zlib.decompress(f_val))
-                          except Exception:
-                              pass
-                  elif k_type == 'list':
-                      raw_blobs.extend(conn.lrange(k, 0, -1))
-                  elif k_type == 'set':
-                      raw_blobs.extend(conn.smembers(k))
-                  elif k_type == 'zset':
-                      raw_blobs.extend(conn.zrange(k, 0, -1))
-                  for blob in raw_blobs:
-                      if target in blob:
-                          matched_keys.append(k)
-                          break
-              return matched_keys
-
-          # Step 1: Positive Control - Prove the type-aware scan detects fixture bytes when present
-          print('Running positive control check...')
-          probe_key = 'test:probe:positive_control'
-          r.hset(probe_key, 'data', zlib.compress(b'prefix_' + first_64 + b'_suffix'))
-          control_matches = scan_redis_for_target_bytes(r, first_64)
-          print('Positive control matches:', control_matches)
-          r.delete(probe_key)
-          assert any(probe_key.encode() in m or probe_key in str(m) for m in control_matches), \
-              'Positive control failed: scan did not detect deliberately injected fixture bytes in Redis hash'
-          print('Positive control verified: scanner reliably detects fixture bytes in Redis.')
-
-          # Step 2: Live Cleanliness Scan - Assert complete absence of fixture bytes across all Redis keys
-          live_matches = scan_redis_for_target_bytes(r, first_64)
-          if live_matches:
-              raise SystemExit(f'FAILED: Upload bytes found in live Redis keys after job completion: {live_matches}')
-          print(f'Redis type-aware scan verified: 0 upload bytes detected across all keys.')
-          "
+          python .github/scripts/redis_leak_scan.py
 
           echo "Container-mode pipeline completed successfully!"
 

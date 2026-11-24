@@ -33,7 +33,7 @@ The platform provides focused, transparent machine-learning-based classification
 - **Web & Link Phishing Scanner:** Classifies email bodies, message text, and suspicious URLs using a domain-grouped TF-IDF + Logistic Regression pipeline.
 - **SMS Smishing Scanner:** Evaluates SMS lures (including urgent linkless banking, delivery, and callback scams) using the frozen **SMS-05-C** combined word and character model.
 - **Dedicated Cybersecurity Design System:** WCAG 2.2 Level AA compliant interface with high contrast ratios ($\ge 4.5:1$), visible focus rings, multi-modal status indicators, and keyboard shortcuts (`Ctrl+Enter` / `Cmd+Enter`).
-- **Research Tools Lab:** Features safe, ephemeral Android APK static analysis (`/api/apk/analyze`) using Androguard and deterministic rule tables, alongside offline 226-feature permission vector benchmarking.
+- **Research Tools Lab:** Dedicated offline Android 226-feature benchmark interface (`/api/ml/analyze-android`) evaluating precomputed permission and feature vectors against the legacy Random Forest baseline.
 - **Cryptographic Model Verification:** Enforces SHA-256 integrity checks at application startup before model deserialization to prevent artifact tampering.
 - **Dynamic CORS Protection:** Configurable via environment variables without wildcard permissions.
 
@@ -386,10 +386,8 @@ npm run build
 ## 13. Research Lab & Android Limitations
 
 > [!IMPORTANT]
-> **Ephemeral Static Analysis Scope:**  
-> The Android Research Lab provides safe, ephemeral static inspection of uploaded Android packages (`.apk`) for dangerous permissions, manifest configurations, cryptographic certificate signatures, and code indicators using an isolated worker sandbox without installing or executing code.
->
-> In addition, a separate offline research interface is provided to evaluate precomputed 226-feature permission vectors against academic random forest baseline models.
+> **Android Research Scope:**
+> The Android Research Lab provides an offline benchmark for precomputed 226-feature permission vectors against the legacy Random Forest baseline model. It operates strictly on precomputed vectors and does not upload, open, inspect, or execute APK files. Only 44 of the model's 226 features can be reproduced directly from an APK container, so direct APK scoring is not supported.
 
 ---
 
@@ -416,5 +414,5 @@ npm run build
    - *Benign Test:* Paste `"Hey team, the draft meeting agenda is attached for tomorrow's standup."`. Show the clean `Likely Legitimate` status.
 3. **SMS Smishing Scanner:**
    - *Smishing Test:* Paste `"URGENT: Your debit card is blocked. Call 08712404000 immediately to unlock."`. Highlight that SignalCheck detects linkless lures that evade simple URL blocklists.
-4. **Android APK Analysis (Research Lab):** Open the Research Lab on the APK tab, upload a sample APK (`backend/tests/fixtures/ANDROGUARD_TESTS_TestActivity.apk`), inspect findings with plain-language explanations, and export the PDF report. Highlight the separate tab for precomputed 226-feature vectors.
+4. **Android 226-Feature Benchmark (Research Lab):** Open the Research Lab, click "Load Sample Vector" to load the genuine 226-feature vector, click "Analyse Benchmark", and review the model output, uncalibrated score, and research limitations.
 5. **Safety Resources:** Review the About & Safety view and the direct link to official reporting channels (`https://cybercrime.gov.in/`).

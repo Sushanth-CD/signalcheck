@@ -1,0 +1,35 @@
+# Version control & cache
+.git
+.gitignore
+.venv*
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache
+node_modules
+**/node_modules
+dist
+**/dist
+build
+**/build
+
+# Development artifacts & logs
+*.log
+.system_generated
+tempCodeRunnerFile.*
+extract_hw_2000.py
+test_scripts.py
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+
+# Heavy datasets and raw archives
+backend/data/raw/
+backend/data/processed/
+backend/reports/ml/android_v2_runs/
+backend/reports/ml/android_v3_runs/venv_v3/
+backend/reports/screenshots/

@@ -28,10 +28,7 @@ export default function AboutSafetySection() {
               <strong>SMS Smishing:</strong> Evaluates short mobile messages (with or without links) for urgent appeals, deceptive verification prompts, and bank impersonation.
             </li>
             <li>
-              <strong>Android Static Analysis (Research Lab):</strong> Performs ephemeral static inspection of uploaded Android packages (.apk) for dangerous permission combinations, component configurations, cryptographic signatures, and bytecode indicators without installing or executing code.
-            </li>
-            <li>
-              <strong>Android Feature Research:</strong> Provides an offline research interface to inspect pre-computed Android permissions and structural indicators against research baselines.
+              <strong>Android 226-Feature Benchmark:</strong> Provides an offline research interface to evaluate precomputed Android permission and intent indicators against a legacy Random Forest baseline. It operates strictly on pre-extracted feature sets without uploading, opening, or executing APK files.
             </li>
           </ul>
         </section>

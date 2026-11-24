@@ -1,15 +1,8 @@
-"""apk_analyzer.py - Lightweight upload validation and ZIP integrity checks.
-
-NOTICE: Androguard parsing has been completely removed from this module and isolated
-into `app.apk_worker` to enforce security isolation. The main API process must NEVER
-import androguard.
-"""
+"""apk_analyzer.py - Lightweight upload validation and ZIP integrity checks for offline evaluation."""
 
 from __future__ import annotations
 
-import os
 import zipfile
-from typing import Any
 
 
 class APKValidationError(Exception):

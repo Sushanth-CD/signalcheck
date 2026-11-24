@@ -28,7 +28,10 @@ from androguard.core.apk import APK
 from androguard.core.dex import DEX
 from androguard.core.analysis.analysis import Analysis
 
-from app.apk_scoring import score_findings
+try:
+    from eval.apk_scoring import score_findings
+except ImportError:
+    from apk_scoring import score_findings
 
 # Canonical Static Limitations Statement
 CANONICAL_LIMITATIONS = [

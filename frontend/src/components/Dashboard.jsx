@@ -108,25 +108,22 @@ export default function Dashboard({ onNavigate }) {
             </div>
             <div className="sc-tool-card__content">
               <span className="sc-tool-card__badge sc-tool-card__badge--neutral">
-                Static Analysis
+                Offline ML Research
               </span>
               <h3 id="tool-research-title" className="sc-tool-card__title">
-                Android APK Analysis
+                Android 226-Feature Benchmark
               </h3>
               <p className="sc-tool-card__description">
-                Performs rule-based static analysis of an uploaded APK (permissions, components, signing, code indicators) in an isolated worker, with plain-language explanations of each finding. Operates using deterministic heuristic rules with no ML model.
-              </p>
-              <p className="sc-tool-card__subtext" style={{ fontSize: "0.8125rem", color: "var(--color-text-secondary, #64748b)", marginTop: "0.5rem" }}>
-                A separate offline benchmark for precomputed 226-feature vectors is also available.
+                Evaluate precomputed 226-feature vectors against the legacy Random Forest benchmark model. Designed for offline research evaluation on prepared permission and intent vectors.
               </p>
             </div>
             <div className="sc-tool-card__footer">
               <button
                 type="button"
                 className="button button-quiet"
-                onClick={() => onNavigate("research", "apk")}
+                onClick={() => onNavigate("research")}
               >
-                Analyze an APK <span aria-hidden="true">→</span>
+                Open Benchmark <span aria-hidden="true">→</span>
               </button>
             </div>
           </article>

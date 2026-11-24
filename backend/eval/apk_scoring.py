@@ -1,4 +1,4 @@
-"""apk_scoring.py - Deterministic Rule-Based Scoring Engine for Android APKs.
+"""apk_scoring.py - Deterministic Rule-Based Scoring Engine for Android APKs (Offline Evaluation Harness).
 
 Version: apk-rules-v1
 Heuristic indicator level calculation based on static findings and combination bonuses.
@@ -187,11 +187,7 @@ def score_findings(findings: List[Dict[str, Any]] | List[Any]) -> Dict[str, Any]
 
 
 def attach_indicator_summary(result_dict: Dict[str, Any]) -> Dict[str, Any]:
-    """Attach or synchronize indicator_summary and indicator_level on an APK static result dictionary.
-
-    Ensures that historical records or responses lacking indicator_summary get computed
-    dynamically at serialization time, maintaining a single source of truth.
-    """
+    """Attach or synchronize indicator_summary and indicator_level on an APK static result dictionary."""
     findings = result_dict.get("findings", [])
     summary = score_findings(findings)
 

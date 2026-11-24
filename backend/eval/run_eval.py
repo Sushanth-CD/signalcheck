@@ -20,7 +20,10 @@ import time
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
-from app.apk_scoring import score_findings
+try:
+    from eval.apk_scoring import score_findings
+except ImportError:
+    from apk_scoring import score_findings
 
 # All 11 deterministic heuristic rule IDs
 RULE_IDS = [
@@ -105,9 +108,12 @@ def pre_validate_apk_file(file_path: str) -> Tuple[bool, str, str, int]:
 
     sha256_digest = hasher.hexdigest()
 
-    # Pre-parse zip checks using the app's validator
+    # Pre-parse zip checks using the eval validator
     try:
-        from app.apk_analyzer import validate_zip_structure, APKValidationError
+        try:
+            from eval.apk_analyzer import validate_zip_structure, APKValidationError
+        except ImportError:
+            from apk_analyzer import validate_zip_structure, APKValidationError
         validate_zip_structure(file_path)
     except APKValidationError as val_err:
         return False, val_err.error_code, sha256_digest, file_size
@@ -122,7 +128,7 @@ def analyze_sample_subprocess(file_path: str, sha256_hash: str, file_size: int) 
     cmd = [
         sys.executable,
         "-m",
-        "app.apk_worker",
+        "eval.apk_worker",
         file_path,
         sha256_hash,
         str(file_size),

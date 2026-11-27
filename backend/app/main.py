@@ -2,17 +2,10 @@
 
 import os
 import re
-import time
-import uuid
-import tempfile
-import hashlib
-import asyncio
-from typing import Optional
-from concurrent.futures import ThreadPoolExecutor, TimeoutError as FuturesTimeoutError
 from urllib.parse import urlparse
 from contextlib import asynccontextmanager
 
-from fastapi import FastAPI, HTTPException, Request, Response, UploadFile, File, Query, status
+from fastapi import FastAPI, HTTPException, Request, Response, status
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
@@ -27,9 +20,6 @@ from app.security import (
     get_client_ip,
     get_rate_limit,
     get_rate_limit_storage_uri,
-    get_or_create_apk_session,
-    get_apk_session_hash,
-    set_apk_session_cookie,
 )
 
 from app.android_classifier import (
@@ -47,30 +37,11 @@ from app.schemas import (
     AnalysisRequest,
     AndroidMLAnalysisRequest,
     AndroidMLAnalysisResponse,
-    APKAnalysisResponse,
-    APKHistoryItem,
-    APKHistoryResponse,
-    APKJobEnqueueResponse,
-    APKJobStatusResponse,
     HealthResponse,
     MLAnalysisResponse,
     SMSAnalysisRequest,
     SMSAnalysisResponse,
 )
-from app.apk_analyzer import (
-    APKValidationError,
-    validate_zip_structure,
-)
-from app.apk_jobs import enqueue_apk_job, get_job_status, get_redis_url
-from app.apk_db import (
-    init_db,
-    save_apk_result,
-    get_apk_history,
-    get_apk_record_by_id,
-)
-from app.apk_pdf import generate_apk_pdf_report
-from app.finding_explanations import attach_explanations_to_payload
-from app.apk_scoring import attach_indicator_summary
 
 
 @asynccontextmanager
@@ -97,11 +68,6 @@ async def lifespan(application: FastAPI):
         # this experimental artifact cannot be loaded.
         application.state.sms_model = None
         application.state.sms_model_load_error = exc
-    # Initialize SQLite database for APK history
-    try:
-        init_db()
-    except Exception as exc:
-        print(f"Warning: Failed to initialize APK database: {exc}")
     try:
         yield
     finally:
@@ -409,344 +375,4 @@ def analyze_sms_with_ml(
             detail="The SMS phishing classification model is not available.",
         )
     return SMSAnalysisResponse(**classify_sms_message(payload.content, model))
-
-
-@app.post(
-    "/api/apk/analyze",
-    status_code=status.HTTP_200_OK,
-)
-@limiter.limit(lambda: get_rate_limit("apk", "5/minute"))
-async def analyze_apk(
-    request: Request,
-    file: UploadFile = File(...),
-    async_mode: Optional[bool] = Query(default=False),
-) -> Response:
-    """Accept an uploaded APK archive, stream-validate it, and run static analysis.
-
-    Supports two modes:
-    1. Async Job Mode (async_mode=True): Enqueues job and returns HTTP 202 with job_id.
-    2. Synchronous Mode (default): Enqueues job, awaits isolated worker completion,
-       and returns the full APKAnalysisResponse (maintaining seamless backwards compatibility).
-    """
-    request_id = str(uuid.uuid4())
-    start_time = time.monotonic()
-    outcome_code = "UNKNOWN"
-
-    max_bytes = int(os.getenv("SIGNALCHECK_APK_MAX_SIZE_BYTES", 25 * 1024 * 1024))
-    max_uncompressed = int(os.getenv("SIGNALCHECK_APK_MAX_UNCOMPRESSED_BYTES", 300 * 1024 * 1024))
-    max_entries = int(os.getenv("SIGNALCHECK_APK_MAX_ENTRIES", "10000"))
-    max_ratio = float(os.getenv("SIGNALCHECK_APK_MAX_COMPRESSION_RATIO", "20.0"))
-
-    temp_path = None
-    bytes_received = 0
-    hasher = hashlib.sha256()
-    enqueued_successfully = False
-
-    try:
-        # Create an ephemeral temp file on disk
-        with tempfile.NamedTemporaryFile(delete=False, suffix=".apk", prefix="sc_upload_") as temp_file:
-            temp_path = temp_file.name
-
-            # Stream chunks (64 KB) to avoid loading entire body into memory
-            chunk_size = 64 * 1024
-            while True:
-                chunk = await file.read(chunk_size)
-                if not chunk:
-                    break
-                bytes_received += len(chunk)
-                if bytes_received > max_bytes:
-                    outcome_code = "PAYLOAD_TOO_LARGE"
-                    raise HTTPException(
-                        status_code=status.HTTP_413_REQUEST_ENTITY_TOO_LARGE,
-                        detail={
-                            "error": "apk_too_large",
-                            "message": f"Uploaded file exceeds maximum permitted size of {max_bytes} bytes.",
-                        },
-                    )
-                hasher.update(chunk)
-                temp_file.write(chunk)
-
-        if bytes_received == 0:
-            outcome_code = "EMPTY_FILE"
-            raise HTTPException(
-                status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
-                detail={
-                    "error": "empty_file",
-                    "message": "Uploaded file is empty.",
-                },
-            )
-
-        sha256_digest = hasher.hexdigest()
-
-        # Step A: Validate ZIP structure and safety boundaries before parsing
-        try:
-            validate_zip_structure(
-                temp_path,
-                max_entries=max_entries,
-                max_uncompressed_bytes=max_uncompressed,
-                max_compression_ratio=max_ratio,
-            )
-        except APKValidationError as val_err:
-            outcome_code = val_err.error_code
-            raise HTTPException(
-                status_code=val_err.status_code,
-                detail={"error": val_err.error_code, "message": val_err.message},
-            ) from val_err
-
-        # Step B: Extract or issue anonymous session token for APK history privacy
-        session_token, session_hash, is_new_session = get_or_create_apk_session(request)
-
-        # Callback for when async job completes (persists result to SQLite history)
-        def on_job_completed(job_id: str, outcome: str, result_dict: Optional[dict], error_str: Optional[str], duration: float):
-            if outcome == "done" and result_dict:
-                try:
-                    result_dict = attach_indicator_summary(result_dict)
-                    record_id = save_apk_result(
-                        sha256=sha256_digest,
-                        package_name=result_dict.get("app", {}).get("package_name", ""),
-                        file_size=bytes_received,
-                        indicator_level=result_dict.get("indicator_level", "no_notable_indicators"),
-                        outcome="SUCCESS",
-                        result_data=result_dict,
-                        session_hash=session_hash,
-                    )
-                    result_dict["id"] = record_id
-                except Exception as db_exc:
-                    print(f"Warning: Failed to persist async APK result: {db_exc}")
-
-        # Enqueue job to worker
-        # In Redis/RQ mode, read upload bytes to send in payload and delete backend temp file immediately.
-        redis_configured = bool(get_redis_url())
-        upload_bytes_payload = None
-        if redis_configured:
-            with open(temp_path, "rb") as f:
-                upload_bytes_payload = f.read()
-
-        try:
-            job_id = enqueue_apk_job(
-                file_path=temp_path,
-                sha256_hash=sha256_digest,
-                file_size=bytes_received,
-                session_hash=session_hash,
-                upload_bytes=upload_bytes_payload,
-                on_complete_cb=on_job_completed,
-            )
-            enqueued_successfully = True
-            outcome_code = "JOB_ENQUEUED"
-        except Exception as enq_exc:
-            outcome_code = "QUEUE_FAILED"
-            # Explicit cleanup of backend temp file if enqueueing fails or Redis is unreachable
-            if temp_path and os.path.exists(temp_path):
-                try:
-                    os.remove(temp_path)
-                except OSError:
-                    pass
-            raise HTTPException(
-                status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
-                detail={"error": "queue_unavailable", "message": f"Worker queue unavailable: {enq_exc}"},
-            ) from enq_exc
-
-        # In Redis/RQ mode, backend does not need the temp file anymore; delete immediately so backend keeps no copy.
-        if redis_configured and temp_path and os.path.exists(temp_path):
-            try:
-                os.remove(temp_path)
-            except OSError:
-                pass
-
-        # If client requested async job mode, return 202 Accepted with job_id immediately
-        if async_mode:
-            enqueue_payload = APKJobEnqueueResponse(
-                job_id=job_id,
-                status="queued",
-                created_at=time.time(),
-            )
-            json_resp = JSONResponse(status_code=status.HTTP_202_ACCEPTED, content=enqueue_payload.model_dump())
-            if is_new_session:
-                is_secure = request.url.scheme == "https" or request.headers.get("x-forwarded-proto") == "https"
-                set_apk_session_cookie(json_resp, session_token, is_secure=is_secure)
-            return json_resp
-
-        # Otherwise, await worker job completion (synchronous mode) for transparent backwards compatibility
-        poll_start = time.monotonic()
-        while True:
-            await asyncio.sleep(0.2)
-            job_info = get_job_status(job_id)
-            if not job_info:
-                break
-            status_val = job_info.get("status")
-            if status_val == "done":
-                res_dict = dict(job_info.get("result", {}))
-                # Deep copy findings so attach_explanations_to_payload does not mutate job_info["result"]
-                res_dict["findings"] = [dict(f) for f in res_dict.get("findings", [])]
-                res_dict = attach_explanations_to_payload(res_dict)
-                res_dict = attach_indicator_summary(res_dict)
-                resp_payload = APKAnalysisResponse(**res_dict)
-                json_resp = JSONResponse(status_code=status.HTTP_200_OK, content=resp_payload.model_dump())
-                if is_new_session:
-                    is_secure = request.url.scheme == "https" or request.headers.get("x-forwarded-proto") == "https"
-                    set_apk_session_cookie(json_resp, session_token, is_secure=is_secure)
-                return json_resp
-            if status_val == "timeout":
-                raise HTTPException(
-                    status_code=status.HTTP_504_GATEWAY_TIMEOUT,
-                    detail={"error": "analysis_timeout", "message": "Static analysis timed out in worker."},
-                )
-            if status_val == "failed":
-                err_msg = job_info.get("error") or "Worker extraction failed."
-                raise HTTPException(
-                    status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
-                    detail={"error": "analysis_failed", "message": err_msg},
-                )
-            if time.monotonic() - poll_start > 35:
-                raise HTTPException(
-                    status_code=status.HTTP_504_GATEWAY_TIMEOUT,
-                    detail={"error": "analysis_timeout", "message": "Static analysis timed out waiting for worker."},
-                )
-
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail={"error": "worker_error", "message": "Worker terminated unexpectedly."},
-        )
-
-    finally:
-        # If enqueuing failed or validation raised an exception, clean up temp file immediately.
-        # If enqueued successfully, worker process/thread manages temp file deletion in its finally block.
-        if not enqueued_successfully and temp_path and os.path.exists(temp_path):
-            try:
-                os.remove(temp_path)
-            except OSError:
-                pass
-
-        # Close uploaded file handle
-        try:
-            await file.close()
-        except Exception:
-            pass
-
-        duration_sec = round(time.monotonic() - start_time, 4)
-        # Log facts only: request_id, size, duration, outcome_code (NO content or strings)
-        print(
-            f"SIGNALCHECK_APK_AUDIT: req_id={request_id} "
-            f"size_bytes={bytes_received} "
-            f"duration_sec={duration_sec} "
-            f"outcome={outcome_code}"
-        )
-
-
-@app.get(
-    "/api/apk/jobs/{job_id}",
-    response_model=APKJobStatusResponse,
-)
-@limiter.limit(lambda: get_rate_limit("apk_job", "60/minute"))
-def get_apk_job(
-    request: Request,
-    job_id: str,
-) -> APKJobStatusResponse:
-    """Retrieve status and results for an asynchronous APK static analysis job."""
-    session_hash = get_apk_session_hash(request)
-    job_info = get_job_status(job_id)
-    if not job_info:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail={
-                "error": "job_not_found",
-                "message": f"No analysis job found with ID {job_id}.",
-            },
-        )
-
-    # Session Isolation: Fail-closed ownership check.
-    # Allow only when the job has a non-empty session_hash AND it matches the requester's session_hash.
-    job_session_hash = job_info.get("session_hash")
-    if not job_session_hash or not session_hash or session_hash != job_session_hash:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail={
-                "error": "job_not_found",
-                "message": f"No analysis job found with ID {job_id}.",
-            },
-        )
-
-    result_payload = None
-    if job_info.get("result"):
-        result_copy = dict(job_info["result"])
-        # Deep copy findings to avoid mutating the in-memory job result cache
-        result_copy["findings"] = [dict(f) for f in result_copy.get("findings", [])]
-        # Attach educational explanations and indicator summary dynamically at serialization time
-        result_copy = attach_explanations_to_payload(result_copy)
-        result_copy = attach_indicator_summary(result_copy)
-        result_payload = APKAnalysisResponse(**result_copy)
-
-    return APKJobStatusResponse(
-        job_id=job_id,
-        status=job_info.get("status", "unknown"),
-        result=result_payload,
-        error=job_info.get("error"),
-        created_at=job_info.get("created_at"),
-        duration_sec=job_info.get("duration_sec"),
-    )
-
-
-@app.get(
-    "/api/apk/history",
-    response_model=APKHistoryResponse,
-)
-@limiter.limit(lambda: get_rate_limit("apk_history", "30/minute"))
-def get_apk_analysis_history(
-    request: Request,
-    limit: int = Query(default=20, ge=1, le=50),
-    offset: int = Query(default=0, ge=0),
-) -> APKHistoryResponse:
-    """Retrieve paginated historical APK static analysis summaries for the caller's session."""
-    session_hash = get_apk_session_hash(request)
-    items, total = get_apk_history(limit=limit, offset=offset, session_hash=session_hash)
-    return APKHistoryResponse(
-        items=[APKHistoryItem(**item) for item in items],
-        total=total,
-        limit=limit,
-        offset=offset,
-    )
-
-
-@app.get(
-    "/api/apk/report/{record_id}",
-)
-@limiter.limit(lambda: get_rate_limit("apk_report", "30/minute"))
-def get_apk_analysis_report(
-    request: Request,
-    record_id: int,
-    format: Optional[str] = Query(default=None),
-) -> Response:
-    """Retrieve full JSON result or generate one-page PDF technical report for the caller's session."""
-    session_hash = get_apk_session_hash(request)
-    record = get_apk_record_by_id(record_id, session_hash=session_hash)
-    if not record:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail={
-                "error": "report_not_found",
-                "message": f"No APK analysis record found with ID {record_id}.",
-            },
-        )
-
-    result_data = record["result"]
-    # Attach educational explanations and indicator summary dynamically to stored record
-    result_data = attach_explanations_to_payload(result_data)
-    result_data = attach_indicator_summary(result_data)
-
-    if format == "pdf":
-        pdf_bytes = generate_apk_pdf_report(result_data)
-        package_clean = result_data.get("app", {}).get("package_name") or "apk"
-        filename = f"signalcheck-report-{package_clean}-{record['sha256'][:8]}.pdf"
-        return Response(
-            content=pdf_bytes,
-            media_type="application/pdf",
-            headers={
-                "Content-Disposition": f'attachment; filename="{filename}"',
-                "Content-Length": str(len(pdf_bytes)),
-            },
-        )
-
-    # Default: return JSON result
-    return JSONResponse(content=result_data)
-
 

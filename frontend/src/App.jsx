@@ -8,14 +8,11 @@ export default function App() {
   // Navigation states: 'dashboard' | 'scanners' | 'research' | 'about'
   const [currentNav, setCurrentNav] = useState("dashboard");
   const [activeScannerMode, setActiveScannerMode] = useState("web");
-  const [researchInitialTab, setResearchInitialTab] = useState("apk");
 
   function handleNavigate(target, subMode) {
     setCurrentNav(target);
     if (target === "scanners" && subMode) {
       setActiveScannerMode(subMode);
-    } else if (target === "research") {
-      setResearchInitialTab(subMode || "apk");
     }
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
@@ -83,7 +80,7 @@ export default function App() {
         )}
 
         {currentNav === "research" && (
-          <ResearchToolsSection initialTab={researchInitialTab} />
+          <ResearchToolsSection />
         )}
 
         {currentNav === "about" && (

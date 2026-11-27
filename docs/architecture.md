@@ -1,6 +1,10 @@
 # SignalCheck System Architecture & Isolation Model
 
-SignalCheck is an accessible cybersecurity awareness and research platform designed to evaluate suspicious electronic communications (web phishing, SMS smishing) and mobile application binaries (Android APK static analysis).
+> [!NOTE]
+> **Android Architecture Update (Milestone 1.0):**
+> The live user-facing APK static analysis upload subsystem, SQLite database persistence, and asynchronous worker queue have been decommissioned. The product runtime operates completely stateless, providing production ML endpoints for Web Phishing, SMS Smishing, and the offline Android 226-Feature Benchmark. The C5 static analysis heuristic evaluation pipeline has been relocated to `backend/eval/` for offline research use.
+
+SignalCheck is an accessible cybersecurity awareness and research platform designed to evaluate suspicious electronic communications (web phishing, SMS smishing) and precomputed mobile indicators (Android 226-feature vector benchmark).
 
 ---
 

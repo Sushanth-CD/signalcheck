@@ -1,5 +1,9 @@
 # SignalCheck 3-Minute Demonstration Script
 
+> [!NOTE]
+> **Historical Demonstration Note:**
+> This document records the historical Milestone C4 demonstration script for live APK static analysis. In Milestone 1.0, live APK upload was decommissioned from the product UI, and the Android Research Lab was streamlined into the dedicated **Android 226-Feature Benchmark**. For the current recommended demonstration flow, see Section 15 of `README.md`.
+
 This walkthrough script is designed for live demonstrations, hackathon presentations, and university lectures to showcase SignalCheck's safe APK static analysis, educational findings, dynamic explanations, PDF export, and private history.
 
 ---

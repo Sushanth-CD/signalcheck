@@ -5,7 +5,7 @@ The main API process must NEVER import androguard or run Androguard code directl
 
 Can be executed as:
 1. Python module function: `run_apk_worker(file_path: str, sha256_hash: str, file_size: int) -> dict[str, Any]`
-2. CLI process: `python -m app.apk_worker <file_path> <sha256_hash> <file_size>` (prints JSON to stdout)
+2. CLI process: `python -m eval.apk_worker <file_path> <sha256_hash> <file_size>` (prints JSON to stdout)
 3. RQ worker task: `execute_rq_apk_job(file_path: str, sha256_hash: str, file_size: int) -> dict[str, Any]`
 """
 
@@ -28,7 +28,10 @@ from androguard.core.apk import APK
 from androguard.core.dex import DEX
 from androguard.core.analysis.analysis import Analysis
 
-from app.apk_scoring import score_findings
+try:
+    from eval.apk_scoring import score_findings
+except ImportError:
+    from apk_scoring import score_findings
 
 # Canonical Static Limitations Statement
 CANONICAL_LIMITATIONS = [
@@ -578,7 +581,7 @@ def main():
     Outputs JSON string to stdout on success, or JSON error object with exit code 1.
     """
     if len(sys.argv) < 4:
-        sys.stderr.write("Usage: python -m app.apk_worker <file_path> <sha256_hash> <file_size>\n")
+        sys.stderr.write("Usage: python -m eval.apk_worker <file_path> <sha256_hash> <file_size>\n")
         sys.exit(2)
 
     file_path = sys.argv[1]

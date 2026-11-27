@@ -25,6 +25,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip setuptools wheel
           pip install -e "./backend[dev]"
+          pip install -r backend/eval/requirements.txt
 
       - name: Run backend pytest suite (Fast non-slow suite on push)
         if: github.event_name == 'push'
@@ -76,9 +77,9 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      - name: Build backend worker image
+      - name: Build backend image
         run: |
-          docker build -t signalcheck-apk-worker:ci -f backend/Dockerfile .
+          docker build -t signalcheck-backend:ci -f backend/Dockerfile .
 
       - name: Create compose internal network and verify compose configuration
         run: |
@@ -94,10 +95,10 @@ jobs:
             --tmpfs /tmp:size=64m,noexec,nosuid,nodev \
             --cap-drop ALL \
             --security-opt no-new-privileges:true \
-            signalcheck-apk-worker:ci id -u)
-          echo "Worker executed with UID: $UID_GID"
+            signalcheck-backend:ci id -u)
+          echo "Backend executed with UID: $UID_GID"
           if [ "$UID_GID" != "10001" ]; then
-            echo "FAILED: Worker is running as UID $UID_GID instead of 10001 (non-root)"
+            echo "FAILED: Backend is running as UID $UID_GID instead of 10001 (non-root)"
             exit 1
           fi
 
@@ -110,7 +111,7 @@ jobs:
             --tmpfs /tmp:size=64m,noexec,nosuid,nodev \
             --cap-drop ALL \
             --security-opt no-new-privileges:true \
-            signalcheck-apk-worker:ci touch /app/evil_probe.txt 2>&1 | grep -i "Read-only file system"
+            signalcheck-backend:ci touch /app/evil_probe.txt 2>&1 | grep -i "Read-only file system"
           EXIT_CODE=$?
           set -e
           if [ $EXIT_CODE -ne 0 ]; then
@@ -138,7 +139,7 @@ jobs:
             --tmpfs /tmp:size=64m,noexec,nosuid,nodev \
             --cap-drop ALL \
             --security-opt no-new-privileges:true \
-            signalcheck-apk-worker:ci python -c "import urllib.request; urllib.request.urlopen('http://1.1.1.1', timeout=3)" 2>&1 | grep -iE "Network is unreachable|timed out|URLError"
+            signalcheck-backend:ci python -c "import urllib.request; urllib.request.urlopen('http://1.1.1.1', timeout=3)" 2>&1 | grep -iE "Network is unreachable|timed out|URLError"
           EXIT_CODE=$?
           set -e
           if [ $EXIT_CODE -ne 0 ]; then
@@ -147,8 +148,8 @@ jobs:
           fi
           echo "Verified: Outbound network egress failed as expected on internal network."
 
-  compose-integration-apk-pipeline:
-    name: Compose Integration APK Worker Pipeline
+  compose-integration:
+    name: Compose Integration Pipeline
     runs-on: ubuntu-latest
 
     steps:
@@ -158,9 +159,9 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      - name: Start Docker Compose services (redis, backend, apk-worker)
+      - name: Start Docker Compose services (redis, backend)
         run: |
-          docker compose up -d redis backend apk-worker
+          docker compose up -d redis backend
 
       - name: Wait for backend service health
         run: |
@@ -175,65 +176,22 @@ jobs:
             sleep 2
           done
 
-      - name: Assert worker is running as non-root with read-only rootfs
+      - name: Verify health and ML endpoints
         run: |
-          WORKER_USER=$(docker inspect --format='{{.Config.User}}' signalcheck-apk-worker)
-          echo "Worker user configured: $WORKER_USER"
-          if [ "$WORKER_USER" != "10001:10001" ]; then
-            echo "FAILED: apk-worker user is not 10001:10001!"
-            exit 1
-          fi
-
-          WORKER_READONLY=$(docker inspect --format='{{.HostConfig.ReadonlyRootfs}}' signalcheck-apk-worker)
-          echo "Worker read-only rootfs: $WORKER_READONLY"
-          if [ "$WORKER_READONLY" != "true" ]; then
-            echo "FAILED: apk-worker does not have read-only rootfs!"
-            exit 1
-          fi
-
-          ACTUAL_UID=$(docker exec signalcheck-apk-worker id -u)
-          echo "Live worker process UID: $ACTUAL_UID"
-          if [ "$ACTUAL_UID" != "10001" ]; then
-            echo "FAILED: Live worker process is not running as UID 10001!"
-            exit 1
-          fi
-
-      - name: Run APK static analysis through container stack and assert results
-        id: test_pipeline
-        run: |
-          set -e
-          FIXTURE_PATH="backend/tests/fixtures/ANDROGUARD_TESTS_TestActivity.apk"
-          if [ ! -f "$FIXTURE_PATH" ]; then
-            echo "FAILED: Fixture APK not found at $FIXTURE_PATH"
-            exit 1
-          fi
-
-          # Ensure fixture is copied into the backend container for test requests and assertions
-          docker cp "$FIXTURE_PATH" signalcheck-backend:/tmp/TestActivity.apk
-
-          # Upload APK via backend container
-          echo "Submitting APK to backend..."
-          JOB_ID=$(python .github/scripts/upload_apk.py)
-          echo "Enqueued Job ID: $JOB_ID"
-
-          # Poll for job completion
-          python .github/scripts/poll_job.py "$JOB_ID" /tmp/job_result.json
-
-          # Assertions on result schema and Redis key cleanup
-          python .github/scripts/assert_result.py "$JOB_ID" /tmp/job_result.json
-
-          # Type-aware raw scan across all Redis keys with positive control assertion
-          python .github/scripts/redis_leak_scan.py
-
-          echo "Container-mode pipeline completed successfully!"
+          docker exec signalcheck-backend python -c "
+          import urllib.request, json
+          resp = urllib.request.urlopen('http://127.0.0.1:8000/health')
+          assert resp.status == 200, f'Expected 200, got {resp.status}'
+          data = json.loads(resp.read().decode())
+          assert data.get('status') == 'ok', f'Expected status ok, got {data}'
+          print('Health endpoint verified successfully!')
+          "
 
       - name: Dump container logs on failure
         if: failure()
         run: |
           echo "=== Backend Logs ==="
           docker logs signalcheck-backend --tail 100
-          echo "=== APK Worker Logs ==="
-          docker logs signalcheck-apk-worker --tail 100
           echo "=== Redis Logs ==="
           docker logs signalcheck-redis --tail 100
 

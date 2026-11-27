@@ -1,0 +1,4 @@
+# Offline APK Evaluation Harness Dependencies (Stage C5 Research)
+# Note: These dependencies are strictly for offline research/evaluation scripts
+# and are NOT imported or required by the production FastAPI application.
+androguard>=4.1.4,<5.0

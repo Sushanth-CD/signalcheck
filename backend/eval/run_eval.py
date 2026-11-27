@@ -160,6 +160,8 @@ def analyze_sample_subprocess(file_path: str, sha256_hash: str, file_size: int) 
                 err_code = err_json.get("error") or "worker_error"
             except Exception:
                 err_code = "worker_crash"
+                if stderr:
+                    sys.stderr.write(f"\n[run_eval worker crash stderr]:\n{stderr}\n")
             return f"FAILED_{err_code}", None
     except subprocess.TimeoutExpired:
         if proc:
